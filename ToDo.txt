@@ -1,0 +1,12 @@
+Ленту(Timeline)/календарь сделать!
+
+Вопросы:
+  правильно ли что в адресе этаж/подъезд строки? Ведь могут быть люди, которые живут сразу на 2-х этажах, в подъездах со странными названиями этаж "3-4" подъезд "Северный".
+  Почему не обрабатываются картинки из папки assets/, а только из public/
+
+
+Production:
+  в девелопменте стоит config.action_mailer.default_url_options = {host:'localhost:3000'} . В продакшне нужно поменять на реальный хост
+  config/devise: config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  
+  Gemfile -- source 'http://rubygems.org' поменять на https
