@@ -32,7 +32,28 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'devise'
+gem 'haml-rails'
+gem 'simple_form'
+gem 'cancan'
+gem 'russian'
+
+group :development do
+  gem 'sextant'
+end
+
+gem 'carrierwave'
+
+# rspec-rails needs to be in the development group so that Rails generators work.
+group :test, :development do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+end
