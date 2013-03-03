@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :authentication_keys => [:login]
 
+  validates :username, length: {minimum: 3}
+  
+  
   # allows user to sign in using both email and username
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   attr_accessor :login

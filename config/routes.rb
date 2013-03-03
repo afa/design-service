@@ -1,5 +1,17 @@
 DesignService::Application.routes.draw do
-  devise_for :users
+  # Disable user from destroying his account
+  # https://github.com/plataformatec/devise/wiki/How-To:-Disable-user-from-destroying-his-account
+  devise_for :users, skip: :registrations
+  devise_scope :user do
+    resource :registration,
+              only: [:new, :create, :edit, :update],
+              path: 'users',
+              path_names: { new: 'sign_up' },
+              controller: 'devise/registrations',
+              as: :user_registration do
+                get :cancel
+              end
+  end
 
   get "welcome/index"
 
