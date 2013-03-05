@@ -40,6 +40,7 @@ gem 'capistrano'
 gem 'devise'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'nested_form'
 gem 'cancan'
 gem 'russian'
 
