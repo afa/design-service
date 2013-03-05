@@ -50,9 +50,10 @@ end
 
 gem 'carrierwave'
 
-# rspec-rails needs to be in the development group so that Rails generators work.
 group :test, :development do
+  # rspec-rails and factory_girl_rails needs to be in the development group so that Rails generators work.
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do
