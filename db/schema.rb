@@ -11,7 +11,50 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303224523) do
+ActiveRecord::Schema.define(:version => 20130304000327) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "address"
+    t.string   "floor"
+    t.string   "section"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "flat_infos", :force => true do |t|
+    t.integer  "address_id"
+    t.integer  "num_standpipes"
+    t.integer  "family_composition_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  add_index "flat_infos", ["address_id"], :name => "index_flat_infos_on_address_id"
+  add_index "flat_infos", ["family_composition_id"], :name => "index_flat_infos_on_family_composition_id"
+
+  create_table "moderable_texts", :force => true do |t|
+    t.text     "original_text"
+    t.text     "moderated_text"
+    t.boolean  "verified",       :default => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
+
+  create_table "plan_developments", :force => true do |t|
+    t.boolean  "join_kitchen_with_living_room"
+    t.boolean  "big_kitchen"
+    t.boolean  "cloakroom_needed"
+    t.boolean  "cabinet_needed"
+    t.integer  "num_builtin_closets"
+    t.integer  "num_guests"
+    t.integer  "num_bedrooms"
+    t.boolean  "washing_room_needed"
+    t.integer  "flat_info_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "plan_developments", ["flat_info_id"], :name => "index_plan_developments_on_flat_info_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
