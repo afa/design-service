@@ -41,6 +41,8 @@ ssh_options[:forward_agent] = true
 
 default_run_options[:pty] = true
 
+set :bundle_flags, "--no_deployment"
+
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
 set :application,     "design-service"
