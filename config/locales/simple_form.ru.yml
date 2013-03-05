@@ -40,3 +40,5 @@ ru:
         address: 'Адрес:'
         floor: 'Этаж:'
         section: 'Подъезд/секция:'
+      family_composition:
+        original_text: 'Состав семьи:'
