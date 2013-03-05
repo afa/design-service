@@ -1,4 +1,7 @@
 DesignService::Application.routes.draw do
+
+  resources :plan_developments #, only: [:new, :create, :show]
+
   # Disable user from destroying his account
   # https://github.com/plataformatec/devise/wiki/How-To:-Disable-user-from-destroying-his-account
   devise_for :users, skip: :registrations

@@ -1,0 +1,42 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательное поле'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Labels and hints examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    
+    labels:
+      plan_development:
+        join_kitchen_with_living_room: 'Объединить кухню с гостиной?'
+        big_kitchen: 'Размер кухни:'
+        num_builtin_closets: 'Количество встроенных шкафов, включая гардеробные комнаты:'
+        num_guests: 'Любите ли вы принимать гостей?'
+        num_bedrooms: 'Количество спальных мест:'
+        washing_room_needed: 'Наличие постирочной:'
+        cabinet_needed: 'Нужен кабинет?'
+        cloakroom_needed: 'Наличие гардеробных комнат:'
+      flat_info:
+        num_standpipes: 'Кол-во стояков водопровода:'
+      address:
+        address: 'Адрес:'
+        floor: 'Этаж:'
+        section: 'Подъезд/секция:'
