@@ -174,6 +174,7 @@ DEPENDENCIES
   devise
   haml-rails
   jquery-rails
+  libv8
   nested_form
   rails (= 3.2.12)
   rspec-rails
@@ -183,4 +184,5 @@ DEPENDENCIES
   shoulda-matchers
   simple_form
   sqlite3
+  therubyracer
   uglifier (>= 1.0.3)
