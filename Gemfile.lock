@@ -176,6 +176,7 @@ DEPENDENCIES
   jquery-rails
   libv8
   nested_form
+  pg
   rails (= 3.2.12)
   rspec-rails
   russian

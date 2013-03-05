@@ -19,7 +19,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  host: postgresql5.locum.ru
+  database: prijutme_desig76
+  username: prijutme_desig76
+  password: idoOmuRw
   pool: 5
   timeout: 5000
