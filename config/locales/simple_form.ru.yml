@@ -42,3 +42,8 @@ ru:
         section: 'Подъезд/секция:'
       family_composition:
         original_text: 'Состав семьи:'
+    hints:
+      user:
+        edit:
+          password: "если вы не сообираетесь менять пароль, оставьте это поле пустым"
+          current_password: "чтобы подтвердить изменения, введите свой текущий пароль"
