@@ -5,4 +5,6 @@ class FlatInfo < ActiveRecord::Base
 
   accepts_nested_attributes_for :address, :family_composition
   attr_accessible :address_attributes, :family_composition_attributes
+  
+  validates :num_standpipes, numericality: true
 end

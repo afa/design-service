@@ -24,4 +24,8 @@ class PlanDevelopmentsController < ApplicationController
   def show
     @plan_development = PlanDevelopment.find(params[:id])
   end
+  def disable_form?
+    action_name == 'show'
+  end
+  helper_method :disable_form?
 end
