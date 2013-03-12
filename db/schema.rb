@@ -11,12 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312063106) do
+ActiveRecord::Schema.define(:version => 20130312095405) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
     t.string   "floor"
     t.string   "section"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "attachments", :force => true do |t|
+    t.string   "file"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -53,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20130312063106) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.integer  "num_plans"
+    t.integer  "attachment_id"
   end
 
   add_index "plan_developments", ["flat_info_id"], :name => "index_plan_developments_on_flat_info_id"

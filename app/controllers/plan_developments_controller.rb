@@ -1,9 +1,10 @@
 class PlanDevelopmentsController < ApplicationController
   def new
     @plan_development = PlanDevelopment.new
-    @flat_info = @plan_development.build_flat_info
-    @address = @flat_info.build_address
-    @flat_info.build_family_composition
+    flat_info = @plan_development.build_flat_info
+    flat_info.build_address
+    flat_info.build_family_composition
+    @plan_development.build_attachment
   end
 
   def create

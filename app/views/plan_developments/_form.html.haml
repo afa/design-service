@@ -1,4 +1,4 @@
-= simple_nested_form_for @plan_development, defaults: (disable_form? ? {disabled: true} : {}) do |f|
+= simple_nested_form_for @plan_development, defaults: (disable_form? ? {disabled: true} : {}), html: {multipart: true} do |f|
   = f.simple_fields_for :flat_info
   = f.input  :join_kitchen_with_living_room, as: :radio_buttons
   = f.input  :big_kitchen, as: :radio_buttons, collection: [[true, 'Больше 15 кв.м.',],[false, 'Меньше 15 кв.м.']], value_method: :first, label_method: :last
@@ -9,4 +9,5 @@
   = f.input  :num_bedrooms
   = f.input  :washing_room_needed, as: :radio_buttons
   = f.input  :num_plans
+  = f.simple_fields_for :attachment
   = f.submit disabled: disable_form?
