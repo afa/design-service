@@ -8,4 +8,5 @@
   = f.input  :num_guests, as: :radio_buttons, collection: PlanDevelopment::NUM_GUESTS, value_method: :first, label_method: :last
   = f.input  :num_bedrooms
   = f.input  :washing_room_needed, as: :radio_buttons
+  = f.input  :num_plans
   = f.submit disabled: disable_form?
