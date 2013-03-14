@@ -1,6 +1,9 @@
 DesignService::Application.routes.draw do
 
-  resources :plan_developments #, only: [:new, :create, :show]
+  resources :plan_developments, only: [:new, :create, :show]
+  get 'plan_developments' => 'plan_developments#new'
+
+  resources :messages
 
   # Disable user from destroying his account
   # https://github.com/plataformatec/devise/wiki/How-To:-Disable-user-from-destroying-his-account

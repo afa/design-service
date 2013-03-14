@@ -1,0 +1,4 @@
+= simple_form_for @message do |f|
+  = f.simple_fields_for :text do |text_form|
+    = render partial: 'moderable_text_fields',  locals: {f: text_form}
+  = f.submit

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312095405) do
+ActiveRecord::Schema.define(:version => 20130312112847) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(:version => 20130312095405) do
 
   add_index "flat_infos", ["address_id"], :name => "index_flat_infos_on_address_id"
   add_index "flat_infos", ["family_composition_id"], :name => "index_flat_infos_on_family_composition_id"
+
+  create_table "messages", :force => true do |t|
+    t.integer  "from_id"
+    t.integer  "to_id"
+    t.integer  "text_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "messages", ["from_id"], :name => "index_messages_on_from_id"
+  add_index "messages", ["text_id"], :name => "index_messages_on_text_id"
+  add_index "messages", ["to_id"], :name => "index_messages_on_to_id"
 
   create_table "moderable_texts", :force => true do |t|
     t.text     "original_text"

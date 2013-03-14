@@ -58,4 +58,9 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'capybara'
 end
+gem 'simplecov', :require => false, :group => :test
+#gem 'simplecov-rcov-text'
+#gem 'metric_fu'
+#gem 'rails_best_practices'

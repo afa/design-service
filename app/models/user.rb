@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
 
   validates :username, length: {minimum: 3}, immutable: true
 
+  has_many :received_messages, class_name: 'Message', foreign_key: 'to_id'
+  has_many :sent_messages, class_name: 'Message', foreign_key: 'from_id'
+
   # allows user to sign in using both email and username
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   attr_accessor :login
