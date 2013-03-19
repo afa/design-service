@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Дизайн сервис. Разработка вариантов планировок.</title>
+<!--<link href="indexFixed.css" rel="stylesheet" type="text/css" /> -->
+<link href="css/unregistred.css" rel="stylesheet" type="text/css" />
+<link href="css/specialistcategory.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div class="twoColFixRtHdr">
+
+<div id="container">
+
+  <div id="header"> 
+  	 <a href="indexfixed.html">
+     <div id="designService" class="headerLayer1">
+     </div>    
+    </a>
+    <a href="ClientCabinet.html">
+    <div id="SignIn" class="headerLayer2">
+      <div id="SignInCaption">
+         <p> Войти </p>
+      </div> 
+    </div>
+    </a>
+    
+    <a href="register.html">
+    <div id="Register" class="headerLayer3">
+      <div id="RegisterCaption">
+         <p>Регистрация</p>
+       </div>	
+    </div>
+    </a>
+       
+    <a href="ClientCabinet.html">
+    <div id="UserMenu" style="visibility:hidden">
+	</div>
+    </a>
+    <!-- Clear floats --> <div class="clear"> </div>  
+  <!-- end #header --></div>
+  
+  
+  <div id="sidebar1">
+  	<div class="wtf"></div>
+    <div id="leftMenu" class="leftMenuContainer">  
+          
+           <a href="PostVarPlan.html">
+           <div id="PostVarPlan" class="leftMenuButton">
+         		<p class="leftMenuCaption"> Варианты <br /> 
+         		планировок</p></div> 
+           </a>
+           <a href="PlanRefactoring.html">    
+           <div id="PostDevAdjust" class="leftMenuButton">
+             <p class="leftMenuCaption"> Согласование <br /> перепланировок </p>
+   			</div>
+           </a>
+           <a href="DesignProject.html">
+            <div id="PostDesignProj" class="leftMenuButton">
+            	<p class="leftMenuCaption"> Дизайн <br /> проект</p>
+            </div>
+            </a>
+            <a href="AuthorMaintance.html">
+            <div id="PostAuthMaintance" class="leftMenuButton">
+            	<p class="leftMenuCaption"> Авторское <br /> Сопровождение </p>
+   			</div>
+            </a>
+  		 
+    <!-- end .leftMenuContainer --></div>
+  <!-- end #sidebar1 --></div>
+  
+  <div id="mainContent">
+  
+     
+     <div id="leftTopContainer" class="leftTopContainer">
+  			<div id="specMenuContainer" class="specMenu">
+            	<a href="SpecialistCategory.html">
+                <div id="architect" class="specMenuButton">
+                	<p class="specMenuCaption" style="font-stretch:extra-expanded;">Архитекторы</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="Designer" class="specMenuButton">
+                	<p class="specMenuCaption">Дизайнеры</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="Enginere" class="specMenuButton">
+                	<p class="specMenuCaption">Инженеры</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="BuildCompany" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные фирмы</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="BuildAshot" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные бригады</p>
+                </div>
+                </a>
+                       
+       
+         <!--end specMenuContainer --></div>
+      <!--end leftTopContainer --> </div>
+      
+     <!-- <div id="wtf" class="wtf"> </div>  KILL ALL FLOATS IF MODULE-->   
+     <!-- WHY DAMN FLOAT BREAKS CONTAINERS FLOAT RULE????!!!!!!!!!!!---> 
+	  
+    
+     <div id="thisPageContent" class="thisPageContent">
+   			
+            <div id="pageCaption" class="pageCaption">
+            	<div id="DesignerLogo" class="pageLogo">
+                </div>
+                <div id="pageName">
+                	<p> Дизайнеры</p>
+                </div>       
+               <!-- <div class="horLine"> </div>        OMFG MAGIC -->
+            <!-- emd #PageCaption--></div>
+            <div class="clearfloat"></div>
+            
+            
+            <div class="sortBy">
+            	<div class="sortCaption"> Сортировать по</div>
+                <div class="sortByRate">
+                </div>
+                <div class="sortByReviews">
+                </div>
+                
+                <div class="ShowN">
+                <div class="showCaption"> Выводить по:</div>
+            	<form name="ShowMe">
+                <input type="number" name="ShowN" class="showSpecs" />
+                </form>
+                </div>
+                <div class="clearfloat"></div>  
+            <!--end .SortBy---> </div>
+            
+            
+            
+            <div class="Specialist" id="Spec1">
+            <div class="SpecDetails" id="SpecDet1">	
+                <div class="specCaption">
+                	<div class="specAva">
+                    </div>
+                    
+                    <div class="usernameContainer">
+                    <p class="specFio">$Name $Surname</p>
+                    <p class="specUserName"> [$UserName]</p>
+                    <!--end userNameContainer --></div>
+                <!--end specCaption--></div>            	
+                <div class="spceRate">
+                	<p class="specRating">
+                    	Рейтинг:
+                        <span class="specRateValue">
+                        		$SpecRateValue
+                        </span>
+                        <span class="specRatesNumber">
+                        		$Num($rateNum)
+                        </span>
+                    </p>
+                    <p class="specRegistred">
+                    	Зарегестрирован:
+                        <span class="SpecDateReg">
+                        	$Date
+                        </span>
+                    </p>
+                <!--end specRate--></div>
+				<div class="specReviews">
+                	<p class="specReviews">
+                    	Отзывы:
+                    </p>
+                    <p class="specReviews">
+                    	<span class="specPosRev">
+                        +$i
+                        </span>
+                        <br />
+                        <span class="specNegRev">
+                        -$j
+                        </span>
+                    </p>
+                <!--end specReviews--></div>            		
+            	<!--end specDeatails--> </div>
+                
+                <div class="specPortfolio">
+                	<div class="portfWork" id="portWork1">
+                    	<a href="#">
+                        	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview.JPG">                        
+                        </a>
+                    <!--end portWork --></div>
+                    
+                    <div class="portfWork" id="portWork1">
+                    	<a href="#">
+                        	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview1.JPG">                        
+                        </a>
+                    <!--end portWork --></div>
+                    
+                    <div class="portfWork" id="portWork1">
+                    	<a href="#">
+                        	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview2.JPG">                        
+                        </a>
+                    <!--end portWork --></div>
+                    
+                    
+                <!--end specProtfoio--></div>
+                
+                
+            <!-- end specialist --> </div>
+            
+              <div class="Specialist" id="Spec3">
+            <div class="SpecDetails" id="SpecDet3">	
+                <div class="specCaption">
+                	<div class="specAva">
+                    </div>
+                    
+                    <div class="usernameContainer">
+                    <p class="specFio">Петр Петров</p>
+                    <p class="specUserName"> [PETJA]</p>
+                    <!--end userNameContainer --></div>
+                <!--end specCaption--></div>            	
+                <div class="spceRate">
+                	<p class="specRating">
+                    	Рейтинг:
+                        <span class="specRateValue">
+                        		15 3432
+                        </span>
+                        <span class="specRatesNumber">
+                        		8(12)
+                        </span>
+                    </p>
+                    <p class="specRegistred">
+                    	Зарегестрирован:
+                        <span class="SpecDateReg">
+                        	11.12.12
+                        </span>
+                    </p>
+                <!--end specRate--></div>
+				<div class="specReviews">
+                	<p class="specReviews">
+                    	Отзывы:
+                    </p>
+                    <p class="specReviews">
+                    	<span class="specPosRev">
+                        +30
+                        </span>
+                        <br />
+                        <span class="specNegRev">
+                        -$0
+                        </span>
+                    </p>
+                <!--end specReviews--></div>            		
+            	<!--end specDeatails--> </div>
+                
+                <div class="specPortfolio">
+                	<div class="portfWork" id="portWork1">
+                    	<a href="#">
+                        	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview.JPG">                        
+                        </a>
+                    <!--end portWork --></div>
+                    
+                    <div class="portfWork" id="portWork1">
+                    	<a href="#">
+                        	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview1.JPG">                        
+                        </a>
+                    <!--end portWork --></div>
+                    
+                    <div class="portfWork" id="portWork1">
+                    	<a href="#">
+                        	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview2.JPG">                        
+                        </a>
+                    <!--end portWork --></div>
+                    
+                    
+                <!--end specProtfoio--></div>
+                
+                
+            <!-- end specialist --> </div>
+            
+            
+              <div class="Specialist" id="Spec2">
+            <div class="SpecDetails" id="SpecDet2">	
+                <div class="specCaption">
+                	<div class="specAva">
+                    </div>
+                    
+                    <div class="usernameContainer">
+                    <p class="specFio">Вася Пупкин</p>
+                    <p class="specUserName"> [SuperDesigner]</p>
+                    <!--end userNameContainer --></div>
+                <!--end specCaption--></div>            	
+                <div class="spceRate">
+                	<p class="specRating">
+                    	Рейтинг:
+                        <span class="specRateValue">
+                        		17+ 123
+                        </span>
+                        <span class="specRatesNumber">
+                        		15(16)
+                        </span>
+                    </p>
+                    <p class="specRegistred">
+                    	Зарегестрирован:
+                        <span class="SpecDateReg">
+                        	16.02.2013
+                        </span>
+                    </p>
+                <!--end specRate--></div>
+				<div class="specReviews">
+                	<p class="specReviews">
+                    	Отзывы:
+                    </p>
+                    <p class="specReviews">
+                    	<span class="specPosRev">
+                        +20
+                        </span>
+                        <br />
+                        <span class="specNegRev">
+                        -1
+                        </span>
+                    </p>
+                <!--end specReviews--></div>            		
+            	<!--end specDeatails--> </div>
+                
+                <div class="specPortfolio" id="specPortfolio2">
+                	<div class="portfWork" id="portWork_2_1">
+                    	<a href="#">
+                        	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview.JPG">                        
+                        </a>
+                    <!--end portWork --></div>
+                    
+                    <div class="portfWork" id="portWork_2_2">
+                    	<a href="#">
+                        	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview1.JPG">                        
+                        </a>
+                    <!--end portWork --></div>
+                    
+                    <div class="portfWork" id="portWork_2_3">
+                    	<a href="#">
+                        	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview2.JPG">                        
+                        </a>
+                    <!--end portWork --></div>
+                    
+                    
+                <!--end specProtfoio--></div>
+                
+                
+            <!-- end specialist --> </div>
+            	
+       
+                
+   
+               
+               
+      <!--end thisPageContent--> </div>    
+	<!-- end #mainContent --> </div>
+    
+	<!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats --><br class="clearfloat" />
+  
+  
+  
+  <div id="footer">
+  
+    <div id="LeftFooter" class="FooterLeft">
+			<p>Cвязаться с нами<br />
+			Тел: +7 (495) 123 65 75<br />
+			E-mail: info@design-service.ru<br /></p>
+		</div>
+        
+	<div id="CenterFooter" class="FooterCenter" >
+			<p>Дизайн-сервис 2012</p>
+    </div>
+    
+	<div id="RightFooter" class="FooterRight" >
+			<p>Партнеры:<br />
+			Банк-Идей<br />
+			ЙА Студия<br /></p>
+	</div>
+
+  <!-- end #footer --></div>
+
+<!-- end #container --></div>
+<!-- end .teamplate--></div>
+</body>
+</html>

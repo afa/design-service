@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Дизайн сервис. Разработка вариантов планировок.</title>
+<!--<link href="indexFixed.css" rel="stylesheet" type="text/css" /> -->
+
+<link href="css/unregistred.css" rel="stylesheet" type="text/css" />
+<link href="css/varplan.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class=>
+<div class="twoColFixRtHdr">
+
+<div id="container">
+  <div id="header">
+     
+     	<div id="designService" class="headerLayer1">
+  	    </div>
+      	
+        <div id="Register" class="headerLayer3">
+      	  <div class="headerCaption" id="registerCaption">
+       		Регистрация
+          </div>	
+    	</div>
+        
+        <div id="SignIn" class="headerLayer2">
+      	  <div class="headerCaption" id="SignInCaption">
+      		Войти
+      	  </div>
+    	</div>
+        <div id="UserMenu" style="visibility:hidden">
+		</div>
+        
+        <!--Clear floats--><div class="clearfloat"></div>
+  	<!-- end #header --></div>
+  
+  
+  <div id="sidebar1">
+  <div class="wtf"></div>
+    <div id="leftMenu" class="leftMenuContainer">  
+          
+           <a href="PostVarPlan.html">
+           <div id="PostVarPlan" class="leftMenuButton">
+         		<p class="leftMenuCaption"> Варианты <br /> 
+         		планировок</p></div> 
+           </a>
+           <a href="PlanRefactoring.html">    
+           <div id="PostDevAdjust" class="leftMenuButton">
+             <p class="leftMenuCaption"> Согласование <br /> перепланировок </p>
+   			</div>
+           </a>
+           <a href="DesignProject.html">
+            <div id="PostDesignProj" class="leftMenuButton">
+            	<p class="leftMenuCaption"> Дизайн <br /> проект</p>
+            </div>
+            </a>
+            <a href="AuthorMaintance.html">
+            <div id="PostAuthMaintance" class="leftMenuButton">
+            	<p class="leftMenuCaption"> Авторское <br /> Сопровождение </p>
+   			</div>
+            </a>
+  		 
+    <!-- end .leftMenuContainer --></div>
+  <!-- end #sidebar1 --></div>
+  
+  <div id="mainContent">
+  
+     
+     <div id="leftTopContainer" class="leftTopContainer">
+  			<div id="specMenuContainer" class="specMenu">
+            	<a href="SpecialistCategory.html">
+                <div id="architect" class="specMenuButton">
+                	<p class="specMenuCaption" style="font-stretch:extra-expanded;">Архитекторы</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="Designer" class="specMenuButton">
+                	<p class="specMenuCaption">Дизайнеры</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="Enginere" class="specMenuButton">
+                	<p class="specMenuCaption">Инженеры</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="BuildCompany" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные фирмы</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="BuildAshot" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные бригады</p>
+                </div>
+                </a>
+                       
+       
+         <!--end specMenuContainer --></div>
+      <!--end leftTopContainer --> </div>   
+     <!-- <div id="wtf" class="wtf"> </div>  KILL ALL FLOATS IF MODULE--> 
+	
+    
+    <div id="DebugMode">
+    <script type="application/javascript">
+		
+		function hideOverFlow()
+		{
+			document.getElementById("mainContent").style.overflow="hidden";
+		}
+		function showOverFlow()
+		{
+			document.getElementById("mainContent").style.overflow="visible";
+		}
+		var del=0;
+		function minWidthCheck(del)
+		{
+			var a=document.getElementById("mainContent").style.width;
+			a=a+del;
+			document.getElementById("mainContent").style.width=a;
+			alert(a);
+			
+		}
+        </script>
+    <input type="button" onclick="hideOverFlow()" value="Hide overflow"/>
+	<input type="button" onclick="showOverFlow()" value="Show overflow"/>
+    <input type="button" onclick="minWidthCheck(1)" value="MinWidth+"/>
+    <input type="button" onclick="minWidthCheck(-1)" value="MinWidth-"/>
+    <!--end debugmode --></div>
+   
+ 	
+    
+    
+     <div id="thisPageContent" class="thisPageContent">
+   			
+            <div id="pageCaption" class="pageCaption">
+            	<div id="postVarPlanLogo" class="pageLogo">
+                </div>
+                <div id="pageName">
+                	<p> Разработка вариантов планировок </p>
+                </div>
+                <div class="horLine"> </div>
+                
+            <!-- emd #PageCaption--></div>
+            	
+                <div class="Manual">
+                	<p> Заполните заявку:</p>
+                </div>
+                <form class="postVarPlan" action="#">
+               		
+                    <div id="post1Adress" class="postContainer">
+               	 		<div id="postNumber1" class="postNumber"></div>
+                 		<div id="postCaption1" class="postCaption"></div>
+                 		<div class="clearfloat"></div>
+                
+                 		<div id="post1Forms">
+                   			<p class="postFormText" id="post1Text">
+                    			Адрес:<input class="adress" type="text" /><br />
+                    			Этаж:<input class="floor" type="text" />
+                                Подъезд/Секция:<input class="section" type="text" /> <br />
+                    			Кол-во стояков водопровода:<input class="waterFlows" type="text" /><br />
+                    			Состав семьи:<input class="family" type="text" /><br />
+								<input class="children" type="text" /><br/>
+                             </p>
+                             <p class="postFormNote">  
+                       			(Укажите количестово и пол детей)<br/>              
+                             </p>
+               			<!--end #post1Forms"--></div> 
+               <!--end post1Adres--></div>
+               
+               
+               
+               
+               
+               
+              		 <div id="post2Quest" class="postContainer">
+            				<div id="postCaption2" class="postCaption"></div>
+                 			<div id="postNumber2" class="postNumber"></div>
+                            <div class="clearfloat"></div>
+                 	<div id="post2Forms">
+                    <div id="#kitchenContainer">
+                    
+                    <span class="postFormText" id="post2Text" style="float:left;">
+                        Объеденить кухню <br />
+                        с гостинной?<br />
+                    </span>
+                    <span>
+                        <input type="radio" class="checkYNkitchen" checked="checked"  name="kitchenSplit"  id="checkYkitchen"/> 
+                        <label for="checkYkitchen" class="check"> Да </label>
+                    </span>
+                    <span>
+                       <input type="radio" class="checkYNkitchen"  name="kitchenSplit"  id="checkNnokitchen"/>
+                       <label for="checkNnokitchen" class="check"> Нет</label>
+                    </span>
+                    
+                    
+                    <p style="float:left;"> 	
+                        Размер кухни: 
+
+                        <input class="kitchenSize" type="radio"  value="1" name="kitchenSizen" id="kitcheBig"/>
+                        <label for="kitcheBig" class="checkY"> Больше 5 кв.м.<br /> </label>
+                        
+                        <input class="kitchenSize" type="radio" value="0" name="kitchenSizen" id="kitcheSmall"/>
+                        <label for="kitcheBig" class="checkN"> Меньше 5 кв.м.</label>
+                    </p>
+                    <div class="clearfloat"></div>
+                    
+                    </div>
+                    <div> 
+ 	                   <p class="postFormText" >
+        	               Наличие градеробных<br />
+            	           комнат:
+    	               </p>   
+                	   <span>
+                    	<input class="checkYNgarderobe" type="radio" name="garderobe" value="1" checked="checked" id="checkYgarderobe"/>
+                       	<label for="checkYgarderobe" class="check">Да</label> 
+					   </span>
+                       <span>
+                       	<input class="checkYNgarderobe" type="radio" name="garderobe" value="0" id="checkNgarderobe"/>
+                       	<label for="checkNgarderobe" class="check">Нет</label>
+                       </span>
+                   	</div>
+                    
+                    
+                    <p class="postFormText">
+                      Количество встроенных <br />
+                      шкафов, включая <br />
+                      гардеробные комнаты.	<input class="wardrobes" type="text"  /> <br />
+                    </p>
+                    
+                    <p class="postFormText">
+                    	Нужен кабинет? <input class="checkYN cabinet" type="radio" name="cabinet" value="1"/> <input class="checkYN cabinet" type="radio" name="cabinet" value="0"/>
+                    </p>
+                    
+                    
+                    <p class="postFormText">
+                    Любите ли Вы <br/>
+                	принимать гостей?<input class="checkYN guests" type="radio" name="guests" value="0"/>Нет <input class="checkYN guests" type="radio" name="guests" value="5"/> До 5<input class="checkYN guests" type="radio" name="guests" value="15"/> 5-15 <input class="checkYN guests" type="radio" name="guests" value="99"/> Более 15  <br />
+                    </p>
+                    
+                    <p class="postFormText">
+                    Количество спальных мест:<input class="Sleepers" type="text"/>
+                    </p>
+                    	<p class="postFormText">
+                    		Наличие постирочной: 
+                            <input class="checkYN laundry" type="radio" name="laundry" value="1"/> 
+                            <label for="laundryY" class="check">Да</label>
+                            <input class="checkYN laundry" type="radio" name="laundry" value="0"/>
+                            <label for="laindryN" class="check">Нет</label> 
+                    	</p>
+                    	<p class="postFormText">
+                    		Сколько предоставить Вам вариантов планировок?<input class="varPlanCount" type="text" /> 
+                    	</p>
+                    
+                    </div>
+               <!--end #post2Quest--></div>
+               
+               <div id="post3Wish" class="postContainer">
+	                <div id="postNumber3" class="postNumber"></div>
+                 	<div id="postCaption3" class="postCaption"></div>
+               		<div id="postFroms3" class="postForms">
+                    <label for="Comment"></label>
+                       <textarea class="postComment" name="Comment" cols="60" rows="3">
+                       </textarea>
+                    
+                    </div>
+               <!--end #post3Wish --></div>
+               
+               <div id="post4Attach" class="postContainer">
+                    <div id="postNumber4" class="postNumber"></div>
+                 	<div id="postCaption4" class="postCaption"></div>
+               		<div id="fileGrab" class="OMFGFILEGRAB">
+                    <div class="clearfloat"></div>
+                    <p>
+                    Вы можете перетащить файлы сюда
+                    </p>
+                    <input type="file"  value="Attach lol"/>
+                    </div>
+               <!-- end post4Attach--></div>
+               
+               <div class="calcContainer">
+                  <div class="calc">      
+                  </div>
+                  
+               	  <div class="count">
+         	         <p>Ваш заказ обрабатывается. Ждите $time. <br />
+              	  		Получить уведомление на e-mail.</p>
+               	  </div>
+               <!--end .calcContainer --></div>
+               
+               <div class="actions">
+               	<div id="cancel"> <input type="reset" /></div>
+                <div id="postRequest"> <input type="submit" /></div>
+               	<div class="clearfloat"></div>
+               </div>
+               </form>
+               
+      <!--end thisPageContent--> </div>    
+	<!-- end #mainContent --> </div>
+    
+	<!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats --><br class="clearfloat" />
+  
+  
+  
+  <div id="footer">
+  
+    <div id="LeftFooter" class="FooterLeft">
+			<p>Cвязаться с нами<br />
+			Тел: +7 (495) 123 65 75<br />
+			E-mail: info@design-service.ru<br /></p>
+		</div>
+        
+	<div id="CenterFooter" class="FooterCenter" >
+			<p>Дизайн-сервис 2012</p>
+    </div>
+    
+	<div id="RightFooter" class="FooterRight" >
+			<p>Партнеры:<br />
+			Банк-Идей<br />
+			ЙА Студия<br /></p>
+	</div>
+
+  <!-- end #footer --></div>
+
+<!-- end #container --></div>
+<!-- end .teamplate--></div>
+</body>
+</html>

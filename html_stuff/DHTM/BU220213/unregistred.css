@@ -1,0 +1,338 @@
+@charset "utf-8";
+/* CSS Document */
+<style>
+@font-face{src:
+Pjanu}
+body  {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background-image:url(images/fon.jpg);
+	background-repeat:repeat-y;
+	margin: 0; 
+	padding: 0;
+	text-align: center;
+	color: #000000;
+	overflow:visible;
+}
+.twoColFixRtHdr #container { 
+	width: 980px;  
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+} 
+.kitchenarea{
+	width:200px;
+	border:13px;
+	color:#00F;
+}
+.kitchenarea:active{
+	width:200px;
+	border-color:#000;
+	-webkit-transition:
+	color:#00F;
+}
+.twoColFixRtHdr #header { 
+	background: #DDDDDD;
+	background-image:url(images/fon-head.jpg);
+	padding: 0 0px 0 0px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+} 
+.twoColFixRtHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+.twoColFixRtHdr #sidebar1 {
+	float: right; /* since this element is floated, a width must be given */
+	width: 164px;/* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	/* height: 760px; |*/
+	background-image:url(images/fon-color-m.jpg); 
+	background-repeat:repeat-y;
+	padding: 0px 0px;
+}
+.leftMenuContainer{
+	float:left;
+	width:163px;
+	margin:0px;
+}
+.leftMenuButton{
+	float:right; /* BLOWYOURBRAIN НЕ ТРОГАЙТЕ флоат тут и в контейнере, а то на мозиле вылазет отступ сверху111! Маргины в детях лишние */
+	margin:0px;
+	padding:0px;
+	height:163px;
+	width:163px;
+	text-align:center;
+	background-repeat:no-repeat;
+}
+
+
+.leftMenuButton#PostVarPlan{
+	margin::0px;
+	background-image:url(images/color-m-1tx.jpg);
+}
+.leftMenuButton#PostVarPlan:hover{
+	margin::0px;
+	background-image:url(images/color-m-1tx-hover-2.jpg);
+}
+.leftMenuButton#PostDevAdjust{
+	margin::0px;
+	background-image:url(images/color-m-2tx.jpg);
+}
+.leftMenuButton#PostDevAdjust:hover{
+	margin::0px;
+	background-image:url(images/color-m-2tx-hover-2.jpg);
+}
+.leftMenuButton#PostDesignProj{
+	margin::0px;
+	background-image:url(images/color-m-3tx.jpg);
+}
+.leftMenuButton#PostDesignProj:hover{
+	margin::0px;
+	background-image:url(images/color-m-3tx-hover-2.jpg);
+}
+.leftMenuButton#PostAuthMaintance{
+	margin::0px;
+	background-image:url(images/color-m-4tx.jpg);
+}
+.leftMenuButton#PostAuthMaintance:hover{
+	margin::0px;
+	background-image:url(images/color-m-4tx-hover-2.jpg);
+}
+.leftMenuCaption{
+	z-index:6;
+	margin-top:60px;
+	text-align:center
+}
+
+
+
+
+.twoColFixRtHdr #mainContent { 
+	margin: 0 0 0 0; /* the right margin on this div element creates the column down the right side of the page - no matter how much content the sidebar1 div contains, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends. */
+	padding: 0 0px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+} 
+
+.leftTopContainer {
+	background-image:url(images/mainMenuBg.PNG);
+	background-repeat:no-repeat;
+	height:380px;
+}
+.mainMenuContainer{
+	width:332px;
+	height:380px;
+	margin-top:30px;
+}
+.mainMenuButton{
+	margin:0px;
+	width:331px;
+	height:67px;
+	padding:0px;
+	margin-left:225px;
+	background-image:url(images/menu-spec.png);
+	background-repeat:no-repeat;
+   }
+.mainMenuButton:hover{
+	background-image:url(images/menu-spec-hover.png);	
+	}
+.mainMenuCaption{
+	text-align:center;
+	z-index:6;
+	/*margin-left:56px;*/
+	position:relative;
+	top:20px;
+	left:56px;
+	}
+.thisPageContent{
+	text-align:left;
+	margin: 0px;
+	height:2000px;
+	width:830px;
+	/*border:2px solid;
+	border-radius:25px;*/
+}
+.postContainer{
+	border-radius:50px;
+	border-width:6px;
+	border:solid;
+}
+#post1Adress{
+	background-image:url(../MyPages/post1Check.png);
+	height:320px;
+	width:420px;
+	border:#f89f65;
+	margin-left:60px;
+	margin-top:50px;
+}
+#post2Quest{
+	background-image:url(../MyPages/post2Check.png);
+	height:620px;
+	width:580px;
+	margin-left:225px;
+	margin-top:50px;
+	border:#a8d868;
+}
+#post3Wish{
+	background-image:url(../MyPages/post3Check.png);
+	width:635px;
+	height:240px;
+	margin-top:50px;
+	margin-left:60px;
+	border:#99bbe1;
+}
+#post4Attach{
+	background-image:url(../MyPages/post4Check.png);
+	width:745px;
+	height:220px;
+	margin-left:60px;
+	margin-top:50px;
+	border:#e5c941;
+}
+
+.postNumber{
+ height:30px;
+ width:90px;
+ float:left;
+ margin-left:26px;
+ margin-top:27px;
+ background-repeat:no-repeat;
+}
+
+#postNumberr1{
+  background-image:url(images/num1.png);  
+}
+
+#postNumberr2{
+  background-image:url(images/num2.png);  
+}
+
+#postNumber3{
+  background-image:url(images/num3.png);  
+}
+#postNumber4{
+  background-image:url(images/num4.png);  
+}
+
+.postCaption{
+  height:30px;
+  float:left;
+  margin-left:20px;
+  margin-top:30px;
+  background-repeat:no-repeat;
+}
+#postCaption1{
+	width:255px;
+	background-image:url(images/post1Caption.png);
+}
+#postCaption2{
+	width:196;
+	background-image:url(images/post2caption.png);
+	}
+.actions{
+}
+#postRequest{
+	background-image:url(images/postButton.png);
+	background-repeat:no-repeat;
+	width:230px;
+	height:50px;
+	float:left;
+	margin-left:230px;
+	margin-top:50px;
+}
+#cancel{
+	background-image:url(images/postButton.png);
+	background-repeat:no-repeat;
+	width:230px;
+	height:50px;
+	float:left;
+	margin-left:110px;
+	margin-top:50px;
+}
+.twoColFixRtHdr #footer { 
+	padding: 0 0px 0 0px;/* this padding matches the left alignment of the elements in the divs that appear above it. */ 
+	height : 100px;
+	background-image:url(images/FooterBg.PNG);
+	
+} 
+.twoColFixRtHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+.headerLayer1 {
+	background-image:url(images/logo.png);
+    padding: 0px; 
+    float: left; 
+    width: 516px; 
+   	height:55px;
+	margin-top:30px;
+	margin-left:120px;
+   }
+
+.headerLayer2 {
+	background-image:url(images/castle.png);
+	background-repeat:no-repeat;	
+    padding: 0px 0px 0px 0px; 
+    width: 55px;
+	height: 76px;
+	margin-right:30px;
+    margin-top:15px;
+	float: right;
+   }
+.headerLayer3 {
+	background-image:url(images/reg-key.png);
+    background-repeat:no-repeat;
+	padding: 0px; /* Поля вокруг текста */
+    width: 126px;
+	height:51px;
+    margin-top:30px;
+	align:right;
+	float: right; /* Обтекание по правому краю */
+   }
+ 
+ .FooterCenter {
+	text-align:center;
+	float:left;
+	margin-left:200px;
+	width: 20%;
+   }
+
+.FooterLeft {
+	text-align:left;
+	float:left;
+	width: 20%;
+   }
+
+.FooterRight {
+	float:right;
+	text-align:right;
+	width:20%;
+	margin: 0px;
+	padding: 0px;
+   }	
+	
+.wtf {
+	clear:both;
+	padding:0px;
+	margin:0px;
+	text-align:center;
+	background-color:#F00;
+}
+.clear {
+	clear:both;
+   }
+   
+
+</style>
+/* CSS Document */
