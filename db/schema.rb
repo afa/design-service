@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312112847) do
+ActiveRecord::Schema.define(:version => 20130315134257) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20130312112847) do
     t.boolean  "verified",       :default => false
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
+    t.boolean  "rejected",       :default => false
   end
 
   create_table "plan_developments", :force => true do |t|

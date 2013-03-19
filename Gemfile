@@ -53,6 +53,7 @@ gem 'carrierwave'
 group :test, :development do
   # rspec-rails and factory_girl_rails needs to be in the development group so that Rails generators work.
   gem 'rspec-rails'
+  gem 'rspec-given'
   gem 'factory_girl_rails'
 end
 
@@ -64,3 +65,5 @@ gem 'simplecov', :require => false, :group => :test
 #gem 'simplecov-rcov-text'
 #gem 'metric_fu'
 #gem 'rails_best_practices'
+
+gem 'spork-rails'
