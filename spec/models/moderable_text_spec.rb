@@ -28,11 +28,6 @@ describe ModerableText do
       Then { msg.verified.should be_false }
       Then { msg.rejected.should be_false }
     end
-    
-    context 'when empty text given' do
-      Given(:creation_params) { {text: ''} }
-      Then { msg.should have_failed }
-    end
   end
   
   context 'when it is already created' do
@@ -68,10 +63,6 @@ describe ModerableText do
         Then { msg.rejected.should be_false }
       end
       
-      context 'when empty text' do
-        Given(:new_parameters) { {text: ''} }
-        Then { updating.should have_failed  }
-      end
     end
     
     context 'and marked as' do
@@ -80,31 +71,30 @@ describe ModerableText do
         When{ msg.rejected = false }
         Then{ msg.verified.should be_true }
         Then{ msg.rejected.should be_false }
-        Then{ msg.rejected.should be_accepted }
+        Then{ msg.should be_accepted }
       end
       
       context 'not verified and not rejected' do
-        When{ msg.verified = true }
+        When{ msg.verified = false }
         When{ msg.rejected = false }
-        Then{ msg.verified.should be_true }
+        Then{ msg.verified.should be_false }
         Then{ msg.rejected.should be_false }
-        Then{ msg.rejected.should_not be_accepted }
+        Then{ msg.should_not be_accepted }
       end
       context 'not verified and rejected' do
         When{ msg.verified = false }
         When{ msg.rejected = true }
         Then{ msg.verified.should be_false }
         Then{ msg.rejected.should be_true }
-        Then{ msg.rejected.should_not be_accepted }
+        Then{ msg.should_not be_accepted }
       end
       context 'verified but rejected' do
         When{ msg.verified = true }
         When{ msg.rejected = true }
         Then{ msg.verified.should be_true }
         Then{ msg.rejected.should be_true }
-        Then{ msg.rejected.should_not be_accepted }
-      end
-      
+        Then{ msg.should_not be_accepted }
+      end    
     end
   end
 

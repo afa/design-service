@@ -49,6 +49,7 @@ group :development do
 end
 
 gem 'carrierwave'
+gem 'draper'
 
 group :test, :development do
   # rspec-rails and factory_girl_rails needs to be in the development group so that Rails generators work.

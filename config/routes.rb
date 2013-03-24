@@ -1,5 +1,8 @@
 DesignService::Application.routes.draw do
 
+  resources :replanning_endorsements
+
+
   resources :plan_developments, only: [:new, :create, :show]
   get 'plan_developments' => 'plan_developments#new'
 

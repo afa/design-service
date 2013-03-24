@@ -1,7 +1,7 @@
 ru:
   simple_form:
-    "yes": 'Да'
-    "no": 'Нет'
+    'yes': 'Да<label></label>'
+    'no': 'Нет<label></label>'
     required:
       text: 'обязательное поле'
       mark: '*'
@@ -26,14 +26,15 @@ ru:
     
     labels:
       plan_development:
-        join_kitchen_with_living_room: 'Объединить кухню с гостиной?'
+        join_kitchen_with_living_room: 'Объединить кухню<br/>с гостиной?<br/>'
         big_kitchen: 'Размер кухни:'
-        num_builtin_closets: 'Количество встроенных шкафов, включая гардеробные комнаты:'
-        num_guests: 'Любите ли вы принимать гостей?'
+        num_builtin_closets: 'Количество встроенных<br/>шкафов, включая<br/>гардеробные комнаты.'
+        num_guests: 'Любите ли Вы<br/>принимать гостей?'
         num_bedrooms: 'Количество спальных мест:'
         washing_room_needed: 'Наличие постирочной:'
         cabinet_needed: 'Нужен кабинет?'
-        cloakroom_needed: 'Наличие гардеробных комнат:'
+        cloakroom_needed: 'Наличие гардеробных<br/>комнат:'
+        num_plans: 'Сколько предоставить Вам вариантов планировок?'
       flat_info:
         num_standpipes: 'Кол-во стояков водопровода:'
       address:
@@ -42,6 +43,10 @@ ru:
         section: 'Подъезд/секция:'
       family_composition:
         original_text: 'Состав семьи:'
+      replanning_endorsement:
+        developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком?'
+        flat_area: 'Площадь квартиры:'
+        replanning_organization_licensed: 'Наличие лицензии у организации,<br/>которая разработала проект перепланировки?'
     hints:
       user:
         edit:

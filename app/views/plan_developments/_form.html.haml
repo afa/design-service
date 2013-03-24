@@ -9,5 +9,7 @@
   = f.input  :num_bedrooms
   = f.input  :washing_room_needed, as: :radio_buttons
   = f.input  :num_plans
+  = f.simple_fields_for :comment do |comment_f|
+    = comment_f.input :text, as: :text, input_html:{rows: 3, cols: 60}
   = f.simple_fields_for :attachment
   = f.submit disabled: disable_form?

@@ -11,7 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-#login-box {
-  border: 1px solid red;
-}

@@ -52,7 +52,7 @@ SimpleForm.setup do |config|
   # Defaults to :nested for bootstrap config.
   #   :inline => input + label
   #   :nested => label > input
-  config.boolean_style = :nested
+  config.boolean_style = :inline
 
   # Default class for buttons
   config.button_class = 'btn'
@@ -78,10 +78,10 @@ SimpleForm.setup do |config|
   # config.collection_value_methods = [ :id, :to_s ]
 
   # You can wrap a collection of radio/check boxes in a pre-defined tag, defaulting to none.
-  # config.collection_wrapper_tag = nil
+  config.collection_wrapper_tag = :div
 
   # You can define the class to use on all collection wrappers. Defaulting to none.
-  # config.collection_wrapper_class = nil
+  config.collection_wrapper_class = 'collection_options_box'
 
   # You can wrap each item in a collection of radio/check boxes with a tag,
   # defaulting to :span. Please note that when using :boolean_style = :nested,
@@ -92,7 +92,7 @@ SimpleForm.setup do |config|
   # config.item_wrapper_class = nil
 
   # How the label text should be generated altogether with the required text.
-  # config.label_text = lambda { |label, required| "#{required} #{label}" }
+  config.label_text = lambda { |label, required| "#{label} #{required}" }
 
   # You can define the class to use on all labels. Default is nil.
   config.label_class = 'control-label'
@@ -104,7 +104,7 @@ SimpleForm.setup do |config|
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
 
   # Whether attributes are required by default (or not). Default is true.
-  # config.required_by_default = true
+  config.required_by_default = false
 
   # Tell browsers whether to use default HTML5 validations (novalidate option).
   # Default is enabled.

@@ -8,9 +8,17 @@ ru:
         create: 'Создать пользователя'
         update: 'Сохранить пользователя'
         submit: 'Сохранить пользователя'
+      plan_development:
+        create: 'Отправить'
   activerecord:
     models:
       user: 'пользователь'
     errors:
       messages:
         immutable: "поле не может быть изменено"
+  
+  plan_developments:
+    title: 'Разработка вариантов планировок'
+  replanning_endorsements:
+    title: 'Согласование перепланировок'
+  title: 'Дизайн сервис'
