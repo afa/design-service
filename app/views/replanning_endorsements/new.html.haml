@@ -1,0 +1,36 @@
+/%h1 New replanning_endorsement
+/= render 'form'
+/= link_to 'Back', replanning_endorsements_path
+
+.Manual
+  %p.Alert ВНИМАНИЕ! Согласование проводится у генпроектировщика и эксплатирующей организации.
+= simple_form_for @replanning_endorsement, html: {class: 'planRefactoring'} do |f|
+  .RefactDetails
+    = f.input :developed_by_general_projector, as: :radio_buttons, input_html: {class: 'FormQuestions'}, wrap:false
+    .clearfloat
+  #appatment
+    = f.input :flat_area, as: :string, input_html: {class: 'FlatArea'}
+    кв.м.
+  #postAttach.postContainer
+    #postCaption.postCaption
+    #fileGrab.OMFGFILEGRAB
+      .clearfloat
+      %p Вы можете перетащить файлы сюда
+      %input{:type => "file", :value => "Attach lol"}/
+  #licence
+    = f.input :replanning_organization_licensed, as: :radio_buttons, input_html: {class: 'FormQuestions'}
+    .clearfloat
+  .calcContainer
+    .calcCaption
+    .calc
+    .count
+      %p
+        Ваш заказ обрабатывается. Ждите $time.
+        %br/
+        Получить уведомление на e-mail.
+  .actions
+    #cancel
+      = f.submit '', type: 'reset'
+    #postRequest
+      = f.submit ''
+    .clearfloat

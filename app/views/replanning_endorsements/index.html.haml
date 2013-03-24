@@ -1,0 +1,23 @@
+%h1 Listing replanning_endorsements
+
+%table
+  %tr
+    %th Developed by general projector
+    %th Replanning organization licenzed
+    %th Flat area
+    %th
+    %th
+    %th
+
+  - @replanning_endorsements.each do |replanning_endorsement|
+    %tr
+      %td= replanning_endorsement.developed_by_general_projector
+      %td= replanning_endorsement.replanning_organization_licensed
+      %td= replanning_endorsement.flat_area
+      %td= link_to 'Show', replanning_endorsement
+      %td= link_to 'Edit', edit_replanning_endorsement_path(replanning_endorsement)
+      %td= link_to 'Destroy', replanning_endorsement, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Replanning endorsement', new_replanning_endorsement_path

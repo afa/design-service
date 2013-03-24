@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Developed by general projector:
+  = @replanning_endorsement.developed_by_general_projector
+%p
+  %b Replanning organization licenzed:
+  = @replanning_endorsement.replanning_organization_licensed
+%p
+  %b Flat area:
+  = @replanning_endorsement.flat_area
+
+= link_to 'Edit', edit_replanning_endorsement_path(@replanning_endorsement)
+\|
+= link_to 'Back', replanning_endorsements_path

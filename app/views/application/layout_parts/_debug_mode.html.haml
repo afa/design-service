@@ -1,0 +1,23 @@
+#DebugMode
+  %script{:type => "application/javascript"}
+    function hideOverFlow()
+    {
+    document.getElementById("mainContent").style.overflow="hidden";
+    }
+    function showOverFlow()
+    {
+    document.getElementById("mainContent").style.overflow="visible";
+    }
+    var del=0;
+    function minWidthCheck(del)
+    {
+    var a=document.getElementById("mainContent").style.width;
+    a=a+del;
+    document.getElementById("mainContent").style.width=a;
+    alert(a);
+    
+    }
+  %input{:onclick => "hideOverFlow()", :type => "button", :value => "Hide overflow"}/
+  %input{:onclick => "showOverFlow()", :type => "button", :value => "Show overflow"}/
+  %input{:onclick => "minWidthCheck(1)", :type => "button", :value => "MinWidth+"}/
+  %input{:onclick => "minWidthCheck(-1)", :type => "button", :value => "MinWidth-"}/

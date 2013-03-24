@@ -1,0 +1,10 @@
+= simple_form_for(@replanning_endorsement) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :developed_by_general_projector
+    = f.input :replanning_organization_licensed
+    = f.input :flat_area
+
+  .form-actions
+    = f.button :submit
