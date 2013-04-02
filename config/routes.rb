@@ -1,8 +1,11 @@
 DesignService::Application.routes.draw do
 
+  resources :specialists
+  get 'specialist_category/:type' => 'specialists#index', as: 'specialist_category'
+  
   resources :replanning_endorsements
-
-
+  get 'replanning_endorsements' => 'replanning_endorsements#new'
+  
   resources :plan_developments, only: [:new, :create, :show]
   get 'plan_developments' => 'plan_developments#new'
 

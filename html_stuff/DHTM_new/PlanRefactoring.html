@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Дизайн сервис. Разработка вариантов планировок.</title>
+<!--<link href="indexFixed.css" rel="stylesheet" type="text/css" /> -->
+<link href="css/unregistred.css" rel="stylesheet" type="text/css" />
+<link href="css/planrefactoring.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body> 
+<div class="twoColFixRtHdr">
+
+<div id="container">
+
+  <div id="header"> 
+  	 <a href="indexfixed.html">
+     <div id="designService" class="headerLayer1">
+     </div>    
+    </a>
+    <a href="ClientCabinet.html">
+    <div id="SignIn" class="headerLayer2">
+      <div id="SignInCaption">
+         <p> Войти </p>
+      </div> 
+    </div>
+    </a>
+    
+    <a href="register.html">
+    <div id="Register" class="headerLayer3">
+      <div id="RegisterCaption">
+         <p>Регистрация</p>
+       </div>	
+    </div>
+    </a>
+       
+    <a href="ClientCabinet.html">
+    <div id="UserMenu" style="visibility:hidden">
+	</div>
+    </a>
+    <!-- Clear floats --> <div class="clear"> </div>  
+  <!-- end #header --></div>
+  
+  
+  <div id="sidebar1">
+  	<div class="wtf"></div>
+    <div id="leftMenu" class="leftMenuContainer">  
+          
+           <a href="PostVarPlan.html">
+           <div id="PostVarPlan" class="leftMenuButton">
+         		<p class="leftMenuCaption"> Варианты <br /> 
+         		планировок</p></div> 
+           </a>
+           <a href="PlanRefactoring.html">    
+           <div id="PostDevAdjust" class="leftMenuButton">
+             <p class="leftMenuCaption"> Согласование <br /> перепланировок </p>
+   			</div>
+           </a>
+           <a href="DesignProject.html">
+            <div id="PostDesignProj" class="leftMenuButton">
+            	<p class="leftMenuCaption"> Дизайн <br /> проект</p>
+            </div>
+            </a>
+            <a href="AuthorMaintance.html">
+            <div id="PostAuthMaintance" class="leftMenuButton">
+            	<p class="leftMenuCaption"> Авторское <br /> Сопровождение </p>
+   			</div>
+            </a>
+  		 
+    <!-- end .leftMenuContainer --></div>
+  <!-- end #sidebar1 --></div>
+  
+  <div id="mainContent">
+  
+     
+     <div id="leftTopContainer" class="leftTopContainer">
+  			<div id="specMenuContainer" class="specMenu">
+            	<a href="SpecialistCategory.html">
+                <div id="architect" class="specMenuButton">
+                	<p class="specMenuCaption" style="font-stretch:extra-expanded;">Архитекторы</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="Designer" class="specMenuButton">
+                	<p class="specMenuCaption">Дизайнеры</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="Enginere" class="specMenuButton">
+                	<p class="specMenuCaption">Инженеры</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="BuildCompany" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные фирмы</p>
+                </div>
+                </a>
+                <a href="SpecialistCategory.html">
+                <div id="BuildAshot" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные бригады</p>
+                </div>
+                </a>
+                       
+       
+         <!--end specMenuContainer --></div>
+      <!--end leftTopContainer --> </div>
+      
+     <!-- <div id="wtf" class="wtf"> </div>  KILL ALL FLOATS IF MODULE--> 
+	  
+    
+     <div id="thisPageContent" class="thisPageContent">
+   			
+            <div id="pageCaption" class="pageCaption">
+            	<div id="postVarPlanLogo" class="pageLogo">
+                </div>
+                <div id="pageName">
+                	<p> Согласование перепланировок</p>
+                </div>
+                <div class="horLine"> </div>
+                
+            <!-- emd #PageCaption--></div>
+            	
+                <div class="Manual">
+                	<p class="Alert"> ВНИМАНИЕ! Согласование проводится у генпроектировщика и эксплатирующей организации.</p>
+                </div>
+                
+                <form class="planRefactoring" name="planRefactoring" action="#">
+               		<div class="RefactDetails">
+                     <p class="FormQuestions"> Проект перепланировки разработан генпроектировщиком?</p>
+                     
+                      <div class="yNinLine">
+                        <span>
+                        <input type="radio" class="checkYNGenplan"   name="GenPlanY"  id="GenPlanY"/> 
+                        <label for="GenPlanY" class="check"> Да </label>
+                    	</span>
+                    	<span>
+                       <input type="radio" class="checkYNGenplann"  name="GenplanN" checked="checked"  id="GenplanN"/>
+                       <label for="GenplanN" class="check"> Нет</label>
+                    	</span>
+                     </div>
+                       
+                     <div class="clearfloat"> </div>          
+                   
+                    <!--end .RefactDetails --></div>
+                    
+                    
+                    <div id="appatment">
+                    <p class="FormQuestions"> Площадь квартиры: <input class="FlatArea" name="flatArea" type="text" />кв.м. </p>
+                    </div>    
+                
+                    
+                    
+                    
+                    <div id="postAttach" class="postContainer">
+                      <div id="postCaption" class="postCaption"></div>
+               		     <div id="fileGrab" class="OMFGFILEGRAB">
+                     		<div class="clearfloat"></div>
+                    			<p>  Вы можете перетащить файлы сюда   </p>
+		                    <input type="file"  value="Attach lol"/>
+        		         <!--OMFGFILEGRAB --></div>
+                    <!-- end post4Attach--></div>
+                    
+               
+               <div id="licence">
+                  	<p class="FormQuestions"> Наличие лицензии у организации, <br />
+                    которая разработала проект перепланировки?
+                    </p>
+                    <div class="yNinLine">
+                        <span>
+                        <input type="radio" class="checkYNLicence"   name="LicenceY" checked="checked"  id="LicenceY"/> 
+                        <label for="LicenceY" class="check"> Да </label>
+                    	</span>
+                    	<span>
+                       <input type="radio" class="checkYNLicence"  name="LicenceN"   id="LicenceN"/>
+                       <label for="checkNnokitchen" class="check"> Нет</label>
+                    	</span>
+                   </div>
+                      <div class="clearfloat"></div> 
+                <!--end #licence--></div>
+               
+               <div class="calcContainer">
+               	  <div class="calcCaption"></div>
+                  <div class="calc">      
+                  </div>
+                  
+               	  <div class="count">
+         	         <p>Ваш заказ обрабатывается. Ждите $time. <br />
+              	  		Получить уведомление на e-mail.</p>
+               	  </div>
+               <!--end calcContainer --></div>
+                  
+                  
+                  
+                  
+                  
+                  
+                <div class="actions">
+               	<div id="cancel"> <input type="reset" /></div>
+                <div id="postRequest"> <input type="submit" /></div>
+               	<div class="clearfloat"></div>
+                <!--end actions --> </div>
+                </form>
+                
+                
+              
+               
+      <!--end thisPageContent--> </div>    
+	<!-- end #mainContent --> </div>
+    
+	<!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats --><br class="clearfloat" />
+  
+  
+  
+  <div id="footer">
+  
+    <div id="LeftFooter" class="FooterLeft">
+			<p>Cвязаться с нами<br />
+			Тел: +7 (495) 123 65 75<br />
+			E-mail: info@design-service.ru<br /></p>
+		</div>
+        
+	<div id="CenterFooter" class="FooterCenter" >
+			<p>Дизайн-сервис 2012</p>
+    </div>
+    
+	<div id="RightFooter" class="FooterRight" >
+			<p>Партнеры:<br />
+			Банк-Идей<br />
+			ЙА Студия<br /></p>
+	</div>
+
+  <!-- end #footer --></div>
+
+<!-- end #container --></div>
+<!-- end .teamplate--></div>
+</body>
+</html>

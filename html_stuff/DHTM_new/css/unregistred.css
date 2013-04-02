@@ -1,0 +1,470 @@
+@charset "utf-8";
+/* CSS Document */
+<style>
+
+/*-----FontFaces ------*/
+/* Menu fonts, table fonts, PostForm font */
+@font-face {
+    font-family: 'gardensc';
+    src: url('../fonts/gardensc_03_1-webfont.eot');
+    src: url('../fonts/gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gardensc_03_1-webfont.woff') format('woff'),
+         url('../fonts/gardensc_03_1-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'monotype_corsiva';
+	src:url('../fonts/MTCORSVA.TTF') format('truetype');
+	font-weight: normal;
+	font-style:normal;
+}
+
+
+
+/*Page captions */
+@font-face {
+    font-family: 'dejavu_sans';
+    src: url('../fonts/dejavusanscondensed-webfont.eot');
+    src: url('../fonts/dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dejavusanscondensed-webfont.woff') format('woff'),
+         url('../fonts/dejavusanscondensed-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* lol wtf*/
+@font-face {
+    font-family: 'minion_pro';
+    src: url('../fonts/minion_pro-webfont.eot');
+    src: url('../fonts/minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/minion_pro-webfont.woff') format('woff'),
+         url('../fonts/minion_pro-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* LayOut Config */
+body  {
+	font: 100% gardensc, Arial, Helvetica, sans-serif;
+	background-image:url(../images/MainContainerOnlyPalm.PNG), url(../images/madPalmFooter.PNG), url(../images/fon-y.jpg);
+	background-repeat: no-repeat, no-repeat, repeat-y;
+	background-position: center top, center bottom, top;
+	margin: 0; 
+	padding: 0;
+	text-align: center;
+	color: #000000;
+	overflow:visible;
+}
+.Unregistred{
+
+}
+.twoColFixRtHdr #container { 
+	width: 980px;  
+	/*background:#dedede;*/
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align: left; /* this overrides the text-align: center on the body element. */
+} 
+
+
+
+/*Custom radio & checkBox */
+.yNinLine{
+
+ float:left;
+}
+input[type='radio']
+{
+    opacity: 0;
+    float: left;
+    width: 18px;
+}
+
+input[type='radio'] + label,
+{
+    margin: 0 0 0 20px;
+	clear: none;
+    padding: 5px 0 4px 24px;
+	/* Make look clickable because they are */
+    cursor: pointer;
+   	background:url(../images/circleN.PNG) no-repeat;
+}
+
+input[type='radio']:checked + label {
+    background:url(../images/circleY.PNG) no-repeat;
+}
+
+
+
+/*Wtf it doing there? some target input*/
+.FormQuestions{
+	font-family:gardensc, verdana, sans-serif, #fff;
+	font-size:16pt;
+	font-style:italic;
+	float:left;
+}
+.kitchenarea{
+	width:200px;
+	border:13px;
+	color:#00F;
+}
+
+.kitchenarea:active{
+	width:200px;
+	border-color:#000;
+	-webkit-transition:
+	color:#00F;
+}
+
+
+/*HEADER */
+.twoColFixRtHdr #header { 
+	height:130px;
+	margin 0px;
+	/*background-image:url(../images/fon-head.jpg);*/
+	padding: 0px; 
+} 
+
+/* Container course Sveta insist on special header bg */
+.headerContainer {	
+	/*background:url(../images/fon-head.jpg);*/
+	width:980px;
+	height:130px;
+	
+}
+/*allows use 2 diffrent float for logo and user menu */
+/*logo*/
+.headerLayer1 { 
+	background-image:url(../images/logo.png);
+    float: left;
+    width: 516px; /* Ширина слоя */
+   	height:55px;
+	margin:30px 0 0 50px; /*top36px */
+   }
+/*register */
+.headerLayer2 {
+	background-image:url(../images/logInIco.png);
+	background-repeat:no-repeat;	
+    width: 50px;
+	height: 89px;
+	margin: 10px 30px;
+	float: right;
+	/* Обтекание по правому краю */
+   }
+.headerLayer3 {
+	background-image:url(../images/regIco.PNG);
+    background-repeat:no-repeat;
+	padding: 0px; /* Поля вокруг текста */
+    width: 130px;
+	height:67px;
+    margin-top:30px;
+	align:right;
+	float: right; /* Обтекание по правому краю */
+   } 
+   
+.headerCaption{
+	font-family: gardensc, verdana, sans-serif;
+	font-size:12pt;
+	-moz-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+	-webkit-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);	
+}
+#SignInCaption{
+	position:relative;
+	top:68px;
+}
+#registerCaption{
+	position:relative;
+	top:-10px;
+}
+ 
+/* Right SideBar */
+
+.twoColFixRtHdr #sidebar1 {
+	float: right; 
+	width: 164px;/* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	/* height: 760px; |*/
+	background-image:url(../images/fon-color-m.jpg); 
+	background-repeat:repeat-y;
+	padding: 0px 0px;
+
+}
+/* Actually Right, but whoRlyCares */
+.leftMenuContainer{
+	float:left;
+	width:163px;
+	margin:0px;
+	background:#dedede;
+}
+.leftMenuButton{
+	float:right; /* BLOWYOURBRAIN НЕ ТРОГАЙТЕ флоат тут и в контейнере, а то на мозиле вылазет отступ сверху111! Маргины в детях лишние */
+	margin:0px;
+	padding:0px;
+	height:163px;
+	width:163px;
+	text-align:center;
+	background-repeat:no-repeat;
+}
+
+
+.leftMenuButton#PostVarPlan{
+	margin::0px;
+	background-image:url(../images/color-m-1tx.jpg);
+}
+.leftMenuButton#PostVarPlan:hover{
+	margin::0px;
+	background-image:url(../images/color-m-1tx-hover-2.jpg);
+}
+.leftMenuButton#PostDevAdjust{
+	margin::0px;
+	background-image:url(../images/color-m-2tx.jpg);
+}
+.leftMenuButton#PostDevAdjust:hover{
+	margin::0px;
+	background-image:url(../images/color-m-2tx-hover-2.jpg);
+}
+.leftMenuButton#PostDesignProj{
+	margin::0px;
+	background-image:url(../images/color-m-3tx.jpg);
+}
+.leftMenuButton#PostDesignProj:hover{
+	margin::0px;
+	background-image:url(../images/color-m-3tx-hover-2.jpg);
+}
+.leftMenuButton#PostAuthMaintance{
+	margin::0px;
+	background-image:url(../images/color-m-4tx.jpg);
+}
+.leftMenuButton#PostAuthMaintance:hover{
+	margin::0px;
+	background-image:url(../images/color-m-4tx-hover-2.jpg);
+}
+.leftMenuCaption{
+	z-index:6;
+	margin-top:60px;
+	color:#6f2d2d;
+	font: 14pt gardensc, Verdana, sans-serif; 
+	text-align:center;
+	-moz-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+	-webkit-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+}
+
+/* End LeftContainer */
+
+
+
+
+/*Main Container  TopMenu (aka specMenu) & thisPageContent */
+.twoColFixRtHdr #mainContent { 
+	margin: 0 0 0 0; /* the right margin on this div element creates the column down the right side of the page - no matter how much content the sidebar1 div contains, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends. */
+	padding: 0 0px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background:#dedede;
+} 
+
+/*SpecMenu */
+.leftTopContainer {
+	background:#FFF;
+	background-image:url(../images/specmenubg.png);
+	background-repeat:no-repeat;
+	height:385px;
+}
+#specMenuContainer{
+	width:332px;
+	height:380px;
+	padding:10px 0 0 0;
+}
+.specMenu a{
+	text-decoration:none;
+}
+
+.specMenuButton{
+	margin:5px 0 0 225px;
+	width:331px;
+	height:67px;
+	padding:0px;
+	margin-left:;
+	background-image:url(../images/menu-spec.png);
+	background-repeat:no-repeat;
+   }
+.specMenuButton:first{
+	margin: 50px 0 0 225px;
+	
+}
+.specMenuButton:hover{
+	background-image:url(../images/menu-spec-hover.png);	
+	}
+.specMenuCaption{
+	margin: 0 0 0 56px;
+	font-family: gardensc, verdana, sans-serif, #fff;
+	font-size: 18pt;
+	font-stretch:ultra-condensed;
+	font-style:normal;
+	line-height:67px;
+	color: #FFF;
+	text-height:auto;
+	text-align:center;
+	z-index:6;
+	/*margin-left:56px;*/
+	}
+/*endSpecMenu */
+
+
+
+
+.thisPageContent{
+	background:#FFF;
+	text-align:left;
+	margin: 0px;
+	/*height:2000px;*/
+	width:830px;
+	/*border:2px solid;
+	border-radius:25px;*/
+}
+.pageCaption{
+	height:60px;
+	padding: 32px 0 0 50px;
+	font-family: dejavu_sans, verdana, sans-serif, #fff;
+	font-size: 22pt;
+	font-style:normal;
+	color:#3d6804;
+}
+#pageName{
+  margin:-10px;
+  line-height:50px;
+  vertical-align:central;
+}
+
+
+/*Calc */
+.calcContainer{
+	margin: 20px auto;
+	background:url(../images/calcBg.PNG) no-repeat;
+	width:432px;
+	height:128px;
+}
+.calcCaption{
+	background:url(../images/CalcCaption.PNG) no-repeat;
+ 	width:283px;
+	height:17px;
+	margin: 0px auto 0px;
+}
+.calc{
+	background:url(../images/calcFieldbg.PNG);
+	width:315px;
+	height:35px;
+	margin: 35px auto 0px;
+}
+.count {
+	margin: -15px 8px 0 8px;
+	text-align:right;
+	font-family: gardensc, verdana, sans-seris;
+}
+.actions{
+	/*height:60px;*/
+}
+
+
+#postRequest{
+	background-image:url(../images/postButton.png);
+	background-repeat:no-repeat;
+	width:230px;
+	height:50px;
+	float:left;
+	margin-left:200px;
+	margin-top:50px;
+}
+#cancel{
+	background-image:url(../images/cancelButton.png);
+	background-repeat:no-repeat;
+	width:230px;
+	height:50px;
+	float:left;
+	margin-left:110px;
+	margin-top:50px;
+}
+
+/*endThisPageContent */
+
+
+
+/*footer */
+.twoColFixRtHdr #footer { 
+	margin: 0 0; /*Omg collapse */
+	padding: 0 0px 0 0px;/* Buben */ 
+	height : 119px;
+  	/* background-image:url(../images/FooterBg.PNG);*/
+	
+} 
+.twoColFixRtHdr #footer p {
+	margin: 0;
+	color:#22550a;
+	font: 16pt gardensc, Verdana, sans-serif; 
+	padding: 10px 0;  /*Required courz margins are collapseable */
+	-moz-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+	-webkit-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+}
+
+ .FooterCenter {
+	text-align:center;
+	float:left;
+	margin-left:200px;
+	width: 20%;
+   }
+
+.FooterLeft {
+	text-align:left;
+	float:left;
+	width: 25;
+   }
+
+.FooterRight {
+	float:right;
+	text-align:right;
+	width:20%;
+	margin: 0px;
+	padding: 0px;
+   }	
+	
+
+
+/*EndFooter */
+
+
+/*SomeMoar trick styles */
+
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+ 
+.wtf {
+	clear:left;
+	padding:0px;
+	margin:0px;
+	text-align:center;
+	background-color:#F00;
+	visibility:hidden;
+}
+.clear {
+	clear:both;
+   }
+   
+/* end trixx */
+
+</style>
+/* CSS Document */

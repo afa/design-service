@@ -1,0 +1,10 @@
+= simple_form_for(@specialist) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :type
+    = f.input :acreditation_level
+    = f.association :profile
+
+  .form-actions
+    = f.button :submit

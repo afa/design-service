@@ -21,4 +21,10 @@ ru:
     title: 'Разработка вариантов планировок'
   replanning_endorsements:
     title: 'Согласование перепланировок'
+  specialists:
+    designers:
+      title: 'Дизайнеры'
+    
+    title: 'Специалисты'
+    
   title: 'Дизайн сервис'

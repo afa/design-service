@@ -1,0 +1,279 @@
+﻿ 
+/* CSS Document */
+
+@charset "utf-8";
+ /*Tweak classes */
+ /*____________________________________________________________________________*/
+ 
+
+@font-face {
+    font-family: dearestregular;
+    src: url('dearest-webfont.eot');
+    src: url('dearest-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dearest-webfont.woff') format('woff'),
+         url('dearest-webfont.ttf') format('truetype'),
+         url('dearest-webfont.svg#dearestregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.index{
+	min-width:980px;
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+/*	background-image:url(images/fon.jpg); */
+	background:url(images/fon.jpg);
+	margin: 0; 
+	padding: 0;
+	text-align: center; 
+	color: #000000;
+/*	overflow:hidden;*/
+} 
+
+p{ margin:0;
+/*font: dearestregular, Verdana, Geneva, sans-serif; */
+padding:0px 0px ;
+}
+.clear {
+	clear:both;
+}
+ 
+.twoColFixRtHdr #container { 
+	width: 980px;  /* 1024 - (4+22)ie borders -using 20px forTheWin */
+	margin: 0 auto; 
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+ 
+ 
+/*Header Unregistred */
+/*---------------------------------------------------------------------------------*/
+.twoColFixRtHdr #header { 
+	height:130px;
+	margin 0px;
+	/*background-image:url(images/fon-head.jpg);*/
+	padding: 0px; 
+} 
+
+/* Container course Sveta insist on special header bg */
+.headerContainer {	
+	background:url(images/fon-head.jpg);
+	width:980px;
+	height:130px;
+	
+}
+/*allows use 2 diffrent float for logo and user menu */
+/*logo*/
+.headerLayer1 { 
+	background-image:url(images/logo.png);
+    float: left;
+    width: 516px; /* Ширина слоя */
+   	height:55px;
+	margin:30px 0 0 50px; /*top36px */
+   }
+/*register */
+.headerLayer2 {
+	background-image:url(images/castle.png);
+	background-repeat:no-repeat;	
+    width: 55px;
+	height: 76px;
+	margin: 10px 30px;
+	float: right;
+	/* Обтекание по правому краю */
+   }
+.headerLayer3 {
+	background-image:url(images/reg-key.png);
+    background-repeat:no-repeat;
+	padding: 0px; /* Поля вокруг текста */
+    width: 126px;
+	height:51px;
+    margin-top:30px;
+	align:right;
+	float: right; /* Обтекание по правому краю */
+   } 
+ 
+/*Right SideBar*/
+/*-------------------------------------------------------------------*/
+.twoColFixRtHdr #sidebar1 {
+	float: right; 
+	width: 346px;/* the actual width of this div*/
+	height: 760px; /*removable */
+	background-image:url(images/fon-color-m.jpg); 
+	background-repeat:no-repeat;
+	padding: 0px 0px;
+}
+/*mainMenuCaptionInMeans */
+.mainMenuSelect{
+	background:url(images/vyberi.png);
+	width:344px;
+	height:74px;
+	margin:0 auto;
+}
+.mainMenuContainer{
+	width: 390px;
+	margin:0px auto;
+	padding:0px;
+}
+.mainMenuEnity{
+	float:left;
+	width:163px;
+	height:163px;
+	background-repeat:no-repeat;
+}
+#mainMenuButton1{
+	background-image:url(images/color-m-1tx.jpg);
+	margin:0;
+}
+#mainMenuButton1:hover{
+	background-image:url(images/color-m-1tx-hover-2.jpg);
+}
+#mainMenuImg1{
+	 background-image:url(images/color-m-1im.jpg);
+	 margin: 0;
+}
+#mainMenuButton2{
+	background-image:url(images/color-m-2tx.jpg);
+	 margin:0;
+}
+#mainMenuButton2:hover{
+	background-image:url(images/color-m-2tx-hover-2.jpg);
+}
+#mainMenuImg2{
+	 background-image:url(images/color-m-2im.jpg);
+	 margin: 0;
+}
+#mainMenuButton3{
+	background-image:url(images/color-m-3tx.jpg);
+	 margin:0;
+}
+#mainMenuButton3:hover{
+	background-image:url(images/color-m-3tx-hover-2.jpg);
+}
+#mainMenuImg3{
+	 background-image:url(images/color-m-3im.jpg);
+	 margin: 0;
+}
+#mainMenuButton4{
+	background-image:url(images/color-m-4tx.jpg);
+	 margin:0;
+}
+#mainMenuButton4:hover{
+	background-image:url(images/color-m-4tx-hover-2.jpg);
+}
+#mainMenuImg4{
+	 background-image:url(images/color-m-4im.jpg);
+	 margin: 0;
+}
+.mainMenuFloater{
+	float: left;
+    height: 110px;
+    width: 100%;
+    margin-bottom: -50px;
+
+}
+
+.mainMenuCaption{
+	float:none;
+	height:inherit;
+	margin:0px auto;
+	text-align:center;
+	
+	
+}
+
+
+/* Main Content/
+/*------------------------------------------------------*/
+.twoColFixRtHdr #mainContent { 
+	height:760px;
+	margin: 0px;
+	padding: 0px;
+	}
+/*FAQ and LEGAL NAVI Container */   
+
+.leftBotContainer{
+	float:left;	
+	width:634px;
+  	height:380px;
+	background-image:url(images/collag.jpg);
+	background-repeat:no-repeat;
+   }
+/*Specialist Menu  Container */
+/*-------------------------------------------------------------*/  
+.leftTopContainer{
+	float:left;
+    width:634px;
+	height:380px;
+	padding:0px;
+	background-image:url(images/fon-menu-cpec.jpg);
+	background-repeat:no-repeat;
+   }	 
+/*   
+.specMenuContainer{
+	height:380px;
+}*/
+.specMenuButton{
+	float:none;
+	width:331px;
+	height:67px;
+	/*padding:15px 0 0 0;*/
+	/*padding:20px 0 0 56px;*/
+	margin:8px 0 0 127px;
+	background-image:url(images/menu-spec.png);
+	background-repeat:no-repeat;
+   }
+.specMenuButton:hover{
+	background-image:url(images/menu-spec-hover.png);	
+	}
+.specMenuCaption{
+	text-align:center;
+	z-index:6;
+	line-height:67px;
+	/*vertical-align:central;*/
+	margin: 0 0 0 57px;
+	}
+
+
+/*Footer 
+__________________________________________________________________*/
+
+   
+.twoColFixRtHdr #footer p {
+	font-family: 'dearestregular';/* , Geneva, sans-serif;*/
+	float:none;
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+	
+.FooterCenter {
+	text-align:center;
+	float:left;
+	margin: 0 auto;
+	width: 300px;
+   }
+.FooterLeft {
+	text-align:left;
+	float:left;
+	width: 300px;
+   }
+.FooterRight {
+	font-family: dearestregular;/* , Geneva, sans-serif;*/
+	float:right;
+	text-align:right;
+	width:300px;
+   }	
+	
+ 
