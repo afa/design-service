@@ -1,9 +1,18 @@
 class SpecialistsController < ApplicationController
+
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /specialists
   # GET /specialists.json
   def index
-    @specialist_type = params[:type]
-    @specialists = Specialist.all
+    specialist_type = params[:specialist_type]
+    if !specialist_type || specialist_type.blank? || specialist_type == :all
+      @specialists = Specialist.all
+    else
+      @specialists = Specialist.specialization(specialist_type)
+      render text: @specialists.inspect
+      return
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,7 +51,7 @@ class SpecialistsController < ApplicationController
   # POST /specialists.json
   def create
     @specialist = Specialist.new(params[:specialist])
-
+    @specialist.profile = current_user
     respond_to do |format|
       if @specialist.save
         format.html { redirect_to @specialist, notice: 'Specialist was successfully created.' }
