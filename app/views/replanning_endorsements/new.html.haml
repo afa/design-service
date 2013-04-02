@@ -6,7 +6,7 @@
   %p.Alert ВНИМАНИЕ! Согласование проводится у генпроектировщика и эксплатирующей организации.
 = simple_form_for @replanning_endorsement, html: {class: 'planRefactoring'} do |f|
   .RefactDetails
-    = f.input :developed_by_general_projector, as: :radio_buttons, input_html: {class: 'FormQuestions'}, wrap:false
+    = f.input :developed_by_general_projector, as: :radio_buttons, input_html: {class: 'FormQuestions'}
     .clearfloat
   #appatment
     = f.input :flat_area, as: :string, input_html: {class: 'FlatArea'}
@@ -15,7 +15,8 @@
     #postCaption.postCaption
     #fileGrab.OMFGFILEGRAB
       .clearfloat
-      %p Вы можете перетащить файлы сюда
+      #dropZone
+        %p Вы можете перетащить файлы сюда
       %input{:type => "file", :value => "Attach lol"}/
   #licence
     = f.input :replanning_organization_licensed, as: :radio_buttons, input_html: {class: 'FormQuestions'}
