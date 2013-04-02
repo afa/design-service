@@ -1,3 +1,96 @@
 @charset "utf-8";
 /* CSS Document */
+#PageCaption{
+	height:126px;
+	overflow:hidden;
+}
+#SelectPLz{
+	margin:0 auto;
+	color:f89f65;
+	font-size:14pt;
+}
+#thisPageContent{
+	width:830px;
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+.WorkDocContainer, .typeContainer,.ConceptContainer,.ConceptRow1,ConceptRow2{
+	margin:0;
+	padding:0;
+	float:left;
+}
+.typeConteiner{
+	width:830px;
+	margin: 126px 0 0 0;
+}
+
+
+.WorkDocContainer{		/*290+530px=820px*/
+	width:290px;
+	background-color:#e8edf1;
+}
+.typeIconContainer{
+	background:url(../images/DesignProjectIcons/hall.png) no-repeat;
+	margin:0 auto;
+	width:185px;
+	height:185px;
+}
+
+.WorkDocCaption, .ConceptCaption{
+	font-family:monotype_corsiva, Verdana, sans-serif;
+	font-size:24pt;
+	text-align:center;
+	height:70px;
+}
+
+.ConceptType, .WorkDocType{
+	padding:25px 0 0 0;
+	height:335px;
+}
+
+.WorkDocTypeCaption, .ConceptTypeCaption{
+	margin:20px 0 25px 0;
+	font-family: dejavu_sans, Verdana, sans-serif;
+	font-size:16pt;
+	text-align:center;
+	height:40px;
+}
+
+.WorkDocTypeDescription, .ConceptTypeDescription{
+	font-family: dejavu_sans, Verdana, sans-serif;
+	font-size:12pt;
+	padding:0 35px;
+	text-align:justify;
+	height:40px;
+}
+.DesignProjType{
+	text-decoration:none;
+	color:#383a3e;
+	}
+.DesignProjType:hover,.DesignProjType:active{
+	text-decoration:underline;
+	color:#383a3e;
+	}	
+
+.ConceptContainer{
+	background-color:#e4efd5;
+	width:520px;	
+}
+.ConceptRow1{
+	width:230px;
+}						/*230+300=530px */
+.ConceptRow2{
+	float:left;
+	width:289px;
+}
+.orderDesPlan{
+	float:left;
+	background:url(../images/orderVarPlan.PNG) no-repeat;
+	width:97px;
+	height:22px;
+	margin: 10px 90px;
+	}
+
 

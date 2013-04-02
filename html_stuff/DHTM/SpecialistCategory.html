@@ -121,74 +121,81 @@
                 </div>       
                <!-- <div class="horLine"> </div>        OMFG MAGIC -->
             <!-- emd #PageCaption--></div>
-            <div class="clearfloat"></div>
+            <div class="wtf"></div>
             
             
             <div class="sortBy">
             	<div class="sortCaption"> Сортировать по</div>
-                <div class="sortByRate">
-                </div>
-                <div class="sortByReviews">
-                </div>
+                	<div class="sortByRate">
+                	</div>
+                
+                	<div class="sortByReviews">
+                	</div>
                 
                 <div class="ShowN">
-                <div class="showCaption"> Выводить по:</div>
-            	<form name="ShowMe">
-                <input type="number" name="ShowN" class="showSpecs" />
-                </form>
-                </div>
+                	<div class="showCaption"> Выводить по:</div>
+            			<form name="ShowMe">
+                			<input type="number" name="ShowN" class="showSpecs" />
+                		</form>
+                	</div>
                 <div class="clearfloat"></div>  
             <!--end .SortBy---> </div>
             
             
             
             <div class="Specialist" id="Spec1">
-            <div class="SpecDetails" id="SpecDet1">	
-                <div class="specCaption">
-                	<div class="specAva">
-                    </div>
-                    
-                    <div class="usernameContainer">
-                    <p class="specFio">$Name $Surname</p>
-                    <p class="specUserName"> [$UserName]</p>
-                    <!--end userNameContainer --></div>
-                <!--end specCaption--></div>            	
-                <div class="spceRate">
-                	<p class="specRating">
-                    	Рейтинг:
-                        <span class="specRateValue">
-                        		$SpecRateValue
-                        </span>
-                        <span class="specRatesNumber">
-                        		$Num($rateNum)
-                        </span>
-                    </p>
-                    <p class="specRegistred">
-                    	Зарегестрирован:
-                        <span class="SpecDateReg">
-                        	$Date
-                        </span>
-                    </p>
-                <!--end specRate--></div>
-				<div class="specReviews">
-                	<p class="specReviews">
-                    	Отзывы:
-                    </p>
-                    <p class="specReviews">
-                    	<span class="specPosRev">
-                        +$i
-                        </span>
-                        <br />
-                        <span class="specNegRev">
-                        -$j
-                        </span>
-                    </p>
-                <!--end specReviews--></div>            		
+            	
+                <div class="SpecDetails" id="SpecDet1">	
+                	<div class="specCaption">
+                		<a class="castSpecialist" href="targetspecialist.html">
+                        <div class="specAva">
+                    	</div></a>
+                    	
+                        <a class="castSpecialist" href="targetspecialist.html">
+                    	<div class="usernameContainer">
+                    		<p class="specFio">$Name $Surname</p>
+                    		<p class="specUserName"> [$UserName]</p>
+                    	<!--end userNameContainer --></div></a>  
+                	<!--end specCaption--></div>          	
+                	
+                	<div class="spceRate">
+                		<p class="specRating">
+                    		Рейтинг:                       	
+                            <span class="specRateValue">
+                        			$SpecRateValue
+                        	</span>
+                        	<span class="specRatesNumber">
+                        			$Num($rateNum)
+                        	</span>
+                   		</p>
+                   	 	<p class="specRegistred">
+                    		Зарегестрирован:
+                        	<span class="SpecDateReg">
+                        		$Date
+                        	</span>
+                    	</p>
+                		<!--end specRate--></div>
+					<a  class="castReviews" href="#"> <!--expands reviews -->
+                    <div class="specReviews">
+                		<p class="specReviews">
+                    		Отзывы:
+                    	</p>
+                    	<p class="specReviews">
+                    		<span class="specPosRev">
+                        	+$i
+                        	</span>
+                        	<br />
+                        	<span class="specNegRev">
+                        	-$j
+                        	</span>
+                    	</p>
+               		<!--end specReviews--></div>
+                    </a>            		
             	<!--end specDeatails--> </div>
                 
                 <div class="specPortfolio">
                 	<div class="portfWork" id="portWork1">
-                    	<a href="#">
+                    	<a href="">
                         	<img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview.JPG">                        
                         </a>
                     <!--end portWork --></div>

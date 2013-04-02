@@ -4,231 +4,152 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 
-<link href="registred.css" rel="stylesheet" type="text/css" />
+
 <link href="css/registred.css" rel="stylesheet" type="text/css" />
-<link hred="css/cashhistory.css" rel="sylesheet type="text/css" />
+<link href="css/regplanrefactoring.css" rel="stylesheet" type="text/css" />
 
 </head>
 
-<body class=>
+<body class="registredContainer">
 
 <div class="container">
+
   <div class="headerReg">
-  
-    <a href="#"><img src="" alt="Insert Logo Here" name="Insert_logo" width="180" height="90" id="Insert_logo" style="background-color: #C6D580; display:block; float:left;" /></a> 
+  	
+    	<div class="Logo">
+    		<a href="#">
+    			<img src="images/logo-2.png" alt="Design Serive" name="Design Service"  id="Logo" />
+        	</a> 
+    	</div>
     
-    <div id="topMenuContainer">
-    <span class="topMenuSpan" id="topMenuBut1" style="float:left;">
-    	<p class="topMenuCaption">Разработка <br />
-        Вариантов<br />
-        Планировок </p>
-    </span>
-    <span class="topMenuSpan" id="topMenuBut2" style="float:left;">
-    	<p class="topMenuCaption">
-        Согласования<br />
-        Перепланировок</p>
-    </span>
-    <span class="topMenuSpan" id="topMenuBut3"style="float:left;">
-    	<p class="topMenuCaption">
-			Дизайн Проект    
-    	</p>
-    </span>
-    	<p class="topMenuCaption">
-        	Авторское<br />
-            Сопровождение<br />
-            Строительства<br />
-        </p>
-    <span class="topMenuSpan" id="topMenuBut4">
-    </span>
+   	<div id="topMenuContainer">
+	  <div class="topMenuBut" id="topMenuBut1">
+    			<div class="topMenuCaption" id="VarPlan">
+        			Разработка <br />
+        			Вариантов<br />
+        			Планировок </div>
+    		<!--end #topMenuBut1 --></div>
     
-    <div class="clearfloat"></div>
+	  <div class="topMenuBut" id="topMenuBut2">
+    			<div class="topMenuCaption">
+        			Согласования<br />
+        			Перепланировок</div>
+    		<!--end #topMenuBut2 --></div>
+    
+ 	  <div class="topMenuBut" id="topMenuBut3">
+    			<div class="topMenuCaption">
+					Дизайн Проект    
+    			</div>
+    		<!--end #topMenuBut3--></div>
+    
+    
+	  <div class="topMenuBut" id="topMenuBut4">
+    			<div class="topMenuCaption">
+        			Авторское<br />
+            		Сопровождение<br />
+            		Строительства<br />
+        		</div>
+    		<!--end #topMenuBut4--></div>
+    
+    	<div class="clearfloat"></div>
+    
+    
     <!--end #topMenuContainer --></div>
+  
   <!-- end .header --></div>
+  <div class="BookCover">
   <div class="sidebar1">
+    <!--Design Elements-->
     
-    <div clas="hiUserName">
-    	<p>
+    <div class="leftPages"></div>
+    
+    <div class="springs" id="connector1"></div>
+    <div class="springs" id="connector2"></div>
+	<div class="springs" id="connector3"></div>
+    <div class="springs" id="connector4"></div>
+    <!--end De-->
+    
+    <div class="hiUserName">
+    	<div class="hiUserNameFloater" style="height:8px; width:100%;">
+        </div>
+        <div>
         Добро Пожаловать<br />
         $Name [$Username]
-        </p>
+        </div>
     </div>
   
   	<div class="cabinetNavContainer">
     <ul class="cabinet nav">
-      <li><a href="#">МОИ ЗАКАЗАЫ</a></li>
-      <li><a href="#">ЛИЦЕВОЙ СЧЕТ</a></li>
-      <li><a href="#">МОИ НАСТРОЙКИ</a></li>
+      <li><a href="#"id="order">МОИ ЗАКАЗЫ</a></li>
+      <li id="laccount"><a href="#" id="account">ЛИЦЕВОЙ СЧЕТ</a></li>
+      <li class="settings"><a href="#" class="settings">МОИ НАСТРОЙКИ</a></li>
     </ul>
     <ul class="mySpecialist nav">
-    	<li><a href="#">МОИ СПЕЦИАЛИСТЫ</a></li>
-        <li class="innerLi"><a href="#">ИЗБРАННЫЕ</a></li>
-        <li class="innerLi"><a href="#">РАБОТАЮТ</a></li>
+    	<li id="special"><a href="#" id="spec">МОИ СПЕЦИАЛИСТЫ</a></li>
+        <li id="thebest"><a href="# "id="best">ИЗБРАННЫЕ</a></li>
+        <li"><a href="# "id="work">РАБОТАЮТ</a></li>
     </ul>
     
     <!--end .cabinetNavC --></div>
     
-    <div id="specialistMenuContainer" class="mainMenu">
-            	<div id="architect" class="mainMenuButton">
-                	<p class="mainMenuCaption">Архитекторы</p>
+    <div id="specialistMenuContainer" class="specMenu">
+		<div id="specSelect">
+        	ВЫБОР СПЕЦИАЛИСТОВ
+        </div>
+            	<div id="architect" class="specMenuButton">
+                	<p class="specMenuCaption">Архитекторы</p>
                 </div>
-                <div id="Designer" class="mainMenuButton">
-                	<p class="mainMenuCaption">Дизайнеры</p>
+                <div id="Designer" class="specMenuButton">
+                	<p class="specMenuCaption">Дизайнеры</p>
                 </div>
-                <div id="Enginere" class="mainMenuButton">
-                	<p class="mainMenuCaption">Инженеры</p>
+                <div id="Enginere" class="specMenuButton">
+                	<p class="specMenuCaption">Инженеры</p>
                 </div>
-                <div id="BuildCompany" class="mainMenuButton">
-                	<p class="mainMenuCaption">Строительные фирмы</p>
+                <div id="BuildCompany" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные фирмы</p>
                 </div>
-                <div id="BuildAshot" class="mainMenuButton">
-                	<p class="mainMenuCaption">Строительные бригады</p>
+                <div id="BuildAshot" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные бригады</p>
                 </div>
-     <!--end mainMenuContainer --></div>
+     <!--end specMenuContainer --></div>
      
      <div id="calendar">
       	<p>BLOW YOUR BRAIN</p>
+       	<input type="date" id="date"/>
+       	<div id="date" class="calendarAnchor">
+       	</div>
      </div>
    
     <!-- end .sidebar1 --></div>
+    <div class="speceBetween">
+    </div> 
+    
   
   
   <div class="content">
     <div class="thisPageContent">
-    	<div class="caption">
-    		<p> ЛИЦЕВОЙ СЧЕТ</p>
+    <div class="rightPages"></div>
+    	
+        <div class="caption">
+    		<p> ЙА БОЛВАНКО РЕГИСТРЕД ПЕЙДЖА</p>
         </div>
-        <div class="cabinetTopNav">
-        	 <ul class="cabinetNav">
-             	<li><a href="#">История</a></li>
-                <li><a href="#">Пополнение</a></li>
-                <li><a href="#">Договора</a></li>
-                <li><a href="#">Счета</a></li>
-             </ul>
-        <!--end .cabinetTopNav --> </div>
-    	<div class="caption" id="Balance">
-        	<p>На лицевом счете: $BALANCE </p>
-        </div>
-        <div class="delayService">
-          <p>&nbsp;</p>
-        <!--end .delayedService--></div>
-        
-        <div class="BalanceHistory">
-        	<table class="balanceHistory" style="width:600px;  margin:0 auto;">
-              <tr class="caption" style="text-align:center;font-family:'Times New Roman', Times, serif; background-color:#e4e4e4; border-bottom-width:1px; border-left-width:0px; border-left-width:0px; height:20px;">
-              	<td class="bHDate">
-                	Дата
-                </td>
-                <td class="bHSumm">
-                	Сумма
-                </td>
-                <td class="bHServise">
-                	Услуга
-                </td>
-                <td class="bhStaus">
-                	Статус
-                </td>
-              </tr>
-              
-              <tr class="balanceHistory statusOk" style="font-family:gardenscregular">
-              	
-                <td class="bHDate">
-                	01.02.2013
-                </td>
-                	
-                <td class="bHSumm">
-                	20 000 руб.
-                	
-                </td>	
-                <td class="bHServise">
-                	30 % Согласование
-                </td>              	
-                <td class="bhStaus">
-                	Оплачен
-                </td>             
-              </tr>
-              
-              <tr class="balanceHistory statusComplete">
-              	<td class="bHDate">
-                	27.01.2013
-                </td>
-                	
-                <td class="bHSumm">
-                	25 000 руб.
-                	
-                </td>	
-                <td class="bHServise">
-                	Пополнение
-                </td>              	
-                <td class="bhStaus">
-                	Выполненно
-                </td>             
-              </tr>
-              
-               <tr class="balanceHistory requireAttention">
-              	<td class="bHDate">
-                	22.01.2013
-                </td>
-                	
-                <td class="bHSumm">
-                	20 000 руб.
-                	
-                </td>	
-                <td class="bHServise">
-                	60% Согласование
-                </td>              	
-                <td class="bhStaus">
-                	Требует оплаты
-                </td>             
-              </tr>
-              
-               <tr class="balanceHistoryOdd statusOk">
-              	<td class="bHDate">
-                	27.01.2013
-                </td>
-                	
-                <td class="bHSumm">
-                	25 000 руб.
-                </td>	
-                <td class="bHServise">
-                	Пополнение
-                </td>              	
-                <td class="bhStaus">
-                	Выполненно
-                </td>             
-              </tr>
-              
-               <tr class="balanceHistoryOdd statusComplete">
-              	<td class="bHDate">
-                	01.01.2013
-                </td>
-                	
-                <td class="bHSumm">
-                	60 000 руб.
-                	
-                </td>	
-                <td class="bHServise">
-                	Пополнение
-                </td>              	
-                <td class="bhStaus">
-                	Выполненно
-                </td>             
-              </tr>
-              
-              
-             </table>
-        	
-        </div>
-           
+        <div class="cabinetHorNav">
+         	 <a class="cabinetHorNavlink" href="#">История</a>
+             <a class="cabinetHorNavlink" href="#">Пополнение</a>
+             <a class="cabinetHorNavlink" href="#">Договоры</a>
+             <a class="cabinetHorNavlink" href="#">Счета</a>
+        <!--end .cabinetNav --></div>
         
         
-    <!--end .thisPageContent--></div>
+    <!--end .Content--></div>
     
     
     
     
 
     </div>
-    <!-- end .content --></div>
+    <!--end bookCover>--></div>
+  <!-- end .contentainer --></div>
         
     <div class="footer">
     <div id="LeftFooter" class="FooterLeft">
@@ -246,8 +167,8 @@
 			Банк-Идей<br />
 			ЙА Студия<br /></p>
 	</div>
-
-  <!-- end #footer --></div>
-  <!-- end .container --></div>
+ 	 <!-- end .footer --></div>
+  <!-- end .RegistredContainer --></div>
+  
 </body>
 </html>

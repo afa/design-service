@@ -6,13 +6,20 @@
 /* Menu fonts, table fonts, PostForm font */
 @font-face {
     font-family: 'gardensc';
-    src: url('gardensc_03_1-webfont.eot');
-    src: url('gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gardensc_03_1-webfont.woff') format('woff'),
-         url('gardensc_03_1-webfont.ttf') format('truetype');
+    src: url('../fonts/gardensc_03_1-webfont.eot');
+    src: url('../fonts/gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gardensc_03_1-webfont.woff') format('woff'),
+         url('../fonts/gardensc_03_1-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
+}
+
+@font-face {
+	font-family: 'monotype_corsiva';
+	src:url('../fonts/MTCORSVA.TTF') format('truetype');
+	font-weight: normal;
+	font-style:normal;
 }
 
 
@@ -20,10 +27,10 @@
 /*Page captions */
 @font-face {
     font-family: 'dejavu_sans';
-    src: url('dejavusanscondensed-webfont.eot');
-    src: url('dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
-         url('dejavusanscondensed-webfont.woff') format('woff'),
-         url('dejavusanscondensed-webfont.ttf') format('truetype');
+    src: url('../fonts/dejavusanscondensed-webfont.eot');
+    src: url('../fonts/dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dejavusanscondensed-webfont.woff') format('woff'),
+         url('../fonts/dejavusanscondensed-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -31,10 +38,10 @@
 /* lol wtf*/
 @font-face {
     font-family: 'minion_pro';
-    src: url('minion_pro-webfont.eot');
-    src: url('minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
-         url('minion_pro-webfont.woff') format('woff'),
-         url('minion_pro-webfont.ttf') format('truetype');
+    src: url('../fonts/minion_pro-webfont.eot');
+    src: url('../fonts/minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/minion_pro-webfont.woff') format('woff'),
+         url('../fonts/minion_pro-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -43,19 +50,21 @@
 /* LayOut Config */
 body  {
 	font: 100% gardensc, Arial, Helvetica, sans-serif;
-	background:url(images/fon-y.jpg) repeat-y;
-	/*background: url(../images/fon-head.jpg) center top no-repeat,
-	url(../images/FooterBg.PNG) center bottom no-repeat,
-	url(../images/fon-y.jpg) left top repeat-y; */
+	background-image:url(../images/MainContainerOnlyPalm.PNG), url(../images/madPalmFooter.PNG), url(../images/fon-y.jpg);
+	background-repeat: no-repeat, no-repeat, repeat-y;
+	background-position: center top, center bottom, top;
 	margin: 0; 
 	padding: 0;
 	text-align: center;
 	color: #000000;
 	overflow:visible;
 }
+.Unregistred{
+
+}
 .twoColFixRtHdr #container { 
 	width: 980px;  
-	background:#dedede;
+	/*background:#dedede;*/
 	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
 	text-align: left; /* this overrides the text-align: center on the body element. */
 } 
@@ -121,7 +130,7 @@ input[type='radio']:checked + label {
 
 /* Container course Sveta insist on special header bg */
 .headerContainer {	
-	background:url(../images/fon-head.jpg);
+	/*background:url(../images/fon-head.jpg);*/
 	width:980px;
 	height:130px;
 	
@@ -181,6 +190,7 @@ input[type='radio']:checked + label {
 	background-image:url(../images/fon-color-m.jpg); 
 	background-repeat:repeat-y;
 	padding: 0px 0px;
+
 }
 /* Actually Right, but whoRlyCares */
 .leftMenuContainer{
@@ -252,23 +262,27 @@ input[type='radio']:checked + label {
 .twoColFixRtHdr #mainContent { 
 	margin: 0 0 0 0; /* the right margin on this div element creates the column down the right side of the page - no matter how much content the sidebar1 div contains, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends. */
 	padding: 0 0px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background:#dedede;
 } 
 
 /*SpecMenu */
 .leftTopContainer {
 	background:#FFF;
-	background-image:url(../images/specMenuBg.PNG);
+	background-image:url(../images/specmenubg.png);
 	background-repeat:no-repeat;
 	height:385px;
 }
-.specMenuContainer{
+#specMenuContainer{
 	width:332px;
 	height:380px;
-	margin-top:50px;
+	padding:10px 0 0 0;
+}
+.specMenu a{
+	text-decoration:none;
 }
 
 .specMenuButton{
-	margin:0px 0 0 225px;
+	margin:5px 0 0 225px;
 	width:331px;
 	height:67px;
 	padding:0px;
@@ -312,7 +326,7 @@ input[type='radio']:checked + label {
 }
 .pageCaption{
 	height:60px;
-	margin: 32px 0 0 50px;
+	padding: 32px 0 0 50px;
 	font-family: dejavu_sans, verdana, sans-serif, #fff;
 	font-size: 22pt;
 	font-style:normal;
@@ -382,7 +396,7 @@ input[type='radio']:checked + label {
 	margin: 0 0; /*Omg collapse */
 	padding: 0 0px 0 0px;/* Buben */ 
 	height : 119px;
-   background-image:url(../images/FooterBg.PNG);
+  	/* background-image:url(../images/FooterBg.PNG);*/
 	
 } 
 .twoColFixRtHdr #footer p {
@@ -439,11 +453,12 @@ input[type='radio']:checked + label {
 }
  
 .wtf {
-	clear:both;
+	clear:left;
 	padding:0px;
 	margin:0px;
 	text-align:center;
 	background-color:#F00;
+	visibility:hidden;
 }
 .clear {
 	clear:both;
