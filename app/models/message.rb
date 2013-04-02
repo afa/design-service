@@ -5,4 +5,5 @@ class Message < ActiveRecord::Base
   
   accepts_nested_attributes_for :text
   attr_accessible :text_attributes
+  attr_accessible :to_id
 end
