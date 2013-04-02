@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.pageLogo{
+	background:url(../images/PlanRefactoring.PNG);
+	margin: 10px 10px 0 0px;
+	float:left;
+	width:46px;
+	height:50px;
+	
+}
+.horLine{
+	float:none;
+	z-index:999;
+	margin:-20px 0;
+	height:3px;
+	width:600px;
+	background-color:#edd358;
+}
+.Manual {
+	margin: 28px  0 0 124px;
+	font-family: dejavu_sans, verdana, sans-serif, #fff;
+	font-size: 22pt;
+	font-style:normal;
+	color:#3d6804;
+}
+.Alert{
+	color:#bd3404;
+	font-size:18pt;
+}
+.FormQuestions{
+	font-family:gardensc, verdana, sans-serif, #fff;
+	font-size:16pt;
+	font-style:italic;
+}
+.FlatArea{
+	margin: 0 10px;
+	width:50px;
+	border:none;
+	background:url(../images/textformbg.PNG) repeat-x;
+}
+#Licence{
+	height: 60px;
+}
+#appatment{
+	height: 60px;
+}
+.postContainer{
+	position:relative;
+	behavior: url(scripts/PIE.htc);
+	background-repeat:no-repeat;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	border-radius:50px;
+	border-width:6px;
+	border:solid;
+}
+.postCaption{
+	float:left;
+    margin: 27px 0 0 22px;
+	background:url(../images/RefactorAttachCaption.PNG) no-repeat;
+	width:584px;
+	height:30px;
+}
+
+#postAttach{
+	/*background-image:url(../MyPages/post4Check.png);*/
+	width:600px;
+	height:220px;
+	margin::20px 0 0 10px; 
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	border-width:6px;
+	border-radius:50px;
+	border-color:#e5c941;	
+	behavior: url(scripts/PIE.htc);
+}
+.OMFGFILEGRAB{
+	width: 750px;
+	height: 220px;
+	margin: 20px auto 0px;
+}

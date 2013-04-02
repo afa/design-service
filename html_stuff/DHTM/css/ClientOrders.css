@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+}
+
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background-color: #C6D580;
+}
+/ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background-color: #ADB96E;
+	color: #FFF;
+}
+
+
+
+/*ThisPageContent */
+
+
+	/*Order Frames */
+.TargetOrder{
+	width:575px;
+	height:255px;
+	background:url(../images/ClientCabinetOrderCheckOut.png);
+	margin:5px auto;
+	position:relative;
+}
+.DesignProjectOrder{
+	border-color:#efd4c2;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	border-width:6px;
+	border-radius:50px;
+	behavior: url(scripts/PIE.htc);	
+}
+	/*3 OtherOrder Types There*/
+
+.MainDateContainer{
+	background:url(../images/ClientCabinetDateContainer.png) no-repeat;
+	width:140px;
+	height:50px;
+	position:absolute;
+	top:0px;
+	right:0px;	
+}
+
+
+	/*Order Frames Content */
+
+.OrderName{
+	position:absolute;
+	left:20px;
+	top:20px;
+}
+.TargetOrderName{
+	color:#752316;
+	text-decoration:underline;
+	font:14pt;
+}
+.OrderStatus{
+	color:#4c4c4c;
+	position:absolute;
+	left:20px;
+	top:90px;
+}
+
+.RelatedDocsContainer{
+	height:40px;
+	positon:absolute;
+	left:50px;
+	top:200px;
+}
+.ProgressBarContainer{
+	position:absolute;
+	left:75px;
+	top:150px;
+}
+
+.DocsList{
+	display:inline;
+	list-style:none;
+	color:#4c4c4c;
+	}
+
+
+
+			/*Progress Bar */
+.ProgressBarContainer{
+	width:192px;
+	height:24px;
+	background:#000;
+	border-color:#b3b3b3;				/*USE MATH AND BRAINS * something fucked up with the border*/ 
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-style:solid;
+	border-width:3px;
+	border-radius:12px;
+	behavior: url(scripts/PIE.htc);	
+}
+.ProgressFill{
+	width:80%;
+	background:#adc987;
+	height:24px;
+	border-color:#b3b3b3;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-width:3px;
+	border-radius:12px;
+	behavior: url(scripts/PIE.htc);	
+}
