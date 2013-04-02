@@ -1,13 +1,6 @@
-.text_to_show
-  Text to show:
-  = moderable_text.text
-- if action_name == 'new' || action_name == 'create'
-  .original_text
-    Original text:
-    = moderable_text.original_text
-.moderated_text
-  Moderated text:  
-  = moderable_text.moderated_text
-.verified_flag
-  Verified?
-  = moderable_text.verified
+= moderable_text.text
+
+/= moderable_text.original_text
+/= moderable_text.moderated_text
+/= moderable_text.verified
+/= moderable_text.submit 'Подтвердить отправку'
