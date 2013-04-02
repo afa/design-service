@@ -428,11 +428,12 @@ input[type='radio']:checked + label {
 }
  
 .wtf {
-	clear:both;
+	clear:left;
 	padding:0px;
 	margin:0px;
 	text-align:center;
 	background-color:#F00;
+  visibility: hidden;
 }
 .clear {
 	clear:both;
@@ -466,4 +467,37 @@ input[type='radio']:checked + label {
 
 div.collection_options_box {
   display: inline;
+}
+
+
+#dropZone {    
+    color: #555;
+    font-size: 18px;
+    text-align: center;    
+    
+    width: 400px;
+    padding: 10px 0;
+    margin: 10px auto;
+    
+    background: #eee;
+    border: 1px solid #ccc;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#dropZone.hover {
+    background: #ddd;
+    border-color: #aaa;
+}
+
+#dropZone.error {
+    background: #faa;
+    border-color: #f00;
+}
+
+#dropZone.drop {
+    background: #afa;
+    border-color: #0f0;
 }
