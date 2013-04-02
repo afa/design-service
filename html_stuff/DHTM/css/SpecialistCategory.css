@@ -3,7 +3,7 @@
 
 /*This page content */
 /*Page caption */
-#DesignerLogo{
+.pageLogo{
 	background:url(../images/DesignerIco.PNG) no-repeat;
 	width:60px;
 	height:60px;
