@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :authentication_keys => [:login]
+  attr_accessible :name, :surname, :middle_name
 
   validates :username, length: {minimum: 3}, immutable: true
 
@@ -25,4 +26,20 @@ class User < ActiveRecord::Base
     end
   end
 
+  def full_name
+    "#{name} #{surname}"
+  end
+  
+  
+  def admin?
+    ACCESS_LEVELS[access_level] == :admin
+  end
+  def specialist?
+    ACCESS_LEVELS[access_level] == :specialist
+  end
+  def simple_user?
+    ACCESS_LEVELS[access_level] == :simple_user
+  end
+  
+  ACCESS_LEVELS = {simple_user: 0, specialist: 1, modearator: 3, expert: 5, admin: 10}.invert
 end

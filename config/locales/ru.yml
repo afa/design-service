@@ -16,7 +16,9 @@ ru:
     errors:
       messages:
         immutable: "поле не может быть изменено"
-  
+
+  welcome:
+    title: ''  
   plan_developments:
     title: 'Разработка вариантов планировок'
   replanning_endorsements:

@@ -1,4 +1,4 @@
-.wtf
+.wtf{style: 'clear: both;'}
 .sortBy
   .sortCaption Сортировать по
   .sortByRate
@@ -9,45 +9,4 @@
       %input.showSpecs{:name => "ShowN", :type => "number"}/
   .clearfloat
 
-#Spec3.Specialist
-  #SpecDet3.SpecDetails
-    .specCaption
-      .specAva
-      .usernameContainer
-        %p.specFio Петр Петров
-        %p.specUserName [PETJA]
-
-    .spceRate
-      %p.specRating
-        Рейтинг:
-        %span.specRateValue
-          15 3432
-        %span.specRatesNumber
-          8(12)
-      %p.specRegistred
-        Зарегестрирован:
-        %span.SpecDateReg
-          11.12.12
-
-    .specReviews
-      %p.specReviews
-        Отзывы:
-      %p.specReviews
-        %span.specPosRev
-          +30
-        %br/
-        %span.specNegRev
-          \-$0
-
-  .specPortfolio
-    #portWork1.portfWork
-      %a{:href => "#"}
-        <img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview.JPG">
-
-    #portWork1.portfWork
-      %a{:href => "#"}
-        <img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview1.JPG">
-
-    #portWork1.portfWork
-      %a{:href => "#"}
-        <img class="portWorkPreview" / alt="$pottWorkName" src="images/workPreview2.JPG">
+= render @specialists

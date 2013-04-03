@@ -10,8 +10,6 @@ class SpecialistsController < ApplicationController
       @specialists = Specialist.all
     else
       @specialists = Specialist.specialization(specialist_type)
-      render text: @specialists.inspect
-      return
     end
 
     respond_to do |format|

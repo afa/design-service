@@ -1,16 +1,16 @@
 #leftMenu.leftMenuContainer
-  %a{:href => "PostVarPlan.html"}
-  #PostVarPlan.leftMenuButton
-    %p.leftMenuCaption
-      Варианты
-      %br/
-      планировок
-  %a{:href => "PlanRefactoring.html"}
-  #PostDevAdjust.leftMenuButton
-    %p.leftMenuCaption
-      Согласование
-      %br/
-      перепланировок
+  = link_to plan_developments_path do 
+    #PostVarPlan.leftMenuButton
+      %p.leftMenuCaption
+        Варианты
+        %br/
+        планировок
+  = link_to replanning_endorsements_path do 
+    #PostDevAdjust.leftMenuButton
+      %p.leftMenuCaption
+        Согласование
+        %br/
+        перепланировок
   %a{:href => "DesignProject.html"}
   #PostDesignProj.leftMenuButton
     %p.leftMenuCaption

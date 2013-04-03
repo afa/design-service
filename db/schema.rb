@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402161810) do
+ActiveRecord::Schema.define(:version => 20130403011801) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -78,6 +78,24 @@ ActiveRecord::Schema.define(:version => 20130402161810) do
 
   add_index "plan_developments", ["flat_info_id"], :name => "index_plan_developments_on_flat_info_id"
 
+  create_table "portfolio_photos", :force => true do |t|
+    t.string   "file"
+    t.integer  "specialist_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "portfolio_photos", ["specialist_id"], :name => "index_portfolio_photos_on_specialist_id"
+
+  create_table "replanning_attachments", :force => true do |t|
+    t.string   "file"
+    t.integer  "replanning_endorsement_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "replanning_attachments", ["replanning_endorsement_id"], :name => "index_replanning_attachments_on_replanning_endorsement_id"
+
   create_table "replanning_endorsements", :force => true do |t|
     t.boolean  "developed_by_general_projector"
     t.boolean  "replanning_organization_licensed"
@@ -110,6 +128,10 @@ ActiveRecord::Schema.define(:version => 20130402161810) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "username"
+    t.string   "name"
+    t.string   "surname"
+    t.string   "middle_name"
+    t.integer  "access_level"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -8,9 +8,11 @@ class Specialist < ActiveRecord::Base
   #SPECIALIST_TYPES = ["Дизайнер", "Архитектор", "Инженер", "Строительная фирма", "Строительная бригада"].map.with_index{|value,index| [index,value]}
   
   scope :specialization, ->(specialist_type){ where(specialist_type: specialist_type) }
-  
   def rating
     666
+  end
+  def rating_count
+    777
   end
   def positive_feedback
    '100500'

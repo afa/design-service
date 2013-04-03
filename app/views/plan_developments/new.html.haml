@@ -1,5 +1,5 @@
 / = render 'form'
-
+.wtf{style: 'clear:both;'}
 .Manual
   %p Заполните заявку:
 = simple_nested_form_for @plan_development, html: {multipart: true, class: 'postVarPlan'} do |f|
@@ -20,9 +20,6 @@
           = flatinfo_f.simple_fields_for :family_composition do |family_f|
             = family_f.input :first_line, input_html: {class: 'family'}, placeholder: '(Укажите количество и пол детей)', label: 'Состав семьи:'
             = family_f.input :second_line, input_html: {class: 'children'}, label: false
-            /%p.postFormNote
-            /  (Укажите количество и пол детей)
-            /  %br/
     
   #post2Quest.postContainer
     #postCaption2.postCaption
