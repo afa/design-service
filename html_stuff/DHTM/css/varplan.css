@@ -24,7 +24,7 @@
 
 .postFormText{
 	line-height:40px;
-	padding: 0 20px;
+	/*padding: 0 20px;*/
 	font-family:gardensc, Geneva, sans-serif;
 	font-style:italic;
 	font-size:18px;
@@ -108,14 +108,93 @@
 	behavior: url(scripts/PIE.htc);
 }
 #post2Forms{
-	margin:20px 20px;
+	padding:20px;
 }
 #post2Text{
 	/*height:300px;	*/
 	margin: 40px 0 0 0;
 
 }
-
+#TextKitchenSplit{
+	position:absolute;
+	top:80px;
+	left:20px;
+}
+#yn1{
+	position:absolute;
+	top:130px;
+	left:100px;
+}
+#KitchenSquare{
+	position:absolute;
+	top:80px;
+	left:240px;
+}
+#yn2{
+	position:absolute;
+	top:80px;
+	left:360px;
+}
+#TextClothRoom{
+	position:absolute;
+	top:192px;
+	left:20px;
+}
+#yn3{
+	position:absolute;
+	top:232px;
+	left:50px;
+}
+#TextWardrobes{
+	position:absolute;
+	top:232px;
+	left:264px;
+}
+#Wardrobes{
+	width: 60px;
+	border:none;
+	background:url(../images/textformbg.PNG) repeat-x;	
+}
+#TextCabinet{
+	position:absolute;
+	top:292px;
+	left:105px;
+}
+#yn4{
+	position:absolute;
+	top:292px;
+	left:265px;
+}
+#GuestText{
+	position:absolute;
+	top:355px;
+	left:20px;
+}
+#SleepersText{
+	position:absolute;
+	left:60px;
+	top:416px;
+}
+#LaundryText{
+	position:absolute;
+	top:470px;
+	left:105px;
+}
+#yn5{
+	position:absolute;
+	top:470px;
+	left:320px;
+}
+#CountText{
+	position:absolute;
+	top:540px;
+	left:24px;
+}
+#SleepersCount, #PlanCount{
+	width: 60px;
+	border:none;
+	background:url(../images/textformbg.PNG) repeat-x;	
+}
 .checkYNkitchen{
 
 }

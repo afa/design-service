@@ -46,7 +46,12 @@
 	min-width:980px;
 	font: 100% Verdana, Arial, Helvetica, sans-serif;
 /*	background-image:url(../images/fon.jpg); */
-	background: url(../images/fon-y.jpg) repeat-y;
+/*	background: url(../images/fon-y.jpg) repeat-y;*/
+	background-image:url(../images/MainContainerOnlyPalm.PNG), url(../images/madPalmFooter.PNG), url(../images/fon.jpg);
+	background-repeat: no-repeat, no-repeat, repeat-y;
+	background-position: center top, center bottom, top;
+	
+
 	margin: 0; 
 	padding: 0;
 	text-align: center; 
@@ -277,7 +282,10 @@ background:url(../images/palmT.PNG) no-repeat;
 	padding:0px;
 	background-image:url(../images/fon-menu-cpec.jpg);
 	background-repeat:no-repeat;
-   }	 
+   }
+ .leftTopContainer a{
+	 text-decoration:none;
+ }
 /*   
 .specMenuContainer{
 	height:380px;
@@ -319,7 +327,7 @@ __________________________________________________________________*/
 .twoColFixRtHdr #footer p {
 	font-family: 'dearestregular';/* , Geneva, sans-serif;*/
 	float:none;
-	height:120px;
+	height:110px;
 	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
 	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
 }
@@ -327,8 +335,11 @@ __________________________________________________________________*/
 	
 #footer {
 	margin: 0;
+	height:125px;
 	color:#22550a;
 	font: 16pt gardensc, Verdana, sans-serif; 
+	/*background-image:url(../images/madPalmFooter.PNG);
+	background-repeat:repeat;*/
 	padding: 10px 0;  /*Required courz margins are collapseable */
 	-moz-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
 	-webkit-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);

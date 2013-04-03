@@ -7,6 +7,8 @@
 <!--<link href="indexFixed.css" rel="stylesheet" type="text/css" /> -->
 <link href="css/unregistred.css" rel="stylesheet" type="text/css" />
 <link href="css/designproject.css" rel="stylesheet" type="text/css" />
+<link href="sctipts/check.jss" type="text/javascript" />
+
 
 </head>
 
@@ -114,15 +116,32 @@
    			
             <div id="pageCaption" class="pageCaption">
             	<div id="postVarPlanLogo" class="pageLogo">
-                </div>
+                 </div>
                 <div id="pageName">
                 	<p> Дизайн проект</p>
                 </div>
                 <div class="horLine"> </div>
-                <div class="manual">ВЫБЕРИТЕ РАЗДЕЛ ДИЗАЙН ПРОЕКТА, КОТОРЫЙ ХОТИТЕ РАЗРАБОТАТЬ!<br />
-                зочем столько капса и восклицательных знаков</div>
+                <div class="manual" id="SelectPLz">
+                	ВЫБЕРИТЕ РАЗДЕЛ ДИЗАЙН ПРОЕКТА, КОТОРЫЙ ХОТИТЕ РАЗРАБОТАТЬ!<br />
+                </div>
                                              
             <!-- emd #PageCaption--></div>
+            	 
+                 
+                 <!--                          FIX REQUIRED                  -->
+                 <p class="wtf">
+                 ВОРУЙ <br/>
+                 @<br />
+                 УБИВАЙ<br/>
+                 ПАЧИМУ СЛЕРФЛОАТ ОПЯТЬ УБИВАЕТ ФЛОАТ КОНТАЙНЕРА1!
+                 КЛЕАР ЛЕФТ ОНЛИ НЕ ДАНО?
+                 </p>
+                 
+                 <div id="MySpacingIsBrikenAgain" style="height:">
+                 </div>  
+            
+            
+            
             	<div class="typesContainer">
                                 
                 	<div class="WorkDocContainer">
@@ -131,27 +150,134 @@
                         </div>
                         
                         <div class="WorkDocType" id="Walls">
-                        	<div class="typeIconContainer">
+                        	<a class="DesignProjType" href="PostDesignProj.html">
+                            <div class="typeIconContainer">
                             </div>
                             <div class="WorkDocTypeCaption">
                             	$Some Work Doc Caption
                             </div>
+                            </a>
                             <div class="WorkDocTypeDescription">
                             	$Some quite short description <br/>
                                 3 lines allowed i guess.
                             </div>
+                            <div class="orderDesPlan" id="OrdBedRoom" onclick="check.js">
+                             
+                            </div>
+                           
                         <!--end WorkDocType --></div>
-                    	
+						
+                        <div class="WorkDocType" id="Floors">
+                        	<a class="DesignProjType" href="PostDesignProj.html">
+                            <div class="typeIconContainer">
+                            </div>
+                            <div class="WorkDocTypeCaption">
+                            	Декорирование полов
+                            </div>
+                            </a>
+                            <div class="WorkDocTypeDescription">
+                            	дизайн сервис дизайн сервис <br/>
+                                и снова дизайн сервис.
+                            </div>
+                            <div class="orderDesPlan" id="OrdBedRoom" onclick="check.js">
+                             
+                            </div>
+                           
+                        <!--end WorkDocType --></div>
+                             
                         
                     
                     <!--end workDocContainer--></div>
                     
                     <div class="ConceptContainer">
+                    	<div class="ConceptCaption">
+                        	Концепция
+                        </div>
+	                   	<div class="ConceptRow1">
+                 			
+                            <div class="ConceptType" id="bedroom">
+                        		<div class="typeIconContainer">
+                            	</div>
+                            	<div class="ConceptTypeCaption">
+                            		Дизайн гостинной
+                            	</div>
+                            	<div class="ConceptTypeDescription">
+                            		$Some quite short description <br/>
+                                	3 lines allowed i guess.
+                            	</div>
+                                <div class="orderDesPlan" id="OrdBedRoom">
+                                
+                                </div>
+	                        	<!--end ConceptDocType --></div>
+                                
+                             <div class="ConceptType" id="bedroom">
+                        		<div class="typeIconContainer">
+                            	</div>
+                            	<div class="ConceptTypeCaption">
+                            		Дизайн детской
+                            	</div>
+                            	<div class="ConceptTypeDescription">
+                            		Краткое описание раздела <br/>
+                                	3 lines allowed i guess.
+                            	</div>
+                                <div class="orderDesPlan" id="OrdBedRoom">
+                                
+                                </div>
+	                        	<!--end ConceptDocType --></div>
+                            
+                        <!--end ConcentRow1--></div>
+                        
+                    
+                    
+                    
+                        <div class="ConceptRow2">
+                        
+                        	   <div class="ConceptType" id="Hall">
+                        		<div class="typeIconContainer">
+                            	</div>
+                            	<div class="ConceptTypeCaption">
+                            		Дизайн прихожей
+                            	</div>
+                            	<div class="ConceptTypeDescription">
+                            		$Some quite short description <br/>
+                                	3 lines allowed i guess.
+                            	</div>
+                                 <div class="orderDesPlan" id="OrdBedRoom">
+                                
+                                </div>
+                               <!--end ConceptDocType --></div>
+                                
+                                <div class="ConceptType" id="Bath">
+                        		<div class="typeIconContainer">
+                            	</div>
+                            	<div class="ConceptTypeCaption">
+                            		Дизайн прихожей
+                            	</div>
+                            	<div class="ConceptTypeDescription">
+                            		$Some quite short description <br/>
+                                	3 lines allowed i guess.
+                            	</div>
+                                 <div class="orderDesPlan" id="OrdBedRoom">
+                                
+                                </div>
+	                       	<!--end ConceptDocType --></div>
+                    
+                    
+                         <!--end ConceptRow2--></div>
                     <!--end conceptContainer--></div>
                     
                     
+                    
+                    
+                    
+                    
+                 
+                 <p class="wtf">
+                 ВОРУЙ <br/>
+                 @<br />
+                 УБИВАЙ</p>   
                 <!--end typesContainer --></div>
-                
+                <div class="clearfloat"></div><!--Strecg still Fucked up-->
                
       <!--end thisPageContent--> </div>    
 	<!-- end #mainContent --> </div>
