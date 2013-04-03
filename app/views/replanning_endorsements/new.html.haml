@@ -1,10 +1,10 @@
 /%h1 New replanning_endorsement
 /= render 'form'
 /= link_to 'Back', replanning_endorsements_path
-
+.wtf{style: 'clear:both;'}
 .Manual
   %p.Alert ВНИМАНИЕ! Согласование проводится у генпроектировщика и эксплатирующей организации.
-= simple_form_for @replanning_endorsement, html: {class: 'planRefactoring'} do |f|
+= simple_nested_form_for @replanning_endorsement, html: {class: 'planRefactoring', multipart: true} do |f|
   .RefactDetails
     = f.input :developed_by_general_projector, as: :radio_buttons, input_html: {class: 'FormQuestions'}
     .clearfloat
@@ -15,9 +15,19 @@
     #postCaption.postCaption
     #fileGrab.OMFGFILEGRAB
       .clearfloat
-      #dropZone
-        %p Вы можете перетащить файлы сюда
-      %input{:type => "file", :value => "Attach lol"}/
+      /#dropZone
+      /  %p Вы можете перетащить файлы сюда
+      /%input{:type => "file", :value => "Attach lol"}/
+    
+    
+    
+      = f.simple_fields_for :replanning_attachments do |attachment_form| 
+        
+        = attachment_form.input :file, as: :file
+        = attachment_form.link_to_remove "Remove this attachment"
+        = f.link_to_add "Add attachment", :replanning_attachments
+    
+    
   #licence
     = f.input :replanning_organization_licensed, as: :radio_buttons, input_html: {class: 'FormQuestions'}
     .clearfloat

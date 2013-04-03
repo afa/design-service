@@ -25,6 +25,7 @@ class ReplanningEndorsementsController < ApplicationController
   # GET /replanning_endorsements/new.json
   def new
     @replanning_endorsement = ReplanningEndorsement.new
+    3.times{@replanning_endorsement.replanning_attachments.new}
 
     respond_to do |format|
       format.html # new.html.erb
