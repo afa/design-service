@@ -18,12 +18,21 @@ test:
   pool: 5
   timeout: 5000
 
-production:
+oldproduction:
   adapter: postgresql
   encoding: utf8
   host: postgresql5.locum.ru
   database: prijutme_desig76
   username: prijutme_desig76
   password: idoOmuRw
+  pool: 5
+  timeout: 5000
+production:
+  adapter: mysql
+  encoding: utf8
+  host: mysql5.locum.ru
+  database: prijutme_desis12
+  username: prijutme_desis12
+  password: kimplex34ur
   pool: 5
   timeout: 5000
