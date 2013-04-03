@@ -240,7 +240,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   libv8
-  mysql
+  mysql2
   nested_form
   rails (= 3.2.12)
   rspec-given

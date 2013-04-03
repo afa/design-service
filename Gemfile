@@ -6,7 +6,7 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'mysql', :platforms => :ruby
+gem 'mysql2', :platforms => :ruby
 #gem 'pg', :platforms => :ruby
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
