@@ -2,8 +2,10 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :specialist_type
+    = f.input :specialist_type, collection: Specialist::SPECIALIST_TYPE_ID_BY_NAME, value_method: ->((name, id)){id}, label_method: ->((name,id)){t "specialists.#{name}.singular"}
     = f.input :acreditation_level
+    = f.simple_fields_for :portfolio_photos do |photos_form|
+      = photos_form.input :file, as: :file
 
   .form-actions
     = f.button :submit

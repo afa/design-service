@@ -6,10 +6,11 @@ class SpecialistsController < ApplicationController
   # GET /specialists.json
   def index
     specialist_type = params[:specialist_type]
+    
     if !specialist_type || specialist_type.blank? || specialist_type == :all
       @specialists = Specialist.all
     else
-      @specialists = Specialist.specialization(specialist_type)
+      @specialists = Specialist.where(specialist_type: Specialist::SPECIALIST_TYPE_ID_BY_NAME[specialist_type])
     end
 
     respond_to do |format|
@@ -33,6 +34,7 @@ class SpecialistsController < ApplicationController
   # GET /specialists/new.json
   def new
     @specialist = Specialist.new
+    @specialist.profile = current_user
 
     respond_to do |format|
       format.html # new.html.erb
@@ -50,6 +52,7 @@ class SpecialistsController < ApplicationController
   def create
     @specialist = Specialist.new(params[:specialist])
     @specialist.profile = current_user
+
     respond_to do |format|
       if @specialist.save
         format.html { redirect_to @specialist, notice: 'Specialist was successfully created.' }

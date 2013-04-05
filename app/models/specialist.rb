@@ -4,10 +4,8 @@ class Specialist < ActiveRecord::Base
   attr_accessible :acreditation_level, :specialist_type
   has_many :portfolio_photos
   
-  #SPECIALIZATION = {'designers' => 'Дизайнер' }
-  #SPECIALIST_TYPES = ["Дизайнер", "Архитектор", "Инженер", "Строительная фирма", "Строительная бригада"].map.with_index{|value,index| [index,value]}
-  
-  scope :specialization, ->(specialist_type){ where(specialist_type: specialist_type) }
+  SPECIALIST_TYPE_ID_BY_NAME = Hash[ ["designers", "architectors", "engineers", "building_companies", "building_brigades"].map.with_index{|value,index| [value, index]} ]
+
   def rating
     666
   end
