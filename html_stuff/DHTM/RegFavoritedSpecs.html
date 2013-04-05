@@ -6,8 +6,7 @@
 
 
 <link href="css/registred.css" rel="stylesheet" type="text/css" />
-<link href="css/regplanrefactoring.css" rel="stylesheet" type="text/css" />
-
+<link href="css/favoritedspecs.css" rel="stylesheet" type="text/css" />
 <!-- jQuery -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 <!-- required plugins -->
@@ -15,7 +14,6 @@
 <!--[if IE]><script type="text/javascript" src="scripts/jquery.bgiframe.js"></script><![endif]-->
 <!-- jquery.datePicker.js -->
 <script type="text/javascript" src="scripts/jquery.datePicker.js"></script>
-
 
 </head>
 
@@ -96,7 +94,7 @@
     <ul class="mySpecialist nav">
     	<li id="special"><a href="#" id="spec">МОИ СПЕЦИАЛИСТЫ</a></li>
         <li id="thebest"><a href="# "id="best">ИЗБРАННЫЕ</a></li>
-        <li"><a href="# "id="work">РАБОТАЮТ</a></li>
+        <li><a href="# "id="work">РАБОТАЮТ</a></li>
     </ul>
     
     <!--end .cabinetNavC --></div>
@@ -138,25 +136,75 @@
   <div class="content">
     <div class="thisPageContent">
     <div class="rightPages"></div>
-    	
+
         <div class="caption">
-    		<p> ЙА БОЛВАНКО РЕГИСТРЕД ПЕЙДЖА</p>
+    		<p> ВЫБОР СПЕЦИАЛИСТОВ</p>
         </div>
+        <hr class="pageHr"/>
+	<!--        
         <div class="cabinetHorNav">
          	 <a class="cabinetHorNavlink" href="#">История</a>
              <a class="cabinetHorNavlink" href="#">Пополнение</a>
              <a class="cabinetHorNavlink" href="#">Договоры</a>
              <a class="cabinetHorNavlink" href="#">Счета</a>
-        <!--end .cabinetNav --></div>
+        <!--end .cabinetNav --><!--</div>-->
+    
+    <div class="specSelectNav">
+    	<div class="CategoryLogo" style="background:url(images/DesignerIco.PNG) no-repeat"></div>
+        <div class="CategoryCaption">Дизайнеры </div>
+        <hr class="CaptionHr" />
+        <div class="find">
+        <p id="findCaption">поиск:</p>
+        <form id="findActive">
+        	<input type="text" id="findSpec" />
+        </form>
+        <!--end .find--></div>
         
-        
-    <!--end .Content--></div>
+        <div class="showN">
+        <p id="showNCaption">Выводить по:</p>
+        <form id="showMe">
+        	<input type="number" id="showNspecs" />
+        </form>
+        <!--end .showMe--></div>
+    <!--end specSelectNav--></div>
+    	
+    <div class="resultShow">
+    	
+    	<div class="specPreview">
+        	<div class="previewNumber"> N </div>
+            <div class="specAvaContainer"> <img class="specAvaImg" src="images/specAva.JPG" /> </div>
+            <div class="specNamingContainer">
+	            <div class="specFIO"> Familia Imja Speca</div>          
+                <div class="specUserName"> [$UserName]</div>
+             <!--endNamingContainer--></div>
+             
+             <div class="specRate">
+            	<span class="positiveRate">+11</span>
+               	<span class="negativeRate">-23</span>
+    		</div>
+            
+            <div class="specialistDescription">
+            	$Prety long about message; What have you done;
+            </div> 
+            <div class="specBestWork"><img  class="bestWorkSource" src="images/workPreview2.JPG" /></div>
+            
+            <div class="targetSpecNav">
+            
+            	<a class="tSNavA" href="#">Смотреть галерею работ</a>
+                <!--<a class="tSNavA" href="#"></a> -->
+            <!--end .targetSpecNav--></div>
+        <!--end specPreview--></div>    
+       
+    <!--end .resultShow--></div>
     
-    
-    
-    
-
-    </div>
+     <div class="ResultNaviContainer">
+      <a href="#"><div class="showPrev"></div>	</a>
+      <a href="#"><div class="showNext"></div> </a>
+     <!--end resultNavi-->   </div>
+     
+     
+  		  <!--thisPageContent--></div>
+        <!--end .Content--></div>
     <!--end bookCover>--></div>
   <!-- end .contentainer --></div>
         

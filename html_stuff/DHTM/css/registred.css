@@ -367,6 +367,13 @@ ul li{
 	color:#591d1d;
 }
 
+
+.pageHr{
+	background:#949494;
+	color:#949494;
+	width:604px;
+}
+
 /* ~~ The footer ~~ */
 
 .footer{ 

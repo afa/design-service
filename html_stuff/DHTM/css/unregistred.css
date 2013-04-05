@@ -4,6 +4,11 @@
 
 /*-----FontFaces ------*/
 /* Menu fonts, table fonts, PostForm font */
+div{
+	border:0px;
+	padding:0px;
+	margin:0px;
+}
 @font-face {
     font-family: 'gardensc';
     src: url('../fonts/gardensc_03_1-webfont.eot');
@@ -12,7 +17,13 @@
          url('../fonts/gardensc_03_1-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+	font-family: 'monotype_corsiva';
+	src:url('../fonts/MTCORSVA.TTF') format('truetype');
+	font-weight: normal;
+	font-style:normal;
 }
 
 @font-face {
@@ -207,6 +218,8 @@ input[type='radio']:checked + label {
 	width:163px;
 	text-align:center;
 	background-repeat:no-repeat;
+	border:0px;
+	border-collapse:collapse;
 }
 
 
