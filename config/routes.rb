@@ -1,5 +1,8 @@
 DesignService::Application.routes.draw do
 
+  resources :clients
+
+
   resources :specialists
   
   get 'replanning_endorsements' => 'replanning_endorsements#new'
