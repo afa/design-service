@@ -7,39 +7,75 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #000;
+	
 }
+
+/*Config */
 /* fonts-declarations */
+/* Menu fonts, table fonts, PostForm font */
 @font-face {
-    font-family: DeliciousRoman;
-    src: url(http://www.font-face.com/fonts/delicious/Delicious-Roman.otf);
-    font-weight:400;
+    font-family: 'gardensc';
+    src: url('../fonts/gardensc_03_1-webfont.eot');
+    src: url('../fonts/gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gardensc_03_1-webfont.woff') format('woff'),
+         url('../fonts/gardensc_03_1-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
 }
+
 @font-face {
-    font-family: 'gardenscregular';
-    src: url('fonts/gardensc_03_1-webfont.eot');
-    src: url('fonts/gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/gardensc_03_1-webfont.woff') format('woff'),
-         url('fonts/gardensc_03_1-webfont.ttf') format('truetype'),
-         url('fonts/gardensc_03_1-webfont.svg#gardenscregular') format('svg');
+	font-family: 'monotype_corsiva';
+	src:url('../fonts/MTCORSVA.TTF') format('truetype');
+	font-weight: normal;
+	font-style:normal;
+}
+
+
+
+/*Page captions */
+@font-face {
+    font-family: 'dejavu_sans';
+    src: url('../fonts/dejavusanscondensed-webfont.eot');
+    src: url('../fonts/dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dejavusanscondensed-webfont.woff') format('woff'),
+         url('../fonts/dejavusanscondensed-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
+/* lol wtf*/
+@font-face {
+    font-family: 'minion_pro';
+    src: url('../fonts/minion_pro-webfont.eot');
+    src: url('../fonts/minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/minion_pro-webfont.woff') format('woff'),
+         url('../fonts/minion_pro-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* ~~ Element/tag selectors ~~ */
-ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+ul, ol, dl, div, span { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
 	padding: 0;
 	margin: 0;
 }
 h1, h2, h3, h4, h5, h6, p {
-	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
-	padding-right: 15px;
-	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
-}
-a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
-	border: none;
+	margin: 0;	
+	padding: 0; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
 }
 
+a img { 
+	border: none;
+}
+.registredContainer{
+	font-family:gardensc, verdana, sans-serif;
+	font-size:16pt;
+	min-width:980px;
+	background-image:url(../images/MainContainerOnlyPalm.PNG), url(../images/madPalmFooter.PNG), url(../images/fon.jpg);
+	background-repeat: no-repeat, no-repeat, repeat-y;
+	background-position: center top, center bottom, top;
+}
 /* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
 a:link {
 	color: #42413C;
@@ -59,73 +95,330 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~this fixed width container surrounds the other divs~~ */
 .container {
-	width: 960px;
-	background-color: #FFF;
+	width: 980px;
+	/*background-color: #FFF; GAZ UHODI */
 	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
 }
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 .headerReg {
-	background-color: #ADB96E;
+	position:relative;
+	padding:0 20px;
 }
 
-/* ~~ These are the columns for the layout. ~~ 
+#Logo{
+display:block;
+float:left;
+width:380px;
+height:130px;
+}
+.topMenuBut{
+	position:absolute;
+	bottom:-25px;
+	background-repeat:no-repeat;
+}
+#topMenuBut1{
+	right:493px;
+	top:70px; /*315+138=468 */
+	width:138px;
+	height:86px;
+	background:url(../images/HorMenuVarPlan.png);
+}
+#topMenuBut2{
+	right:315px;  /*166+169+20=330*/
+	width:169px;
+	height:66px;
+	background:url(../images/horMenuPlanRefactoring.PNG);
+}
+#topMenuBut3{
+	right:166px; /*141+5 */
+	width:141px;
+	height:87px;
+	background:url(../images/horMenuDesignProj.png);
+}
+#topMenuBut4{
+	right:20px;
+	width:140px;
+	height:64px;
+	background:url(../images/HorMenuAuthorMaint.png);
+}
+.topMenuCaption{
+	visibility:hidden;
+}
+/* end Header & HeaderNav */
 
-1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
 
-2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+/*Wrapper to show bg */
+.BookCover{
+	width:980px;
+	height:930px;
+	padding:20px;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	background:url(../images/coverpatter.png) repeat;
+}
 
-3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
-
-4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
-
-*/
+/*-------------- leftMenu -------------*/
 .sidebar1 {
 	float: left;
-	width: 180px;
-	background-color: #EADCAE;
+	width: 292px;
+	height:910px;
+	position:relative;
+	background-color:rgb(237, 237, 237);
 	padding-bottom: 10px;
+	z-index:2;
+	font-size:18px;
 }
-.content {
-
-	padding: 10px 0;
-	width: 780px;
-	float: left;
-}
-
-/* ~~ This grouped selector gives the lists in the .content area space ~~ */
-.content ul, .content ol { 
-	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+.speceBetween{
+	float:left;
+	width:8px;
+	height:910px;
 }
 
-/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
-ul.nav {
-	list-style: none; /* this removes the list marker */
-	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
-	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+/*---DesignElements---*/
+.rightPages{
+	width:14px;
+	height:910px;
+	background:url(../images/PagesRightBorder.PNG) no-repeat;
+	position:absolute;
+	top:0px;
+	right:-14px;
 }
-ul.nav li {
-	border-bottom: 1px solid #666; /* this creates the button separation */
+.leftPages{
+	width:16px;
+	height:909px;
+	position:absolute;
+	top:0px;
+	left:-16px;
+	background:url(../images/PagesLeftBorder.png) no-repeat;
+	z-index:1;
 }
-ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
-	padding: 5px 5px 5px 15px;
-	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
-	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
-	text-decoration: none;
-	background-color: #C6D580;
+.springs{
+	width:50px;
+	height:90px;
+	position:absolute;
+	right:-29px;
+	z-index:3;
+	background:url(../images/Connector.PNG) no-repeat;
 }
-ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
-	background-color: #ADB96E;
+#connector1{
+	top:80px;
+}
+#connector2{
+	top:280px;	
+}
+#connector3{
+	top:520px;
+}
+#connector4{
+	top:750px;
+}
+
+
+
+.hiUserName{
+	width:292px;
+	height:58px;
+	margin-top: 27px;
+	background:#cee2b1;
+	text-align: center;
+}
+
+#UserNameDisplay{
+	font-family:gardensc, verdana, sans-serif;
+	text-align:center;
+}
+
+.cabinetNavContainer{
+	width:auto;
+	height:255px;;
+	color:#d55400;
+	padding: 20px 0 0 50px;
+	margin-bottom:47px;
+	font-size:-1;
+}
+#order{
+	color:#d55400;
+}
+#account{
+	color:#d55400;
+}
+#laccount{
+	margin-top:5px;
+}
+.settings{
+	color:#434242;
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+#special{
+	margin-bottom:10px;
+}
+#spec{
+	color:#8d0606;
+}
+#thebest{
+	margin-bottom:4px;
+}
+#best{
+	color:#5a8720;
+}
+#work{
+	color:#5a8720;
+}
+#ulSpace{
+	height:50px;
+}
+ul li{
+	list-style: none;
+}
+
+
+.mySpecialistNav a{
+	color:#447801;
+}
+.mySpecialistNav a:first{
+	color:#9a2424 !important; 
+}
+#navSpec a:{
+	color:#9a2424;	
+}
+
+
+
+.specMenuContainer{
+	width:332px;
+	height:380px;
+	margin-top:50px;
+}
+
+.specMenuButton{
+	margin:8px auto;
+	width:203px;
+	height:51px;
+	padding:0px;
+	margin-left:;
+	background-image:url(../images/menu-spec-reg.png);
+	background-repeat:no-repeat;
+   }
+
+.specMenuButton:hover{
+	background-image:url(../images/menu-spec-reg-hover.png);	
+	}
+.specMenuCaption{
+	font-family: gardensc, verdana, sans-serif, #fff;
+	font-size: 12pt;
+	font-stretch:ultra-condensed;
+	font-style:normal;
+	line-height:50px;
 	color: #FFF;
+	text-height:auto;
+	text-align:center;
+	z-index:6;
+	/*margin-left:56px;*/
+	}
+#specSelect{
+	color:#8d0606;
+	text-align:center;
+	
+}
+/*endSpecMenu */
+
+.calendarAnchor{
+	margin: 8px auto;
+	width:216px;
+	height:144px;
+	background:url(../images/CalendarAnchor.PNG) no-repeat;
 }
 
-/* ~~ The footer ~~ */
-.footer {
+/*~~This page content universal~~ */
+
+.content {
+	height:912px;
+	position:relative;
 	padding: 10px 0;
-	height:120px;
-	background-image:url(images/fon-y.jpg);
-	position: relative;/* this gives IE6 hasLayout to properly clear */
-	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+	width: 640px;  /*original 680 px  but 980 -20x2 (bgPadding) -292px (sidebar1) - 8 (spaceBeetween) */
+	float: left;
+	z-index:1;
+	background-color:#ededed;
+}
+.thisPageContent{
+	float:left;
+	width:640px;
+	margin-top:18px;
+}
+.cabinetHorNav{
+	color:#d55400;
+	margin-left:44px;
+	margin-bottom:34px;
+	background-color:#dbdbdb;
+	width:593px;
+	border-top:solid #767676;
+	padding-left:15px;
+	height:42px;
+	line-height:42px;
+	vertical-align:middle;
+}
+.cabinetHorNavlink:active, .cabinetHorNavlink:hover{
+	color:#591d1d;
+}
+.cabinetHorNavllink:vistited{
+	color:#591d1d;
+}
+
+.pageHr{
+	background:#949494;
+	color:#949494;
+	width:604px;
+}
+/* ~~ The footer ~~ */
+
+.footer{ 
+	margin: 0 auto; /*Omg collapse */
+	padding: 0 0px 0 0px;/* Buben */ 
+	height : 119px;
+	width:980px;
+  	/* background-image:url(../images/FooterBg.PNG);*/
+	
+} 
+.footer p {
+	margin: 0;
+	color:#22550a;
+	font: 16pt gardensc, Verdana, sans-serif; 
+	padding: 10px 0;  /*Required courz margins are collapseable */
+	-moz-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+	-webkit-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
+}
+
+ .FooterCenter {
+	text-align:center;
+	float:left;
+	margin-left:200px;
+	width: 20%;
+   }
+
+.FooterLeft {
+	text-align:left;
+	float:left;
+	width: 25;
+   }
+
+.FooterRight {
+	float:right;
+	text-align:right;
+	width:20%;
+	margin: 0px;
+	padding: 0px;
+   }	
+	
+
+
+/*EndFooter */
+#delayed  {
+	margin:20px auto;
+	text-align:center;
 }
 
 /* ~~ miscellaneous float/clear classes ~~ */
@@ -143,34 +436,19 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	font-size: 1px;
 	line-height: 0px;
 }
- .FooterCenter {
-	text-align:center;
-	float:left;
-	margin-left:200px;
-	width: 20%;
-   }
 
-.FooterLeft {
-	text-align:left;
-	float:left;
-	width: 20%;
-   }
-
-.FooterRight {
-	float:right;
-	text-align:right;
-	width:20%;
-	margin: 0px;
-	padding: 0px;
-   }
-#delayed  {
-	margin:20px auto;
-	text-align:center;
-	}
-	
-.bhSumm{
-	font:Georgia, "Times New Roman", Times, serif;
-}
 -->
 /* CSS Document */
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+
 

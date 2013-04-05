@@ -10,7 +10,7 @@
 <link href="css/varplan.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body class=>
+<body class="Unregistred">
 <div class="twoColFixRtHdr">
 
 <div id="container">
@@ -101,7 +101,7 @@
       <!--end leftTopContainer --> </div>   
      <!-- <div id="wtf" class="wtf"> </div>  KILL ALL FLOATS IF MODULE--> 
 	
-    
+    <!--
     <div id="DebugMode">
     <script type="application/javascript">
 		
@@ -127,7 +127,7 @@
 	<input type="button" onclick="showOverFlow()" value="Show overflow"/>
     <input type="button" onclick="minWidthCheck(1)" value="MinWidth+"/>
     <input type="button" onclick="minWidthCheck(-1)" value="MinWidth-"/>
-    <!--end debugmode --></div>
+    <!--end debugmode --><!--</div>-->
    
  	
     
@@ -179,79 +179,91 @@
                  			<div id="postNumber2" class="postNumber"></div>
                             <div class="clearfloat"></div>
                  	<div id="post2Forms">
-                    <div id="#kitchenContainer">
                     
-                    <span class="postFormText" id="post2Text" style="float:left;">
+                    
+                    <!--<div id="#kitchenContainer"> -->
+                    
+                    <div class="postFormText" id="TextKitchenSplit" >
                         Объеденить кухню <br />
                         с гостинной?<br />
-                    </span>
-                    <span>
-                        <input type="radio" class="checkYNkitchen" checked="checked"  name="kitchenSplit"  id="checkYkitchen"/> 
-                        <label for="checkYkitchen" class="check"> Да </label>
-                    </span>
-                    <span>
-                       <input type="radio" class="checkYNkitchen"  name="kitchenSplit"  id="checkNnokitchen"/>
-                       <label for="checkNnokitchen" class="check"> Нет</label>
-                    </span>
+                    </div>
+                    
+    					<div class="yNinLine" id="yn1">                	
+	                       	<input type="radio" class="checkYNkitchen" checked="checked"  name="kitchenSplit"  id="checkYkitchen"/> 
+                        	<label for="checkYkitchen" class="check"> Да </label>
+                    	
+	                       <input type="radio" class="checkYNkitchen"  name="kitchenSplit"  id="checkNnokitchen"/>
+    	                   <label for="checkNnokitchen" class="check"> Нет</label>
+						<!--end .yNline --></div>
                     
                     
-                    <p style="float:left;"> 	
+                    <div class="postFormText" id="KitchenSquare"> 	
                         Размер кухни: 
-
+					 <!--end KitchenSquare--></div>
+                     	<div class="yNinCol" id="yn2">
                         <input class="kitchenSize" type="radio"  value="1" name="kitchenSizen" id="kitcheBig"/>
                         <label for="kitcheBig" class="checkY"> Больше 5 кв.м.<br /> </label>
                         
                         <input class="kitchenSize" type="radio" value="0" name="kitchenSizen" id="kitcheSmall"/>
                         <label for="kitcheBig" class="checkN"> Меньше 5 кв.м.</label>
-                    </p>
-                    <div class="clearfloat"></div>
+                   		<!--end yNinCol--></div>
+                    <!-- BRAINDEAD ABSOLUTES COMES IN TO PLAY FUCK FLOATS FROM NOW<div class="clearfloat"></div> -->
                     
-                    </div>
-                    <div> 
- 	                   <p class="postFormText" >
+                    <!-- end kitchenContainer </div> -->
+                    
+                   
+ 	                   <div class="postFormText" id="TextClothRoom" >
         	               Наличие градеробных<br />
             	           комнат:
-    	               </p>   
-                	   <span>
+    	               </div>   
+                	 	<div class="yNinLine" id="yn3">
                     	<input class="checkYNgarderobe" type="radio" name="garderobe" value="1" checked="checked" id="checkYgarderobe"/>
                        	<label for="checkYgarderobe" class="check">Да</label> 
-					   </span>
-                       <span>
+					   
                        	<input class="checkYNgarderobe" type="radio" name="garderobe" value="0" id="checkNgarderobe"/>
                        	<label for="checkNgarderobe" class="check">Нет</label>
-                       </span>
-                   	</div>
+                       <!--end ynInline yn3--></div>
+                   
                     
                     
-                    <p class="postFormText">
+                    <div class="postFormText" id="TextWardrobes">
                       Количество встроенных <br />
                       шкафов, включая <br />
-                      гардеробные комнаты.	<input class="wardrobes" type="text"  /> <br />
-                    </p>
+                      гардеробные комнаты.	<input class="wardrobes" name="wardrobes" id="Wardrobes" type="text"  /> <br />
+                    </div>
                     
-                    <p class="postFormText">
+                    
+                    
+                    <div class="postFormText" id="TextCabinet">
                     	Нужен кабинет? <input class="checkYN cabinet" type="radio" name="cabinet" value="1"/> <input class="checkYN cabinet" type="radio" name="cabinet" value="0"/>
-                    </p>
+                    </div>
                     
                     
-                    <p class="postFormText">
+                    <div class="postFormText" id="GuestText">
                     Любите ли Вы <br/>
-                	принимать гостей?<input class="checkYN guests" type="radio" name="guests" value="0"/>Нет <input class="checkYN guests" type="radio" name="guests" value="5"/> До 5<input class="checkYN guests" type="radio" name="guests" value="15"/> 5-15 <input class="checkYN guests" type="radio" name="guests" value="99"/> Более 15  <br />
-                    </p>
+                	принимать гостей?<input class="checkYN guests" type="radio" name="guests" value="0"/>Нет
+                     <input class="checkYN guests" type="radio" name="guests" value="5"/> До 5
+                     <input class="checkYN guests" type="radio" name="guests" value="15"/> 5-15 
+                     <input class="checkYN guests" type="radio" name="guests" value="99"/> Более 15  <br />
+                    </div>
                     
-                    <p class="postFormText">
-                    Количество спальных мест:<input class="Sleepers" type="text"/>
-                    </p>
-                    	<p class="postFormText">
-                    		Наличие постирочной: 
-                            <input class="checkYN laundry" type="radio" name="laundry" value="1"/> 
-                            <label for="laundryY" class="check">Да</label>
-                            <input class="checkYN laundry" type="radio" name="laundry" value="0"/>
-                            <label for="laindryN" class="check">Нет</label> 
-                    	</p>
-                    	<p class="postFormText">
-                    		Сколько предоставить Вам вариантов планировок?<input class="varPlanCount" type="text" /> 
-                    	</p>
+                    <div class="postFormText" id="SleepersText" >
+                    Количество спальных мест:<input class="Sleepers" id="SleepersCount"  type="text"/>
+                    </div>
+                    
+                    <div class="postFormText" id="LaundryText">
+                    		Наличие постирочной:     
+                    </div>
+                    <div class="yNinLine" id="yn5">
+                    	<input class="checkYN laundry" type="radio" name="laundry" value="1"/> 
+                        <label for="laundryY" class="check">Да</label>
+                        <input class="checkYN laundry" type="radio" name="laundry" value="0"/>
+                        <label for="laindryN" class="check">Нет</label> 
+                     </div> 
+                           
+                    <div class="postFormText" id="CountText">
+                    		Сколько предоставить Вам вариантов планировок?<input class="varPlanCount" id="PlanCount" type="text" /> 
+                    </div>
                     
                     </div>
                <!--end #post2Quest--></div>
