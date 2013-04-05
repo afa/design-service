@@ -38,27 +38,36 @@ ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your li
 .TargetOrder{
 	width:575px;
 	height:255px;
-	background:url(../images/ClientCabinetOrderCheckOut.png);
+	font-size:12pt;
+	/*background:url(../images/ClientCabinetOrderCheckOut.png);*/
 	margin:5px auto;
+	border-width:8px;
 	position:relative;
+	border-style:solid;
+	border-color:#e8d994;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	behavior:url(scripts/PIE.htc);	
 }
 .DesignProjectOrder{
 	border-color:#efd4c2;
 	-moz-border-radius:50px;
 	-webkit-border-radius:50px;
-	border-width:6px;
+	border-width:8px;
 	border-radius:50px;
-	behavior: url(scripts/PIE.htc);	
+	behavior:url(scripts/PIE.htc);	
 }
 	/*3 OtherOrder Types There*/
 
 .MainDateContainer{
-	background:url(../images/ClientCabinetDateContainer.png) no-repeat;
-	width:140px;
+	/*background:url(../images/ClientCabinetDateContainer.png) no-repeat;*/
+	/*width:140px;*/
 	height:50px;
 	position:absolute;
-	top:0px;
-	right:0px;	
+	top:50px;
+	right:60px;
+	text-align:right;
+	font-size:12pt;
 }
 
 
@@ -68,7 +77,31 @@ ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your li
 	position:absolute;
 	left:20px;
 	top:20px;
+	font-size:12pt;
 }
+.FinishDate{
+	position:absolute;
+	text-align:right;
+	top:90px;
+	right:60px;
+}
+.CompletedPart{
+	position:absolute;
+	top:160px;
+	left:250px;
+	float:right;
+	text-align:center;
+	line-height:28px;
+	vertical-align:middle;
+	font-size:12pt;
+}
+.ProgressBarContainer{
+	position:absolute;
+	left:90px;
+	top:0;
+	text-align:center;
+}
+
 .TargetOrderName{
 	color:#752316;
 	text-decoration:underline;
@@ -79,33 +112,69 @@ ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your li
 	position:absolute;
 	left:20px;
 	top:90px;
+	font-size:14pt;
+}
+.toDate{
+	position:absolute;
+	top:25px;
+	right:105px;
 }
 
 .RelatedDocsContainer{
 	height:40px;
 	positon:absolute;
-	left:50px;
-	top:200px;
+	padding-left:50px;
+	padding-top:200px;
 }
-.ProgressBarContainer{
-	position:absolute;
-	left:75px;
-	top:150px;
+a.osInWork{
+	color:#6b140a;
 }
+a.contract{
+	color:#568aa0;
+}
+a: visited{
+	color:#ff0;
+}
+a: active{
+	color:#cecece;
+}
+a.mdcDate{
+	color:#668041;
+}
+
 
 .DocsList{
 	display:inline;
 	list-style:none;
 	color:#4c4c4c;
+	position:absolute;
 	}
-
+.cabinetTopNav{
+	color:#d55400;
+	margin-left:44px;
+	margin-bottom:50px;
+	background-color:#dbdbdb;
+	width:593px;
+	border-top:solid #767676;
+	padding-left:15px;
+	height:42px;
+	line-height:42px;
+	vertical-align:middle;
+}
+.caption{
+	color:grey;
+	padding: 0 0 0 50px;
+	width: 600px;
+	vertical-align:middle;
+	font-size:24px;
+}
 
 
 			/*Progress Bar */
 .ProgressBarContainer{
 	width:192px;
 	height:24px;
-	background:#000;
+	background:#efefef;
 	border-color:#b3b3b3;				/*USE MATH AND BRAINS * something fucked up with the border*/ 
 	-moz-border-radius:12px;
 	-webkit-border-radius:12px;
@@ -124,4 +193,6 @@ ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your li
 	border-width:3px;
 	border-radius:12px;
 	behavior: url(scripts/PIE.htc);	
+	position:absolute;
+	text-align:center
 }
