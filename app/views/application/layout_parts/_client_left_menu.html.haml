@@ -1,0 +1,49 @@
+.sidebar1
+  .leftPages
+  #connector1.springs
+  #connector2.springs
+  #connector3.springs
+  #connector4.springs
+
+  .hiUserName
+    .hiUserNameFloater{:style => "height:8px; width:100%;"}
+    %div
+      Добро Пожаловать
+      %br/
+      $Name [$Username]
+  .cabinetNavContainer
+    %ul.cabinet.nav
+      %li
+        %a#order{:href => "#"} МОИ ЗАКАЗЫ
+      %li#laccount
+        %a#account{:href => "#"} ЛИЦЕВОЙ СЧЕТ
+      %li.settings
+        %a.settings{:href => "#"} МОИ НАСТРОЙКИ
+    %ul.mySpecialist.nav
+      %li#special
+        %a#spec{:href => "#"} МОИ СПЕЦИАЛИСТЫ
+      %li#thebest
+        %a#best{:href => "# "} ИЗБРАННЫЕ
+      %li#working
+        %a#work{:href => "# "} РАБОТАЮТ
+
+  #specialistMenuContainer.specMenu
+    #specSelect
+      ВЫБОР СПЕЦИАЛИСТОВ
+    #architect.specMenuButton
+      %p.specMenuCaption Архитекторы
+    #Designer.specMenuButton
+      %p.specMenuCaption Дизайнеры
+    #Enginere.specMenuButton
+      %p.specMenuCaption Инженеры
+    #BuildCompany.specMenuButton
+      %p.specMenuCaption Строительные фирмы
+    #BuildAshot.specMenuButton
+      %p.specMenuCaption Строительные бригады
+
+  #calendar
+    %p BLOW YOUR BRAIN
+    %input#date{:type => "date"}/
+    #date.calendarAnchor
+
+.speceBetween

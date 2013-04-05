@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title= title
+    = stylesheet_link_tag "registered/application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body.registredContainer
+    .notice= notice
+    .alert= alert
+  
+    .container
+      
+      = render 'application/layout_parts/client_header'
+      
+      .BookCover
+        = render 'application/layout_parts/client_left_menu'      
+        .content
+          .thisPageContent
+            .rightPages
+            = yield
+      = render 'application/layout_parts/client_footer'
