@@ -1,6 +1,8 @@
 DesignService::Application.routes.draw do
 
-  get 'specialist_category/:specialist_type' => 'specialists#index', as: 'specialist_category'
+  resources :clients
+
+
   resources :specialists
   
   get 'replanning_endorsements' => 'replanning_endorsements#new'

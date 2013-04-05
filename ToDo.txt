@@ -1,3 +1,5 @@
+notice/alert flash images can break markup, make the position:fixed (if any)
+
 Ленту(Timeline)/календарь сделать!
 
 Вопросы:

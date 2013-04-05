@@ -26,7 +26,19 @@ ru:
   specialists:
     designers:
       title: 'Дизайнеры'
-    
+      singular: 'Дизайнер'
+    architectors:
+      title: 'Архитекторы'
+      singular: 'Архитектор'
+    engineers:
+      title: 'Инженеры'
+      singular: 'Инженер'
+    building_companies:
+      title: 'Строительные фирмы'
+      singular: 'Строительная фирма'
+    building_brigades:
+      title: 'Строительные бригады'
+      singular: 'Строительная бригада'
     title: 'Специалисты'
     
   title: 'Дизайн сервис'

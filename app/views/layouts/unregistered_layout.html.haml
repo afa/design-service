@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %title= title
+    = stylesheet_link_tag "unregistered/application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %noindex
+      .notice= notice
+      .alert= alert
+      
+      .twoColFixRtHdr
+        #container
+          #header
+            #designService.headerLayer1
+            = render 'devise/menu/login_box'
+            #UserMenu{:style => "visibility:hidden"}
+            .clearfloat
+          #sidebar1
+            .wtf
+            = render 'application/layout_parts/sidebar_order_types'
+          #mainContent
+            #leftTopContainer.leftTopContainer
+              = render 'application/layout_parts/specialists_box'
+            /= render 'application/layout_parts/debug_mode'
+            #thisPageContent.thisPageContent
+              #pageCaption.pageCaption
+                .pageLogo
+                #pageName
+                  %p= subtitle
+                .horLine
+              = yield
+            
+          / This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats
+          %br.clearfloat/
+          
+          = render 'application/layout_parts/footer'
