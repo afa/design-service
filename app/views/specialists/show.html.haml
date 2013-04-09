@@ -10,7 +10,7 @@
   %b Profile:
   = @specialist.profile
 
-= @specialist.portfolio_photos.inspect
+= render @specialist.portfolio_photos
 
 = link_to 'Edit', edit_specialist_path(@specialist)
 \|
