@@ -19,10 +19,11 @@
             .clearfloat
           #sidebar1
             .wtf
-            = render 'application/layout_parts/sidebar_order_types'
+            = render 'application/layout_parts/order_types_unregistered'
           #mainContent
             #leftTopContainer.leftTopContainer
-              = render 'application/layout_parts/specialists_box'
+              #specMenuContainer.specMenu
+                = render 'application/layout_parts/specialists_box'
             /= render 'application/layout_parts/debug_mode'
             #thisPageContent.thisPageContent
               #pageCaption.pageCaption

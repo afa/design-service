@@ -1,0 +1,36 @@
+.headerReg
+  .Logo
+    %a{:href => "#"}
+      /%img#Logo{:alt => "Design Serive", :name => "Design Service", :src => "images/logo-2.png"}/
+      = image_tag 'logo-2.png', alt: "Design Service", name: "Design Service", id: 'Logo'
+  #topMenuContainer
+    = link_to plan_developments_path do
+      #topMenuBut1.topMenuBut
+        #VarPlan.topMenuCaption
+          Разработка
+          %br/
+          Вариантов
+          %br/
+          Планировок
+
+    = link_to replanning_endorsements_path do
+      #topMenuBut2.topMenuBut
+        .topMenuCaption
+          Согласования
+          %br/
+          Перепланировок
+
+    #topMenuBut3.topMenuBut
+      .topMenuCaption
+        Дизайн Проект
+
+    #topMenuBut4.topMenuBut
+      .topMenuCaption
+        Авторское
+        %br/
+        Сопровождение
+        %br/
+        Строительства
+        %br/
+
+    .clearfloat
