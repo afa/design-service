@@ -16,7 +16,7 @@
         %span.specRatesNumber=  specialist.rating_count
       %p.specRegistred
         Зарегистрирован:
-        %span.SpecDateReg=  l specialist.profile.created_at, format: :short
+        %span.SpecDateReg=  l(specialist.profile.created_at, format: :short)
 
     .specReviews
       %p.specReviews
