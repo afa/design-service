@@ -1,4 +1,4 @@
-= simple_form_for(@specialist) do |f|
+= simple_nested_form_for(@specialist) do |f|
   = f.error_notification
 
   .form-inputs
@@ -6,6 +6,8 @@
     = f.input :acreditation_level
     = f.simple_fields_for :portfolio_photos do |photos_form|
       = photos_form.input :file, as: :file
+      = photos_form.link_to_remove 'Удалить приложенный файл'
+    = f.link_to_add 'Добавить файл', :portfolio_photos
 
   .form-actions
     = f.button :submit

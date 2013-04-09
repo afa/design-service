@@ -35,6 +35,7 @@ class SpecialistsController < ApplicationController
   def new
     @specialist = Specialist.new
     @specialist.profile = current_user
+    @specialist.portfolio_photos.new
 
     respond_to do |format|
       format.html # new.html.erb

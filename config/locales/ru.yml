@@ -42,3 +42,11 @@ ru:
     title: 'Специалисты'
     
   title: 'Дизайн сервис'
+  
+  user:
+    session:
+      signout: 'Выйти'
+      signin: 'Войти'
+      signup: 'Регистрация'
+    profile:
+      edit: 'Редактировать профиль'

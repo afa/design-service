@@ -8,4 +8,7 @@ module ApplicationHelper
   def title
     "#{site_name}." + (subtitle.empty? ? '': " #{subtitle}.")
   end
+  def greating_name(user)
+    "#{user.name} [#{user.username}]"
+  end
 end

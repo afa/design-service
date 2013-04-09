@@ -22,10 +22,9 @@
     
     
       = f.simple_fields_for :replanning_attachments do |attachment_form| 
-        
         = attachment_form.input :file, as: :file
         = attachment_form.link_to_remove "Remove this attachment"
-        = f.link_to_add "Add attachment", :replanning_attachments
+      = f.link_to_add "Add attachment", :replanning_attachments
     
     
   #licence
