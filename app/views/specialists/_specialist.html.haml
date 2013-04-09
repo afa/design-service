@@ -1,34 +1,28 @@
-/= specialist.acreditation_level
-/= specialist.specialist_type
+.SpecDetails
+  .specCaption
+    .specAva
+    .usernameContainer
+      %p.specFio=  specialist.profile.full_name
+      %p.specUserName=  specialist.profile.username
 
-.Specialist
-  .SpecDetails
-    .specCaption
-      .specAva
-      .usernameContainer
-        %p.specFio=  specialist.profile.full_name
-        %p.specUserName=  specialist.profile.username
+  .spceRate
+    %p.specRating
+      Рейтинг:
+      %span.specRateValue=  specialist.rating
+      %span.specRatesNumber=  specialist.rating_count
+    %p.specRegistred
+      Зарегистрирован:
+      %span.SpecDateReg=  l(specialist.profile.created_at, format: :short)
 
-    .spceRate
-      %p.specRating
-        Рейтинг:
-        %span.specRateValue=  specialist.rating
-        %span.specRatesNumber=  specialist.rating_count
-      %p.specRegistred
-        Зарегистрирован:
-        %span.SpecDateReg=  l(specialist.profile.created_at, format: :short)
+  .specReviews
+    %p.specReviews
+      Отзывы:
+    %p.specReviews
+      %span.specPosRev
+        +
+        = specialist.positive_feedback
+      %br/
+      %span.specNegRev
+        \-
+        = specialist.negative_feedback
 
-    .specReviews
-      %p.specReviews
-        Отзывы:
-      %p.specReviews
-        %span.specPosRev
-          +
-          = specialist.positive_feedback
-        %br/
-        %span.specNegRev
-          \-
-          = specialist.negative_feedback
-
-  .specPortfolio
-    = render specialist.portfolio_photos.first(3)

@@ -9,4 +9,8 @@
       %input.showSpecs{:name => "ShowN", :type => "number"}/
   .clearfloat
 
-= render @specialists
+- @specialists.each do |specialist|
+  .Specialist
+    = render specialist
+  .specPortfolio
+    = render specialist.portfolio_photos.first(3)

@@ -1,16 +1,7 @@
-%p#notice= notice
-
-%p
-  %b Type:
-  = @specialist.specialist_type
-%p
-  %b Acreditation level:
-  = @specialist.acreditation_level
-%p
-  %b Profile:
-  = @specialist.profile
-
-= render @specialist.portfolio_photos
+.Specialist
+  = render @specialist
+.specPortfolio
+  = render @specialist.portfolio_photos
 
 = link_to 'Edit', edit_specialist_path(@specialist)
 \|
