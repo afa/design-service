@@ -5,10 +5,10 @@
 /* Menu fonts, table fonts, PostForm font */
 @font-face {
     font-family: 'gardensc';
-    src: url('gardensc_03_1-webfont.eot');
-    src: url('gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gardensc_03_1-webfont.woff') format('woff'),
-         url('gardensc_03_1-webfont.ttf') format('truetype');
+    src: font-url('gardensc/gardensc_03_1-webfont.eot');
+    src: font-url('gardensc/gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('gardensc/gardensc_03_1-webfont.woff') format('woff'),
+         font-url('gardensc/gardensc_03_1-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -19,10 +19,10 @@
 /*Page captions */
 @font-face {
     font-family: 'dejavu_sans';
-    src: url('dejavusanscondensed-webfont.eot');
-    src: url('dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
-         url('dejavusanscondensed-webfont.woff') format('woff'),
-         url('dejavusanscondensed-webfont.ttf') format('truetype');
+    src: font-url('dejavusanscondensed/dejavusanscondensed-webfont.eot');
+    src: font-url('dejavusanscondensed/dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('dejavusanscondensed/dejavusanscondensed-webfont.woff') format('woff'),
+         font-url('dejavusanscondensed/dejavusanscondensed-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -30,10 +30,10 @@
 /* lol wtf*/
 @font-face {
     font-family: 'minion_pro';
-    src: url('minion_pro-webfont.eot');
-    src: url('minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
-         url('minion_pro-webfont.woff') format('woff'),
-         url('minion_pro-webfont.ttf') format('truetype');
+    src: font-url('minion_pro/minion_pro-webfont.eot');
+    src: font-url('minion_pro/minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('minion_pro/minion_pro-webfont.woff') format('woff'),
+         font-url('minion_pro/minion_pro-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -265,7 +265,7 @@ input[type='radio']:checked + label {
 /*SpecMenu */
 .leftTopContainer {
 	background:#FFF;
-	background-image:image-url("specMenuBg.PNG");
+	background-image:image-url("specMenuBg.png");
 	background-repeat:no-repeat;
 	height:385px;
 }
