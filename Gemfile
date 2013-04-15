@@ -1,13 +1,13 @@
 source 'http://rubygems.org'
 
+#ruby '2.0.0'
 gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'mysql2' #, :platforms => :ruby
-#gem 'pg', :platforms => :ruby
+gem 'sqlite3' #, platform: :ruby
+gem 'mysql2' #, platform: :ruby
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', :platforms => :ruby
@@ -69,3 +69,4 @@ gem 'simplecov', :require => false, :group => :test
 #gem 'rails_best_practices'
 
 gem 'spork-rails'
+gem 'activeadmin'
