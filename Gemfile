@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 #ruby '2.0.0'
-gem 'rails', '3.2.12'
+gem 'rails', '~> 3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -70,3 +70,5 @@ gem 'simplecov', :require => false, :group => :test
 
 gem 'spork-rails'
 gem 'activeadmin'
+#gem 'rb-readline', "~> 0.5.0.pre.1"
+#gem 'pry-rails', :group => :development
