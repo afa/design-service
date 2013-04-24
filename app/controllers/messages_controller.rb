@@ -1,9 +1,5 @@
-class MessagesController < ApplicationController
+class MessagesController < InheritedResources::Base
   before_filter :authenticate_user!
-
-  def index
-    @messages = Message.all
-  end
 
   def new
     recipient = User.find(params[:recipient_id])
@@ -14,7 +10,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:message])
+    @message = Message.new(permitted_params)
     @message.from = current_user
     if @message.save
       redirect_to @message
@@ -23,20 +19,8 @@ class MessagesController < ApplicationController
     end
   end
 
-  def show
-    @message = Message.find(params[:id])
-  end
-
-  def edit
-    @message = Message.find(params[:id])
-  end
-
-  def update
-    @message = Message.find(params[:id])
-    if @message.update_attributes(params[:message])
-      redirect_to @message
-    else
-      render action: 'edit'
-    end
+private
+  def permitted_params
+    params.permit(message: [:to_id, text_attributes: [:text]] }
   end
 end

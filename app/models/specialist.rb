@@ -1,11 +1,9 @@
 #encoding: utf-8
 class Specialist < ActiveRecord::Base
   belongs_to :profile, class_name: 'User'
-  attr_accessible :acreditation_level, :specialist_type
   has_many :portfolio_photos
   accepts_nested_attributes_for :portfolio_photos, allow_destroy: true
-  attr_accessible :portfolio_photos_attributes
-  
+
   SPECIALIST_TYPE_ID_BY_NAME = Hash[ ["designers", "architectors", "engineers", "building_companies", "building_brigades"].map.with_index{|value,index| [value, index]} ]
 
   def rating
@@ -20,5 +18,4 @@ class Specialist < ActiveRecord::Base
   def negative_feedback
     '0'
   end
-  
 end
