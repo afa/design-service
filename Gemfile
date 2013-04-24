@@ -44,6 +44,8 @@ gem 'simple_form'
 gem 'nested_form'
 gem 'cancan'
 gem 'russian'
+gem 'inherited_resources'
+gem 'strong_parameters'
 
 group :development do
   gem 'sextant'
