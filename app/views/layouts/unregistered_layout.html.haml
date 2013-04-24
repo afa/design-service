@@ -3,13 +3,16 @@
   %head
     %title= title
     = stylesheet_link_tag "unregistered/application", :media => "all"
+    = stylesheet_link_tag "unregistered/#{params[:controller]}" if Rails.application.assets.find_asset("unregistered/#{params[:controller]}")
+    = stylesheet_link_tag "unregistered/#{params[:controller]}_#{params[:action]}"  if Rails.application.assets.find_asset("unregistered/#{params[:controller]}_#{params[:action]}")
+
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     %noindex
       .notice= notice
       .alert= alert
-      
+
       .twoColFixRtHdr
         #container
           #header
@@ -33,8 +36,8 @@
                 .horLine
               .wtf
               = yield
-            
+
           / This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats
           %br.clearfloat/
-          
+
           = render 'application/layout_parts/footer'

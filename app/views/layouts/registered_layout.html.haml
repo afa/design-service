@@ -3,6 +3,9 @@
   %head
     %title= title
     = stylesheet_link_tag "registered/application", :media => "all"
+    = stylesheet_link_tag "registered/#{params[:controller]}" if Rails.application.assets.find_asset("registered/#{params[:controller]}")
+    = stylesheet_link_tag "registered/#{params[:controller]}_#{params[:action]}"  if Rails.application.assets.find_asset("registered/#{params[:controller]}_#{params[:action]}")
+
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body.registredContainer
