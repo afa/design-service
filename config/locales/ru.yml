@@ -50,3 +50,7 @@ ru:
       signup: 'Регистрация'
     profile:
       edit: 'Редактировать профиль'
+  sessions:
+    title: 'Вход в систему'
+  registrations:
+    title: 'Регистрация нового пользователя'

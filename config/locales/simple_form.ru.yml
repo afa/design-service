@@ -4,12 +4,13 @@ ru:
     'no': 'Нет<label></label>'
     required:
       text: 'обязательное поле'
-      mark: '*'
+      mark: '&lowast;'
+      #html: '<abbr class="required">&lowast;</div>'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: "Пожалуйста исправьте следующие ошибки:"
     # Labels and hints examples
     # labels:
     #   defaults:
@@ -47,6 +48,12 @@ ru:
         developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком?'
         flat_area: 'Площадь квартиры:'
         replanning_organization_licensed: 'Наличие лицензии у организации,<br/>которая разработала проект перепланировки?'
+      user:
+        username: 'Логин'
+        login: 'Логин'
+        email: 'E-mail'
+        password: 'Пароль'
+        password_confirmation: 'Повторите<br/>пароль'
     hints:
       user:
         edit:
