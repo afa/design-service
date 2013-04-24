@@ -3,6 +3,7 @@ class Specialist < ActiveRecord::Base
   belongs_to :profile, class_name: 'User'
   has_many :portfolio_photos
   accepts_nested_attributes_for :portfolio_photos, allow_destroy: true
+  scope :by_specialist_type, ->(specialist_type) { where(specialist_type: SPECIALIST_TYPE_ID_BY_NAME[specialist_type]) }
 
   SPECIALIST_TYPE_ID_BY_NAME = Hash[ ["designers", "architectors", "engineers", "building_companies", "building_brigades"].map.with_index{|value,index| [value, index]} ]
 

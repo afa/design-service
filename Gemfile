@@ -45,6 +45,7 @@ gem 'nested_form'
 gem 'cancan'
 gem 'russian'
 gem 'inherited_resources'
+gem 'has_scope'
 gem 'strong_parameters'
 
 group :development do
