@@ -18,7 +18,7 @@
   	
     	<div class="Logo">
     		<a href="#">
-    			<img src="images/logo-2.png" alt="Design Serive" name="Design Service"  id="Logo" />
+    			<img src="images/logo-2.png" alt="Design Serive" name="Design Service"  />
         	</a> 
     	</div>
     
@@ -58,24 +58,20 @@
   
   <!-- end .header --></div>
   <div class="BookCover">
+    <div id="main_content">
   <div class="sidebar1">
     <!--Design Elements-->
     
-    <div class="leftPages"></div>
+  <!--  <div class="leftPages"></div> -->
     
-    <div class="springs" id="connector1"></div>
-    <div class="springs" id="connector2"></div>
-	<div class="springs" id="connector3"></div>
-    <div class="springs" id="connector4"></div>
+ 
+
     <!--end De-->
     
     <div class="hiUserName">
-    	<div class="hiUserNameFloater" style="height:8px; width:100%;">
-        </div>
-        <div>
+    	<div class="hiUserNameFloater">
         Добро Пожаловать<br />
-        $Name [$Username]
-        </div>
+        $Name [$Username]</div>
     </div>
   
   	<div class="cabinetNavContainer">
@@ -87,7 +83,7 @@
     <ul class="mySpecialist nav">
     	<li id="special"><a href="#" id="spec">МОИ СПЕЦИАЛИСТЫ</a></li>
         <li id="thebest"><a href="# "id="best">ИЗБРАННЫЕ</a></li>
-        <li"><a href="# "id="work">РАБОТАЮТ</a></li>
+        <li id=""><a href="# "id="work">РАБОТАЮТ</a></li>
     </ul>
     
     <!--end .cabinetNavC --></div>
@@ -119,44 +115,32 @@
        	<div id="date" class="calendarAnchor">
        	</div>
      </div>
-   
     <!-- end .sidebar1 --></div>
     <div class="speceBetween">
     </div> 
     
   
-  
+   <div class="springs" id="connector1"></div>
+   <div class="border_left"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+   <div class="border_right"><div class="top_corner"></div><div class="bottom_corner"></div></div>
   <div class="content">
+    
     <div class="thisPageContent">
-    <div class="rightPages"></div>
+  <!--  <div class="rightPages"></div> -->
     	
         <div class="caption">
-    		<p> ЙА БОЛВАНКО РЕГИСТРЕД ПЕЙДЖА</p>
+    		<p> РАЗРАБОТКА ВАРИАНТОВ ПЛАНИРОВОК</p>
         </div>
-        <div class="cabinetHorNav">
-         	 <a class="cabinetHorNavlink" href="#">История</a>
-             <a class="cabinetHorNavlink" href="#">Пополнение</a>
-             <a class="cabinetHorNavlink" href="#">Договоры</a>
-             <a class="cabinetHorNavlink" href="#">Счета</a>
-        <!--end .cabinetNav --></div>
+
         
-        
-         <div id="pageCaption" class="pageCaption">
-            	<div id="postVarPlanLogo" class="pageLogo">
-                </div>
-                <div id="pageName">
-                	<p> Разработка вариантов планировок </p>
-                </div>
-                <div class="horLine"> </div>
-                
-            <!-- emd #PageCaption--></div>
+     
             	
-                <div class="Manual">
+                <div class="manual">
                 	<p> Заполните заявку:</p>
                 </div>
                 <form class="postVarPlan" action="#">
                		
-                    <div id="post1Adress" class="postContainer">
+                    <div id="post1Adress" class="postContainer shadow">
                	 		<div id="postNumber1" class="postNumber"></div>
                  		<div id="postCaption1" class="postCaption"></div>
                  		<div class="clearfloat"></div>
@@ -167,9 +151,9 @@
                     			Этаж:<input class="floor" type="text" />
                                 Подъезд/Секция:<input class="section" type="text" /> <br />
                     			Кол-во стояков водопровода:<input class="waterFlows" type="text" /><br />
-                    			Состав семьи:<input class="family" type="text" /><br />
+                    			Состав семьи:<input class="family" type="text" />
 								<input class="children" type="text" /><br/>
-                             </p>
+                          </p>
                              <p class="postFormNote">  
                        			(Укажите количестово и пол детей)<br/>              
                              </p>
@@ -181,7 +165,7 @@
                
                
                
-              		 <div id="post2Quest" class="postContainer">
+              		 <div id="post2Quest" class="postContainer shadow">
             				<div id="postCaption2" class="postCaption"></div>
                  			<div id="postNumber2" class="postNumber"></div>
                             <div class="clearfloat"></div>
@@ -191,8 +175,7 @@
                     <!--<div id="#kitchenContainer"> -->
                     
                     <div class="postFormText" id="TextKitchenSplit" >
-                        Объеденить кухню <br />
-                        с гостинной?<br />
+                        Объеденить кухню с гостинной?<br />
                     </div>
                     
     					<div class="yNinLine" id="yn1">                	
@@ -242,7 +225,10 @@
                     
                     
                     <div class="postFormText" id="TextCabinet">
-                    	Нужен кабинет? <input class="checkYN cabinet" type="radio" name="cabinet" value="1"/> <input class="checkYN cabinet" type="radio" name="cabinet" value="0"/>
+                    	Нужен кабинет? <input class="checkYN cabinet" type="radio" name="cabinet" value="1"/> 
+                        <label for="checkYkitchen" class="check"> Да </label>
+                        <input class="checkYN cabinet" type="radio" name="cabinet" value="0"/>
+                        <label for="checkNgarderobe" class="check">Нет</label>
                     </div>
                     
                     
@@ -255,7 +241,7 @@
                     </div>
                     
                     <div class="postFormText" id="SleepersText" >
-                    Количество спальных мест:<input class="Sleepers" id="SleepersCount"  type="text"/>
+                    Количество спальных мест: <input class="Sleepers" id="SleepersCount"  type="text"/>
                     </div>
                     
                     <div class="postFormText" id="LaundryText">
@@ -275,7 +261,7 @@
                     </div>
                <!--end #post2Quest--></div>
                
-               <div id="post3Wish" class="postContainer">
+               <div id="post3Wish" class="postContainer shadow">
 	                <div id="postNumber3" class="postNumber"></div>
                  	<div id="postCaption3" class="postCaption"></div>
                		<div id="postFroms3" class="postForms">
@@ -286,7 +272,7 @@
                     </div>
                <!--end #post3Wish --></div>
                
-               <div id="post4Attach" class="postContainer">
+               <div id="post4Attach" class="postContainer shadow">
                     <div id="postNumber4" class="postNumber"></div>
                  	<div id="postCaption4" class="postCaption"></div>
                		<div id="fileGrab" class="OMFGFILEGRAB">
@@ -298,20 +284,15 @@
                     </div>
                <!-- end post4Attach--></div>
                
-               <div class="calcContainer">
-                  <div class="calc">      
-                  </div>
-                  
-               	  <div class="count">
-         	         <p>Ваш заказ обрабатывается. Ждите $time. <br />
-              	  		Получить уведомление на e-mail.</p>
-               	  </div>
+               <div class="calcContainer shadow_t2">
+                  <div class="calc_text"> </div>
+                  <input type="text" class="resuilt_cal" />
+                  <span>Посчитать</span>
                <!--end .calcContainer --></div>
                
                <div class="actions">
-               	<div id="cancel"> <input type="reset" /></div>
-                <div id="postRequest"> <input type="submit" /></div>
-               	<div class="clearfloat"></div>
+                <div id="postRequest"> </div>
+               	<div id="cancel"> </div>
                </div>
                </form>
         
@@ -324,8 +305,13 @@
     
 
     </div>
+    <!-- end main_content -->
+    </div>
     <!--end bookCover>--></div>
-  <!-- end .contentainer --></div>
+    
+    <div id="ads"> <span>МЕСТО ДЛЯ РЕКЛАМЫ</span></div>
+    
+<!-- end .contentainer --></div>
         
     <div class="footer">
     <div id="LeftFooter" class="FooterLeft">

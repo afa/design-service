@@ -2,8 +2,7 @@
 /* CSS Document */
 .postVarPlan{
 	width:640px;
-	height:930px;
-	overflow:scroll;
+	overflow: hidden;
 }
 
 /*Form 1 container form consisnt of split divs so STFU*/
@@ -16,22 +15,23 @@
 	border-radius:50px;
 	border-width:6px;
 	border:solid;
+	padding:20px;
+	
 }
 
 
 /* Post 1 Ishodnie Dannie aka Adress */
 #post1Forms{
 	position:relative;
-	top:-15px;
 	height:235px;
 }
 
 .postFormText{
-	line-height:40px;
-	/*padding: 0 20px;*/
+	/*line-height:40px;
+	padding: 0 20px;*/
 	font-family:gardensc, Geneva, sans-serif;
 	font-style:italic;
-	font-size:18px;
+	font-size:16px;
 	text-align:left;
 }
 
@@ -40,19 +40,21 @@
 	font-family:gardensc, Geneva, sans-serif;
 	font-style:italic;
 	font-size:14px;
-	margin: -18px auto;
+	margin: 0px auto;
 	text-align:center;
+	font-weight:500;
 }
 
 
 #post1Adress{
 	
 	/*background-image:url(../MyPages/post1Check.png);*/
-	height:320px;
-	width:420px;
+	line-height:40px;
+	height:266px;
+	width:347px;
 	border-color:#f89f65;
-	margin-left:60px;
-	margin-top:50px;
+	margin-left:40px;
+	margin-top:30px;
 	background-repeat:no-repeat;
 	-moz-border-radius:50px;
 	-webkit-border-radius:50px;
@@ -60,9 +62,20 @@
 	border-width:6px;
 	behavior: url(scripts/PIE.htc);
 }
+
+.shadow{ 	
+-moz-box-shadow: inset 0 3px 15px 1px #888;
+-webkit-box-shadow: inset 0 3px 15px 1px #888;
+box-shadow: inset 0 3px 15px 1px #888;
+}
+.shadow_t2{
+-moz-box-shadow: inset 0 -3px 5px 1px #888;
+-webkit-box-shadow: inset 0 -3px 5px 1px #888;
+box-shadow: inset 0 -3px 5px 1px #888;	
+}
 .adress{
 	margin: 0 10px;
-	width:280px;
+	width:275px;
 	border:none;
 	background:url(../images/textformbg.PNG) repeat-x;
 }
@@ -72,42 +85,47 @@
 	border:none;
 	background:url(../images/textformbg.PNG) repeat-x;
 }
+
+#calendar{ margin-left:25px; float:left; margin-top:10px;}
+
 .section{
 	margin: 0 10px;
-	width: 50px;
+	width: 82px;
 	border:none;
 	background:url(../images/textformbg.PNG) repeat-x;
 }
 .waterFlows{
 	margin: 0 10px;
-	width: 60px;
+	width: 105px;
 	border:none;
 	background:url(../images/textformbg.PNG) repeat-x;
 }
 .family{
 	margin: 0 10px;
-	width:230px;
+	width:222px;
 	border:none;
 	background:url(../images/textformbg.PNG) repeat-x;
 }
 .children{
 	margin: 0 10px;
-	width:350px;
+	width:330px;
 	border:none;
 	background:url(../images/textformbg.PNG) repeat-x;
+	
 }
 
 #post2Quest{
 	/*background-image:url(../MyPages/post2Check.png);*/
-	height:620px;
-	width:580px;
-	margin:50px 0 0 225px;
+	height:511px;
+	width:450px;
+	margin:30px 0 0 115px;
 	-moz-border-radius:50px;
 	-webkit-border-radius:50px;
 	border-width:6px;
 	border-radius:50px;
 	border-color:#a8d868;
 	behavior: url(scripts/PIE.htc);
+	font-size:18px;
 }
 #post2Forms{
 	padding:20px;
@@ -119,8 +137,10 @@
 }
 #TextKitchenSplit{
 	position:absolute;
+	width:200px;
 	top:80px;
 	left:20px;
+	line-height:18px;
 }
 #yn1{
 	position:absolute;
@@ -130,12 +150,12 @@
 #KitchenSquare{
 	position:absolute;
 	top:80px;
-	left:240px;
+	left:210px;
 }
 #yn2{
 	position:absolute;
 	top:80px;
-	left:360px;
+	left:330px;
 }
 #TextClothRoom{
 	position:absolute;
@@ -149,8 +169,8 @@
 }
 #TextWardrobes{
 	position:absolute;
-	top:232px;
-	left:264px;
+	top:180px;
+	left:240px;
 }
 #Wardrobes{
 	width: 60px;
@@ -179,17 +199,17 @@
 }
 #LaundryText{
 	position:absolute;
-	top:470px;
+	top:460px;
 	left:105px;
 }
 #yn5{
 	position:absolute;
-	top:470px;
-	left:320px;
+	top:460px;
+	left:280px;
 }
 #CountText{
 	position:absolute;
-	top:540px;
+	top:500px;
 	left:24px;
 }
 #SleepersCount, #PlanCount{
@@ -202,14 +222,14 @@
 }
 
 
-
+#fileGrab p{ color:#949494; margin:30px 0px 30px 120px;}
 
 #post3Wish{
 	/*background-image:url(../MyPages/post3Check.png); */
-	width:635px;
-	height:240px;
-	margin-top:50px;
-	margin-left:60px;
+	width:515px;
+	height:189px;
+	margin-top:30px;
+	margin-left:45px;
 	border-color:#99bbe1;
 	-moz-border-radius:50px;
 	-webkit-border-radius:50px;
@@ -219,17 +239,18 @@
 }
 .postComment{
    background:url(../images/textformbg.PNG);
-   width:565px;
+   width:510px;
    height:120px;
    margin: 20px auto 0px;
    overflow:auto; /*IE HAX */
+   border:none;
  }
 #post4Attach{
 	/*background-image:url(../MyPages/post4Check.png);*/
-	width:745px;
-	height:220px;
-	margin-left:60px;
-	margin-top:50px;
+	width:560px;
+	height:179px;
+	margin-left:10px;
+	margin-top:30px;
 	-moz-border-radius:50px;
 	-webkit-border-radius:50px;
 	border-width:6px;
@@ -237,6 +258,30 @@
 	border-color:#e5c941;	
 	behavior: url(scripts/PIE.htc);
 }
+
+.calcContainer{
+	width:352px;
+	height:103px;
+	margin-left:125px;
+	margin-top:30px;
+	position:relative;
+	float:left;
+	behavior: url(scripts/PIE.htc);
+	background-color:#ebebeb;
+	background-repeat:no-repeat;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	border-radius:35px;
+	border-width:6px;
+	border:1px solid #949494;
+}
+.calcContainer div.calc_text{ background:url(../images/cal_text.png); background-repeat:no-repeat; margin:15px 0px 15px 50px; width:235px; height:15px;}
+.resuilt_cal{ width:257px; height:26px; background-color:#ffffff; border:none; margin:0px 0px 0px 45px; background-image:url(../images/text_box_x.jpg); background-repeat: repeat-x; text-align:center; font-size:18px; color:#636363; }
+div.calcContainer span{ color:#676363; float:right; margin-right:25px; font-style:italic; text-decoration:underline;}
+.actions{ float:left; width:450px; height:15px; margin:25px 0px 45px 110px;}
+div.actions div#cancel{ background:url(../images/cancel.png); background-repeat:no-repeat; width:185px; height:43px; float:left; margin-left:15px;} 
+div.actions div#postRequest{ background:url(../images/submit.png); background-repeat:no-repeat; width:183px; height:43px; float:left;}
+
 .OMFGFILEGRAB{
 	width: 750px;
 	height: 220px;
@@ -244,9 +289,9 @@
 }
 .postNumber{
  height:30px;
- width:90px;
+ width:71px;
  float:left;
- margin: 27px 0 0 26px;
+ margin: 5px 0px 0px 20px;
  background-repeat:no-repeat;
 }
 
@@ -256,7 +301,6 @@
 
 #postNumber2{
   float:right;
-  margin-right:20px;
   background-image:url(../images/num2.png);  
 }
 
@@ -264,21 +308,22 @@
   background-image:url(../images/num3.png);  
 }
 #postNumber4{
-  background-image:url(../images/num4.png);  
+  background-image:url(../images/num4.png);
+  margin:0px;
 }
 
 .postCaption{
-  height:30px;
+  height:25px;
   float:left;
-  margin: 27px 0 0 20px;
   background-repeat:no-repeat;
 }
 #postCaption1{
-	width:255px;
+	margin-top:5px;
+	width:205px;
 	background-image:url(../images/post1Caption.png);
 }
 #postCaption2{
-	margin: 27px 40px 0 0;
+	margin: 5px 0px 0px 0px;
 	float:right;
 	width:196px;
 	background-image:url(../images/post2caption.png);
@@ -288,9 +333,10 @@
 	background:url(../images/post3caption.png) no-repeat;
 	width:370px;
 	height:30px;
+	margin-top:5px;
 }
 #postCaption4{
 	background:url(../images/post4caption.png) no-repeat;
-	width:585px;
-	height:30px;
+	width:477px;
+	height:25px;
 }
