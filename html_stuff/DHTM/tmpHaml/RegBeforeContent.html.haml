@@ -1,0 +1,99 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Untitled Document
+    %link{:href => "css/registred.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/regvarplan.css", :rel => "stylesheet", :type => "text/css"}/
+  %body.registredContainer
+    .container
+      .headerReg
+        .Logo
+          %a{:href => "#"}
+            %img{:alt => "Design Serive", :name => "Design Service", :src => "images/logo-2.png"}/
+        #topMenuContainer
+          #topMenuBut1.topMenuBut
+            #VarPlan.topMenuCaption
+              Разработка
+              %br/
+              Вариантов
+              %br/
+              Планировок
+            / end #topMenuBut1
+          #topMenuBut2.topMenuBut
+            .topMenuCaption
+              Согласования
+              %br/
+              Перепланировок
+            / end #topMenuBut2
+          #topMenuBut3.topMenuBut
+            .topMenuCaption
+              Дизайн Проект
+            / end #topMenuBut3
+          #topMenuBut4.topMenuBut
+            .topMenuCaption
+              Авторское
+              %br/
+              Сопровождение
+              %br/
+              Строительства
+              %br/
+            / end #topMenuBut4
+          .clearfloat
+          / end #topMenuContainer
+        / end .header
+      .BookCover
+        #main_content
+          .sidebar1
+            / Design Elements
+            / <div class="leftPages"></div>
+            / end De
+            .hiUserName
+              .hiUserNameFloater
+                Добро Пожаловать
+                %br/
+                $Name [$Username]
+            .cabinetNavContainer
+              %ul.cabinet.nav
+                %li
+                  %a#order{:href => "#"} МОИ ЗАКАЗЫ
+                %li#laccount
+                  %a#account{:href => "#"} ЛИЦЕВОЙ СЧЕТ
+                %li.settings
+                  %a.settings{:href => "#"} МОИ НАСТРОЙКИ
+              %ul.mySpecialist.nav
+                %li#special
+                  %a#spec{:href => "#"} МОИ СПЕЦИАЛИСТЫ
+                %li#thebest
+                  %a#best{:href => "# "} ИЗБРАННЫЕ
+                %li{:id => ""}
+                  %a#work{:href => "# "} РАБОТАЮТ
+              / end .cabinetNavC
+            #specialistMenuContainer.specMenu
+              #specSelect
+                ВЫБОР СПЕЦИАЛИСТОВ
+              #architect.specMenuButton
+                %p.specMenuCaption Архитекторы
+              #Designer.specMenuButton
+                %p.specMenuCaption Дизайнеры
+              #Enginere.specMenuButton
+                %p.specMenuCaption Инженеры
+              #BuildCompany.specMenuButton
+                %p.specMenuCaption Строительные фирмы
+              #BuildAshot.specMenuButton
+                %p.specMenuCaption Строительные бригады
+              / end specMenuContainer
+            #calendar
+              %p BLOW YOUR BRAIN
+              %input#date{:type => "date"}/
+              #date.calendarAnchor
+            / end .sidebar1
+          .speceBetween
+          #connector1.springs
+          .border_left
+            .top_corner
+            .bottom_corner
+          .border_right
+            .top_corner
+            .bottom_corner
+          .content			
