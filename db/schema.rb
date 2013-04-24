@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415120710) do
+ActiveRecord::Schema.define(:version => 20130424150850) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -28,14 +28,6 @@ ActiveRecord::Schema.define(:version => 20130415120710) do
   add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
-  create_table "addresses", :force => true do |t|
-    t.string   "address"
-    t.string   "floor"
-    t.string   "section"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "attachments", :force => true do |t|
     t.string   "file"
     t.datetime "created_at", :null => false
@@ -46,17 +38,6 @@ ActiveRecord::Schema.define(:version => 20130415120710) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "flat_infos", :force => true do |t|
-    t.integer  "address_id"
-    t.integer  "num_standpipes"
-    t.integer  "family_composition_id"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
-  end
-
-  add_index "flat_infos", ["address_id"], :name => "index_flat_infos_on_address_id"
-  add_index "flat_infos", ["family_composition_id"], :name => "index_flat_infos_on_family_composition_id"
 
   create_table "messages", :force => true do |t|
     t.integer  "from_id"
@@ -88,15 +69,17 @@ ActiveRecord::Schema.define(:version => 20130415120710) do
     t.integer  "num_guests"
     t.integer  "num_bedrooms"
     t.boolean  "washing_room_needed"
-    t.integer  "flat_info_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.integer  "num_plans"
     t.integer  "attachment_id"
     t.integer  "comment_id"
+    t.string   "address"
+    t.string   "floor"
+    t.string   "section"
+    t.integer  "num_standpipes"
+    t.integer  "family_composition_id"
   end
-
-  add_index "plan_developments", ["flat_info_id"], :name => "index_plan_developments_on_flat_info_id"
 
   create_table "portfolio_photos", :force => true do |t|
     t.string   "file"

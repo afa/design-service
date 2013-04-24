@@ -8,17 +8,15 @@
     .clearfloat
     #post1Forms
       #post1Text.postFormText
-        = f.simple_fields_for :flat_info do |flatinfo_f|
-          = flatinfo_f.simple_fields_for :address do |address_f|
-            = address_f.input :address, input_html: {class: 'adress'}
-            .line
-              %div{style:"float:left;"}= address_f.input :floor, input_html: {class: 'floor'}
-              %div{style:"float:left;"}= address_f.input :section, input_html: {class: 'section'}
-              .clearfloat
-          = flatinfo_f.input :num_standpipes, as: :string, input_html: {class: 'waterFlows'}
-          = flatinfo_f.simple_fields_for :family_composition do |family_f|
-            = family_f.input :first_line, input_html: {class: 'family'}, placeholder: '(Укажите количество и пол детей)', label: 'Состав семьи:'
-            = family_f.input :second_line, input_html: {class: 'children'}, label: false
+        = f.input :address, input_html: {class: 'adress'}
+        .form_fields_inline
+          = f.input :floor, input_html: {class: 'floor'}
+          = f.input :section, input_html: {class: 'section'}
+          .clearfloat
+        = f.input :num_standpipes, as: :string, input_html: {class: 'waterFlows'}
+        = f.simple_fields_for :family_composition do |family_f|
+          = family_f.input :first_line, input_html: {class: 'family'}, placeholder: '(Укажите количество и пол детей)', label: t('simple_form.labels.family_composition')
+          = family_f.input :second_line, input_html: {class: 'children'}, label: false
     
   #post2Quest.postContainer
     #postCaption2.postCaption
@@ -59,9 +57,8 @@
       .clearfloat
       %p
         Вы можете перетащить файлы сюда
-      /%input{:type => "file", :value => "Attach lol"}/
-      = f.simple_fields_for :attachment do |attchment_f|
-        = attchment_f.input :file, as: :file, label: false
+      = f.simple_fields_for :attachment do |attachment_f|
+        = attachment_f.input :file, as: :file, label: false
 
   .calcContainer
     .calc
