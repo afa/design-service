@@ -1,0 +1,82 @@
+.RegistrationContainer{
+	position:relative;
+	margin: 64 auto;
+	padding-top:36px;
+	width:476px;
+	height:396px;
+	background:image-url("registerContainer.PNG") no-repeat;
+}
+.RegisterCaption{
+	margin: 0px auto;
+	width:220px;
+	height:30px;
+	background:image-url("registerCaption.PNG"), no-repeat;
+}
+.LoginContainer{
+	position:relative;
+	margin: 64 auto;
+	padding-top:36px;
+	width:476px;
+	height:396px;
+	background:image-url("registerContainer.PNG") no-repeat;
+}
+.LoginCaption{
+	margin: 0px auto;
+	width:220px;
+	height:30px;
+	background:image-url("registerCaption.PNG"), no-repeat;
+}
+.input label{
+	text-align:right;
+	float:left;
+	width:128px;
+}
+.Legend > div{
+	line-height:20px;
+	margin: 36px 0 0;
+}
+
+#2lineConf{
+	/*margin:-4px 0 0;*/
+}
+.required{
+	position:relative;
+	color:#ff0000;
+	top:-8px;
+}
+.input input{
+	text-align:left;
+	top:-40px;
+	float:left;
+	/*width:348px;*/ /* 476-128= 248 */
+}
+input{
+	background:image-url("textformbg.PNG") repeat-x;
+	height:20px;
+	width:280px;
+	border:none;
+	margin:36px 0 0;
+}
+
+/*.underLine{
+	position:absolute;
+	left:169px;
+	top:128px;
+}*/
+
+.ok {
+  position:absolute;
+  bottom:69px;
+  right:60px;
+
+	background:image-url("okButton.PNG") no-repeat;
+	width:108px;
+	height:33px;
+}
+input[type=submit]{
+  width:108px;
+  height:33px;
+  margin:0;
+  padding:0;
+  background: none;
+}

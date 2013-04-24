@@ -1,11 +1,14 @@
-%h2 Sign up
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :username, :required => true, :autofocus => true
-    = f.input :email, :required => true
-    = f.input :password, :required => true
-    = f.input :password_confirmation, :required => true
-  .form-actions
-    = f.button :submit, "Sign up"
+.RegistrationContainer
+  .RegisterCaption
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: 'registration'}) do |f|
+    /= f.error_notification
+    .Legend
+      = f.input :username, :required => true, :autofocus => true, placeholder: '(латинские буквы и цифры)'
+      = f.input :email, :required => true
+      = f.input :password, :required => true
+      = f.input :password_confirmation, :required => true, input_html: {class: 'twoLines'}
+    /<div class="Agreement"> Я принимаю <a href="#"> пользовательское соглашение </a> <input type="checkbox" name="eula"/></div>
+    .ok
+      = f.submit ''
+
 = render "devise/shared/links"
