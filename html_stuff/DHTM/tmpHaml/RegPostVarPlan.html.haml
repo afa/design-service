@@ -1,0 +1,139 @@
+            .thisPageContent
+              .caption
+                %p РАЗРАБОТКА ВАРИАНТОВ ПЛАНИРОВОК
+              .manual
+                %p Заполните заявку:
+              %form.postVarPlan{:action => "#"}
+                #post1Adress.postContainer.shadow
+                  #postNumber1.postNumber
+                  #postCaption1.postCaption
+                  .clearfloat
+                  #post1Forms
+                    %p#post1Text.postFormText
+                      Адрес:
+                      %input.adress{:type => "text"}/
+                      %br/
+                      Этаж:
+                      %input.floor{:type => "text"}/
+                      Подъезд/Секция:
+                      %input.section{:type => "text"}/
+                      %br/
+                      Кол-во стояков водопровода:
+                      %input.waterFlows{:type => "text"}/
+                      %br/
+                      Состав семьи:
+                      %input.family{:type => "text"}/
+                      %input.children{:type => "text"}/
+                      %br/
+                    %p.postFormNote
+                      (Укажите количестово и пол детей)
+                      %br/
+                    / end #post1Forms"
+                  / end post1Adres
+                #post2Quest.postContainer.shadow
+                  #postCaption2.postCaption
+                  #postNumber2.postNumber
+                  .clearfloat
+                  #post2Forms
+                    / <div id="#kitchenContainer">
+                    #TextKitchenSplit.postFormText
+                      Объеденить кухню с гостинной?
+                      %br/
+                    #yn1.yNinLine
+                      %input#checkYkitchen.checkYNkitchen{:checked => "checked", :name => "kitchenSplit", :type => "radio"}/
+                      %label.check{:for => "checkYkitchen"} Да
+                      %input#checkNnokitchen.checkYNkitchen{:name => "kitchenSplit", :type => "radio"}/
+                      %label.check{:for => "checkNnokitchen"} Нет
+                      / end .yNline
+                    #KitchenSquare.postFormText
+                      Размер кухни:
+                      / end KitchenSquare
+                    #yn2.yNinCol
+                      %input#kitcheBig.kitchenSize{:name => "kitchenSizen", :type => "radio", :value => "1"}/
+                      %label.checkY{:for => "kitcheBig"}
+                        Больше 5 кв.м.
+                        %br/
+                      %input#kitcheSmall.kitchenSize{:name => "kitchenSizen", :type => "radio", :value => "0"}/
+                      %label.checkN{:for => "kitcheBig"} Меньше 5 кв.м.
+                      / end yNinCol
+                    / BRAINDEAD ABSOLUTES COMES IN TO PLAY FUCK FLOATS FROM NOW<div class="clearfloat"></div>
+                    / end kitchenContainer </div>
+                    #TextClothRoom.postFormText
+                      Наличие градеробных
+                      %br/
+                      комнат:
+                    #yn3.yNinLine
+                      %input#checkYgarderobe.checkYNgarderobe{:checked => "checked", :name => "garderobe", :type => "radio", :value => "1"}/
+                      %label.check{:for => "checkYgarderobe"} Да
+                      %input#checkNgarderobe.checkYNgarderobe{:name => "garderobe", :type => "radio", :value => "0"}/
+                      %label.check{:for => "checkNgarderobe"} Нет
+                      / end ynInline yn3
+                    #TextWardrobes.postFormText
+                      Количество встроенных
+                      %br/
+                      шкафов, включая
+                      %br/
+                      гардеробные комнаты.
+                      %input#Wardrobes.wardrobes{:name => "wardrobes", :type => "text"}/
+                      %br/
+                    #TextCabinet.postFormText
+                      Нужен кабинет?
+                      %input.checkYN.cabinet{:name => "cabinet", :type => "radio", :value => "1"}/
+                      %label.check{:for => "checkYkitchen"} Да
+                      %input.checkYN.cabinet{:name => "cabinet", :type => "radio", :value => "0"}/
+                      %label.check{:for => "checkNgarderobe"} Нет
+                    #GuestText.postFormText
+                      Любите ли Вы
+                      %br/
+                      принимать гостей?
+                      %input.checkYN.guests{:name => "guests", :type => "radio", :value => "0"}>/
+                      Нет
+                      %input.checkYN.guests{:name => "guests", :type => "radio", :value => "5"}/
+                      До 5
+                      %input.checkYN.guests{:name => "guests", :type => "radio", :value => "15"}/
+                      5-15
+                      %input.checkYN.guests{:name => "guests", :type => "radio", :value => "99"}/
+                      Более 15
+                      %br/
+                    #SleepersText.postFormText
+                      Количество спальных мест:
+                      %input#SleepersCount.Sleepers{:type => "text"}/
+                    #LaundryText.postFormText
+                      Наличие постирочной:
+                    #yn5.yNinLine
+                      %input.checkYN.laundry{:name => "laundry", :type => "radio", :value => "1"}/
+                      %label.check{:for => "laundryY"} Да
+                      %input.checkYN.laundry{:name => "laundry", :type => "radio", :value => "0"}/
+                      %label.check{:for => "laindryN"} Нет
+                    #CountText.postFormText
+                      Сколько предоставить Вам вариантов планировок?
+                      %input#PlanCount.varPlanCount{:type => "text"}/
+                  / end #post2Quest
+                #post3Wish.postContainer.shadow
+                  #postNumber3.postNumber
+                  #postCaption3.postCaption
+                  #postFroms3.postForms
+                    %label{:for => "Comment"}
+                    %textarea.postComment{:cols => "60", :name => "Comment", :rows => "3"}
+                      :preserve
+                        
+                #post4Attach.postContainer.shadow
+                  #postNumber4.postNumber
+                  #postCaption4.postCaption
+                  #fileGrab.OMFGFILEGRAB
+                    .clearfloat
+                    %p
+                      Вы можете перетащить файлы сюда
+                    %input{:type => "file", :value => "Attach lol"}/
+                  / end post4Attach
+                .calcContainer.shadow_t2
+                  .calc_text
+                  %input.resuilt_cal{:type => "text"}/
+                  %span Посчитать
+                  / end .calcContainer
+                .actions
+                  #postRequest
+                  #cancel
+              / end .thisPageContent
+
+       
