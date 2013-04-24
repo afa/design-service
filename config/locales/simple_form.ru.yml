@@ -36,14 +36,14 @@ ru:
         cabinet_needed: 'Нужен кабинет?'
         cloakroom_needed: 'Наличие гардеробных<br/>комнат:'
         num_plans: 'Сколько предоставить Вам вариантов планировок?'
-      flat_info:
+      
         num_standpipes: 'Кол-во стояков водопровода:'
-      address:
+        
         address: 'Адрес:'
         floor: 'Этаж:'
         section: 'Подъезд/секция:'
-      family_composition:
-        original_text: 'Состав семьи:'
+      
+      family_composition: 'Состав семьи:'
       replanning_endorsement:
         developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком?'
         flat_area: 'Площадь квартиры:'
