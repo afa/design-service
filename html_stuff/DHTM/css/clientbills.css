@@ -53,22 +53,31 @@ body {
     font-style: normal;
 }
 
-.caption{
-	color:#d55400;
-	background-color:#ebdede;
-	/*padding-left:50px;
-	padding-top:15px;
-	padding-bottom:10px;*/
-	padding: 0 0 0 50px;
-	margin-right:40px;
-	height: 58px;
-	line-height:58px;
-	vertical-align:middle;
-	font-size:24px;
-	margin-bottom:19px;
+
+
+
+.thisPageContent{
+	float:left;
+	width:640px;
 }
-
-
+.cabinetNav{
+	color:#d55400;
+	margin-left:44px;
+	margin-bottom:34px;
+	background-color:#dbdbdb;
+	width:593px;
+	border-top:solid #767676;
+	padding-left:15px;
+	height:42px;
+	line-height:42px;
+	vertical-align:middle;
+}
+.cabinetNavlink:active, .cabinetNavlink:hover{
+	color:#591d1d;
+}
+.cabinetNavllink:vistited{
+	color:#591d1d;
+}
 
 #Balance{
 	background-color:#cfe3b3;
@@ -91,7 +100,7 @@ body {
 .tableService{
 	border-top:solid #767676;
 	border-collapse:collapse;
-	text-align:left;
+	text-align:left  !important;
 }
 .BalanceHistory{
 	width:593px;
@@ -161,4 +170,17 @@ body {
 .balanceHistory statusFalied{
 	color:#691818;
 	font-size:10px;
+}
+.balanceHistoryMain{
+	border-top:solid #767676;
+	border-right:solid #767676;
+	border-left:solid #767676;
+	border-bottom:solid #767676;
+	border-width: 1px;
+	text-align:center;
+	border-collapse:collapse;
+	text-align:center;
+	font-family:'Times New Roman', Times, serif; 
+	background-color:#e4e4e4;
+	height:20px;
 }
