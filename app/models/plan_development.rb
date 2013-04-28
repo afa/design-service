@@ -11,4 +11,11 @@ class PlanDevelopment < ActiveRecord::Base
 
   NUM_GUESTS = ["Нет", "До 5", "5-15", "Более 15"].map.with_index{|value,index| [index,value]}
   KITCHEN_SIZE = [[true, 'Больше 15 кв.м.<br/>'.html_safe],[false, 'Меньше 15 кв.м.']]
+
+  def full_address
+    "#{address} (подъезд: #{section}, этаж: #{floor})"
+  end
+  def num_guests_description
+    num_guests ? NUM_GUESTS[num_guests].last : 'Не указано'
+  end
 end

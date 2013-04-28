@@ -26,4 +26,7 @@ class ModerableText < ActiveRecord::Base
   def set_composed_text
     self.text = "#{first_line} #{second_line}"
   end
+  def to_s
+    text
+  end
 end
