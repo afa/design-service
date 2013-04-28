@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   has_many :received_messages, class_name: 'Message', foreign_key: 'to_id'
   has_many :sent_messages, class_name: 'Message', foreign_key: 'from_id'
 
+  has_one :specialist, foreign_key: 'profile_id'
+  has_one :client, foreign_key: 'profile_id'
+
   # allows user to sign in using both email and username
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   attr_accessor :login

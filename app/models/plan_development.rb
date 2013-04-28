@@ -3,6 +3,7 @@ class PlanDevelopment < ActiveRecord::Base
   belongs_to :comment, class_name: 'ModerableText'
   belongs_to :attachment
   belongs_to :family_composition, class_name: 'ModerableText'
+  belongs_to :client
 
   accepts_nested_attributes_for :attachment, :comment, :family_composition
 

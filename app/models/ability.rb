@@ -10,7 +10,7 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can :read, User
+      can :read, :all
       can :read, ActiveAdmin::Page, name: "Dashboard"
     end
 
