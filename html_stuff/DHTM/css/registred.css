@@ -55,6 +55,18 @@ body {
     font-style: normal;
 }
 
+.shadow{ 	
+-moz-box-shadow: inset 0 3px 15px 1px #888;
+-webkit-box-shadow: inset 0 3px 15px 1px #888;
+box-shadow: inset 0 3px 15px 1px #888;
+}
+.shadow_t2{
+-moz-box-shadow: inset 0 -3px 5px 1px #888;
+-webkit-box-shadow: inset 0 -3px 5px 1px #888;
+box-shadow: inset 0 -3px 5px 1px #888;	
+}
+
+
 /* ~~ Element/tag selectors ~~ */
 ul, ol, dl, div, span { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
 	padding: 0;
@@ -362,15 +374,20 @@ ul li{
 .caption{ 
 height: 40px;
 width: 600px;
-background: #cee2b1;
 margin-top:27px;
 padding-top:15px;
 padding-left:40px;
 font-size:22px;
 font-weight: inherit;
-color:#549202;
-
 }
+.col_green{ color:#549202; }
+.col_orrange{ color:#d55400;}
+.col_rose{ color:#ecdfdf; }
+.dark_yellow{color:#a78900}
+.backgr_color_green{ background-color:#cee2b1;}
+.backgr_color_rose{ background-color:#ecdfdf;}
+.backgr_color_orrange{ background-color:#ebdea3}
+
 div.manual{ padding-left:20px; width:570px; border-top:solid 2px; border-top-color:#949494; margin:15px auto auto 20px; padding-top:10px; color:#3d6804; font-size:19px; font-family:gardensc, Geneva, sans-serif;}
 .thisPageContent{
 	float:left;
@@ -471,6 +488,7 @@ div.manual{ padding-left:20px; width:570px; border-top:solid 2px; border-top-col
 	line-height: 0px;
 }
 
+#calendar{ margin-left:25px; float:left; margin-top:10px;}
 -->
 /* CSS Document */
 /* ~~ These are the columns for the layout. ~~ 
