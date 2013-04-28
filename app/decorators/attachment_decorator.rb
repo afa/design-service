@@ -1,7 +1,6 @@
-class PlanDevelopmentDecorator < Draper::Decorator
+class AttachmentDecorator < Draper::Decorator
   delegate_all
-  #decorates_association :attachment
-  
+
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
@@ -10,7 +9,7 @@ class PlanDevelopmentDecorator < Draper::Decorator
   #       source.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-  def attachment
-    source.attachment ? source.attachment.decorate.link : ''
+  def link
+    helpers.link_to file.filename, file.url
   end
 end

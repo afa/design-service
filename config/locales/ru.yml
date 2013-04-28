@@ -54,3 +54,22 @@ ru:
     title: 'Вход в систему'
   registrations:
     title: 'Регистрация нового пользователя'
+  activerecord:
+    models:
+      client: 'Заказчик'
+    attributes:
+      plan_development:
+        join_kitchen_with_living_room: 'Объединить кухню с гостиной'
+        big_kitchen: 'Размер кухни'
+        num_builtin_closets: 'Количество шкафов'
+        num_guests: 'Кол-во гостей'
+        num_bedrooms: 'Количество спальных мест'
+        washing_room_needed: 'Наличие постирочной'
+        cabinet_needed: 'Нужен кабинет'
+        cloakroom_needed: 'Гардеробные комнаты'
+        num_plans: 'Число вариантов планировок'
+        num_guests_description: 'Число гостей'
+        full_address: 'Адрес'
+        comment: 'Пожелания'
+        client: 'Заказчик'
+        price: 'Цена'
