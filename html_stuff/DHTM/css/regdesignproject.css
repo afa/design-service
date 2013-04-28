@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-#PageCaption{
+.PageCaption{
 	height:126px;
 	overflow:hidden;
 }
@@ -16,76 +16,19 @@
 	padding:0;
 	float:left;
 }
-.typeConteiner{
-	width:630px;
-	margin: 126px 0 0 0;
+.typesContainer{
+	width:600px;
+	margin: 16px 8px 0 25px;
 }
 
+.concept{ width:430px; background-color:#e4efd5; position:relative; float:left;}
+.working_documents{ background-color:#e8edf1; position:relative;  width:160px; float:left; }
+div.concept span.heading{ width:430px; float:left; position:relative; padding:10px 0px 10px 15px; text-align:center; height:40px; color:#77b02a;}
+div.working_documents span.heading{ width:160px;  float:left; position:relative;  text-align:center; height:40px; padding-top:10px; padding-bottom:10px; color:#79a3d1; line-height:16px;}
 
-.WorkDocContainer{		/*290+530px=820px*/
-	width:200px;
-	background-color:#e8edf1;
-}
-.typeIconContainer{
-	background:url(../images/DesignProjectIcons/hall.png) no-repeat;
-	margin:0 auto;
-	width:185px;
-	height:185px;
-}
-
-.WorkDocCaption, .ConceptCaption{
-	font-family:monotype_corsiva, Verdana, sans-serif;
-	font-size:22pt;
-	text-align:center;
-	height:70px;
-}
-
-.ConceptType, .WorkDocType{
-	padding:20px 0 0 0;
-	height:335px;
-}
-
-.WorkDocTypeCaption, .ConceptTypeCaption{
-	margin:20px 0 25px 0;
-	font-family: dejavu_sans, Verdana, sans-serif;
-	font-size:16pt;
-	text-align:center;
-	height:40px;
-}
-
-.WorkDocTypeDescription, .ConceptTypeDescription{
-	font-family: dejavu_sans, Verdana, sans-serif;
-	font-size:12pt;
-	padding:0 35px;
-	text-align:justify;
-	height:40px;
-}
-.DesignProjType{
-	text-decoration:none;
-	color:#383a3e;
-	}
-.DesignProjType:hover,.DesignProjType:active{
-	text-decoration:underline;
-	color:#383a3e;
-	}	
-
-.ConceptContainer{
-	background-color:#e4efd5;
-	width:420px;	
-}
-.ConceptRow1{
-	width:200px;
-}						/*230+300=530px */
-.ConceptRow2{
-	float:left;
-	width:200px;
-}
-.orderDesPlan{
-	float:left;
-	background:url(../images/orderVarPlan.PNG) no-repeat;
-	width:97px;
-	height:22px;
-	margin: 10px 90px;
-}
+div.work_blocks{ width:133px; height:235px;  float:left; margin-left:10px; margin-bottom:15px; position:relative;}
+div.work_blocks span.heading_text{ font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:5px 5px 2px 5px; float:left; font-weight:bold;}
+div.work_blocks span.discription{ font-family:Arial, Helvetica, sans-serif; font-size:11px; padding:0px 5px 2px 5px; float:left;}
+div.work_blocks span.order{ background-image:url(../images/order.png); height:21px; width:100px; background-repeat:no-repeat; float:left; position:relative; margin-left:55px; cursor:pointer;}
 
 

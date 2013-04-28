@@ -18,7 +18,7 @@
   	
     	<div class="Logo">
     		<a href="#">
-    			<img src="images/logo-2.png" alt="Design Serive" name="Design Service"  id="Logo" />
+    			<img src="images/logo-2.png" alt="Design Serive" name="Design Service"  />
         	</a> 
     	</div>
     
@@ -58,24 +58,18 @@
   
   <!-- end .header --></div>
   <div class="BookCover">
+  <div id="main_content">
   <div class="sidebar1">
     <!--Design Elements-->
     
-    <div class="leftPages"></div>
+   <!--  <div class="leftPages"></div> -->
     
-    <div class="springs" id="connector1"></div>
-    <div class="springs" id="connector2"></div>
-	<div class="springs" id="connector3"></div>
-    <div class="springs" id="connector4"></div>
     <!--end De-->
     
     <div class="hiUserName">
-    	<div class="hiUserNameFloater" style="height:8px; width:100%;">
-        </div>
-        <div>
+    	<div class="hiUserNameFloater">
         Добро Пожаловать<br />
-        $Name [$Username]
-        </div>
+        $Name [$Username]</div>
     </div>
   
   	<div class="cabinetNavContainer">
@@ -87,7 +81,7 @@
     <ul class="mySpecialist nav">
     	<li id="special"><a href="#" id="spec">МОИ СПЕЦИАЛИСТЫ</a></li>
         <li id="thebest"><a href="# "id="best">ИЗБРАННЫЕ</a></li>
-        <li"><a href="# "id="work">РАБОТАЮТ</a></li>
+        <li><a href="# "id="work">РАБОТАЮТ</a></li>
     </ul>
     
     <!--end .cabinetNavC --></div>
@@ -124,39 +118,35 @@
     <div class="speceBetween">
     </div> 
     
-  
+     <div class="springs" id="connector1"></div>
+   <div class="border_left"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+   <div class="border_right"><div class="top_corner"></div><div class="bottom_corner"></div></div>
   
   <div class="content">
     <div class="thisPageContent">
-    <div class="rightPages"></div>
+     <!--  <div class="rightPages"></div> -->
     	
-        <div class="caption">
-    		<p> ЙА БОЛВАНКО РЕГИСТРЕД ПЕЙДЖА</p>
+ 
+        <div class="caption dark_yellow backgr_color_orrange">
+    		<p>СОГЛАСОВАНИЕ ПЕРЕПЛАНИРОВОК</p>
         </div>
-        <div class="cabinetHorNav">
-         	 <a class="cabinetHorNavlink" href="#">История</a>
-             <a class="cabinetHorNavlink" href="#">Пополнение</a>
-             <a class="cabinetHorNavlink" href="#">Договоры</a>
-             <a class="cabinetHorNavlink" href="#">Счета</a>
-        <!--end .cabinetNav --></div>
+
         
-        <div id="pageCaption" class="pageCaption">
-            	<div id="postVarPlanLogo" class="pageLogo">
-                </div>
-                <div id="pageName">
-                	<p> Согласование перепланировок</p>
-                </div>
-                <div class="horLine"> </div>
-                
-            <!-- emd #PageCaption--></div>
+     
             	
-                <div class="Manual">
-                	<p class="Alert"> ВНИМАНИЕ! Согласование проводится у генпроектировщика и эксплатирующей организации.</p>
+                <div class="manual">
+                	<p> Заполните заявку</p>
                 </div>
+        
+            	<div class="alert">
+                ВНИМАНИЕ! Согласование проводится у генпроектировщика и 
+эксплуатирующей организации!
+                </div>
+                
                 
                 <form class="planRefactoring" name="planRefactoring" action="#">
                		<div class="RefactDetails">
-                     <p class="FormQuestions"> Проект перепланировки разработан генпроектировщиком?</p>
+                     <p class="FormQuestions">Проект перепланировки разработан генпроектировщиком?</p>
                      
                       <div class="yNinLine">
                         <span>
@@ -181,8 +171,10 @@
                     
                     
                     
-                    <div id="postAttach" class="postContainer">
+                    <div id="postAttach" class="postContainer shadow">
                       <div id="postCaption" class="postCaption"></div>
+                      <div id="postNumber" class="postNumber"></div>
+                      
                		     <div id="fileGrab" class="OMFGFILEGRAB">
                      		<div class="clearfloat"></div>
                     			<p>  Вы можете перетащить файлы сюда   </p>
@@ -208,29 +200,24 @@
                       <div class="clearfloat"></div> 
                 <!--end #licence--></div>
                
-               <div class="calcContainer">
-               	  <div class="calcCaption"></div>
-                  <div class="calc">      
-                  </div>
-                  
-               	  <div class="count">
-         	         <p>Ваш заказ обрабатывается. Ждите $time. <br />
-              	  		Получить уведомление на e-mail.</p>
-               	  </div>
-               <!--end calcContainer --></div>
-                  
-                  
-                  
-                  
+                 <div class="calcContainer shadow_t2">
+                  <div class="calc_text"> </div>
+                  <input type="text" class="resuilt_cal" />
+                  <span>Посчитать</span>
+               <!--end .calcContainer --></div>
+               
                   
                   
                 <div class="actions">
-               	<div id="cancel"> <input type="reset" /></div>
-                <div id="postRequest"> <input type="submit" /></div>
-               	<div class="clearfloat"></div>
-                <!--end actions --> </div>
+                <div id="postRequest"> </div>
+               	<div id="cancel"> </div>
+               </div>
                 </form>
                 
+                <div class="alert">
+                Согласование в жил.инспекции осуществляется по отдельному договору 
+со специализирующей организацией!
+                </div>
         
         
     <!--end .Content--></div>
@@ -240,7 +227,10 @@
     
 
     </div>
+        <!-- end main_content -->
+    </div>
     <!--end bookCover>--></div>
+        <div id="ads"> <span>МЕСТО ДЛЯ РЕКЛАМЫ</span></div>
   <!-- end .contentainer --></div>
         
     <div class="footer">
