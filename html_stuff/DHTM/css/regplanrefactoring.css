@@ -10,6 +10,11 @@
 	height:50px;
 	
 }
+.planRefactoring{ margin-left:20px; margin-top:15px;}
+#fileGrab p{ color: #949494; margin: 30px 0px 30px 120px; }
+
+.yNinLine{ margin-left:10px; margin-top:10px;}
+
 .horLine{
 	float:none;
 	z-index:999;
@@ -25,14 +30,24 @@
 	font-style:normal;
 	color:#3d6804;
 }
-.Alert{
+.alert{
 	color:#bd3404;
-	font-size:18pt;
+	font-size:14pt;
+	margin-left:35px;
+	margin-top:20px;
+	margin-bottom:15px;
+	width:580px;
+	float:left;
+	font-family:"DejaVu Sans Condensed";
+	font-weight: inherit;
 }
+
 .FormQuestions{
 	font-family:gardensc, verdana, sans-serif, #fff;
-	font-size:16pt;
+	font-size:14pt;
 	font-style:italic;
+	margin-top:5px;
+	margin-left:10px;
 }
 .FlatArea{
 	margin: 0 10px;
@@ -40,8 +55,10 @@
 	border:none;
 	background:url(../images/textformbg.PNG) repeat-x;
 }
-#Licence{
+#licence{
 	height: 60px;
+	margin-top:25px;
+
 }
 #appatment{
 	height: 60px;
@@ -66,7 +83,7 @@
 
 #postAttach{
 	/*background-image:url(../MyPages/post4Check.png);*/
-	width:600px;
+	width:580px;
 	height:220px;
 	margin::20px 0 0 10px; 
 	-moz-border-radius:50px;
@@ -80,4 +97,46 @@
 	width: 750px;
 	height: 220px;
 	margin: 20px auto 0px;
+}
+
+.calcContainer{
+	width:352px;
+	height:103px;
+	margin-left:125px;
+	margin-top:30px;
+	position:relative;
+	float:left;
+	behavior: url(scripts/PIE.htc);
+	background-color:#ebebeb;
+	background-repeat:no-repeat;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	border-radius:35px;
+	border-width:6px;
+	border:1px solid #949494;
+}
+.calcContainer div.calc_text{ background:url(../images/cal_text.png); background-repeat:no-repeat; margin:15px 0px 15px 50px; width:235px; height:15px;}
+.resuilt_cal{ width:257px; height:26px; background-color:#ffffff; border:none; margin:0px 0px 0px 45px; background-image:url(../images/text_box_x.jpg); background-repeat: repeat-x; text-align:center; font-size:18px; color:#636363; }
+
+div.calcContainer span{ color:#676363; float:right; margin-right:25px; font-style:italic; text-decoration:underline; cursor:pointer;}
+.actions{ float:left; width:450px; height:15px; margin:25px 0px 45px 110px;}
+
+.actions{ float:left; width:450px; height:15px; margin:25px 0px 45px 110px;}
+div.actions div#cancel{ background:url(../images/cancel.png); background-repeat:no-repeat; width:185px; height:43px; float:left; margin-left:15px;} 
+div.actions div#postRequest{ background:url(../images/submit.png); background-repeat:no-repeat; width:183px; height:43px; float:left;}
+
+#postCaption{
+	background:url(../images/post4caption.png) no-repeat;
+	width:477px;
+	height:25px;
+	float:left;
+}
+#postNumber{
+  background-image: url(../images/num1_yellow.png);
+  margin:0px;
+  height:30px;
+ width:71px;
+ float:left;
+ margin: 28px 0px 0px 0px;
+ background-repeat:no-repeat;
 }
