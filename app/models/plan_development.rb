@@ -16,7 +16,4 @@ class PlanDevelopment < ActiveRecord::Base
   def full_address
     "#{address} (подъезд: #{section}, этаж: #{floor})"
   end
-  def num_guests_description
-    num_guests ? NUM_GUESTS[num_guests].last : 'Не указано'
-  end
 end
