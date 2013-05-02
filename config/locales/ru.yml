@@ -16,9 +16,9 @@ ru:
     errors:
       messages:
         immutable: "поле не может быть изменено"
-
+  title: 'Дизайн сервис'
   welcome:
-    title: ''  
+    title: ''
   plan_developments:
     title: 'Разработка вариантов планировок'
   replanning_endorsements:
@@ -40,9 +40,6 @@ ru:
       title: 'Строительные бригады'
       singular: 'Строительная бригада'
     title: 'Специалисты'
-    
-  title: 'Дизайн сервис'
-  
   user:
     session:
       signout: 'Выйти'
@@ -61,6 +58,7 @@ ru:
       plan_development:
         join_kitchen_with_living_room: 'Объединить кухню с гостиной'
         big_kitchen: 'Размер кухни'
+        kitchen_size: 'Размер кухни'
         num_builtin_closets: 'Количество шкафов'
         num_guests: 'Кол-во гостей'
         num_bedrooms: 'Количество спальных мест'
@@ -69,7 +67,10 @@ ru:
         cloakroom_needed: 'Гардеробные комнаты'
         num_plans: 'Число вариантов планировок'
         num_guests_description: 'Число гостей'
+        num_standpipes: 'Число стояков'
         full_address: 'Адрес'
         comment: 'Пожелания'
         client: 'Заказчик'
         price: 'Цена'
+        attachment: 'Приложенный файл'
+        family_composition: 'Состав семьи'

@@ -24,7 +24,6 @@ ru:
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'
-    
     labels:
       plan_development:
         join_kitchen_with_living_room: 'Объединить кухню<br/>с гостиной?<br/>'
@@ -36,13 +35,12 @@ ru:
         cabinet_needed: 'Нужен кабинет?'
         cloakroom_needed: 'Наличие гардеробных<br/>комнат:'
         num_plans: 'Сколько предоставить Вам вариантов планировок?'
-      
+
         num_standpipes: 'Кол-во стояков водопровода:'
-        
+
         address: 'Адрес:'
         floor: 'Этаж:'
         section: 'Подъезд/секция:'
-      
       family_composition: 'Состав семьи:'
       replanning_endorsement:
         developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком?'
