@@ -73,5 +73,5 @@ gem 'simplecov', :require => false, :group => :test
 
 gem 'spork-rails'
 gem 'activeadmin'
-#gem 'rb-readline', "~> 0.5.0.pre.1"
+gem 'rb-readline', "~> 0.5.0", require: 'readline'
 #gem 'pry-rails', :group => :development
