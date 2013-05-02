@@ -1,9 +1,9 @@
 ActiveAdmin.register PlanDevelopment do
   menu label: ->(){ I18n.t('plan_developments.title') }
   config.filters = false
-  
+
   decorate_with PlanDevelopmentDecorator
-  
+
   index do
     column :id
     default_actions
@@ -17,15 +17,23 @@ ActiveAdmin.register PlanDevelopment do
     column :cloakroom_needed
     column :cabinet_needed
     column :num_builtin_closets
-
     column :num_bedrooms
     column :washing_room_needed
+    column :num_standpipes
 
     column :attachment
     column :comment
-    column :num_standpipes
     column :family_composition
+
     column :created_at
     column :updated_at
+  end
+
+  form partial: 'form'
+
+  controller do
+    def permitted_params
+      params.permit(plan_development: [:price])
+    end
   end
 end

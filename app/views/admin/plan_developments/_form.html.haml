@@ -1,0 +1,21 @@
+= simple_nested_form_for [:admin, resource], html: {multipart: true, class: 'postVarPlan'} do |f|
+  = resource.render_attribute :full_address
+  = resource.render_attribute :num_standpipes
+  = resource.render_attribute :family_composition
+  = resource.render_attribute :join_kitchen_with_living_room
+  = resource.render_attribute :kitchen_size
+
+  = resource.render_attribute :cloakroom_needed
+  = resource.render_attribute :num_builtin_closets
+  = resource.render_attribute :cabinet_needed
+  = resource.render_attribute :num_guests_description
+  = resource.render_attribute :num_bedrooms
+  = resource.render_attribute :washing_room_needed
+  = resource.render_attribute :num_plans
+
+  = resource.render_attribute :comment
+  = resource.render_attribute :attachment
+
+  = f.input :price
+
+  = f.submit
