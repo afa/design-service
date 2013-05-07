@@ -1,18 +1,14 @@
 DesignService::Application.routes.draw do
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
-
   resources :clients
-
-
   resources :specialists
-  
+
   get 'replanning_endorsements' => 'replanning_endorsements#new'
   resources :replanning_endorsements
-  
+
   get 'plan_developments' => 'plan_developments#new'
   resources :plan_developments, only: [:new, :create, :show]
-  
 
   resources :messages
 

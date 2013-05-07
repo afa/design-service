@@ -37,4 +37,18 @@ class User < ActiveRecord::Base
   def admin?
     role == 'admin'
   end
+
+  def self.new_guest
+    u = new(name: "Гость", email: "guest_#{Time.now.to_i}#{rand(99)}@example.com")
+    u.role = 'guest'
+    u.save!(validate: false)
+    u
+  end
+
+  def guest?
+    role == 'guest'
+  end
+  def registered?
+    ! guest?
+  end
 end
