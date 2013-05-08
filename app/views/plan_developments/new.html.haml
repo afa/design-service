@@ -17,7 +17,7 @@
         = f.simple_fields_for :family_composition do |family_f|
           = family_f.input :first_line, input_html: {class: 'family'}, placeholder: '(Укажите количество и пол детей)', label: t('simple_form.labels.family_composition')
           = family_f.input :second_line, input_html: {class: 'children'}, label: false
-    
+
   #post2Quest.postContainer
     #postCaption2.postCaption
     #postNumber2.postNumber
@@ -42,7 +42,7 @@
         = f.input :washing_room_needed, as: :radio_buttons
       #CountText.postFormText
         = f.input :num_plans, as: :string, input_html: {id: 'PlanCount', class: 'varPlanCount'}
-    
+
   #post3Wish.postContainer
     #postNumber3.postNumber
     #postCaption3.postCaption
@@ -60,13 +60,7 @@
       = f.simple_fields_for :attachment do |attachment_f|
         = attachment_f.input :file, as: :file, label: false
 
-  .calcContainer
-    .calc
-    .count
-      %p
-        Ваш заказ обрабатывается. Ждите $time.
-        %br/
-        Получить уведомление на e-mail.
+  = render 'cost_calculator'
 
   .actions
     #cancel

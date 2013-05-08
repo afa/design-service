@@ -21,14 +21,7 @@
   #licence
     = f.input :replanning_organization_licensed, as: :radio_buttons, input_html: {class: 'FormQuestions'}
     .clearfloat
-  .calcContainer
-    .calcCaption
-    .calc
-    .count
-      %p
-        Ваш заказ обрабатывается. Ждите $time.
-        %br/
-        Получить уведомление на e-mail.
+  =render 'cost_calculator'
   .actions
     #cancel
       = f.submit '', type: 'reset'
