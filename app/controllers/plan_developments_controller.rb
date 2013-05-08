@@ -17,11 +17,6 @@ class PlanDevelopmentsController < InheritedResources::Base
   end
 
 private
-  def disable_form?
-    action_name == 'show'
-  end
-  helper_method :disable_form?
-
   def permitted_params
     params.permit(plan_development: [:big_kitchen, :cabinet_needed, :cloakroom_needed,
                                       :join_kitchen_with_living_room, :num_bedrooms, :num_builtin_closets,
