@@ -1,6 +1,3 @@
-@charset "utf-8";
-
-
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background-color: #42413C;
@@ -11,7 +8,6 @@ body {
 }
 
 /*Config */
-/* fonts-declarations */
 /* Menu fonts, table fonts, PostForm font */
 @font-face {
     font-family: 'gardensc';
@@ -21,7 +17,6 @@ body {
          font-url('gardensc/gardensc_03_1-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -30,8 +25,6 @@ body {
 	font-weight: normal;
 	font-style:normal;
 }
-
-
 
 /*Page captions */
 @font-face {

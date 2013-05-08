@@ -1,7 +1,3 @@
-@charset "utf-8";
-
-
-/*-----FontFaces ------*/
 /* Menu fonts, table fonts, PostForm font */
 @font-face {
     font-family: 'gardensc';
@@ -13,8 +9,6 @@
     font-style: normal;
 
 }
-
-
 
 /*Page captions */
 @font-face {
@@ -38,7 +32,6 @@
     font-style: normal;
 }
 
-
 /* LayOut Config */
 body  {
 	font: 100% gardensc, Arial, Helvetica, sans-serif;
@@ -46,22 +39,21 @@ body  {
 	/*
   background: image-url("fon-head.jpg") center top no-repeat,
 	image-url("FooterBg.PNG") center bottom no-repeat,
-	image-url("fon-y.jpg") left top repeat-y; 
+	image-url("fon-y.jpg") left top repeat-y;
   */
-	margin: 0; 
+	margin: 0;
 	padding: 0;
 	text-align: center;
 	color: #000000;
 	overflow:visible;
 }
-.twoColFixRtHdr #container { 
-	width: 980px;  
+
+.twoColFixRtHdr #container {
+	width: 980px;
 	background:#dedede;
 	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
 	text-align: left; /* this overrides the text-align: center on the body element. */
-} 
-
-
+}
 
 /*Custom radio & checkBox */
 .yNinLine{
@@ -113,18 +105,18 @@ input[type='radio']:checked + label {
 .kitchenarea:active{
 	width:200px;
 	border-color:#000;
-	/* -webkit-transition: */ 
+	/* -webkit-transition: */
 	color:#00F;
 }
 
 
 /*HEADER */
-.twoColFixRtHdr #header { 
+.twoColFixRtHdr #header {
 	height:130px;
 	margin: 0px;
 	/*background-image:image-url("fon-head.jpg");*/
-	padding: 0px; 
-} 
+	padding: 0px;
+}
 
 /* Container course Sveta insist on special header bg */
 /* Ilya: PostVarPlan doesn't have this. Does anyone have it? */
@@ -136,7 +128,7 @@ input[type='radio']:checked + label {
 }
 /*allows use 2 diffrent float for logo and user menu */
 /*logo*/
-.headerLayer1 { 
+.headerLayer1 {
 	background-image:image-url("logo.png");
     float: left;
     width: 516px; /* Ширина слоя */
@@ -162,8 +154,8 @@ input[type='radio']:checked + label {
     margin-top:30px;
 	align:right;
 	float: right; /* Обтекание по правому краю */
-   } 
-   
+   }
+
 .headerCaption{
 	font-family: gardensc, verdana, sans-serif;
 	font-size:12pt;
@@ -179,11 +171,11 @@ input[type='radio']:checked + label {
 	position:relative;
 	top:-10px;
 }
- 
+
 /* Right SideBar */
 
 .twoColFixRtHdr #sidebar1 {
-	float: right; 
+	float: right;
 	width: 164px;/* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
 	/* height: 760px; |*/
 	background-image:image-url("fon-color-m.jpg"); /*url(../images/fon-color-m.jpg); */
@@ -244,7 +236,7 @@ input[type='radio']:checked + label {
 	z-index:6;
 	margin-top:60px;
 	color:#6f2d2d;
-	font: 14pt gardensc, Verdana, sans-serif; 
+	font: 14pt gardensc, Verdana, sans-serif;
 	text-align:center;
 	-moz-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
 	-webkit-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
@@ -257,10 +249,10 @@ input[type='radio']:checked + label {
 
 
 /*Main Container  TopMenu (aka specMenu) & thisPageContent */
-.twoColFixRtHdr #mainContent { 
+.twoColFixRtHdr #mainContent {
 	margin: 0 0 0 0; /* the right margin on this div element creates the column down the right side of the page - no matter how much content the sidebar1 div contains, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends. */
 	padding: 0 0px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
-} 
+}
 
 /*SpecMenu */
 .leftTopContainer {
@@ -369,17 +361,17 @@ input[type='radio']:checked + label {
 
 
 /*footer */
-.twoColFixRtHdr #footer { 
+.twoColFixRtHdr #footer {
 	margin: 0 0; /*Omg collapse */
-	padding: 0 0px 0 0px;/* Buben */ 
+	padding: 0 0px 0 0px;/* Buben */
 	height : 119px;
    background-image:image-url("FooterBg.PNG");
 	
-} 
+}
 .twoColFixRtHdr #footer p {
 	margin: 0;
 	color:#22550a;
-	font: 16pt gardensc, Verdana, sans-serif; 
+	font: 16pt gardensc, Verdana, sans-serif;
 	padding: 10px 0;  /*Required courz margins are collapseable */
 	-moz-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
 	-webkit-text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.26);
@@ -428,7 +420,7 @@ input[type='radio']:checked + label {
     font-size: 1px;
     line-height: 0px;
 }
- 
+
 .wtf {
 	clear:both;
 	padding:0px;
@@ -440,7 +432,7 @@ input[type='radio']:checked + label {
 .clear {
 	clear:both;
    }
-   
+
 /* end trixx */
 
 
@@ -472,34 +464,34 @@ div.collection_options_box {
 }
 
 
-#dropZone {    
+#dropZoneSingle {
     color: #555;
     font-size: 18px;
-    text-align: center;    
-    
+    text-align: center;
+
     width: 400px;
     padding: 10px 0;
     margin: 10px auto;
-    
+
     background: #eee;
     border: 1px solid #ccc;
-    
+
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
 
-#dropZone.hover {
+#dropZoneSingle.hover {
     background: #ddd;
     border-color: #aaa;
 }
 
-#dropZone.error {
+#dropZoneSingle.error {
     background: #faa;
     border-color: #f00;
 }
 
-#dropZone.drop {
+#dropZoneSingle.drop {
     background: #afa;
     border-color: #0f0;
 }

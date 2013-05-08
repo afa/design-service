@@ -1,0 +1,14 @@
+.render_attribute {
+  clear: both;
+  .label{
+    float: left;
+    width: 200px;
+  }
+  .value {
+    float: left;
+  }
+  width: 600px;
+}
+.render_attribute:last-child{
+  margin-bottom: 30px;
+}
