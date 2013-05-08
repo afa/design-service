@@ -26,7 +26,7 @@ $(document).ready ->
     dropZone.removeClass('hover')
     dropZone.addClass('drop')
 
-    if event.dataTransfer.files.length > 1
+    if (event.dataTransfer.files.length > 1)
       dropZone.text('Вы можете загрузить только один файл!')
       dropZone.addClass('error')
       false
@@ -35,6 +35,6 @@ $(document).ready ->
       dropZone.text('Файл слишком большой!')
       dropZone.addClass('error')
       false
-        
-    $("input[type='file']")
-      .prop("files", file)  // put files into element
+
+    file_input = $("input[type='file']")
+    file_input.prop("files", file)
