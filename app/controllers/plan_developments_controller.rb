@@ -1,4 +1,6 @@
 class PlanDevelopmentsController < InheritedResources::Base
+  respond_to :html
+
   def create
   # here we should fill order etc
     @plan_development = PlanDevelopment.new(permitted_params).decorate
@@ -9,9 +11,6 @@ class PlanDevelopmentsController < InheritedResources::Base
   end
   def new
     @plan_development = PlanDevelopment.new.decorate
-    @plan_development.build_order do |order|
-      order.client = current_or_guest_user
-    end
     @plan_development.build_family_composition
     @plan_development.build_comment
     @plan_development.build_attachment
