@@ -55,10 +55,10 @@
     #postCaption4.postCaption
     #fileGrab.OMFGFILEGRAB
       .clearfloat
-      %p
-        Вы можете перетащить файлы сюда
-      = f.simple_fields_for :attachment do |attachment_f|
-        = attachment_f.input :file, as: :file, label: false
+      #dropZoneSingle
+        .hint
+        = f.simple_fields_for :attachment do |attachment_f|
+          = attachment_f.input :file, as: :file, label: false, required: true
 
   = render 'cost_calculator'
 
