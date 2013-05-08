@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def self.new_guest
-    u = new(name: "Гость", email: "")
+    u = new(name: "Гость", email: "guest_#{Time.now}@design-service.ru")
     u.role = 'guest'
     u.save!(validate: false)
     u
