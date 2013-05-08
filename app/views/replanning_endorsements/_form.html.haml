@@ -1,10 +1,37 @@
-= simple_form_for(@replanning_endorsement) do |f|
-  = f.error_notification
+= simple_nested_form_for @replanning_endorsement, html: {class: 'planRefactoring', multipart: true} do |f|
+  .RefactDetails
+    = f.input :developed_by_general_projector, as: :radio_buttons, input_html: {class: 'FormQuestions'}
+    .clearfloat
+  #appatment
+    = f.input :flat_area, as: :string, input_html: {class: 'FlatArea'}
+    кв.м.
+  #postAttach.postContainer
+    #postCaption.postCaption
+    #fileGrab.OMFGFILEGRAB
+      .clearfloat
+      /#dropZone
+      /  %p Вы можете перетащить файлы сюда
+      /%input{:type => "file", :value => "Attach lol"}/
 
-  .form-inputs
-    = f.input :developed_by_general_projector
-    = f.input :replanning_organization_licensed
-    = f.input :flat_area
+      = f.simple_fields_for :replanning_attachments do |attachment_form|
+        = attachment_form.input :file, as: :file
+        = attachment_form.link_to_remove "Remove this attachment"
+      = f.link_to_add "Add attachment", :replanning_attachments
 
-  .form-actions
-    = f.button :submit
+  #licence
+    = f.input :replanning_organization_licensed, as: :radio_buttons, input_html: {class: 'FormQuestions'}
+    .clearfloat
+  .calcContainer
+    .calcCaption
+    .calc
+    .count
+      %p
+        Ваш заказ обрабатывается. Ждите $time.
+        %br/
+        Получить уведомление на e-mail.
+  .actions
+    #cancel
+      = f.submit '', type: 'reset'
+    #postRequest
+      = f.submit ''
+    .clearfloat

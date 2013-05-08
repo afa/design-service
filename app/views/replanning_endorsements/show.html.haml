@@ -1,15 +1,11 @@
 %p#notice= notice
 
 %p
-  %b Developed by general projector:
+  %b= t 'activerecord.attributes.replanning_endorsement.developed_by_general_projector'
   = @replanning_endorsement.developed_by_general_projector
 %p
-  %b Replanning organization licenzed:
-  = @replanning_endorsement.replanning_organization_licensed
-%p
-  %b Flat area:
+  %b= t 'activerecord.attributes.replanning_endorsement.flat_area'
   = @replanning_endorsement.flat_area
-
-= link_to 'Edit', edit_replanning_endorsement_path(@replanning_endorsement)
-\|
-= link_to 'Back', replanning_endorsements_path
+%p
+  %b= t 'activerecord.attributes.replanning_endorsement.replanning_organization_licensed'
+  = @replanning_endorsement.replanning_organization_licensed
