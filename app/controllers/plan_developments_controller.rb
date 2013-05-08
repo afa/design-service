@@ -3,17 +3,21 @@ class PlanDevelopmentsController < InheritedResources::Base
 
   def create
   # here we should fill order etc
-    @plan_development = PlanDevelopment.new(permitted_params).decorate
+    @plan_development = @plan_development.decorate
     @plan_development.build_order do |order|
-      order.client = current_or_guest_user
+      order.client = current_or_guest_user.client
     end
     create!{ resource }
   end
   def new
-    @plan_development = PlanDevelopment.new.decorate
+    @plan_development = @plan_development.decorate
     @plan_development.build_family_composition
     @plan_development.build_comment
     @plan_development.build_attachment
+  end
+  def show
+    @plan_development = @plan_development.decorate
+    show!
   end
 
 private
