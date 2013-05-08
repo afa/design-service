@@ -78,3 +78,51 @@ ru:
         developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком'
         flat_area: 'Площадь квартиры'
         replanning_organization_licensed: 'Наличие лицензии у организации, которая разработала проект перепланировки?'
+
+  simple_form:
+    # Labels and hints examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    labels:
+      plan_development:
+        join_kitchen_with_living_room: 'Объединить кухню<br/>с гостиной?<br/>'
+        big_kitchen: 'Размер кухни:'
+        num_builtin_closets: 'Количество встроенных<br/>шкафов, включая<br/>гардеробные комнаты.'
+        num_guests: 'Любите ли Вы<br/>принимать гостей?'
+        num_bedrooms: 'Количество спальных мест:'
+        washing_room_needed: 'Наличие постирочной:'
+        cabinet_needed: 'Нужен кабинет?'
+        cloakroom_needed: 'Наличие гардеробных<br/>комнат:'
+        num_plans: 'Сколько предоставить Вам вариантов планировок?'
+
+        num_standpipes: 'Кол-во стояков водопровода:'
+
+        address: 'Адрес:'
+        floor: 'Этаж:'
+        section: 'Подъезд/секция:'
+      family_composition: 'Состав семьи:'
+      replanning_endorsement:
+        developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком?'
+        flat_area: 'Площадь квартиры:'
+        replanning_organization_licensed: 'Наличие лицензии у организации,<br/>которая разработала проект перепланировки?'
+      user:
+        username: 'Логин'
+        login: 'Логин'
+        email: 'E-mail'
+        password: 'Пароль'
+        password_confirmation: 'Повторите<br/>пароль'
+    hints:
+      user:
+        edit:
+          password: "если вы не сообираетесь менять пароль, оставьте это поле пустым"
+          current_password: "чтобы подтвердить изменения, введите свой текущий пароль"
