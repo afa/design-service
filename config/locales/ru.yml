@@ -73,6 +73,7 @@ ru:
         client: 'Заказчик'
         price: 'Цена'
         attachment: 'Приложенный файл'
+        attachment_info: 'Приложенный файл'
         family_composition: 'Состав семьи'
       replanning_endorsement:
         developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком'
