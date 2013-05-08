@@ -2,7 +2,7 @@ class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
       t.references :orderable, polymorphic: true
-      t.references :client
+      t.references :client, null: false
       t.string :completion_status
 
       t.timestamps
