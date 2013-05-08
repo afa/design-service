@@ -10,7 +10,7 @@ class PlanDevelopmentDecorator < Draper::Decorator
   #       source.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-  def attachment
+  def attachment_info
     source.attachment ? source.attachment.decorate.link : ''
   end
   def render_attribute(attribute)
