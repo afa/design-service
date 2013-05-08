@@ -6,12 +6,13 @@ class Ability
     #
 
     user ||= User.new_guest   # guest user (not logged in)
-
     if user.admin?
       can :manage, :all
     else
       can :read, :all
       can :read, ActiveAdmin::Page, name: "Dashboard"
+      can :create, PlanDevelopment
+      can :create, ReplanningEndorsement
     end
 
     # The first argument to `can` is the action you are giving the user
