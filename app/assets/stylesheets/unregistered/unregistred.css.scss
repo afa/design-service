@@ -463,43 +463,9 @@ div.collection_options_box {
   display: inline;
 }
 
-
-#dropZoneSingle {
-    color: #555;
-    font-size: 18px;
-    text-align: center;
-
-    width: 400px;
-    padding: 10px 0;
-    margin: 10px auto;
-
-    background: #eee;
-    border: 1px solid #ccc;
-
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-
-#dropZoneSingle.hover {
-    background: #ddd;
-    border-color: #aaa;
-}
-
-#dropZoneSingle.error {
-    background: #faa;
-    border-color: #f00;
-}
-
-#dropZoneSingle.drop {
-    background: #afa;
-    border-color: #0f0;
-}
-
 .form_fields_inline > div.input {
   float:left;
 }
-
 
 /*----- Additional Styles to suit design updates, .shadow cast shadow from all forms ------*/
 #sprite{background-image:url(Sprite.png);}

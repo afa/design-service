@@ -1,6 +1,6 @@
 # Singular file upload (for the only file input element on page)
 
-window.registerDropZoneSingularFileHandlers = (dropZone) ->
+window.registerDropZoneSingleFileHandlers = (dropZone) ->
   dropZone_hint = $('.hint', dropZone)
   dropZone_hint.text('Вы можете перетащить файлы сюда')
   maxFileSize = 100000000; # max file size - 100 Mb
@@ -31,9 +31,9 @@ window.registerDropZoneSingularFileHandlers = (dropZone) ->
     dropZone_hint.text('Вы добавили файл ' + file.name)
     dropZone.addClass('drop')
 
-
     $("input[type='file']", dropZone).prop('files', files)
 
+  dropZone[0].ondrop = drop_handler
 
   dropZone[0].ondragover = ->
     dropZone.addClass('hover')
@@ -41,4 +41,4 @@ window.registerDropZoneSingularFileHandlers = (dropZone) ->
   dropZone[0].ondragleave =  ->
     dropZone.removeClass('hover')
     false
-  dropZone[0].ondrop = drop_handler
+  

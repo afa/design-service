@@ -5,5 +5,6 @@
 //= require single_file_drop
 
 $(document).ready ->
-  unless $('#dropZoneSingle').empty()
-    registerDropZoneSingularFileHandlers($('#dropZoneSingle'))
+  filegrabber = $('.dropZone.single')
+  unless filegrabber.size() == 0
+    registerDropZoneSingleFileHandlers(filegrabber)
