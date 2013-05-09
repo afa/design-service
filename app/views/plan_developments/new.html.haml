@@ -1,4 +1,3 @@
-/ = render 'form'
 .Manual
   %p Заполните заявку:
 = simple_nested_form_for @plan_development, html: {multipart: true, class: 'postVarPlan'} do |f|
@@ -55,7 +54,7 @@
     #postCaption4.postCaption
     #fileGrab.OMFGFILEGRAB
       .clearfloat
-      #dropZoneSingle
+      .dropZone.single
         .hint
         = f.simple_fields_for :attachment do |attachment_f|
           = attachment_f.input :file, as: :file, label: false, required: true
@@ -64,7 +63,6 @@
 
   .actions
     #cancel
-      /%input{:type => "reset"}/
       = f.submit '', type: 'reset'
     #postRequest
       = f.submit ''
