@@ -1,5 +1,6 @@
 class PlanDevelopmentsController < InheritedResources::Base
   respond_to :html
+  load_and_authorize_resource
 
   def create
   # here we should fill order etc

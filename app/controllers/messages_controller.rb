@@ -1,6 +1,6 @@
 class MessagesController < InheritedResources::Base
   before_filter :authenticate_user!
-
+  load_and_authorize_resource
   def new
     recipient = User.find(params[:recipient_id])
     redirect_to :back, alert: 'You should select recipient of a message'  unless recipient

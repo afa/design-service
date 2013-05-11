@@ -1,5 +1,6 @@
 class ReplanningEndorsementsController < InheritedResources::Base
   respond_to :html
+  load_and_authorize_resource
   def new
     @replanning_endorsement.replanning_attachments.build
     new!
