@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  def current_ability
+    @current_ability ||= Ability.new(current_or_guest_user)
+  end
+
   # Should skip forgery protection for ajax requests (see https://github.com/plataformatec/devise/wiki/How-To:-Create-a-guest-user)
   #skip_before_filter :verify_authenticity_token, :only => [:name_of_your_ajax_action]
 
