@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130508005959) do
+ActiveRecord::Schema.define(:version => 20130510233411) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -66,8 +66,9 @@ ActiveRecord::Schema.define(:version => 20130508005959) do
     t.string   "orderable_type"
     t.integer  "client_id"
     t.string   "completion_status"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+    t.decimal  "price",             :precision => 10, :scale => 2
   end
 
   add_index "orders", ["client_id"], :name => "index_orders_on_client_id"
@@ -93,7 +94,6 @@ ActiveRecord::Schema.define(:version => 20130508005959) do
     t.integer  "num_standpipes"
     t.integer  "family_composition_id",         :null => false
     t.integer  "client_id"
-    t.string   "price"
   end
 
   create_table "portfolio_photos", :force => true do |t|
