@@ -14,9 +14,9 @@ class PlanDevelopmentDecorator < Draper::Decorator
     source.attachment ? source.attachment.decorate.link : ''
   end
   def kitchen_size
-    PlanDevelopment::KITCHEN_SIZE.detect{|k,v| k == big_kitchen}.last
+    PlanDevelopment::KITCHEN_SIZE.detect{|k,v| k == big_kitchen}.try(&:last) || 'Не указано'
   end
   def num_guests_description
-    num_guests ? PlanDevelopment::NUM_GUESTS[num_guests].last : 'Не указано'
+    num_guests ? PlanDevelopment::NUM_GUESTS[num_guests].try(&:last) : 'Не указано'
   end
 end
