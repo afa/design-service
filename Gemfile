@@ -38,7 +38,7 @@ gem 'capistrano'
 # To use debugger
 # gem 'debugger'
 
-gem 'devise'
+gem 'devise', '~> 3.0.0.rc'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'nested_form'
