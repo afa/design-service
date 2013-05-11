@@ -1,4 +1,6 @@
 DesignService::Application.routes.draw do
+  get "orders/:id/get_price" => 'orders#get_price'
+
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
   resources :clients
@@ -9,7 +11,6 @@ DesignService::Application.routes.draw do
 
   get 'plan_developments' => 'plan_developments#new'
   resources :plan_developments, only: [:new, :create, :show]
-
   resources :messages
 
   # Disable user from destroying his account
