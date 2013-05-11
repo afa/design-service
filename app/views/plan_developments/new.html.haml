@@ -59,8 +59,6 @@
         = f.simple_fields_for :attachment do |attachment_f|
           = attachment_f.input :file, as: :file, label: false, required: true
 
-  = render 'cost_calculator'
-
   .actions
     #cancel
       = f.submit '', type: 'reset'
