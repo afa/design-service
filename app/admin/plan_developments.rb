@@ -30,6 +30,9 @@ ActiveAdmin.register PlanDevelopment do
   end
 
   form partial: 'form'
+  show do
+    render 'plan_development'
+  end
 
   controller do
     def permitted_params
