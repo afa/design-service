@@ -1,13 +1,6 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :authentication_keys => [:login]
-  attr_accessible :name, :surname, :middle_name
-#  attr_accessible :email, :admin, as: :admin
+  # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
   validates :username, length: {minimum: 3}, immutable: true
 
@@ -20,7 +13,7 @@ class User < ActiveRecord::Base
   # allows user to sign in using both email and username
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   attr_accessor :login
-  attr_accessible :username, :login
+
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
