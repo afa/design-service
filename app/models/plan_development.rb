@@ -2,6 +2,8 @@
 class PlanDevelopment < ActiveRecord::Base
   has_one :order, as: :orderable
   has_one :client, through: :order
+  def price; order.price; end
+  def price=(value); order.update_attribute(:price, value); end
 
   belongs_to :comment, class_name: 'ModerableText'
   belongs_to :attachment
