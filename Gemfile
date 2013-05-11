@@ -44,7 +44,7 @@ gem 'simple_form'
 gem 'nested_form'
 gem 'cancan'
 gem 'russian'
-gem 'inherited_resources'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'has_scope'
 gem 'strong_parameters'
 
