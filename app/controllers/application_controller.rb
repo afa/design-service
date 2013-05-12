@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
   def logging_in
     guest_orders = guest_user.try{|user| user.orders.all}
     guest_orders.each do |order|
-      order.user_id = current_user.id
+      order.client_id = current_user.id
       order.save!
     end
   end

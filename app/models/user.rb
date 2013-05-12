@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :sent_messages, class_name: 'Message', foreign_key: 'from_id'
 
   has_one :specialist, foreign_key: 'profile_id'
-  has_many :orders
+  has_many :orders, foreign_key: 'client_id'
 
   # allows user to sign in using both email and username
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
@@ -43,5 +43,9 @@ class User < ActiveRecord::Base
   end
   def registered?
     ! guest?
+  end
+
+  def to_s
+    "#{full_name} [#{username}]"
   end
 end
