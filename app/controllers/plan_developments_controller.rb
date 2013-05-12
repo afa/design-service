@@ -2,6 +2,10 @@ class PlanDevelopmentsController < InheritedResources::Base
   respond_to :html
   load_and_authorize_resource
 
+  before_filter only: [:show] do
+    @plan_development = @plan_development.decorate
+  end
+
   def create
   # here we should fill order etc
     @plan_development = @plan_development.decorate
@@ -15,10 +19,6 @@ class PlanDevelopmentsController < InheritedResources::Base
     @plan_development.build_family_composition
     @plan_development.build_comment
     @plan_development.build_attachment
-  end
-  def show
-    @plan_development = @plan_development.decorate
-    show!
   end
 
 private

@@ -1,11 +1,2 @@
-%p#notice= notice
-
-%p
-  %b= t 'activerecord.attributes.replanning_endorsement.developed_by_general_projector'
-  = @replanning_endorsement.developed_by_general_projector
-%p
-  %b= t 'activerecord.attributes.replanning_endorsement.flat_area'
-  = @replanning_endorsement.flat_area
-%p
-  %b= t 'activerecord.attributes.replanning_endorsement.replanning_organization_licensed'
-  = @replanning_endorsement.replanning_organization_licensed
+= render resource
+= render 'price_calculator', order_id: resource.order.id

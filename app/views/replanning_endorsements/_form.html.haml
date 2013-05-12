@@ -19,7 +19,6 @@
   #licence
     = f.input :replanning_organization_licensed, as: :radio_buttons, input_html: {class: 'FormQuestions'}
     .clearfloat
-  =render 'price_calculator', order_id: resource.order.id
   .actions
     #cancel
       = f.submit '', type: 'reset'
