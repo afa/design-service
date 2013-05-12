@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/brainspec/enumerize.git
+  revision: 1c5b40d748bc42c686ebc9a6e1934d9ccf81f7c1
+  specs:
+    enumerize (0.5.1)
+      activesupport (>= 3.2)
+
+GIT
   remote: git://github.com/josevalim/inherited_resources.git
   revision: 9366ccfb88d4efa3456af6ec46efe902218c7e28
   specs:
@@ -206,6 +213,9 @@ GEM
       rails (>= 3.2)
     shoulda-matchers (2.0.0)
       activesupport (>= 3.0.0)
+    show_for (0.3.0.rc)
+      actionpack (>= 3.2, < 5)
+      activemodel (>= 3.2, < 5)
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -254,6 +264,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise (~> 3.0.0.rc)
   draper
+  enumerize!
   factory_girl_rails
   haml-rails
   has_scope
@@ -270,6 +281,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sextant
   shoulda-matchers
+  show_for (~> 0.3.0.rc)
   simple_form
   simplecov
   spork-rails

@@ -47,6 +47,8 @@ gem 'russian'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'has_scope'
 gem 'strong_parameters'
+gem 'show_for', '~> 0.3.0.rc'
+gem 'enumerize', github: 'brainspec/enumerize'
 
 group :development do
   gem 'sextant'
