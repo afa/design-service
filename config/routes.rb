@@ -1,4 +1,8 @@
 DesignService::Application.routes.draw do
+  get "profile/edit"
+  get "profile/specialists"
+  get "profile/orders"
+  
   get "orders/:id/get_price" => 'orders#get_price'
 
   root :to => 'welcome#index'
