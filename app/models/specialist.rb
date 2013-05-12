@@ -23,7 +23,7 @@ class Specialist < ActiveRecord::Base
   end
 
   def like_from?(user)
-    !! users_liked.include?(user)
+    users_liked.where(id: user.id).count > 0
   end
   def set_like_from(user)
     return false  if profile == user
@@ -41,6 +41,6 @@ class Specialist < ActiveRecord::Base
     end
   end
   def number_of_likes
-    users_liked.size
+    users_liked.count
   end
 end
