@@ -2,21 +2,24 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the passed in user here. For example:
-    #
+    user ||= User.new_guest  # actually user can already be guest because in application controller we yielded current_or_guest_user
 
-    user ||= User.new_guest   # guest user (not logged in)
-
-    case user.role
-    when 'admin'
-      can :manage, :all
-    else
-      can :read, ActiveAdmin::Page, name: "Dashboard"
+    if user.role == 'guest'
       can :create, PlanDevelopment
       can :create, ReplanningEndorsement
       can :read, PlanDevelopment, order: { client_id: user.id  }
       can :read, ReplanningEndorsement, order: { client_id: user.id  }
       can :read, Specialist
+    end
+    if user.role == 'client'
+    end
+    if user.role == 'specialist'
+    end
+    if user.role == 'moderator'
+    end
+    if user.role == 'admin'
+      can :manage, :all
+      can :manage, ActiveAdmin::Page, name: "Dashboard"
     end
 
     # The first argument to `can` is the action you are giving the user
