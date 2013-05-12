@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512093629) do
+ActiveRecord::Schema.define(:version => 20130512140657) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -115,6 +115,14 @@ ActiveRecord::Schema.define(:version => 20130512093629) do
     t.datetime "created_at",                                                     :null => false
     t.datetime "updated_at",                                                     :null => false
   end
+
+  create_table "specialist_likes", :id => false, :force => true do |t|
+    t.integer "specialist_id"
+    t.integer "user_id"
+  end
+
+  add_index "specialist_likes", ["specialist_id"], :name => "index_specialist_likes_on_specialist_id"
+  add_index "specialist_likes", ["user_id"], :name => "index_specialist_likes_on_user_id"
 
   create_table "specialists", :force => true do |t|
     t.integer  "specialist_type"
