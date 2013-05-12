@@ -10,6 +10,13 @@ ru:
         submit: 'Сохранить пользователя'
       plan_development:
         create: 'Отправить'
+  show_for:
+    blank: "Не указано"
+    # If you want to use html tags with blank value use blank html translation
+    # blank_html: "<span>Not specified</span>"
+    "yes": "Да"
+    "no": "Нет"
+
   activerecord:
     models:
       user: 'пользователь'
@@ -54,6 +61,7 @@ ru:
   activerecord:
     models:
       client: 'Заказчик'
+      replanning_endorsement: 'Согласование перепланировки'
     attributes:
       plan_development:
         join_kitchen_with_living_room: 'Объединить кухню с гостиной'
@@ -79,7 +87,11 @@ ru:
         developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком'
         flat_area: 'Площадь квартиры'
         replanning_organization_licensed: 'Наличие лицензии у организации, которая разработала проект перепланировки?'
-
+        client: 'Заказчик'
+        price: 'Стоимость'
+      order:
+        client: 'Заказчик'
+        price: 'Стоимость'
   simple_form:
     # Labels and hints examples
     # labels:
