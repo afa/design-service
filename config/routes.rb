@@ -3,7 +3,11 @@ DesignService::Application.routes.draw do
 
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
-  resources :specialists
+  resources :specialists do
+    member do
+      post 'toggle_like'
+    end
+  end
 
   get 'replanning_endorsements' => 'replanning_endorsements#new'
   resources :replanning_endorsements
