@@ -12,20 +12,7 @@
 	height:30px;
 	background:image-url("registerCaption.PNG"), no-repeat;
 }
-.LoginContainer{
-	position:relative;
-	margin: 64 auto;
-	padding-top:36px;
-	width:476px;
-	height:396px;
-	background:image-url("registerContainer.PNG") no-repeat;
-}
-.LoginCaption{
-	margin: 0px auto;
-	width:220px;
-	height:30px;
-	background:image-url("registerCaption.PNG"), no-repeat;
-}
+
 .input label{
 	text-align:right;
 	float:left;
@@ -38,11 +25,6 @@
 
 #2lineConf{
 	/*margin:-4px 0 0;*/
-}
-.required{
-	position:relative;
-	color:#ff0000;
-	top:-8px;
 }
 .input input{
 	text-align:left;
@@ -63,20 +45,3 @@ input{
 	left:169px;
 	top:128px;
 }*/
-
-.ok {
-  position:absolute;
-  bottom:69px;
-  right:60px;
-
-	background:image-url("okButton.PNG") no-repeat;
-	width:108px;
-	height:33px;
-}
-input[type=submit]{
-  width:108px;
-  height:33px;
-  margin:0;
-  padding:0;
-  background: none;
-}

@@ -1,0 +1,23 @@
+.ok {
+  position:absolute;
+  bottom:69px;
+  right:60px;
+
+	background:image-url("okButton.PNG") no-repeat;
+	width:108px;
+	height:33px;
+}
+
+input[type=submit]{
+  width:108px;
+  height:33px;
+  margin:0;
+  padding:0;
+  background: none;
+}
+
+.required{
+	position:relative;
+	color:#ff0000;
+	top:-8px;
+}

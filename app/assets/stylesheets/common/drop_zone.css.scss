@@ -1,0 +1,43 @@
+.OMFGFILEGRAB{
+  width: 750px;
+  height: 220px;
+  margin: 20px auto 0px;
+  .hint{
+    margin: 18px;
+    color:#22550a;
+    font: 16pt gardensc, Verdana, sans-serif;
+    padding: 10px 0;
+  }
+}
+
+.dropZone {
+  color: #555;
+  font-size: 18px;
+  text-align: center;
+
+  width: 400px;
+  padding: 10px 0;
+  margin: 10px auto;
+
+  background: #eee;
+  border: 1px solid #ccc;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.dropZone.hover {
+  background: #ddd;
+  border-color: #aaa;
+}
+
+.dropZone.error {
+  background: #faa;
+  border-color: #f00;
+}
+
+.dropZone.drop {
+  background: #afa;
+  border-color: #0f0;
+}
