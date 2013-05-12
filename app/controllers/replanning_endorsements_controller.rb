@@ -12,7 +12,7 @@ class ReplanningEndorsementsController < InheritedResources::Base
   end
   def create
     @replanning_endorsement.build_order do |order|
-      order.client = current_or_guest_user.client
+      order.client = current_or_guest_user
     end
     create!{ resource }
   end

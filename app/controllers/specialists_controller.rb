@@ -1,6 +1,5 @@
 class SpecialistsController < InheritedResources::Base
   respond_to :html
-  before_filter :authenticate_user!, except: [:index]
   has_scope :by_specialist_type, as: :specialist_type, only: :index
   load_and_authorize_resource
 private

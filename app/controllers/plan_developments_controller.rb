@@ -10,7 +10,7 @@ class PlanDevelopmentsController < InheritedResources::Base
   # here we should fill order etc
     @plan_development = @plan_development.decorate
     @plan_development.build_order do |order|
-      order.client = current_or_guest_user.client
+      order.client = current_or_guest_user
     end
     create!{ resource }
   end

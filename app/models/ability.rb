@@ -6,13 +6,17 @@ class Ability
     #
 
     user ||= User.new_guest   # guest user (not logged in)
-    if user.admin?
+
+    case user.role
+    when 'admin'
       can :manage, :all
     else
-      can :read, :all
       can :read, ActiveAdmin::Page, name: "Dashboard"
       can :create, PlanDevelopment
       can :create, ReplanningEndorsement
+      can :read, PlanDevelopment, order: { client_id: user.id  }
+      can :read, ReplanningEndorsement, order: { client_id: user.id  }
+      can :read, Specialist
     end
 
     # The first argument to `can` is the action you are giving the user

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130510233411) do
+ActiveRecord::Schema.define(:version => 20130512084643) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -32,12 +32,6 @@ ActiveRecord::Schema.define(:version => 20130510233411) do
     t.string   "file"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "clients", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "profile_id"
   end
 
   create_table "messages", :force => true do |t|
