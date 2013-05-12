@@ -4,14 +4,14 @@ class Ability
   def initialize(user)
     user ||= User.new_guest  # actually user can already be guest because in application controller we yielded current_or_guest_user
 
-    if user.role == 'guest'
-      can :create, PlanDevelopment
-      can :create, ReplanningEndorsement
-      can :read, PlanDevelopment, order: { client_id: user.id  }
-      can :read, ReplanningEndorsement, order: { client_id: user.id  }
-      can :read, Specialist
-    end
+    can :create, PlanDevelopment
+    can :create, ReplanningEndorsement
+    can :read, PlanDevelopment, order: { client_id: user.id  }
+    can :read, ReplanningEndorsement, order: { client_id: user.id  }
+    can :read, Specialist
+
     if user.role == 'client'
+      can :toggle_like, Specialist
     end
     if user.role == 'specialist'
     end

@@ -1,5 +1,8 @@
 .Specialist
   = render @specialist
+.toggle_like{data: {specialist: @specialist.id} }
+  = @specialist.toggle_like_text
+
 .specPortfolio
   = render @specialist.portfolio_photos
 

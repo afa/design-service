@@ -23,7 +23,7 @@ class Specialist < ActiveRecord::Base
   end
 
   def like_from?(user)
-    users_liked.include?(user)
+    !! users_liked.include?(user)
   end
   def set_like_from(user)
     return false  if profile == user
