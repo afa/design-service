@@ -4,6 +4,7 @@ window.register_price_calculator = (calc_container, timeout) ->
     .success (data) ->
       if data['price']?
         $('.count', calc_container).html(data['price']);
+        $('.hint', calc_container).html('');
       else
         setTimeout(worker, timeout);
     .error ->
