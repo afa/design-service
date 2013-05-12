@@ -1,4 +1,4 @@
-window.register_price_updater = (calc_container, timeout) ->
+window.register_price_calculator = (calc_container, timeout) ->
   worker = ->
     $.ajax(url: '/orders/' + calc_container.data('order') + '/get_price')
     .success (data) ->

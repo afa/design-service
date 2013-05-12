@@ -3,8 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 //= require multiple_file_drop
+//= require price_calculator
 
 $(document).ready ->
   filegrabber = $('.dropZone.multiple')
   unless filegrabber.size() == 0
     registerDropZoneMultipleFileHandlers(filegrabber)
+
+  register_price_calculator($('.calcContainer'), 5000)

@@ -1,4 +1,4 @@
-= simple_nested_form_for @replanning_endorsement, html: {class: 'planRefactoring', multipart: true} do |f|
+= simple_nested_form_for resource, html: {class: 'planRefactoring', multipart: true} do |f|
   .RefactDetails
     = f.input :developed_by_general_projector, as: :radio_buttons, input_html: {class: 'FormQuestions'}
     .clearfloat
@@ -19,7 +19,7 @@
   #licence
     = f.input :replanning_organization_licensed, as: :radio_buttons, input_html: {class: 'FormQuestions'}
     .clearfloat
-  =render 'cost_calculator'
+  =render 'price_calculator', order_id: resource.order.id
   .actions
     #cancel
       = f.submit '', type: 'reset'
