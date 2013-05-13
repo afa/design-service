@@ -1,5 +1,4 @@
-= resource.render_attribute :client
-
-= resource.render_attribute :developed_by_general_projector
-= resource.render_attribute :flat_area
-= resource.render_attribute :replanning_organization_licensed
+= show_for replanning_endorsement do |s|
+  = s.attribute :developed_by_general_projector
+  = s.attribute :flat_area
+  = s.attribute :replanning_organization_licensed
