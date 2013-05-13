@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
+  scope :with_orders, -> { where('orders_count > 0') }
+
   validates :username, length: {minimum: 3}, immutable: true
 
   has_many :received_messages, class_name: 'Message', foreign_key: 'to_id'
