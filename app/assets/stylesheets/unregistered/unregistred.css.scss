@@ -411,29 +411,6 @@ input[type='radio']:checked + label {
 /* end trixx */
 
 
-#postRequest input {
-  background-color: #FFF;
-  border: none;
-  background-image:image-url("postButton.png");
-	background-repeat:no-repeat;
-	width:230px;
-	height:50px;
-	float:left;
-	margin-left:200px;
-	margin-top:50px;
-}
-#cancel input {
-  background-color: #FFF;
-  border: none;
-	background-image:image-url("cancelButton.PNG");
-	background-repeat:no-repeat;
-	width:230px;
-	height:50px;
-	float:left;
-	margin-left:110px;
-	margin-top:50px;
-}
-
 div.collection_options_box {
   display: inline;
 }
