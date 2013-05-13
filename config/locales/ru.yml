@@ -47,6 +47,9 @@ ru:
       title: 'Строительные бригады'
       singular: 'Строительная бригада'
     title: 'Специалисты'
+  profile:
+    title: 'Профиль'
+    singular: 'Профиль'
   user:
     session:
       signout: 'Выйти'

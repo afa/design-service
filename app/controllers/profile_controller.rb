@@ -9,5 +9,6 @@ class ProfileController < ApplicationController
   end
 
   def orders
+    @orderable = current_user.orders.map(&:orderable).map(&:decorate)
   end
 end
