@@ -1,22 +1,6 @@
 //= require ./form_style
 //= require ./drop_zone
 
-.render_attribute {
-  clear: both;
-  .label{
-    float: left;
-    width: 200px;
-  }
-  .value {
-    float: left;
-  }
-  width: 600px;
-  &:last-child {
-    margin-bottom: 30px;
-  }
-}
-
-
 .Manual {
 	margin: 28px  0 0 124px;
 	font-family: dejavu_sans, verdana, sans-serif, #fff;
