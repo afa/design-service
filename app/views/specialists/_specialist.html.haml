@@ -2,8 +2,9 @@
   .specCaption
     .specAva
     .usernameContainer
-      %p.specFio=  specialist.profile.full_name
-      %p.specUserName=  specialist.profile.username
+      = link_to specialist do
+        %p.specFio=  specialist.profile.full_name
+        %p.specUserName=  specialist.profile.username
 
   .spceRate
     %p.specRating
