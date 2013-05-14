@@ -142,3 +142,17 @@ ru:
         edit:
           password: "если вы не сообираетесь менять пароль, оставьте это поле пустым"
           current_password: "чтобы подтвердить изменения, введите свой текущий пароль"
+  specialist:
+    titles:
+      singular:
+        architectors: 'Архитектор'
+        engineers: 'Инженер'
+        designers: 'Дизайнер'
+        building_companies: 'Строительная компания'
+        building_brigades: 'Строительная бригада'
+      plural:
+        architectors: 'Архитекторы'
+        engineers: 'Инженеры'
+        designers: 'Дизайнеры'
+        building_companies: 'Строительные компании'
+        building_brigades: 'Строительные бригады'
