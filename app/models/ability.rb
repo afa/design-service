@@ -6,8 +6,8 @@ class Ability
 
     can :create, PlanDevelopment
     can :create, ReplanningEndorsement
-    can :read, PlanDevelopment.by_client(user.id)
-    can :read, ReplanningEndorsement.by_client(user.id)
+    can :read, PlanDevelopment.by_client(user.id).readonly(false)
+    can :read, ReplanningEndorsement.by_client(user.id).readonly(false)
     can :read, Specialist
 
     if user.role == 'client'

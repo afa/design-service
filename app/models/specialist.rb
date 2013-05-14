@@ -5,9 +5,10 @@ class Specialist < ActiveRecord::Base
   has_and_belongs_to_many :users_liked, class_name: 'User', join_table: 'specialist_likes'
   has_and_belongs_to_many :orders, class_name: 'Order', join_table: 'order_executors'
 
-  accepts_nested_attributes_for :portfolio_photos, allow_destroy: true
   scope :by_specialist_type, ->(specialist_type) { where(specialist_type: SPECIALIST_TYPE_ID_BY_NAME[specialist_type]) }
-  scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id).select('specialists.*') }
+  scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
+
+  accepts_nested_attributes_for :portfolio_photos, allow_destroy: true
 
   SPECIALIST_TYPE_ID_BY_NAME = Hash[ ["designers", "architectors", "engineers", "building_companies", "building_brigades"].map.with_index{|value,index| [value, index]} ]
   SPECIALIST_TYPE_NAME_BY_TYPE_ID = SPECIALIST_TYPE_ID_BY_NAME.invert
