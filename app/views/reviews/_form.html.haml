@@ -1,9 +1,8 @@
-= simple_form_for(@review) do |f|
+= simple_nested_form_for [@order, @review] do |f|
   = f.error_notification
-
   .form-inputs
-    = f.association :order
-    = f.association :text
+    = f.simple_fields_for :text do |ff|
+      = ff.input :text
 
   .form-actions
     = f.button :submit

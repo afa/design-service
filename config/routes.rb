@@ -1,11 +1,14 @@
 DesignService::Application.routes.draw do
-  resources :reviews
+  resources :orders do
+    member do
+      get 'get_price'
+    end
+    resources :reviews
+  end
 
   get "profile/edit"
   get "profile/specialists"
   get "profile/orders"
-
-  get "orders/:id/get_price" => 'orders#get_price'
 
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
