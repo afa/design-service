@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512140657) do
+ActiveRecord::Schema.define(:version => 20130513160446) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -54,6 +54,14 @@ ActiveRecord::Schema.define(:version => 20130512140657) do
     t.datetime "updated_at",                        :null => false
     t.boolean  "rejected",       :default => false
   end
+
+  create_table "order_executors", :id => false, :force => true do |t|
+    t.integer "order_id"
+    t.integer "specialist_id"
+  end
+
+  add_index "order_executors", ["order_id"], :name => "index_order_executors_on_order_id"
+  add_index "order_executors", ["specialist_id"], :name => "index_order_executors_on_specialist_id"
 
   create_table "orders", :force => true do |t|
     t.integer  "orderable_id"
@@ -153,6 +161,7 @@ ActiveRecord::Schema.define(:version => 20130512140657) do
     t.string   "middle_name"
     t.integer  "access_level"
     t.string   "role",                   :default => "client"
+    t.integer  "orders_count",           :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
