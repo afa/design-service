@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
+  ROLES = ['guest', 'client', 'admin', 'specialist', 'moderator']
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
   scope :with_orders, -> { where('orders_count > 0') }

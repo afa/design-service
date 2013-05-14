@@ -7,7 +7,7 @@ class OrderDecorator < Draper::Decorator
     h.link_to  source.orderable.class.model_name.underscore.humanize, h.url_for([:admin,source])
   end
   def executors_info
-    h.link_to  'Исполнители', h.admin_specialists_path(order_executors: source.id)
+    h.link_to  'Исполнители', h.admin_specialists_path(order: source.id)
   end
 
   # Define presentation-specific methods here. Helpers are accessed through
