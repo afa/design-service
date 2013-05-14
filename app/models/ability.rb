@@ -6,8 +6,8 @@ class Ability
 
     can :create, PlanDevelopment
     can :create, ReplanningEndorsement
-    can :read, PlanDevelopment, order: { client_id: user.id  }
-    can :read, ReplanningEndorsement, order: { client_id: user.id  }
+    can :read, PlanDevelopment.by_client(user.id)
+    can :read, ReplanningEndorsement.by_client(user.id)
     can :read, Specialist
 
     if user.role == 'client'
@@ -21,6 +21,7 @@ class Ability
       can :manage, :all
       can :manage, ActiveAdmin::Page, name: "Dashboard"
     end
+
 
     # The first argument to `can` is the action you are giving the user
     # permission to do.
