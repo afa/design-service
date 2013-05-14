@@ -1,0 +1,207 @@
+@charset "utf-8";
+/* CSS Document */
+<style type="text/css">
+<!--
+/*--MainPageContentWrapper --*/
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	
+}
+
+/*Config */
+/* fonts-declarations */
+/* Menu fonts, table fonts, PostForm font */
+@font-face {
+    font-family: 'gardensc';
+    src: url('../fonts/gardensc_03_1-webfont.eot');
+    src: url('../fonts/gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gardensc_03_1-webfont.woff') format('woff'),
+         url('../fonts/gardensc_03_1-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'monotype_corsiva';
+	src:url('../fonts/MTCORSVA.TTF') format('truetype');
+	font-weight: normal;
+	font-style:normal;
+}
+@font-face {
+    font-family: 'dejavu_sans';
+    src: url('../fonts/dejavusanscondensed-webfont.eot');
+    src: url('../fonts/dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dejavusanscondensed-webfont.woff') format('woff'),
+         url('../fonts/dejavusanscondensed-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* lol wtf*/
+@font-face {
+    font-family: 'minion_pro';
+    src: url('../fonts/minion_pro-webfont.eot');
+    src: url('../fonts/minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/minion_pro-webfont.woff') format('woff'),
+         url('../fonts/minion_pro-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.caption{
+	color:#d55400;
+	background-color:#ebdede;
+	/*padding-left:50px;
+	padding-top:15px;
+	padding-bottom:10px;*/
+	padding: 0 0 0 50px;
+	width: 600px;
+	height: 58px;
+	line-height:58px;
+	vertical-align:middle;
+	font-size:24px;
+	margin-bottom:19px;
+}
+
+.content {
+	position:relative;
+	padding: 10px 0;
+	width: 640px;  /*original 680 px  but 980 -20x2 (bgPadding) -292px (sidebar1) - 8 (spaceBeetween) */
+	float: left;
+	z-index:1;
+	background-color:#ededed;
+}
+.thisPageContent{
+	float:left;
+	width:640px;
+	margin-top:18px;
+}
+.cabinetNav{
+	color:#d55400;
+	margin-left:44px;
+	margin-bottom:34px;
+	background-color:#dbdbdb;
+	width:593px;
+	border-top:solid #767676;
+	padding-left:15px;
+	height:42px;
+	line-height:42px;
+	vertical-align:middle;
+}
+.cabinetNavlink:active, .cabinetNavlink:hover{
+	color:#591d1d;
+}
+.cabinetNavllink:vistited{
+	color:#591d1d;
+}
+
+#Balance{
+	background-color:#cfe3b3;
+	color:#ac231c;
+	margin-left:44px;
+	padding-left:15px;
+	height:46px;
+	line-height:46px;
+	vertical-align:middle;
+	width:593px;
+	font-size:16px;
+	font-style:italic;
+	margin-bottom:39px;
+}
+.delayService{
+	margin-left:44px;
+	color:#691818;
+	font-style:italic;
+}
+.tableService{
+	border-top:solid #767676;
+	border-collapse:collapse;
+	text-align:left  !important;
+}
+.BalanceHistory{
+	width:593px;
+	margin-left:44px;
+	margin-bottom:57px;
+	size:15px;
+}/*ececec   919191*/
+.bhSumm{
+	font:Georgia, "Times New Roman", Times, serif;
+}
+.tsSumm{
+	font:Georgia, "Times New Roman", Times, serif;
+	text-align:center;
+}
+#jsAncor1{
+	border-top:solid #767676;
+	border-bottom:solid #767676;
+	text-align:left;
+}
+.tsOrderType{
+	text-align:left;
+}
+.bhOrderDate{
+	font-size:13px;
+	color:#919191;
+}
+.bHDate{
+	text-align:center;
+	border-top:solid #747474;
+	border-bottom:solid #747474;
+	border-collapse:collapse;
+	font-size:18px;
+}
+.bHServise{
+	text-align:center;
+	border-top:solid #747474;
+	border-bottom:solid #747474;
+	border-collapse:collapse;
+	font-size:18px;
+}
+.bhStatus{
+	text-align:center;
+	border-top:solid #747474;
+	border-bottom:solid #747474;
+	border-collapse:collapse;
+	font-size:18px;
+}
+.bHSumm{
+	text-align:center;
+	border-top:solid #747474;
+	border-bottom:solid #747474;
+	border-collapse:collapse;
+	font-size:18px;
+}
+.balanceHistoryTotal{
+	border-top:solid #767676;
+	border-right:solid #767676;
+	border-left:solid #767676;
+	border-bottom:solid #767676;
+	text-align:left;
+	border-collapse:collapse;
+	text-align:center;
+	font-family:'Times New Roman', Times, serif; 
+	background-color:#e4e4e4;
+	height:20px;
+}
+.balanceHistory statusFalied{
+	color:#691818;
+	font-size:10px;
+}
+.balanceHistoryMain{
+	border-top:solid #767676;
+	border-right:solid #767676;
+	border-left:solid #767676;
+	border-bottom:solid #767676;
+	border-width: 1px;
+	text-align:center;
+	border-collapse:collapse;
+	text-align:center;
+	font-family:'Times New Roman', Times, serif; 
+	background-color:#e4e4e4;
+	height:20px;
+}

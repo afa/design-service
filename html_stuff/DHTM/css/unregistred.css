@@ -25,14 +25,11 @@ div{
 	font-weight: normal;
 	font-style:normal;
 }
-
-@font-face {
-	font-family: 'monotype_corsiva';
-	src:url('../fonts/MTCORSVA.TTF') format('truetype');
-	font-weight: normal;
-	font-style:normal;
+.Agreement{
+	position:absolute;
+	left:80px;
+	top:330px;
 }
-
 
 
 /*Page captions */

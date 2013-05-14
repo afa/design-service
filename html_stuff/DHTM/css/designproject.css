@@ -10,10 +10,22 @@
 	font-size:14pt;
 }
 #thisPageContent{
-	width:830px;
+	position:relative;
+	width:814px;
 	height:100%;
 	margin:0;
-	padding:0;
+	padding-top:128px;
+}
+#postVarPlanLogo{
+	background:url(../images/designProjIco.PNG) no-repeat;
+	width:46px;
+	height:46px;
+}
+
+.horLine{
+	background:#f89f65;
+	height:2px;
+	width:700px;
 }
 
 .WorkDocContainer, .typeContainer,.ConceptContainer,.ConceptRow1,ConceptRow2{
@@ -22,13 +34,13 @@
 	float:left;
 }
 .typeConteiner{
-	width:830px;
+	width:801px;
 	margin: 126px 0 0 0;
 }
 
 
-.WorkDocContainer{		/*290+530px=820px*/
-	width:290px;
+.WorkDocContainer{		/*290+530px=820px*/ /*267px */
+	width:267px;
 	background-color:#e8edf1;
 }
 .typeIconContainer{
@@ -76,14 +88,14 @@
 
 .ConceptContainer{
 	background-color:#e4efd5;
-	width:520px;	
+	width:534px;	
 }
 .ConceptRow1{
-	width:230px;
+	width:267px;
 }						/*230+300=530px */
 .ConceptRow2{
 	float:left;
-	width:289px;
+	width:267px;
 }
 .orderDesPlan{
 	float:left;

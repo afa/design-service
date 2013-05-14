@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+<link href="css/registred.css" rel="stylesheet" type="text/css" />
+<!--<link href="css/cashhistory.css" rel="sylesheet" type="text/css" /> -->
+<link href="css/ClientOrders.css" rel="stylesheet" type="text/css" /> 
+<link rel="stylesheet" href="css/datepicker.css" type="text/css" /> <!--calendar plug-in -->
+
+<script type="text/javascript" src="js/jquery.js"> </script>
+<script type="text/javascript" src="js/datepicker.js"></script> <!-- requires invokation -->
+
+</head>
+
+<body class="registredContainer">
+
+<div class="container">
+
+  <div class="headerReg">
+  	
+    	<div class="Logo">
+    		<a href="#">
+    			<img src="images/logo-2.png" alt="Design Serive" name="Design Service"  id="Logo" /> 
+        	</a> 
+    	</div>
+        
+   	<div id="topMenuContainer">
+	  <div class="topMenuBut" id="topMenuBut1">
+    			<div class="topMenuCaption" id="VarPlan">
+        			Разработка 
+        			Вариантов
+        			Планировок </div>
+    	<!--end #topMenuBut1 --></div>
+    
+	  <div class="topMenuBut" id="topMenuBut2">
+    			<div class="topMenuCaption">
+        			Согласования
+        			Перепланировок</div>
+    		<!--end #topMenuBut2 --></div>
+    
+ 	  <div class="topMenuBut" id="topMenuBut3">
+    			<div class="topMenuCaption">
+					Дизайн Проект    
+    			</div>
+    		<!--end #topMenuBut3--></div>
+    
+    
+	  <div class="topMenuBut" id="topMenuBut4">
+    			<div class="topMenuCaption">
+        			Авторское
+            		Сопровождение
+            		Строительства
+        		</div>
+    		<!--end #topMenuBut4--></div>
+    
+    	<div class="clearfloat"></div>
+    
+    
+    <!--end #topMenuContainer --></div>
+  
+  <!-- end .header --></div>
+  
+  
+  <div class="BookCover">
+  <div class="sidebar1">
+    <!--Design Elements-->
+    
+    <div class="leftPages"></div>
+    
+    <div class="springs" id="connector1"></div>
+    <div class="springs" id="connector2"></div>
+	<div class="springs" id="connector3"></div>
+    <div class="springs" id="connector4"></div>
+    <!--end De-->
+    
+    <div class="hiUserName">
+    	<div id="UserNameDisplay">
+        Добро Пожаловать<br />
+        $Name [$Username]
+        </div>
+    </div>
+    
+  
+  	<div class="cabinetNavContainer">
+    <ul class="cabinetNav">
+	  <li id="navOrders">	<a href="#">МОИ ЗАКАЗЫ</a>	</li>
+      <li id="navBalance">	<a href="#">ЛИЦЕВОЙ СЧЕТ</a>	</li>
+      <li id="navPresets">	<a href="#">МОИ НАСТРОЙКИ</a>	</li>
+    </ul>
+    <div id="ulSpace"></div>
+    <ul class="mySpecialistNav">
+    	<li id="navSpec">	<a href="#">МОИ СПЕЦИАЛИСТЫ</a>	</li>
+        <li id="navFav" class="innerLi">	<a href="#">ИЗБРАННЫЕ</a> 	</li>
+        <li id="navExec" class="innerLi">	<a href="#">РАБОТАЮТ</a>	</li>
+    </ul>
+     <!--end .cabinetNavC --></div>
+ 
+    <div id="specialistMenuContainer" class="specMenu">
+		<div id="specSelect">
+        	ВЫБОР СПЕЦИАЛИСТОВ
+        </div>
+            	<div id="architect" class="specMenuButton">
+                	<p class="specMenuCaption">Архитекторы</p>
+                </div>
+                <div id="Designer" class="specMenuButton">
+                	<p class="specMenuCaption">Дизайнеры</p>
+                </div>
+                <div id="Enginere" class="specMenuButton">
+                	<p class="specMenuCaption">Инженеры</p>
+                </div>
+                <div id="BuildCompany" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные фирмы</p>
+                </div>
+                <div id="BuildAshot" class="specMenuButton">
+                	<p class="specMenuCaption">Строительные бригады</p>
+                </div>
+     <!--end specMenuContainer --></div>
+     
+     <div id="calendar">
+      	<p>BLOW YOUR BRAIN</p>
+       	<input type="date" id="date"/>
+       	<div id="date" class="calendarAnchor">
+       	</div>
+     </div>
+   
+    <!-- end .sidebar1 --></div>
+ 
+	<div class="speceBetween">
+    </div> 
+  
+<div class="content">
+    <div class="thisPageContent">
+    <div class="rightPages"></div>
+    	
+             
+    	<div class="caption">
+    		<p> МОИ ЗАКАЗЫ</p>
+        </div>
+       <!--
+        <div class="cabinetHorNav">
+         	 <a class="cabinetHorNavlink" href="#">История</a>
+             <a class="cabinetHorNavlink" href="#">Пополнение</a>
+             <a class="cabinetHorNavlink" href="#">Договоры</a>
+             <a class="cabinetHorNavlink" href="#">Счета</a>
+        <!--end .cabinetNav --> <!--</div>  --> <!--Почему не оставить кабинет нав? -->
+        
+    	
+        
+        <div class="OrdersContainer">
+    	  	
+            
+            <div class="TargetOrder DesignProjectOrder" id="TargetOrder1">
+            	<div class="MainDateContainer">
+                	30.01.2013
+                </div>
+                <div class="OrderName">
+                	Наименование: <span class="TargetOrderName"> Согласование перепланировки </span>
+                </div>
+                
+                <div class="OrderStatus">
+                	Состояние: <span class="TargetOrderStatus">В работе</span>
+                </div>
+                <div class="FinishDate">
+                	15.02.2013
+                </div>
+                
+                <div class="CompletedPart">
+                	ЗАВЕРШЕНО	
+                    
+                    <div class="ProgressBarContainer">
+                    	<div class="ProgressFill">
+                        	80%
+                        </div>           
+                    <!--end ProgressBarContainer--></div>
+                   <!--end CompletedPart--> </div>
+                    <div class="RelatedDocsContainer">
+						<span style="float:left;"> Документы: </span>
+                        
+                      <ul class="DocsList" >
+                        	<li> <a href="#" class="contract" style="float:left;">Договор</a></li>
+                        	<li> <a href="#" class="acts" style="float:left;">Акты </a> </li>
+                        	<li> <a href="#" class="payment" style="float:left;">Оплата</a> </li>
+                        </ul> 
+                        
+                        <div class="clearfloat"></div>
+                        
+                    <!--end relatedDocs --></div>
+                
+            <!--end .TargetOrder --></div>
+            
+            
+            
+        <!--end .OrdersContainer --></div>
+        	
+        </div>
+           
+        
+        
+    <!--end .thisPageContent--></div>
+    
+    
+    
+    
+
+    </div>
+    <!--end bookCover>--></div>
+  
+        
+    <div class="footer">
+    <div id="LeftFooter" class="FooterLeft">
+			<p>Cвязаться с нами<br />
+			Тел: +7 (495) 123 65 75<br />
+			E-mail: info@design-service.ru<br /></p>
+		</div>
+        
+	<div id="CenterFooter" class="FooterCenter" >
+			<p>Дизайн-сервис 2012</p>
+    </div>
+    
+	<div id="RightFooter" class="FooterRight" >
+			<p>Партнеры:<br />
+			Банк-Идей<br />
+			ЙА Студия<br /></p>
+	</div>
+    
+    
+
+  <!-- end #footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>
