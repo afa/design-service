@@ -1,5 +1,8 @@
 #encoding: utf-8
 class Specialist < ActiveRecord::Base
+  # extend Enumerize
+  # enumerize :specialist_type, in: [:architector, :engineer, :designer, :building_company, :building_brigade]
+
   belongs_to :profile, class_name: 'User'
   has_many :portfolio_photos
   has_and_belongs_to_many :users_liked, class_name: 'User', join_table: 'specialist_likes'
