@@ -5,6 +5,6 @@
   = s.attribute :flat_area
   = s.attribute :replanning_organization_licensed
 
-= simple_nested_form_for [:admin, resource] do |f|
+= simple_form_for [:admin, resource] do |f|
   = f.input :price
   = f.submit

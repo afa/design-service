@@ -1,0 +1,11 @@
+= simple_form_for [:admin, resource] do |f|
+  = f.association :executors, collection: SpecialistDecorator.decorate_collection(Specialist.all)
+  = f.input :completion_status
+  = f.input :price
+
+  = show_for resource do |s|
+    = s.attribute :orderable_info
+    = s.attribute :client_info
+    = s.attribute :created_at
+    = s.attribute :updated_at
+  = f.submit

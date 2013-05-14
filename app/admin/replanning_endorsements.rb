@@ -25,5 +25,5 @@ ActiveAdmin.register ReplanningEndorsement do
     def permitted_params
       params.permit(replanning_endorsement: [:price])
     end
-  end  
+  end
 end
