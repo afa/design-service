@@ -1,4 +1,6 @@
 DesignService::Application.routes.draw do
+  resources :reviews
+
   get "profile/edit"
   get "profile/specialists"
   get "profile/orders"
