@@ -3,4 +3,4 @@ window.register_toggle_like = (link_element) ->
   .click ->
     $.ajax(url: '/specialists/' + link_element.data('specialist') + '/toggle_like.json', type: 'POST')
     .success (data) ->
-      $(link_element).html(data['toggle_like_text'])
+      $('.hint', link_element).html(data['toggle_like_text'])
