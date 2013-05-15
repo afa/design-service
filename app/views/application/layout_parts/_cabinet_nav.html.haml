@@ -1,0 +1,15 @@
+.cabinetNavContainer
+  %ul.cabinet.nav
+    %li
+      = link_to 'МОИ ЗАКАЗЫ', profile_orders_path, id: 'order'
+    %li#laccount
+      %a#account{:href => "#"} ЛИЦЕВОЙ СЧЕТ
+    %li.settings
+      = link_to 'МОИ НАСТРОЙКИ', profile_edit_path, class: 'settings'
+  %ul.mySpecialist.nav
+    %li#special
+      %a#spec{:href => "#"} МОИ СПЕЦИАЛИСТЫ
+    %li#thebest
+      = link_to 'ИЗБРАННЫЕ', profile_specialists_path, id: 'best'
+    %li#working
+      %a#work{:href => "# "} РАБОТАЮТ

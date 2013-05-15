@@ -15,17 +15,25 @@
     = javascript_include_tag "#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset("#{params[:controller]}_#{params[:action]}")
     = csrf_meta_tags
   %body.registredContainer
-    .notice= notice
-    .alert= alert
+    /.notice= notice
+    /.alert= alert
   
     .container
-      
       = render 'application/layout_parts/order_types_registered'
-      
       .BookCover
-        = render 'application/layout_parts/client_left_menu'      
-        .content
-          .thisPageContent
-            .rightPages
-            = yield
+        #main_content
+          = render 'application/layout_parts/client_left_menu'
+          .speceBetween
+          #connector1.springs
+          .border_left
+            .top_corner
+            .bottom_corner
+          .border_right
+            .top_corner
+            .bottom_corner
+          .content
+            .thisPageContent
+              = yield
+      #ads
+        %span МЕСТО ДЛЯ РЕКЛАМЫ
       = render 'application/layout_parts/footer'

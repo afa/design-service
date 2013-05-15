@@ -1,41 +1,18 @@
 .sidebar1
-  .leftPages
-  #connector1.springs
-  #connector2.springs
-  #connector3.springs
-  #connector4.springs
-
   .hiUserName
-    .hiUserNameFloater{:style => "height:8px; width:100%;"}
-    %div
+    .hiUserNameFloater
       Добро Пожаловать
       %br/
       = greating_name(current_user)
-
-  .cabinetNavContainer
-    %ul.cabinet.nav
-      %li
-        = link_to 'МОИ ЗАКАЗЫ', profile_orders_path, class: 'order'
-      %li#laccount
-        %a#account{:href => "#"} ЛИЦЕВОЙ СЧЕТ
-      %li.settings
-        = link_to 'МОИ НАСТРОЙКИ', profile_edit_path, class: 'settings'
-    %ul.mySpecialist.nav
-      %li#special
-        %a#spec{:href => "#"} МОИ СПЕЦИАЛИСТЫ
-      %li#thebest
-        = link_to 'ИЗБРАННЫЕ', profile_specialists_path, class: 'best'
-      %li#working
-        %a#work{:href => "# "} РАБОТАЮТ
-
-  #specMenuContainer.specMenu
+      (
+      = link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete)
+      )
+  = render 'application/layout_parts/cabinet_nav'
+  #specialistMenuContainer.specMenu
     #specSelect
       ВЫБОР СПЕЦИАЛИСТОВ
     = render 'application/layout_parts/specialists_box'
-
   #calendar
     %p BLOW YOUR BRAIN
     %input#date{:type => "date"}/
     #date.calendarAnchor
-  = link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete)
-.speceBetween
