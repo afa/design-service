@@ -47,29 +47,18 @@
   height:51px;
   line-height:50px;
   text-align:center;
-
-}
-.specMenuHref{
-  color:#FFF;
-  text-decoration:none;
-}
-.specMenuHref:visited{
-  color:#FFF;
+  .hint{
+    text-decoration:none;
   }
-.specMenuHref:hover, .specMenuHref:hover{
-  color:#FFF;
 }
 
-.PortfolioCategory1{
-  background:#f89f65;
-  width:604px;
-  margin:40px 0 0 40px;
-  height:264px;
-  overflow:hidden;
-}
-
-.PortfolioCategory2{
-  background:#a8d868;
+.PortfolioCategory{
+  &.DesignProjectCategory{
+    background:#f89f65;
+  }
+  &.PlanDevelopmentCategory {
+    background:#a8d868;
+  }
   width:604px;
   margin:40px 0 0 40px;
   height:264px;
