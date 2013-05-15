@@ -1,4 +1,10 @@
 DesignService::Application.routes.draw do
+  resources :specialist_groups
+  resources :photo_collections
+  resources :photos
+  resources :portfolio_items
+
+
   resources :orders do
     member do
       get 'get_price'

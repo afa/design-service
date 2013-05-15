@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514133208) do
+ActiveRecord::Schema.define(:version => 20130515190146) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -77,6 +77,20 @@ ActiveRecord::Schema.define(:version => 20130514133208) do
   add_index "orders", ["client_id"], :name => "index_orders_on_client_id"
   add_index "orders", ["orderable_id"], :name => "index_orders_on_orderable_id"
 
+  create_table "photo_collections", :force => true do |t|
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "file"
+    t.integer  "photo_collection_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
   create_table "plan_developments", :force => true do |t|
     t.boolean  "join_kitchen_with_living_room"
     t.boolean  "big_kitchen"
@@ -97,6 +111,12 @@ ActiveRecord::Schema.define(:version => 20130514133208) do
     t.integer  "num_standpipes"
     t.integer  "family_composition_id",         :null => false
     t.integer  "client_id"
+  end
+
+  create_table "portfolio_items", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "portfolio_photos", :force => true do |t|
@@ -135,6 +155,13 @@ ActiveRecord::Schema.define(:version => 20130514133208) do
   add_index "reviews", ["order_id"], :name => "index_reviews_on_order_id"
   add_index "reviews", ["text_id"], :name => "index_reviews_on_text_id"
 
+  create_table "specialist_groups", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "specialist_likes", :id => false, :force => true do |t|
     t.integer "specialist_id"
     t.integer "user_id"
@@ -146,9 +173,10 @@ ActiveRecord::Schema.define(:version => 20130514133208) do
   create_table "specialists", :force => true do |t|
     t.integer  "specialist_type"
     t.integer  "acreditation_level"
-    t.integer  "profile_id",         :null => false
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "profile_id",          :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "specialist_group_id"
   end
 
   add_index "specialists", ["profile_id"], :name => "index_specialists_on_profile_id"

@@ -1,0 +1,2 @@
+module PhotoCollectionsHelper
+end
