@@ -1,0 +1,118 @@
+.specialistMenu{
+	background:#f0dcd3;
+	position:relative;
+	width:604px;
+	height:200px;
+	margin:40px 0 0 40px;
+}
+
+.specialistAva{
+	margin:16px;
+}
+.specialistDescription{
+	position:absolute;
+	top:75px;
+	left:105px;
+	width:225px;
+	height:90px;
+	overflow:hidden;
+	color:#6a6b6d;
+	font-size:12pt;
+}
+
+.specialistStats{
+	font-size:14pt;
+	padding:8px 0;
+	height:55px;
+	width:300px;
+	position:absolute;
+	top:0px;
+	left:105px;
+}
+.positiveReviews{
+	color:#467702;
+}
+.negativeReviews{
+	color:#9f1302;
+}
+.specialistButtonsContainer{
+	position:absolute;
+	right:15px;
+	top:32px;
+}
+
+.specButton{
+	background: image-url("menu-spec-reg.png") no-repeat;
+	width:203px;
+	height:51px;
+	line-height:50px;
+	text-align:center;
+	
+}
+.specMenuHref{
+	color:#FFF;
+	text-decoration:none;
+}
+.specMenuHref:visited{
+	color:#FFF;
+	}
+.specMenuHref:hover, .specMenuHref:hover{
+	color:#FFF;
+}
+
+.PortfolioCategory1{
+	background:#f89f65;
+	width:604px;
+	margin:40px 0 0 40px;
+	height:264px;
+	overflow:hidden;
+}
+
+.PortfolioCategory2{
+	background:#a8d868;
+	width:604px;
+	margin:40px 0 0 40px;
+	height:264px;
+	overflow:hidden;
+}
+
+.portfWork{
+	float:left;
+ 	width:302px;
+}
+
+.workCaption{
+	text-align:center;
+}
+.workType{
+	float:left;
+	height:32px;
+}
+.workRate{
+	color:#060;
+	
+}
+.rateDown{
+	float:left;
+	width:32px;
+	height:32px;
+	background:image-url("thumbs_down.png") no-repeat;
+	margin:0 0 0 8px;
+}
+.rateUp{
+	float:left;
+	width:32px;
+	height:32px;
+	background:image-url("thumbs_up.png") no-repeat;
+	margin:0 0 0 16px;
+}
+
+.portWorkPreview{
+	float:left;
+	width:180px;
+	height:180px;
+}
+.showMeWorkThere{
+	margin:0px auto;
+	width:180px;
+}
