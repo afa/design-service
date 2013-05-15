@@ -1,46 +1,46 @@
 .LoginContainer{
-	position:relative;
-	margin: 64 auto;
-	padding-top:36px;
-	width:476px;
-	height:396px;
-	background:image-url("loginContainer.PNG") no-repeat;
+  position:relative;
+  margin: 64 auto;
+  padding-top:36px;
+  width:476px;
+  height:396px;
+  background:image-url("loginContainer.PNG") no-repeat;
 }
 .LoginCaption{
-	margin: 0px auto;
-	width:220px;
-	height:30px;
-	background:image-url("loginCaption.PNG"), no-repeat;
+  margin: 0px auto;
+  width:220px;
+  height:30px;
+  background:image-url("loginCaption.PNG"), no-repeat;
 }
 .input label{
-	text-align:right;
-	float:left;
-	width:128px;
+  text-align:right;
+  float:left;
+  width:128px;
 }
 .Legend > div{
-	line-height:20px;
-	margin: 36px 0 0;
+  line-height:20px;
+  margin: 36px 0 0;
 }
 
 #2lineConf{
-	/*margin:-4px 0 0;*/
+  /*margin:-4px 0 0;*/
 }
 .input input{
-	text-align:left;
-	top:-40px;
-	float:left;
-	/*width:348px;*/ /* 476-128= 248 */
+  text-align:left;
+  top:-40px;
+  float:left;
+  /*width:348px;*/ /* 476-128= 248 */
 }
 input{
-	background:image-url("textformbg.PNG") repeat-x;
-	height:20px;
-	width:280px;
-	border:none;
-	margin:36px 0 0;
+  background:image-url("textformbg.PNG") repeat-x;
+  height:20px;
+  width:280px;
+  border:none;
+  margin:36px 0 0;
 }
 
 /*.underLine{
-	position:absolute;
-	left:169px;
-	top:128px;
+  position:absolute;
+  left:169px;
+  top:128px;
 }*/
