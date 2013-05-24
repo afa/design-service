@@ -52,4 +52,12 @@ class User < ActiveRecord::Base
   def to_s
     "#{full_name} [#{username}]"
   end
+
+  def messages
+    Message.by_user(id)
+  end
+
+  def specialization
+    specialist ? specialist.specialization : :not_a_specialist
+  end
 end
