@@ -1,0 +1,10 @@
+= simple_nested_form_for resource, html: {multipart: true} do |f|
+  = f.input :title
+  = f.simple_fields_for :photo_collection do |collection_f|
+    = collection_f.input :keep, as: :hidden
+    = collection_f.simple_fields_for :photos do |photo_f|
+      = photo_f.input :photo, as: :file
+      = photo_f.link_to_remove "Удалить фотографию"
+    = collection_f.link_to_add "Добавить фотографию", :photos
+  .ok
+    = f.submit ''

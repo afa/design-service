@@ -1,0 +1,26 @@
+.specialistMenu
+  .specialistAva
+    = image_tag "specAva.JPG"
+  .specialistStats
+    Отзывы об исполнителе:
+    %span.positiveReviews=  specialist_group.positive_feedback
+    %span.negativeReviews=  specialist_group.negative_feedback
+    %br/
+    Выполнено работ:
+    %span{:completedorders => ""}=  specialist_group.number_of_completed_orders
+  .specialistDescription=  specialist_group.description
+  .specialistButtonsContainer
+    .toggle_like{data: {specialist_group: specialist_group.id} }
+      #favorite.specButton
+        .hint=  specialist_group.toggle_like_text
+    = link_to new_specialist_group_message_path(specialist_group) do
+      #writeTo.specButton
+        .hint
+          Написать
+    #order.specButton
+      .hint
+        Заказать
+
+- specialist_group.portfolio_items.group_by(&:specialization) do |category, portfolio_items|
+  .PortfolioCategory{class: "#{category.camelize}Category"}
+    = render portfolio_items
