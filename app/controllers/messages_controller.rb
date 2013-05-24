@@ -1,6 +1,9 @@
 class MessagesController < InheritedResources::Base
   before_filter :authenticate_user!
-  load_and_authorize_resource
+  load_and_authorize_resource :specialist
+  load_and_authorize_resource :message, through: :specialist, shallow: true
+  belongs_to :specialist, optional: true
+
   def new
     recipient = User.find(params[:recipient_id])
     redirect_to :back, alert: 'You should select recipient of a message'  unless recipient
@@ -21,6 +24,9 @@ class MessagesController < InheritedResources::Base
 
 private
   def permitted_params
-    params.permit(message: [:to_id, text_attributes: [:text]] }
+    params.permit(message: [:to_id, text_attributes: [:text]])
   end
+  #def begin_of_association_chain
+  #  current_or_guest_user
+  #end
 end
