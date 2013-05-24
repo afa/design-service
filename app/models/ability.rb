@@ -14,8 +14,11 @@ class Ability
       can :toggle_like, Specialist
     end
     if user.role == 'specialist'
+      can :create, PortfolioItems
+      can :update, PortfolioItems, specialist_id: user.specialist.id
     end
     if user.role == 'moderator'
+      can :manage, PortfolioItems
     end
     if user.role == 'admin'
       can :manage, :all
