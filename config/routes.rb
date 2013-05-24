@@ -4,7 +4,6 @@ DesignService::Application.routes.draw do
   resources :photos
   resources :portfolio_items
 
-
   resources :orders do
     member do
       get 'get_price'
@@ -19,6 +18,7 @@ DesignService::Application.routes.draw do
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
   resources :specialists do
+    resources :messages
     member do
       post 'toggle_like'
     end
@@ -29,7 +29,6 @@ DesignService::Application.routes.draw do
 
   get 'plan_developments' => 'plan_developments#new'
   resources :plan_developments, only: [:new, :create, :show]
-  resources :messages
 
   # Disable user from destroying his account
   # https://github.com/plataformatec/devise/wiki/How-To:-Disable-user-from-destroying-his-account
