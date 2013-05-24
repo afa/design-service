@@ -8,7 +8,5 @@ class MoveFieldsFromSeparateTablesToPlanDevelopments < ActiveRecord::Migration
       t.references :family_composition
       t.remove :flat_info_id
     end
-    drop_table :flat_infos
-    drop_table :addresses
   end
 end

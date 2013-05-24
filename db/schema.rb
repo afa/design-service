@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515190146) do
+ActiveRecord::Schema.define(:version => 20130520123624) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20130515190146) do
   create_table "orders", :force => true do |t|
     t.integer  "orderable_id"
     t.string   "orderable_type"
-    t.integer  "client_id"
+    t.integer  "client_id",                                                       :null => false
     t.string   "completion_status"
     t.datetime "created_at",                                                      :null => false
     t.datetime "updated_at",                                                      :null => false
@@ -85,10 +85,11 @@ ActiveRecord::Schema.define(:version => 20130515190146) do
   end
 
   create_table "photos", :force => true do |t|
-    t.string   "file"
+    t.string   "photo"
     t.integer  "photo_collection_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "title"
   end
 
   create_table "plan_developments", :force => true do |t|
@@ -115,8 +116,10 @@ ActiveRecord::Schema.define(:version => 20130515190146) do
 
   create_table "portfolio_items", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "specialization"
+    t.integer  "specialist_id"
   end
 
   create_table "portfolio_photos", :force => true do |t|
@@ -171,12 +174,12 @@ ActiveRecord::Schema.define(:version => 20130515190146) do
   add_index "specialist_likes", ["user_id"], :name => "index_specialist_likes_on_user_id"
 
   create_table "specialists", :force => true do |t|
-    t.integer  "specialist_type"
     t.integer  "acreditation_level"
     t.integer  "profile_id",          :null => false
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.integer  "specialist_group_id"
+    t.string   "specialization"
   end
 
   add_index "specialists", ["profile_id"], :name => "index_specialists_on_profile_id"
