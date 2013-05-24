@@ -157,10 +157,10 @@ ru:
         building_companies: 'Строительные компании'
         building_brigades: 'Строительные бригады'
   enumerize:
-    specialist:
-      specialist_type:
-        architector: 'Архитектор'
-        engineer: 'Инженер'
-        designer: 'Дизайнер'
-        building_company: 'Строительная компания'
-        building_brigade: 'Строительная бригада'
+    specialization:
+      architector: 'Архитектор'
+      engineer: 'Инженер'
+      designer: 'Дизайнер'
+      building_company: 'Строительная компания'
+      building_brigade: 'Строительная бригада'
+      not_a_specialist: 'Не специалист'
