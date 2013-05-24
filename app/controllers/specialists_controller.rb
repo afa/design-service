@@ -1,6 +1,6 @@
 class SpecialistsController < InheritedResources::Base
   respond_to :html, except: [:toggle_like]
-  has_scope :by_specialist_type, as: :specialist_type, only: [:index]
+  has_scope :by_specialization, as: :specialization, only: [:index]
   load_and_authorize_resource
   custom_actions resource: [:toggle_like]
 
@@ -17,13 +17,9 @@ class SpecialistsController < InheritedResources::Base
   end
 private
   def build_resource
-    @specialist ||= begin
-      obj = super
-      obj.profile = current_user
-      obj
-    end
+    @specialist ||= super.tap{|s| s.profile = current_user }
   end
   def permitted_params
-    params.permit(specialist: [:specialist_type, :acreditation_level, portfolio_photos_attributes: [:file]] )
+    params.permit(specialist: [:specialization, :acreditation_level, portfolio_photos_attributes: [:file]] )
   end
 end
