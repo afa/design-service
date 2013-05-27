@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :orders, foreign_key: 'client_id'
   has_one :specialist, foreign_key: 'profile_id'
+  has_one :avatar, as: :imageable_single, class_name: 'Photo'
 
   scope :with_orders, -> { where('orders_count > 0') }
 

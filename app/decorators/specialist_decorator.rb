@@ -1,5 +1,6 @@
 class SpecialistDecorator < Draper::Decorator
   delegate_all
+  decorates_association :profile
 
   def positive_feedback
     source.positive_feedback
@@ -28,4 +29,8 @@ class SpecialistDecorator < Draper::Decorator
   #       source.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
+
+  def avatar
+    profile.decorate.avatar
+  end
 end
