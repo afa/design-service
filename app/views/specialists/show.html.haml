@@ -4,74 +4,20 @@
   %p Any text
 .specialistMenu
   .specialistAva
-    = image_tag "specAva.JPG"
+    = resource.avatar
   .specialistStats
     Отзывы об исполнителе:
-    %span.positiveReviews=  @specialist.positive_feedback
-    %span.negativeReviews=  @specialist.negative_feedback
+    %span.positiveReviews=  resource.positive_feedback
+    %span.negativeReviews=  resource.negative_feedback
     %br/
     Выполнено работ:
-    %span{:completedorders => ""}=  @specialist.number_of_completed_orders
-  .specialistDescription=  @specialist.description
+    %span{:completedorders => ""}=  resource.number_of_completed_orders
+  .specialistDescription=  resource.description
   .specialistButtonsContainer
-    = link_to new_specialist_message_path(@specialist) do
+    = link_to new_specialist_message_path(resource) do
       #writeTo.specButton
         .hint
           Написать
     #order.specButton
       .hint
         Заказать
-
-.PortfolioCategory.DesignProjectCategory
-  #portWork1.portfWork
-    .workCaption
-      Спальня в стиле
-      %span.ifWeSuddenlyNeedIt
-        мамаСказалаТащить
-    .showMeWorkThere
-      = image_tag "workPreview.JPG", class: 'portWorkPreview', alt: "$portWorkName"
-    .workType
-      Категория работы
-      %span.workRate +7
-    .rateIt
-      .rateUp
-      .rateDown
-  #portWork2.portfWork
-    .workCaption
-      Спальня в стиле
-      мамаСказалаТащить
-    .showMeWorkThere
-      = image_tag "workPreview.JPG", class: 'portWorkPreview', alt: "$portWorkName"
-    .workType
-      Категория работы
-      %span.workRate +7
-    .rateIt
-      .rateUp
-      .rateDown
-
-.PortfolioCategory.PlanDevelopmentCategory
-  #portWork3.portfWork
-    .workCaption
-      Спальня в стиле
-      %span.ifWeSuddenlyNeedIt
-        мамаСказалаТащить
-    .showMeWorkThere
-      = image_tag "workPreview.JPG", class: 'portWorkPreview', alt: "$portWorkName"
-    .workType
-      Категория работы
-      %span.workRate +7
-    .rateIt
-      .rateUp
-      .rateDown
-  #portWork4.portfWork
-    .workCaption
-      Спальня в стиле
-      мамаСказалаТащить
-    .showMeWorkThere
-      = image_tag "workPreview.JPG", class: 'portWorkPreview', alt: "$portWorkName"
-    .workType
-      Категория работы
-      %span.workRate +7
-    .rateIt
-      .rateUp
-      .rateDown
