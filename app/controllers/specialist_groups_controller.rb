@@ -5,7 +5,7 @@ class SpecialistGroupsController < InheritedResources::Base
   before_filter :decorate_resource, except: :index
 private
   def decorate_collection
-    set_collection_ivar( SpecialistGroupDecorator.decorate(get_collection_ivar) )
+    set_collection_ivar( SpecialistGroupDecorator.decorate_collection(get_collection_ivar) )
   end
   def decorate_resource
     set_resource_ivar( SpecialistGroupDecorator.decorate(get_resource_ivar) )
