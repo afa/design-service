@@ -1,5 +1,7 @@
 class SpecialistGroupDecorator < Draper::Decorator
   delegate_all
+  decorates_association :specialists
+  decorates_association :portfolio_items
 
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
@@ -14,5 +16,8 @@ class SpecialistGroupDecorator < Draper::Decorator
   end
   def negative_feedback
     "-#{source.negative_feedback}"
+  end
+  def avatar
+    h.image_tag (source.avatar || source.build_avatar).photo.avatar_size.url
   end
 end

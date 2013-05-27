@@ -5,10 +5,10 @@ class MessagesController < InheritedResources::Base
   belongs_to :specialist, :specialist_group, optional: true, polymorphic: true
 
   def new
-    recipient = User.find(params[:recipient_id])
+    recipient = User.find(params[:specialist_group_id])
     redirect_to :back, alert: 'You should select recipient of a message'  unless recipient
     @message = Message.new
-    @message.to = recipient
+    @message.recipient = recipient
     @message.build_text
   end
 
