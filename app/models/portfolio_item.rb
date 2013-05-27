@@ -1,8 +1,7 @@
 class PortfolioItem < ActiveRecord::Base
-  has_one :photo_collection, as: :imageable
-  #has_many :photos, through: :photo_collection
-  has_one :specialist_group, through: :specialist
   belongs_to :specialist
+  has_one :photo_collection, as: :imageable, include: :photos
+  has_one :specialist_group, through: :specialist
 
   delegate :preview_photo, to: :photo_collection
 

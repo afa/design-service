@@ -10,6 +10,6 @@ private
     @specialist ||= super.tap{|s| s.profile = current_user }
   end
   def permitted_params
-    params.permit(specialist: [:specialization, :acreditation_level, portfolio_photos_attributes: [:file]] )
+    params.permit(specialist: [:specialization, :acreditation_level] )
   end
 end

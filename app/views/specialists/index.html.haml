@@ -12,4 +12,4 @@
   .Specialist
     = render specialist
   .specPortfolio
-    = render specialist.portfolio_photos.first(3)
+    = render specialist.portfolio_items.first(3).map(&:preview_photo)
