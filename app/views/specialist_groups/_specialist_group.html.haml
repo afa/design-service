@@ -10,9 +10,6 @@
     %span{:completedorders => ""}=  specialist_group.number_of_completed_orders
   .specialistDescription=  specialist_group.description
   .specialistButtonsContainer
-    .toggle_like{data: {specialist_group: specialist_group.id} }
-      #favorite.specButton
-        .hint=  specialist_group.toggle_like_text
     = link_to new_specialist_group_message_path(specialist_group) do
       #writeTo.specButton
         .hint

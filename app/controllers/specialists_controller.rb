@@ -1,8 +1,6 @@
 class SpecialistsController < InheritedResources::Base
-  include LikeableResource
   has_scope :by_specialization, as: :specialization, only: [:index]
   load_and_authorize_resource
-  respond_to :html, except: [:upvote_like, :downvote_like, :toggle_like]
 
   before_filter only: [:show] do
     @specialist = @specialist.decorate

@@ -15,8 +15,4 @@ class SpecialistGroupDecorator < Draper::Decorator
   def negative_feedback
     "-#{source.negative_feedback}"
   end
-
-  def toggle_like_text
-    source.like_from?(h.current_user) ? 'Убрать из избранных' : 'В избранные'
-  end
 end

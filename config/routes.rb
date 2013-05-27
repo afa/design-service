@@ -1,9 +1,6 @@
 DesignService::Application.routes.draw do
   resources :specialist_groups do
     resources :messages
-    member do
-      post 'toggle_like'
-    end
   end
   resources :photo_collections
   resources :photos
@@ -24,9 +21,6 @@ DesignService::Application.routes.draw do
   ActiveAdmin.routes(self)
   resources :specialists do
     resources :messages
-    member do
-      post 'toggle_like'
-    end
   end
 
   get 'replanning_endorsements' => 'replanning_endorsements#new'

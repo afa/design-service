@@ -8,10 +8,6 @@ class SpecialistDecorator < Draper::Decorator
     "-#{source.negative_feedback}"
   end
 
-  def toggle_like_text
-    source.like_from?(h.current_user) ? 'Убрать из избранных' : 'В избранные'
-  end
-
   def link_to_profile_admin
     h.link_to profile.to_s, h.admin_user_path(profile)
   end

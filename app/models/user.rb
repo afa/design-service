@@ -9,9 +9,6 @@ class User < ActiveRecord::Base
 
   has_many :orders, foreign_key: 'client_id'
   has_one :specialist, foreign_key: 'profile_id'
-  #has_and_belongs_to_many :liked_specialists, class_name: 'Specialist', join_table: 'specialist_likes'
-  has_many :likes
-  has_many :liked_specialists, through: :likes, source: :likeable, source_type: 'Specialist'
 
   scope :with_orders, -> { where('orders_count > 0') }
 

@@ -1,5 +1,4 @@
 class SpecialistGroup < ActiveRecord::Base
-  include Likeable
   has_many :specialists
   has_many :portfolio_items, through: :specialists, include: :photo_collection
   def messages; specialists.map(&:messages).inject(&:+); end

@@ -7,7 +7,6 @@ class Specialist < ActiveRecord::Base
 
   belongs_to :profile, class_name: 'User'
   #has_many :portfolio_photos
-  #has_and_belongs_to_many :users_liked, class_name: 'User', join_table: 'specialist_likes'
   
   has_many :portfolio_items
   
@@ -33,5 +32,4 @@ class Specialist < ActiveRecord::Base
   # def orders_in_portfolio_by_category(category)
     # portfolio_by_category(category).first(2)
   # end
-  include Likeable
 end

@@ -13,7 +13,6 @@ class Ability
     can :read, Specialist
 
     if user.role == 'client'
-      can :toggle_like, Specialist
     end
     if user.role == 'specialist'
       can :create, PortfolioItems

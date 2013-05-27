@@ -1,13 +1,3 @@
-/.Specialist
-/  = render @specialist
-/.toggle_like{data: {specialist: @specialist.id} }
-/  = @specialist.toggle_like_text
-/.specPortfolio
-/  = render @specialist.portfolio_photos
-/= link_to 'Edit', edit_specialist_path(@specialist)
-/|
-/= link_to 'Back', specialists_path
-
 .caption.col_green.backgr_color_green
   %p ЙА БОЛВАНКО РЕГИСТРЕД ПЕЙДЖА
 .manual
@@ -24,9 +14,6 @@
     %span{:completedorders => ""}=  @specialist.number_of_completed_orders
   .specialistDescription=  @specialist.description
   .specialistButtonsContainer
-    .toggle_like{data: {resource_id: @specialist.id} }
-      #favorite.specButton
-        .hint=  @specialist.toggle_like_text_for(current_user)
     = link_to new_specialist_message_path(@specialist) do
       #writeTo.specButton
         .hint
