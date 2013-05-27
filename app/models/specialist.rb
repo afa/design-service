@@ -6,16 +6,12 @@ class Specialist < ActiveRecord::Base
   enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
 
   belongs_to :profile, class_name: 'User'
-  #has_many :portfolio_photos
-  
-  has_many :portfolio_items
-  
+  has_many :portfolio_items, include: :photo_collection
+
   has_and_belongs_to_many :orders, class_name: 'Order', join_table: 'order_executors'
 
   scope :by_specialization, ->(specialization) { where(specialization: specialization) }
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
-
-  #accepts_nested_attributes_for :portfolio_photos, allow_destroy: true
 
   delegate :full_name, :to_s, :messages,  to: :profile
 
@@ -28,8 +24,4 @@ class Specialist < ActiveRecord::Base
   def description
     "Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!"
   end
-
-  # def orders_in_portfolio_by_category(category)
-    # portfolio_by_category(category).first(2)
-  # end
 end

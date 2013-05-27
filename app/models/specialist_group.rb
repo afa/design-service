@@ -1,7 +1,6 @@
 class SpecialistGroup < ActiveRecord::Base
   has_many :specialists
-  has_many :portfolio_items, through: :specialists, include: :photo_collection
-  def messages; specialists.map(&:messages).inject(&:+); end
+  has_many :portfolio_items, through: :specialists
 
   def positive_feedback; specialists.map(&:positive_feedback).inject(0,&:+); end
   def negative_feedback; specialists.map(&:negative_feedback).inject(0,&:+); end
