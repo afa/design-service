@@ -13,11 +13,9 @@ class PlanDevelopment < ActiveRecord::Base
   def price; order.price; end
   def price=(value); order.update_attribute(:price, value); end
 
-  #validates :num_guests, numericality: true
-  #validates :num_builtin_closets, numericality: true
-
-  NUM_GUESTS = ["Нет", "До 5", "5-15", "Более 15"].map.with_index{|value,index| [index,value]}
-  KITCHEN_SIZE = [[true, 'Больше 15 кв.м.<br/>'.html_safe],[false, 'Меньше 15 кв.м.']]
+  extend Enumerize
+  enumerize :num_guests, in: [:zero, :less_than_five, :five_to_fifteen, :greater_than_fifteen]
+  enumerize :big_kitchen, in: [:less_than_fifteen, :greater_than_fifteen]
 
   def full_address
     "#{address} (подъезд: #{section}, этаж: #{floor})"

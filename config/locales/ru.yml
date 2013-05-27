@@ -164,3 +164,12 @@ ru:
       building_company: 'Строительная компания'
       building_brigade: 'Строительная бригада'
       not_a_specialist: 'Не специалист'
+    plan_development:
+      num_guests:
+        zero: 'Нет'
+        less_than_five: 'До 5'
+        five_to_fifteen: '5-15'
+        greater_than_fifteen: 'Более 15'
+      big_kitchen:
+        less_than_fifteen: 'Больше 15 кв.м.'
+        greater_than_fifteen: 'Меньше 15 кв.м.'

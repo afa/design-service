@@ -11,7 +11,7 @@ ActiveAdmin.register PlanDevelopment do
     column :full_address
     column :num_plans
     column :price
-    column :num_guests_description
+    column :num_guests
     column :join_kitchen_with_living_room
     column :big_kitchen
     column :cloakroom_needed

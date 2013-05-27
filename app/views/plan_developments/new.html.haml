@@ -22,11 +22,10 @@
     #postNumber2.postNumber
     .clearfloat
     #post2Forms
-      /#kitchenContainer
       #TextKitchenSplit.postFormText
         = f.input :join_kitchen_with_living_room, as: :radio_buttons
       #KitchenSquare.postFormText
-        = f.input :big_kitchen, as: :radio_buttons, collection: PlanDevelopment::KITCHEN_SIZE, value_method: :first, label_method: :last, input_html: {class: 'kitchenSize'}
+        = f.input :big_kitchen, as: :radio_buttons, input_html: {class: 'kitchenSize'}
       #TextClothRoom.postFormText
         = f.input :cloakroom_needed, as: :radio_buttons
       #TextWardrobes.postFormText
@@ -34,7 +33,7 @@
       #TextCabinet.postFormText
         = f.input :cabinet_needed, as: :radio_buttons
       #GuestText.postFormText
-        = f.input :num_guests, as: :radio_buttons, collection: PlanDevelopment::NUM_GUESTS, value_method: :first, label_method: :last
+        = f.input :num_guests, as: :radio_buttons
       #SleepersText.postFormText
         = f.input :num_bedrooms, as: :string, input_html: {id: 'SleepersCount', class: 'Sleepers'}
       #LaundryText.postFormText
