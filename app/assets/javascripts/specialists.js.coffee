@@ -4,4 +4,5 @@
 //= require toggle_like
 
 $(document).ready ->
-  register_toggle_like($('.toggle_like'))
+  register_toggle_like('specialists', $('.toggle_like'))
+  register_updownvote('specialists', $('.upvote'), $('.downvote'))

@@ -7,7 +7,10 @@ class Specialist < ActiveRecord::Base
 
   belongs_to :profile, class_name: 'User'
   #has_many :portfolio_photos
-  has_and_belongs_to_many :users_liked, class_name: 'User', join_table: 'specialist_likes'
+  #has_and_belongs_to_many :users_liked, class_name: 'User', join_table: 'specialist_likes'
+  
+  has_many :portfolio_items
+  
   has_and_belongs_to_many :orders, class_name: 'Order', join_table: 'order_executors'
 
   scope :by_specialization, ->(specialization) { where(specialization: specialization) }
@@ -30,27 +33,5 @@ class Specialist < ActiveRecord::Base
   # def orders_in_portfolio_by_category(category)
     # portfolio_by_category(category).first(2)
   # end
-
-  def like_from?(user)
-    users_liked.where(id: user.id).count > 0
-  end
-  def set_like_from(user)
-    return false  if profile == user
-    return false  if like_from?(user)
-    users_liked << user
-  end
-  def delete_like_from(user)
-    users_liked.delete(user)
-  end
-
-  def toggle_like_from(user)
-    if like_from?(user)
-      delete_like_from(user)
-    else
-      set_like_from(user)
-    end
-  end
-  def number_of_likes
-    users_liked.count
-  end
+  include Likeable
 end

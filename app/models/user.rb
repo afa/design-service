@@ -4,11 +4,14 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
-  has_many :received_messages, class_name: 'Message', foreign_key: 'to_id'
-  has_many :sent_messages, class_name: 'Message', foreign_key: 'from_id'
+  has_many :received_messages, as: :recipient
+  has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id', inverse_of: :sender
+
   has_many :orders, foreign_key: 'client_id'
   has_one :specialist, foreign_key: 'profile_id'
-  has_and_belongs_to_many :liked_specialists, class_name: 'Specialist', join_table: 'specialist_likes'
+  #has_and_belongs_to_many :liked_specialists, class_name: 'Specialist', join_table: 'specialist_likes'
+  has_many :likes
+  has_many :liked_specialists, through: :likes, source: :likeable, source_type: 'Specialist'
 
   scope :with_orders, -> { where('orders_count > 0') }
 

@@ -1,5 +1,10 @@
 DesignService::Application.routes.draw do
-  resources :specialist_groups
+  resources :specialist_groups do
+    resources :messages
+    member do
+      post 'toggle_like'
+    end
+  end
   resources :photo_collections
   resources :photos
   resources :portfolio_items

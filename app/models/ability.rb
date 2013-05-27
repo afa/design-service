@@ -4,6 +4,8 @@ class Ability
   def initialize(user)
     user ||= User.new_guest  # actually user can already be guest because in application controller we yielded current_or_guest_user
 
+    can :manage, :all  # debug mode
+
     can :create, PlanDevelopment
     can :create, ReplanningEndorsement
     can :read, PlanDevelopment.by_client(user.id).readonly(false)

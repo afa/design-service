@@ -2,7 +2,7 @@ class MessagesController < InheritedResources::Base
   before_filter :authenticate_user!
   load_and_authorize_resource :specialist
   load_and_authorize_resource :message, through: :specialist, shallow: true
-  belongs_to :specialist, optional: true
+  belongs_to :specialist, :specialist_group, optional: true, polymorphic: true
 
   def new
     recipient = User.find(params[:recipient_id])

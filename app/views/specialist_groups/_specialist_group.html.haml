@@ -21,6 +21,6 @@
       .hint
         Заказать
 
-- specialist_group.portfolio_items.group_by(&:specialization) do |category, portfolio_items|
+- specialist_group.portfolio_items.group_by(&:specialization).each do |category, portfolio_items|
   .PortfolioCategory{class: "#{category.camelize}Category"}
-    = render portfolio_items
+    = render partial: 'portfolio_items', collection: portfolio_items

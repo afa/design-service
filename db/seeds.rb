@@ -37,13 +37,13 @@ group_2.specialists << spec_3.specialist
 puts "specialist groups created:\n#{group_1.specialists}\n#{group_2.specialists}\n"
 
 photos = 10.times.map{|i| Photo.new(photo: "photo_#{i}.png") }
-collection_1 = PhotoCollection.create(name: 'photo album 1'){|c| c.photos << photos[0] << photos[1] << photos[2] }
-collection_2 = PhotoCollection.create(name: 'photo album 2'){|c| c.photos << photos[3] << photos[4] << photos[5] }
-collection_3 = PhotoCollection.create(name: 'photo album 3'){|c| c.photos << photos[6] << photos[7] << photos[8] }
-collection_4 = PhotoCollection.create(name: 'photo album 4'){|c| c.photos << photos[9] }
+collection_1 = PhotoCollection.create{|c| c.photos << photos[0] << photos[1] << photos[2] }
+collection_2 = PhotoCollection.create{|c| c.photos << photos[3] << photos[4] << photos[5] }
+collection_3 = PhotoCollection.create{|c| c.photos << photos[6] << photos[7] << photos[8] }
+collection_4 = PhotoCollection.create{|c| c.photos << photos[9] }
 puts 'photos and photo collection builded'
-portfolio_item_1 = PortfolioItem.new(photo_collection: collection_1, specialist: :spec_1)
-portfolio_item_2 = PortfolioItem.new(photo_collection: collection_2, specialist: :spec_1)
-portfolio_item_3 = PortfolioItem.new(photo_collection: collection_3, specialist: :spec_2)
-portfolio_item_4 = PortfolioItem.new(photo_collection: collection_4, specialist: :spec_3)
+portfolio_item_1 = PortfolioItem.new(photo_collection: collection_1, specialist: spec_1.specialist)
+portfolio_item_2 = PortfolioItem.new(photo_collection: collection_2, specialist: spec_1.specialist)
+portfolio_item_3 = PortfolioItem.new(photo_collection: collection_3, specialist: spec_2.specialist)
+portfolio_item_4 = PortfolioItem.new(photo_collection: collection_4, specialist: spec_3.specialist)
 puts 'portfolio items buided'

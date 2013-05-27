@@ -9,5 +9,14 @@ class SpecialistGroupDecorator < Draper::Decorator
   #       source.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
+  def positive_feedback
+    source.positive_feedback
+  end
+  def negative_feedback
+    "-#{source.negative_feedback}"
+  end
 
+  def toggle_like_text
+    source.like_from?(h.current_user) ? 'Убрать из избранных' : 'В избранные'
+  end
 end

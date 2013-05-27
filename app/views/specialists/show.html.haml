@@ -24,9 +24,9 @@
     %span{:completedorders => ""}=  @specialist.number_of_completed_orders
   .specialistDescription=  @specialist.description
   .specialistButtonsContainer
-    .toggle_like{data: {specialist: @specialist.id} }
+    .toggle_like{data: {resource_id: @specialist.id} }
       #favorite.specButton
-        .hint=  @specialist.toggle_like_text
+        .hint=  @specialist.toggle_like_text_for(current_user)
     = link_to new_specialist_message_path(@specialist) do
       #writeTo.specButton
         .hint
