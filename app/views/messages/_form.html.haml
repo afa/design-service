@@ -1,5 +1,4 @@
-= simple_form_for @message do |f|
-  = f.input :to_id, as: :hidden
-  = f.simple_fields_for :text do |text_form|
-    = render partial: 'moderable_text_fields',  locals: {f: text_form}
+= simple_form_for [parent, resource] do |f|
+  = f.simple_fields_for :text do |text_f|
+    = text_f.input :text, as: :text, input_html: {cols: 60, rows:3}, label: 'Текст сообщения'
   = f.submit 'Отправить сообщение'

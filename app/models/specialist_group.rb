@@ -9,5 +9,11 @@ class SpecialistGroup < ActiveRecord::Base
 
   def positive_feedback; specialists.map(&:positive_feedback).inject(0,&:+); end
   def negative_feedback; specialists.map(&:negative_feedback).inject(0,&:+); end
+  def neutral_feedback; specialists.map(&:neutral_feedback).inject(0,&:+); end
   def number_of_completed_orders; specialists.map(&:number_of_completed_orders).inject(0,&:+); end
+  def rating;  "Д/379"; end
+  def description; "Опыт работы: 5 лет"; end
+  def to_s; name; end
+  def status; :free; end
+  def free?; status == :free ? 'Свободен' : 'Занят'; end
 end

@@ -1,7 +1,9 @@
 From:
-= message.from.try(&:username)
+= message.sender.class
 %br/
 To:
-= message.to.try(&:username)
+= link_to message.recipient, message.recipient
 %br/
+Текст сообщения:
 = render partial:'moderable_text', object: message.text
+%br/

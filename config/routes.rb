@@ -1,5 +1,9 @@
 DesignService::Application.routes.draw do
+  resources :messages
   resources :specialist_groups do
+    resources :messages
+  end
+  resources :specialists do
     resources :messages
   end
   resources :photo_collections
@@ -19,9 +23,6 @@ DesignService::Application.routes.draw do
 
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
-  resources :specialists do
-    resources :messages
-  end
 
   get 'replanning_endorsements' => 'replanning_endorsements#new'
   resources :replanning_endorsements

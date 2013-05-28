@@ -1,32 +1,36 @@
 class MessagesController < InheritedResources::Base
   before_filter :authenticate_user!
-  load_and_authorize_resource :specialist
-  load_and_authorize_resource :message, through: :specialist, shallow: true
+  #load_and_authorize_resource :specialist
+  #load_and_authorize_resource :message, through: :specialist, shallow: true
+  load_and_authorize_resource :message
   belongs_to :specialist, :specialist_group, optional: true, polymorphic: true
 
+  before_filter :check_have_recipient, only: [:new, :create]
+  
   def new
-    recipient = User.find(params[:specialist_group_id])
-    redirect_to :back, alert: 'You should select recipient of a message'  unless recipient
-    @message = Message.new
-    @message.recipient = recipient
-    @message.build_text
+    @message = Message.new do |msg|
+      msg.recipient = parent
+      msg.build_text
+    end
   end
 
   def create
-    @message = Message.new(permitted_params)
-    @message.from = current_user
-    if @message.save
-      redirect_to @message
-    else
-      render action: 'new'
+    @message = Message.new(permitted_params[:message]) do |msg|
+      msg.recipient = parent
+      msg.sender = current_user
     end
+    create! { resource }
   end
 
 private
   def permitted_params
-    params.permit(message: [:to_id, text_attributes: [:text]])
+    params.permit(message: [text_attributes: [:text]])
   end
   #def begin_of_association_chain
   #  current_or_guest_user
   #end
+  def check_have_recipient
+    redirect_to :back, alert: 'Невозможно создать сообщение в никуда'  unless parent
+    false
+  end
 end

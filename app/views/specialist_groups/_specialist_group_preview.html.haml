@@ -1,0 +1,23 @@
+.thisPageContent
+  .caption.col_orrange.backgr_color_rose
+    %p ДИЗАЙНЕРЫ
+  .manual
+
+.blocks_designers
+  .info_type1
+    = specialist_group_preview.avatar height: 39, width: 38
+    %span= specialist_group_preview.rating
+  .info_type2
+    %span.text1= link_to specialist_group_preview.name, specialist_group_preview
+    %span.text2= specialist_group_preview.description
+    %span{class:['status', specialist_group_preview.status]}
+      .button
+      = specialist_group_preview.free?
+  .info_type3
+    %span.dark_gray Рекомендации:
+    %span.green=  specialist_group_preview.positive_feedback
+    %span.gray= specialist_group_preview.neutral_feedback
+    %span.red=  specialist_group_preview.negative_feedback
+
+.work_samples
+  =render partial: 'portfolio_items/preview_photo', collection: specialist_group_preview.portfolio_items.first(3)

@@ -97,6 +97,8 @@ ru:
       order:
         client: 'Заказчик'
         price: 'Стоимость'
+      message:
+        text: 'Текст сообщения'
   simple_form:
     # Labels and hints examples
     # labels:

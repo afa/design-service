@@ -19,6 +19,7 @@ class Specialist < ActiveRecord::Base
   def rating_count; 777; end
   def positive_feedback; 10; end
   def negative_feedback; 0; end
+  def neutral_feedback; 0; end
   def number_of_completed_orders; 7; end
 
   def description
