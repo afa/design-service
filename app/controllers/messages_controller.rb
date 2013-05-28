@@ -6,7 +6,7 @@ class MessagesController < InheritedResources::Base
   belongs_to :specialist, :specialist_group, optional: true, polymorphic: true
 
   before_filter :check_have_recipient, only: [:new, :create]
-  
+
   def new
     @message = Message.new do |msg|
       msg.recipient = parent

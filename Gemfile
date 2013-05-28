@@ -11,7 +11,7 @@ gem 'mysql2' #, platform: :ruby
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', :platforms => :ruby
-gem 'libv8', :platforms => :ruby
+gem 'libv8', '~>3.11.8', :platforms => :ruby
 
 # Gems used only for assets and not required
 # in production environments by default.
