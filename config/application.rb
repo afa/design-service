@@ -62,7 +62,7 @@ module DesignService
 
     # Enable the asset pipeline
     config.assets.enabled = true
-    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.assets.paths << "#{Rails.root}/app/assets/fonts" << "#{Rails.root}/app/assets/stylesheets/registered" << "#{Rails.root}/app/assets/stylesheets/unregistered" << "#{Rails.root}/app/assets/stylesheets/common" << "#{Rails.root}/app/assets/stylesheets/common/devise"
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
