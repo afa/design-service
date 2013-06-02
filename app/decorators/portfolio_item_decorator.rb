@@ -1,7 +1,7 @@
 class PortfolioItemDecorator < Draper::Decorator
   delegate_all
   def rating
-    if rating >= 0
+    if source.rating >= 0
       h.content_tag :div, class: 'positiveRating' do
         "+#{source.rating}"
       end
