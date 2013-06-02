@@ -23,4 +23,4 @@
 
 - specialist_group.portfolio_items.group_by(&:specialization).each do |category, portfolio_items|
   .PortfolioCategory{class: "#{category.camelize}Category"}
-    = render partial: 'portfolio_item', collection: portfolio_items
+    = render partial: 'specialist_groups/portfolio_item', collection: portfolio_items

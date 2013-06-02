@@ -13,9 +13,8 @@
           = f.input :section, input_html: {class: 'section'}
           .clearfloat
         = f.input :num_standpipes, as: :string, input_html: {class: 'waterFlows'}
-        = f.simple_fields_for :family_composition do |family_f|
-          = family_f.input :first_line, input_html: {class: 'family'}, placeholder: '(Укажите количество и пол детей)', label: t('simple_form.labels.family_composition')
-          = family_f.input :second_line, input_html: {class: 'children'}, label: false
+        = f.input :family_composition_first_line, input_html: {class: 'family'}, placeholder: '(Укажите количество и пол детей)', label: t('simple_form.labels.family_composition')
+        = f.input :family_composition_second_line, input_html: {class: 'children'}, label: false
 
   #post2Quest.postContainer
     #postCaption2.postCaption

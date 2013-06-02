@@ -174,13 +174,19 @@ showSpecs{
     text-decoration:none;
   }
 }
-
+/* TODO: fix this categories (we use "#{specialization}Category" class naming)*/
 .PortfolioCategory{
-  &.DesignProjectCategory{
+  &.DesignProjectCategory, &.ArchitectorCategory {
     background:#f89f65;
   }
-  &.PlanDevelopmentCategory {
+  &.PlanDevelopmentCategory, &.DesignerCategory {
     background:#a8d868;
+  }
+  &.ReplanningEndorsementCategory, &.BuildingCompanyCategory {
+    background:#aabbcc;
+  }
+  &.ConstructiveCategory, &.BuildingBrigadeCategory, &.EngineerCategory  {
+    background:#ccbbaa;
   }
   width:604px;
   margin:40px 0 0 40px;
