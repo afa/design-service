@@ -56,7 +56,7 @@ group :development do
 end
 
 gem 'carrierwave'
-gem 'mini_magick'
+gem 'mini_magick', github: 'minimagick/minimagick'
 gem 'draper'
 
 group :test, :development do

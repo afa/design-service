@@ -8,7 +8,8 @@ class Specialist < ActiveRecord::Base
   belongs_to :profile, class_name: 'User'
   has_many :portfolio_items, include: :photo_collection
 
-  has_and_belongs_to_many :orders, class_name: 'Order', join_table: 'order_executors'
+  has_many :order_parts
+  has_many :orders, through: :order_parts
 
   scope :by_specialization, ->(specialization) { where(specialization: specialization) }
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
