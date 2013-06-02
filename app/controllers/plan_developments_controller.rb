@@ -28,8 +28,8 @@ private
                                       :num_guests, :washing_room_needed, :num_plans,
                                       :num_standpipes,
                                       :address, :floor, :section,
-                                      family_composition_attributes: [:first_line, :second_line],
-                                      attachment_attributes: :file,
-                                      comment_attributes: :text ] )
+                                      :family_composition_first_line, :family_composition_second_line,
+                                      attachment_attributes: [:file],
+                                      :comment_attributes ] )
   end
 end

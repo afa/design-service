@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601162257) do
+ActiveRecord::Schema.define(:version => 20130602220832) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -35,23 +35,14 @@ ActiveRecord::Schema.define(:version => 20130601162257) do
   end
 
   create_table "messages", :force => true do |t|
-    t.integer  "text_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.integer  "sender_id"
     t.integer  "recipient_id"
     t.string   "recipient_type"
-  end
-
-  add_index "messages", ["text_id"], :name => "index_messages_on_text_id"
-
-  create_table "moderable_texts", :force => true do |t|
-    t.text     "original_text"
-    t.text     "moderated_text"
-    t.boolean  "verified",       :default => false
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.boolean  "rejected",       :default => false
+    t.text     "text"
+    t.text     "comment_id"
+    t.text     "family_composition_id"
   end
 
   create_table "order_parts", :force => true do |t|
@@ -122,9 +113,8 @@ ActiveRecord::Schema.define(:version => 20130601162257) do
 
   create_table "portfolio_items", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.string   "specialization"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "specialist_id"
   end
 
@@ -156,13 +146,12 @@ ActiveRecord::Schema.define(:version => 20130601162257) do
 
   create_table "reviews", :force => true do |t|
     t.integer  "order_id"
-    t.integer  "text_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "text"
   end
 
   add_index "reviews", ["order_id"], :name => "index_reviews_on_order_id"
-  add_index "reviews", ["text_id"], :name => "index_reviews_on_text_id"
 
   create_table "specialist_groups", :force => true do |t|
     t.string   "name"
