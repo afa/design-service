@@ -6,6 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+def upload_photo(filename)
+  Photo.create{|photo|
+    fp = File.open(filename)
+    photo.photo = fp
+    fp.close
+  }
+end
+
 admin = User.where(username: 'admin', email: 'prijutme4ty@gmail.com').first_or_create(password: 'VerY_str0ng_p@ssword', password_confirmation: 'VerY_str0ng_p@ssword') do |u|
   u.role = 'admin'
 end
@@ -36,14 +44,18 @@ group_2 = SpecialistGroup.where(name: 'Эксклюзивный дизайн', d
 group_2.specialists << spec_3.specialist
 puts "specialist groups created:\n#{group_1.specialists}\n#{group_2.specialists}\n"
 
-photos = 10.times.map{|i| Photo.new(photo: "photo_#{i}.png") }
+photos = (1..15).map{|i| upload_photo "./db/seeds/designers_works/#{i}.jpg" }
+
 collection_1 = PhotoCollection.create{|c| c.photos << photos[0] << photos[1] << photos[2] }
 collection_2 = PhotoCollection.create{|c| c.photos << photos[3] << photos[4] << photos[5] }
 collection_3 = PhotoCollection.create{|c| c.photos << photos[6] << photos[7] << photos[8] }
-collection_4 = PhotoCollection.create{|c| c.photos << photos[9] }
+collection_4 = PhotoCollection.create{|c| c.photos << photos[9] << photos[10] << photos[11] << photos[12] }
+collection_5 = PhotoCollection.create{|c| c.photos << photos[13] << photos[14] }
 puts 'photos and photo collection builded'
-portfolio_item_1 = PortfolioItem.new(photo_collection: collection_1, specialist: spec_1.specialist)
-portfolio_item_2 = PortfolioItem.new(photo_collection: collection_2, specialist: spec_1.specialist)
-portfolio_item_3 = PortfolioItem.new(photo_collection: collection_3, specialist: spec_2.specialist)
-portfolio_item_4 = PortfolioItem.new(photo_collection: collection_4, specialist: spec_3.specialist)
+
+portfolio_item_1 = PortfolioItem.create(photo_collection: collection_1, specialist: spec_1.specialist, title: 'Как я отделал хату')
+portfolio_item_2 = PortfolioItem.create(photo_collection: collection_2, specialist: spec_1.specialist, title: 'Как я отделал избу')
+portfolio_item_3 = PortfolioItem.create(photo_collection: collection_3, specialist: spec_2.specialist, title: 'Как я отделал шалаш')
+portfolio_item_4 = PortfolioItem.create(photo_collection: collection_4, specialist: spec_3.specialist, title: 'Как я построил плотину')
+portfolio_item_5 = PortfolioItem.create(photo_collection: collection_5, specialist: spec_3.specialist, title: 'Как я обустроил мир')
 puts 'portfolio items buided'
