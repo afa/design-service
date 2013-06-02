@@ -1,8 +1,8 @@
 class PortfolioItem < ActiveRecord::Base
   belongs_to :specialist
   has_one :photo_collection, as: :imageable, include: :photos
-  has_one :specialist_group, through: :specialist
 
+  delegate :specialist_group, :specialization,  to: :specialist
   delegate :preview_photo, to: :photo_collection
 
   accepts_nested_attributes_for :photo_collection, allow_destroy: true
