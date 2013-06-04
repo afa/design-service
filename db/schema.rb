@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602220832) do
+ActiveRecord::Schema.define(:version => 20130603131858) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -35,15 +35,24 @@ ActiveRecord::Schema.define(:version => 20130602220832) do
   end
 
   create_table "messages", :force => true do |t|
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "sender_id"
     t.integer  "recipient_id"
     t.string   "recipient_type"
     t.text     "text"
-    t.text     "comment_id"
-    t.text     "family_composition_id"
   end
+
+  create_table "moderations", :force => true do |t|
+    t.integer  "moderable_id"
+    t.string   "moderable_type"
+    t.boolean  "accepted_first_stage", :default => false
+    t.boolean  "accepted_final",       :default => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+  end
+
+  add_index "moderations", ["moderable_type", "moderable_id"], :name => "index_moderations_on_moderable_type_and_moderable_id"
 
   create_table "order_parts", :force => true do |t|
     t.integer  "order_id"
@@ -100,15 +109,15 @@ ActiveRecord::Schema.define(:version => 20130602220832) do
     t.datetime "updated_at",                    :null => false
     t.integer  "num_plans"
     t.integer  "attachment_id",                 :null => false
-    t.integer  "comment_id",                    :null => false
     t.string   "address"
     t.string   "floor"
     t.string   "section"
     t.integer  "num_standpipes"
-    t.integer  "family_composition_id",         :null => false
     t.integer  "client_id"
     t.string   "num_guests"
     t.string   "big_kitchen"
+    t.text     "comment"
+    t.text     "family_composition"
   end
 
   create_table "portfolio_items", :force => true do |t|
@@ -117,15 +126,6 @@ ActiveRecord::Schema.define(:version => 20130602220832) do
     t.datetime "updated_at",    :null => false
     t.integer  "specialist_id"
   end
-
-  create_table "portfolio_photos", :force => true do |t|
-    t.string   "file"
-    t.integer  "specialist_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "portfolio_photos", ["specialist_id"], :name => "index_portfolio_photos_on_specialist_id"
 
   create_table "replanning_attachments", :force => true do |t|
     t.string   "file"
