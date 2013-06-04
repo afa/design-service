@@ -1,6 +1,7 @@
 #encoding: utf-8
 class PlanDevelopment < ActiveRecord::Base
   has_paper_trail
+  has_one :moderation_info, as: :moderable
   has_one :order, as: :orderable
   has_one :client, through: :order
   #belongs_to :comment, class_name: 'ModerableText'
@@ -22,12 +23,19 @@ class PlanDevelopment < ActiveRecord::Base
     "#{address} (подъезд: #{section}, этаж: #{floor})"
   end
 
+  def family_composition_first_line
+    @family_composition_first_line ||= family_composition
+  end
+  def family_composition_second_line
+    @family_composition_second_line ||= ''
+  end
+
   def family_composition_first_line=(val)
     @family_composition_first_line = val
-    self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.join(' ')
+    self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.reject(&:blank?).join(' ')
   end
   def family_composition_second_line=(val)
     @family_composition_second_line = val
-    self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.join(' ')
+    self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.reject(&:blank?).join(' ')
   end
 end
