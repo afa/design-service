@@ -50,6 +50,7 @@ gem 'strong_parameters'
 gem 'show_for', '~> 0.3.0.rc'
 gem 'enumerize', github: 'brainspec/enumerize'
 gem 'paper_trail', '~> 2'
+gem 'remotipart', '~> 1.0'
 
 group :development do
   gem 'sextant'

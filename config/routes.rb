@@ -1,4 +1,6 @@
 DesignService::Application.routes.draw do
+  resources :attachments
+
   resources :messages
   resources :specialist_groups do
     resources :messages
@@ -28,7 +30,7 @@ DesignService::Application.routes.draw do
   resources :replanning_endorsements
 
   get 'plan_developments' => 'plan_developments#new'
-  resources :plan_developments, only: [:new, :create, :show]
+  resources :plan_developments #, only: [:new, :create, :show]
 
   # Disable user from destroying his account
   # https://github.com/plataformatec/devise/wiki/How-To:-Disable-user-from-destroying-his-account
