@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<%= stylesheet_link_tag "unregistered/application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<body>
+
+<noindex> 
+
+<%= render 'layouts/login_popup' %>
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements">
+<div class="header_top">
+<div class="coconut_leaves">
+
+<div id="container">
+  <%= render 'layouts/header' %>
+  <div id='maincontent_index'>	<!--  ------------------------------------------------------------------------------CHANGE ID NAME -->
+    <%= render 'layouts/specialists' %>
+    <%= render 'layouts/worktypes' %>
+  </div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+<%= render "layouts/footer" %>
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>
