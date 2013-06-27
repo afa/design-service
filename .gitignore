@@ -21,3 +21,5 @@
 /html_stuff/**/*.haml
 /nbproject/
 /app/assets/stylesheets/.sass-cache/**/*
+
+/spec/

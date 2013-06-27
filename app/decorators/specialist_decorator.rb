@@ -1,6 +1,6 @@
 class SpecialistDecorator < Draper::Decorator
   delegate_all
-  decorates_association :profile
+  decorates_association :user
 
   def positive_feedback
     source.positive_feedback
@@ -10,7 +10,7 @@ class SpecialistDecorator < Draper::Decorator
   end
 
   def link_to_profile_admin
-    h.link_to profile.to_s, h.admin_user_path(profile)
+    h.link_to user.to_s, h.admin_user_path(user)
   end
 
   def orders_info
@@ -31,6 +31,6 @@ class SpecialistDecorator < Draper::Decorator
   #   end
 
   def avatar
-    profile.decorate.avatar
+    user.decorate.avatar
   end
 end

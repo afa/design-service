@@ -3,8 +3,8 @@
     .specAva
     .usernameContainer
       = link_to specialist do
-        %p.specFio=  specialist.profile.full_name
-        %p.specUserName=  specialist.profile.username
+        %p.specFio=  specialist.full_name
+        %p.specUserName=  specialist.username
 
   .spceRate
     %p.specRating
@@ -13,7 +13,7 @@
       %span.specRatesNumber=  specialist.rating_count
     %p.specRegistred
       Зарегистрирован:
-      %span.SpecDateReg=  l(specialist.profile.created_at, format: :short)
+      %span.SpecDateReg=  l(specialist.created_at, format: :short)
 
   .specReviews
     %p.specReviews

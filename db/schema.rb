@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603131858) do
+ActiveRecord::Schema.define(:version => 20130618132037) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -127,6 +127,18 @@ ActiveRecord::Schema.define(:version => 20130603131858) do
     t.integer  "specialist_id"
   end
 
+  create_table "profiles", :force => true do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "middle_name"
+    t.string   "fake_name"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
   create_table "replanning_attachments", :force => true do |t|
     t.string   "file"
     t.integer  "replanning_endorsement_id"
@@ -161,14 +173,14 @@ ActiveRecord::Schema.define(:version => 20130603131858) do
   end
 
   create_table "specialists", :force => true do |t|
-    t.integer  "profile_id",          :null => false
+    t.integer  "user_id",             :null => false
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.integer  "specialist_group_id"
     t.string   "specialization"
   end
 
-  add_index "specialists", ["profile_id"], :name => "index_specialists_on_profile_id"
+  add_index "specialists", ["user_id"], :name => "index_specialists_on_profile_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",       :null => false
@@ -184,9 +196,6 @@ ActiveRecord::Schema.define(:version => 20130603131858) do
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
     t.string   "username"
-    t.string   "name"
-    t.string   "surname"
-    t.string   "middle_name"
     t.integer  "access_level"
     t.string   "role",                   :default => "client"
     t.integer  "orders_count",           :default => 0

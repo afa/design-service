@@ -13,7 +13,7 @@ private
     get_collection_ivar || set_collection_ivar(SpecialistDecorator.decorate(end_of_association_chain))
   end
   def build_resource
-    @specialist ||= super.tap{|s| s.profile = current_user }
+    @specialist ||= super.tap{|s| s.user = current_user }
   end
 
   def permitted_params

@@ -177,3 +177,10 @@ ru:
       big_kitchen:
         less_than_fifteen: 'Больше 15 кв.м.'
         greater_than_fifteen: 'Меньше 15 кв.м.'
+    user:
+      role:
+        guest: 'Гость'
+        client: 'Клиент'
+        specialist: 'Специалист'
+        moderator: 'Модератор'
+        admin: 'Администратор'
