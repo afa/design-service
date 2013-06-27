@@ -50,33 +50,34 @@ gem 'strong_parameters'
 gem 'show_for', '~> 0.3.0.rc'
 gem 'enumerize', github: 'brainspec/enumerize'
 gem 'paper_trail', '~> 2'
-gem 'remotipart', '~> 1.0'
+#gem 'squeel'
+gem 'carrierwave'
+gem 'mini_magick', github: 'minimagick/minimagick'
+gem 'draper'
+gem 'activeadmin'
 
 group :development do
   gem 'sextant'
 end
 
-gem 'carrierwave'
-gem 'mini_magick', github: 'minimagick/minimagick'
-gem 'draper'
+# group :test, :development do
+#   # rspec-rails and factory_girl_rails needs to be in the development group so that Rails generators work.
+#   gem 'rspec-rails'
+#   gem 'rspec-given'
+#   gem 'factory_girl_rails'
+# end
 
-group :test, :development do
-  # rspec-rails and factory_girl_rails needs to be in the development group so that Rails generators work.
-  gem 'rspec-rails'
-  gem 'rspec-given'
-  gem 'factory_girl_rails'
-end
+# group :test do
+#   gem 'shoulda-matchers'
+#   gem 'capybara'
+# end
+# gem 'simplecov', :require => false, :group => :test
 
-group :test do
-  gem 'shoulda-matchers'
-  gem 'capybara'
-end
-gem 'simplecov', :require => false, :group => :test
-#gem 'simplecov-rcov-text'
-#gem 'metric_fu'
-#gem 'rails_best_practices'
+## gem 'simplecov-rcov-text'
+## gem 'metric_fu'
+## gem 'rails_best_practices'
 
-gem 'spork-rails'
-gem 'activeadmin'
+# gem 'spork-rails'
 gem 'rb-readline', "~> 0.5.0", require: 'readline'
-#gem 'pry-rails', :group => :development
+
+# gem 'pry-rails', :group => :development
