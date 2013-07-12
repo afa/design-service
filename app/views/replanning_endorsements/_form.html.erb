@@ -1,0 +1,33 @@
+<%= simple_nested_form_for resource, html: {id: 'all_forms', multipart: true} do |f| %>
+  <div class="plan_refactor">
+    Проект перепланировки разработан генпроектировщиком? 
+    
+    <span class="plan_refactor gen_proekt">
+      <%= f.input_field :developed_by_general_projector, as: :radio_buttons %>
+    </span>
+    <br>Площадь кватиры:<%= f.input_field :flat_area, as: :string, name: 'plojad', class: 'textlines_default textline_l4' %> кв.м.
+  </div>
+
+  <div class="form_refactoring border_x4 rounded-corners_l2 shadow_x1 multiattach">
+    <div class="form_description"></div>
+    <span class="hint">Вы можете перетащить файлы сюда</span>
+    <%= f.simple_fields_for :replanning_attachments do |attachment_form| %>
+      <%= attachment_form.input_field :file, as: :file %>
+      <%= attachment_form.link_to_remove "Удалить файл" %>
+    <%- end %>
+    <%= f.link_to_add "Добавить файл", :replanning_attachments %>
+  </div>
+
+  <div class="plan_refactor" id="second_ques" style="display:none;">
+    Наличие лицензии у организации,
+    <span class="plan_refactor">
+      <%= f.input_field :replanning_organization_licensed, as: :radio_buttons %>
+    </span>
+    которая разработала проект перепланировки?
+  </div>
+
+  <div class="planrefactoring_submiting">
+    <input type="image" src="<%= asset_path('cancelButton.png') %>" alt="Сбросить форму" class="submit_all_forms" onClick="$('#all_forms').trigger('reset'); return false;" />
+    <input type="image" class="postRequest" src="<%= asset_path('postButton.png') %>" alt="Отправить форму" class="submit_all_forms"/>
+  </div>
+<%- end %>

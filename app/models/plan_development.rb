@@ -18,6 +18,7 @@ class PlanDevelopment < ActiveRecord::Base
   extend Enumerize
   enumerize :num_guests, in: [:zero, :less_than_five, :five_to_fifteen, :greater_than_fifteen]
   enumerize :big_kitchen, in: [:less_than_fifteen, :greater_than_fifteen]
+  enumerize :num_plans, in: [1,2,3,4]
 
   def full_address
     "#{address} (подъезд: #{section}, этаж: #{floor})"

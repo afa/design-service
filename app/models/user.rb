@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
+  has_one :profile
   before_create :new_profile
+  accepts_nested_attributes_for :profile
 
   extend Enumerize
   enumerize :role, in: ['guest', 'client', 'admin', 'specialist', 'moderator']
@@ -7,7 +9,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
-  has_one :profile
+
   
   has_many :received_messages, as: :recipient
   has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id', inverse_of: :sender
@@ -44,10 +46,14 @@ class User < ActiveRecord::Base
   end
 
   def self.new_guest
-    u = new(name: "Гость", email: "guest_#{Time.now.to_i}_#{rand(99)}@design-service.ru")
-    u.role = 'guest'
-    u.save!(validate: false)
-    u
+    username = "guest_#{Time.now.to_i}_#{rand(99)}"
+    user = User.new(username: username, email: "#{username}@design-service.ru", profile_attributes: {name: 'Гость'}) do |u|
+      u.role = 'guest'
+    end
+    
+    #user.new_profile
+    user.save!(validate: false)
+    user
   end
 
   def guest?
@@ -70,6 +76,7 @@ class User < ActiveRecord::Base
   end
 
   def new_profile
+    return if profile
     build_profile do |p|
       p.fake_name = 'My fake name'
       p.middle_name = 'My middle name'

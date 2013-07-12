@@ -40,7 +40,7 @@ body  {
   background:image-url("fon-y.jpg") repeat-y;
   /*
   background: image-url("fon-head.jpg") center top no-repeat,
-  image-url("FooterBg.PNG") center bottom no-repeat,
+  image-url("FooterBg.png") center bottom no-repeat,
   image-url("fon-y.jpg") left top repeat-y;
   */
   margin: 0;
@@ -157,7 +157,7 @@ span.plan_refactor ul.answer li{ float:left;  margin-right:10px; }
 div.form_refactoring{ width:685px; height:140px;  margin-left:45px; padding:20px; margin-top:15px; clear:left; }
 div.form_refactoring div.form_description{ background-image:image-url("file_attach_refactoring.png"); width:585px; float:left; }
 div.form_refactoring span{ font-size:14px; color:#8e8e8e; padding:30px 0px 0px 200px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:125px 0px; }
-div.planrafactoring_submiting{  height:80px; width:550px; margin-left:160px; padding:40px 0px 60px 0px;  }
+div.planrefactoring_submiting{  height:80px; width:550px; margin-left:160px; padding:40px 0px 60px 0px;  }
 
 
 /*  PAGE CONCEPT ENGINEERING_SYSTEMS.HTML */
@@ -394,13 +394,13 @@ input[type='radio'] + label
   clear: none;
   padding: 0px 0 0px 24px;
   cursor: pointer;
-	background-image:image-url("circleN.PNG");
+	background-image:image-url("circleN.png");
 	background-repeat:no-repeat;
 	display:inline-block;
 }
 
 input[type='radio']:checked + label {
-	background-image:image-url("circleY.PNG");
+	background-image:image-url("circleY.png");
 	background-repeat:no-repeat;
 }
 
@@ -437,3 +437,14 @@ input[type='checkbox']:checked + label {
 .close_fly_window{ background-image:image-url("close.png"); width:30px; height:26px; position:absolute; right:0px; margin-top:-40px; cursor:pointer;}
 
 /*.submit_button{ background-image: image-url("ok_button.png"); }*/
+
+.postComment{
+  сolor:#333;
+  border:0px;
+  padding:0px 5px 0px 5px;
+  margin:0px;
+  font-size:16px;
+  background-color:#f6f6f6;
+  height:120px;
+  background:image-url("textformbg.PNG");
+ }

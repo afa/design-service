@@ -3,8 +3,22 @@
 <head>
 <title>Дизайн сервис.</title>
 
+<%= stylesheet_link_tag "common/application", :media => "all" %>
 <%= stylesheet_link_tag "unregistered/application", :media => "all" %>
 <%= javascript_include_tag "application" %>
+<%= javascript_include_tag "#{params[:controller]}" if Rails.application.assets.find_asset("#{params[:controller]}") %>
+
+<!--
+= stylesheet_link_tag "common/application", :media => "all"
+= stylesheet_link_tag "common/#{params[:controller]}" if Rails.application.assets.find_asset("common/#{params[:controller]}")
+= stylesheet_link_tag "common/#{params[:controller]}_#{params[:action]}"  if Rails.application.assets.find_asset("common/#{params[:controller]}_#{params[:action]}")
+
+= stylesheet_link_tag "unregistered/#{params[:controller]}" if Rails.application.assets.find_asset("unregistered/#{params[:controller]}")
+= stylesheet_link_tag "unregistered/#{params[:controller]}_#{params[:action]}"  if Rails.application.assets.find_asset("unregistered/#{params[:controller]}_#{params[:action]}")
+
+= javascript_include_tag "#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset("#{params[:controller]}_#{params[:action]}")
+-->
+
 <%= csrf_meta_tags %>
 
 <!--[if lt IE 9]>
@@ -24,10 +38,17 @@
 
 <div id="container">
   <%= render 'layouts/header' %>
-  <div id='maincontent_index'>	<!--  ------------------------------------------------------------------------------CHANGE ID NAME -->
-    <%= render 'layouts/specialists' %>
-    <%= render 'layouts/worktypes' %>
-  </div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+  <div id='maincontent_default'>  <!--  ------------------------------------------------------------------------------CHANGE ID NAME -->
+    <div class="page_content_default">
+      <div class="collage_design mode1">                              
+        <%= render 'layouts/specialists' %>
+      </div>
+      <%= yield %>
+      <div id="block_menu_default">
+        <%= render 'layouts/worktypes' %>
+      </div>
+    </div>
+  </div> <!--------------------------------------------------- -----------------------------------------------END maincontent_default -->
 </div><!--------------------------------------------------- --------------------------------------------------------END container--------->
 <%= render "layouts/footer" %>
 

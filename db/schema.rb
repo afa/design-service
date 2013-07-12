@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618132037) do
+ActiveRecord::Schema.define(:version => 20130712101815) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -105,10 +105,10 @@ ActiveRecord::Schema.define(:version => 20130618132037) do
     t.integer  "num_builtin_closets"
     t.integer  "num_bedrooms"
     t.boolean  "washing_room_needed"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
     t.integer  "num_plans"
-    t.integer  "attachment_id",                 :null => false
+    t.integer  "attachment_id",                                               :null => false
     t.string   "address"
     t.string   "floor"
     t.string   "section"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20130618132037) do
     t.string   "big_kitchen"
     t.text     "comment"
     t.text     "family_composition"
+    t.decimal  "flat_area",                     :precision => 5, :scale => 1
   end
 
   create_table "portfolio_items", :force => true do |t|
