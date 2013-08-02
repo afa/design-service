@@ -19,9 +19,10 @@ DesignService::Application.routes.draw do
     resources :reviews
   end
 
-  get "profile/edit"
-  get "profile/specialists"
-  get "profile/orders"
+  resource :profile do
+    get "specialists"
+    get "orders"
+  end
 
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
