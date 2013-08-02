@@ -8,15 +8,7 @@ class PlanDevelopmentsController < InheritedResources::Base
   end
 
   def new
-    @plan_development = @plan_development.decorate
-    @plan_development.join_kitchen_with_living_room = true
-    @plan_development.big_kitchen = :greater_than_fifteen
-    @plan_development.cloakroom_needed = true
-    @plan_development.cabinet_needed = true
-    @plan_development.num_guests = :zero
-    @plan_development.washing_room_needed = true
-    @plan_development.build_attachment
-    @plan_development.num_plans = 1
+    @plan_development = PlanDevelopment.generate.decorate
   end
 
   def create
@@ -38,6 +30,7 @@ private
                                       :num_standpipes,
                                       :address, :floor, :section,
                                       :family_composition_first_line, :family_composition_second_line, :comment,
+                                      :flat_area,
                                       attachment_attributes: [:file]
                                     ] )
   end

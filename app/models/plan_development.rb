@@ -1,7 +1,6 @@
 #encoding: utf-8
 class PlanDevelopment < ActiveRecord::Base
   has_paper_trail
-  has_one :moderation_info, as: :moderable
   has_one :order, as: :orderable
   has_one :client, through: :order
   #belongs_to :comment, class_name: 'ModerableText'
@@ -38,5 +37,16 @@ class PlanDevelopment < ActiveRecord::Base
   def family_composition_second_line=(val)
     @family_composition_second_line = val
     self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.reject(&:blank?).join(' ')
+  end
+  def self.generate
+    new(join_kitchen_with_living_room: true,
+        big_kitchen: :greater_than_fifteen,
+        cloakroom_needed: true,
+        cabinet_needed: true,
+        num_guests: :zero,
+        washing_room_needed: true,
+        num_plans: 1).tap do |obj|
+      obj.build_attachment
+    end
   end
 end

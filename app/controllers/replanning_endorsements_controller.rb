@@ -7,11 +7,7 @@ class ReplanningEndorsementsController < InheritedResources::Base
   end
 
   def new
-    @replanning_endorsement = ReplanningEndorsement.new do |o|
-      o.developed_by_general_projector = true
-      o.replanning_organization_licensed = true
-      #o.replanning_attachments.build
-    end
+    @replanning_endorsement = ReplanningEndorsement.generate
     new!
   end
 

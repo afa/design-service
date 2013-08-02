@@ -1,6 +1,8 @@
 class Message < ActiveRecord::Base
   has_paper_trail
   has_one :moderation_info, as: :moderable
+  delegate :accepted?, to: :moderation_info
+
   belongs_to :recipient, polymorphic: true
   belongs_to :sender, class_name: 'User'
 
