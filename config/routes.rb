@@ -20,8 +20,16 @@ DesignService::Application.routes.draw do
   end
 
   resource :profile do
-    get "specialists"
-    get "orders"
+    get 'specialists'  # is it actual page yet?
+    get 'orders'
+  end
+
+  get 'personal_account' => 'personal_account#history'
+  resource :personal_account do
+    get 'history'
+    get 'replenishment'
+    get 'contracts'
+    get 'acts'
   end
 
   root :to => 'welcome#index'
