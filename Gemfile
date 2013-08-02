@@ -6,8 +6,9 @@ gem 'rails', '~> 3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3' #, platform: :ruby
-gem 'mysql2' #, platform: :ruby
+
+#gem 'mysql2' #, platform: :ruby
+gem 'pg'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', :platforms => :ruby
@@ -23,9 +24,6 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
@@ -38,7 +36,7 @@ gem 'capistrano'
 # To use debugger
 # gem 'debugger'
 
-gem 'devise', '~> 3.0.0.rc'
+gem 'devise', '~> 3.0.0'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'nested_form', github: 'ryanb/nested_form'
@@ -60,12 +58,13 @@ group :development do
   gem 'sextant'
 end
 
-# group :test, :development do
-#   # rspec-rails and factory_girl_rails needs to be in the development group so that Rails generators work.
-#   gem 'rspec-rails'
-#   gem 'rspec-given'
-#   gem 'factory_girl_rails'
-# end
+group :test, :development do
+# rspec-rails and factory_girl_rails needs to be in the development group so that Rails generators work.
+  gem 'rspec-rails'
+  # gem 'rspec-given'
+  gem 'factory_girl_rails'
+  gem 'sqlite3'
+end
 
 # group :test do
 #   gem 'shoulda-matchers'
