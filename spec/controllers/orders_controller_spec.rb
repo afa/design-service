@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe OrderController do
+describe OrdersController do
 
   describe "GET 'get_price'" do
     it "returns http success" do
