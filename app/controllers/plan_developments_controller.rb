@@ -12,11 +12,7 @@ class PlanDevelopmentsController < InheritedResources::Base
   end
 
   def create
-    @plan_development = PlanDevelopment.new(permitted_params[:plan_development]) do |plan|
-      plan.build_order do |order|
-        order.client = current_or_guest_user
-      end
-    end
+    @plan_development = PlanDevelopment.make_order(permitted_params[:plan_development], current_or_guest_user)
     @plan_development.save!
     render partial: 'form'
   end
