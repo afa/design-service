@@ -729,13 +729,13 @@ input[type='radio'] + label
   clear: none;
   padding: 0px 0 0px 24px;
   cursor: pointer;
-	background-image:image-url("circleN.PNG");
+	background-image:image-url("circleN.png");
 	background-repeat:no-repeat;
 	/*display:inline-block; */
 }
 
 input[type='radio']:checked + label {
-	background-image:image-url("circleY.PNG");
+	background-image:image-url("circleY.png");
 	background-repeat:no-repeat;
 }
 
