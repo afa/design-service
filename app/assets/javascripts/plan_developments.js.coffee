@@ -4,10 +4,13 @@
 
 //= require single_file_drop
 //= require price_calculator
+//= require register_ajax_submit
 
 $(document).ready ->
-  filegrabber = $('.dropZone.single')
+  filegrabber = $('.singleattach')
   unless filegrabber.size() == 0
     registerDropZoneSingleFileHandlers(filegrabber)
 
   register_price_calculator($('.calcContainer'), 5000)
+
+  register_ajax_submit('.singleattach', 'form .postRequest')

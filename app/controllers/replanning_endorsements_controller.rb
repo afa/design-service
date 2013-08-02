@@ -7,15 +7,21 @@ class ReplanningEndorsementsController < InheritedResources::Base
   end
 
   def new
-    @replanning_endorsement.replanning_attachments.build
+    @replanning_endorsement = ReplanningEndorsement.generate
     new!
   end
+
   def create
+    @replanning_endorsement = ReplanningEndorsement.new(permitted_params[:replanning_endorsement])
     @replanning_endorsement.build_order do |order|
       order.client = current_or_guest_user
     end
-    create!{ resource }
+    @replanning_endorsement.save!
+    render partial: 'form'
   end
+
+  respond_to :json, only: :update
+
 private
   def permitted_params
     params.permit(replanning_endorsement: [:developed_by_general_projector, :flat_area, :replanning_organization_licensed,

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<%= stylesheet_link_tag "common/application", :media => "all" %>
+<%= stylesheet_link_tag "registered/application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= javascript_include_tag "#{params[:controller]}" if Rails.application.assets.find_asset("#{params[:controller]}") %>
+
+<!--
+= stylesheet_link_tag "common/application", :media => "all"
+= stylesheet_link_tag "common/#{params[:controller]}" if Rails.application.assets.find_asset("common/#{params[:controller]}")
+= stylesheet_link_tag "common/#{params[:controller]}_#{params[:action]}"  if Rails.application.assets.find_asset("common/#{params[:controller]}_#{params[:action]}")
+
+= stylesheet_link_tag "registered/#{params[:controller]}" if Rails.application.assets.find_asset("registered/#{params[:controller]}")
+= stylesheet_link_tag "registered/#{params[:controller]}_#{params[:action]}"  if Rails.application.assets.find_asset("registered/#{params[:controller]}_#{params[:action]}")
+
+= javascript_include_tag "#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset("#{params[:controller]}_#{params[:action]}")
+-->
+
+<%= csrf_meta_tags %>
+
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<body>
+
+<noindex> 
+
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<%= render 'layouts/registered_header' %>
+
+<div id="maincontent_index" class="rounded-corners_l4">  
+  <div id="main_content">  
+     <div class="springs"></div> 
+      <div class="border_left"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+      <div class="border_right"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+       
+      <div class="sidebar_left">
+        <div class="caption_left_menu light_green">Добро пожаловать,<br>
+          <%= greating_name(current_user)%>(<%= link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete) %>)
+        </div>
+        <%= render 'layouts/client_left_menu' %>
+        <div class="heading_captions">ВЫБОР СПЕЦИАЛИСТОВ</div>
+        <%= render 'layouts/registered_specialists' %>
+      </div>
+      
+      <div class="page_contener">
+        <div class="caption light_red">---</div>
+        <div class="breaker"></div>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+
+<%= render "layouts/footer" %>
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>

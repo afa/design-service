@@ -16,7 +16,7 @@ window.registerDropZoneMultipleFileHandlers = (dropZone) ->
 
     files = event.dataTransfer.files
     if (files.length > 1)
-      dropZone_hint.text('Извините, вы можно загрузить не более одного файла за раз!')
+      dropZone_hint.text('Извините, вы можете загрузить не более одного файла за раз!')
       dropZone.addClass('error')
       return false
 

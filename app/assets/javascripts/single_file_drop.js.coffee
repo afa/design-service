@@ -41,4 +41,26 @@ window.registerDropZoneSingleFileHandlers = (dropZone) ->
   dropZone[0].ondragleave =  ->
     dropZone.removeClass('hover')
     false
-  
+
+#  upload = (file)->
+#    xhr = new XMLHttpRequest()
+#    xhr.upload.addEventListener('progress', uploadProgress, false)
+#    xhr.onreadystatechange = stateChange
+#    xhr.open('POST', '/attachments')
+#    xhr.setRequestHeader('X-Filename', file.name)
+#    xhr.send(file)
+
+#  uploadProgress = (event)->
+#    percent = parseInt(event.loaded / event.total * 100);
+#    dropZone_hint.text('Загрузка: ' + percent + '%');
+
+#  stateChange = (event)->
+#    if (event.target.readyState == 4)
+#      if (event.target.status == 200)
+#        dropZone_hint.text('Загрузка успешно завершена!')
+#      else
+#        dropZone_hint.text('Произошла ошибка!')
+#        dropZone.addClass('error')
+
+#  $("input[type='file']", dropZone).change (event) ->
+#    upload(event.target.files[0])

@@ -5,7 +5,8 @@ class Specialist < ActiveRecord::Base
   extend Enumerize
   enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
 
-  belongs_to :profile, class_name: 'User'
+  belongs_to :user
+  has_one :profile, through: :user
   has_many :portfolio_items, include: :photo_collection
 
   has_many :order_parts
@@ -14,7 +15,8 @@ class Specialist < ActiveRecord::Base
   scope :by_specialization, ->(specialization) { where(specialization: specialization) }
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
 
-  delegate :full_name, :to_s, :messages,  to: :profile
+  delegate :messages,  to: :user
+  delegate :full_name, :username, :to_s,  to: :profile
 
   def rating; 666; end
   def rating_count; 777; end

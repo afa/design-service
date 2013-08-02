@@ -11,4 +11,7 @@ class ReplanningEndorsement < ActiveRecord::Base
   def price=(value); order.update_attribute(:price, value); end
 
   accepts_nested_attributes_for :replanning_attachments, allow_destroy: true
+  def self.generate
+    new(developed_by_general_projector: true, replanning_organization_licensed: true)
+  end
 end

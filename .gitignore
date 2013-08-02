@@ -18,7 +18,10 @@
 /coverage
 
 *.doc
-/html_stuff/**/*.haml
+/html_stuff/
+#/html_stuff/**/*.haml
 /nbproject/
 /app/assets/stylesheets/.sass-cache/**/*
+/db/schema.rb
+/config/database.yml
 Gemfile.lock

@@ -1,5 +1,5 @@
 = simple_form_for [:admin, resource] do |f|
-  = f.input :role, collection: ::User::ROLES
+  = f.input :role
   = show_for resource do |s|
     = s.attribute :username
     = s.attribute :surname
