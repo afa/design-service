@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     self.class.name.underscore
   end
   helper_method :page_subtitle
+  protected :page_subtitle
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation) }
