@@ -1,62 +1,76 @@
-= simple_nested_form_for @plan_development, remote: true, html: {multipart: true, class: 'postVarPlan'} do |f|
-  #post1Adress.postContainer
-    #postNumber1.postNumber
-    #postCaption1.postCaption
-    .clearfloat
-    #post1Forms
-      #post1Text.postFormText
-        = f.input :address, input_html: {class: 'adress'}
-        .form_fields_inline
-          = f.input :floor, input_html: {class: 'floor'}
-          = f.input :section, input_html: {class: 'section'}
-          .clearfloat
-        = f.input :num_standpipes, as: :string, input_html: {class: 'waterFlows'}
-        = f.input :family_composition_first_line, input_html: {class: 'family'}, placeholder: '(Укажите количество и пол детей)', label: t('simple_form.labels.family_composition')
-        = f.input :family_composition_second_line, input_html: {class: 'children'}, label: false
+= simple_nested_form_for resource, remote: true, html: {multipart: true, id: 'all_forms'} do |f|
+  .var_form1.border_x1.rounded-corners_l2.shadow_x1
+    .number
+    .form_description
+    Адрес:#{ f.input_field :address, class: 'textlines_default textline_l8' }
+    Этаж: #{ f.input_field :floor, class: 'textlines_default textline_l4' } Подъезд/Секция: #{ f.input_field :section, class: 'textlines_default textline_l4' }
+    Площадь квартиры: #{ f.input_field :flat_area, class: 'textlines_default textline_l6'}
+    %br/
+    Кол-во стояков водопровода:#{ f.input_field :num_standpipes, class: 'textlines_default textline_l6' }
+    Состав семьи:#{ f.input_field :family_composition_first_line, class: 'textlines_default textline_l7'}
+    = f.input_field :family_composition_second_line, class: 'textlines_default textline_l10'
+    %span.subtitle (укажите количество и пол детей)
 
-  #post2Quest.postContainer
-    #postCaption2.postCaption
-    #postNumber2.postNumber
-    .clearfloat
-    #post2Forms
-      #TextKitchenSplit.postFormText
-        = f.input :join_kitchen_with_living_room, as: :radio_buttons
-      #KitchenSquare.postFormText
-        = f.input :big_kitchen, as: :radio_buttons, input_html: {class: 'kitchenSize'}
-      #TextClothRoom.postFormText
-        = f.input :cloakroom_needed, as: :radio_buttons
-      #TextWardrobes.postFormText
-        = f.input :num_builtin_closets, as: :string, input_html: {id: 'Wardrobes', class: 'wardrobes'}
-      #TextCabinet.postFormText
-        = f.input :cabinet_needed, as: :radio_buttons
-      #GuestText.postFormText
-        = f.input :num_guests, as: :radio_buttons
-      #SleepersText.postFormText
-        = f.input :num_bedrooms, as: :string, input_html: {id: 'SleepersCount', class: 'Sleepers'}
-      #LaundryText.postFormText
-        = f.input :washing_room_needed, as: :radio_buttons
-      #CountText.postFormText
-        = f.input :num_plans, as: :string, input_html: {id: 'PlanCount', class: 'varPlanCount'}
+  .var_form2.border_x2.rounded-corners_l2.shadow_x1
+    .form_description
+    .number
+    .kithen_split
+      Объединить кухню <br>с гостиной?
+      = f.input_field :join_kitchen_with_living_room, as: :radio_buttons
+    
+    .kithen_size
+      Размер кухни:
+      = f.input_field :big_kitchen, as: :radio_buttons, collection: PlanDevelopment.big_kitchen.options
+    
+    .changing_rooms
+      Наличие гардеробных <br>комнат:
+      = f.input_field :cloakroom_needed, as: :radio_buttons
+    
+    .number_of_rooms
+      Количество встроенных <br>шкафов, включая <br>гардеробные комнаты:
+      = f.input_field :num_builtin_closets, as: :string, class: 'textlines_default textline_l2'
+    
+    .cabinets
+      Нужен кабинет?
+      = f.input_field :cabinet_needed, as: :radio_buttons
+    
+    .guests
+      Любите ли Вы <br>принимать гостей?
+      = f.input_field :num_guests, as: :radio_buttons, collection: PlanDevelopment.num_guests.options
+    
+    
+    .sleeping_places
+      Количество спальных мест: #{ f.input_field :num_bedrooms, as: :string, class: 'textlines_default textline_l2' }
+    
+    .washing_machin
+      Наличие постирочной:
+      = f.input_field :washing_room_needed, as: :radio_buttons
+    
+    .options
+      Сколько представить Вам вариантов планировок?
+      = f.input_field :num_plans, as: :radio_buttons, collection: PlanDevelopment.num_plans.options
 
-  #post3Wish.postContainer
-    #postNumber3.postNumber
-    #postCaption3.postCaption
-    #postFroms3.postForms
-    = f.input :comment, as: :text, input_html: {cols: 60, rows:3, class: 'postComment'}, label: false
+  .var_form3.border_x3.rounded-corners_l2.shadow_x1
+    .number
+    .form_description
+    = f.input_field :comment, as: :text, cols: 60, rows:3, class: 'postComment textline_l12'
 
-  #post4Attach.postContainer
-    #postNumber4.postNumber
-    #postCaption4.postCaption
-    #fileGrab.OMFGFILEGRAB
-      .clearfloat
-      .dropZone.single
-        .hint
-        = f.simple_fields_for :attachment do |attachment_f|
-          = attachment_f.input :file, as: :file, label: false, required: true
+  .var_form4.border_x4.rounded-corners_l2.shadow_x1.singleattach
+    .form_description
+    .number
+    %span Вы можете перетащить файлы сюда
+    = f.simple_fields_for :attachment do |attachment_form|
+      = attachment_form.input_field :file, as: :file
+    
 
-  .actions
-    #cancel
-      = f.submit '', type: 'reset'
-    #postRequest
-      %input
-    .clearfloat
+  .calculator.border_x5.rounded-corners_l2.shadow_x2
+    .form_description
+    %span
+      <input name="" type="text" class="total">
+    %span.count
+  
+
+  .postvar_plan_submiting
+    %input.submit_all_forms{:type => "image", :src=> "#{asset_path('cancelButton.png')}", :alt => "Сбросить форму", :onClick => "$('#all_forms').trigger('reset'); return false;" }
+    %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+  

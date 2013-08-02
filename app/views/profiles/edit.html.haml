@@ -1,0 +1,6 @@
+= simple_form_for resource do |f|
+  %div Имя: #{ f.input_field :name }
+  %div Фамилия: #{ f.input_field :surname }
+  %div Отчество: #{ f.input_field :middle_name }
+  = f.submit 'Сохранить'
+= link_to 'Сменить пароль', edit_user_registration_path

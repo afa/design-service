@@ -1,27 +1,28 @@
-= simple_nested_form_for resource, html: {class: 'planRefactoring', multipart: true} do |f|
-  .RefactDetails
-    = f.input :developed_by_general_projector, as: :radio_buttons, input_html: {class: 'FormQuestions'}
-    .clearfloat
-  #appatment
-    = f.input :flat_area, as: :string, input_html: {class: 'FlatArea'}
-    кв.м.
-  #postAttach.postContainer
-    #postCaption.postCaption
-    #fileGrab.OMFGFILEGRAB
-      .clearfloat
-      .dropZone.multiple
-        .hint
-        = f.simple_fields_for :replanning_attachments do |attachment_form|
-          = attachment_form.input :file, as: :file
-          = attachment_form.link_to_remove "Remove this attachment"
-        = f.link_to_add "Add attachment", :replanning_attachments
+= simple_nested_form_for resource, html: {id: 'all_forms', multipart: true} do |f|
+  .plan_refactor
+    Проект перепланировки разработан генпроектировщиком? 
+    
+    %span.plan_refactor.gen_proekt
+      = f.input_field :developed_by_general_projector, as: :radio_buttons
+    %br/
+    Площадь кватиры:#{ f.input_field :flat_area, as: :string, name: 'plojad', class: 'textlines_default textline_l4' } кв.м.
 
-  #licence
-    = f.input :replanning_organization_licensed, as: :radio_buttons, input_html: {class: 'FormQuestions'}
-    .clearfloat
-  .actions
-    #cancel
-      = f.submit '', type: 'reset'
-    #postRequest
-      %input
-    .clearfloat
+  .form_refactoring.border_x4.rounded-corners_l2.shadow_x1.multiattach
+    .form_description
+    %span.hint Вы можете перетащить файлы сюда
+    = f.simple_fields_for :replanning_attachments do |attachment_form|
+      = attachment_form.input_field :file, as: :file
+      = attachment_form.link_to_remove "Удалить файл"
+    = f.link_to_add "Добавить файл", :replanning_attachments
+  
+
+  .plan_refactor#second_ques{ :style=>"display:none;" }
+    Наличие лицензии у организации,
+    %span.plan_refactor
+      = f.input_field :replanning_organization_licensed, as: :radio_buttons
+    которая разработала проект перепланировки?
+  
+  .planrefactoring_submiting
+    %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;" }
+    %input.submit_all_forms.postRequest{ :type=>"image", :src=>"#{asset_path('postButton.png')}", :alt=>"Отправить форму" }
+  

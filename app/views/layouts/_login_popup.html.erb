@@ -2,28 +2,33 @@
 <div id="black_content">
   <div id="register" class="rounded-corners border_x1 shadow_x1">
     <div class="close_fly_window"></div>
-    <form action="">
+    <%= simple_form_for(@user ||= User.new, as: :user, :url => registration_path(:user)) do |f| %>
       <div class="head_register"></div>
       <div class="info">Логин:<span>*</span></div>
       <div class="text_fields">
         <span class="caution">(латинские символы и цифры)</span>
-        <input name="" type="text" class="reg_client_tfeild">
+        <%= f.input_field :username, class: 'reg_client_tfeild' %>
       </div>
-      <div class="info">E-mail:<span>*</span></div><div class="text_fields"><input name="" type="text" class="reg_client_tfeild"></div>
-      <div class="info">Пароль:<span>*</span></div><div class="text_fields"><input name="" type="text" class="reg_client_tfeild"></div>
-      <div class="info">Повторите&nbsp;&nbsp; пароль:<span>*</span></div><div class="text_fields"><input name="" type="text" class="reg_client_tfeild"></div>
+      <div class="info">E-mail:<span>*</span></div><div class="text_fields"><%= f.input_field :email, class: 'reg_client_tfeild' %></div>
+      <div class="info">Пароль:<span>*</span></div><div class="text_fields"><%= f.input_field :password, class: 'reg_client_tfeild' %></div>
+      <div class="info">Повторите&nbsp;&nbsp; пароль:<span>*</span></div><div class="text_fields"><%= f.input_field :password_confirmation, class: 'reg_client_tfeild' %></div>
       <div class="control"><input type="image" src="<%= asset_path("ok_button.png") %>" alt="Submit Form" class="submit_button"/></div>
-    </form>
+    <% end %>
   </div>
     
   <div id="login" class="rounded-corners border_x2 shadow_x1">
     <div class="close_fly_window"></div>
-    <form action="">
+    
+    <%= simple_form_for(@user ||= User.new, as: :user, :url => session_path(:user)) do |f| %>
       <div class="head_register"></div>
-      <div class="info">Логин или E-mail :</div><div class="text_fields"><input name="" type="text" class="log_client_tfeild"></div>
-      <div class="info">Пароль :</div><div class="text_fields"><input name="" type="text" class="log_client_tfeild"></div>
-      <div class="control"><span><a href="#">Забыли?</a></span><input type="image" src="<%= asset_path("ok_button_green.png") %>" alt="Submit Form" class="login_button"/></div>
-    </form>
+      <div class="info">Логин или E-mail :</div><div class="text_fields"><%= f.input_field :login, class: 'log_client_tfeild' %></div>
+      <div class="info">Пароль :</div><div class="text_fields"><%= f.input_field :password, class: 'log_client_tfeild' %></div>
+      <div class="control"><span>
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+      <%= link_to "Забыли?", new_password_path(:user) %>
+      <% end -%>
+      </span><input type="image" src="<%= asset_path("ok_button_green.png") %>" alt="Submit Form" class="login_button"/></div>
+    <% end %>
   </div>
 </div>
 <!--------------------------------------------------- BLACK_PALET END---------------->
