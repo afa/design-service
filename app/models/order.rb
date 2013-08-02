@@ -7,4 +7,9 @@ class Order < ActiveRecord::Base
 
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor_id) { joins(:executors).where(specialists: {id: executor_id} ) }
+
+  # TODO: fix this stub
+  def paid?
+    id % 2 == 0
+  end
 end

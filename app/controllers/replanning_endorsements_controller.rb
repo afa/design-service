@@ -12,10 +12,7 @@ class ReplanningEndorsementsController < InheritedResources::Base
   end
 
   def create
-    @replanning_endorsement = ReplanningEndorsement.new(permitted_params[:replanning_endorsement])
-    @replanning_endorsement.build_order do |order|
-      order.client = current_or_guest_user
-    end
+    @replanning_endorsement = ReplanningEndorsement.make_order(permitted_params[:replanning_endorsement], current_or_guest_user)
     @replanning_endorsement.save!
     render partial: 'form'
   end
