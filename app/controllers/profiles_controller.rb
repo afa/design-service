@@ -9,14 +9,14 @@ class ProfilesController < InheritedResources::Base
   def orders
     @orderable = current_user.orders.map(&:orderable).map(&:decorate)
   end
-
+protected
   def page_subtitle
     case params[:action]
     when 'orders' then 'МОИ ЗАКАЗЫ'
     else super
     end
   end
-protected
+
   def begin_of_association_chain
     current_user
   end
