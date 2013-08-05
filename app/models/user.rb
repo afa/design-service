@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   attr_accessor :login
   
-  delegate :fake_name, :middle_name, :name, :surname, to: :profile
+  delegate :fake_name, :middle_name, :name, :surname, :to_s, to: :profile
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -61,10 +61,6 @@ class User < ActiveRecord::Base
   end
   def registered?
     ! guest?
-  end
-
-  def to_s
-    "#{full_name} [#{username}]"
   end
 
   def messages

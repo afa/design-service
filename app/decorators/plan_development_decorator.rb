@@ -1,5 +1,6 @@
 class PlanDevelopmentDecorator < Draper::Decorator
   delegate_all
+  decorates_association :order
   #decorates_association :attachment
 
   # Define presentation-specific methods here. Helpers are accessed through
@@ -15,5 +16,11 @@ class PlanDevelopmentDecorator < Draper::Decorator
   end
   def attachment_info
     source.attachment ? source.attachment.decorate.link : ''
+  end
+  def border_class
+    'border_xg'
+  end
+  def border_class_mild
+    'border_xg'
   end
 end

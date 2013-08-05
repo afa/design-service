@@ -11,4 +11,7 @@ class ReplanningEndorsement < ActiveRecord::Base
   def self.generate
     new(default_params)
   end
+  def title
+    'Согласование перепланировки'
+  end
 end

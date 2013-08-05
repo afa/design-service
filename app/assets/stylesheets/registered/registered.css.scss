@@ -603,13 +603,13 @@ ul#navigation.blue li.last a{ color:#6d95c3; }
 #header ul li{ float:left; list-style:none;  display: inline-block;  position:absolute; bottom:0px; text-align:center; line-height:15px; }
 
 #header ul li a:link span,#header ul li a:visited span{ color: #6f2d2d; font-size:13px; font-weight:bold;}
-#header ul li:nth-child(1){ background-color:#a8d868; width:130px; height:78px; left:0px; }
-#header ul li:nth-child(1) span{  width:130px; height:78px; float:left; margin-top:15px;}
-#header ul li:nth-child(2){ background-color:#e6c941; width:160px; height:60px; left:138px; }
+#header ul li:nth-child(1){ background-color:#a8d868; width:130px; height:78px; left:0px; }  /* Варианты планировки */
+#header ul li:nth-child(1) span{  width:130px; height:78px; float:left; margin-top:15px;}    
+#header ul li:nth-child(2){ background-color:#e6c941; width:160px; height:60px; left:138px; } /* Согласования перепланировок */
 #header ul li:nth-child(2) span{ width:160px; height:60px; float:left; margin-top:13px;}
-#header ul li:nth-child(3){ background-color:#f89f65; width:132px; height:78px; left:306px; }
+#header ul li:nth-child(3){ background-color:#f89f65; width:132px; height:78px; left:306px; }  /* Дизайн-проект */
 #header ul li:nth-child(3) span{width:132px; height:78px; float:left; margin-top:30px;}
-#header ul li:nth-child(4){ background-color:#99bbe1; width:132px; height:58px; left:446px; }
+#header ul li:nth-child(4){ background-color:#99bbe1; width:132px; height:58px; left:446px; } /* Инженерные системы и конструктив */
 #header ul li:nth-child(4) span{ width:132px; height:58px; float:left; margin-top:5px; }
 
 /* LEFT MENU TOP */
@@ -645,12 +645,12 @@ div.footer_elements div.partners{ text-align:right; float: right;  margin-top:15
 .caption{ height: 40px;  margin-top:27px; padding-top:15px;  font-size:22px; font-weight: inherit; float:left; width:595px; padding-left:40px;}
 .heading_captions{ color:#8d0606; font-size:18px; font:16px; float:left; padding:20px 0px 15px 40px;}
 
-.border_x1{border:6px solid #efd4c2; }
-.border_xs{border:6px solid #f89f65; }
-.border_xg{border:6px solid #a8d868; }
-.border_x2{border:6px solid #e9da95; }
-.border_x3{border:6px solid #99bbe1; }
-.border_x4{border:6px solid #e6c941; }
+.border_x1{border:6px solid #efd4c2; }    /* Дизайн-проект (мягкий) */
+.border_xs{border:6px solid #f89f65; }    /* Дизайн-проект */
+.border_xg{border:6px solid #a8d868; }    /* Варианты планировки */
+.border_x2{border:6px solid #e9da95; }    /* Согласования перепланировок (мягкий) */
+.border_x3{border:6px solid #99bbe1; }    /* Инженерные системы и конструктив */
+.border_x4{border:6px solid #e6c941; }    /* Согласования перепланировок */
 .border_x5{border:1px solid #c1c1c1; }
 .border_x6{ border:1px solid #a8d868; }
 .shadow_x1{
