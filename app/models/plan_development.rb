@@ -19,23 +19,31 @@ class PlanDevelopment < ActiveRecord::Base
   def family_composition_first_line
     @family_composition_first_line ||= family_composition
   end
+
   def family_composition_second_line
     @family_composition_second_line ||= ''
   end
 
+  def mk_family_composition
+    self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.reject(&:blank?).join(' ')
+  end
+
   def family_composition_first_line=(val)
     @family_composition_first_line = val
-    self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.reject(&:blank?).join(' ')
+    mk_family_composition
   end
+
   def family_composition_second_line=(val)
     @family_composition_second_line = val
-    self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.reject(&:blank?).join(' ')
+    mk_family_composition
   end
+
   def self.generate
     new(default_params).tap do |obj|
       obj.build_attachment
     end
   end
+
   def self.default_params
     { join_kitchen_with_living_room: true,
       big_kitchen: :greater_than_fifteen,
@@ -45,6 +53,7 @@ class PlanDevelopment < ActiveRecord::Base
       washing_room_needed: true,
       num_plans: 1 }
   end
+
   def title
     'Разработка вариантов планировки'
   end
