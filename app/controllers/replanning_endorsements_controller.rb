@@ -22,7 +22,7 @@ class ReplanningEndorsementsController < InheritedResources::Base
 private
   def permitted_params
     params.permit(replanning_endorsement: [:developed_by_general_projector, :flat_area, :replanning_organization_licensed,
-                                      replanning_attachments_attributes: [:file] ] )
+                                      attachments_attributes: [:file] ] )
   end
   def page_subtitle
     'Согласования перепланировок'
