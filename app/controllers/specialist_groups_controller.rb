@@ -10,4 +10,7 @@ private
   def decorate_resource
     set_resource_ivar( SpecialistGroupDecorator.decorate(get_resource_ivar) )
   end
+  def page_subtitle
+    I18n.t "specialists.#{params[:specialization].pluralize}.title"
+  end
 end
