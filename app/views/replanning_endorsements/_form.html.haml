@@ -1,4 +1,4 @@
-= simple_nested_form_for resource, html: {id: 'all_forms', multipart: true} do |f|
+= simple_nested_form_for resource, remote: true, html: {id: 'all_forms', multipart: true} do |f|
   .plan_refactor
     Проект перепланировки разработан генпроектировщиком? 
     
@@ -24,5 +24,5 @@
   
   .planrefactoring_submiting
     %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;" }
-    %input.submit_all_forms.postRequest{ :type=>"image", :src=>"#{asset_path('postButton.png')}", :alt=>"Отправить форму" }
+    %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
   

@@ -1,6 +1,7 @@
 class ReplanningEndorsementsController < InheritedResources::Base
   respond_to :html
   load_and_authorize_resource
+  respond_to :json, only: [:create, :update]
 
   before_filter only: [:show] do
     @replanning_endorsement = @replanning_endorsement.decorate
@@ -16,8 +17,6 @@ class ReplanningEndorsementsController < InheritedResources::Base
     @replanning_endorsement.save!
     render partial: 'form'
   end
-
-  respond_to :json, only: :update
 
 private
   def permitted_params
