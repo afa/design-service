@@ -1,4 +1,5 @@
 class OrderDecorator < Draper::Decorator
+  decorates_association :orderable
   delegate_all
   def client_info
     client.try{|c| c.decorate.admin_link }
@@ -12,6 +13,10 @@ class OrderDecorator < Draper::Decorator
     h.link_to  'Исполнители', h.admin_specialists_path(order: source.id)
   end
 
+  def time_to_finish
+    completion_time ? h.distance_of_time_in_words(Time.now, completion_time) : 'Время завершения неизвестно'
+  end
+
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
@@ -20,5 +25,13 @@ class OrderDecorator < Draper::Decorator
   #       source.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-
+  def border_class
+    orderable.border_class
+  end
+  def border_class_mild
+    orderable.border_class_mild
+  end
+  def completion_time
+    source.completion_time && I18n.l(source.completion_time)
+  end
 end

@@ -24,8 +24,8 @@ DesignService::Application.routes.draw do
     get 'orders'
   end
 
-  get 'personal_account' => 'personal_account#history'
-  resource :personal_account do
+  get 'personal_account' => 'personal_accounts#history'
+  resource :personal_account   do
     get 'history'
     get 'replenishment'
     get 'contracts'

@@ -1,4 +1,10 @@
-- if order.paid?
-  = render 'orders/order_paid'
-- else
-  = render 'orders/order_unpaid'
+._razrabotka_var.rounded-corners{:class => order.border_class_mild}
+  .date.rounded-corners_l3{:class => order.border_class_mild}= order.completion_time
+  .name
+    Наименование:
+    %span= order.title
+
+  - if order.paid?
+    = render partial: 'orders/order_paid', locals: {order: order}
+  - else
+    = render partial: 'orders/order_unpaid', locals: {order: order}

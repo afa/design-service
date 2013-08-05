@@ -1,35 +1,30 @@
-._razrabotka_var.rounded-corners{:class => "border_x1"}
-  .date.rounded-corners_l3{:class => "border_x1"} 30.01.2013
-  .name
-    Наименование:
-    %span Дизайн кухни+гостиной
-  .artists
-    Исполнители:
-    %ul
-      %li Журавлев Михаил
-      %li Новикова Мария
-  .completion
-    %span.tit Завершения:
-    %ul
-      %li будет определена после оплаты
-      %li 3 недели
-  .status
-    Состояние:
-    %span Дизайн кухни+гостиной
-  .pay_now
-    %a{:href => ""} Оплатите заказ
-  .completed
-    завершено
-    .presentage_blocks
-      %span.presentage
-        %span.value_present 50%
-        %span.bar
-  .documents
-    Документы:
-    %ul
-      %li
-        %a{:href => ""} Договор
-      %li
-        %a{:href => ""} Акты
-      %li
-        %a{:href => ""} Оплата
+.artists
+  Исполнители:
+  %ul
+    - order.executors.each do |executor|
+      %li= executor
+.completion
+  %span.tit Завершения:
+  %ul
+    %li будет определена после оплаты
+    %li= order.time_to_finish
+.status
+  Состояние:
+  %span Дизайн кухни+гостиной
+.pay_now
+  = link_to 'Оплатите заказ', replenishment_personal_account_path
+.completed
+  завершено
+  .presentage_blocks
+    %span.presentage
+      %span.value_present #{order.completion_percent}%
+      %span.bar
+.documents
+  Документы:
+  %ul
+    %li
+      %a{:href => ""} Договор
+    %li
+      %a{:href => ""} Акты
+    %li
+      %a{:href => ""} Оплата

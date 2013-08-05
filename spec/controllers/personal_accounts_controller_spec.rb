@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PersonalAccountController do
+describe PersonalAccountsController do
 
   describe "GET 'history'" do
     it "returns http success" do

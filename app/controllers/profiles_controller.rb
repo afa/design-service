@@ -7,7 +7,8 @@ class ProfilesController < InheritedResources::Base
   end
 
   def orders
-    @orderable = current_user.orders.map(&:orderable).map(&:decorate)
+    #@orderable = current_user.orders.map(&:orderable).map(&:decorate)
+    @orderable = current_user.orders.decorate
   end
 protected
   def page_subtitle

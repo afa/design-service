@@ -12,4 +12,10 @@ class Order < ActiveRecord::Base
   def paid?
     id % 2 == 0
   end
+  def title
+    orderable.title
+  end
+  def executors
+    order_parts.map(&:executor)
+  end
 end
