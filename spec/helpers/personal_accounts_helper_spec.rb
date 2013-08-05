@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe PersonalAccountHelper do
+describe PersonalAccountsHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end
