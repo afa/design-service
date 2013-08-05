@@ -1,2 +1,4 @@
-= render order
-= render order.reviews
+- if order.paid?
+  = render 'orders/order_paid'
+- else
+  = render 'orders/order_unpaid'
