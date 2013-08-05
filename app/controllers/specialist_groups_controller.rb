@@ -11,6 +11,14 @@ private
     set_resource_ivar( SpecialistGroupDecorator.decorate(get_resource_ivar) )
   end
   def page_subtitle
-    I18n.t "specialists.#{params[:specialization].pluralize}.title"
+    if params[:action] == 'index'
+      if !params[:specialization] || params[:specialization].match(/^all$/i)
+        'Все специалисты'
+      else
+        I18n.t "specialists.#{params[:specialization].pluralize}.title"
+      end
+    else
+      I18n.t "specialists.#{resource.specialization.pluralize}.title"
+    end
   end
 end
