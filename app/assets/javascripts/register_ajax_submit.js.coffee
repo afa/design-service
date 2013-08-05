@@ -1,4 +1,5 @@
 # Here we should use string of query as an argument, not an element because after form reloading we need to search an element again
+# submit element must be an image but not input[type=image]
 window.register_ajax_submit = (element_to_restore, submit_button)->
   $(submit_button).click ->
     unless $(this).closest('form').get(0).checkValidity()

@@ -1,6 +1,7 @@
 class ReplanningEndorsementsController < InheritedResources::Base
   respond_to :html
   load_and_authorize_resource
+  respond_to :json, only: [:create, :update]
 
   before_filter only: [:show] do
     @replanning_endorsement = @replanning_endorsement.decorate
@@ -17,12 +18,10 @@ class ReplanningEndorsementsController < InheritedResources::Base
     render partial: 'form'
   end
 
-  respond_to :json, only: :update
-
 private
   def permitted_params
     params.permit(replanning_endorsement: [:developed_by_general_projector, :flat_area, :replanning_organization_licensed,
-                                      replanning_attachments_attributes: [:file] ] )
+                                      attachments_attributes: [:file] ] )
   end
   def page_subtitle
     'Согласования перепланировок'

@@ -1,4 +1,4 @@
-= simple_nested_form_for resource, html: {id: 'all_forms', multipart: true} do |f|
+= simple_nested_form_for resource, remote: true, html: {id: 'all_forms', multipart: true} do |f|
   .plan_refactor
     Проект перепланировки разработан генпроектировщиком? 
     
@@ -10,10 +10,10 @@
   .form_refactoring.border_x4.rounded-corners_l2.shadow_x1.multiattach
     .form_description
     %span.hint Вы можете перетащить файлы сюда
-    = f.simple_fields_for :replanning_attachments do |attachment_form|
+    = f.simple_fields_for :attachments do |attachment_form|
       = attachment_form.input_field :file, as: :file
       = attachment_form.link_to_remove "Удалить файл"
-    = f.link_to_add "Добавить файл", :replanning_attachments
+    = f.link_to_add "Добавить файл", :attachments
   
 
   .plan_refactor#second_ques{ :style=>"display:none;" }
@@ -24,5 +24,5 @@
   
   .planrefactoring_submiting
     %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;" }
-    %input.submit_all_forms.postRequest{ :type=>"image", :src=>"#{asset_path('postButton.png')}", :alt=>"Отправить форму" }
+    %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
   
