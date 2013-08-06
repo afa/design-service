@@ -1,10 +1,10 @@
 //= require jquery.slimscroll
 
 window.register_chat = ->
-  msg_black_content = ->
+  black_content = ->
     $('body').animate({scrollTop:0},"slow")
-    $("#msg_black_content").css("height",$(document).height())
-    $("#msg_black_content").css("display","block")
+    $("#black_content").css("height",$(document).height())
+    $("#black_content").css("display","block")
 
   scroll_to_last = ->
     $('.msg_content').animate({"scrollTop": $('.msg_content')[0].scrollHeight},"slow")
@@ -13,7 +13,7 @@ window.register_chat = ->
     msg_dialog_id = $(this).attr('id');
     name_order = $(this).parent().find('.name span').html();
     $('.order_name').html(name_order);
-    msg_black_content();
+    black_content();
     $('.left_bar').slimscroll({ size: '7px', width:'220px', height:'520px' } );
     $('.msg_content').slimscroll({ size: '7px', width:'500px', height:'400px' });
     $("#msg_dialog").css("display","block");
