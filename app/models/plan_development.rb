@@ -53,8 +53,4 @@ class PlanDevelopment < ActiveRecord::Base
       washing_room_needed: true,
       num_plans: 1 }
   end
-
-  def title
-    'Разработка вариантов планировки'
-  end
 end

@@ -1,5 +1,5 @@
 ActiveAdmin.register ReplanningEndorsement do
-  menu label: ->(){ I18n.t('replanning_endorsements.title') }
+  menu label: ->(){ I18n.t('titles.replanning_endorsement') }
   config.filters = false
 
   decorate_with ReplanningEndorsementDecorator

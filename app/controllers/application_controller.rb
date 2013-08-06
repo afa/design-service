@@ -31,8 +31,6 @@ class ApplicationController < ActionController::Base
   # Should skip forgery protection for ajax requests (see https://github.com/plataformatec/devise/wiki/How-To:-Create-a-guest-user)
   #skip_before_filter :verify_authenticity_token, :only => [:name_of_your_ajax_action]
 
-#  helper_method :title, :subtitle
-
  layout :choose_layout
 
   private
