@@ -1,2 +1,3 @@
-= render 'layouts/msg_box'
+- content_for :outer_box do
+  = render 'layouts/msg_box'
 = render partial: 'orders/order', collection: @orderable
