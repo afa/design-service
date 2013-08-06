@@ -8,10 +8,14 @@ class ApplicationController < ActionController::Base
   end
 
   def page_subtitle
-    self.class.name.underscore
+    result = I18n.t :"controller_titles.#{params[:controller]}.#{params[:action]}",  default: [:"controller_titles.#{params[:controller]}"]
+    result.is_a?(String) ? result : "#{self.class.name.underscore}##{params[:action]}"
   end
-  helper_method :page_subtitle
-  protected :page_subtitle
+  def page_subtitle_class
+    I18n.t :"controller_title_classes.#{params[:controller]}",  default: ''
+  end
+  helper_method :page_subtitle, :page_subtitle_class
+  protected :page_subtitle, :page_subtitle_class
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation) }
@@ -26,8 +30,6 @@ class ApplicationController < ActionController::Base
 
   # Should skip forgery protection for ajax requests (see https://github.com/plataformatec/devise/wiki/How-To:-Create-a-guest-user)
   #skip_before_filter :verify_authenticity_token, :only => [:name_of_your_ajax_action]
-
-#  helper_method :title, :subtitle
 
  layout :choose_layout
 

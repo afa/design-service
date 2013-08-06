@@ -1,5 +1,5 @@
 ActiveAdmin.register PlanDevelopment do
-  menu label: ->(){ I18n.t('plan_developments.title') }
+  menu label: ->(){ I18n.t('titles.plan_development') }
   config.filters = false
 
   decorate_with PlanDevelopmentDecorator

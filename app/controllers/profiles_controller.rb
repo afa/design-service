@@ -11,13 +11,6 @@ class ProfilesController < InheritedResources::Base
     @orderable = current_user.orders.decorate
   end
 protected
-  def page_subtitle
-    case params[:action]
-    when 'orders' then 'МОИ ЗАКАЗЫ'
-    else super
-    end
-  end
-
   def begin_of_association_chain
     current_user
   end
