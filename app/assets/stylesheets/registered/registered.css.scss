@@ -93,6 +93,11 @@ div._razrabotka_var div.pay_now{ float:left;  font-size:14px; color:#03129e; fon
 div._razrabotka_var div.pay_now a,div._razrabotka_var div.pay_now a:link, div._razrabotka_var div.pay_now a:visited, div._razrabotka_var div.pay_now a:active{ text-decoration:underline; color:#03129e;}
 div._razrabotka_var div.pay_now a:hover{ text-decoration:none;}
 
+div._razrabotka_var div.msg{ float:left;  font-size:14px; color:#03129e; font-weight:bold; margin-left:400px; padding-top:5px; height:20px;}
+div._razrabotka_var div.msg a,div._razrabotka_var div.msg a:link, div._razrabotka_var div.msg a:visited, div._razrabotka_var div.msg a:active{ text-decoration:underline; color:#03129e;}
+div._razrabotka_var div.msg a:hover{ text-decoration:none;}
+
+
 div._razrabotka_var div.completed{ float:left; width:350px; margin-left:140px; padding-top:10px;}
 div.presentage_blocks{ float: right; position:relative; width:250px; height:35px; margin-top:-5px;}
 div.presentage_blocks span.presentage{ width:150px; height:32px; float: right; padding:0px; margin:0px; background-color:#adc987; background-image:image-url("presentage_bar.png"); background-repeat:no-repeat; background-position:right; position:absolute; }
@@ -583,6 +588,7 @@ div.border_left div.top_corner{ position:relative; width:6px; height:22px; backg
 div.border_left div.bottom_corner{background-color:#000; position: absolute; width:6px; height:31px; bottom:0px; background-image:image-url("left_bottom_corner.jpg");}
 
 #black_content{ position:absolute; width:100%; height:100%;  z-index:20; background-image:image-url("black_content.png"); background-repeat:repeat; display: none;  min-width:980px; }
+#msg_black_content{ position:absolute; width:100%; height:100%;  z-index:20; background-image:image-url("black_content.png"); background-repeat:repeat; display: none;  min-width:980px; }
 
 /* NAVIGATION MENU DEFAULT */
 ul#navigation{ float:left; width:600px; font-size:14px; margin:0px; padding-bottom:0px;}
