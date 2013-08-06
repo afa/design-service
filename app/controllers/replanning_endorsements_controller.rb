@@ -23,7 +23,4 @@ private
     params.permit(replanning_endorsement: [:developed_by_general_projector, :flat_area, :replanning_organization_licensed,
                                       attachments_attributes: [:file] ] )
   end
-  def page_subtitle
-    'Согласования перепланировок'
-  end
 end

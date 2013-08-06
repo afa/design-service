@@ -12,8 +12,4 @@ class PersonalAccountsController < ApplicationController
 
   def contracts
   end
-protected
-  def page_subtitle
-    "ЛИЦЕВОЙ СЧЕТ"
-  end
 end

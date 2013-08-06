@@ -30,8 +30,4 @@ private
                                       attachment_attributes: [:file]
                                     ] )
   end
-
-  def page_subtitle
-    'Разработка вариантов планировки'
-  end
 end

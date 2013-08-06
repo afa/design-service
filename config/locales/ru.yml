@@ -32,6 +32,20 @@ ru:
       messages:
         immutable: "поле не может быть изменено"
   title: 'Дизайн сервис'
+  controller_titles: # header of page
+    welcome: ''
+    plan_developments: 'Разработка вариантов планировок'
+    replanning_endorsements: 'Согласование перепланировок'
+    specialists: 'Специалисты'
+    personal_accounts: 'ЛИЦЕВОЙ СЧЕТ'
+    profiles:
+      orders: 'МОИ ЗАКАЗЫ'
+      edit: 'Редактировать профиль'
+  controller_title_classes: # class for header in unregistered mode
+                            # TODO: make class for specialists page and other pages available to unregistered users
+    plan_developments: 'post_varplan'
+    replanning_endorsements: 'plan_refactoring'
+    specialists: ''
   welcome:
     title: ''
   plan_developments:
