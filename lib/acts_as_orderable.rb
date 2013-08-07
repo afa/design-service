@@ -1,6 +1,6 @@
 module ActsAsOrderable
   def price; order.price; end
-  def price=(value); order.update_attribute(:price, value); end
+  def price=(value); order.price = value; end
   def paid?; order.paid?; end
   def title; I18n.t "titles.#{self.class.name.underscore}"; end
   module ClassMethods
