@@ -55,6 +55,7 @@ gem 'activeadmin'
 
 group :development do
   gem 'sextant'
+  gem "bullet"
 end
 
 group :test, :development do
@@ -78,3 +79,4 @@ gem 'simplecov', :require => false, :group => :test
 #gem 'activeadmin'
 #gem 'pry-rails', :group => :development
 gem 'rb-readline', "~> 0.5.0", require: 'readline'
+gem "rubykassa"
