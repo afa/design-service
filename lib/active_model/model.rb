@@ -1,4 +1,4 @@
-# Stolen from Rails 4 
+# Stolen from Rails 4
 
 module ActiveModel
 

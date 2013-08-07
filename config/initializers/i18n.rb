@@ -19,7 +19,7 @@ module SimpleForm
           [ [I18n.t(:"simple_form.yes", :default => 'Yes').html_safe, true],
             [I18n.t(:"simple_form.no", :default => 'No').html_safe, false] ]
         end
-      end 
+      end
     end
   end
 end
