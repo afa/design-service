@@ -20,10 +20,21 @@ window.register_chat = ->
     scroll_to_last();
     $('body').css('overflow','hidden');
 
-  $('img', '.send_msg').click ->
-    data = $('#msg_form').serialize();
+  $('input[type="image"]', '.send_msg').click (event)->
+    event.preventDefault();
+    data = jQuery.param
+      message:
+        text:  $('#msg_form textarea[name="text"]').val()
     scroll_to_last();
-    alert(data);
+    $.ajax
+      url: $('#msg_form').data('url')
+      dataType: 'json'
+      data: data
+      type: 'POST'
+      success: ->
+        $('#msg_form').resetForm()
+      error: ->
+        alert('Не получилось отправить сообщение')
 
   $(".close_fly_window").click ->
     $('body').css('overflow','auto');
