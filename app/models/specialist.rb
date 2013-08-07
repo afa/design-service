@@ -1,6 +1,7 @@
 #encoding: utf-8
 class Specialist < ActiveRecord::Base
   belongs_to :specialist_group
+  has_many :orders, as: :executor
 
   extend Enumerize
   enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
