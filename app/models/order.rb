@@ -1,12 +1,12 @@
 class Order < ActiveRecord::Base
   belongs_to :orderable, polymorphic: true
   belongs_to :client, class_name: 'User', foreign_key: 'client_id', counter_cache: true
-  has_many :order_parts
-  has_many :executors, through: :order_parts
+  belongs_to :executor, polymorphic: true
   has_many :reviews, include: :text
 
   scope :by_client, ->(client_id) { where(client_id: client_id) }
-  scope :by_executor, ->(executor_id) { joins(:executors).where(specialists: {id: executor_id} ) }
+  # how to make polymorphic scope
+  # scope :by_executor, ->(executor) { where(executor: executor) }
 
 =begin
  state_machine :state
@@ -18,8 +18,5 @@ class Order < ActiveRecord::Base
   end
   def title
     orderable.title
-  end
-  def executors
-    order_parts.map(&:executor)
   end
 end
