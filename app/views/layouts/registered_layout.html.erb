@@ -20,7 +20,7 @@
 
 <body>
 
-<noindex> 
+<noindex>
 
 <%= content_for :outer_box %>
 
@@ -33,12 +33,12 @@
 
 <%= render 'layouts/registered_header' %>
 
-<div id="maincontent_index" class="rounded-corners_l4">  
-  <div id="main_content">  
-     <div class="springs"></div> 
+<div id="maincontent_index" class="rounded-corners_l4">
+  <div id="main_content">
+     <div class="springs"></div>
       <div class="border_left"><div class="top_corner"></div><div class="bottom_corner"></div></div>
       <div class="border_right"><div class="top_corner"></div><div class="bottom_corner"></div></div>
-       
+
       <div class="sidebar_left">
         <div class="caption_left_menu light_green">Добро пожаловать,<br>
           <%= greating_name(current_user)%>(<%= link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete) %>)
@@ -47,7 +47,7 @@
         <div class="heading_captions">ВЫБОР СПЕЦИАЛИСТОВ</div>
         <%= render 'layouts/registered_specialists' %>
       </div>
-      
+
       <div class="page_contener">
         <div class="caption light_red"><%= page_subtitle %></div>
         <div class="breaker"></div>
@@ -62,7 +62,7 @@
 
 </div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
 </div> <!-- header_top  ----------------------------------------------------- END CLASS--->
-</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->
 </div>
 
 

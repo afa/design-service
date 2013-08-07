@@ -1,7 +1,7 @@
-= simple_nested_form_for resource, remote: true, html: {id: 'all_forms', multipart: true} do |f|
+= simple_nested_form_for replanning_endorsement, remote: true, html: {id: 'all_forms', multipart: true} do |f|
   .plan_refactor
-    Проект перепланировки разработан генпроектировщиком? 
-    
+    Проект перепланировки разработан генпроектировщиком?
+
     %span.plan_refactor.gen_proekt
       = f.input_field :developed_by_general_projector, as: :radio_buttons
     %br/
@@ -14,15 +14,15 @@
       = attachment_form.input_field :file, as: :file
       = attachment_form.link_to_remove "Удалить файл"
     = f.link_to_add "Добавить файл", :attachments
-  
+
 
   .plan_refactor#second_ques{ :style=>"display:none;" }
     Наличие лицензии у организации,
     %span.plan_refactor
       = f.input_field :replanning_organization_licensed, as: :radio_buttons
     которая разработала проект перепланировки?
-  
+
   .planrefactoring_submiting
     %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;" }
     %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
-  
+
