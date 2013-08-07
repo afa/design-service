@@ -42,7 +42,7 @@
     .send_msg
       %form#msg_form{:data => {:url => "#{messages_path}" } }
         %textarea.msg_sender{:cols => "", :name => "text", :rows => ""}
-        %input.send_msg{:name => "submit", :src => "msg_send.jpg", :type => "image"}/
+        = image_tag 'msg_send.jpg', name: 'submit', class: 'send_msg'
     .order_data_bottom
       %span
         %a{:href => "#"} Исходные данные

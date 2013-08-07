@@ -20,7 +20,7 @@ window.register_chat = ->
     scroll_to_last();
     $('body').css('overflow','hidden');
 
-  $('input[type="image"]', '.send_msg').click (event)->
+  $('img[name="submit"]', '.send_msg').click (event)->
     event.preventDefault();
     data = jQuery.param
       message:
