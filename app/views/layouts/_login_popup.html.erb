@@ -15,10 +15,10 @@
       <div class="control"><input type="image" src="<%= asset_path("ok_button.png") %>" alt="Submit Form" class="submit_button"/></div>
     <% end %>
   </div>
-    
+
   <div id="login" class="rounded-corners border_x2 shadow_x1">
     <div class="close_fly_window"></div>
-    
+
     <%= simple_form_for(@user ||= User.new, as: :user, :url => session_path(:user)) do |f| %>
       <div class="head_register"></div>
       <div class="info">Логин или E-mail :</div><div class="text_fields"><%= f.input_field :login, class: 'log_client_tfeild' %></div>

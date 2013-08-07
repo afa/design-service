@@ -37,7 +37,7 @@
           %a{:href => "#"} План 7
     .msg_content
       / -----------------------------------------
-      = render partial: 'messages/message_in_chat', collection: @messages, as: :message
+      = render partial: 'messages/message_in_chat', collection: messages, as: :message
       / -----------------------------------------
     .send_msg
       %form
