@@ -1,8 +1,7 @@
 .artists
   Исполнители:
   %ul
-    - order.executors.each do |executor|
-      %li= executor
+    %li= order.executor
 .completion
   %span.tit Завершения:
   %ul
@@ -13,6 +12,9 @@
   %span Дизайн кухни+гостиной
 .pay_now
   = link_to 'Оплатите заказ', replenishment_personal_account_path
+.msg
+  %span
+    %a{:href=>"#"} Новое сообщение
 .completed
   завершено
   .presentage_blocks

@@ -1,4 +1,4 @@
-= simple_nested_form_for [@order, @review] do |f|
+= simple_nested_form_for [order, review] do |f|
   = f.error_notification
   .form-inputs
     = f.simple_fields_for :text do |ff|

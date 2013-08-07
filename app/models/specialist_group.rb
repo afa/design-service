@@ -3,6 +3,9 @@ class SpecialistGroup < ActiveRecord::Base
   has_many :portfolio_items, through: :specialists
   has_one :avatar, as: :imageable_single, class_name: 'Photo'
   has_many :received_messages, as: :recipient, class_name: 'Message'
+
+  has_many :orders, as: :executor
+
   def messages; received_messages; end
 
   scope :by_specialization, ->(specialization) do

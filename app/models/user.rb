@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
 
-  
+
   has_many :received_messages, as: :recipient
   has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id', inverse_of: :sender
 
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   # allows user to sign in using both email and username
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   attr_accessor :login
-  
+
   delegate :fake_name, :middle_name, :name, :surname, :to_s, to: :profile
 
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
     user = User.new(username: username, email: "#{username}@design-service.ru", profile_attributes: {name: 'Гость'}) do |u|
       u.role = 'guest'
     end
-    
+
     #user.new_profile
     user.save!(validate: false)
     user

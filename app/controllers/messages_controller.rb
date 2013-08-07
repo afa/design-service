@@ -5,6 +5,8 @@ class MessagesController < InheritedResources::Base
   load_and_authorize_resource :message
   belongs_to :specialist, :specialist_group, optional: true, polymorphic: true
 
+  respond_to :json, only: [:create]
+
   before_filter :check_have_recipient, only: [:new, :create]
 
   def new
@@ -16,15 +18,16 @@ class MessagesController < InheritedResources::Base
 
   def create
     @message = Message.new(permitted_params[:message]) do |msg|
-      msg.recipient = parent
       msg.sender = current_user
+      msg.attached_to = parent
+      #msg.recipient = parent.
     end
     create! { resource }
   end
 
 private
   def permitted_params
-    params.permit(message: [text_attributes: [:text]])
+    params.permit(message: [:text])
   end
   #def begin_of_association_chain
   #  current_or_guest_user

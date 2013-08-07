@@ -1,10 +1,10 @@
 class AddClientStr < ActiveRecord::Migration
-  def up                       
+  def up
     if !(PlanDevelopment.new.attributes.has_key?(:client) && PlanDevelopment.new.attributes.has_key?(:client_id))
      add_column :plan_developments, :client, :string
-    end                        
+    end
   end
-  def down                     
-   
-  end 
-end   
+  def down
+
+  end
+end

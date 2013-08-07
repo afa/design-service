@@ -1,0 +1,7 @@
+.#{current_user == message.sender ? 'msg_to' : 'msg_from' }
+  %ul.message
+    %li= message.sender
+    %li= I18n.l(message.created_at.to_date)
+    %li= I18n.l(message.created_at, format: :as_time)
+  %span.message.rounded-corners_l4
+    = message.text

@@ -1,7 +1,7 @@
 class MakeAssociationsNotNull < ActiveRecord::Migration
   def change
     # Make sure no null value exist
-    PlanDevelopment.all.each do |plan_development|
+    PlanDevelopment.find_each do |plan_development|
       p plan_development
       plan_development.build_family_composition
       plan_development.build_comment
