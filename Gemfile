@@ -78,5 +78,5 @@ gem 'simplecov', :require => false, :group => :test
 #gem 'spork-rails'
 #gem 'activeadmin'
 #gem 'pry-rails', :group => :development
-#gem 'rb-readline', "~> 0.5.0", require: 'readline'
+gem 'rb-readline', "~> 0.5.0", require: 'readline'
 gem "rubykassa"
