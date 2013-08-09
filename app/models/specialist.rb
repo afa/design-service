@@ -1,5 +1,6 @@
 #encoding: utf-8
 class Specialist < ActiveRecord::Base
+  before_create :new_user
   belongs_to :specialist_group
   has_many :orders, as: :executor
 
@@ -18,6 +19,7 @@ class Specialist < ActiveRecord::Base
 
   delegate :messages,  to: :user
   delegate :full_name, :username, :to_s,  to: :profile
+  delegate :avatar, to: :user
 
   def rating; 666; end
   def rating_count; 777; end
@@ -28,5 +30,19 @@ class Specialist < ActiveRecord::Base
 
   def description
     "Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!"
+  end
+
+  def self.new_user
+    return if user
+    build_user do |u|
+      u.new_profile
+    end
+  end
+  def self.new_specialist(options = {})
+    new(options) do |sp|
+      sp.build_user do |u|
+        u.new_profile
+      end
+    end
   end
 end

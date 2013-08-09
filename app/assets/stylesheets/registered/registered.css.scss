@@ -679,6 +679,7 @@ div.border_left div.bottom_corner{background-color:#000; position: absolute; wid
 #msg_dialog div.left_bar{ width:220px; height:520px; margin-top:5px; margin-bottom:5px; float:left;  overflow:hidden; border-right:1px solid #d3d3d3;}
 #msg_dialog div.left_bar span.heading{ width:200px; float:left; text-align: center; padding:5px 0px 10px 0px; font-size:18px}
 #msg_dialog div.left_bar span.photo{ width:46px; height:46px; border:1px solid #999999; float:left; background-color:#e6e6e6; margin-left:20px;}
+#msg_dialog div.left_bar span.photo img{ width:46px; height:46px;}
 #msg_dialog div.left_bar span.name{ width:120px; float:left; margin-left:10px; text-align:left; color:#5b5b5b;}  
 
 #msg_dialog div.left_bar span.heading_done{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}

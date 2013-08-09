@@ -17,6 +17,7 @@ DesignService::Application.routes.draw do
       get 'get_price'
     end
     resources :reviews
+    resources :messages
   end
 
   resource :profile do

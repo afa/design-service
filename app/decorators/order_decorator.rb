@@ -14,7 +14,7 @@ class OrderDecorator < Draper::Decorator
   end
 
   def time_to_finish
-    completion_time ? h.distance_of_time_in_words(Time.now, completion_time) : 'Время завершения неизвестно'
+    source.completion_time ? h.distance_of_time_in_words(Time.now, source.completion_time) : 'Время завершения неизвестно'
   end
 
   # Define presentation-specific methods here. Helpers are accessed through

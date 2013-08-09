@@ -11,6 +11,16 @@ ru:
       as_time: "%H:%M"
       #short: "%b %d"
       #long: "%B %d, %Y"
+  time:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%d.%m.%Y"
+      as_time: "%H:%M"
+      #short: "%b %d"
+      #long: "%B %d, %Y"
+
   helpers:
     submit:
       user:
@@ -45,6 +55,7 @@ ru:
     profiles:
       orders: 'МОИ ЗАКАЗЫ'
       edit: 'Редактировать профиль'
+    orders: 'Заказы'
   controller_title_classes: # class for header in unregistered mode
                             # TODO: make class for specialists page and other pages available to unregistered users
     plan_developments: 'post_varplan'
@@ -89,6 +100,8 @@ ru:
     title: 'Вход в систему'
   registrations:
     title: 'Регистрация нового пользователя'
+  orders:
+    executor_not_assigned: 'Не назначен'
   activerecord:
     models:
       client: 'Заказчик'

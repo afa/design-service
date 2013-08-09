@@ -40,7 +40,7 @@
       = render partial: 'messages/message_in_chat', collection: messages, as: :message
       / -----------------------------------------
     .send_msg
-      %form#msg_form{:data => {:url => "#{messages_path}" } }
+      %form#msg_form
         %textarea.msg_sender{:cols => "", :name => "text", :rows => ""}
         = image_tag 'msg_send.jpg', name: 'submit', class: 'send_msg'
     .order_data_bottom

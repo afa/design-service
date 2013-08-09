@@ -1,4 +1,4 @@
-.#{current_user == message.sender ? 'msg_to' : 'msg_from' }
+%div{:class => "#{current_user == message.sender ? 'msg_to' : 'msg_from' }"}
   %ul.message
     %li= message.sender
     %li= I18n.l(message.created_at.to_date)
