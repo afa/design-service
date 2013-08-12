@@ -2,8 +2,7 @@
 class PlanDevelopment < ActiveRecord::Base
   include ActsAsOrderable
 
-  #belongs_to :comment, class_name: 'ModerableText'
-  belongs_to :attachment
+  has_one :attachment, as: :attachable, class_name: 'Attachment'
 
   accepts_nested_attributes_for :attachment #, :comment, :family_composition
 
