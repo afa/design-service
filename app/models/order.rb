@@ -4,6 +4,8 @@ class Order < ActiveRecord::Base
   belongs_to :executor, polymorphic: true
   has_many :reviews, dependent: :destroy
   has_many :messages, as: :attached_to, dependent: :destroy
+  has_many :payments
+  has_many :purchases, :through => :payments
 
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor) { where(executor_id: executor.id, executor_type: executor.class.name) }
