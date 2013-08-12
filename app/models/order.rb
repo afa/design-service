@@ -18,6 +18,10 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def authorized_user?(user)
+    user && (user == client || user == executor || user.moderator?)
+  end
+
 =begin
  state_machine :state
 =end

@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  http_status:
+    unauthorized: 'Вы не авторизованы для просмотра этого файла'
   date:
     formats:
       # Use the strftime parameters for formats.

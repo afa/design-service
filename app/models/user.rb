@@ -57,10 +57,13 @@ class User < ActiveRecord::Base
   end
 
   def guest?
-    role == 'guest'
+    role.to_s == 'guest'
   end
   def registered?
     ! guest?
+  end
+  def moderator?
+    %w{admin moderator}.include?(role.to_s)
   end
 
   def messages

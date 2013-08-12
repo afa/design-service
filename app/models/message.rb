@@ -11,5 +11,8 @@ class Message < ActiveRecord::Base
   scope :received_by_user, ->(user_id){ where(recipient_type: 'user', recipient_id: user_id) }
   scope :sent_by_user, ->(user_id){ where(sender_id: user_id) }
   scope :ordered_by_date, lambda{ order(:created_at) }
-
+  def authorized_user?(user)
+    #accepted? && (user == sender || user == recipient)
+    user && (user == sender || user == recipient || user.moderator?)
+  end
 end

@@ -1,5 +1,9 @@
 DesignService::Application.routes.draw do
-  resources :attachments
+  resources :attachments, only: [:show] do
+    member do
+      get 'download'
+    end
+  end
 
   resources :messages
   resources :specialist_groups do

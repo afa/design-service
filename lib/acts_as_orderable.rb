@@ -3,6 +3,9 @@ module ActsAsOrderable
   def price=(value); order.price = value; end
   def paid?; order.paid?; end
   def title; I18n.t "titles.#{self.class.name.underscore}"; end
+  def authorized_user?(user)
+    user && (user == order.client || user == order.executor || user.moderator?)
+  end
   module ClassMethods
     def make_order(params, user)
       new(params) do |o|

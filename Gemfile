@@ -49,6 +49,7 @@ gem 'paper_trail', '~> 2'
 
 #gem 'squeel'
 gem 'carrierwave'
+gem 'mime-types'
 gem 'mini_magick', github: 'minimagick/minimagick'
 gem 'draper'
 gem 'activeadmin'
