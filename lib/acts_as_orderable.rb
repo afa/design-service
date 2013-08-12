@@ -17,7 +17,7 @@ module ActsAsOrderable
   def self.included(base)
     base.extend ClassMethods
     base.class_eval do
-      has_one :order, as: :orderable
+      has_one :order, as: :orderable, dependent: :destroy
       has_one :client, through: :order
       has_paper_trail
       # scopes use select not to be readonly

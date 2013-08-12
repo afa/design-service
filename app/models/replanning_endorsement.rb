@@ -1,7 +1,7 @@
 class ReplanningEndorsement < ActiveRecord::Base
   include ActsAsOrderable
 
-  has_many :attachments, as: :attachable, class_name: 'Attachment'
+  has_many :attachments, as: :attachable, class_name: 'Attachment', dependent: :destroy
 
   accepts_nested_attributes_for :attachments, allow_destroy: true
   def self.default_params

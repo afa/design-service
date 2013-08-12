@@ -2,7 +2,7 @@
 class PlanDevelopment < ActiveRecord::Base
   include ActsAsOrderable
 
-  has_one :attachment, as: :attachable, class_name: 'Attachment'
+  has_one :attachment, as: :attachable, class_name: 'Attachment', dependent: :destroy
 
   accepts_nested_attributes_for :attachment #, :comment, :family_composition
 
