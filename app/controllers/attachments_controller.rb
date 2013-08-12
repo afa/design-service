@@ -3,12 +3,11 @@ class AttachmentsController < ApplicationController
   before_filter :check_permission
 
   def show
-    content_type = @attachment.file.tap{|f| f.set_content_type}.file.content_type
-    send_file @attachment.file.file.file, :type => content_type, :disposition => 'inline', filename: @attachment.file.file.original_filename
+    send_file @attachment.path, filename: @attachment.original_filename, type: @attachment.content_type, disposition: 'inline'
   end
 
   def download
-    send_file @attachment.file.file.file, filename: @attachment.file.file.original_filename
+    send_file @attachment.path, filename: @attachment.original_filename
   end
 
 private
