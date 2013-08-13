@@ -1,5 +1,5 @@
 DesignService::Application.routes.draw do
-  resources :attachments, only: [:show] do
+  resources :attachments, only: [:show, :index] do
     member do
       get 'download'
     end
@@ -22,6 +22,7 @@ DesignService::Application.routes.draw do
     end
     resources :reviews
     resources :messages
+    resources :attachments
   end
 
   resource :profile do

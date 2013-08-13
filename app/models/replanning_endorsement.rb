@@ -11,4 +11,5 @@ class ReplanningEndorsement < ActiveRecord::Base
   def self.generate
     new(default_params)
   end
+  def num_plans; 1; end
 end

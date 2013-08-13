@@ -28,13 +28,13 @@ class MessagesController < InheritedResources::Base
   def index
     respond_with do |format|
       format.json {
-        text = render_to_string(partial: 'messages/message_in_chat.html', collection: collection.ordered_by_date, as: :message, layout: false, handlers: [:haml])
         executor = parent.executor
         executor_name = executor && executor.to_s || I18n.t('orders.executor_not_assigned')
         executor_avatar_url = executor && executor.avatar || Photo.new.photo.avatar_size.url
-        render json: {msgs_text: text,
+        render json: {msgs_text: messages_text,
                       executor_name: executor_name,
-                      executor_avatar_url: executor_avatar_url
+                      executor_avatar_url: executor_avatar_url,
+                      attachment_previews_text: attachment_previews_text
                     }
       }
     end
@@ -50,5 +50,15 @@ private
   def check_have_recipient
     redirect_to :back, alert: 'Невозможно создать сообщение в никуда'  unless parent
     false
+  end
+  def attachment_previews_text
+    render_to_string(partial: 'attachments/attachments_in_chat',
+                    locals: {attachments: parent.attachments, num_of_unfinished_works: parent.num_of_unfinished_works},
+                    layout: false, formats: [:html], handlers: [:haml])
+  end
+  def messages_text
+    render_to_string(partial: 'messages/message_in_chat',
+                    collection: collection.ordered_by_date, as: :message,
+                    layout: false, formats: [:html], handlers: [:haml])
   end
 end

@@ -6,6 +6,7 @@ class Order < ActiveRecord::Base
   has_many :messages, as: :attached_to, dependent: :destroy
   has_many :payments
   has_many :purchases, :through => :payments
+  has_many :attachments, as: :attachable
 
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor) { where(executor_id: executor.id, executor_type: executor.class.name) }
@@ -34,5 +35,9 @@ class Order < ActiveRecord::Base
   end
   def title
     orderable.title
+  end
+
+  def num_of_unfinished_works
+    orderable.num_plans.to_i - attachments.size
   end
 end

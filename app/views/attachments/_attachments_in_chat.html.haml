@@ -1,0 +1,18 @@
+- unless attachments.empty?
+  %span.heading_done.dark_green_header Выполнено
+  %ul.done
+    - attachments.each_with_index do |attachment, index|
+      %li
+        %span>
+          = image_tag attachment_path(attachment)
+        = link_to download_attachment_path(attachment) do
+          = precede "План " do
+            = index + 1
+- unless num_of_unfinished_works == 0
+  %span.heading_working.dark_red В разработке
+  %ul.working
+    - num_of_unfinished_works.times do |index|
+      %li
+        %span>
+        = precede "План " do
+          = index + attachments.size + 1
