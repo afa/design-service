@@ -32,7 +32,7 @@ class Specialist < ActiveRecord::Base
     "Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!"
   end
 
-  def self.new_user
+  def new_user
     return if user
     build_user do |u|
       u.new_profile
