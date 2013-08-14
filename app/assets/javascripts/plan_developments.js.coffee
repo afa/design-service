@@ -6,11 +6,10 @@
 //= require price_calculator
 //= require register_ajax_submit
 
-$(document).ready ->
-  filegrabber = $('.singleattach')
+$(document).ready ->  
+  filegrabber = $('.multiattach')
   unless filegrabber.size() == 0
-    registerDropZoneSingleFileHandlers(filegrabber)
-
+    registerDropZoneMultipleFileHandlers(filegrabber)
+  
   register_price_calculator($('.calcContainer'), 5000)
-
-  register_ajax_submit('.singleattach', 'form .postRequest')
+  register_ajax_submit('.multiattach', 'form .postRequest')

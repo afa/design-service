@@ -27,7 +27,7 @@ private
                                       :address, :floor, :section,
                                       :family_composition_first_line, :family_composition_second_line, :comment,
                                       :flat_area,
-                                      attachment_attributes: [:file]
+                                      attachments_attributes: [:file]
                                     ] )
   end
 end

@@ -21,7 +21,7 @@ ActiveAdmin.register PlanDevelopment do
     column :washing_room_needed
     column :num_standpipes
 
-    column :attachment_info
+#    column :attachment_info
     column :comment
     column :family_composition
 

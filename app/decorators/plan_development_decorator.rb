@@ -14,9 +14,9 @@ class PlanDevelopmentDecorator < Draper::Decorator
   def order_info_link
     h.link_to 'Информация о заказе', h.admin_order_path(order.id)
   end
-  def attachment_info
-    source.attachment ? source.attachment.decorate.link : ''
-  end
+#  def attachment_info
+#    source.attachment ? source.attachment.decorate.link : ''
+#  end
   def border_class
     'border_xg'
   end

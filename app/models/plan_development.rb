@@ -2,9 +2,9 @@
 class PlanDevelopment < ActiveRecord::Base
   include ActsAsOrderable
 
-  has_one :attachment, as: :attachable, class_name: 'Attachment', dependent: :destroy
+  has_many :attachments, as: :attachable, class_name: 'Attachment', dependent: :destroy
 
-  accepts_nested_attributes_for :attachment #, :comment, :family_composition
+  accepts_nested_attributes_for :attachments
 
   extend Enumerize
   enumerize :num_guests, in: [:zero, :less_than_five, :five_to_fifteen, :greater_than_fifteen]
@@ -39,7 +39,7 @@ class PlanDevelopment < ActiveRecord::Base
 
   def self.generate
     new(default_params).tap do |obj|
-      obj.build_attachment
+      obj.attachments.build
     end
   end
 
