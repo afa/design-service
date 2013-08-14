@@ -1,6 +1,7 @@
 class Attachment < ActiveRecord::Base
   mount_uploader :file, FileUploader
   belongs_to :attachable, polymorphic: true
+  belongs_to :user
 
   def authorized?(user)
     attachable.authorized_user?(user)
