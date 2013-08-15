@@ -10,9 +10,10 @@ $(document).ready ->
   filegrabber = $('.multiattach')
   unless filegrabber.size() == 0
     registerDropZoneMultipleFileHandlers(filegrabber)
-  
+
   register_price_calculator($('.calcContainer'), 5000)
-  register_ajax_submit('.multiattach', 'form .postRequest')
+  register_ajax_submit('.multiattach .loaded_files', 'form .postRequest')
+
   $("span.plan_refactor.gen_proekt input[type='radio'][value='true']").change ->
     if($(this).attr('checked', true))
       $('#second_ques').css('display','none')

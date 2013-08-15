@@ -63,7 +63,7 @@
       = attachment_form.input_field :file, as: :file
       = attachment_form.link_to_remove "Удалить файл"
     = f.link_to_add "Добавить файл", :attachments
-    /= plan_development.attachments.inspect
+    .loaded_files
 
 
   .calculator.border_x5.rounded-corners_l2.shadow_x2

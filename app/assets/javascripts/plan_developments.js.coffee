@@ -2,14 +2,14 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-//= require single_file_drop
+//= require multiple_file_drop
 //= require price_calculator
 //= require register_ajax_submit
 
-$(document).ready ->  
+$(document).ready ->
   filegrabber = $('.multiattach')
   unless filegrabber.size() == 0
     registerDropZoneMultipleFileHandlers(filegrabber)
-  
+
   register_price_calculator($('.calcContainer'), 5000)
-  register_ajax_submit('.multiattach', 'form .postRequest')
+  register_ajax_submit('.multiattach .loaded_files', 'form .postRequest')

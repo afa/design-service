@@ -1,24 +1,14 @@
 # Here we should use string of query as an argument, not an element because after form reloading we need to search an element again
 # submit element must be an image but not input[type=image]
-window.register_ajax_submit = (element_to_restore, submit_button)->
+window.register_ajax_submit = (element_to_set, submit_button)->
   $(submit_button).click ->
-    unless $(this).closest('form').get(0).checkValidity()
+    form = $(this).closest('form')
+    unless form.get(0).checkValidity()
       return false
 
-    $(this).closest('form').ajaxSubmit
+    form.ajaxSubmit
       beforeSubmit: (a,f,o)->
         o.dataType = 'json'
-      complete: (XMLHttpRequest, textStatus)->
-        if XMLHttpRequest.status == 200 || XMLHttpRequest.status == 201
-          # file inputs lose information when form is replaced
-          to_save = $(element_to_restore)
-          $(element_to_restore).closest('form').replaceWith(XMLHttpRequest.responseText)
-          $(element_to_restore).replaceWith(to_save)
-          $(submit_button).click ->
-            unless $(this).closest('form').get(0).checkValidity()
-              return false
-            $(this).closest('form').ajaxSubmit
-              beforeSubmit: (a,f,o)->
-                o.dataType = 'json'
-              complete: (XMLHttpRequest, textStatus)->
-                ;
+      complete: (xhr, textStatus)->
+        if xhr.status == 200 || xhr.status == 201
+          $(element_to_set).html(xhr.responseText)
