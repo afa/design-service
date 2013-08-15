@@ -11,6 +11,52 @@ class Order < ActiveRecord::Base
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor) { where(executor_id: executor.id, executor_type: executor.class.name) }
 
+  state_machine :work_state, initial: :empty_draft do
+    state :empty_draft
+    state :draft
+    state :specialist_suggested
+    state :client_agreed
+    state :in_work
+    state :work_accepted
+
+    event :save_draft do
+      transition [:empty_draft, :draft] => :draft
+    end
+    event :set_price do
+      transition :draft => :specialist_suggested
+    end
+    event :agree do
+      transition :specialist_suggested => :client_agreed
+    end
+
+    event :start_work do
+      transition [:in_work, :agree] => :in_work,  :if => :must_start_work?
+    end
+
+    event :accept_work do
+      transition :in_work => :work_accepted
+    end
+  end
+
+  state_machine :payment_state, initial: :not_paid do
+    state :not_paid
+    state :advance_paid
+    state :paid
+
+    state :no_paid do
+      def must_start_work?; false; end
+    end
+    state :advance_paid, :paid do
+      def must_start_work?; true; end
+    end
+
+    event :pay do
+      transition [:not_paid, :advance_paid] => :paid, :if => lambda {|order| order.amount_paid >= order.price }
+      transition [:not_paid, :advance_paid] => :advance_paid, :if => lambda {|order| order.amount_paid >= order.advance_price }
+      transition [:not_paid, :paid] => same
+    end
+  end
+
   def interlocutor(user)
     if user == client
       executor
