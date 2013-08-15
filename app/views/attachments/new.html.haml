@@ -1,0 +1,3 @@
+= simple_form_for Attachment.new, remote:true, html: {class: 'has_attachments', multipart: true, data:{attachment_upload_url: order_attachments_path(3)}} do |f|
+  = f.input_field :file, as: :file
+  = f.submit

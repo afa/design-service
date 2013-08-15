@@ -1,5 +1,5 @@
 DesignService::Application.routes.draw do
-  resources :attachments, only: [:show, :index] do
+  resources :attachments, except: [:edit, :update] do
     member do
       get 'download'
     end
@@ -42,10 +42,14 @@ DesignService::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get 'replanning_endorsements' => 'replanning_endorsements#new'
-  resources :replanning_endorsements
+  resources :replanning_endorsements do
+    resources :attachments
+  end
 
   get 'plan_developments' => 'plan_developments#new'
-  resources :plan_developments #, only: [:new, :create, :show]
+  resources :plan_developments do
+    resources :attachments
+  end
 
   # Disable user from destroying his account
   # https://github.com/plataformatec/devise/wiki/How-To:-Disable-user-from-destroying-his-account
