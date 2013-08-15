@@ -1,20 +1,28 @@
 class PlanDevelopmentsController < InheritedResources::Base
   #respond_to :html, except: [:create, :update]
   load_and_authorize_resource
-  respond_to :json, only: [:create, :update]
+  respond_to :json, only: [:update]
 
   before_filter only: [:show] do
     @plan_development = @plan_development.decorate
   end
 
   def new
-    @plan_development = PlanDevelopment.generate.decorate
+    @plan_development = PlanDevelopment.generate(current_or_guest_user).decorate
   end
 
-  def create
-    @plan_development = PlanDevelopment.make_order(permitted_params[:plan_development], current_or_guest_user)
-    @plan_development.save!
-    render partial: 'form', locals: {plan_development: @plan_development}
+  #def create
+  #  @plan_development = PlanDevelopment.make_order(permitted_params[:plan_development], current_or_guest_user)
+  #  @plan_development.save!
+  #  #render partial: 'form', locals: {plan_development: @plan_development}
+  #end
+
+  def update
+    resource.update_attributes(permitted_params[:plan_development])
+    resource.save!
+    respond_with do |format|
+      format.json { render json: {text: attachments_text} }
+    end
   end
 
 
@@ -29,5 +37,9 @@ private
                                       :flat_area,
                                       attachments_attributes: [:file]
                                     ] )
+  end
+  def attachments_text
+    render_to_string('update',
+                    layout: false, formats: [:html], handlers: [:haml])
   end
 end
