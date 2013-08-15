@@ -11,31 +11,15 @@ class PlanDevelopment < ActiveRecord::Base
   enumerize :big_kitchen, in: [:less_than_fifteen, :greater_than_fifteen]
   enumerize :num_plans, in: [1,2,3,4]
 
-  def full_address
-    "#{address} (подъезд: #{section}, этаж: #{floor})"
-  end
+  def full_address; "#{address} (подъезд: #{section}, этаж: #{floor})"; end
 
-  def family_composition_first_line
-    @family_composition_first_line ||= family_composition
-  end
+  def family_composition_first_line; @family_composition_first_line ||= family_composition; end
+  def family_composition_second_line; @family_composition_second_line ||= ''; end
 
-  def family_composition_second_line
-    @family_composition_second_line ||= ''
-  end
+  def mk_family_composition; self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.reject(&:blank?).join(' '); end
 
-  def mk_family_composition
-    self.family_composition = [@family_composition_first_line, @family_composition_second_line].compact.reject(&:blank?).join(' ')
-  end
-
-  def family_composition_first_line=(val)
-    @family_composition_first_line = val
-    mk_family_composition
-  end
-
-  def family_composition_second_line=(val)
-    @family_composition_second_line = val
-    mk_family_composition
-  end
+  def family_composition_first_line=(val); @family_composition_first_line = val; mk_family_composition; end
+  def family_composition_second_line=(val); @family_composition_second_line = val; mk_family_composition; end
 
   def self.generate
     new(default_params).tap do |obj|
