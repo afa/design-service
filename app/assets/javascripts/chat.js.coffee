@@ -15,6 +15,7 @@ window.register_chat = ->
         $('#msg_dialog .msg_content').html(response['msgs_text'])
         $('#msg_dialog .left_bar .name').html(response['executor_name'])
         $('#msg_dialog .left_bar .photo').html('<img src="' + response['executor_avatar_url'] + '">')
+        $('#msg_dialog .attachments_list').html(response['attachment_previews_text'])
         scroll_to_last()
       error: ->
         alert('Не получилось загрузить сообщения')
@@ -23,9 +24,10 @@ window.register_chat = ->
     $('.msg_content').animate({"scrollTop": $('.msg_content')[0].scrollHeight},"slow")
 
   $(".msg").click (event)->
-    url = $(event.target).data('msgUrl')
-    $('#msg_form').data('msg_send_url', url)
-    load_messages(url)
+    messages_url = $(event.target).data('msgUrl')
+    $('#msg_form').data('msg_send_url', messages_url)
+    load_messages(messages_url)
+
     name_order = $(this).parent().find('.name span').html();
     $('.order_name').html(name_order);
     black_content();
@@ -36,19 +38,19 @@ window.register_chat = ->
 
   $('img[name="submit"]', '.send_msg').click (event)->
     event.preventDefault();
-    url = $('#msg_form').data('msg_send_url')
+    messages_url = $('#msg_form').data('msg_send_url')
     data = jQuery.param
       message:
         text:  $('#msg_form textarea[name="text"]').val()
     scroll_to_last();
     $.ajax
-      url: url
+      url: messages_url
       dataType: 'json'
       data: data
       type: 'POST'
       success: ->
         $('#msg_form').resetForm()
-        load_messages(url)
+        load_messages(messages_url)
       error: ->
         alert('Не получилось отправить сообщение')
 

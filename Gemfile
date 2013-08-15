@@ -49,6 +49,7 @@ gem 'paper_trail', '~> 2'
 
 #gem 'squeel'
 gem 'carrierwave'
+gem 'mime-types'
 gem 'mini_magick', github: 'minimagick/minimagick'
 gem 'draper'
 gem 'activeadmin'
@@ -80,3 +81,4 @@ gem 'simplecov', :require => false, :group => :test
 #gem 'pry-rails', :group => :development
 gem 'rb-readline', "~> 0.5.0", require: 'readline'
 gem "rubykassa"
+gem "state_machine"

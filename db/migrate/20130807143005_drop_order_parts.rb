@@ -1,6 +1,8 @@
 class DropOrderParts < ActiveRecord::Migration
   def up
-    drop_table :order_parts
+    if ActiveRecord::Base.connection.table_exists?(:order_parts)
+     drop_table :order_parts
+    end
   end
 
   def down

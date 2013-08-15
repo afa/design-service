@@ -14,7 +14,7 @@ class PlanDevelopmentsController < InheritedResources::Base
   def create
     @plan_development = PlanDevelopment.make_order(permitted_params[:plan_development], current_or_guest_user)
     @plan_development.save!
-    render partial: 'form'
+    render partial: 'form', locals: {plan_development: @plan_development}
   end
 
 

@@ -15,7 +15,7 @@ class ReplanningEndorsementsController < InheritedResources::Base
   def create
     @replanning_endorsement = ReplanningEndorsement.make_order(permitted_params[:replanning_endorsement], current_or_guest_user)
     @replanning_endorsement.save!
-    render partial: 'form'
+    render partial: 'form', locals: {replanning_endorsement: @replanning_endorsement}
   end
 
 private
