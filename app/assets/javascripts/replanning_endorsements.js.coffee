@@ -12,7 +12,7 @@ $(document).ready ->
     registerDropZoneMultipleFileHandlers(filegrabber)
 
   register_price_calculator($('.calcContainer'), 5000)
-  register_ajax_submit('.multiattach .loaded_files', 'form .postRequest')
+  register_ajax_submit('.multiattach .loaded_files', 'form#all_forms .postRequest')
 
   $("span.plan_refactor.gen_proekt input[type='radio'][value='true']").change ->
     if($(this).attr('checked', true))
