@@ -61,6 +61,7 @@
     %span Вы можете перетащить файлы сюда
     = f.simple_fields_for :attachments do |attachment_form|
       = attachment_form.input_field :file, as: :file
+      = attachment_form.input_field :kind, as: :hidden, value: 'plan_of_flat'
       = attachment_form.link_to_remove "Удалить файл"
     = f.link_to_add "Добавить файл", :attachments
     .loaded_files

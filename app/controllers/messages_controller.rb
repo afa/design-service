@@ -53,7 +53,7 @@ private
   end
   def attachment_previews_text
     render_to_string(partial: 'attachments/attachments_in_chat',
-                    locals: {attachments: parent.attachments, num_of_unfinished_works: parent.num_of_unfinished_works},
+                    locals: {attachments: parent.attachments, unfinished_attachments: parent.unfinished_attachments},
                     layout: false, formats: [:html], handlers: [:haml])
   end
   def messages_text

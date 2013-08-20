@@ -6,6 +6,7 @@ module ActsAsOrderable
   def authorized_user?(user)
     user && (user == order.client || user == order.executor || user.moderator?)
   end
+
   module ClassMethods
     def make_order(params, user)
       new(params) do |o|
@@ -19,6 +20,9 @@ module ActsAsOrderable
     base.class_eval do
       has_one :order, as: :orderable, dependent: :destroy
       has_one :client, through: :order
+      has_many :attachments, as: :attachable, class_name: 'Attachment', dependent: :destroy
+      accepts_nested_attributes_for :attachments, allow_destroy: true
+
       has_paper_trail
       # scopes use select not to be readonly
       # .readonly(false) can be used instead

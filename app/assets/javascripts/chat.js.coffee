@@ -1,4 +1,5 @@
 //= require jquery.slimscroll
+//= require 'attachments'
 
 window.register_chat = ->
   black_content = ->
@@ -16,6 +17,7 @@ window.register_chat = ->
         $('#msg_dialog .left_bar .name').html(response['executor_name'])
         $('#msg_dialog .left_bar .photo').html('<img src="' + response['executor_avatar_url'] + '">')
         $('#msg_dialog .attachments_list').html(response['attachment_previews_text'])
+        make_attachment_forms_remote('form.attachment_upload input[type="submit"]')
         scroll_to_last()
       error: ->
         alert('Не получилось загрузить сообщения')

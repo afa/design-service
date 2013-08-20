@@ -2,14 +2,14 @@
 class PlanDevelopment < ActiveRecord::Base
   include ActsAsOrderable
 
-  has_many :attachments, as: :attachable, class_name: 'Attachment', dependent: :destroy
-
-  accepts_nested_attributes_for :attachments
-
   extend Enumerize
   enumerize :num_guests, in: [:zero, :less_than_five, :five_to_fifteen, :greater_than_fifteen]
   enumerize :big_kitchen, in: [:less_than_fifteen, :greater_than_fifteen]
   enumerize :num_plans, in: [1,2,3,4]
+
+  def attachment_kinds
+    ['plan_of_flat']
+  end
 
   def full_address; "#{address} (подъезд: #{section}, этаж: #{floor})"; end
 

@@ -17,7 +17,7 @@ class AttachmentsController < InheritedResources::Base
 private
 
   def permitted_params
-    params.permit(:attachment => [:file])
+    params.permit(:attachment => [:file, :kind, :_destroy])
   end
   def check_permission
     if resource.authorized?(current_or_guest_user)

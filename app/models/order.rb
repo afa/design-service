@@ -71,19 +71,14 @@ class Order < ActiveRecord::Base
     user && (user == client || user == executor || user.moderator?)
   end
 
-=begin
- state_machine :state
-=end
-  # TODO: fix this stub
-# remove paid? after stating
-  def paid?
-    id % 2 == 0
-  end
   def title
     orderable.title
   end
 
-  def num_of_unfinished_works
-    orderable.num_plans.to_i - attachments.size
+  #def num_of_unfinished_works
+  #  orderable.num_plans.to_i - attachments.size
+  #end
+  def unfinished_attachments
+    orderable.attachment_kinds - orderable.attachments.pluck(:kind)
   end
 end
