@@ -16,11 +16,8 @@
       = content_for :outer_box
       .twoColFixRtHdr
         .border_ornements
-          / ------------------------------------------------------------------------------- NEW CLASS ADDED--------------
           .header_top
-            / ------------------------------------------------------------------------------------- NEW CLASS ADDED--------------
             .coconut_leaves
-              / --------------------------------------------------------------------------------- NEW CLASS ADDED--------------
               #container
                 = render 'layouts/registered_header'
                 #maincontent_index.rounded-corners_l4
@@ -45,9 +42,4 @@
                       .caption.light_red= page_subtitle
                       .breaker
                       = yield
-              / ------------------------------------------------- -----------------------------------------------END maincontent_index
-            / ------------------------------------------------- --------------------------------------------------------END container-------
             = render "layouts/footer"
-          / coconut_leaves ----------------------------------------------------- END CLASS-
-        / header_top  ----------------------------------------------------- END CLASS-
-      / border_ornements ---------------------------------------------------- END CLASS
