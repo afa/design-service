@@ -70,5 +70,6 @@ module DesignService
     config.generators do |g|
       g.fixture_replacement :factory_girl
     end
+    config.i18n.locale = config.i18n.default_locale
   end
 end
