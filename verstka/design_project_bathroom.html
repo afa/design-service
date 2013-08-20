@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+<link href="/assets/common/form_style.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/common/drop_zone.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/common/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+
+
+<link href="/assets/unregistered/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/unregistered/unregistred.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/unregistered/welcome.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="unregistred.css" media="screen" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		function black_content(){
+			$("#black_content").css("height",$(document).height());
+			$("#black_content").css("display","block");
+		};
+		
+		
+		$(".registration").click(function(){
+		black_content();
+		$("#register").css("display","block");
+		});
+		
+		$(".login").click(function(){
+		black_content();
+		$("#login").css("display","block");
+		});
+		
+		$(".close_fly_window").click(function(){
+		//alert($(this).attr("class"));
+		$(this).parent().css("display","none").parent().css("display","none");
+		});
+	
+
+		});
+
+		function show_next(element){
+		var checker = $(element).is(':checked');
+		var li_near = $(element).parent().next('li');
+		if(checker==true){
+		li_near.css("display","block");
+		}
+		else{
+		li_near.css("display","none");
+		}
+		}
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+	<div id="register" class="rounded-corners border_x1 shadow_x1">
+    <div class="close_fly_window"></div>
+    <form action="">
+	<div class="head_register"></div>
+	<div class="info">Логин:<span>*</span></div>
+    <div class="text_fields">
+    <span class="caution">(латинские символы и цифры)</span>
+    <input name="" type="text" class="reg_client_tfeild">
+    </div>
+    <div class="info">E-mail:<span>*</span></div><div class="text_fields"><input name="" type="text" class="reg_client_tfeild"></div>
+    <div class="info">Пароль:<span>*</span></div><div class="text_fields"><input name="" type="text" class="reg_client_tfeild"></div>
+    <div class="info">Повторите&nbsp;&nbsp; пароль:<span>*</span></div><div class="text_fields"><input name="" type="text" class="reg_client_tfeild"></div>
+    <div class="control"><input type="image" src="ok_button.png" alt="Submit Form" class="submit_button"/></div>
+    </form>
+    </div>
+    
+    <div id="login" class="rounded-corners border_x2 shadow_x1">
+    <div class="close_fly_window"></div>
+    <form action="">
+    <div class="head_register"></div>
+    <div class="info">Логин или E-mail :</div><div class="text_fields"><input name="" type="text" class="log_client_tfeild"></div>
+    <div class="info">Пароль :</div><div class="text_fields"><input name="" type="text" class="log_client_tfeild"></div>
+    <div class="control"><span><a href="#">Забыли?</a></span><input type="image" src="ok_button_green.png" alt="Submit Form" class="login_button"/></div>
+     </form>
+    </div>
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header">
+	<div class="headerLayer1" id="designService"></div>
+	<div class="login_panel">
+		<div class="login">Вход</div>
+		<div class="registration">Регистрация</div>
+	</div>
+    
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_default">	<!--  --------------------------------------------------------------CHANGE ID NAME -->	
+<div class="page_content_default">
+
+<div class="collage_design mode2">															
+	<ul id="main_menu" class="default_pages">
+		<li><a href="#"><span><p>Архитекторы</p></span></a></li>
+		<li><a href="#"><span><p>Дизайнеры</p></span></a></li>
+		<li><a href="#"><span><p>Инженеры</p></span></a></li>
+		<li><a href="#"><span><p>Строительные фирмы</p></span></a></li>
+		<li><a href="#"><span><p>Строительные бригады</p></span></a></li>
+	</ul>
+</div>
+
+
+<ul id="navigation">
+	<li class="first"><a href="#">Главная</a></li>
+    <li><a href="#">Дизайн-проекты</a></li>
+    <li class="last"><a href="#">концепция</a></li>
+</ul>
+
+<div class="page_description design_p-workin-docs"><span class="design_p-workin-docs">Дизайн санузла</span></div>
+<div class="msg_caution"><span class="design_p-workin-docs">Заполните заявку</span></div>
+
+<form action="" id="all_forms">
+<div class="design_p-workin-docs_form1 border_x1 rounded-corners_l2 shadow_x1">
+<div class="number"></div>
+<div class="form_description"></div>
+
+<div class="file_attaching border_x5 rounded-corners_l3">
+<span class="caution">Прикрепите: 1. план с расстановкой мебели!</span>
+<span class="attach">Вы можете перетащить файлы сюда</span>
+</div>
+
+<div class="number_second"></div>
+<div class="form_description_second"></div>
+<span class="text">Площадь помещения: <input name="plojad" type="text" class="textlines_default textline_l6"></span>
+
+<div class="interior">
+Какой стиль интерьера Вы предпочитаете?
+    <ul class="answer">
+      	<li><input name="interior" type="radio" value="" id="classicism">
+    	<label for="classicism"> Классицизм </label></li>
+    	<li><input name="interior" type="radio" value="" id="minimalism" checked="checked">
+    	<label for="minimalism"> Современный минимализм </label></li>
+        <li><input name="interior" type="radio" value="" id="East">
+    	<label for="East"> Восток </label></li>
+        <li><input name="interior" type="radio" value="" id="Art-Deco">
+    	<label for="Art-Deco"> Современный Art-Deco </label></li>
+        <li><input name="interior" type="radio" value="" id="any">
+    	<label for="any"> Другое <input name="plojad" type="text" class="textlines_default textline_l5"> </label></li>
+    </ul>
+</div>
+
+<div class="present_results">
+Как Вам представить результат?
+    <ul class="answer">
+    	<li><input name="present_results" type="radio" value="" id="3d">
+    	<label for="3d"> 3-D визуализация </label></li>
+        <li><input name="present_results" type="radio" value="" id="drawing">
+    	<label for="drawing"> Рисунок от руки </label></li>
+    </ul>
+</div>
+
+</div>
+
+
+<div class="design_p-workin-docs_form2 border_x3 rounded-corners_l2 shadow_x1">
+<div class="number"></div>
+<div class="form_description"></div>
+<input name="" type="text" class="var_form3_default textline_l12">
+<input name="" type="text" class="var_form3_default textline_l12">
+<input name="" type="text" class="var_form3_default textline_l12">
+</div>
+
+<span class="design_p-workin-docs-caution2">Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!</span>
+
+<div class="design_p-workin-docs_submiting">
+<input type="image" src="cancelButton.png" alt="" class="submit_all_forms" onClick="$('#all_forms').trigger('reset');
+; return false;" />
+<input type="image" src="postButton.png" alt="Submit Form" class="submit_all_forms"/>
+</div>
+</form>
+
+</div><!------------------------END page_content_default -->
+<div id="block_menu_default">
+	<ul>
+		<li><a href="PostVarPlan.html"><span><p>Разработка <br>вариантов планировок</p></span></a></li>
+		<li><a href="PlanRefactoring.html"><span><p>Согласования перепланировок</p></span></a></li>
+		<li><a href="design_project.html"><span><p>Дизайн-проект</p></span></a></li>
+		<li><a href="engineering_systems.html"><span><p>Инженерные <br>системы и конструктив</p></span></a></li>
+	</ul>
+    
+</div>
+
+</div> <!------------------------------------------- -----------------------------------------------END maincontent_default -->
+
+</div><!---------------------------------------------------------------------------------------------------END container--------->
+
+<div class="footer"> <!-- FOOTER START--------------------------------->
+<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        </div>
+</div>
+</div> <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>

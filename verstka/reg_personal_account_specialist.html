@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<link href="registered.css" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		function black_content(){
+			$("#black_content").css("height",$(document).height());
+			$("#black_content").css("display","block");
+		};
+		
+		$(document).ready(function(){
+			$('.specialist_orders_presentage_blocks').each(function(){
+			var presentage = parseInt($(this).find('.value_present').html());
+			var len = 200 * presentage/100;
+			$(this).find('.presentage').css('width',len);
+			})
+		})
+		
+		});
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header_specialist">
+	<div class="headerLayer1"></div>
+    <ul id="menu_specialist">
+    	<li><a href="reg_my_projects_specialist.html"><span></span></a></li>
+    	<li><a href="#"><span></span></a></li>
+    	<li><a href="reg_personal_account_specialist.html"><span></span></a></li>
+    	<li><a href="reg_personal_page_specialist.html"><span></span></a></li>
+    </ul>
+   
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_specialist" class="rounded-corners_l4">	
+	<div id="main_content_specialist_inside">	
+		 
+        <div class="sidebar_left_specialist">		
+        		<div class="name rounded-corners">NAME</div>
+                <div class="events rounded-corners">
+                	<span class="heading_event">ПОСЛЕДНИЕ СОБЫТИЯ</span>
+                	<ul class="last_events">
+                    	<li><span>25.04.2013</span>  Отправлены варианты планировки для LEX</li>
+                        <li><span>15.04.2013</span>  Заказ от Lex в работе</li>
+                        <li><span>13.04.2013</span>  Новый заказ</li>
+                    	<li><span>11.04.2013</span>  Поступление денежных средств на лицевой счет</li>
+                        <li class="last"><span>10.04.2013</span>  Выполнен заказ от STIFF</li>
+                    </ul>
+                </div>
+         </div>
+        
+        <div class="page_contener_specialist">
+        	<div class="header_page_specialist orrange_header">ЛИЦЕВОЙ СЧЕТ</div>
+
+			<div class="personal_account_specialist">
+			<ul class="personal_account">
+            <li class="select"><a href="#">История</a></li>
+            <li><a href="#">Пополнение</a></li>
+            <li><a href="#">Договора</a></li>
+            <li><a href="#">Акты</a></li>
+            </ul>
+            
+            <div class="personal_account">
+            На лицевом счете:     10 000 руб.
+            </div>
+            
+            <div class="content_header">Отложенные услуги</div>
+            <table class="deferred_services">
+            <tr class="heading"><td>Услуга</td> <td>Сумма</td> <td>Статус</td></tr>
+            <tr><td><span class="term">Разработка дизайн-проекта</span><span class="term_info">Заказ от 23.01.2013</span></td> <td>50 000 руб.</td> <td>Не оплачен <br>по счету <br>№18003/2</td></tr>
+            </table>
+            
+            <div class="content_header">История пополнения</div>
+            <table class="history_recharge">
+            <tr class="heading"><td>Дата</td> <td>Сумма</td> <td>Услуга</td><td>Статус</td></tr>
+            <tr><td>01.02.2013</td> <td>20 000 руб.</td> <td>согласование </td><td>Оплачен</td></tr>
+            <tr class="green"><td>27.01.2013</td> <td>25 000 руб.</td> <td>Пополнение</td><td>Выполнено</td></tr>
+            <tr><td>23.01.2013</td> <td>35 000 руб.</td> <td>согласование </td><td>Оплачен</td></tr>
+            <tr><td>19.01.2013</td> <td>20 000 руб.</td> <td>согласование </td><td>Оплачен</td></tr>
+            <tr class="green"><td>15.01.2013</td> <td>60 000 руб.</td> <td>Пополнение</td><td>Выполнено</td></tr>
+            </table>
+			</div>
+            
+            
+        </div><!-- end page_contener_specialist-->
+    </div>
+        
+</div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+
+<!-- FOOTER START -->
+<div class="footer">
+	<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        
+        </div>
+	</div>
+</div> 
+ <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>

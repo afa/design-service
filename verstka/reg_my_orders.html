@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<link href="registered.css" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<script type="text/javascript" src="scroll/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scroll/jquery.slimscroll.js"></script>
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		function black_content(){
+		$('body,html').animate({scrollTop:0},"slow");
+			$("#black_content").css("height",$(document).height());
+			$("#black_content").css("display","block");
+		};
+		
+		function scroll_to_last(){
+		$('.msg_content').animate({"scrollTop": $('.msg_content')[0].scrollHeight},"slow");
+		}
+		
+		$(".msg").click(function(){
+		var msg_dialog_id = $(this).attr('id');
+		var name_order = $(this).parent().find('.name span').html();
+		$('.order_name').html(name_order);
+		black_content();
+			 $('.left_bar').slimscroll({
+   			 size: '7px',
+			 width:'220px',
+			 height:'520px'
+ 			 });
+			 $('.msg_content').slimscroll({
+   			 size: '7px',
+			 width:'500px',
+			 height:'400px'
+ 			 });		
+		$("#msg_dialog").css("display","block");
+		scroll_to_last();
+		$('body').css('overflow','hidden');
+		});
+		
+		$('img', '.send_msg').click(function(){
+		data = $('#msg_form').serialize();      //////////////////////////////////////////////
+		scroll_to_last();
+		alert(data);
+		})
+		
+		$(".close_fly_window").click(function(){
+		$('body').css('overflow','auto');
+		$(this).parent().css("display","none").parent().css("display","none");
+		});
+		
+		$(document).ready(function(){
+			$('.presentage_blocks').each(function(){
+			var presentage = parseInt($(this).find('.value_present').html());
+			var len = 200 * presentage/100;
+			$(this).find('.presentage').css('width',len);
+			})
+		})
+		
+		});
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+	<div id="msg_dialog" class="shadow_x1 border_xs rounded-corners">
+    <div class="close_fly_window"></div>
+    	<div class="order_name"></div>
+        <div class="left_bar">
+        	<span class="heading gray_header">Исполнители</span>
+            <span class="photo"></span>
+            <span class="name">Журавлев <br>Михаил</span>
+            <span class="heading_done dark_green_header">Выполнено</span>
+        	<ul class="done">
+            	<li><span></span>План 1</li>
+                <li><span></span>План 2</li>
+                <li><span></span>План 3</li>
+            </ul>
+            <span class="heading_working dark_red">В разработке</span>
+        	<ul class="working">
+            	<li><span></span><a href="#">План 4</a></li>
+                <li><span></span><a href="#">План 5</a></li>
+                <li><span></span><a href="#">План 6</a></li>
+                <li><span></span><a href="#">План 7</a></li>
+            </ul>
+        </div>
+        <div class="msg_content">
+        	<!-- ----------------------------------------- -->
+        	<div class="msg_from">
+            	<ul class="message">
+                	<li>Журавлев Михаил</li><li>24.05.2013</li><li>17:30</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+          <!-- ----------------------------------------- -->
+          <div class="msg_to">
+                <ul class="message">
+            		<li>Александр</li><li>24.05.2013</li><li>19:40</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+            
+         <!-- ----------------------------------------- -->
+          <div class="msg_to">
+                <ul class="message">
+            		<li>Александр</li><li>24.05.2013</li><li>19:40</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+            
+         <!-- ----------------------------------------- -->
+          <div class="msg_from">
+                <ul class="message">
+            		<li>Александр</li><li>24.05.2013</li><li>19:40</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+        <!-- ----------------------------------------- -->    
+        </div>
+        <div class="send_msg">
+        <form>
+        <textarea name="" cols="" rows="" class="msg_sender"></textarea>
+        <input name="submit" type="image" src="msg_send.jpg" class="send_msg">
+        </form>
+        </div>
+    	<div class="order_data_bottom"><span><a href="#">Исходные данные</a></span></div>
+    </div>
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header">
+	<div class="headerLayer1" id="designService"></div>
+    <ul class="text_shadow_1">
+    <li class="shadow_x3"><a href="reg_postvarplan.html"><span>Разработка <br>вариантов планировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_planrefactoring.html"><span>Согласования перепланировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_design_project.html"><span>Дизайн-проект</span></a></li>
+    <li class="shadow_x3"><a href="reg_engineering_systems.html"><span>Инженерные <br>системы и конструктив</span></a></li>
+    </ul>
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_index" class="rounded-corners_l4">	
+	<div id="main_content">	
+		 <div class="springs"></div> 
+         <div class="border_left"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+   		 <div class="border_right"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+         
+        <div class="sidebar_left">		
+        		<div class="caption_left_menu light_green">Добро пожаловать,<br>Александр [Alex]</div>
+            	<ul id="left_menu">
+            	<li><a href="reg_my_orders.html">Мои заказы</a></li>
+                <li><a href="reg_personal_account.html">Лицевой счет</a></li>
+                <li><a href="#">Мои настройки</a></li>
+            	</ul>	
+            	<div class="heading_captions">ВЫБОР СПЕЦИАЛИСТОВ</div>
+                <ul id="menu_sub_left">
+            	<li><a href="#"><span>Архитекторы</span></a></li>
+                <li><a href="reg_designers.html"><span>Дизайнеры</span></a></li>
+                <li><a href="#"><span>Инженеры</span></a></li>
+                <li><a href="#"><span>Строительные фирмы</span></a></li>		
+                <li><a href="#"><span>Строительные бригады</span></a></li>											
+				</ul>
+         </div>
+        
+        <div class="page_contener">
+        	<div class="caption light_red">МОИ ЗАКАЗЫ</div>
+            <div class="breaker"></div>
+        <!-----------------------------  ---------------->   
+            <div class="_razrabotka_var border_x1 rounded-corners">
+            	<div class="date border_x1 rounded-corners_l3">30.01.2013</div>
+            	<div class="name">Наименование: <span>Дизайн кухни+гостиной</span></div>
+                <div class="artists">Исполнители: <ul><li>Журавлев Михаил </li><li>Новикова Мария</li></ul></div>
+                <div class="completion"><span class="tit">Завершения:</span><ul><li>будет определена после оплаты</li><li>3 недели</li></ul></div>
+                <div class="status">Состояние: <span>Дизайн кухни+гостиной</span></div>
+                <div class="pay_now"><a href="">Оплатите заказ</a></div>
+                <div class="msg" id="23t2323523523"><span><a href="#">Новое сообщение</a></span></div>
+                <div class="completed">завершено 
+                	<div class="presentage_blocks">
+                	<span class="presentage"><span class="value_present">50%</span><span class="bar"></span></span>
+                	</div>
+                </div>
+                <div class="documents">Документы:
+                	<ul><li><a href="">Договор</a></li><li><a href="">Акты</a></li><li><a href="">Оплата</a></li></ul>
+                </div>
+            </div>
+            
+             <div class="_razrabotka_var border_x2 rounded-corners">
+            	<div class="date border_x2 rounded-corners_l3">30.01.2013</div>
+            	<div class="name">Наименование: <span>Согласование перепланировки</span></div>
+                <div class="artists">Исполнители: <ul><li>Журавлев Михаил </li></ul></div>
+                <div class="completion"><span class="tit">Завершения:</span><ul><li class="payid">3 недели</li></ul></div>
+                <div class="status">Состояние: <span>В работе</span></div>
+                <div class="pay_now"><!--<a href="">Оплатите заказ</a>--></div>
+                <div class="msg" id="23t2323523523"><span><a href="#">Новое сообщение</a></span></div>
+                <div class="completed">завершено 
+                	<div class="presentage_blocks">
+                	<span class="presentage"><span class="value_present">90%</span><span class="bar"></span></span>
+                	</div>
+                </div>
+                <div class="documents">Документы:
+                	<ul><li><a href="">Договор</a></li><li><a href="">Акты</a></li><li><a href="">Оплата</a></li></ul>
+                </div>
+            </div>
+       <!---------------------------------------------- end _razrabotka_var -->
+        </div>
+        
+	</div>
+</div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+
+<!-- FOOTER START -->
+<div class="footer">
+	<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        
+        </div>
+	</div>
+</div> 
+ <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>
