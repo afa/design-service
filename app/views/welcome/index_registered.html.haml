@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+    %title Дизайн сервис.
+    = stylesheet_link_tag "common/application", :media => "all"
+    = stylesheet_link_tag "registered/application", :media => "all"
+    = stylesheet_link_tag "common/#{params[:controller]}.css" if Rails.application.assets.find_asset("common/#{params[:controller]}.css")
+    = stylesheet_link_tag "registered/#{params[:controller]}.css" if Rails.application.assets.find_asset("registered/#{params[:controller]}.css")
+    = javascript_include_tag "application"
+    = javascript_include_tag "#{params[:controller]}.js" if Rails.application.assets.find_asset("#{params[:controller]}.js")
+    = csrf_meta_tags
+    /[if lt IE 9]
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+  %body
+    %noindex
+      = content_for :outer_box
+      .twoColFixRtHdr
+        .border_ornements
+          .header_top
+            .coconut_leaves
+              #container
+                = render 'layouts/registered_header'
+                #maincontent_index.rounded-corners_l4
+                  #main_content
+                    .springs
+                    .border_left
+                      .top_corner
+                      .bottom_corner
+                    .border_right
+                      .top_corner
+                      .bottom_corner
+                    .sidebar_left
+                      .caption_left_menu.light_green
+                        Добро пожаловать,
+                        %br/
+                        = greating_name(current_user)
+                        (#{link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete)})
+                      = render 'layouts/client_left_menu'
+                      .heading_captions ВЫБОР СПЕЦИАЛИСТОВ
+                      = render 'layouts/registered_specialists'
+                    .page_contener
+                      = render 'worktypes_welcome_page'
+            = render "layouts/footer"

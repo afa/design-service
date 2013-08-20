@@ -4,10 +4,10 @@ class WelcomeController < ApplicationController
       if current_user.orders.count > 0
         redirect_to controller: 'profiles', action: 'orders'
       else
-        redirect_to controller: 'profiles', action: 'edit'
+        render 'index_registered', layout: false
       end
     else
-      render layout: false
+      render 'index_unregistered', layout: false
     end
   end
 end

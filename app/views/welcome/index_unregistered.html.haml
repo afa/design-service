@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title Дизайн сервис.
+    = stylesheet_link_tag "unregistered/application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    /[if lt IE 9]
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+  %body
+    %noindex
+      = render 'layouts/login_popup'
+      .twoColFixRtHdr
+        .border_ornements
+          .header_top
+            .coconut_leaves
+              #container
+                = render 'layouts/header'
+                #maincontent_index
+                  = render 'layouts/specialists'
+                  = render 'worktypes_welcome_page'
+              = render "layouts/footer"
