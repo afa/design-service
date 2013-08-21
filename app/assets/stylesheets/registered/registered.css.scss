@@ -237,7 +237,7 @@ div.var_form3 div.form_description{ background-image:image-url("comments.png"); 
 div.var_form4{ width:505px; height:140px;  margin-left:45px; margin-top:15px; padding:20px; margin-bottom:25px; }
 div.var_form4 div.number{ background-image:image-url("4_number_yellow_small.png"); float:left; width:54px; height:30px; float:right; margin:0px; padding:0px; background-repeat:no-repeat;}
 div.var_form4 div.form_description{ background-image:image-url("file_attach_refactoring_small.png"); width:449px; float:left; height:30px; background-repeat:no-repeat; margin:0px; padding:0px;}
-div.var_form4 span{ font-size:14px; color:#8e8e8e; padding:40px 0px 0px 170px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:110px 10px; }
+div.var_form4 span.dropzone_box{ font-size:14px; color:#8e8e8e; padding:40px 0px 0px 170px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:110px 10px; }
 
 div.postvar_plan_submiting{  height:50px; width:550px; margin-left:60px; padding:20px 0px 20px 0px;}
 .submit_all_forms{ float:left; margin-right:25px;}
