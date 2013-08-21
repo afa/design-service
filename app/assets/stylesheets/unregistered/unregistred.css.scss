@@ -72,25 +72,6 @@ body  {
 /*  /////////////////////////////////////////NEW CSS//////////////////////////////////////////////// */
 /*  PAGE CONCEPT INDEX.HTML */
 div#maincontent_index{  height:765px; position:relative;  margin:0px; padding:0px; background-image:image-url("collag.jpg");}
-/*  BLOCK MENU */
-#block_menu{ position:absolute; right:50px; bottom:0px; font-family: Tahoma;}
-#block_menu p{ font-size:70px; color:#c1c1c1; padding:0px; margin:0px; position:absolute; z-index:6; font-family: "gardensc"; font-weight:bold; letter-spacing:12px; } 
-#block_menu ul{ width:326px; height:650px; margin:100px 0px 0px 30px; padding:0px;}
-#block_menu ul li{ width:163px; height:163px;  float:left; list-style:none; position:relative; background-repeat:no-repeat;}
-#block_menu ul li span{ width:163px; height:163px; float:left;  padding:55px 0px 0px 0px; background-repeat:no-repeat; color:#6f2d2d; text-align:center; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26); font-size:14px;}
-#block_menu ul li:nth-child(1){ background-image:image-url("block_menu_1.jpg");}
-#block_menu ul li:nth-child(2) span{ background-image:image-url("block_menu_2.jpg"); }
-#block_menu ul li:nth-child(2) span:hover{ background-image:image-url("block_menu_2_hover.jpg");  }
-#block_menu ul li:nth-child(3) span{ background-image:image-url("block_menu_3.jpg"); padding-top:60px;}
-#block_menu ul li:nth-child(3) span:hover{ background-image:image-url("block_menu_3_hover.jpg"); }
-#block_menu ul li:nth-child(4){ background-image:image-url("block_menu_4.jpg");}
-#block_menu ul li:nth-child(5){ background-image:image-url("block_menu_5.jpg");}
-#block_menu ul li:nth-child(6) span{ background-image:image-url("block_menu_6.jpg"); padding-top:70px;}
-#block_menu ul li:nth-child(6) span:hover{ background-image:image-url("block_menu_6_hover.jpg");}
-#block_menu ul li:nth-child(7) span{ background-image:image-url("block_menu_7.jpg");}
-#block_menu ul li:nth-child(7) span:hover{ background-image:image-url("block_menu_7_hover.jpg");}
-#block_menu ul li:nth-child(8){ background-image:image-url("block_menu_8.jpg");}
-
 
 /*  PAGE CONCEPT POSTVARPLAN.HTML */
 span.post_varplan{ color:#3d6804}
@@ -136,7 +117,7 @@ div.var_form3 div.form_description{ background-image:image-url("comments.png"); 
 div.var_form4{ width:685px; height:140px;  margin-left:45px; margin-top:15px; padding:20px; margin-bottom:25px; }
 div.var_form4 div.number{ background-image:image-url("4_number_yellow.png"); float:left; }
 div.var_form4 div.form_description{ background-image:image-url("file_attach.png"); width:585px; float:left; }
-div.var_form4 span{ font-size:14px; color:#8e8e8e; padding:30px 0px 0px 200px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:125px 0px; }
+div.var_form4 span.dropzone_box{ font-size:14px; color:#8e8e8e; padding:30px 0px 0px 200px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:125px 0px; }
 
 div.postvar_plan_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 20px 0px;}
 .submit_all_forms{ float:left; margin-right:25px;}

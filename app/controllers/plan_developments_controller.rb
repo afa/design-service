@@ -25,7 +25,6 @@ class PlanDevelopmentsController < InheritedResources::Base
     end
   end
 
-
 private
   def permitted_params
     params.permit(plan_development: [:big_kitchen, :cabinet_needed, :cloakroom_needed,
@@ -35,7 +34,7 @@ private
                                       :address, :floor, :section,
                                       :family_composition_first_line, :family_composition_second_line, :comment,
                                       :flat_area,
-                                      attachments_attributes: [:file]
+                                      attachments_attributes: [:file, :kind, :_destroy]
                                     ] )
   end
   def attachments_text

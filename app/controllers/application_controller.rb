@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter -> {User.current = current_or_guest_user}
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: exception.message

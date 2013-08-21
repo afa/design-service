@@ -4,7 +4,7 @@ class Invoice < ActiveRecord::Base
 
  state_machine :state, :initial => :created do
   state :created
-  #state 
+  #state
 
  end
 end

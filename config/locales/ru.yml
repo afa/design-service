@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  attachment_kinds:
+    plan_of_flat: 'План квартиры'
   http_status:
     unauthorized: 'Вы не авторизованы для просмотра этого файла'
   date:
