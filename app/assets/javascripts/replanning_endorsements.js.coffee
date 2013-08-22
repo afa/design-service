@@ -20,3 +20,9 @@ $(document).ready ->
   $("span.plan_refactor.gen_proekt input[type='radio'][value='false']").change ->
     if($(this).attr('checked', true))
       $('#second_ques').css('display','block')
+
+  if($("span.plan_refactor.gen_proekt input[type='radio'][value='true']").attr('checked', true))
+    $('#second_ques').css('display','none')
+
+  if($("span.plan_refactor.gen_proekt input[type='radio'][value='false']").attr('checked', true))
+    $('#second_ques').css('display','block')
