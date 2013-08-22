@@ -11,8 +11,7 @@ class Order < ActiveRecord::Base
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor) { where(executor_id: executor.id, executor_type: executor.class.name) }
 
-  state_machine :work_state, initial: :empty_draft do
-    state :empty_draft
+  state_machine :work_state, initial: :draft do
     state :draft
     state :specialist_suggested
     state :client_agreed
@@ -20,7 +19,7 @@ class Order < ActiveRecord::Base
     state :work_accepted
 
     event :save_draft do
-      transition [:empty_draft, :draft] => :draft
+      transition :draft => :draft
     end
     event :set_price do
       transition :draft => :specialist_suggested

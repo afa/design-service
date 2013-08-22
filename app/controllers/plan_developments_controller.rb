@@ -7,15 +7,7 @@ class PlanDevelopmentsController < InheritedResources::Base
     @plan_development = @plan_development.decorate
   end
 
-  def new
-    @plan_development = PlanDevelopment.generate(current_or_guest_user).decorate
-  end
-
-  #def create
-  #  @plan_development = PlanDevelopment.make_order(permitted_params[:plan_development], current_or_guest_user)
-  #  @plan_development.save!
-  #  #render partial: 'form', locals: {plan_development: @plan_development}
-  #end
+  before_filter :load_draft, only: [:new, :edit]
 
   def update
     resource.update_attributes(permitted_params[:plan_development])
@@ -37,8 +29,14 @@ private
                                       attachments_attributes: [:file, :kind, :_destroy]
                                     ] )
   end
+
+  def load_draft
+    @plan_development = PlanDevelopment.find_or_create_order
+  end
+
   def attachments_text
-    render_to_string('update',
-                    layout: false, formats: [:html], handlers: [:haml])
+    render_to_string(partial: 'attachments/attachment',
+                    collection: resource.attachments,
+                    formats: [:html], handlers: [:haml])
   end
 end

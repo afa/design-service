@@ -10,7 +10,7 @@ class ReplanningEndorsement < ActiveRecord::Base
     replanning_organization_licensed: true}
   end
   def self.generate
-    new(default_params)
+    find_or_create_order
   end
   def num_plans; 1; end
 end
