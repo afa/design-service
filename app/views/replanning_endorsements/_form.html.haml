@@ -5,7 +5,7 @@
     %span.plan_refactor.gen_proekt
       = f.input_field :developed_by_general_projector, as: :radio_buttons
     %br/
-    Площадь кватиры:#{ f.input_field :flat_area, as: :string, name: 'plojad', class: 'textlines_default textline_l4' } кв.м.
+    Площадь кватиры:#{ f.input_field :flat_area, as: :string, class: 'textlines_default textline_l4' } кв.м.
 
   .form_refactoring.border_x4.rounded-corners_l2.shadow_x1.multiattach
     .form_description
@@ -16,6 +16,7 @@
       = attachment_form.link_to_remove "Удалить файл"
     = f.link_to_add "Добавить файл", :attachments
     .loaded_files
+      = render resource.attachments
 
   .plan_refactor#second_ques{ :style=>"display:none;" }
     Наличие лицензии у организации,
@@ -26,4 +27,3 @@
   .planrefactoring_submiting
     %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;" }
     %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
-

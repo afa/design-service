@@ -65,6 +65,7 @@
       = attachment_form.link_to_remove "Удалить файл"
     = f.link_to_add "Добавить файл", :attachments
     .loaded_files
+      = render resource.attachments
 
 
   .calculator.border_x5.rounded-corners_l2.shadow_x2
