@@ -1,0 +1,31 @@
+.attachments_list {
+  .load_attachment_box {
+    .add_file_button {
+      background-image: image-url("add_file_button.png");
+      background-repeat: no-repeat;
+      height:32px;
+      width: 32px;
+    }
+    .filename {
+    }
+    input[type=file] {
+      opacity: 0;
+      height:32px;
+      width: 32px;
+    }
+    .submit {
+      height:32px;
+      width: 32px;
+    }
+  }
+
+  li {
+    .remove_attachment {
+      background-image: image-url("delete_attachment.png");
+      background-repeat: no-repeat;
+      float: left;
+      height: 16px;
+      width: 16px;
+    }
+  }
+}

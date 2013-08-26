@@ -1,4 +1,5 @@
 //= require drop_zone
+//= require chat
 
 /* Menu fonts, table fonts, PostForm font */
 @font-face {
@@ -667,10 +668,16 @@ div.border_left div.bottom_corner{background-color:#000; position: absolute; wid
 #msg_dialog div.left_bar span.photo img{ width:46px; height:46px;}
 #msg_dialog div.left_bar span.name{ width:120px; float:left; margin-left:10px; text-align:left; color:#5b5b5b;}
 
+/*
 #msg_dialog div.left_bar span.heading_done{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}
 #msg_dialog ul.done{ width:147px; float:left; list-style:none; margin-left:30px; padding:0px;}
 #msg_dialog ul.done li{ float: left; font-size:14px; text-decoration:underline; padding-bottom:10px;}
-#msg_dialog ul.done li span{ width:147px; height:109px; border:1px solid #999999; float:left; background-color:#e6e6e6; background-repeat:no-repeat;}
+#msg_dialog ul.done li span.preview{ width:147px; height:109px; border:1px solid #999999; float:left; background-color:#e6e6e6; background-repeat:no-repeat;}
+*/
+#msg_dialog div.left_bar span.heading_done{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}
+#msg_dialog ul.done{ width:147px; float:left; list-style:none; margin-left:30px; padding:0px;}
+#msg_dialog ul.done li{ font-size:14px; text-decoration:underline; padding-bottom:10px;}
+#msg_dialog ul.done li span.preview{ width:147px; height:109px; border:1px solid #999999; background-color:#e6e6e6; background-repeat:no-repeat;}
 
 #msg_dialog div.left_bar span.heading_working{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}
 #msg_dialog ul.working{ width:147px; float:left; list-style:none; margin-left:30px; padding:0px;}

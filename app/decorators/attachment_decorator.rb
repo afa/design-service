@@ -12,4 +12,13 @@ class AttachmentDecorator < Draper::Decorator
   def link
     helpers.link_to file.filename, file.url
   end
+
+  def kind(index = nil)
+    kind_name = source.kind
+    if kind_name && !kind_name.blank?
+      I18n.t "attachment_kinds.#{kind_name}"
+    else
+      "План #{index + 1}"
+    end
+  end
 end

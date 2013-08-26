@@ -21,7 +21,12 @@ DesignService::Application.routes.draw do
       get 'get_price'
     end
     resources :reviews
-    resources :messages
+    resources :messages do
+      member do
+        get :show_attachments
+        get :show_messages
+      end
+    end
     resources :attachments
   end
 
