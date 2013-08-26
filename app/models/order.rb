@@ -42,7 +42,7 @@ class Order < ActiveRecord::Base
     state :advance_paid
     state :paid
 
-    state :no_paid do
+    state :not_paid do
       def must_start_work?; false; end
     end
     state :advance_paid, :paid do
