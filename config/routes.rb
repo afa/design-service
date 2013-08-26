@@ -1,5 +1,5 @@
 DesignService::Application.routes.draw do
-  resources :attachments, except: [:edit, :update] do
+  resources :attachments, only: [:create, :destroy, :show, :index] do
     member do
       get 'download'
     end

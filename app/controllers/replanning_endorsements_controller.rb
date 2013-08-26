@@ -3,14 +3,13 @@ class ReplanningEndorsementsController < InheritedResources::Base
   load_and_authorize_resource
   respond_to :json, only: [:create, :update]
 
-  before_filter only: [:show] do
+  before_filter :load_draft, only: [:new, :edit]
+  before_filter except: [:index] do
     @replanning_endorsement = @replanning_endorsement.decorate
   end
 
-  before_filter :load_draft, only: [:new, :edit]
-
   def update
-    resource.update_attributes(permitted_params[:plan_development])
+    resource.update_attributes(permitted_params[:replanning_endorsement])
     resource.save!
     respond_with do |format|
       format.json { render json: {text: attachments_text} }
@@ -28,8 +27,8 @@ private
   end
 
   def attachments_text
-    render_to_string(partial: 'attachments/attachment',
-                    collection: resource.attachments,
+    render_to_string(partial: 'attachments/list_of_attachments',
+                    locals: {attachments: resource.attachments},
                     formats: [:html], handlers: [:haml])
   end
 end

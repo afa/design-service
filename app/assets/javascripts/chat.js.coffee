@@ -1,5 +1,5 @@
 //= require jquery.slimscroll
-//= require 'attachments'
+//= require ajax_submit
 
 window.register_chat = ->
   black_content = ->
