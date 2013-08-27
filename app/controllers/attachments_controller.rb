@@ -3,8 +3,9 @@ class AttachmentsController < InheritedResources::Base
   before_filter :authenticate_user!
   before_filter :check_permission, only: [:show, :download]
   before_filter :set_user, only: [:create]
+  before_filter :check_can_destroy, only: [:destroy]
 
-  respond_to :json, only: [:index, :create]
+  respond_to :json, only: [:index, :create, :destroy]
 
   def show
     send_file resource.path, filename: resource.original_filename, type: resource.content_type, disposition: 'inline'
@@ -26,6 +27,15 @@ private
       render text: I18n.t('http_status.unauthorized'), status: :unauthorized
     end
   end
+
+  def check_can_destroy
+    if resource.user == User.current
+      true
+    else
+      render text: I18n.t('http_status.unauthorized'), status: :unauthorized
+    end
+  end
+
   def set_user
     build_resource
     resource.user = current_or_guest_user

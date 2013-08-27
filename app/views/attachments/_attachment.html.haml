@@ -1,1 +1,3 @@
-= link_to attachment.original_filename, download_attachment_path(attachment)
+- unless attachment.new_record?
+  %span.delete_attachment{:data => {attachment_url: attachment_url(attachment, format: 'json')}}
+  %span.attachment_link= link_to attachment.original_filename, download_attachment_path(attachment)

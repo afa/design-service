@@ -1,4 +1,4 @@
-= simple_nested_form_for plan_development, remote: true, html: {id: 'all_forms', multipart: true} do |f|
+= simple_nested_form_for plan_development, remote: true, html: {id: 'all_forms'} do |f|
   .var_form1.border_x1.rounded-corners_l2.shadow_x1
     .number
     .form_description
@@ -56,16 +56,7 @@
     = f.input_field :comment, as: :text, cols: 60, rows:3, class: 'postComment textline_l12'
 
   .var_form4.border_x4.rounded-corners_l2.shadow_x1.multiattach
-    .form_description
-    .number
-    %span.dropzone_box Вы можете перетащить файлы сюда
-    = f.simple_fields_for :attachments do |attachment_form|
-      = attachment_form.input_field :file, as: :file
-      = attachment_form.input_field :kind, as: :hidden, value: 'plan_of_flat'
-      = attachment_form.link_to_remove "Удалить файл"
-    = f.link_to_add "Добавить файл", :attachments
-    .loaded_files
-
+    .attach_place_for_box
 
   .calculator.border_x5.rounded-corners_l2.shadow_x2
     .form_description
@@ -77,3 +68,15 @@
   .postvar_plan_submiting
     %input.submit_all_forms{:type => "image", :src=> "#{asset_path('cancelButton.png')}", :alt => "Сбросить форму", :onClick => "$('#all_forms').trigger('reset'); return false;" }
     %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+
+.loaded_files
+  = render partial: 'attachments/list_of_attachments', locals:{attachments: resource.attachments}
+
+.attach_box.plan_development
+  .form_description
+  .number
+  %span.dropZone
+    = simple_form_for resource.attachments.build(kind: 'plan_of_flat'), url: plan_development_attachments_url(resource, format: 'json'), remote: true, multipart: true do |f|
+      = f.input_field :file, as: :file
+      = f.input_field :kind, as: :hidden
+    .hint Вы можете перетащить файлы сюда

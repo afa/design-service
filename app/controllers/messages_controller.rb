@@ -5,7 +5,7 @@ class MessagesController < InheritedResources::Base
   #load_and_authorize_resource :message
   belongs_to :specialist, :specialist_group, :order, optional: true, polymorphic: true
 
-  respond_to :json, only: [:create, :index]
+  respond_to :json, only: [:create, :index, :show_messages, :show_attachments]
 
   before_filter :check_have_recipient, only: [:new, :create]
 
@@ -39,6 +39,12 @@ class MessagesController < InheritedResources::Base
       }
     end
   end
+  def show_attachments
+    render json: { attachment_previews_text: attachment_previews_text }
+  end
+  def show_messages
+    render json: { msgs_text: messages_text }
+  end
 
 private
   def permitted_params
@@ -53,7 +59,8 @@ private
   end
   def attachment_previews_text
     render_to_string(partial: 'attachments/attachments_in_chat',
-                    locals: {attachments: parent.attachments, unfinished_attachments: parent.unfinished_attachments},
+                    locals: { attachments: parent.attachments,
+                              unfinished_attachments: parent.unfinished_attachments},
                     layout: false, formats: [:html], handlers: [:haml])
   end
   def messages_text

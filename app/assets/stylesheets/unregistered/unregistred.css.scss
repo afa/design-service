@@ -1,3 +1,5 @@
+//= require drop_zone
+
 /* Menu fonts, table fonts, PostForm font */
 @font-face {
     font-family: 'gardensc';
@@ -114,25 +116,13 @@ div.var_form3 div.number{ background-image:image-url("3_number_blue.png"); float
 div.var_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; }
 .var_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
 
-div.var_form4{ width:685px; height:140px;  margin-left:45px; margin-top:15px; padding:20px; margin-bottom:25px; }
-div.var_form4 div.number{ background-image:image-url("4_number_yellow.png"); float:left; }
-div.var_form4 div.form_description{ background-image:image-url("file_attach.png"); width:585px; float:left; }
-div.var_form4 span.dropzone_box{ font-size:14px; color:#8e8e8e; padding:30px 0px 0px 200px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:125px 0px; }
+div.var_form4{ width:685px; height:140px;  margin-left:45px; margin-top:15px; clear:left;}
+div.attach_box{ padding: 20px 10px 10px 15px;}
+div.attach_box.plan_development div.number{ background-image:image-url("4_number_yellow.png"); float:left; padding-bottom: 5px; }
+div.attach_box div.form_description{ background-image:image-url("file_attach.png"); width:585px; float:left; padding-bottom: 5px;}
 
 div.postvar_plan_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 20px 0px;}
 .submit_all_forms{ float:left; margin-right:25px;}
-
-/*  PAGE CONCEPT PLANREFACTORING.HTML */
-span.plan_refactoring{ color:#ccb545; }
-div.plan_refactoring{ background-image:image-url("plan_refactoring_logo.jpg") ; border-bottom-color:#edd358; width:550px; float:left;   }
-div.msg_caution span.plan_refactoring{ color:#bd3404; text-align: center; width:780px;  font-size:20px; padding-top:15px; float:left; margin:0px; padding-bottom:15px;}
-div.plan_refactor{ padding-left:45px; margin-top:20px;   width:750px;  position:relative; float:left;   margin-bottom:35px; height:45px; position: relative; line-height:25px;}
-span.plan_refactor ul.answer{ list-style:none;  margin:0px;  padding-left:10px; float: right; padding-right:120px;}
-span.plan_refactor ul.answer li{ float:left;  margin-right:10px; }
-div.form_refactoring{ width:685px; height:140px;  margin-left:45px; padding:20px; margin-top:15px; clear:left; }
-div.form_refactoring div.form_description{ background-image:image-url("file_attach_refactoring.png"); width:585px; float:left; }
-div.form_refactoring span{ font-size:14px; color:#8e8e8e; padding:30px 0px 0px 200px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:125px 0px; }
-div.planrefactoring_submiting{  height:80px; width:550px; margin-left:160px; padding:40px 0px 60px 0px;  }
 
 
 /*  PAGE CONCEPT DESIGNERS.HTML */

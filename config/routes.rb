@@ -1,5 +1,5 @@
 DesignService::Application.routes.draw do
-  resources :attachments, except: [:edit, :update] do
+  resources :attachments, only: [:create, :destroy, :show, :index] do
     member do
       get 'download'
     end
@@ -21,7 +21,12 @@ DesignService::Application.routes.draw do
       get 'get_price'
     end
     resources :reviews
-    resources :messages
+    resources :messages do
+      member do
+        get :show_attachments
+        get :show_messages
+      end
+    end
     resources :attachments
   end
 

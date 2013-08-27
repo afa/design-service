@@ -1,4 +1,6 @@
-= simple_form_for attachment, remote: true, url: resource_url(attachment), html: {class: 'attachment_upload'} do |f|
-  = f.input_field :file, as: :file
+= simple_form_for attachment, remote: true, url: resource_url(attachment), html: {class: 'attachment_upload load_attachment_box'} do |f|
   = f.input_field :kind, as: :hidden
-  = f.submit 'Отправить'
+  %span.add_file_button
+    = f.input_field :file, as: :file
+  %span.filename
+  = f.submit 'Ok', class: 'submit'

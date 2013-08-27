@@ -1,34 +1,20 @@
 //= require ./form_style
 //= require ./drop_zone
 
-/*.Manual {
-  margin: 28px  0 0 124px;
-  font-family: dejavu_sans, verdana, sans-serif, #fff;
-  font-size: 22pt;
-  font-style:normal;
-  color:#3d6804;
-}*/
-/*
-#postRequest input {
-  background-color: #FFF;
-  border: none;
-  background-image:image-url("postButton.png");
-  background-repeat:no-repeat;
-  width:230px;
-  height:50px;
-  float:left;
-  margin-left:200px;
-  margin-top:50px;
+ul.list_of_attachments {
+  li {
+    position: relative;
+    .delete_attachment {
+      background-image: image-url('delete_attachment.png');
+      background-repeat: no-repeat;
+      height: 16px;
+      width: 16px;
+      position:absolute;
+      left: 5px;
+    }
+    .attachment_link {
+      position:absolute;
+      left: 25px;
+    }
+  }
 }
-#cancel input {
-  background-color: #FFF;
-  border: none;
-  background-image:image-url("cancelButton.png");
-  background-repeat:no-repeat;
-  width:230px;
-  height:50px;
-  float:left;
-  margin-left:110px;
-  margin-top:50px;
-}
-*/
