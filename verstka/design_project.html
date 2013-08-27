@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+<link href="/assets/common/form_style.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/common/drop_zone.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/common/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+
+
+<link href="/assets/unregistered/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/unregistered/unregistred.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/unregistered/welcome.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="unregistred.css" media="screen" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		function black_content(){
+			$("#black_content").css("height",$(document).height());
+			$("#black_content").css("display","block");
+		};
+		
+		
+		$(".registration").click(function(){
+		black_content();
+		$("#register").css("display","block");
+		});
+		
+		$(".login").click(function(){
+		black_content();
+		$("#login").css("display","block");
+		});
+		
+		//////IMAGE HOVER///
+		$(".img_").mouseenter(
+		function(){
+		$(this).parent().find('.heading').addClass('heading_h');
+		$(this).parent().find('.black_opacity').addClass('black_opacity_on');
+		}
+		);
+		
+		$(".black_opacity").mouseleave(	
+		function(){
+		$('.black_opacity_on').removeClass('black_opacity_on');
+		$(this).parent().parent().find('.heading').removeClass('heading_h');
+		}
+		);
+		/////////////
+		
+		$(".close_fly_window").click(function(){
+		$(this).parent().css("display","none").parent().css("display","none");
+		});
+
+		});
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+	<div id="register" class="rounded-corners border_x1 shadow_x1">
+    <div class="close_fly_window"></div>
+    <form action="">
+	<div class="head_register"></div>
+	<div class="info">Логин:<span>*</span></div>
+    <div class="text_fields">
+    <span class="caution">(латинские символы и цифры)</span>
+    <input name="" type="text" class="reg_client_tfeild">
+    </div>
+    <div class="info">E-mail:<span>*</span></div><div class="text_fields"><input name="" type="text" class="reg_client_tfeild"></div>
+    <div class="info">Пароль:<span>*</span></div><div class="text_fields"><input name="" type="text" class="reg_client_tfeild"></div>
+    <div class="info">Повторите&nbsp;&nbsp; пароль:<span>*</span></div><div class="text_fields"><input name="" type="text" class="reg_client_tfeild"></div>
+    <div class="control"><input type="image" src="ok_button.png" alt="Submit Form" class="submit_button"/></div>
+    </form>
+    </div>
+    
+    <div id="login" class="rounded-corners border_x2 shadow_x1">
+    <div class="close_fly_window"></div>
+    <form action="">
+    <div class="head_register"></div>
+    <div class="info">Логин или E-mail :</div><div class="text_fields"><input name="" type="text" class="log_client_tfeild"></div>
+    <div class="info">Пароль :</div><div class="text_fields"><input name="" type="text" class="log_client_tfeild"></div>
+    <div class="control"><span><a href="#">Забыли?</a></span><input type="image" src="ok_button_green.png" alt="Submit Form" class="login_button"/></div>
+     </form>
+    </div>
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header">
+	<div class="headerLayer1" id="designService"></div>
+	<div class="login_panel">
+		<div class="login">Вход</div>
+		<div class="registration">Регистрация</div>
+	</div>
+    
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_default">	<!--  --------------------------------------------------------------CHANGE ID NAME -->	
+<div class="page_content_default">
+
+<div class="collage_design mode1">															
+	<ul id="main_menu" class="default_pages">
+		<li><a href="#"><span><p>Архитекторы</p></span></a></li>
+		<li><a href="designers.html"><span><p>Дизайнеры</p></span></a></li>
+		<li><a href="#"><span><p>Инженеры</p></span></a></li>
+		<li><a href="#"><span><p>Строительные фирмы</p></span></a></li>
+		<li><a href="#"><span><p>Строительные бригады</p></span></a></li>
+	</ul>
+</div>
+
+
+
+
+<div class="page_description design_project">
+<span class="design_project">Дизайн-проекты</span>
+</div>
+
+<div class="msg_caution">
+<span class="design_project">Выберите раздел дизайн-проекта, который хотите разработать!</span>
+</div>
+
+<div class="design_project_all">
+<div class="headers">
+<span class="first">Концепция</span>
+<span class="second">Рабочая <br>документация</span>
+</div>
+
+<a href="copyright_supervision.html"><div class="copyright"></div></a>
+
+	<ul class="concept">
+	<li>
+    	<a href="design_project_hallway.html"><span class="black_opacity" id="cccc"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_hallway.html">Дизайн прихожей</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+   <li>
+   		<a href="design_project_bedrooms.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_bedrooms.html">Дизайн спальни</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+    	<li>
+        <a href="design_project_living_room.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_living_room.html">Дизайн гостиной</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+   <li>
+   		<a href="design_project_color_scheme.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_color_scheme.html">Цветовые решения <br>(идеи сочетаний)</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+   <li>
+   		<a href="design_project_child_room.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_child_room.html">Дизайн детской комнаты</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+   <li>
+   		<a href="design_project_bathroom.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_bathroom.html">Дизайн санузла</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+   <li>
+        <a href="design_project_kitchen.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_kitchen.html">Дизайн кухни</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+   <li>
+        <a href="design_project_kitchen+living_room.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_kitchen+living_room.html">Дизайн кухни+гостиной</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+    <li>
+    	<a href="design_project_lounges.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_lounges.html">Дизайн комнаты отдыха</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+   <li>
+        <a href="design_project_cabinet.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_project_cabinet.html">Дизайн кабинета</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+	</ul>
+
+
+	<ul class="working_documents">
+    <li>
+    	<a href="design_projects_sweep_wall.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_projects_sweep_wall.html">Развертки стен</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+    <li>
+    	<a href="design_projects_floor_plans.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_projects_floor_plans.html">Планы полов</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+    <li>
+    	<a href="design_projects_ceilings_fixtures.html"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="design_projects_ceilings_fixtures.html">Планы потолков и <br>освещение</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+    
+    <li>
+    	<a href="#"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="#">Вентиляция и <br>кондиционирование</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    
+    <li>
+    	<a href="#"><span class="black_opacity"></span></a>
+    	<img src="concept.jpg" class="img_">
+    	<span class="heading"><a href="#">Подбор отделочных <br>материалов</a></span>
+    	<span class="text">дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис </span>
+    	<span class="order"></span>
+    </li>
+    </ul>
+    
+</div>
+
+
+
+</div><!------------------------END page_content_default -->
+<div id="block_menu_default">
+	<ul>
+		<li><a href="PostVarPlan.html"><span><p>Разработка <br>вариантов планировок</p></span></a></li>
+		<li><a href="PlanRefactoring.html"><span><p>Согласования перепланировок</p></span></a></li>
+		<li><a href="design_project.html"><span><p>Дизайн-проект</p></span></a></li>
+		<li><a href="engineering_systems.html"><span><p>Инженерные <br>системы и конструктив</p></span></a></li>
+	</ul>
+    
+</div>
+
+</div> <!------------------------------------------- -----------------------------------------------END maincontent_default -->
+
+</div><!---------------------------------------------------------------------------------------------------END container--------->
+
+<div class="footer"> <!-- FOOTER START--------------------------------->
+<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        </div>
+</div>
+</div> <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>

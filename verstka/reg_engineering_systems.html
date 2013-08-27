@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<link href="registered.css" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		function black_content(){
+			$("#black_content").css("height",$(document).height());
+			$("#black_content").css("display","block");
+		};		
+		});
+		
+		function show_next(element){
+		var checker = $(element).is(':checked');
+		var li_near = $(element).parent().next('li');
+		if(checker==true){
+		li_near.css("display","block");
+		}
+		else{
+		li_near.css("display","none");
+		}
+		}
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header">
+	<div class="headerLayer1" id="designService"></div>
+    <ul class="text_shadow_1">
+    <li class="shadow_x3"><a href="reg_postvarplan.html"><span>Разработка <br>вариантов планировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_planrefactoring.html"><span>Согласования перепланировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_design_project.html"><span>Дизайн-проект</span></a></li>
+    <li class="shadow_x3"><a href="reg_engineering_systems.html"><span>Инженерные <br>системы и конструктив</span></a></li>
+    </ul>
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_index" class="rounded-corners_l4">	
+	<div id="main_content">	
+		 <div class="springs"></div> 
+         <div class="border_left"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+   		 <div class="border_right"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+         
+        <div class="sidebar_left">		
+        		<div class="caption_left_menu light_green">Добро пожаловать,<br>Александр [Alex]</div>
+            	<ul id="left_menu">
+            	<li><a href="reg_my_orders.html">Мои заказы</a></li>
+                <li><a href="reg_personal_account.html">Лицевой счет</a></li>
+                <li><a href="#">Мои настройки</a></li>
+            	</ul>	
+            	<div class="heading_captions">ВЫБОР СПЕЦИАЛИСТОВ</div>
+                <ul id="menu_sub_left">
+            	<li><a href="#"><span>Архитекторы</span></a></li>
+                <li><a href="reg_designers.html"><span>Дизайнеры</span></a></li>
+                <li><a href="#"><span>Инженеры</span></a></li>
+                <li><a href="#"><span>Строительные фирмы</span></a></li>		
+                <li><a href="#"><span>Строительные бригады</span></a></li>											
+				</ul>
+         </div>
+        
+        <div class="page_contener">
+        	<div class="caption light_red">ИНЖЕНЕРНЫЕ СИСТЕМЫ И КОНСТРУКТИВ</div>
+            <div class="breaker"></div>
+        <!-----------------------------  ---------------->   
+		<div class="caution">Заполните заявку </div>       
+	
+   <form action="" id="all_forms">
+<div class="engineering_systems_form1 border_xs rounded-corners_l2 shadow_x1">
+<div class="number"></div>
+<div class="form_description"></div>
+<span style="float:left; width:400px; padding-bottom:15px;">
+Адрес:<input name="" type="text" class="textlines_default textline_l8">
+Этаж: <input name="" type="text" class="textlines_default textline_l4"> Подъезд/Секция: <input name="" type="text" class="textlines_default textline_l4">
+</span>
+<div class="head_part"></div>
+<div class="file_attaching border_x5 rounded-corners_l3">
+<span class="attach">Вы можете перетащить файлы сюда</span>
+<span class="caution">Обязательно необходима планировка <br>с расстановкой мебели и сантехнического оборудования</span>
+</div>
+</div>
+
+
+<div class="engineering_systems_form2 border_xg rounded-corners_l2 shadow_x1">
+<div class="form_description"></div>
+<div class="number"></div>
+<span class="select_">Выбор разделов:</span>
+	<ul>	
+		<li id="sss"><input name="" type="checkbox" value="1" id="first" onClick="show_next(this);"><label for="first">Электрооборудование и электроосвещение &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(проект ЭОМ для согласования)</label></li>
+        <li class="caution"><span></span>Необходим план расстановки светильников, электрооборудования,розеток и других электроприборов</li>
+        <li><input name="" type="checkbox" value="1" id="second"><label for="second">Водоснабжение и канализация - ВК</label></li>
+        <li><input name="" type="checkbox" value="1" id="third"><label for="third">Отопление - ОВ-I</label></li>
+        <li><input name="" type="checkbox" value="1" id="forth"><label for="forth">Вентиляция - ОВ-II</label></li>
+        <li><input name="" type="checkbox" value="1" id="fifth"><label for="fifth">Слаботочные системы - СС</label></li>
+        <li><input name="" type="checkbox" value="1" id="sixth" onClick="show_next(this);"><label for="sixth">Конструктивные решения - КР</label></li>
+        <li class="caution"><span></span>Необходим план, где указаны привязки и размеры проемов</li>
+	</ul>	
+</div>
+ 	  
+   <div class="engineering_systems_form3 border_x3 rounded-corners_l2 shadow_x1">
+		<div class="number"></div>
+		<div class="form_description"></div>
+		<input name="" type="text" class="engineering_systems_form3_default textline_l12">
+		<input name="" type="text" class="engineering_systems_form3_default textline_l12">
+		<input name="" type="text" class="engineering_systems_form3_default textline_l12">
+	</div>
+
+	
+
+	<div class="engineering_systems_submiting">
+		<input type="image" src="cancelButton.png" alt="" class="submit_all_forms" onClick="$('#all_forms').trigger('reset');
+; return false;" />
+		<input type="image" src="postButton.png" alt="Submit Form" class="submit_all_forms"/>
+	</div>
+		</form>
+       <!---------------------------------------------- end page_contener -->
+        </div>
+        
+	</div>
+</div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+
+<!-- FOOTER START -->
+<div class="footer">
+	<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        
+        </div>
+	</div>
+</div> 
+ <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>
