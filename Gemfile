@@ -44,7 +44,7 @@ gem 'inherited_resources', '~> 1.4.1'
 gem 'has_scope', '~> 0.6.0.rc'
 gem 'strong_parameters'
 gem 'show_for', '~> 0.3.0.rc'
-gem 'enumerize', github: 'brainspec/enumerize'
+gem 'enumerize'
 gem 'paper_trail', '~> 2'
 
 #gem 'squeel'
@@ -58,6 +58,8 @@ group :development do
   gem 'sextant'
   gem "bullet"
 end
+
+gem 'bcrypt-ruby', '~>3.1.2'
 
 group :test, :development do
 # rspec-rails and factory_girl_rails needs to be in the development group so that Rails generators work.
