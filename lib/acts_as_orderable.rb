@@ -40,7 +40,6 @@ module ActsAsOrderable
       has_one :order, as: :orderable, dependent: :destroy
       has_one :client, through: :order
       has_many :attachments, as: :attachable, class_name: 'Attachment', dependent: :destroy
-      accepts_nested_attributes_for :attachments, allow_destroy: true
 
       scope :by_client, ->(user){ joins(:order).where(orders: {client_id: user}) }
       scope :by_work_state, ->(state){ joins(:order).where(orders: {work_state: state}) }
