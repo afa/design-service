@@ -1,4 +1,6 @@
 class MessagesController < InheritedResources::Base
+  # TODO: !!! set cancan and use load_and_authorize_resource to load only accepted messages
+
   before_filter :authenticate_user!
   #load_and_authorize_resource :specialist
   #load_and_authorize_resource :message, through: :specialist, shallow: true
