@@ -80,4 +80,13 @@ class Order < ActiveRecord::Base
   def unfinished_attachments
     orderable.attachment_kinds - attachments.pluck(:kind)
   end
+
+  def advance_price
+    price && price * 0.5
+  end
+
+  # FIX ME: refactor
+  def amount_paid
+    purchases.where(state: paid).inject{|sum,purchase| sum + purchase.payments.where(state: paid).inject(0.0){|r,payment| r + payment.amount } }
+  end
 end
