@@ -7,6 +7,7 @@ class Order < ActiveRecord::Base
   has_many :payments
   has_many :purchases, :through => :payments
   has_many :attachments, as: :attachable
+  has_many :transactions
 
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor) { where(executor_id: executor.id, executor_type: executor.class.name) }
