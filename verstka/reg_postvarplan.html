@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<link href="registered.css" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		function black_content(){
+			$("#black_content").css("height",$(document).height());
+			$("#black_content").css("display","block");
+		};
+		$(document).ready(function(){
+			$('.presentage_blocks').each(function(){
+			var presentage = parseInt($(this).find('.value_present').html());
+			var len = 200 * presentage/100;
+			$(this).find('.presentage').css('width',len);
+			})
+		})
+		
+		});
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header">
+	<div class="headerLayer1" id="designService"></div>
+    <ul class="text_shadow_1">
+    <li class="shadow_x3"><a href="reg_postvarplan.html"><span>Разработка <br>вариантов планировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_planrefactoring.html"><span>Согласования перепланировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_design_project.html"><span>Дизайн-проект</span></a></li>
+    <li class="shadow_x3"><a href="reg_engineering_systems.html"><span>Инженерные <br>системы и конструктив</span></a></li>
+    </ul>
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_index" class="rounded-corners_l4">	
+	<div id="main_content">	
+		 <div class="springs"></div> 
+         <div class="border_left"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+   		 <div class="border_right"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+         
+        <div class="sidebar_left">		
+        		<div class="caption_left_menu light_green">Добро пожаловать,<br>Александр [Alex]</div>
+            	<ul id="left_menu">
+            	<li><a href="reg_my_orders.html">Мои заказы</a></li>
+                <li><a href="reg_personal_account.html">Лицевой счет</a></li>
+                <li><a href="#">Мои настройки</a></li>
+            	</ul>	
+            	<div class="heading_captions">ВЫБОР СПЕЦИАЛИСТОВ</div>
+                <ul id="menu_sub_left">
+            	<li><a href="#"><span>Архитекторы</span></a></li>
+                <li><a href="reg_designers.html"><span>Дизайнеры</span></a></li>
+                <li><a href="#"><span>Инженеры</span></a></li>
+                <li><a href="#"><span>Строительные фирмы</span></a></li>		
+                <li><a href="#"><span>Строительные бригады</span></a></li>											
+				</ul>
+         </div>
+        
+        <div class="page_contener">
+        	<div class="caption light_red">РАЗРАБОТКА ВАРИАНТОВ ПЛАНИРОВОК</div>
+            <div class="breaker"></div>
+        <!-----------------------------  ---------------->   
+		<div class="caution">Заполните заявку </div>       
+		
+        <form action="" id="all_forms">
+		<div class="var_form1 border_xs rounded-corners_l2 shadow_x1">
+		<div class="number"></div>
+		<div class="form_description"></div>
+		Адрес:<input name="" type="text" class="textlines_default textline_l8">
+		Этаж: <input name="" type="text" class="textlines_default textline_l4"> Подъезд/Секция: <input name="" type="text" class="textlines_default 		textline_l4">
+		Кол-во стояков водопровода:<input name="" type="text" class="textlines_default textline_l6">
+		Состав семьи:<input name="" type="text" class="textlines_default textline_l7">
+		<input name="" type="text" class="textlines_default textline_l10">
+		<span class="subtitle">(укажите количество и пол детей)</span>
+		</div>
+
+
+		<div class="var_form2 border_xg rounded-corners_l2 shadow_x1">
+		<div class="form_description"></div>
+		<div class="number"></div>
+
+		<div class="kithen_split">
+		Объеденить кухню <br>с гостинной?
+    	<ul class="answer">
+      		<li><input name="kithen_split" type="radio" value="" id="split_yes" checked="checked">
+    		<label for="split_yes"> Да </label></li>
+    		<li><input name="kithen_split" type="radio" value="" id="split_no">
+    		<label for="split_no"> Нет </label></li>
+    	</ul>
+		</div>
+	
+    	<div class="kithen_size">
+    	Размер кухни:
+      	<ul class="answer">
+    		<li><input name="kithen_size" type="radio" value="" id="size_big" checked="checked">
+    		<label for="size_big"> Больше 15 кв.м. </label></li>
+    		<li><input name="kithen_size" type="radio" value="" id="size_small">
+    		<label for="size_small"> Меньше 15 кв.м. </label></li>
+    	</ul>
+    	</div>
+    
+    	<div class="changing_rooms">
+    	Наличие гардеробных <br>комнат:
+    	<ul class="answer">
+    		<li><input name="changing_rooms" type="radio" value="" id="changing_rooms_yes" checked="checked">
+    		<label for="changing_rooms_yes"> Да </label></li>
+    		<li><input name="changing_rooms" type="radio" value="" id="changing_rooms_no">
+    		<label for="changing_rooms_no"> Нет </label></li>
+    	</ul>
+    	</div>
+    
+    	<div class="number_of_rooms">
+    		Количество встроенных <br>шкафов, включая <br>гардеробные комнаты:
+    	<input name="" type="text" class="textlines_default textline_l2">
+    	</div>
+    
+    	<div class="cabinets">
+    	Нужен кабинет?
+    	<ul class="answer">
+    		<li><input name="cabinets" type="radio" value="" id="cabinets_yes" checked="checked">
+    		<label for="cabinets_yes"> Да </label></li>
+    		<li><input name="cabinets" type="radio" value="" id="cabinets_no">
+    		<label for="cabinets_no"> Нет </label></li>
+    	</ul>
+    	</div>
+    
+    	<div class="guests">
+    	Любите ли Вы <br>принимать гостей?
+    	<ul class="answer">
+    		<li><input name="guests" type="radio" value="" id="guest_no" checked="checked">
+    		<label for="guest_no"> Нет </label></li>
+    		<li><input name="guests" type="radio" value="" id="to5">
+    		<label for="to5"> до 5 </label></li>
+    		<li><input name="guests" type="radio" value="" id="5-15">
+   			<label for="5-15"> 5-15 </label></li>
+    		<li><input name="guests" type="radio" value="" id="great_15">
+    		<label for="great_15"> Более 15 </label></li>
+    		</ul>
+    	</div>
+    
+    	<div class="sleeping_places">
+    	Количество спальных мест: <input name="" type="text" class="textlines_default textline_l2">
+    	</div>
+    
+    	<div class="washing_machin">
+    	Наличие постирочной:
+    	<ul class="answer">
+    		<li><input name="washing_machin" type="radio" value="" id="washing_machin_yes" checked="checked">
+    		<label for="washing_machin_yes"> Да </label></li>
+    		<li><input name="washing_machin" type="radio" value="" id="washing_machin_no">
+    		<label for="washing_machin_no"> Нет </label></li>
+    	</ul>
+    	</div>
+    
+    	<div class="options">
+   		Сколько представить Вам вариантов планировок?
+    	<ul class="answer">
+    		<li><input name="options" type="radio" value="" id="1option" checked="checked">
+    		<label for="1option"> 1 </label></li>
+    		<li><input name="options" type="radio" value="" id="2option">
+    		<label for="2option"> 2 </label></li>
+    		<li><input name="options" type="radio" value="" id="3option">
+    		<label for="3option"> 3 </label></li>
+    		<li><input name="options" type="radio" value="" id="4option">
+    		<label for="4option"> 4 </label></li>
+    	</ul>
+    	</div>
+   </div>
+   
+   <div class="var_form3 border_x3 rounded-corners_l2 shadow_x1">
+		<div class="number"></div>
+		<div class="form_description"></div>
+		<input name="" type="text" class="var_form3_default textline_l12">
+		<input name="" type="text" class="var_form3_default textline_l12">
+		<input name="" type="text" class="var_form3_default textline_l12">
+	</div>
+
+	<div class="var_form4 border_x4 rounded-corners_l2 shadow_x1">
+		<div class="form_description"></div>
+		<div class="number"></div>
+		<span>Вы можете перетащить файлы сюда</span>
+	</div>
+    
+    <div class="calculator border_x5 rounded-corners_l2 shadow_x2">
+		<div class="form_description"></div>
+		<span><input name="" type="text" class="total"></span>
+		<span class="count"></span>
+	</div>
+
+	<div class="postvar_plan_submiting">
+		<input type="image" src="cancelButton.png" alt="" class="submit_all_forms" onClick="$('#all_forms').trigger('reset');
+; return false;" />
+		<input type="image" src="postButton.png" alt="Submit Form" class="submit_all_forms"/>
+	</div>
+		</form>
+       <!---------------------------------------------- end page_contener -->
+        </div>
+        
+	</div>
+</div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+
+<!-- FOOTER START -->
+<div class="footer">
+	<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        
+        </div>
+	</div>
+</div> 
+ <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>

@@ -24,8 +24,7 @@ private
                                       :num_standpipes,
                                       :address, :floor, :section,
                                       :family_composition_first_line, :family_composition_second_line, :comment,
-                                      :flat_area,
-                                      attachments_attributes: [:file, :kind, :_destroy]
+                                      :flat_area
                                     ] )
   end
 

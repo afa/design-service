@@ -227,3 +227,11 @@ ru:
         specialist: 'Специалист'
         moderator: 'Модератор'
         admin: 'Администратор'
+  moderation:
+    status:
+      not_accepted: 'Еще не проверено'
+      rejected_first_stage: 'Отклонено модератором первого уровня'
+      rejected_complete: 'Отклонено главным модератором'
+      accepted_first_stage: 'Принято модератором первого уровня'
+      accepted_complete: 'Принято главным модератором'
+      accepted_automatically: 'Принято модератором первого уровня и подтверждено по истечении срока проверки'

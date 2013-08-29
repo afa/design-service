@@ -67,7 +67,7 @@ window.attachment_and_form_ajax_submission = (order_form, attach_form, submit_bu
 window.register_destroy_attachment_buttons = ->
   $('.delete_attachment').click (event)->
     attachment_url = $(event.target).data('attachment-url')
-    ajax_request(attachment_url, 'DELETE', $.param({}),
+    ajax_request(attachment_url, 'DELETE', '',
       success: ->
         alert('Файл успешно удален')
         $(event.target).closest('li.attachment_item').remove()

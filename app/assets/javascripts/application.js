@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery_nested_form
 //= require jquery.form
-//= require jquery-ui.min
+//= require jquery-ui
 
 //= require jquery.corner
 //= require login_box

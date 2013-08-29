@@ -26,7 +26,7 @@ window.register_chat = ->
   register_destroy_attachment_buttons = (button_selector)->
     $(button_selector).click (event)->
       attachment_url = $(this).data('attachment-url')
-      ajax_request(attachment_url, 'DELETE', $.param({}),
+      ajax_request(attachment_url, 'DELETE', '',
         success: ->
           alert('Файл удален')
           messages_url = $('#msg_form').data('msg_send_url')
@@ -39,6 +39,26 @@ window.register_chat = ->
     $('body').animate({scrollTop:0},"slow")
     $("#black_content").css("height",$(document).height())
     $("#black_content").css("display","block")
+
+  # Not used yet (due to url obtaining issues)
+  load_messages = (url)->
+    ajax_request(url, "GET", '',
+      success: (response) ->
+        $('#msg_dialog .msg_content').html(response['msgs_text'])
+        scroll_to_last()
+      error: (response) ->
+        alert('Не получилось загрузить сообщения')
+    )
+  # Not used yet (due to url obtaining issues)
+  load_attachments = (url)->
+    ajax_request(url, "GET", '',
+      success: (response) ->
+        $('#msg_dialog .attachments_list').html(response['attachment_previews_text'])
+        make_attachment_forms_remote('form.attachment_upload')
+        register_destroy_attachment_buttons('.remove_attachment')
+      error: (response) ->
+        alert('Не получилось загрузить сообщения')
+    )
 
   load_chat = (url)->
     $.ajax
@@ -78,22 +98,22 @@ window.register_chat = ->
     data = jQuery.param
       message:
         text:  $('#msg_form textarea[name="text"]').val()
-    scroll_to_last();
-    $.ajax
-      url: messages_url
-      dataType: 'json'
-      data: data
-      type: 'POST'
+    # scroll_to_last();
+    ajax_request(messages_url, 'POST', data,
       success: ->
         $('#msg_form').resetForm()
         load_chat(messages_url)
       error: ->
         alert('Не получилось отправить сообщение')
+    )
 
-  $(".close_fly_window").click ->
+  clear_content = ->
     $('#msg_dialog .msg_content').html('')
     $('#msg_dialog .left_bar .name').html('')
     $('#msg_dialog .left_bar .photo').html('')
     $('#msg_dialog .attachments_list').html('')
+
+  $(".close_fly_window").click ->
+    clear_content()
     $('body').css('overflow','auto');
     $(this).parent().css("display","none").parent().css("display","none");

@@ -45,3 +45,25 @@ form.postVarPlan{
     clear: both;
   }
 }
+.show_for{
+  .wrapper {
+    float:left;
+    clear:both;
+  }
+}
+.accept {
+  span {
+    background-image: image-url("like.jpg");
+    float: left;
+    width: 80px;
+    height: 60px;
+  }
+}
+.reject {
+  span {
+    background-image: image-url("dislike.jpg");
+    float: left;
+    width: 80px;
+    height: 60px;
+  }
+}

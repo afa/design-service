@@ -18,8 +18,7 @@ class ReplanningEndorsementsController < InheritedResources::Base
 
 private
   def permitted_params
-    params.permit(replanning_endorsement: [:developed_by_general_projector, :flat_area, :replanning_organization_licensed,
-                                      attachments_attributes: [:file, :kind, :_destroy] ] )
+    params.permit(replanning_endorsement: [:developed_by_general_projector, :flat_area, :replanning_organization_licensed] )
   end
 
   def load_draft

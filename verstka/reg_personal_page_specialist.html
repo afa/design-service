@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<link href="registered.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="lightbox/lightbox.css" media="screen"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<script type="text/javascript" src="scroll/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scroll/jquery.slimscroll.js"></script>
+
+<script src="lightbox/lightbox-2.6.min.js"></script>
+
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		function black_content(){
+		$('body,html').animate({scrollTop:0},"slow");
+			$("#black_content").css("height",$(document).height());
+			$("#black_content").css("display","block");
+		};
+		
+		function scroll_to_last(){
+		$('.msg_content').animate({"scrollTop": $('.msg_content')[0].scrollHeight},"slow");
+		}
+		
+		$(".msg").click(function(){
+		var msg_dialog_id = $(this).attr('id');
+		var name_order = $(this).parent().find('.name span').html();
+		if(isNaN(parseFloat(name_order))){ name_order = 'Chat'; }
+		$('.order_name').html(name_order);
+		black_content();
+			 $('.left_bar').slimscroll({
+   			 size: '7px',
+			 width:'220px',
+			 height:'520px'
+ 			 });
+			 $('.msg_content').slimscroll({
+   			 size: '7px',
+			 width:'500px',
+			 height:'400px'
+ 			 });
+		$("#msg_dialog").css("display","block");
+		scroll_to_last();
+		$('body').css('overflow','hidden');
+		});
+		
+		$('img', '.send_msg').click(function(){
+		data = $('#msg_form').serialize();      //////////////////////////////////////////////
+		scroll_to_last();
+		alert(data);
+		})
+		
+		//$(document).ready(function(){
+		$(".change_portfolio").click(function(){
+		var func = $(this).attr('alt');
+		
+		if(func=='edit'){ 
+			$("#im_prev").html($(this).next('ul').html()); 
+			$("#title_req_border").val($(this).prev('span').html());
+			$("#im_prev li").not(':last').each(function(index){
+			$(this).append('<span class="delete"></span>');
+			})
+		}
+		else{ $("#im_prev").html('<li class="add"></li>');
+			  $("#title_req_border").val(''); 
+			}
+		$("#im_prev li span.delete").click(function(){
+		$(this).parent().remove();
+		})
+			
+		black_content();
+		$("#portfolio_changes").css("display","block");
+		});
+		
+
+		
+		$(".close_fly_window").click(function(){
+		$('body').css('overflow','auto');
+		$(this).parent().css("display","none").parent().css("display","none");
+		});
+
+	
+		});
+		
+
+		
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+	<div id="msg_dialog" class="shadow_x1 border_xs rounded-corners">
+    <div class="close_fly_window"></div>
+    	<div class="order_name"></div>
+        <div class="left_bar">
+        	<span class="heading gray_header">Заказчик</span>
+            <span class="photo"></span>
+            <span class="name">Журавлев <br>Михаил</span>
+            <span class="heading_done dark_green_header">Выполнено</span>
+        	<ul class="done">
+            	<li><span></span>План 1</li>
+                <li><span></span>План 2</li>
+                <li><span></span>План 3</li>
+            </ul>
+            <span class="heading_working dark_red">В разработке</span>
+        	<ul class="working">
+            	<li><span></span><a href="#">План 4</a></li>
+                <li><span></span><a href="#">План 5</a></li>
+                <li><span></span><a href="#">План 6</a></li>
+                <li><span></span><a href="#">План 7</a></li>
+            </ul>
+        </div>
+        <div class="msg_content">
+        <!------------------------------------------------------- -->
+        	<div class="msg_from">
+            	<ul class="message">
+                	<li>Журавлев Михаил</li><li>24.05.2013</li><li>17:30</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+         <!------------------------------------------------------- -->  
+          <div class="msg_to">
+                <ul class="message">
+            		<li>Александр</li><li>24.05.2013</li><li>19:40</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+             <!------------------------------------------------------- -->  
+          <div class="msg_to">
+            	<ul class="message">
+                	<li>Журавлев Михаил</li><li>24.05.2013</li><li>17:30</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+         <!------------------------------------------------------- -->      
+            <div class="msg_from">
+            	<ul class="message">
+                	<li>Журавлев Михаил</li><li>24.05.2013</li><li>17:30</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+         <!------------------------------------------------------- -->    
+        </div>
+        <div class="send_msg">
+        <form id="msg_form">
+        <input type="hidden" name="user" value="user">
+        <input type="hidden" name="date" value="date">
+        <input type="hidden" name="time" value="time">
+        <textarea name="message" cols="" rows="" class="msg_sender"></textarea>
+        <img src="msg_send.jpg" class="send_msg">
+        <!--<input name="submit" type="image" src="msg_send.jpg" class="send_msg">-->
+        </form>
+        </div>
+    	<div class="order_data_bottom"><span><a href="#">Исходные данные</a></span></div>
+    </div>
+    
+    <div id="portfolio_changes"  class="rounded-corners">
+    <div class="close_fly_window"></div>
+    <div class="heading">Добавление на Портфолио</div>
+    	<ul>
+        	<li class="title">Назьвание проекта</li>
+            <li class="title_req_border"><input name="" type="text" id="title_req_border"></li>
+            <li><input name="" type="checkbox" value="" id="add_to_group"><label for="add_to_group">Отобросить проект на портфолие группа </label>
+            </li>
+            <li class="file_attach">приклепить картинки</li>
+            <li class="image_preview">
+            	<ul id="im_prev">
+            	</ul>
+            </li>
+            <li><img src="reject.png" class="reject"><img src="add_green.png" class="add"></li>
+        </ul>
+    </div>
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header_specialist">
+	<div class="headerLayer1"></div>
+    <ul id="menu_specialist">
+    	<li><a href="reg_my_projects_specialist.html"><span></span></a></li>
+    	<li><a href="#"><span></span></a></li>
+    	<li><a href="reg_personal_account_specialist.html"><span></span></a></li>
+    	<li><a href="reg_personal_page_specialist.html"><span></span></a></li>
+    </ul>
+   
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_specialist" class="rounded-corners_l4">	
+	<div id="main_content_specialist_inside">	
+		 
+        <div class="sidebar_left_specialist">		
+        		<div class="name rounded-corners">NAME</div>
+                <div class="events rounded-corners">
+                	<span class="heading_event">ПОСЛЕДНИЕ СОБЫТИЯ</span>
+                	<ul class="last_events">
+                    	<li><span>25.04.2013</span>  Отправлены варианты планировки для LEX</li>
+                        <li><span>15.04.2013</span>  Заказ от Lex в работе</li>
+                        <li><span>13.04.2013</span>  Новый заказ</li>
+                    	<li><span>11.04.2013</span>  Поступление денежных средств на лицевой счет</li>
+                        <li class="last"><span>10.04.2013</span>  Выполнен заказ от STIFF</li>
+                    </ul>
+                </div>
+                
+                <div class="groups rounded-corners">
+                	<span class="heading_groups">МОИ ГРУППЫ</span>
+                	<ul class="my_groups">
+						<li> 
+                        <div class="img_group">
+                        	<span class="img_group_border"></span>
+                            <img src="designer_icon_not_reg.jpg" class="group_image">
+                        </div>
+                            <ul><a href="reg_group_specialist.html">
+                            	<li>Союз [Ромашка]</li>
+                                <li>4 участников</li>
+                                </a>
+                            </ul>
+                        
+                        </li>
+						
+                        <li> 
+                        <div class="img_group">
+                        	<span class="img_group_border"></span>
+                            <img src="portfolio_1.jpg" class="group_image">
+                        </div>
+                            <ul><a href="reg_group_specialist.html">
+                            	<li>Союз [Ромашка]</li>
+                                <li>4 участников</li>
+                                </a>
+                            </ul>
+                        </li>
+                        
+                        <li> 
+                        <div class="img_group">
+                        	<span class="img_group_border"></span>
+                            <img src="designer_icon_not_reg.jpg" class="group_image">
+                        </div>
+                             <ul><a href="reg_group_specialist.html">
+                            	<li>Союз [Ромашка]</li>
+                                <li>4 участников</li>
+                                </a>
+                            </ul>
+                        </li>
+                    </ul>
+               </div>
+         </div>
+        
+        <div class="page_contener_specialist">
+        	<div class="header_page_specialist blue_header">Александр [Alex]</div>
+			<div class="specialist_img_">
+            	<span class="specialist_img_border"></span>
+            	<img src="specialist_img.jpg">
+            </div>
+            <div class="send_message msg"></div>
+            <div class="info_specialist">
+            	<span class="heading">Обо Мне <img src="edit.png" class="change_text" alt="edit"></span>
+                <p>
+            Расширенный интерфейс управления питанием и конфигурациями (Advanced Configuration and Power Interface, ACPI) является открытым промышленным стандартом, определяющим гибкий и расширяемый интерфейс аппаратуры с системной платой. Разработчики программного обеспечения используют эту спецификацию для объединения возможностей управления электропитанием во всей компьютерной системе, включая аппаратуру, операционную систему и прикладное программное обеспечение. 
+			</p>
+            <span class="heading">О Работе <img src="edit.png" class="change_text" alt="edit"></span>
+            <p>
+ACPI является основой промышленной инициативы OnNow, которая позволяет производителям систем поставлять компьютеры, которые запускаются прикосновением к клавише на клавиатуре.
+			</p>
+            
+            
+     		<span class="heading margine">Портфолио</span>
+            <ul class="portfolio">
+            <li class="projects rounded-corners_l3">
+            	<span class="project_name">проект по склад (2013)</span>
+                <span class="edit change_portfolio" alt="edit"></span>
+            	<ul id="pr1">
+                	<li><a href="portfolio_2.jpg" data-lightbox="project1"><img src="portfolio_2.jpg"></a></li>
+                    <li><a href="workPreview2.jpg" data-lightbox="project1"><img src="workPreview2.jpg"></a></li>
+                    <li><a href="portfolio_3.jpg" data-lightbox="project1"><img src="portfolio_3.jpg"></a></li>
+                    <li class="add"></li>
+                </ul>
+            </li>
+            
+           <li class="projects rounded-corners_l3">
+            	<span class="project_name">проект по склад (2013)</span>
+                <span class="edit change_portfolio" alt="edit"></span>
+            	<ul>
+                	<li><a href="portfolio_2.jpg" data-lightbox="project2"><img src="portfolio_2.jpg"></a></li>
+                    <li class="add"></li>
+                </ul>
+            </li>
+            
+           <li class="projects rounded-corners_l3">
+            	<span class="project_name">проект по склад (2013)</span>
+                <span class="edit change_portfolio" alt="edit"></span>
+            	<ul>
+                	<li><a href="workPreview2.jpg" data-lightbox="project3"><img src="workPreview2.jpg"></a></li>
+                    <li><a href="portfolio_3.jpg" data-lightbox="project3"><img src="portfolio_3.jpg"></a></li>
+                    <li class="add"></li>
+                </ul>
+           </li>
+           </ul> 
+           <div class="see_all">смотрить все</div> 
+           <div class="add_new"><img src="add_new_project.png" class="change_portfolio" alt="add_new"></div> 
+            </div><!-- info_specialist end -->
+        </div><!-- end page_contener_specialist-->
+    </div>
+        
+</div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+
+<!-- FOOTER START -->
+<div class="footer">
+	<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        
+        </div>
+	</div>
+</div> 
+ <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>

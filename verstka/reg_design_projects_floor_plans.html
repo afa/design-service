@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<link href="registered.css" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		function black_content(){
+			$("#black_content").css("height",$(document).height());
+			$("#black_content").css("display","block");
+		};
+		
+		});
+		
+		function show_next(element){
+		var checker = $(element).is(':checked');
+		var li_near = $(element).parent().next('li');
+		if(checker==true){
+		li_near.css("display","block");
+		}
+		else{
+		li_near.css("display","none");
+		}
+		}
+		
+		
+		var n=2;
+		function make_new_block(selected,values){
+		if(parseInt(values)>=n){
+		n++;
+		last = $(selected).parent().parent();
+		obj ='<div class="place">Помещение<input name="room_block'+n+'plojad" type="text" style="color:#999999" class="textlines_default textline_l6" value="например, Кухня" onFocus="if($(this).val()==\'например, Кухня\'){$(this).val(\'\'); $(this).css(\'color\',\'#000000\');make_new_block($(this),\''+n+'\')}; return false;" onBlur="if($(this).val()==\'\'){$(this).val(\'например, Кухня\'); $(this).css(\'color\',\'#999999\');remove_next('+n+')}; return false; "></div><ul class="border_x6 rounded-corners_l3"><li><input name="room_block'+n+'option1" type="checkbox" id="room_block'+n+'option1"><label for="room_block'+n+'option1">Искусственных <br>холодных</label></li><li><input name="room_block'+n+'option2" type="checkbox" id="room_block'+n+'option2"><label for="room_block'+n+'option2">Искусственных <br>теплых</label></li><li><input name="room_block'+n+'option3" type="checkbox" id="room_block'+n+'option3"><label for="room_block'+n+'option3">Ковролин или набивной <br>рисунок ковра</label></li><li><input name="room_block'+n+'option4" type="checkbox" id="room_block'+n+'option4"><label for="room_block'+n+'option4">Камень</label></li><li><input name="room_block'+n+'option5" type="checkbox" id="room_block'+n+'option5"><label for="room_block'+n+'option5">Дерево</label></li></ul>';
+		alls= '<div class="room_blocks" id="room_block'+n+'">'+ obj +'</div>';
+		last.after(alls);
+	$("input[type=checkbox]").click(function() {
+        var checker = $(this).is(':checked');
+		if(checker==true){
+		$(this).next('label').css('background-image','url(box_checked.png)');
+		}
+		else{
+		$(this).next('label').css('background-image','url(box_not_cheked.png)');
+		}
+      });
+	}
+  }
+		
+		function remove_next(block_id){
+		s=0;
+		if(n>parseInt(block_id)){
+			for(y=block_id+1; y<=n; y++){
+			//alert('delete'+y);
+			$('#room_block'+y).remove();
+			s++;
+			}
+		n=n-s;
+		}
+		}
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header">
+	<div class="headerLayer1" id="designService"></div>
+    <ul class="text_shadow_1">
+    <li class="shadow_x3"><a href="reg_postvarplan.html"><span>Разработка <br>вариантов планировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_planrefactoring.html"><span>Согласования перепланировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_design_project.html"><span>Дизайн-проект</span></a></li>
+    <li class="shadow_x3"><a href="reg_engineering_systems.html"><span>Инженерные <br>системы и конструктив</span></a></li>
+    </ul>
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_index" class="rounded-corners_l4">	
+	<div id="main_content">	
+		 <div class="springs"></div> 
+         <div class="border_left"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+   		 <div class="border_right"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+         
+        <div class="sidebar_left">		
+        		<div class="caption_left_menu light_green">Добро пожаловать,<br>Александр [Alex]</div>
+            	<ul id="left_menu">
+            	<li><a href="reg_my_orders.html">Мои заказы</a></li>
+                <li><a href="reg_personal_account.html">Лицевой счет</a></li>
+                <li><a href="#">Мои настройки</a></li>
+            	</ul>	
+            	<div class="heading_captions">ВЫБОР СПЕЦИАЛИСТОВ</div>
+                <ul id="menu_sub_left">
+            	<li><a href="#"><span>Архитекторы</span></a></li>
+                <li><a href="reg_designers.html"><span>Дизайнеры</span></a></li>
+                <li><a href="#"><span>Инженеры</span></a></li>
+                <li><a href="#"><span>Строительные фирмы</span></a></li>		
+                <li><a href="#"><span>Строительные бригады</span></a></li>											
+				</ul>
+         </div>
+        
+        <div class="page_contener">
+        	<div class="caption light_red">ПЛАНЫ ПОЛОВ</div>
+            <ul id="navigation"  class="blue">
+				<li class="first"><a href="#">Главная</a></li>
+    			<li><a href="#">Дизайн-проекты</a></li>
+    			<li class="last"><a href="#">концепция</a></li>
+			</ul>
+            <div class="breaker"></div>
+        <!-----------------------------  ---------------->   
+		<div class="msg_caution"><span class="design_p-workin-docs">Заполните заявку</span></div>
+        
+        <form action="" id="all_forms">
+		<div class="design_p_floor_plans_form1 border_x1 rounded-corners_l2 shadow_x1">
+				<div class="number"></div>
+				<div class="form_description"></div>
+
+				<div class="file_attaching border_x5 rounded-corners_l3">
+				<span class="caution">Прикрепите:
+					<ul>
+    					<li>1. план с расстановкой мебели!</li>
+    					<li>2. ИЗОБРАЖЕНИЕ концепции или пример!</li>
+    				</ul>
+    			</span>
+				<span class="attach">Вы можете перетащить файлы сюда</span>
+				</div>
+
+				<div class="number_second"></div>
+				<div class="form_description_second"></div>
+				<span class="text">Наименование помещения: <input name="plojad" type="text" class="textlines_default textline_l6-5"></span>
+
+			<div class="interior">Какой стиль интерьера Вы предпочитаете?
+    			<ul class="answer">
+      				<li><input name="interior" type="radio" value="" id="classicism">
+    				<label for="classicism"> Классицизм </label></li>
+    				<li><input name="interior" type="radio" value="" id="minimalism" checked="checked">
+    				<label for="minimalism"> Современный минимализм </label></li>
+        			<li><input name="interior" type="radio" value="" id="East">
+    				<label for="East"> Восток </label></li>
+        			<li><input name="interior" type="radio" value="" id="Art-Deco">
+    				<label for="Art-Deco"> Современный Art-Deco </label></li>
+        			<li><input name="interior" type="radio" value="" id="any">
+  				  	<label for="any"> Другое <input name="plojad" type="text" class="textlines_default textline_l5"> </label></li>
+    			</ul>
+			</div>
+
+		<div class="depending">Зависимость от потолков?
+    			<ul class="answer">
+      				<li><input name="depending" type="radio" value="" id="depend_yes" checked="checked">
+    				<label for="depend_yes"> Да </label></li>
+    				<li><input name="depending" type="radio" value="" id="depend_no">
+    				<label for="depend_no"> Нет</label></li>
+    			</ul>
+		</div>
+	
+    	<div class="what_materials">Из каких материалов?
+    		<span><input name="" type="checkbox" id="what_meterials" value="">
+    		<label for="what_meterials">На усмотрение дизайнера</label>
+    		</span>
+    	</div>
+    
+    	<div class="room_blocks" id="room_block1">
+    		<div class="place">Помещение <input name="room_block1plojad" type="text" style="color:#999999" class="textlines_default textline_l6" value="например, Кухня" onFocus="if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000')}; return false;" onBlur="if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999')}; return false;"></div>
+        
+    		<ul class="border_x6 rounded-corners_l3">
+        		<li><input name="room_block1option1" type="checkbox" id="room_block1option1"><label for="room_block1option1">Искусственных <br>
+            холодных</label></li>
+        		<li><input name="room_block1option2" type="checkbox" id="room_block1option2"><label for="room_block1option2">Искусственных <br>
+            теплых</label></li>
+        		<li><input name="room_block1option3" type="checkbox" id="room_block1option3"><label for="room_block1option3">Ковролин или набивной <br>
+            рисунок ковра</label></li>
+        		<li><input name="room_block1option4" type="checkbox" id="room_block1option4"><label for="room_block1option4">Камень</label></li>
+        		<li><input name="room_block1option5" type="checkbox" id="room_block1option5"><label for="room_block1option5">Дерево</label></li>
+        	</ul>
+    	</div>
+    
+   		<div class="room_blocks" id="room_block2">
+    		<div class="place">Помещение <input name="room_block2plojad" type="text" style="color:#999999" class="textlines_default textline_l6" value="например, Кухня" onFocus="if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000'); make_new_block($(this),'2');}; return false;" onBlur="if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999'); remove_next(2)};  return false;"></div>
+        
+    		<ul class="border_x6 rounded-corners_l3">
+        		<li><input name="room_block2option1" type="checkbox" id="room_block2option1"><label for="room_block2option1">Искусственных <br>
+            холодных</label></li>
+            	<li><input name="room_block2option2" type="checkbox" id="room_block2option2"><label for="room_block2option2">Искусственных <br>
+            теплых</label></li>
+                <li><input name="room_block2option3" type="checkbox" id="room_block2option3"><label for="room_block2option3">Ковролин или набивной <br>
+            рисунок ковра</label></li>
+            	<li><input name="room_block2option4" type="checkbox" id="room_block2option4"><label for="room_block2option4">Камень</label></li>
+           	 	<li><input name="room_block2option5" type="checkbox" id="room_block2option5"><label for="room_block2option5">Дерево</label></li>
+        	</ul>
+    		</div>
+   		</div>
+
+
+		<div class="design_p_floor_plans_form2 border_x3 rounded-corners_l2 shadow_x1">
+			<div class="form_description"></div>
+			<input name="" type="text" class="var_form3_default textline_l11">
+			<input name="" type="text" class="var_form3_default textline_l11">
+			<input name="" type="text" class="var_form3_default textline_l11">
+		</div>
+		<span class="design_p_floor_plans-caution2">Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!</span>
+		
+        <div class="design_p_floor_plans_submiting">
+		<input type="image" src="cancelButton.png" alt="" class="submit_all_forms" onClick="$('#all_forms').trigger('reset');
+; return false;" />
+		<input type="image" src="postButton.png" alt="Submit Form" class="submit_all_forms"/>
+		</div>
+
+		</form>
+       <!---------------------------------------------- end page_contener -->
+        </div>
+        
+	</div>
+</div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+
+<!-- FOOTER START -->
+<div class="footer">
+	<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        
+        </div>
+	</div>
+</div> 
+ <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>

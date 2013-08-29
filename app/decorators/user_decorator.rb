@@ -1,8 +1,9 @@
 class UserDecorator < Draper::Decorator
   delegate_all
-  def admin_link
+  def to_s
     h.link_to source.to_s, h.admin_user_path(source)
   end
+  alias_method :admin_link, :to_s
   def orders_info_link
     source.orders_count > 0 ?  h.link_to("Заказы: #{orders_count}", h.admin_orders_path(client: source.id)) : nil
   end
