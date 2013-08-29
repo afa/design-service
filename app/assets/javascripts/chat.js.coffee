@@ -1,13 +1,66 @@
 //= require jquery.slimscroll
-//= require 'attachments'
+//= require ajax_submit
 
 window.register_chat = ->
+  make_attachment_forms_remote = (form_selector)->
+    form = $(form_selector)
+    form.find('.submit').click (event)->
+      event.preventDefault()
+      multipart_ajax_sendform(form, 'POST',
+        success: ->
+          alert('Файл загружен')
+          form.get(0).reset()
+          form.find('input[type=file]').trigger('change')
+          messages_url = $('#msg_form').data('msg_send_url')
+          load_chat(messages_url)
+        error: ->
+          alert('Не удалось загрузить файл')
+      )
+    form.find('input[type=file]').change ->
+      files = this.files
+      if files.length != 0
+        form.find('.filename').html(files[0].name)
+      else
+        form.find('.filename').html('')
+
+  register_destroy_attachment_buttons = (button_selector)->
+    $(button_selector).click (event)->
+      attachment_url = $(this).data('attachment-url')
+      ajax_request(attachment_url, 'DELETE', '',
+        success: ->
+          alert('Файл удален')
+          messages_url = $('#msg_form').data('msg_send_url')
+          load_chat(messages_url)
+        error: ->
+          alert('Не удалось удалить файл')
+      )
+
   black_content = ->
     $('body').animate({scrollTop:0},"slow")
     $("#black_content").css("height",$(document).height())
     $("#black_content").css("display","block")
 
+  # Not used yet (due to url obtaining issues)
   load_messages = (url)->
+    ajax_request(url, "GET", '',
+      success: (response) ->
+        $('#msg_dialog .msg_content').html(response['msgs_text'])
+        scroll_to_last()
+      error: (response) ->
+        alert('Не получилось загрузить сообщения')
+    )
+  # Not used yet (due to url obtaining issues)
+  load_attachments = (url)->
+    ajax_request(url, "GET", '',
+      success: (response) ->
+        $('#msg_dialog .attachments_list').html(response['attachment_previews_text'])
+        make_attachment_forms_remote('form.attachment_upload')
+        register_destroy_attachment_buttons('.remove_attachment')
+      error: (response) ->
+        alert('Не получилось загрузить сообщения')
+    )
+
+  load_chat = (url)->
     $.ajax
       url: url
       dataType: 'json'
@@ -17,7 +70,8 @@ window.register_chat = ->
         $('#msg_dialog .left_bar .name').html(response['executor_name'])
         $('#msg_dialog .left_bar .photo').html('<img src="' + response['executor_avatar_url'] + '">')
         $('#msg_dialog .attachments_list').html(response['attachment_previews_text'])
-        make_attachment_forms_remote('form.attachment_upload input[type="submit"]')
+        make_attachment_forms_remote('form.attachment_upload')
+        register_destroy_attachment_buttons('.remove_attachment')
         scroll_to_last()
       error: ->
         alert('Не получилось загрузить сообщения')
@@ -28,7 +82,7 @@ window.register_chat = ->
   $(".msg").click (event)->
     messages_url = $(event.target).data('msgUrl')
     $('#msg_form').data('msg_send_url', messages_url)
-    load_messages(messages_url)
+    load_chat(messages_url)
 
     name_order = $(this).parent().find('.name span').html();
     $('.order_name').html(name_order);
@@ -44,18 +98,22 @@ window.register_chat = ->
     data = jQuery.param
       message:
         text:  $('#msg_form textarea[name="text"]').val()
-    scroll_to_last();
-    $.ajax
-      url: messages_url
-      dataType: 'json'
-      data: data
-      type: 'POST'
+    # scroll_to_last();
+    ajax_request(messages_url, 'POST', data,
       success: ->
         $('#msg_form').resetForm()
-        load_messages(messages_url)
+        load_chat(messages_url)
       error: ->
         alert('Не получилось отправить сообщение')
+    )
+
+  clear_content = ->
+    $('#msg_dialog .msg_content').html('')
+    $('#msg_dialog .left_bar .name').html('')
+    $('#msg_dialog .left_bar .photo').html('')
+    $('#msg_dialog .attachments_list').html('')
 
   $(".close_fly_window").click ->
+    clear_content()
     $('body').css('overflow','auto');
     $(this).parent().css("display","none").parent().css("display","none");

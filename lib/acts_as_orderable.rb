@@ -13,6 +13,25 @@ module ActsAsOrderable
         o.build_order{|order| order.client = user }
       end
     end
+
+    # creates stubby saved order with associated model and linked client
+    # given block is called after save so it's a good place to build some associations
+    def generate_order
+      orderable = new(default_params) do |o|
+        o.build_order(client: User.current)
+      end
+      orderable.save
+      yield orderable  if block_given?
+      orderable
+    end
+
+    def default_params
+      raise NotImplementedError, "Specify #{self.name}.default_params class-method with default order parameters"
+    end
+
+    def find_or_create_order
+      by_client(User.current).by_work_state('draft').first || generate_order
+    end
   end
 
   def self.included(base)
@@ -21,13 +40,11 @@ module ActsAsOrderable
       has_one :order, as: :orderable, dependent: :destroy
       has_one :client, through: :order
       has_many :attachments, as: :attachable, class_name: 'Attachment', dependent: :destroy
-      accepts_nested_attributes_for :attachments, allow_destroy: true
+
+      scope :by_client, ->(user){ joins(:order).where(orders: {client_id: user}) }
+      scope :by_work_state, ->(state){ joins(:order).where(orders: {work_state: state}) }
 
       has_paper_trail
-      # scopes use select not to be readonly
-      # .readonly(false) can be used instead
-      # In rails 4 this problem is fixed
-      scope :by_client, ->(client_id) { joins(:order).where(orders: {client_id: client_id} ) }
     end
   end
 end

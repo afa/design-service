@@ -3,20 +3,18 @@
   %ul.done
     - attachments.each_with_index do |attachment, index|
       %li
-        %span>
-          /= image_tag attachment_path(attachment)
+        /%span.preview>
+        /  = image_tag attachment_path(attachment)
+        %span.remove_attachment{:data => {:attachment_url => "#{ attachment_url(attachment) }"} }
         = link_to download_attachment_path(attachment) do
-          - if attachment.kind && !attachment.kind.blank?
-            = I18n.t "attachment_kinds.#{attachment.kind}"
-          - else
-            = precede "План " do
-              = index + 1
-- unless unfinished_attachments.empty? == 0
+          = attachment.decorate.kind(index)
+- unless unfinished_attachments.empty?
   %span.heading_working.dark_red В разработке
   %ul.working
     - unfinished_attachments.each do |kind|
       %li
-        %span>
+        /%span.preview>
         = I18n.t "attachment_kinds.#{kind}"
         - if current_user.specialist?
-          = render partial: 'attachments/attachment_form', locals:{attachment: attachments.build(kind: kind)}
+          .load_attachment_box
+            = render partial: 'attachments/attachment_form', locals:{attachment: attachments.build(kind: kind)}

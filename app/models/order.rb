@@ -12,8 +12,7 @@ class Order < ActiveRecord::Base
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor) { where(executor_id: executor.id, executor_type: executor.class.name) }
 
-  state_machine :work_state, initial: :empty_draft do
-    state :empty_draft
+  state_machine :work_state, initial: :draft do
     state :draft
     state :specialist_suggested
     state :client_agreed
@@ -21,7 +20,7 @@ class Order < ActiveRecord::Base
     state :work_accepted
 
     event :save_draft do
-      transition [:empty_draft, :draft] => :draft
+      transition :draft => :draft
     end
     event :set_price do
       transition :draft => :specialist_suggested
@@ -44,7 +43,7 @@ class Order < ActiveRecord::Base
     state :advance_paid
     state :paid
 
-    state :no_paid do
+    state :not_paid do
       def must_start_work?; false; end
     end
     state :advance_paid, :paid do
@@ -80,6 +79,15 @@ class Order < ActiveRecord::Base
   #  orderable.num_plans.to_i - attachments.size
   #end
   def unfinished_attachments
-    orderable.attachment_kinds - orderable.attachments.pluck(:kind)
+    orderable.attachment_kinds - attachments.pluck(:kind)
+  end
+
+  def advance_price
+    price && price * 0.5
+  end
+
+  # FIX ME: refactor
+  def amount_paid
+    purchases.where(state: paid).inject{|sum,purchase| sum + purchase.payments.where(state: paid).inject(0.0){|r,payment| r + payment.amount } }
   end
 end

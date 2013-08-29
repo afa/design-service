@@ -1,3 +1,6 @@
+//= require drop_zone
+//= require chat
+
 /* Menu fonts, table fonts, PostForm font */
 @font-face {
     font-family: 'gardensc';
@@ -45,7 +48,6 @@ body  {
   overflow:visible;
    -webkit-font-smoothing: antialiased;
      font-smoothing: antialiased;
-  
 }
 
 .twoColFixRtHdr #container {
@@ -54,14 +56,14 @@ body  {
   margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
   text-align: left; /* this overrides the text-align: center on the body element. */
   padding:0px;
-  height:auto;  
+  height:auto;
 }
 
 
 
 /*Main Container  TopMenu (aka specMenu) & thisPageContent */
 .twoColFixRtHdr #mainContent {
-  margin: 0 0 0 0; 
+  margin: 0 0 0 0;
   padding: 0 0px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
   clear:both;
 }
@@ -145,7 +147,7 @@ table.history_recharge tr.green td{ color:#137702}
 div.pagianter{ float:right; margin-right:10px; font-size:12px; color:#989898; width:150px; }
 div.pagianter span{ float:left; padding-right:10px;}
 div.styled-select select {background: transparent;width: 58px;font-size: 13px;line-height: 1;border: 0;border-radius: 0;height: 17px;-webkit-appearance:none;color:#787676; }
-div.styled-select {width: 41px; height: 17px; overflow: hidden; background:image-url("select_menu_button.png") no-repeat #FFFFFF; background-position:24px -3px; border: 1px solid #838282; position:relative; }   
+div.styled-select {width: 41px; height: 17px; overflow: hidden; background:image-url("select_menu_button.png") no-repeat #FFFFFF; background-position:24px -3px; border: 1px solid #838282; position:relative; }
 
 div.designers{ background-image:image-url("designers.png") ; border-bottom-color:#f89f65; width:500px; float:left; background-repeat:no-repeat; background-position:left -2px; height:40px;}
 div.designers_list{ float:left; clear:both; height:104px; width:630px; margin-top:15px; background-color:#f5eae4;}
@@ -154,7 +156,7 @@ div.designers_list div.designer_no img{ width:70px; height:50px; float:left;}
 div.designers_list div.designer_no span{ color:#b70682; font-size:16px; text-align:center; width:70px; float:left; padding-top:5px;}
 div.designers_list div.designer_info{ width:380px; position:relative; padding:5px 5px 5px 15px; float:left; color:#4c4c4c;  }
 div.designers_list div.designer_info div{ width:470px; float:left;}
-div.designers_list div.designer_info div span { padding:0px; margin:0px; float:left; } 
+div.designers_list div.designer_info div span { padding:0px; margin:0px; float:left; }
 div.designers_list div.designer_info div span:nth-child(2){ color:#50880f; padding-left:10px;}
 div.designers_list div.designer_info div:nth-child(1){ padding-top:10px; padding-bottom:15px; font-weight:bold; font-size:18px; }
 div.designers_list div.designer_info div:nth-child(2){ font-size:14px;}
@@ -180,22 +182,6 @@ div.pages span{ border:none; color:#46a815; float: right; background-image:image
 div.pages span a{ border:none; color:#46a815; float:left; text-decoration:underline;}
 div.pages span a:hover{ text-decoration:none; }
 
-
-/* PAGE CONCEPT REG_PLANREFACTORING */
-span.plan_refactoring{ color:#ccb545; }
-span.plan_refactoring{ color:#bd3404; text-align: center; width:580px;  font-size:18px; padding-top:25px; float:left; margin:0px; padding-bottom:15px; margin-left:30px;}
-
-div.plan_refactor{ padding-left:45px; margin-top:20px;   width:610px;  position:relative; float:left;   margin-bottom:35px; height:45px; position: relative; line-height:25px;  float:left }
-
-
-span.plan_refactor ul.answer{ list-style:none;  margin:0px;   float: right; margin-right:35px; padding:0px; }
-span.plan_refactor ul.answer li{ float:left;  margin-right:10px; }
-div.form_refactoring{ width:515px; height:140px;  margin-left:45px; padding:20px; margin-top:15px; clear:left; }
-div.form_refactoring div.form_description{ background-image:image-url("file_attach_refactoring_small.png"); width:585px; float:left; height:30px; background-repeat:no-repeat;}
-div.form_refactoring span{ font-size:14px; color:#8e8e8e; padding:35px 0px 0px 160px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:90px 15px; }
-div.planrefactoring_submiting{  height:80px; width:550px; margin-left:100px; padding:40px 0px 60px 0px;  }
- 
- 
 /* PAGE CONCEPT REG_POSTVARPLAN.HTML */
 div.var_form1{ width:360px; height:315px;  margin-left:45px; margin-top:30px; padding:30px; line-height:45px; margin-bottom:25px; }
 div.var_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left;   width:86px; height:29px; }
@@ -235,9 +221,9 @@ div.var_form3 div.form_description{ background-image:image-url("comments.png"); 
 
 
 div.var_form4{ width:505px; height:140px;  margin-left:45px; margin-top:15px; padding:20px; margin-bottom:25px; }
-div.var_form4 div.number{ background-image:image-url("4_number_yellow_small.png"); float:left; width:54px; height:30px; float:right; margin:0px; padding:0px; background-repeat:no-repeat;}
-div.var_form4 div.form_description{ background-image:image-url("file_attach_refactoring_small.png"); width:449px; float:left; height:30px; background-repeat:no-repeat; margin:0px; padding:0px;}
-div.var_form4 span.dropzone_box{ font-size:14px; color:#8e8e8e; padding:40px 0px 0px 170px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:110px 10px; }
+div.attach_box{ padding: 20px 10px 10px 2px;}
+div.attach_box.plan_development div.number{ background-image:image-url("4_number_yellow_small.png"); float:left; width:54px; height:30px; float:left; margin:0px; padding:0px; background-repeat:no-repeat;}
+div.attach_box.plan_development div.form_description{ background-image:image-url("file_attach_refactoring_small.png"); width:449px; float:left; height:30px; background-repeat:no-repeat; margin:0px; padding:0px;}
 
 div.postvar_plan_submiting{  height:50px; width:550px; margin-left:60px; padding:20px 0px 20px 0px;}
 .submit_all_forms{ float:left; margin-right:25px;}
@@ -298,7 +284,7 @@ div.design_project_all div.copyright{ position:relative; float:left; width:340px
 div.design_project_all div.copyright:hover{  background-image:image-url("avtor_h-small.png"); }
 
 
-div.design_project_all ul.working_documents{ margin:0px;  list-style:none; height:auto; background-color:#e8edf1; overflow:auto; 
+div.design_project_all ul.working_documents{ margin:0px;  list-style:none; height:auto; background-color:#e8edf1; overflow:auto;
 padding:60px 12px 20px 25px; width:164px;}
 div.design_project_all ul.working_documents li{  width:150px; height:280px; position:static; float:left;  margin-bottom:10px; }
 div.design_project_all ul.working_documents li img{ width:150px; height:150px;}
@@ -330,7 +316,7 @@ div.copyright_text:nth-child(2){ margin-bottom:25px;}
 span.copyright_ques ul.answer{list-style:none;  margin:0px;  padding-left:10px; float: right;}
 span.copyright_ques ul.answer li{ float: none;   }
 
-span.copyright_ques ul.select{list-style:none;  margin:0px;   float: right; padding:0px; padding-right:110px;} 
+span.copyright_ques ul.select{list-style:none;  margin:0px;   float: right; padding:0px; padding-right:110px;}
 span.copyright_ques ul.select li{ float: none;  margin-right:10px; }
 
 div.copyright_ques_submiting{  height:80px; width:550px; padding:40px 0px 60px 0px; margin-left:70px;  }
@@ -680,12 +666,18 @@ div.border_left div.bottom_corner{background-color:#000; position: absolute; wid
 #msg_dialog div.left_bar span.heading{ width:200px; float:left; text-align: center; padding:5px 0px 10px 0px; font-size:18px}
 #msg_dialog div.left_bar span.photo{ width:46px; height:46px; border:1px solid #999999; float:left; background-color:#e6e6e6; margin-left:20px;}
 #msg_dialog div.left_bar span.photo img{ width:46px; height:46px;}
-#msg_dialog div.left_bar span.name{ width:120px; float:left; margin-left:10px; text-align:left; color:#5b5b5b;}  
+#msg_dialog div.left_bar span.name{ width:120px; float:left; margin-left:10px; text-align:left; color:#5b5b5b;}
 
+/*
 #msg_dialog div.left_bar span.heading_done{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}
 #msg_dialog ul.done{ width:147px; float:left; list-style:none; margin-left:30px; padding:0px;}
 #msg_dialog ul.done li{ float: left; font-size:14px; text-decoration:underline; padding-bottom:10px;}
-#msg_dialog ul.done li span{ width:147px; height:109px; border:1px solid #999999; float:left; background-color:#e6e6e6; background-repeat:no-repeat;}
+#msg_dialog ul.done li span.preview{ width:147px; height:109px; border:1px solid #999999; float:left; background-color:#e6e6e6; background-repeat:no-repeat;}
+*/
+#msg_dialog div.left_bar span.heading_done{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}
+#msg_dialog ul.done{ width:147px; float:left; list-style:none; margin-left:30px; padding:0px;}
+#msg_dialog ul.done li{ font-size:14px; text-decoration:underline; padding-bottom:10px;}
+#msg_dialog ul.done li span.preview{ width:147px; height:109px; border:1px solid #999999; background-color:#e6e6e6; background-repeat:no-repeat;}
 
 #msg_dialog div.left_bar span.heading_working{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}
 #msg_dialog ul.working{ width:147px; float:left; list-style:none; margin-left:30px; padding:0px;}
@@ -728,7 +720,7 @@ ul#navigation.blue li.last a{ color:#6d95c3; }
 
 #header ul li a:link span,#header ul li a:visited span{ color: #6f2d2d; font-size:13px; font-weight:bold;}
 #header ul li:nth-child(1){ background-color:#a8d868; width:130px; height:78px; left:0px; }  /* Варианты планировки */
-#header ul li:nth-child(1) span{  width:130px; height:78px; float:left; margin-top:15px;}    
+#header ul li:nth-child(1) span{  width:130px; height:78px; float:left; margin-top:15px;}
 #header ul li:nth-child(2){ background-color:#e6c941; width:160px; height:60px; left:138px; } /* Согласования перепланировок */
 #header ul li:nth-child(2) span{ width:160px; height:60px; float:left; margin-top:13px;}
 #header ul li:nth-child(3){ background-color:#f89f65; width:132px; height:78px; left:306px; }  /* Дизайн-проект */
@@ -807,7 +799,7 @@ box-shadow: inset 0 -7px 15px 1px #888;}
 moz-box-shadow: 2px -2px 10px #8c8c8c;
 -webkit-box-shadow: 2px -2px 10px #8c8c8c;
 box-shadow: 2px -2px 10px #8c8c8c;
- behavior:url("ie-css3.htc"); 
+ behavior:url("ie-css3.htc");
 }
 
 .rounded-corners {
@@ -853,7 +845,6 @@ div.var_form1 span.subtitle{ font-size:12px; position: relative; margin-left:70p
 
 input[type='radio']
 {
- 
     float: left;
     width:0px;
     height: 0px;

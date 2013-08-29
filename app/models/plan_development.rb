@@ -21,13 +21,10 @@ class PlanDevelopment < ActiveRecord::Base
   def family_composition_first_line=(val); @family_composition_first_line = val; mk_family_composition; end
   def family_composition_second_line=(val); @family_composition_second_line = val; mk_family_composition; end
 
-  def self.generate(user)
-    orderable = new(default_params) do |o|
-      o.build_order(client: user)
+  def self.generate
+    generate_order do
+      orderable.attachments.build
     end
-    orderable.save
-    orderable.attachments.build
-    orderable
   end
 
   def self.default_params

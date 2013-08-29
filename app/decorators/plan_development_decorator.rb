@@ -1,7 +1,7 @@
 class PlanDevelopmentDecorator < Draper::Decorator
   delegate_all
   decorates_association :order
-  #decorates_association :attachment
+#  decorates_association :attachments
 
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:

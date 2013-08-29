@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<link href="registered.css" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		function black_content(){
+			$("#black_content").css("height",$(document).height());
+			$("#black_content").css("display","block");
+		};
+		
+				$(".img_").mouseenter(
+		function(){
+		$(this).parent().find('.heading').addClass('heading_h');
+		$(this).parent().find('.black_opacity').addClass('black_opacity_on');
+		}
+		);
+		
+		$(".black_opacity").mouseleave(	
+		function(){
+		$('.black_opacity_on').removeClass('black_opacity_on');
+		$(this).parent().parent().find('.heading').removeClass('heading_h');
+		}
+		);
+		
+		});
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header">
+	<div class="headerLayer1" id="designService"></div>
+    <ul class="text_shadow_1">
+    <li class="shadow_x3"><a href="reg_postvarplan.html"><span>Разработка <br>вариантов планировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_planrefactoring.html"><span>Согласования перепланировок</span></a></li>
+    <li class="shadow_x3"><a href="reg_design_project.html"><span>Дизайн-проект</span></a></li>
+    <li class="shadow_x3"><a href="reg_engineering_systems.html"><span>Инженерные <br>системы и конструктив</span></a></li>
+    </ul>
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_index" class="rounded-corners_l4">	
+	<div id="main_content">	
+		 <div class="springs"></div> 
+         <div class="border_left"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+   		 <div class="border_right"><div class="top_corner"></div><div class="bottom_corner"></div></div>
+         
+        <div class="sidebar_left">		
+        		<div class="caption_left_menu light_green">Добро пожаловать,<br>Александр [Alex]</div>
+            	<ul id="left_menu">
+            	<li><a href="reg_my_orders.html">Мои заказы</a></li>
+                <li><a href="reg_personal_account.html">Лицевой счет</a></li>
+                <li><a href="#">Мои настройки</a></li>
+            	</ul>	
+            	<div class="heading_captions">ВЫБОР СПЕЦИАЛИСТОВ</div>
+                <ul id="menu_sub_left">
+            	<li><a href="#"><span>Архитекторы</span></a></li>
+                <li><a href="reg_designers.html"><span>Дизайнеры</span></a></li>
+                <li><a href="#"><span>Инженеры</span></a></li>
+                <li><a href="#"><span>Строительные фирмы</span></a></li>		
+                <li><a href="#"><span>Строительные бригады</span></a></li>											
+				</ul>
+         </div>
+        
+        <div class="page_contener">
+        	<div class="caption light_red">АВТОРСКОЕ СОПРОВОЖДЕНИЕ СТРОИТЕЛЬСТВА</div>
+            <div class="breaker"></div>
+        <!-----------------------------  ---------------->   
+		<div class="caution">Заполните заявку</div>       
+	
+    
+
+<form action="" id="all_forms">
+<div class="copyright_text">
+Выбор специализации Исполнителя<br>
+авторского сопровождения строительства:
+<span class="copyright_ques">
+<ul class="select">
+      	<li><input name="" type="checkbox" value="" id="architecture">
+    	<label for="architecture"> Архитектор </label></li>
+    	<li><input name="" type="checkbox" value="" id="designer">
+    	<label for="designer"> Дизайнер </label></li>
+        <li><input name="" type="checkbox" value="" id="engineer">
+    	<label for="engineer"> Инженер </label></li>
+</ul>
+</span>
+</div>
+
+<div class="copyright_text">
+Выбор варианта сотрудничества:
+<span class="copyright_ques">
+<ul class="answer">
+      	<li><input name="salary" type="radio" value="for_hours" id="for_hours" checked="checked" >
+    	<label for="for_hours"> Почасовая оплата </label></li>
+    	<li><input name="salary" type="radio" value="monthly_pay" id="monthly_pay" >
+    	<label for="monthly_pay"> Ежемесячная оплата </label></li>
+        <li><input name="salary" type="radio" value="by_agreement" id="by_agreement" >
+    	<label for="by_agreement"> Полный договор на авторское<br>сопровождение строительства </label></li>
+</ul>
+</span>
+</div>
+
+<div class="form_copyright border_x3 rounded-corners_l2 shadow_x1">
+<div class="form_description"></div>
+<span>Вы можете перетащить файлы сюда</span>
+</div>
+
+<div class="calculator border_x5 rounded-corners_l2 shadow_x2">
+<div class="form_description"></div>
+<span><input name="" type="text" class="total"></span>
+<span class="count"></span>
+</div>
+
+<div class="copyright_ques_submiting">
+<input type="image" src="cancelButton.png" alt="" class="submit_all_forms" onClick="$('#all_forms').trigger('reset');
+; return false;" />
+<input type="image" src="postButton.png" alt="Submit Form" class="submit_all_forms"/>
+</div>
+</form>
+
+ 
+  
+       <!---------------------------------------------- end page_contener -->
+        </div>
+        
+	</div>
+</div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+
+<!-- FOOTER START -->
+<div class="footer">
+	<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        
+        </div>
+	</div>
+</div> 
+ <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>

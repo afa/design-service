@@ -1,12 +1,17 @@
 class OrderDecorator < Draper::Decorator
   decorates_association :orderable
+  decorates_association :messages
+
   delegate_all
+  def to_s
+    h.link_to source.title, h.admin_order_path(source)
+  end
   def client_info
     client.try{|c| c.decorate.admin_link }
   end
   def orderable_info
     if source.orderable
-      h.link_to  source.orderable.class.model_name.underscore.humanize, h.url_for([:admin,source])
+      h.link_to  source.title, h.url_for([:admin,source.orderable])
     end
   end
   def executors_info

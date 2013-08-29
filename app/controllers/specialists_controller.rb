@@ -1,5 +1,6 @@
 class SpecialistsController < InheritedResources::Base
   has_scope :by_specialization, as: :specialization, only: [:index]
+  has_scope :by_order, only: [:index]
   load_and_authorize_resource
 
   before_filter only: [:show] do

@@ -73,6 +73,9 @@ class User < ActiveRecord::Base
   def moderator?
     %w{admin moderator}.include?(role.to_s)
   end
+  def main_moderator?
+    %w{admin}.include?(role.to_s)
+  end
 
   def messages
     Message.by_user(id)
