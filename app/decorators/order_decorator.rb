@@ -1,5 +1,7 @@
 class OrderDecorator < Draper::Decorator
   decorates_association :orderable
+  decorates_association :messages
+
   delegate_all
   def to_s
     h.link_to source.title, h.admin_order_path(source)

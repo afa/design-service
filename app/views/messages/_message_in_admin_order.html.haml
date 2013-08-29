@@ -1,0 +1,12 @@
+.message
+  %span.participants
+    = message.sender
+    \=>
+    = message.recipient
+  %span.datetime
+    = surround '(', ')' do
+      = I18n.l(message.created_at.to_date)
+      = I18n.l(message.created_at, format: :as_time)
+  .message= message.text
+  .moderation= render partial: 'moderations/moderation', locals: {moderation: message.moderation_info}
+  %br

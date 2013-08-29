@@ -10,7 +10,7 @@ ActiveAdmin.register Order do
   end
 
   show do
-    render partial: 'order'
+    render partial: 'order', locals: {order: resource}
   end
   form partial: 'form'
 end

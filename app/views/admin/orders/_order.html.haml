@@ -1,8 +1,11 @@
-= show_for resource do |s|
-  = s.attribute :orderable_info
-  = s.attribute :client_info
-  = s.attribute :executors_info
-  = s.attribute :completion_status
-  = s.attribute :price
-  = s.attribute :created_at
-  = s.attribute :updated_at
+.order
+  = show_for order do |s|
+    = s.attribute :orderable_info
+    = s.attribute :client_info
+    = s.attribute :executors_info
+    = s.attribute :completion_status
+    = s.attribute :price
+    = s.attribute :created_at
+    = s.attribute :updated_at
+.message_list
+  = render partial: 'messages/message_in_admin_order', collection: order.messages, as: :message, spacer_template: 'shared/hr_separator'
