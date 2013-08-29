@@ -65,6 +65,13 @@ DesignService::Application.routes.draw do
               end
   end
 
+  resources :purchases do
+   collection do
+    get :ok
+    get :bad
+   end
+  end
+
   get "welcome/index"
 
   # The priority is based upon order of creation:

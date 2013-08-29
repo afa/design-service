@@ -2,12 +2,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
-  before_filter -> {User.current = current_or_guest_user}
+  before_filter :get_current_user
+  #before_filter -> {User.current = current_or_guest_user}
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: exception.message
   end
 
+  def get_current_user
+   User.current = current_or_guest_user
+  end
   def page_subtitle
     result = I18n.t :"controller_titles.#{params[:controller]}.#{params[:action]}",  default: [:"controller_titles.#{params[:controller]}"]
     result.is_a?(String) ? result : "#{self.class.name.underscore}##{params[:action]}"
