@@ -1,4 +1,11 @@
 DesignService::Application.routes.draw do
+  resources :moderations, only: [:show] do
+    member do
+      post 'accept'
+      post 'reject'
+    end
+  end
+
   resources :attachments, only: [:create, :destroy, :show, :index] do
     member do
       get 'download'

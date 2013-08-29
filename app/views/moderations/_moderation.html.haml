@@ -1,0 +1,6 @@
+.moderation.wrapper
+  = moderation.status
+  .remote_link.post.accept{data: {url: accept_moderation_path(moderation)} } 
+    %span
+  .remote_link.post.reject{data: {url: reject_moderation_path(moderation)} } 
+    %span

@@ -52,6 +52,7 @@ gem 'carrierwave'
 gem 'mime-types'
 gem 'mini_magick', github: 'minimagick/minimagick'
 gem 'draper'
+gem 'jquery-ui-rails'
 gem 'activeadmin'
 
 group :development do
