@@ -8,3 +8,5 @@
 $(document).ready ->
   $('.presentage_blocks').each ->
     draw_percentage_box(this, '.value_present', '.presentage')
+  $('.postRequest').click (event)->
+    multipart_ajax_sendform($(event.target).closest('form').get(0), 'PUT', {})

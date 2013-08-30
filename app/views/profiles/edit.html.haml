@@ -1,6 +1,11 @@
-= simple_form_for resource do |f|
-  %div Имя: #{ f.input_field :name }
-  %div Фамилия: #{ f.input_field :surname }
-  %div Отчество: #{ f.input_field :middle_name }
-  = f.submit 'Сохранить'
-= link_to 'Сменить пароль', edit_user_registration_path
+= simple_form_for resource, url: url_for(profile_path), html:{class: 'profile'}, remote: true do |f|
+  .profile.border_x2.rounded-corners_l2.shadow_x1
+    .name
+      Имя: #{ f.input_field :name, class: 'textlines_default textline_l8' }
+    .surname
+      Фамилия: #{ f.input_field :surname, class: 'textlines_default textline_l8' }
+    .middlename
+      Отчество: #{ f.input_field :middle_name, class: 'textlines_default textline_l8' }
+  .form_submiting
+    %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+  = link_to 'Сменить пароль', edit_user_registration_path
