@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   has_many :received_messages, as: :recipient
   has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id', inverse_of: :sender
 
+  has_many :transactions
+
   has_many :orders, foreign_key: 'client_id'
   has_one :specialist
   has_one :avatar, as: :imageable_single, class_name: 'Photo'

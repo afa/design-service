@@ -4,6 +4,13 @@ class Specialist < ActiveRecord::Base
   belongs_to :specialist_group
   has_many :orders, as: :executor
 
+  has_many :transactions_inbound, :class_name => 'Transaction', :foreign_key => :destination_id
+  has_many :transactions_outbound, :class_name => 'Transaction', :foreign_key => :source_id
+
+  def transactions
+   transactions_inbound + transactions_outbound
+  end
+
   extend Enumerize
   enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
 

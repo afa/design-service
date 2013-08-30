@@ -7,6 +7,7 @@ class Order < ActiveRecord::Base
   has_many :payments
   has_many :purchases, :through => :payments
   has_many :attachments, as: :attachable
+  has_many :transactions
 
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor) { where(executor_id: executor.id, executor_type: executor.class.name) }
@@ -79,5 +80,14 @@ class Order < ActiveRecord::Base
   #end
   def unfinished_attachments
     orderable.attachment_kinds - attachments.pluck(:kind)
+  end
+
+  def advance_price
+    price && price * 0.5
+  end
+
+  # FIX ME: refactor
+  def amount_paid
+    purchases.where(state: paid).inject{|sum,purchase| sum + purchase.payments.where(state: paid).inject(0.0){|r,payment| r + payment.amount } }
   end
 end
