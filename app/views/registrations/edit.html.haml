@@ -1,0 +1,10 @@
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { method: :put, novalidate: true }) do |f|
+  .edit_password.border_x2.rounded-corners_l2.shadow_x1
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %p Currently waiting confirmation for: #{ resource.unconfirmed_email }
+
+    %div Новый пароль: #{ f.input_field :password, class: 'textlines_default textline_l7' }
+    %div Подтвердите пароль: #{ f.input_field :password_confirmation, class: 'textlines_default textline_l7' }
+    %div Текущий пароль: #{ f.input_field :current_password, class: 'textlines_default textline_l7' }
+  .form_submiting
+    %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
