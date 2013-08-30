@@ -2,10 +2,13 @@
   = show_for order do |s|
     = s.attribute :orderable_info
     = s.attribute :client_info
-    = s.attribute :executors_info
+    = s.attribute :executor
     = s.attribute :completion_status
-    = s.attribute :price
     = s.attribute :created_at
     = s.attribute :updated_at
+  = simple_form_for [:admin, resource] do |f|
+    = f.association :executor, collection: SpecialistDecorator.decorate_collection(Specialist.all)
+    = f.input :price
+    = f.submit
 .message_list
   = render partial: 'messages/message_in_admin_order', collection: order.messages, as: :message, spacer_template: 'shared/hr_separator'

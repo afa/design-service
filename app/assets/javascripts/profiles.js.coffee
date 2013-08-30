@@ -4,7 +4,15 @@
 
 //= require completion_percent
 //= require orders
+//= require ajax_submit
 
 $(document).ready ->
   $('.presentage_blocks').each ->
     draw_percentage_box(this, '.value_present', '.presentage')
+  $('.postRequest').click (event)->
+    ajax_sendform($(event.target).closest('form'), 'PUT',
+      success: ->
+        alert('Информация успешно сохранена');
+      error: ->
+        alert('Не удалось поменять ваш профиль')
+    )

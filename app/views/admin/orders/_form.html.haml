@@ -1,5 +1,5 @@
 = simple_form_for [:admin, resource] do |f|
-  = f.association :executors, collection: SpecialistDecorator.decorate_collection(Specialist.all)
+  = f.association :executor, collection: SpecialistDecorator.decorate_collection(Specialist.all)
   = f.input :completion_status
   = f.input :price
 
