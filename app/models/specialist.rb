@@ -11,6 +11,8 @@ class Specialist < ActiveRecord::Base
    transactions_inbound + transactions_outbound
   end
 
+  def specialist_groups; [specialist_group]; end
+
   extend Enumerize
   enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
 

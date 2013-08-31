@@ -62,6 +62,9 @@ ru:
     orders: 'Заказы'
     registrations:
       edit: 'Смена пароля'
+    devise/sessions:
+      new: 'Вход'
+      create: 'Регистрация'
   specialist_controller_titles:
     profiles:
       orders: 'МОИ ПРОЕКТЫ'
