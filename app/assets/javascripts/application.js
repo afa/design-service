@@ -18,3 +18,4 @@
 
 //= require jquery.corner
 //= require login_box
+//= require jquery.slimscroll
