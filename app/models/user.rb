@@ -11,12 +11,6 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
-
-
-  def specialist?
-    role.specialist? || role.admin?
-  end
-
   has_many :received_messages, as: :recipient
   has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id', inverse_of: :sender
 
@@ -68,6 +62,9 @@ class User < ActiveRecord::Base
   end
   def client?
     role.to_s == 'client'
+  end
+  def specialist?
+    role.specialist? || role.admin?
   end
   def moderator?
     %w{admin moderator}.include?(role.to_s)
