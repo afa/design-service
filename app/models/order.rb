@@ -11,10 +11,15 @@ class Order < ActiveRecord::Base
 
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor) { where(executor_id: executor.id, executor_type: executor.class.name) }
+  scope :accepted_to_start_work, ->{ where(accepted_to_start_work_arel) }
+  scope :at_least_advance_paid, -> { where(at_least_advance_paid_arel) }
+  scope :in_work, -> { where(in_work_arel) }
+  scope :not_in_work, -> { where(in_work_arel.not) }
 
   state_machine :work_state, initial: :draft do
     state :draft
-    state :specialist_suggested
+    state :moderator_suggested
+    state :specialist_agreed
     state :client_agreed
     state :in_work
     state :work_accepted
@@ -23,10 +28,12 @@ class Order < ActiveRecord::Base
       transition :draft => :draft
     end
     event :set_price do
-      transition :draft => :specialist_suggested
+      transition [:draft, :moderator_suggested] => :moderator_suggested
     end
+
     event :agree do
-      transition :specialist_suggested => :client_agreed
+      transition :moderator_suggested => :specialist_agreed, if: ->{ User.current.specialist? }
+      transition :specialist_agreed => :client_agreed, if: ->{ User.current.client? }
     end
 
     event :start_work do
@@ -89,5 +96,16 @@ class Order < ActiveRecord::Base
   # FIX ME: refactor
   def amount_paid
     purchases.where(state: paid).inject{|sum,purchase| sum + purchase.payments.where(state: paid).inject(0.0){|r,payment| r + payment.amount } }
+  end
+
+private
+  def self.accepted_to_start_work_arel
+    arel_table[:work_state].eq_any([:client_agreed, :in_work, :work_accepted])
+  end
+  def self.at_least_advance_paid_arel
+    arel_table[:payment_state].eq_any([:paid, :advance_paid])
+  end
+  def self.in_work_arel
+    at_least_advance_paid_arel.or(accepted_to_start_work_arel)
   end
 end
