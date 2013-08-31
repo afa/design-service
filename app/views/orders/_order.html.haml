@@ -4,7 +4,13 @@
     Наименование:
     %span= order.title
 
-  - if order.paid?
-    = render partial: 'orders/order_paid', locals: {order: order}
-  - else
-    = render partial: 'orders/order_unpaid', locals: {order: order}
+  - if User.current.client?
+    - if order.paid?
+      = render partial: 'orders/clients/order_paid', locals: {order: order}
+    - else
+      = render partial: 'orders/clients/order_unpaid', locals: {order: order}
+  - elsif User.current.specialist?
+    - if order.paid?
+      = render partial: 'orders/specialists/order_paid', locals: {order: order}
+    - else
+      = render partial: 'orders/specialists/order_unpaid', locals: {order: order}

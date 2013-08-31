@@ -1,0 +1,31 @@
+.artists
+  Исполнители:
+  %ul
+    %li= order.executor
+.completion
+  %span.tit Завершения:
+  %ul
+    %li будет определена после оплаты
+    %li= order.time_to_finish
+.status
+  Состояние:
+  %span= order.title
+.pay_now
+.msg
+  %span
+    %a{:href=>"#", :data => {:msg_url => "#{order_messages_path(order)}"} } Новое сообщение
+.completed
+  завершено
+  .presentage_blocks
+    %span.presentage
+      %span.value_present #{order.completion_percent}%
+      %span.bar
+.documents
+  Документы:
+  %ul
+    %li
+      %a{:href => ""} Договор
+    %li
+      %a{:href => ""} Акты
+    %li
+      %a{:href => ""} Оплата
