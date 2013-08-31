@@ -38,7 +38,6 @@ DesignService::Application.routes.draw do
   end
 
   resource :profile do
-    get 'specialists'  # is it actual page yet?
     get 'orders'
   end
 
