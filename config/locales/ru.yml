@@ -62,6 +62,9 @@ ru:
     orders: 'Заказы'
     registrations:
       edit: 'Смена пароля'
+  specialist_controller_titles:
+    profiles:
+      orders: 'МОИ ПРОЕКТЫ'
   controller_title_classes: # class for header in unregistered mode
                             # TODO: make class for specialists page and other pages available to unregistered users
     plan_developments: 'post_varplan'

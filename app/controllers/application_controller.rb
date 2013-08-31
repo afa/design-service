@@ -12,14 +12,21 @@ class ApplicationController < ActionController::Base
   def get_current_user
    User.current = current_or_guest_user
   end
+
   def page_subtitle
     result = I18n.t :"controller_titles.#{params[:controller]}.#{params[:action]}",  default: [:"controller_titles.#{params[:controller]}"]
     result.is_a?(String) ? result : "#{self.class.name.underscore}##{params[:action]}"
   end
+
+  def specialist_page_subtitle
+    result = I18n.t :"specialist_controller_titles.#{params[:controller]}.#{params[:action]}", default: [:"controller_titles.#{params[:controller]}.#{params[:action]}", :"specialist_controller_titles.#{params[:controller]}", :"controller_titles.#{params[:controller]}"]
+    result.is_a?(String) ? result : "#{self.class.name.underscore}##{params[:action]}"
+  end
+
   def page_subtitle_class
     I18n.t :"controller_title_classes.#{params[:controller]}",  default: ''
   end
-  helper_method :page_subtitle, :page_subtitle_class
+  helper_method :page_subtitle, :page_subtitle_class, :specialist_page_subtitle
   protected :page_subtitle, :page_subtitle_class
 
   def configure_permitted_parameters
@@ -41,7 +48,15 @@ class ApplicationController < ActionController::Base
   private
 
   def choose_layout
-    user_signed_in? ? "registered_layout" : "unregistered_layout"
+    if user_signed_in?
+      if User.current.specialist?
+        "specialist_layout"
+      else
+        "registered_layout"
+      end
+    else
+      "unregistered_layout"
+    end
   end
 
   # if user is logged in, return current_user, else return guest_user
