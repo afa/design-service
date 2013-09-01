@@ -19,3 +19,4 @@
 //= require jquery.corner
 //= require login_box
 //= require jquery.slimscroll
+//= require lightbox/lightbox-2.6.min.js
