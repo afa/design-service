@@ -1,0 +1,188 @@
+!!!
+%html
+  %head
+    %title Дизайн сервис.
+    %link{:href => "registered.css", :rel => "stylesheet", :type => "text/css"}/
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+  %script{:language => "javascript", :src => "jquery-1.10.1.js"}
+  %script{:language => "javascript", :src => "jquery.corner.js"}
+  /[if lt IE 9]
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+  :javascript
+    $(function() {
+    function black_content(){
+    	$("#black_content").css("height",$(document).height());
+    	$("#black_content").css("display","block");
+    };		
+    });
+    
+    function show_next(element){
+    var checker = $(element).is(':checked');
+    var li_near = $(element).parent().next('li');
+    if(checker==true){
+    li_near.css("display","block");
+    }
+    else{
+    li_near.css("display","none");
+    }
+    }
+  %body
+    %noindex
+      / ------------------------------------------------- BLACK_PALET START--------------
+      #black_content
+      / ------------------------------------------------- BLACK_PALET END--------------
+      .twoColFixRtHdr
+        .border_ornements
+          / ------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+          .header_top
+            / ------------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+            .coconut_leaves
+              / --------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+              #container
+                #header
+                  #designService.headerLayer1
+                  %ul.text_shadow_1
+                    %li.shadow_x3
+                      %a{:href => "reg_postvarplan.html"}
+                        %span
+                          Разработка
+                          = succeed "\u{432}\u{430}\u{440}\u{438}\u{430}\u{43d}\u{442}\u{43e}\u{432}" do
+                            %br/
+                          планировок
+                    %li.shadow_x3
+                      %a{:href => "reg_planrefactoring.html"}
+                        %span Согласования перепланировок
+                    %li.shadow_x3
+                      %a{:href => "reg_design_project.html"}
+                        %span Дизайн-проект
+                    %li.shadow_x3
+                      %a{:href => "reg_engineering_systems.html"}
+                        %span
+                          Инженерные
+                          = succeed "\u{441}\u{438}\u{441}\u{442}\u{435}\u{43c}\u{44b}" do
+                            %br/
+                          и конструктив
+                / ------------------------ END HEADER --------------------------------------------------------------------------------------------------
+                #maincontent_index.rounded-corners_l4
+                  #main_content
+                    .springs
+                    .border_left
+                      .top_corner
+                      .bottom_corner
+                    .border_right
+                      .top_corner
+                      .bottom_corner
+                    .sidebar_left
+                      .caption_left_menu.light_green
+                        Добро пожаловать,
+                        %br>/
+                        Александр [Alex]
+                      %ul#left_menu
+                        %li
+                          %a{:href => "reg_my_orders.html"} Мои заказы
+                        %li
+                          %a{:href => "reg_personal_account.html"} Лицевой счет
+                        %li
+                          %a{:href => "#"} Мои настройки
+                      .heading_captions ВЫБОР СПЕЦИАЛИСТОВ
+                      %ul#menu_sub_left
+                        %li
+                          %a{:href => "#"}
+                            %span Архитекторы
+                        %li
+                          %a{:href => "reg_designers.html"}
+                            %span Дизайнеры
+                        %li
+                          %a{:href => "#"}
+                            %span Инженеры
+                        %li
+                          %a{:href => "#"}
+                            %span Строительные фирмы
+                        %li
+                          %a{:href => "#"}
+                            %span Строительные бригады
+                    .page_contener
+                      .caption.light_red ИНЖЕНЕРНЫЕ СИСТЕМЫ И КОНСТРУКТИВ
+                      .breaker
+                      / ---------------------------  --------------
+                      .caution Заполните заявку
+                      %form#all_forms{:action => ""}
+                        .engineering_systems_form1.border_xs.rounded-corners_l2.shadow_x1
+                          .number
+                          .form_description
+                          %span{:style => "float:left; width:400px; padding-bottom:15px;"}
+                            Адрес:
+                            %input.textlines_default.textline_l8{:name => "", :type => "text"}/
+                            Этаж:
+                            %input.textlines_default.textline_l4{:name => "", :type => "text"}/
+                            Подъезд/Секция:
+                            %input.textlines_default.textline_l4{:name => "", :type => "text"}/
+                          .head_part
+                          .file_attaching.border_x5.rounded-corners_l3
+                            %span.attach Вы можете перетащить файлы сюда
+                            %span.caution
+                              Обязательно необходима планировка
+                              = succeed "\u{441}" do
+                                %br/
+                              расстановкой мебели и сантехнического оборудования
+                        .engineering_systems_form2.border_xg.rounded-corners_l2.shadow_x1
+                          .form_description
+                          .number
+                          %span.select_ Выбор разделов:
+                          %ul
+                            %li#sss
+                              %input#first{:name => "", :onclick => "show_next(this);", :type => "checkbox", :value => "1"}/
+                              %label{:for => "first"} Электрооборудование и электроосвещение &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(проект ЭОМ для согласования)
+                            %li.caution
+                              %span>
+                              Необходим план расстановки светильников, электрооборудования,розеток и других электроприборов
+                            %li
+                              %input#second{:name => "", :type => "checkbox", :value => "1"}/
+                              %label{:for => "second"} Водоснабжение и канализация - ВК
+                            %li
+                              %input#third{:name => "", :type => "checkbox", :value => "1"}/
+                              %label{:for => "third"} Отопление - ОВ-I
+                            %li
+                              %input#forth{:name => "", :type => "checkbox", :value => "1"}/
+                              %label{:for => "forth"} Вентиляция - ОВ-II
+                            %li
+                              %input#fifth{:name => "", :type => "checkbox", :value => "1"}/
+                              %label{:for => "fifth"} Слаботочные системы - СС
+                            %li
+                              %input#sixth{:name => "", :onclick => "show_next(this);", :type => "checkbox", :value => "1"}/
+                              %label{:for => "sixth"} Конструктивные решения - КР
+                            %li.caution
+                              %span>
+                              Необходим план, где указаны привязки и размеры проемов
+                        .engineering_systems_form3.border_x3.rounded-corners_l2.shadow_x1
+                          .number
+                          .form_description
+                          %input.engineering_systems_form3_default.textline_l12{:name => "", :type => "text"}/
+                          %input.engineering_systems_form3_default.textline_l12{:name => "", :type => "text"}/
+                          %input.engineering_systems_form3_default.textline_l12{:name => "", :type => "text"}/
+                        .engineering_systems_submiting
+                          %input.submit_all_forms{:alt => "", :onclick => "$('#all_forms').trigger('reset');\n; return false;", :src => "cancelButton.png", :type => "image"}/
+                          %input.submit_all_forms{:alt => "Submit Form", :src => "postButton.png", :type => "image"}/
+                      / -------------------------------------------- end page_contener
+                / ------------------------------------------------- -----------------------------------------------END maincontent_index
+              / ------------------------------------------------- --------------------------------------------------------END container-------
+              / FOOTER START
+              .footer
+                .footer_elements
+                  .contact_with_us
+                    Связаться с нами:
+                    %br/
+                    Тел: +7 (495) 123-45-67
+                    %br/
+                    E-mail: info@design-servis.ru
+                  .rights Дизайн-Сервис©2О12
+                  .partners
+                    Партнеры:
+                    %br/
+                    Банк-Идей
+                    %br/
+                    www-студия
+              / -------------- FOOTER END -------
+            / coconut_leaves ----------------------------------------------------- END CLASS-
+          / header_top  ----------------------------------------------------- END CLASS-
+        / border_ornements ---------------------------------------------------- END CLASS
