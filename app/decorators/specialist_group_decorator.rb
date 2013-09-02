@@ -20,4 +20,7 @@ class SpecialistGroupDecorator < Draper::Decorator
   def avatar(options = {})
     h.image_tag((source.avatar || source.build_avatar).photo.avatar_size.url, options)
   end
+  def number_of_participants
+    "#{source.number_of_participants} участников"
+  end
 end
