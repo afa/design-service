@@ -12,6 +12,8 @@ class Ability
     can :read, ReplanningEndorsement.by_client(user.id).readonly(false)
     can :read, Specialist
 
+    can :read, Message.by_user(user.id)
+
     if user.role == 'client'
     end
     if user.role == 'specialist'

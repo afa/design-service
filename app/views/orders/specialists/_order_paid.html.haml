@@ -1,17 +1,11 @@
-.artists
-  Исполнители:
-  %ul
-    %li= order.executor
 .completion
   %span.tit Завершения:
   %ul
-    %li будет определена после оплаты
-    %li= order.time_to_finish
+    %li.payid= order.time_to_finish
 .status
   Состояние:
-  %span Дизайн кухни+гостиной
+  %span В работе
 .pay_now
-  = link_to 'Оплатите заказ', replenishment_personal_account_path
 .msg
   %span
     %a{:href=>"#", :data => {:msg_url => "#{order_messages_path(order)}"} } Новое сообщение

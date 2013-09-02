@@ -1,4 +1,3 @@
-//= require jquery.slimscroll
 //= require ajax_submit
 
 window.register_chat = ->

@@ -3,13 +3,20 @@ class ProfilesController < InheritedResources::Base
   before_filter :authenticate_user!
   respond_to :json
 
-  def specialists
-    @specialists = current_user.liked_specialists.decorate
-  end
+  ## This code can't work in this controller, but it should be moved to nested orders controller
+  ## (and #orders action will be simplified to a default method, especially if N+1 problem will be solved)
+  # has_scope :in_work, :type => :boolean, only: [:orders]
+  # has_scope :not_in_work, :type => :boolean, only: [:orders]
 
   def orders
-    #@orderable = current_user.orders.map(&:orderable).map(&:decorate)
-    @orderable = current_user.orders.decorate
+    orders = current_user.orders.includes(:orderable)
+    if params[:in_work]
+      @orderable = orders.in_work.decorate
+    elsif params[:not_in_work]
+      @orderable = orders.not_in_work.decorate
+    else
+      @orderable = orders.decorate
+    end
   end
 protected
   def begin_of_association_chain
