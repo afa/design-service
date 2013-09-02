@@ -1,1 +1,2 @@
-= render partial: 'specialist_groups/specialist_group_preview', collection: collection
+#specialization_data{:data => {:specialization => specialist_group_specialization} }
+= render partial: 'specialist_groups/specialist_group_preview', collection: collection, as: :specialist_group

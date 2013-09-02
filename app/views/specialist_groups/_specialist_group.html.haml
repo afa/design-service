@@ -1,26 +1,23 @@
-.specialistMenu
-  .specialistAva
+.selected_designer
+  %a{:href => "#{specialist_groups_path(specialization: specialist_group.specialization)}"}
+    .go_back
+  .designer_no
     = specialist_group.avatar
-  .specialistStats
-    Отзывы об исполнителе:
-    %span.text1= specialist_group.name
-    %span.positiveReviews=  specialist_group.positive_feedback
-    %span.neutralReviews=  specialist_group.neutral_feedback
-    %span.negativeReviews=  specialist_group.negative_feedback
-    %br/
-    Выполнено работ:
-    %span{:completedorders => ""}=  specialist_group.number_of_completed_orders
-  .specialistDescription=  specialist_group.description
-  .specialistButtonsContainer
-    = link_to new_specialist_group_message_path(specialist_group) do
-      #writeTo.specButton
-        .hint
-          Написать
-    = link_to new_specialist_group_message_path(specialist_group) do
-      #order.specButton
-        .hint
-          Заказать
+    %span= specialist_group.rating
+  .designer_info
+    %div
+      %span= specialist_group.union_name
+      %span
+        = surround '[', ']' do
+          = specialist_group.name
+    %div= specialist_group.description
+  %a{:href => "#"}
+    .send_request
+.rel_portfolio Портфолио
+%span.project_breaker
 
-- specialist_group.portfolio_items.group_by(&:specialization).each do |category, portfolio_items|
-  .PortfolioCategory{class: "#{category.camelize}Category"}
-    = render partial: 'specialist_groups/portfolio_item', collection: portfolio_items
+- specialist_group.portfolios.each_with_index do |portfolio, index|
+  %ul.project_selected_designer
+    %li= portfolio.name || "ПРОЕКТ #{index+1}"
+    %li= portfolio.description
+  = render partial: 'shared/portfolio', locals: { portfolio_items: portfolio.portfolio_items.first(8), example_set: portfolio.id, ul_class: 'rel_portfolio' }
