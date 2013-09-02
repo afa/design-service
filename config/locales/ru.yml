@@ -55,6 +55,7 @@ ru:
     plan_developments: 'Разработка вариантов планировок'
     replanning_endorsements: 'Согласование перепланировок'
     specialists: 'Специалисты'
+    specialist_groups: 'Специалисты'
     personal_accounts: 'ЛИЦЕВОЙ СЧЕТ'
     profiles:
       orders: 'МОИ ЗАКАЗЫ'
@@ -95,9 +96,19 @@ ru:
     building_brigades:
       title: 'Строительные бригады'
       singular: 'Строительная бригада'
+    not_a_specialists:
+      title: 'Не специалист'
+      singular: 'Не специалист'
     title: 'Специалисты'
   specialist_groups:
     title: 'Специалисты'
+    union_name:
+      architector: 'Союз'
+      engineer: 'Команда'
+      designer: 'Союз'
+      building_company: 'Фирма'
+      building_brigade: 'Бригада'
+      not_a_specialist: 'Не специалист'
   profile:
     title: 'Профиль'
     singular: 'Профиль'
@@ -205,12 +216,14 @@ ru:
         designers: 'Дизайнер'
         building_companies: 'Строительная компания'
         building_brigades: 'Строительная бригада'
+        not_a_specialists: 'Не специалист'
       plural:
         architectors: 'Архитекторы'
         engineers: 'Инженеры'
         designers: 'Дизайнеры'
         building_companies: 'Строительные компании'
         building_brigades: 'Строительные бригады'
+        not_a_specialists: 'Не специалисты'
   enumerize:
     specialization:
       architector: 'Архитектор'
