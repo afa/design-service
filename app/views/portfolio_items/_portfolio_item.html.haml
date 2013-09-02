@@ -2,8 +2,8 @@
   .workCaption
     = portfolio_item.title
   .showMeWorkThere
-    = portfolio_item.preview_photo.photo.url
-    = image_tag portfolio_item.preview_photo.photo.thumb.url, class: 'portWorkPreview', alt: portfolio_item.preview_photo.title
+    = portfolio_item.photo.url
+    = image_tag portfolio_item.photo.thumb.url, class: 'portWorkPreview', alt: portfolio_item.preview_photo.title
   .workType
     = portfolio_item.specialization_text
     %span.workRate
