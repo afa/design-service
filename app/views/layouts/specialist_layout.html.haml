@@ -24,9 +24,15 @@
                 #maincontent_specialist.rounded-corners_l4
                   #main_content_specialist_inside
                     .sidebar_left_specialist
-                      .name.rounded-corners NAME
+                      .name.rounded-corners
+                        = greating_name(current_user)
+                        = surround '(', ')' do
+                          = link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete)
+
                       .events.rounded-corners
                         = render 'layouts/events'
+                      .groups.rounded-corners
+                        = render partial: 'layouts/groups', locals: {specialist_groups: SpecialistGroupDecorator.decorate_collection(current_user.specialist_groups)}
                     .page_contener_specialist
                       .header_page_specialist.green_header= specialist_page_subtitle
                       = yield

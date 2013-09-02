@@ -1,6 +1,6 @@
 %span.heading_event ПОСЛЕДНИЕ СОБЫТИЯ
 %ul.last_events
   - current_user.events[0...-1].each do |event|
-    %li= render 'shared/events', locals:{event: event}
+    %li= render partial: 'shared/events', locals:{event: event}
   - unless current_user.events.empty?
-    %li.last= render 'shared/events', locals:{event:  current_user.events[-1]}
+    %li.last= render partial: 'shared/events', locals:{event:  current_user.events[-1]}

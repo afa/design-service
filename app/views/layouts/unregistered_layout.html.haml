@@ -21,7 +21,6 @@
               #container
                 = render 'layouts/header'
                 #maincontent_default
-
                   .page_content_default
                     .collage_design.mode1
                       = render 'layouts/specialists'
@@ -29,5 +28,5 @@
                       %span{:class => page_subtitle_class}= page_subtitle
                     = yield
                     #block_menu_default
-                      = render 'layouts/worktypes'
+                      = render partial: 'layouts/worktypes'
               = render "layouts/footer"

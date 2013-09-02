@@ -18,7 +18,31 @@ private
         I18n.t "specialists.#{params[:specialization].pluralize}.title"
       end
     else
-      I18n.t "specialists.#{resource.specialization.pluralize}.title"
+      I18n.t "specialists.#{resource.specialization.pluralize}.title" rescue 'Специалисты'
     end
   end
+
+  def page_subtitle_class
+    'designers'
+
+    # FIX ME -- code behind is absolutely correct but css understands only designers.
+    # One should either remove this code and use in css and here .specialists class
+    # or customize classes on each specialization basis
+    #
+    # specialist_group_specialization.try(&:pluralize)
+  end
+
+  def specialist_group_specialization
+    if params[:action] == 'index'
+      if !params[:specialization] || params[:specialization].match(/^all$/i)
+        'specialist'
+      else
+        params[:specialization]
+      end
+    else
+      resource.specialization
+    end
+  end
+
+  helper_method :specialist_group_specialization
 end

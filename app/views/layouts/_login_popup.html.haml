@@ -23,7 +23,7 @@
         %span *
       .text_fields= f.input_field :password_confirmation, class: 'reg_client_tfeild'
       .control
-        %input.submit_button{:alt => "Submit Form", :src => asset_path("ok_button.png"), :type => "image"}/
+        %input.submit_button{:alt => "Submit Form", :src => asset_path("ok_button.png"), :type => "image"}
   #login.rounded-corners.border_x2.shadow_x1
     .close_fly_window
     = simple_form_for(@user ||= User.new, as: :user, :url => session_path(:user)) do |f|
@@ -36,5 +36,5 @@
         %span
           - if devise_mapping.recoverable? && controller_name != 'passwords'
             = link_to "Забыли?", new_password_path(:user)
-        %input.login_button{:alt => "Submit Form", :src => asset_path("ok_button_green.png"), :type => "image"}/
+        %input.login_button{:alt => "Submit Form", :src => asset_path("ok_button_green.png"), :type => "image"}
 / ------------------------------------------------- BLACK_PALET END--------------

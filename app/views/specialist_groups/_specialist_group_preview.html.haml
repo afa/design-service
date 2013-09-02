@@ -1,18 +1,17 @@
-.blocks_designers
-  .info_type1
-    = specialist_group_preview.avatar height: 39, width: 38
-    %span= specialist_group_preview.rating
-  .info_type2
-    %span.text1= link_to specialist_group_preview.name, specialist_group_preview
-    %span.text2= specialist_group_preview.description
-    %span{class:['status', specialist_group_preview.status]}
-      .button
-      = specialist_group_preview.free?
-  .info_type3
-    %span.dark_gray Рекомендации:
-    %span.green=  specialist_group_preview.positive_feedback
-    %span.gray= specialist_group_preview.neutral_feedback
-    %span.red=  specialist_group_preview.negative_feedback
-
-.work_samples
-  = render partial: 'portfolio_items/preview_photo', collection: specialist_group_preview.portfolio_items.first(3)
+.designers_list
+  .designer_no
+    = specialist_group.avatar
+    %span= specialist_group.rating
+  .designer_info
+    %div
+      = link_to specialist_group_path(specialist_group) do
+        %span= specialist_group.union_name
+        %span
+          = surround '[', ']' do
+            = specialist_group.name
+    %div= specialist_group.description
+  .portfolio
+    %img{:src => "#{asset_path("portfolio.png")}"}
+    %span
+      = link_to 'Портфолио', specialist_group_path(specialist_group)
+= render partial: 'shared/portfolio', locals: { portfolio_items: specialist_group.portfolio_items.first(3), example_set: specialist_group.id, ul_class: 'portfolio' }

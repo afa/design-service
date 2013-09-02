@@ -1,0 +1,11 @@
+%span.heading_groups МОИ ГРУППЫ
+%ul.my_groups
+  - specialist_groups.each do |specialist_group|
+    %li
+      .img_group
+        %span.img_group_border
+        %img.group_image{:src => "#{ asset_path("designer_icon_not_reg.jpg") }"}
+      %ul
+        = link_to specialist_group_path(specialist_group) do
+          %li= specialist_group.name
+          %li= specialist_group.number_of_participants
