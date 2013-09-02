@@ -53,13 +53,13 @@ end
 
 puts "specialists created:\n#{spec_1}\n#{spec_2}\n#{spec_3}\n#{spec_4}\n"
 
-group_1 = SpecialistGroup.where(name: 'Радуга', description: 'Покрашу усё', specialization: 'building_brigade').first_or_create
+group_1 = SpecialistGroup.where(name: 'Радуга', description: 'Покрашу усё', specialization: 'building_brigade', quality_rating: 6, reliability_rating: 'A').first_or_create
 group_1.specialists << spec_1.specialist
 
-group_2 = SpecialistGroup.where(name: 'Суперкоманда', description: 'Сделаю нууу полный ремонт', specialization: 'engineer').first_or_create
+group_2 = SpecialistGroup.where(name: 'Суперкоманда', description: 'Сделаю нууу полный ремонт', specialization: 'engineer', quality_rating: 4, reliability_rating: 'B').first_or_create
 group_2.specialists << spec_2.specialist
 
-group_3 = SpecialistGroup.where(name: 'Дизайнутые дизайнёры', description: 'Сабж, как и было сказано', specialization: 'designer').first_or_create
+group_3 = SpecialistGroup.where(name: 'Дизайнутые дизайнёры', description: 'Сабж, как и было сказано', specialization: 'designer', quality_rating: 5, reliability_rating: 'D').first_or_create
 group_3.specialists << spec_3.specialist << spec_4.specialist
 puts "specialist groups created:\n#{group_1}\n#{group_1.specialists}\n\n#{group_2}\n#{group_2.specialists}\n\n#{group_3}\n#{group_3.specialists}\n"
 
