@@ -26,7 +26,7 @@ private
     'designers'
 
     # FIX ME -- code behind is absolutely correct but css understands only designers.
-    # One should either remove this code and use in css and here .specialists class 
+    # One should either remove this code and use in css and here .specialists class
     # or customize classes on each specialization basis
     #
     # specialist_group_specialization.try(&:pluralize)
