@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
     "#{name} #{surname}"
   end
 
+  def specialist_groups
+    try(&:specialist).try(&:specialist_groups) || []
+  end
+
   def self.new_guest
     username = "guest_#{Time.now.to_i}_#{rand(99)}"
     user = User.new(username: username, email: "#{username}@design-service.ru", profile_attributes: {name: 'Гость'}) do |u|
