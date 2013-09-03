@@ -1,14 +1,24 @@
-.RegistrationContainer
-  .RegisterCaption
-  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: 'registration'}) do |f|
-    /= f.error_notification
-    .Legend
-      = f.input :username, :required => true, :autofocus => true, placeholder: '(латинские буквы и цифры)'
-      = f.input :email, :required => true
-      = f.input :password, :required => true
-      = f.input :password_confirmation, :required => true, input_html: {class: 'twoLines'}
-    /<div class="Agreement"> Я принимаю <a href="#"> пользовательское соглашение </a> <input type="checkbox" name="eula"/></div>
-    .ok
-      = f.submit ''
-
-/= render "devise/shared/links"
+#black_content
+  #register.rounded-corners.border_x1.shadow_x1
+    = simple_form_for(@user ||= User.new, as: :user, :url => registration_path(:user)) do |f|
+      .head_register
+      .info
+        Логин:
+        %span *
+      .text_fields
+        %span.caution (латинские символы и цифры)
+        = f.input_field :username, class: 'reg_client_tfeild'
+      .info
+        E-mail:
+        %span *
+      .text_fields= f.input_field :email, class: 'reg_client_tfeild'
+      .info
+        Пароль:
+        %span *
+      .text_fields= f.input_field :password, class: 'reg_client_tfeild'
+      .info
+        Повторите&nbsp;&nbsp; пароль:
+        %span *
+      .text_fields= f.input_field :password_confirmation, class: 'reg_client_tfeild'
+      .control
+        %input.submit_button{:alt => "Submit Form", :src => asset_path("ok_button.png"), :type => "image"}

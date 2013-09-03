@@ -65,6 +65,7 @@ ru:
     orders: 'Заказы'
     registrations:
       edit: 'Смена пароля'
+      create: 'Регистрация'
     devise/sessions:
       new: 'Вход'
       create: 'Регистрация'

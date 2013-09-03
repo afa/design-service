@@ -9,3 +9,6 @@ $(document).ready ->
       error: ->
         alert('Не удалось поменять ваш профиль')
     )
+  $("#black_content").css("height",$(document).height());
+  $("#black_content").show()
+  $('#register').show()
