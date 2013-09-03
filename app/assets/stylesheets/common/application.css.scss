@@ -17,6 +17,7 @@ ul.list_of_attachments {
     }
   }
 }
+
 .enabled {
   ul.list_of_attachments {
     li {
@@ -27,4 +28,15 @@ ul.list_of_attachments {
       }
     }
   }
+
+.postComment{
+  сolor:#333;
+  background:image-url("textformbg.png");
+  width:465px;
+  height:120px;
+  overflow:auto; /*IE HAX */
+  border: none;
+  padding:0px 5px 0px 5px;
+  margin: 0px;
+  font-size:16px;
 }

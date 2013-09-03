@@ -57,6 +57,11 @@ DesignService::Application.routes.draw do
     resources :attachments
   end
 
+  get 'engineering_systems' => 'engineering_systems#new'
+  resources :engineering_systems do
+    resources :attachments
+  end
+
   get 'plan_developments' => 'plan_developments#new'
   resources :plan_developments do
     resources :attachments

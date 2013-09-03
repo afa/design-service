@@ -50,10 +50,12 @@ ru:
   titles:
     plan_development: 'Разработка вариантов планировок'
     replanning_endorsement: 'Согласование перепланировок'
+    engineering_systems: 'Инженерые системы и конструктив'
   controller_titles: # header of page
     welcome: ''
     plan_developments: 'Разработка вариантов планировок'
     replanning_endorsements: 'Согласование перепланировок'
+    engineering_systems: 'Инженерые системы и конструктив'
     specialists: 'Специалисты'
     specialist_groups: 'Специалисты'
     personal_accounts: 'ЛИЦЕВОЙ СЧЕТ'
@@ -73,6 +75,7 @@ ru:
                             # TODO: make class for specialists page and other pages available to unregistered users
     plan_developments: 'post_varplan'
     replanning_endorsements: 'plan_refactoring'
+    engineering_systems: 'engineering_systems'
     specialists: ''
   welcome:
     title: ''
@@ -80,6 +83,8 @@ ru:
     title: 'Разработка вариантов планировок'
   replanning_endorsements:
     title: 'Согласование перепланировок'
+  engineering_systems:
+    title: 'Инженерые системы и конструктив'
   specialists:
     designers:
       title: 'Дизайнеры'
