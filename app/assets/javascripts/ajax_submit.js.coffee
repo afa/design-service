@@ -30,6 +30,7 @@ window.attachment_and_form_ajax_submission = (order_form, attach_form, submit_bu
   attach_form = $(attach_form)
 
   $(submit_button_selector).click (event)->
+    event.preventDefault()
     submit_button = event.target
     # form = $(submit_button).closest('form')
 
