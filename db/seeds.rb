@@ -14,6 +14,25 @@ def upload_portfolio_item(filename)
   }
 end
 
+{ hallway: 'Дизайн прихожей',
+  bedroom: 'Дизайн спальни',
+  living_room: 'Дизайн гостиной',
+  color_solutions: 'Цветовые решения (идеи сочетаний)',
+  child_room: 'Дизайн детской комнаты',
+  bathroom: 'Дизайн санузла',
+  kitchen: 'Дизайн кухни',
+  kitchen_plus_living_room: 'Дизайн кухни+гостиной',
+  lounges: 'Дизайн комнаты отдыха',
+  cabinet: 'Дизайн кабинета',
+  sweep_wall: 'Развертки стен',
+  floor_plans: 'Планы полов',
+  ceiling_fixtures: 'Планы потолков и освещение',
+  ventilation: 'Вентиляция и кондиционирование',
+  draping_materials: 'Подбор отделочных материалов'
+}.each do |typename, name|
+  OrderCustomizer.create(typename: typename, name: name, image: 'concept.jpg', description: 'дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис')
+end
+
 admin = User.where(username: 'admin', email: 'prijutme4ty@gmail.com').first_or_create(password: 'VerY_str0ng_p@ssword', password_confirmation: 'VerY_str0ng_p@ssword') do |u|
   u.role = 'admin'
   u.build_profile(name: 'Ilya', surname: 'Vorontsov', middle_name: 'E.', fake_name: 'Adminych')

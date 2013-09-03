@@ -49,6 +49,10 @@ DesignService::Application.routes.draw do
     get 'acts'
   end
 
+  get 'design_projects/:type' => 'order_customizers#show', as: 'design_project_type'
+  get 'design_projects' => 'order_customizers#index'
+
+
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
 

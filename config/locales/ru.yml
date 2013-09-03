@@ -56,6 +56,7 @@ ru:
     plan_developments: 'Разработка вариантов планировок'
     replanning_endorsements: 'Согласование перепланировок'
     engineering_systems: 'Инженерые системы и конструктив'
+    order_customizers: 'Дизайн-проект'
     specialists: 'Специалисты'
     specialist_groups: 'Специалисты'
     personal_accounts: 'ЛИЦЕВОЙ СЧЕТ'
@@ -77,6 +78,7 @@ ru:
     plan_developments: 'post_varplan'
     replanning_endorsements: 'plan_refactoring'
     engineering_systems: 'engineering_systems'
+    order_customizers: 'design_project'
     specialists: ''
   welcome:
     title: ''
