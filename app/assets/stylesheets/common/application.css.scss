@@ -6,8 +6,6 @@ ul.list_of_attachments {
   li {
     position: relative;
     .delete_attachment {
-      background-image: image-url('delete_attachment.png');
-      background-repeat: no-repeat;
       height: 16px;
       width: 16px;
       position:absolute;
@@ -16,6 +14,17 @@ ul.list_of_attachments {
     .attachment_link {
       position:absolute;
       left: 25px;
+    }
+  }
+}
+.enabled {
+  ul.list_of_attachments {
+    li {
+      position: relative;
+      .delete_attachment {
+        background-image: image-url('delete_attachment.png');
+        background-repeat: no-repeat;
+      }
     }
   }
 }

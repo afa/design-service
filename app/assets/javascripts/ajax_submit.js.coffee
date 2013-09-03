@@ -49,6 +49,7 @@ window.attachment_and_form_ajax_submission = (order_form, attach_form, submit_bu
             send_form()
             alert('Файл загружен')
             $(attach_form).get(0).reset()
+            attach_form.find('input[type=file]').trigger('change')
           error: ->
             alert('Ошибка при загрузке файла')
         )

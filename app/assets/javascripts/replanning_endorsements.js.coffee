@@ -15,10 +15,10 @@ $(document).ready ->
       order_form
       attach_form
       order_form.find('.postRequest')
-      $('.loaded_files')
+      $('.loaded_files.enabled')
   )
 
-  $('.loaded_files').on 'change', ->
+  $('.loaded_files.enabled').on 'change', ->
     register_destroy_attachment_buttons()
   register_destroy_attachment_buttons()
   register_drag_n_drop(attach_box.find('.dropZone'), attach_form.find('input[type=file]'), attach_box.find('.hint'))

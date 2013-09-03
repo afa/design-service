@@ -2,7 +2,8 @@
   .date.rounded-corners_l3{:class => "#{order.border_class_mild}" }= order.completion_time
   .name
     Наименование:
-    %span= order.title
+    %span
+      = link_to order.title, url_for(order.orderable)
 
   - if User.current.client?
     - if order.paid?
