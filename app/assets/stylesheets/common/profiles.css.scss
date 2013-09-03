@@ -1,3 +1,5 @@
+//= require specialist_groups
+
 .profile {
   width:450px; height:145px;
   margin-left:15px;
@@ -10,4 +12,8 @@
 .form_submiting{
   margin-right: 50px;
   margin-left: 300px;
+}
+
+.info_specialist span.heading {
+  clear: left;
 }

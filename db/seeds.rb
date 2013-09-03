@@ -33,22 +33,22 @@ puts "clients created:\n#{client_1}\n#{client_2}\n"
 spec_1 = User.where(username: 'cool_malyar', email: 'cool_malyar@test.com').first_or_create(password: 'password', password_confirmation: 'password') do |u|
   u.role = 'specialist'
   u.build_profile(name: 'Иван', surname: 'Иванов', middle_name: 'Иваныч', fake_name: 'КулМаляр')
-  u.build_specialist(specialization: 'building_brigade')
+  u.build_specialist(specialization: 'building_brigade', bio_info: 'Родился, жил, помер', work_info: 'Работал, работал, работал')
 end
 spec_2 = User.where(username: 'injener_4to_nado', email: 'injener_4to_nado@test.com').first_or_create(password: 'password', password_confirmation: 'password') do |u|
   u.role = 'specialist'
   u.build_profile(name: 'Александр', surname: 'Александров', middle_name: 'Александрыч', fake_name: 'ИнженерШоНадо')
-  u.build_specialist(specialization: 'engineer')
+  u.build_specialist(specialization: 'engineer', bio_info: 'Родился, жил, пил, курил', work_info: 'Пока космические корабли бороздят просторы Большого театра...')
 end
 spec_3 = User.where(username: 'belyi_vorona', email: 'belyi_vorona@test.com').first_or_create(password: 'password', password_confirmation: 'password') do |u|
   u.role = 'specialist'
   u.build_profile(name: 'Иван', surname: 'Александров', middle_name: 'Петрович', fake_name: 'БелыйВорон')
-  u.build_specialist(specialization: 'designer')
+  u.build_specialist(specialization: 'designer', bio_info: 'Еще не родился', work_info: 'Работал? вкалывал? кто-то другой')
 end
 spec_4 = User.where(username: 'gradus_marazma', email: 'gradus_marazma@test.com').first_or_create(password: 'password', password_confirmation: 'password') do |u|
   u.role = 'specialist'
   u.build_profile(name: 'Градус', surname: 'Маразма', middle_name: 'Крепчал', fake_name: 'ПростоВася')
-  u.build_specialist(specialization: 'designer')
+  u.build_specialist(specialization: 'designer', bio_info: 'Я жил, забыл уж сколько тысяч лет', work_info: 'С гармошкой и с долотом')
 end
 
 puts "specialists created:\n#{spec_1}\n#{spec_2}\n#{spec_3}\n#{spec_4}\n"
