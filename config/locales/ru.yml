@@ -4,6 +4,8 @@
 ru:
   attachment_kinds:
     plan_of_flat: 'План квартиры'
+    supplementary_files: 'Вспомогательные файлы'
+    design_project: 'Дизайн-проект'
   http_status:
     unauthorized: 'Вы не авторизованы для просмотра этого файла'
   date:
