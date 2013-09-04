@@ -98,6 +98,15 @@ class Order < ActiveRecord::Base
     purchases.where(state: paid).inject{|sum,purchase| sum + purchase.payments.where(state: paid).inject(0.0){|r,payment| r + payment.amount } }
   end
 
+  def possible_executors
+    if executor.is_a?(Specialist)
+      [executor]
+    elsif executor.is_a?(SpecialistGroup)
+      executor.specialists
+    elsif !executor
+      Specialist.all
+     end
+  end
 private
   def self.accepted_to_start_work_arel
     arel_table[:work_state].eq_any([:client_agreed, :in_work, :work_accepted])
