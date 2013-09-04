@@ -82,9 +82,6 @@ class Order < ActiveRecord::Base
     orderable.title
   end
 
-  #def num_of_unfinished_works
-  #  orderable.num_plans.to_i - attachments.size
-  #end
   def unfinished_attachments
     orderable.attachment_kinds - attachments.pluck(:kind)
   end

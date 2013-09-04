@@ -9,8 +9,4 @@ class ReplanningEndorsement < ActiveRecord::Base
     {developed_by_general_projector: true,
     replanning_organization_licensed: true}
   end
-  def self.generate
-    find_or_create_order
-  end
-  def num_plans; 1; end
 end
