@@ -13,20 +13,20 @@
       <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
   %body
     %noindex
-      = render 'layouts/login_popup'
+      = render 'layouts/unregistered/login_popup'
       .twoColFixRtHdr
         .border_ornements
           .header_top
             .coconut_leaves
               #container
-                = render 'layouts/header'
+                = render 'layouts/unregistered/header'
                 #maincontent_default
                   .page_content_default
                     .collage_design.mode1
-                      = render 'layouts/specialists'
+                      = render 'layouts/unregistered/specialists'
                     %div{:class => "page_description #{page_subtitle_class}"}
                       %span{:class => page_subtitle_class}= page_subtitle
                     = yield
                     #block_menu_default
-                      = render partial: 'layouts/worktypes'
-              = render "layouts/footer"
+                      = render partial: 'layouts/unregistered/worktypes'
+              = render 'layouts/footer'

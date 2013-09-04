@@ -19,7 +19,7 @@
           .header_top
             .coconut_leaves
               #container
-                = render 'layouts/registered_header'
+                = render 'layouts/registered/header'
                 #maincontent_index.rounded-corners_l4
                   #main_content
                     .springs
@@ -35,9 +35,9 @@
                         %br/
                         = greating_name(current_user)
                         (#{link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete)})
-                      = render 'layouts/client_left_menu'
+                      = render 'layouts/registered/left_menu'
                       .heading_captions ВЫБОР СПЕЦИАЛИСТОВ
-                      = render 'layouts/registered_specialists'
+                      = render 'layouts/registered/specialists'
                     .page_contener
-                      = render 'worktypes_welcome_page'
-            = render "layouts/footer"
+                      = render 'layouts/welcome_page/worktypes'
+            = render 'layouts/footer'
