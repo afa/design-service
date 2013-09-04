@@ -1,4 +1,4 @@
 .msg_caution
   %span.plan_refactoring ВНИМАНИЕ! Согласование проводится у генпроектировщика и <br>эксплуатирующей организации!
 
-= render 'form', replanning_endorsement: resource
+= render partial: 'form', locals: {replanning_endorsement: resource, disabled: false}

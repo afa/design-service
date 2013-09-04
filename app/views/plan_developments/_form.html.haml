@@ -1,4 +1,4 @@
-= simple_nested_form_for plan_development, remote: true, html: {id: 'all_forms'} do |f|
+= simple_nested_form_for plan_development, remote: true, html: {id: 'all_forms'},  defaults: { input_html: { disabled: disabled } } do |f|
   .var_form1.border_x1.rounded-corners_l2.shadow_x1
     .number
     .form_description
@@ -64,19 +64,19 @@
       <input name="" type="text" class="total">
     %span.count
 
+  - unless disabled
+    .postvar_plan_submiting
+      %input.submit_all_forms{:type => "image", :src=> "#{asset_path('cancelButton.png')}", :alt => "Сбросить форму", :onClick => "$('#all_forms').trigger('reset'); return false;" }
+      %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
 
-  .postvar_plan_submiting
-    %input.submit_all_forms{:type => "image", :src=> "#{asset_path('cancelButton.png')}", :alt => "Сбросить форму", :onClick => "$('#all_forms').trigger('reset'); return false;" }
-    %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
-
-.loaded_files
-  = render partial: 'attachments/list_of_attachments', locals:{attachments: resource.attachments}
+.loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
+  = render partial: 'attachments/list_of_attachments', locals:{attachments: resource.attachments, has_remove_button: !disabled}
 
 .attach_box.plan_development
   .form_description
   .number
   %span.dropZone
-    = simple_form_for resource.attachments.build(kind: 'plan_of_flat'), url: plan_development_attachments_url(resource, format: 'json'), remote: true, multipart: true do |f|
+    = simple_form_for resource.attachments.build(kind: 'plan_of_flat'), url: plan_development_attachments_url(resource, format: 'json'), remote: true, multipart: true, defaults: { input_html: { disabled: disabled } } do |f|
       = f.input_field :file, as: :file
       = f.input_field :kind, as: :hidden
     .hint Вы можете перетащить файлы сюда

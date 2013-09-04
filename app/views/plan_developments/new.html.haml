@@ -1,3 +1,3 @@
 .msg_caution
   %span.post_varplan Заполните заявку
-= render 'form', plan_development: resource
+= render partial: 'form', locals: {plan_development: resource, disabled: false}

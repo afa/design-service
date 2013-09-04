@@ -6,8 +6,6 @@ ul.list_of_attachments {
   li {
     position: relative;
     .delete_attachment {
-      background-image: image-url('delete_attachment.png');
-      background-repeat: no-repeat;
       height: 16px;
       width: 16px;
       position:absolute;
@@ -18,4 +16,28 @@ ul.list_of_attachments {
       left: 25px;
     }
   }
+}
+
+.enabled {
+  ul.list_of_attachments {
+    li {
+      position: relative;
+      .delete_attachment {
+        background-image: image-url('delete_attachment.png');
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.postComment{
+  сolor:#333;
+  background:image-url("textformbg.png");
+  width:465px;
+  height:120px;
+  overflow:auto; /*IE HAX */
+  border: none;
+  padding:0px 5px 0px 5px;
+  margin: 0px;
+  font-size:16px;
 }

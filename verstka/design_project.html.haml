@@ -1,0 +1,337 @@
+!!!
+%html
+  %head
+    %title Дизайн сервис.
+    %link{:href => "/assets/common/form_style.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/common/drop_zone.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/common/application.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/unregistered/application.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/unregistered/unregistred.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/unregistered/welcome.css?body=1", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "unregistred.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+  %script{:language => "javascript", :src => "jquery-1.10.1.js"}
+  %script{:language => "javascript", :src => "jquery.corner.js"}
+  /[if lt IE 9]
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+  :javascript
+    $(function() {
+    function black_content(){
+    	$("#black_content").css("height",$(document).height());
+    	$("#black_content").css("display","block");
+    };
+    
+    
+    $(".registration").click(function(){
+    black_content();
+    $("#register").css("display","block");
+    });
+    
+    $(".login").click(function(){
+    black_content();
+    $("#login").css("display","block");
+    });
+    
+    //////IMAGE HOVER///
+    $(".img_").mouseenter(
+    function(){
+    $(this).parent().find('.heading').addClass('heading_h');
+    $(this).parent().find('.black_opacity').addClass('black_opacity_on');
+    }
+    );
+    
+    $(".black_opacity").mouseleave(	
+    function(){
+    $('.black_opacity_on').removeClass('black_opacity_on');
+    $(this).parent().parent().find('.heading').removeClass('heading_h');
+    }
+    );
+    /////////////
+    
+    $(".close_fly_window").click(function(){
+    $(this).parent().css("display","none").parent().css("display","none");
+    });
+
+    });
+  %body
+    %noindex
+      / ------------------------------------------------- BLACK_PALET START--------------
+      #black_content
+        #register.rounded-corners.border_x1.shadow_x1
+          .close_fly_window
+          %form{:action => ""}
+            .head_register
+            .info
+              Логин:
+              %span *
+            .text_fields
+              %span.caution (латинские символы и цифры)
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .info
+              E-mail:
+              %span *
+            .text_fields
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .info
+              Пароль:
+              %span *
+            .text_fields
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .info
+              Повторите&nbsp;&nbsp; пароль:
+              %span *
+            .text_fields
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .control
+              %input.submit_button{:alt => "Submit Form", :src => "ok_button.png", :type => "image"}/
+        #login.rounded-corners.border_x2.shadow_x1
+          .close_fly_window
+          %form{:action => ""}
+            .head_register
+            .info Логин или E-mail :
+            .text_fields
+              %input.log_client_tfeild{:name => "", :type => "text"}/
+            .info Пароль :
+            .text_fields
+              %input.log_client_tfeild{:name => "", :type => "text"}/
+            .control
+              %span
+                %a{:href => "#"} Забыли?
+              %input.login_button{:alt => "Submit Form", :src => "ok_button_green.png", :type => "image"}/
+      / ------------------------------------------------- BLACK_PALET END--------------
+      .twoColFixRtHdr
+        .border_ornements
+          / ------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+          .header_top
+            / ------------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+            .coconut_leaves
+              / --------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+              #container
+                #header
+                  #designService.headerLayer1
+                  .login_panel
+                    .login Вход
+                    .registration Регистрация
+                / ------------------------ END HEADER --------------------------------------------------------------------------------------------------
+                #maincontent_default
+                  / --------------------------------------------------------------CHANGE ID NAME
+                  .page_content_default
+                    .collage_design.mode1
+                      %ul#main_menu.default_pages
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Архитекторы
+                        %li
+                          %a{:href => "designers.html"}
+                            %span/
+                          %p Дизайнеры
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Инженеры
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Строительные фирмы
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Строительные бригады
+                    .page_description.design_project
+                      %span.design_project Дизайн-проекты
+                    .msg_caution
+                      %span.design_project Выберите раздел дизайн-проекта, который хотите разработать!
+                    .design_project_all
+                      .headers
+                        %span.first Концепция
+                        %span.second
+                          Рабочая
+                          = succeed "\u{434}\u{43e}\u{43a}\u{443}\u{43c}\u{435}\u{43d}\u{442}\u{430}\u{446}\u{438}\u{44f}" do
+                            %br/
+                      %a{:href => "copyright_supervision.html"}/
+                      .copyright
+                      %ul.concept
+                        %li
+                          %a{:href => "design_project_hallway.html"}
+                            %span#cccc.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_hallway.html"} Дизайн прихожей
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_project_bedrooms.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_bedrooms.html"} Дизайн спальни
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_project_living_room.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_living_room.html"} Дизайн гостиной
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_project_color_scheme.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_color_scheme.html"}
+                              Цветовые решения
+                              = succeed "(\u{438}\u{434}\u{435}\u{438}" do
+                                %br/
+                              сочетаний)
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_project_child_room.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_child_room.html"} Дизайн детской комнаты
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_project_bathroom.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_bathroom.html"} Дизайн санузла
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_project_kitchen.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_kitchen.html"} Дизайн кухни
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_project_kitchen+living_room.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_kitchen+living_room.html"} Дизайн кухни+гостиной
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_project_lounges.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_lounges.html"} Дизайн комнаты отдыха
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_project_cabinet.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_project_cabinet.html"} Дизайн кабинета
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                      %ul.working_documents
+                        %li
+                          %a{:href => "design_projects_sweep_wall.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_projects_sweep_wall.html"} Развертки стен
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_projects_floor_plans.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_projects_floor_plans.html"} Планы полов
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "design_projects_ceilings_fixtures.html"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "design_projects_ceilings_fixtures.html"}
+                              Планы потолков и
+                              = succeed "\u{43e}\u{441}\u{432}\u{435}\u{449}\u{435}\u{43d}\u{438}\u{435}" do
+                                %br/
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "#"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "#"}
+                              Вентиляция и
+                              = succeed "\u{43a}\u{43e}\u{43d}\u{434}\u{438}\u{446}\u{438}\u{43e}\u{43d}\u{438}\u{440}\u{43e}\u{432}\u{430}\u{43d}\u{438}\u{435}" do
+                                %br/
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                        %li
+                          %a{:href => "#"}
+                            %span.black_opacity
+                          %img.img_{:src => "concept.jpg"}/
+                          %span.heading
+                            %a{:href => "#"}
+                              Подбор отделочных
+                              = succeed "\u{43c}\u{430}\u{442}\u{435}\u{440}\u{438}\u{430}\u{43b}\u{43e}\u{432}" do
+                                %br/
+                          %span.text дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис
+                          %span.order
+                  / ----------------------END page_content_default
+                  #block_menu_default
+                    %ul
+                      %li
+                        %a{:href => "PostVarPlan.html"}
+                          %span/
+                        %p
+                          Разработка
+                          = succeed "\u{432}\u{430}\u{440}\u{438}\u{430}\u{43d}\u{442}\u{43e}\u{432}" do
+                            %br/
+                          планировок
+                      %li
+                        %a{:href => "PlanRefactoring.html"}
+                          %span/
+                        %p Согласования перепланировок
+                      %li
+                        %a{:href => "design_project.html"}
+                          %span/
+                        %p Дизайн-проект
+                      %li
+                        %a{:href => "engineering_systems.html"}
+                          %span/
+                        %p
+                          Инженерные
+                          = succeed "\u{441}\u{438}\u{441}\u{442}\u{435}\u{43c}\u{44b}" do
+                            %br/
+                          и конструктив
+                / ----------------------------------------- -----------------------------------------------END maincontent_default
+              / -------------------------------------------------------------------------------------------------END container-------
+              .footer
+                / FOOTER START-------------------------------
+                .footer_elements
+                  .contact_with_us
+                    Связаться с нами:
+                    %br/
+                    Тел: +7 (495) 123-45-67
+                    %br/
+                    E-mail: info@design-servis.ru
+                  .rights Дизайн-Сервис©2О12
+                  .partners
+                    Партнеры:
+                    %br/
+                    Банк-Идей
+                    %br/
+                    www-студия
+              / -------------- FOOTER END -------
+            / coconut_leaves ----------------------------------------------------- END CLASS-
+          / header_top  ----------------------------------------------------- END CLASS-
+        / border_ornements ---------------------------------------------------- END CLASS

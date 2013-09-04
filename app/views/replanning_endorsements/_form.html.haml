@@ -1,4 +1,4 @@
-= simple_nested_form_for replanning_endorsement, remote: true, html: {id: 'all_forms'} do |f|
+= simple_nested_form_for replanning_endorsement, remote: true, html: {id: 'all_forms'}, defaults: { input_html: { disabled: disabled } } do |f|
   .plan_refactor
     Проект перепланировки разработан генпроектировщиком?
 
@@ -16,17 +16,18 @@
       = f.input_field :replanning_organization_licensed, as: :radio_buttons
     которая разработала проект перепланировки?
 
-  .planrefactoring_submiting
-    %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;" }
-    %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+  - unless disabled
+    .planrefactoring_submiting
+      %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;" }
+      %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
 
-.loaded_files
-  = render partial: 'attachments/list_of_attachments', locals:{attachments: resource.attachments}
+.loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
+  = render partial: 'attachments/list_of_attachments', locals:{attachments: resource.attachments, has_remove_button: !disabled}
 
 .attach_box.form_refactoring
   .form_description
   %span.dropZone
-    = simple_form_for resource.attachments.build(kind: 'plan_of_flat'), url: replanning_endorsement_attachments_url(resource, format: 'json'), remote: true, multipart: true do |f|
+    = simple_form_for resource.attachments.build(kind: 'plan_of_flat'), url: replanning_endorsement_attachments_url(resource, format: 'json'), remote: true, multipart: true, defaults: { input_html: { disabled: disabled } } do |f|
       = f.input_field :file, as: :file
       = f.input_field :kind, as: :hidden
     .hint Вы можете перетащить файлы сюда

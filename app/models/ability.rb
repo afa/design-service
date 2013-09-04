@@ -17,11 +17,11 @@ class Ability
     if user.role == 'client'
     end
     if user.role == 'specialist'
-      can :create, PortfolioItems
-      can :update, PortfolioItems, specialist_id: user.specialist.id
+      can :create, PortfolioItem
+      can :update, PortfolioItem, specialist_id: user.specialist.id
     end
     if user.role == 'moderator'
-      can :manage, PortfolioItems
+      can :manage, PortfolioItem
     end
     if user.role == 'admin'
       can :manage, :all

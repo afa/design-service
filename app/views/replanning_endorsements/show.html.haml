@@ -1,2 +1,4 @@
-= render resource
-= render 'price_calculator', order_id: resource.order.id
+.msg_caution
+  %span.plan_refactoring Данные заказа
+= render partial: 'form', locals: {replanning_endorsement: resource, disabled: true}
+/= render 'price_calculator', order_id: resource.order.id

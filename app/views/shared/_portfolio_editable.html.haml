@@ -1,0 +1,6 @@
+%ul{class: ul_class}
+  - portfolio_items.each do |portfolio_item|
+    %li
+      = link_to portfolio_item.photo.thumb.url, data: {lightbox: example_set} do
+        = image_tag portfolio_item.photo.thumb.url
+  %li.add

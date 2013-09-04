@@ -1,4 +1,4 @@
 class PortfolioItem < ActiveRecord::Base
-  belongs_to :portfolio
+  has_and_belongs_to_many :portfolios
   mount_uploader :photo, PhotoUploader
 end

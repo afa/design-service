@@ -26,3 +26,4 @@
 /config/database.yml
 Gemfile.lock
 **/Thumbs.db
+**/*~

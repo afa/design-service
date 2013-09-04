@@ -49,11 +49,20 @@ DesignService::Application.routes.draw do
     get 'acts'
   end
 
+  get 'design_projects/:type' => 'order_customizers#show', as: 'design_project_type'
+  get 'design_projects' => 'order_customizers#index'
+
+
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
 
   get 'replanning_endorsements' => 'replanning_endorsements#new'
   resources :replanning_endorsements do
+    resources :attachments
+  end
+
+  get 'engineering_systems' => 'engineering_systems#new'
+  resources :engineering_systems do
     resources :attachments
   end
 

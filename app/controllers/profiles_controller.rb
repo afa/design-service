@@ -26,4 +26,12 @@ protected
   def permitted_params
     params.permit(profile: [:name, :surname, :middle_name])
   end
+
+  def specialist_page_subtitle
+    if params[:action] == 'edit'
+      resource.to_s
+    else
+      super
+    end
+  end
 end

@@ -1,0 +1,17 @@
+%h1 Listing engineering_systems
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @engineering_systems.each do |engineering_system|
+    %tr
+      %td= link_to 'Show', engineering_system
+      %td= link_to 'Edit', edit_engineering_system_path(engineering_system)
+      %td= link_to 'Destroy', engineering_system, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Engineering system', new_engineering_system_path

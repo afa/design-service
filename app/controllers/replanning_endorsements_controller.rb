@@ -27,7 +27,7 @@ private
 
   def attachments_text
     render_to_string(partial: 'attachments/list_of_attachments',
-                    locals: {attachments: resource.attachments},
+                    locals: {attachments: resource.attachments, has_remove_button: true},
                     formats: [:html], handlers: [:haml])
   end
 end
