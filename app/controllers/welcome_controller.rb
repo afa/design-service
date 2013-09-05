@@ -6,10 +6,10 @@ class WelcomeController < ApplicationController
       elsif current_user.orders.count > 0 || current_user.specialist?
         redirect_to controller: 'profiles', action: 'orders'
       else
-        render 'index_registered', layout: false
+        render 'layouts/welcome_page/registered', layout: false
       end
     else
-      render 'index_unregistered', layout: false
+      render 'layouts/welcome_page/unregistered', layout: false
     end
   end
 end
