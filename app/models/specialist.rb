@@ -1,7 +1,7 @@
 #encoding: utf-8
 class Specialist < ActiveRecord::Base
   before_create :new_user
-  belongs_to :specialist_group
+  has_and_belongs_to_many :specialist_groups
   has_many :orders, as: :executor
 
   has_many :transactions_inbound, :class_name => 'Transaction', :foreign_key => :destination_id
@@ -10,8 +10,6 @@ class Specialist < ActiveRecord::Base
   def transactions
    transactions_inbound + transactions_outbound
   end
-
-  def specialist_groups; [specialist_group]; end
 
   belongs_to :user
   has_one :profile, through: :user

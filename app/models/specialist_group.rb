@@ -1,5 +1,5 @@
 class SpecialistGroup < ActiveRecord::Base
-  has_many :specialists
+  has_and_belongs_to_many :specialists
 
   has_many :portfolios, as: :owner
   has_many :portfolio_items, through: :portfolios
