@@ -72,6 +72,11 @@ ru:
     devise/sessions:
       new: 'Вход'
       create: 'Регистрация'
+    devise/passwords:
+      new: 'Забыли пароль'
+      create: 'Забыли пароль'
+      edit: 'Смена пароля'
+      update: 'Смена пароля'
   specialist_controller_titles:
     profiles:
       orders: 'МОИ ПРОЕКТЫ'

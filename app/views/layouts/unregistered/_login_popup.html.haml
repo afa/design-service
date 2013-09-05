@@ -1,40 +1,7 @@
-/ ------------------------------------------------- BLACK_PALET START--------------
 #black_content
   #register.rounded-corners.border_x1.shadow_x1
     .close_fly_window
-    = simple_form_for(@user ||= User.new, as: :user, :url => registration_path(:user)) do |f|
-      .head_register
-      .info
-        Логин:
-        %span *
-      .text_fields
-        %span.caution (латинские символы и цифры)
-        = f.input_field :username, class: 'reg_client_tfeild'
-      .info
-        E-mail:
-        %span *
-      .text_fields= f.input_field :email, class: 'reg_client_tfeild'
-      .info
-        Пароль:
-        %span *
-      .text_fields= f.input_field :password, class: 'reg_client_tfeild'
-      .info
-        Повторите&nbsp;&nbsp; пароль:
-        %span *
-      .text_fields= f.input_field :password_confirmation, class: 'reg_client_tfeild'
-      .control
-        %input.submit_button{:alt => "Submit Form", :src => asset_path("ok_button.png"), :type => "image"}
+    = render 'layouts/unregistered/registration_form'
   #login.rounded-corners.border_x2.shadow_x1
     .close_fly_window
-    = simple_form_for(@user ||= User.new, as: :user, :url => session_path(:user)) do |f|
-      .head_register
-      .info Логин или E-mail :
-      .text_fields= f.input_field :login, class: 'log_client_tfeild'
-      .info Пароль :
-      .text_fields= f.input_field :password, class: 'log_client_tfeild'
-      .control
-        %span
-          - if devise_mapping.recoverable? && controller_name != 'passwords'
-            = link_to "Забыли?", new_password_path(:user)
-        %input.login_button{:alt => "Submit Form", :src => asset_path("ok_button_green.png"), :type => "image"}
-/ ------------------------------------------------- BLACK_PALET END--------------
+    = render 'layouts/unregistered/login_form'
