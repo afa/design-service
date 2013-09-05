@@ -271,3 +271,15 @@ ru:
       accepted_first_stage: 'Принято модератором первого уровня'
       accepted_complete: 'Принято главным модератором'
       accepted_automatically: 'Принято модератором первого уровня и подтверждено по истечении срока проверки'
+  order:
+    work_state:
+      draft: 'Черновик заказа'
+      moderator_suggested: 'Модератор предложил цену'
+      specialist_agreed: 'Специалист подтвердил предложенную цену'
+      client_agreed: 'Заказчик подтвердил предложенную цену'
+      in_work: 'В работе'
+      work_accepted: 'Выполненная работа принята'
+    payment_state:
+      not_paid: 'Заказ не оплачен'
+      advance_paid: 'Аванс за заказ оплачен'
+      paid: 'Заказ оплачен'
