@@ -1,5 +1,4 @@
 class SpecialistsController < InheritedResources::Base
-  has_scope :by_specialization, as: :specialization, only: [:index]
   has_scope :by_order, only: [:index]
   load_and_authorize_resource
 
@@ -18,6 +17,6 @@ private
   end
 
   def permitted_params
-    params.permit(specialist: [:specialization] )
+    params.permit(specialist: [  ] )
   end
 end
