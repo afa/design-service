@@ -20,7 +20,7 @@
             .coconut_leaves
               #container
                 #header_specialist
-                  = render 'layouts/specialist_profile_menu'
+                  = render 'layouts/specialist/profile_menu'
                 #maincontent_specialist.rounded-corners_l4
                   #main_content_specialist_inside
                     .sidebar_left_specialist
@@ -30,9 +30,9 @@
                           = link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete)
 
                       .events.rounded-corners
-                        = render 'layouts/events'
+                        = render 'layouts/specialist/events'
                       .groups.rounded-corners
-                        = render partial: 'layouts/groups', locals: {specialist_groups: SpecialistGroupDecorator.decorate_collection(current_user.specialist_groups)}
+                        = render partial: 'layouts/specialist/groups', locals: {specialist_groups: SpecialistGroupDecorator.decorate_collection(current_user.specialist_groups)}
                     .page_contener_specialist
                       .header_page_specialist.green_header= specialist_page_subtitle
                       = yield

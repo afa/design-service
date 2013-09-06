@@ -13,14 +13,14 @@
       <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
   %body
     %noindex
-      = render 'layouts/login_popup'
+      = render 'layouts/unregistered/login_popup'
       .twoColFixRtHdr
         .border_ornements
           .header_top
             .coconut_leaves
               #container
-                = render 'layouts/header'
+                = render 'layouts/unregistered/header'
                 #maincontent_index
-                  = render 'layouts/specialists'
-                  = render 'worktypes_welcome_page'
-              = render "layouts/footer"
+                  = render 'layouts/unregistered/specialists'
+                  = render 'layouts/welcome_page/worktypes'
+              = render 'layouts/footer'

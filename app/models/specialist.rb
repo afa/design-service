@@ -1,7 +1,7 @@
 #encoding: utf-8
 class Specialist < ActiveRecord::Base
   before_create :new_user
-  belongs_to :specialist_group
+  has_and_belongs_to_many :specialist_groups
   has_many :orders, as: :executor
 
   has_many :transactions_inbound, :class_name => 'Transaction', :foreign_key => :destination_id
@@ -11,11 +11,6 @@ class Specialist < ActiveRecord::Base
    transactions_inbound + transactions_outbound
   end
 
-  def specialist_groups; [specialist_group]; end
-
-  extend Enumerize
-  enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
-
   belongs_to :user
   has_one :profile, through: :user
 
@@ -23,7 +18,6 @@ class Specialist < ActiveRecord::Base
   has_many :portfolio_items, through: :portfolios
   has_one :main_portfolio, as: :owner, class_name: 'Portfolio'
 
-  scope :by_specialization, ->(specialization) { where(specialization: specialization) }
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
 
   delegate :messages,  to: :user
