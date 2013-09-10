@@ -43,7 +43,7 @@
     .number
     .form_description
     = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
-    
+
   .engineering_systems_submiting
     %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;"}
     %input.postRequest.submit_all_forms{:alt => "Отправить форму", :src => "#{ asset_path('postButton.png')}", :type => "image"}/
