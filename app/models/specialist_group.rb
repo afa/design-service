@@ -9,6 +9,7 @@ class SpecialistGroup < ActiveRecord::Base
   has_many :received_messages, as: :recipient, class_name: 'Message'
 
   has_many :orders, as: :executor
+  has_many :reviews, through: :specialists
 
   def messages; received_messages; end
 
@@ -22,7 +23,7 @@ class SpecialistGroup < ActiveRecord::Base
 #  def number_of_completed_orders; specialists.map(&:number_of_completed_orders).inject(0,&:+); end
 
   def rating;  "#{reliability_rating}/#{quality_rating}"; end
-  def to_s; name; end
+  def to_s; "#{union_name} [#{name}]"; end
 
   def number_of_participants
     specialists.count
