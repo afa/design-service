@@ -8,8 +8,7 @@ class EngineeringSystemsController < InheritedResources::Base
   end
 
   def update
-    resource.update_attributes(permitted_params[:engineering_system])
-    resource.save!
+    resource.update_attributes!(permitted_params[:engineering_system])
     respond_with do |format|
       format.json { render json: {text: attachments_text} }
     end
