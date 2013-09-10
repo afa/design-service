@@ -600,7 +600,7 @@ div.header_page_specialist{ float:left; margin-top:100px; margin-left:20px; font
 
 /* ----------- */
 div.header_page_specialist img{ width:50px; height:50px; margin-right:15px; float:left; }
-div.header_page_specialist span.heaading{ padding-top:12px; float:left;}
+div.header_page_specialist span.heading{ padding-top:12px; float:left;}
 div.header_page_specialist span.members{ color:#9b9898; float:left; padding-top:20px; padding-left:10px; font-size:14px;}
 
 div.sidebar_left_specialist div.groups{ width:250px;  background-color:#ececec; float:left; margin-top:5px; margin-left:5px; margin-top:15px;}
@@ -641,24 +641,6 @@ div.info_specialist ul li.projects ul li.add:hover{ background-image: image-url(
 div.info_specialist ul li.projects ul li img{ width:75px; height:68px; margin:0px; padding:0px; }
 div.info_specialist div.see_all{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:right}
 div.info_specialist div.add_new{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:left; cursor:pointer;}
-/* ----------- */
-
-
-/* SPECIALIST REG_GROUP_SPACIALIST.HTML */
-
-div.info_specialist ul.members{ float: left; position:relative; list-style:none; max-width:550px; margin:0px 0px 20px 0px; padding:0px; max-height:150px; }
-div.info_specialist ul.members li.content{ float:left; width:500px; max-height:150px; margin-left:10px;}
-div.info_specialist ul.members li.left_controller{ position:relative; float:left; width:15px; height:136px; padding-top:15px}
-div.info_specialist ul.members li.right_controller{position:relative; float: right; width:15px; margin:0px; height:136px; padding-top:15px}
-div.info_specialist ul.members li.content ul{ list-style:none; float:left; position:relative; margin:0px; padding:0px; max-width:500px; max-height:146px; overflow: hidden;}
-div.info_specialist ul.members li.content ul li{ width:118px; height:146px; margin-right:5px; background-color:#c5dde4; float: left}
-
-div.info_specialist ul.comments{ margin:0px; padding:0px; float: left; position:relative; list-style:none; width:550px; margin-top:15px;}
-div.info_specialist ul.comments li{ margin-bottom:5px; float:left; background-color:#d2d2d2; width:550px;}
-div.info_specialist ul.comments li ul{ float:left; position:relative; list-style:none; margin:0px; padding:10px; width:510px; }
-div.info_specialist ul.comments li ul li{ margin:0px; padding:0px; float:none; width:510px; font-size:12px;}
-div.info_specialist ul.comments li ul li:nth-child(1){ font-weight:bold; font-size:14px;}
-div.info_specialist ul.comments li ul li:nth-child(1) span{ color:#6d6d6d; font-weight:normal; font-size:11px; margin-left:5px;}
 
 /* PORTFOLIO */
 #portfolio_changes{ width:660px;  background-color:#FFFFFF; margin: 0 auto; position:relative;  margin-top:50px; display:none;  clear:left; padding-bottom:5px; }
@@ -688,10 +670,10 @@ div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; back
 .coconut_leaves{ background-image:image-url("coconut_leaves.png"); background-repeat:no-repeat; background-position:center 0px; width: auto; position: relative; z-index:1; min-width:980px; height:auto }
 .springs{width:50px; height: 100%; position: absolute; z-index:60; background:image-url("repeating_bar.png"); background-repeat:repeat-y; margin:0px; padding:0px; right:620px; }
 .border_right{ width:12px; height:100%;	position: absolute;	z-index:60;	right:0px; background-image:image-url("right_border.png"); background-repeat:repeat-y; }
-div.border_right div.top_corner{ position:relative; width:12px; height:26px; background-image:image-url("right_top_corner.jpg"); }	
+div.border_right div.top_corner{ position:relative; width:12px; height:26px; background-image:image-url("right_top_corner.jpg"); }
 div.border_right div.bottom_corner{  position: absolute; width:12px; height:33px; bottom:0px; background-image:image-url("right_bottom_corner.jpg");}
 .border_left{ width:6px; height:100%; position: absolute; z-index:60; right:934px; background-image:image-url("left_border.png"); background-repeat:repeat-y; }
-div.border_left div.top_corner{ position:relative; width:6px; height:22px; background-image:image-url("left_top_corner.jpg"); }	
+div.border_left div.top_corner{ position:relative; width:6px; height:22px; background-image:image-url("left_top_corner.jpg"); }
 div.border_left div.bottom_corner{background-color:#000; position: absolute; width:6px; height:31px; bottom:0px; background-image:image-url("left_bottom_corner.jpg");}
 
 #black_content{ position:absolute; width:100%; height:100%;  z-index:20; background-image:image-url("black_content.png"); background-repeat:repeat; display: none;  min-width:980px; }
@@ -879,8 +861,8 @@ box-shadow: 2px -2px 10px #8c8c8c;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
 	border-radius:15px;
-}	
-	
+}
+
 .textlines_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #333; height:20px; font-size:16px; background-color:#eae9e9; }
 
 .textline_l2{ width:45px; }

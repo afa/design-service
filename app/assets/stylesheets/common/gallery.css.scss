@@ -1,0 +1,30 @@
+.gallery {
+  .content {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 500px;
+    position: relative;
+    border:2px solid #4e4e4e;
+    > ul {
+      position: relative;
+      left: 0;
+      top: 0;
+      width:40px;
+      margin:0px;
+      padding:0px;
+      height:200px;
+      > li {
+        list-style:none;
+        display: inline-table;
+        margin:0px;
+        img {
+          padding:0px;
+          margin:0px;
+        }
+      }
+    }
+  }
+  .left_controller, .right_controller {
+    cursor: pointer;
+  }
+}
