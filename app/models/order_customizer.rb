@@ -1,5 +1,5 @@
 class OrderCustomizer < ActiveRecord::Base
-  has_one :selected_form
+  has_many :selected_forms
   scope :scope_by_type, ->(type){ where(typename: type).limit(1) }
   def self.by_type(type)
     scope_by_type(type).first
