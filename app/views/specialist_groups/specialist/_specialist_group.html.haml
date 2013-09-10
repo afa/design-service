@@ -1,0 +1,20 @@
+.info_specialist
+  %ul.members.gallery
+    %li.left_controller= image_tag 'left_control.png'
+    %li.content
+      %ul
+        - specialist_group.specialists.each do |specialist|
+          %li
+            = specialist.avatar(width: '118px', height: '146px')
+    %li.right_controller= image_tag 'right_control.png'
+  %span.heading.margine Портфолио Группы
+  %ul.portfolio
+    - specialist_group.portfolios.each do |portfolio|
+      %li.projects.rounded-corners_l3
+        %span.project_name= portfolio.name
+        = render partial: 'shared/portfolio', locals: {portfolio_items: portfolio.portfolio_items, ul_class: '', example_set: "portfolio_#{portfolio.id}"}
+  %span.heading Отзывы
+  %ul.comments
+    - specialist_group.reviews.each do |review|
+      %li.rounded-corners_l5
+        = render partial: 'reviews/review', locals: {review: review}
