@@ -70,17 +70,30 @@ spec_4 = User.where(username: 'gradus_marazma', email: 'gradus_marazma@test.com'
   u.build_specialist(bio_info: 'Я жил, забыл уж сколько тысяч лет', work_info: 'С гармошкой и с долотом')
 end
 
+spec_5 = User.where(username: 'marazma_gradus', email: 'marazma_gradus@test.com').first_or_create(password: 'password', password_confirmation: 'password') do |u|
+  u.role = 'specialist'
+  u.build_profile(name: 'Маразма', surname: 'Градус', middle_name: 'Крепчает', fake_name: 'ЙодаПростоЯ')
+  u.build_specialist(bio_info: 'Лет тысяч сколько уж забыл, жил я', work_info: 'С бутылкою вина и с ложкой')
+end
+
+
 puts "specialists created:\n#{spec_1}\n#{spec_2}\n#{spec_3}\n#{spec_4}\n"
 
 group_1 = SpecialistGroup.where(name: 'Радуга', description: 'Покрашу усё', specialization: 'building_brigade', quality_rating: 6, reliability_rating: 'A').first_or_create
-group_1.specialists << spec_1.specialist
+group_1.specialists << spec_1.specialist << spec_5.specialist
 
 group_2 = SpecialistGroup.where(name: 'Суперкоманда', description: 'Сделаю нууу полный ремонт', specialization: 'engineer', quality_rating: 4, reliability_rating: 'B').first_or_create
-group_2.specialists << spec_2.specialist
+group_2.specialists << spec_2.specialist << spec_5.specialist
 
 group_3 = SpecialistGroup.where(name: 'Дизайнутые дизайнёры', description: 'Сабж, как и было сказано', specialization: 'designer', quality_rating: 5, reliability_rating: 'D').first_or_create
-group_3.specialists << spec_3.specialist << spec_4.specialist
-puts "specialist groups created:\n#{group_1}\n#{group_1.specialists}\n\n#{group_2}\n#{group_2.specialists}\n\n#{group_3}\n#{group_3.specialists}\n"
+group_3.specialists << spec_3.specialist << spec_4.specialist << spec_5.specialist
+
+group_4 = SpecialistGroup.where(name: 'Винни Пух и все-все-все', description: 'Ну мы всё могём, ага!', specialization: 'architector', quality_rating: 9, reliability_rating: 'A').first_or_create
+group_4.specialists << spec_1.specialist << spec_2.specialist << spec_3.specialist << spec_4.specialist << spec_5.specialist
+
+group_5 = SpecialistGroup.where(name: 'Йода-да-да-та-да-дам', description: 'Йода я, персоной своей, в бочке затычка в каждой', specialization: 'building_company', quality_rating: 1, reliability_rating: 'F').first_or_create
+group_5.specialists << spec_5.specialist
+
 
 portfolio_items = (1..15).map{|i| upload_portfolio_item "./db/seeds/designers_works/#{i}.jpg" }
 

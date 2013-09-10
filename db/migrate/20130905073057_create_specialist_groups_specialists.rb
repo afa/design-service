@@ -6,7 +6,7 @@ class CreateSpecialistGroupsSpecialists < ActiveRecord::Migration
     end
     add_index :specialist_groups_specialists, :specialist_id
     add_index :specialist_groups_specialists, :specialist_group_id
-    
+
     remove_column :specialists, :specialist_group_id
   end
 end
