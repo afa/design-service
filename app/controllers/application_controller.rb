@@ -18,9 +18,13 @@ class ApplicationController < ActionController::Base
     result.is_a?(String) ? result : "#{self.class.name.underscore}##{params[:action]}"
   end
 
-  def specialist_page_subtitle
+  def specialist_page_header
     result = I18n.t :"specialist_controller_titles.#{params[:controller]}.#{params[:action]}", default: [:"controller_titles.#{params[:controller]}.#{params[:action]}", :"specialist_controller_titles.#{params[:controller]}", :"controller_titles.#{params[:controller]}"]
     result.is_a?(String) ? result : "#{self.class.name.underscore}##{params[:action]}"
+  end
+
+  def specialist_page_subtitle
+    render_to_string partial: 'layouts/specialist/subtitle', locals: {header: specialist_page_header}
   end
 
   def page_subtitle_class

@@ -28,13 +28,11 @@
                         = greating_name(current_user)
                         = surround '(', ')' do
                           = link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete)
-
                       .events.rounded-corners
                         = render 'layouts/specialist/events'
                       .groups.rounded-corners
                         = render partial: 'layouts/specialist/groups', locals: {specialist_groups: SpecialistGroupDecorator.decorate_collection(current_user.specialist_groups)}
                     .page_contener_specialist
-                      .header_page_specialist.green_header= specialist_page_subtitle
+                      = raw specialist_page_subtitle
                       = yield
-
               = render 'layouts/footer'
