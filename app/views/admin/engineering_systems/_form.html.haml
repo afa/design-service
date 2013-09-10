@@ -1,0 +1,7 @@
+= show_for resource do |s|
+  = s.association :client do |c|
+    = c.decorate.admin_link
+
+= simple_form_for [:admin, resource] do |f|
+  = f.input :price
+  = f.submit
