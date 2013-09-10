@@ -6,7 +6,6 @@
 //= require price_calculator
 //= require ajax_submit
 
-
 $(document).ready ->
   order_form = $('form#all_forms')
   attach_box = $('.attach_box')
@@ -24,8 +23,6 @@ $(document).ready ->
     register_destroy_attachment_buttons()
     register_drag_n_drop(attach_box.find('.dropZone'), attach_form.find('input[type=file]'), attach_box.find('.hint'))
 
-
-
   #////IMAGE HOVER///
   $(".img_").mouseenter ->
     $(this).parent().find(".heading").addClass "heading_h"
@@ -35,15 +32,14 @@ $(document).ready ->
     $(".black_opacity_on").removeClass "black_opacity_on"
     $(this).parent().parent().find(".heading").removeClass "heading_h"
 
-  
   #///////////
   $(".close_fly_window").click ->
     $(this).parent().css("display", "none").parent().css "display", "none"
 
-  #////KEY_BOARD///  
+  #////KEY_BOARD///
   $(".color_keyboard ul li").click ->
     $("div.color_keyboard ul *").removeClass "selected"
     $("#selected_color").val $(this).attr("value")
-    $(this).addClass "selected"  
+    $(this).addClass "selected"
 
-  $('.interior ul li:last-child label').append($('.interior ul + input[type="text"]')) 
+  $('.interior ul li:last-child label').append($('.interior ul + input[type="text"]'))

@@ -9,7 +9,7 @@ class SelectedForm < ActiveRecord::Base
   enumerize :show_results, in: [:'3d_visualization', :freehand_drawing]
 
   scope :by_type, ->(type){ joins(:order_customizer).where(order_customizers: {typename: type}) }
-  
+
   def attachment_kinds
     ['plan_of_flat']
   end

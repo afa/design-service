@@ -11,6 +11,6 @@ private
   def resource
     @selected_form
   end
-  
+
   helper_method :resource
 end
