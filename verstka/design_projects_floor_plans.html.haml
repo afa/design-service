@@ -1,0 +1,345 @@
+!!!
+%html
+  %head
+    %title Дизайн сервис.
+    %link{:href => "/assets/common/form_style.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/common/drop_zone.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/common/application.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/unregistered/application.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/unregistered/unregistred.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/unregistered/welcome.css?body=1", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "unregistred.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+  %script{:language => "javascript", :src => "jquery-1.10.1.js"}
+  %script{:language => "javascript", :src => "jquery.corner.js"}
+  /[if lt IE 9]
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+  :javascript
+    $(function() {
+    		function black_content(){
+    			$("#black_content").css("height",$(document).height());
+    			$("#black_content").css("display","block");
+    		};
+    		
+    		
+    		$(".registration").click(function(){
+    		black_content();
+    		$("#register").css("display","block");
+    		});
+    		
+    		$(".login").click(function(){
+    		black_content();
+    		$("#login").css("display","block");
+    		});
+    		
+    		$(".close_fly_window").click(function(){
+    		$(this).parent().css("display","none").parent().css("display","none");
+    		});
+    
+    		});
+    
+    		function show_next(element){
+    		var checker = $(element).is(':checked');
+    		var li_near = $(element).parent().next('li');
+    		if(checker==true){
+    		li_near.css("display","block");
+    		}
+    		else{
+    		li_near.css("display","none");
+    		}
+    		}
+    		
+    		
+    		var n=2;
+    		function make_new_block(selected,values){
+    		if(parseInt(values)>=n){
+    		n++;
+    		last = $(selected).parent().parent();
+    		obj ='<div class="place">Помещение<input name="room_block'+n+'plojad" type="text" style="color:#999999" class="textlines_default textline_l6-5" value="например, Кухня" onFocus="if($(this).val()==\'например, Кухня\'){$(this).val(\'\'); $(this).css(\'color\',\'#000000\');make_new_block($(this),\''+n+'\')}; return false;" onBlur="if($(this).val()==\'\'){$(this).val(\'например, Кухня\'); $(this).css(\'color\',\'#999999\');remove_next('+n+')}; return false; "></div><ul class="border_x6 rounded-corners_l3"><li><input name="room_block'+n+'option1" type="checkbox" id="room_block'+n+'option1"><label for="room_block'+n+'option1">Искусственных <br>холодных</label></li><li><input name="room_block'+n+'option2" type="checkbox" id="room_block'+n+'option2"><label for="room_block'+n+'option2">Искусственных <br>теплых</label></li><li><input name="room_block'+n+'option3" type="checkbox" id="room_block'+n+'option3"><label for="room_block'+n+'option3">Ковролин или набивной <br>рисунок ковра</label></li><li><input name="room_block'+n+'option4" type="checkbox" id="room_block'+n+'option4"><label for="room_block'+n+'option4">Камень</label></li><li><input name="room_block'+n+'option5" type="checkbox" id="room_block'+n+'option5"><label for="room_block'+n+'option5">Дерево</label></li></ul>';
+    		alls= '<div class="room_blocks" id="room_block'+n+'">'+ obj +'</div>';
+    		last.after(alls);
+    	$("input[type=checkbox]").click(function() {
+            var checker = $(this).is(':checked');
+    		if(checker==true){
+    		$(this).next('label').css('background-image','url(box_checked.png)');
+    		}
+    		else{
+    		$(this).next('label').css('background-image','url(box_not_cheked.png)');
+    		}
+          });
+    	}
+      }
+    		
+    		function remove_next(block_id){
+    		s=0;
+    		if(n>parseInt(block_id)){
+    			for(y=block_id+1; y<=n; y++){
+    			//alert('delete'+y);
+    			$('#room_block'+y).remove();
+    			s++;
+    			}
+    		n=n-s;
+    		}
+    		}
+  %body
+    %noindex
+      / ------------------------------------------------- BLACK_PALET START--------------
+      #black_content
+        #register.rounded-corners.border_x1.shadow_x1
+          .close_fly_window
+          %form{:action => ""}
+            .head_register
+            .info
+              Логин:
+              %span *
+            .text_fields
+              %span.caution (латинские символы и цифры)
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .info
+              E-mail:
+              %span *
+            .text_fields
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .info
+              Пароль:
+              %span *
+            .text_fields
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .info
+              Повторите&nbsp;&nbsp; пароль:
+              %span *
+            .text_fields
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .control
+              %input.submit_button{:alt => "Submit Form", :src => "ok_button.png", :type => "image"}/
+        #login.rounded-corners.border_x2.shadow_x1
+          .close_fly_window
+          %form{:action => ""}
+            .head_register
+            .info Логин или E-mail :
+            .text_fields
+              %input.log_client_tfeild{:name => "", :type => "text"}/
+            .info Пароль :
+            .text_fields
+              %input.log_client_tfeild{:name => "", :type => "text"}/
+            .control
+              %span
+                %a{:href => "#"} Забыли?
+              %input.login_button{:alt => "Submit Form", :src => "ok_button_green.png", :type => "image"}/
+      / ------------------------------------------------- BLACK_PALET END--------------
+      .twoColFixRtHdr
+        .border_ornements
+          / ------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+          .header_top
+            / ------------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+            .coconut_leaves
+              / --------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+              #container
+                #header
+                  #designService.headerLayer1
+                  .login_panel
+                    .login Вход
+                    .registration Регистрация
+                / ------------------------ END HEADER --------------------------------------------------------------------------------------------------
+                #maincontent_default
+                  / --------------------------------------------------------------CHANGE ID NAME
+                  .page_content_default
+                    .collage_design.mode2
+                      %ul#main_menu.default_pages
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Архитекторы
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Дизайнеры
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Инженеры
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Строительные фирмы
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Строительные бригады
+                    %ul#navigation.blue
+                      %li.first
+                        %a{:href => "#"} Главная
+                      %li
+                        %a{:href => "#"} Дизайн-проекты
+                      %li.last
+                        %a{:href => "#"} Рабочая документация
+                    .page_description.design_p_floor_plans
+                      %span.design_p_floor_plans Планы полов
+                    .msg_caution
+                      %span.design_p_floor_plans Заполните заявку
+                    %form#all_forms{:action => ""}
+                      .design_p_floor_plans_form1.border_x1.rounded-corners_l2.shadow_x1
+                        .number
+                        .form_description
+                        .file_attaching.border_x5.rounded-corners_l3
+                          %span.caution
+                            Прикрепите:
+                          %ul
+                            %li 1. план с расстановкой мебели!
+                            %li 2. ИЗОБРАЖЕНИЕ концепции или пример!
+                          %span.attach Вы можете перетащить файлы сюда
+                        .number_second
+                        .form_description_second
+                        %span.text
+                          Наименование помещения:
+                          %input.textlines_default.textline_l8{:name => "plojad", :type => "text"}/
+                        .interior
+                          Какой стиль интерьера Вы предпочитаете?
+                          %ul.answer
+                            %li
+                              %input#classicism{:name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "classicism"} Классицизм
+                            %li
+                              %input#minimalism{:checked => "checked", :name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "minimalism"} Современный минимализм
+                            %li
+                              %input#East{:name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "East"} Восток
+                            %li
+                              %input#Art-Deco{:name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "Art-Deco"} Современный Art-Deco
+                            %li
+                              %input#any{:name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "any"}
+                                Другое
+                                %input.textlines_default.textline_l5{:name => "plojad", :type => "text"}/
+                        .depending
+                          Зависимость от потолков?
+                          %ul.answer
+                            %li
+                              %input#depend_yes{:checked => "checked", :name => "depending", :type => "radio", :value => ""}/
+                              %label{:for => "depend_yes"} Да
+                            %li
+                              %input#depend_no{:name => "depending", :type => "radio", :value => ""}/
+                              %label{:for => "depend_no"} Нет
+                        .what_materials
+                          Из каких материалов?
+                          %span
+                            %input#what_meterials{:name => "", :type => "checkbox", :value => ""}/
+                            %label{:for => "what_meterials"} На усмотрение дизайнера
+                        #room_block1.room_blocks
+                          .place
+                            Помещение
+                            %input.textlines_default.textline_l6-5{:name => "room_block1plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999')}; return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000')}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}/
+                          %ul.border_x6.rounded-corners_l3
+                            %li
+                              %input#room_block1option1{:name => "room_block1option1", :type => "checkbox"}/
+                              %label{:for => "room_block1option1"}
+                                Искусственных
+                                %br/
+                                холодных
+                            %li
+                              %input#room_block1option2{:name => "room_block1option2", :type => "checkbox"}/
+                              %label{:for => "room_block1option2"}
+                                Искусственных
+                                %br/
+                                теплых
+                            %li
+                              %input#room_block1option3{:name => "room_block1option3", :type => "checkbox"}/
+                              %label{:for => "room_block1option3"}
+                                Ковролин или набивной
+                                %br/
+                                рисунок ковра
+                            %li
+                              %input#room_block1option4{:name => "room_block1option4", :type => "checkbox"}/
+                              %label{:for => "room_block1option4"} Камень
+                            %li
+                              %input#room_block1option5{:name => "room_block1option5", :type => "checkbox"}/
+                              %label{:for => "room_block1option5"} Дерево
+                        #room_block2.room_blocks
+                          .place
+                            Помещение
+                            %input.textlines_default.textline_l6-5{:name => "room_block2plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999'); remove_next(2)};  return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000'); make_new_block($(this),'2');}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}/
+                          %ul.border_x6.rounded-corners_l3
+                            %li
+                              %input#room_block2option1{:name => "room_block2option1", :type => "checkbox"}/
+                              %label{:for => "room_block2option1"}
+                                Искусственных
+                                %br/
+                                холодных
+                            %li
+                              %input#room_block2option2{:name => "room_block2option2", :type => "checkbox"}/
+                              %label{:for => "room_block2option2"}
+                                Искусственных
+                                %br/
+                                теплых
+                            %li
+                              %input#room_block2option3{:name => "room_block2option3", :type => "checkbox"}/
+                              %label{:for => "room_block2option3"}
+                                Ковролин или набивной
+                                %br/
+                                рисунок ковра
+                            %li
+                              %input#room_block2option4{:name => "room_block2option4", :type => "checkbox"}/
+                              %label{:for => "room_block2option4"} Камень
+                            %li
+                              %input#room_block2option5{:name => "room_block2option5", :type => "checkbox"}/
+                              %label{:for => "room_block2option5"} Дерево
+                      .design_p_floor_plans_form2.border_x3.rounded-corners_l2.shadow_x1
+                        .form_description
+                        %input.var_form3_default.textline_l11{:name => "", :type => "text"}/
+                        %input.var_form3_default.textline_l11{:name => "", :type => "text"}/
+                        %input.var_form3_default.textline_l11{:name => "", :type => "text"}/
+                      %span.design_p_floor_plans-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
+                      .design_p_floor_plans_submiting
+                        %input.submit_all_forms{:alt => "", :onclick => "$('#all_forms').trigger('reset');\n; return false;", :src => "cancelButton.png", :type => "image"}/
+                        %input.submit_all_forms{:alt => "Submit Form", :src => "postButton.png", :type => "image"}/
+                  / ----------------------END page_content_default
+                  #block_menu_default
+                    %ul
+                      %li
+                        %a{:href => "PostVarPlan.html"}
+                          %span/
+                        %p
+                          Разработка
+                          = succeed "\u{432}\u{430}\u{440}\u{438}\u{430}\u{43d}\u{442}\u{43e}\u{432}" do
+                            %br/
+                          планировок
+                      %li
+                        %a{:href => "PlanRefactoring.html"}
+                          %span/
+                        %p Согласования перепланировок
+                      %li
+                        %a{:href => "design_project.html"}
+                          %span/
+                        %p Дизайн-проект
+                      %li
+                        %a{:href => "engineering_systems.html"}
+                          %span/
+                        %p
+                          Инженерные
+                          = succeed "\u{441}\u{438}\u{441}\u{442}\u{435}\u{43c}\u{44b}" do
+                            %br/
+                          и конструктив
+                / ----------------------------------------- -----------------------------------------------END maincontent_default
+              / -------------------------------------------------------------------------------------------------END container-------
+              .footer
+                / FOOTER START-------------------------------
+                .footer_elements
+                  .contact_with_us
+                    Связаться с нами:
+                    %br/
+                    Тел: +7 (495) 123-45-67
+                    %br/
+                    E-mail: info@design-servis.ru
+                  .rights Дизайн-Сервис©2О12
+                  .partners
+                    Партнеры:
+                    %br/
+                    Банк-Идей
+                    %br/
+                    www-студия
+              / -------------- FOOTER END -------
+            / coconut_leaves ----------------------------------------------------- END CLASS-
+          / header_top  ----------------------------------------------------- END CLASS-
+        / border_ornements ---------------------------------------------------- END CLASS

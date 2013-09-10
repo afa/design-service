@@ -1,5 +1,5 @@
 class AttachmentsController < InheritedResources::Base
-  belongs_to :order, :plan_development, :replanning_endorsement, :engineering_system, optional: true #, polymorphic: true
+  belongs_to :order, :plan_development, :replanning_endorsement, :engineering_system, :selected_form, optional: true #, polymorphic: true
   before_filter :authenticate_user!
   before_filter :check_permission, only: [:show, :download]
   before_filter :set_user, only: [:create]

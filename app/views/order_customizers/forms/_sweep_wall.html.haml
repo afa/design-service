@@ -1,0 +1,66 @@
+.msg_caution
+  %span.design_p_sweep_wall Заполните заявку
+%form#all_forms{:action => ""}
+  .design_p_sweep_wall_form1.border_x1.rounded-corners_l2.shadow_x1
+    .number
+    .form_description
+    .file_attaching.border_x5.rounded-corners_l3
+      %span.caution
+        Прикрепите:
+        %ul
+          %li 1. план с расстановкой мебели!
+          %li 2. ИЗОБРАЖЕНИЕ концепции или пример!
+          %li 3. файлы с изображением предметов интерьера!
+      %span.attach Вы можете перетащить файлы сюда
+    .number_second
+    .form_description_second
+    %span.text
+      Наименование помещения:
+      %input.textlines_default.textline_l8{:name => "plojad", :type => "text"}
+    .interior
+      Какой стиль интерьера Вы предпочитаете?
+      %ul.answer
+        %li
+          %input#classicism{:name => "interior", :type => "radio", :value => ""}
+          %label{:for => "classicism"} Классицизм
+        %li
+          %input#minimalism{:checked => "checked", :name => "interior", :type => "radio", :value => ""}
+          %label{:for => "minimalism"} Современный минимализм
+        %li
+          %input#East{:name => "interior", :type => "radio", :value => ""}
+          %label{:for => "East"} Восток
+        %li
+          %input#Art-Deco{:name => "interior", :type => "radio", :value => ""}
+          %label{:for => "Art-Deco"} Современный Art-Deco
+        %li
+          %input#any{:name => "interior", :type => "radio", :value => ""}
+          %label{:for => "any"}
+            Другое
+            %input.textlines_default.textline_l5{:name => "plojad", :type => "text"}
+    .what_materials
+      Из каких материалов?
+      %ul.answer
+        %li.long
+          %input#decorative_plaster{:name => "", :type => "checkbox", :value => ""}
+          %label{:for => "decorative_plaster"} Декоративная штукатурка
+        %li
+          %input#wallpaper{:name => "", :type => "checkbox", :value => ""}
+          %label{:for => "wallpaper"} Обои
+        %li.long
+          %input#ceramic_tiles{:name => "", :type => "checkbox", :value => ""}
+          %label{:for => "ceramic_tiles"} Керамическая плитка
+        %li
+          %input#tree{:name => "", :type => "checkbox", :value => ""}
+          %label{:for => "tree"} Дерево
+        %li.long
+          %input#natural_stone{:name => "", :type => "checkbox", :value => ""}
+          %label{:for => "natural_stone"} Натуральный камень
+  .design_p_sweep_wall_form2.border_x3.rounded-corners_l2.shadow_x1
+    .form_description
+    %input.var_form3_default.textline_l11{:name => "", :type => "text"}
+    %input.var_form3_default.textline_l11{:name => "", :type => "text"}
+    %input.var_form3_default.textline_l11{:name => "", :type => "text"}
+  %span.design_p_sweep_wall-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
+  .design_p_sweep_wall_submiting
+    %input.submit_all_forms{:alt => "", :onclick => "$('#all_forms').trigger('reset');\n; return false;", :src => "cancelButton.png", :type => "image"}
+    %input.submit_all_forms{:alt => "Submit Form", :src => "postButton.png", :type => "image"}

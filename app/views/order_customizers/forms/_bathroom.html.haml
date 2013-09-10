@@ -9,7 +9,6 @@
     .form_description_second
     %span.text
       Площадь помещения:#{ f.input_field :room_space, class: 'textlines_default textline_l6' }
-      = selected_form.order_customizer_id
     .interior
       Какой стиль интерьера Вы предпочитаете?
       = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options

@@ -1,1 +1,3 @@
-= render partial: "order_customizers/forms/#{params[:type]}"
+.msg_caution
+  %span.design_p-workin-docs Заполните заявку
+= render partial: "order_customizers/forms/#{params[:type]}", locals: {selected_form: resource, disabled: false}

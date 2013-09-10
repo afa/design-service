@@ -236,10 +236,20 @@ ru:
         architectors: 'Архитекторы'
         engineers: 'Инженеры'
         designers: 'Дизайнеры'
-        building_companies: 'Строительные компании'
+        building_companies: 'Строительныeast:е компании'
         building_brigades: 'Строительные бригады'
         not_a_specialists: 'Не специалисты'
   enumerize:
+    interior_style:
+      classicism: 'Классицизм'
+      modern_minimalism: 'Современный минимализм'
+      east: 'Восток'
+      modernart_deco: 'Современный Art-Deco'
+      any: 'Другое'
+
+    show_results:
+      3d_visualization: '3D-Визуализация'
+      freehand_drawing: 'Рисунок от руки'
     specialization:
       architector: 'Архитектор'
       engineer: 'Инженер'

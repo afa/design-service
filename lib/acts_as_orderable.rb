@@ -29,8 +29,8 @@ module ActsAsOrderable
       raise NotImplementedError, "Specify #{self.name}.default_params class-method with default order parameters"
     end
 
-    def find_or_create_order(conditions = {})
-      where(conditions).by_client(User.current).by_work_state('draft').first || generate_order
+    def find_or_create_order(scope = where({}))
+      by_client(User.current).by_work_state('draft').first || generate_order
     end
   end
 
