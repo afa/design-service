@@ -52,7 +52,11 @@ ru:
   titles:
     plan_development: 'Разработка вариантов планировок'
     replanning_endorsement: 'Согласование перепланировок'
-    engineering_systems: 'Инженерые системы и конструктив'
+    engineering_system: 'Инженерые системы и конструктив'
+    #design_project:
+    #  type1: 'ToDo Дизайн-проект'
+    #  type2: 'ToDo Дизайн-проект'
+    #  TODO: 'To Do'
   controller_titles: # header of page
     welcome: ''
     plan_developments: 'Разработка вариантов планировок'
