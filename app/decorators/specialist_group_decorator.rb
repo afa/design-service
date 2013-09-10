@@ -23,4 +23,7 @@ class SpecialistGroupDecorator < Draper::Decorator
   def number_of_participants
     "#{source.number_of_participants} участников"
   end
+  def to_s
+    source.to_s
+  end
 end
