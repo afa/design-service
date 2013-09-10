@@ -236,7 +236,7 @@ ru:
         architectors: 'Архитекторы'
         engineers: 'Инженеры'
         designers: 'Дизайнеры'
-        building_companies: 'Строительныeast:е компании'
+        building_companies: 'Строительные компании'
         building_brigades: 'Строительные бригады'
         not_a_specialists: 'Не специалисты'
   enumerize:

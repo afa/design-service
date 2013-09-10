@@ -30,7 +30,7 @@ module ActsAsOrderable
     end
 
     def find_or_create_order(scope = where({}))
-      by_client(User.current).by_work_state('draft').first || generate_order
+      scope.by_client(User.current).by_work_state('draft').first || generate_order
     end
   end
 
