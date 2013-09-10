@@ -1,7 +1,5 @@
 class SelectedForm < ActiveRecord::Base
   include ActsAsOrderable
-  # this model presents params for design_projects
-  # attr_accessible :title, :body
   belongs_to :order_customizer
 
   extend Enumerize
@@ -17,5 +15,4 @@ class SelectedForm < ActiveRecord::Base
   def self.default_params
     {  }
   end
-
 end
