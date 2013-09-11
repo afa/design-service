@@ -5,7 +5,8 @@
       %ul
         - specialist_group.specialists.each do |specialist|
           %li
-            = specialist.avatar(width: '118px', height: '146px')
+            = link_to specialist_path(specialist) do
+              = specialist.avatar(width: '118px', height: '146px')
     %li.right_controller= image_tag 'right_control.png'
   %span.heading.margine Портфолио Группы
   %ul.portfolio

@@ -1,23 +1,2 @@
-.caption.col_green.backgr_color_green
-  %p ЙА БОЛВАНКО РЕГИСТРЕД ПЕЙДЖА
-.manual
-  %p Any text
-.specialistMenu
-  .specialistAva
-    = resource.avatar
-  .specialistStats
-    Отзывы об исполнителе:
-    %span.positiveReviews=  resource.positive_feedback
-    %span.negativeReviews=  resource.negative_feedback
-    %br/
-    Выполнено работ:
-    %span{:completedorders => ""}=  resource.number_of_completed_orders
-  .specialistDescription=  resource.description
-  .specialistButtonsContainer
-    = link_to new_specialist_message_path(resource) do
-      #writeTo.specButton
-        .hint
-          Написать
-    #order.specButton
-      .hint
-        Заказать
+- if User.current.specialist?
+  = render partial: 'specialists/specialist/specialist', locals: {specialist: resource}
