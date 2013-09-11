@@ -1,0 +1,83 @@
+app/models/attachment.rb:1 - protect mass assignment
+app/models/invoice.rb:1 - protect mass assignment
+app/models/message.rb:1 - protect mass assignment
+app/models/moderation.rb:1 - protect mass assignment
+app/models/order.rb:1 - protect mass assignment
+app/models/payment.rb:1 - protect mass assignment
+app/models/photo.rb:1 - protect mass assignment
+app/models/photo_collection.rb:1 - protect mass assignment
+app/models/plan_development.rb:2 - protect mass assignment
+app/models/portfolio_item.rb:1 - protect mass assignment
+app/models/profile.rb:1 - protect mass assignment
+app/models/purchase.rb:1 - protect mass assignment
+app/models/replanning_endorsement.rb:1 - protect mass assignment
+app/models/review.rb:1 - protect mass assignment
+app/models/specialist.rb:2 - protect mass assignment
+app/models/specialist_group.rb:1 - protect mass assignment
+
+app/helpers/attachments_helper.rb:1 - remove empty helpers
+app/helpers/message_helper.rb:1 - remove empty helpers
+app/helpers/moderations_helper.rb:1 - remove empty helpers
+app/helpers/orders_helper.rb:1 - remove empty helpers
+app/helpers/personal_accounts_helper.rb:1 - remove empty helpers
+app/helpers/photos_helper.rb:1 - remove empty helpers
+app/helpers/photo_collections_helper.rb:1 - remove empty helpers
+app/helpers/plan_developments_helper.rb:1 - remove empty helpers
+app/helpers/portfolio_items_helper.rb:1 - remove empty helpers
+app/helpers/profiles_helper.rb:1 - remove empty helpers
+app/helpers/purchases_helper.rb:1 - remove empty helpers
+app/helpers/registrations_helper.rb:1 - remove empty helpers
+app/helpers/replanning_endorsements_helper.rb:1 - remove empty helpers
+app/helpers/reviews_helper.rb:1 - remove empty helpers
+app/helpers/specialists_helper.rb:1 - remove empty helpers
+app/helpers/specialist_groups_helper.rb:1 - remove empty helpers
+app/helpers/welcome_helper.rb:1 - remove empty helpers
+
+app/controllers/application_controller.rb:39 - remove unused methods (ApplicationController#current_ability)
+app/controllers/attachments_controller.rb:20 - remove unused methods (AttachmentsController#permitted_params)
+app/controllers/orders_controller.rb:9 - remove unused methods (OrdersController#get_price)
+app/controllers/personal_accounts_controller.rb:4 - remove unused methods (PersonalAccountsController#history)
+app/controllers/personal_accounts_controller.rb:8 - remove unused methods (PersonalAccountsController#replenishment)
+app/controllers/personal_accounts_controller.rb:11 - remove unused methods (PersonalAccountsController#acts)
+app/controllers/personal_accounts_controller.rb:14 - remove unused methods (PersonalAccountsController#contracts)
+app/controllers/portfolio_items_controller.rb:9 - remove unused methods (PortfolioItemsController#permitted_params)
+app/controllers/profiles_controller.rb:10 - remove unused methods (ProfilesController#specialists)
+app/controllers/profiles_controller.rb:28 - remove unused methods (ProfilesController#permitted_params)
+app/controllers/purchases_controller.rb:24 - remove unused methods (PurchasesController#fail)
+app/controllers/reviews_controller.rb:11 - remove unused methods (ReviewsController#permitted_params)
+app/controllers/specialists_controller.rb:20 - remove unused methods (SpecialistsController#permitted_params)
+app/controllers/specialist_groups_controller.rb:13 - remove unused methods (SpecialistGroupsController#page_subtitle)
+app/models/message.rb:12 - remove unused methods (Message#received_by_user)
+app/models/message.rb:13 - remove unused methods (Message#sent_by_user)
+app/models/moderation.rb:24 - remove unused methods (Moderation#accepted?)
+app/models/moderation.rb:28 - remove unused methods (Moderation#rejected?)
+app/models/order.rb:13 - remove unused methods (Order#by_executor)
+app/models/order.rb:14 - remove unused methods (Order#accepted_to_start_work)
+app/models/order.rb:15 - remove unused methods (Order#at_least_advance_paid)
+app/models/plan_development.rb:14 - remove unused methods (PlanDevelopment#full_address)
+app/models/plan_development.rb:16 - remove unused methods (PlanDevelopment#family_composition_first_line)
+app/models/plan_development.rb:17 - remove unused methods (PlanDevelopment#family_composition_second_line)
+app/models/plan_development.rb:24 - remove unused methods (PlanDevelopment#generate)
+app/models/plan_development.rb:30 - remove unused methods (PlanDevelopment#default_params)
+app/models/replanning_endorsement.rb:8 - remove unused methods (ReplanningEndorsement#default_params)
+app/models/replanning_endorsement.rb:12 - remove unused methods (ReplanningEndorsement#generate)
+app/models/specialist.rb:10 - remove unused methods (Specialist#transactions)
+app/models/specialist.rb:21 - remove unused methods (Specialist#by_specialization)
+app/models/specialist.rb:22 - remove unused methods (Specialist#by_order)
+app/models/specialist.rb:45 - remove unused methods (Specialist#new_specialist)
+app/models/specialist_group.rb:11 - remove unused methods (SpecialistGroup#by_specialization)
+app/models/user.rb:29 - remove unused methods (User#with_orders)
+app/models/user.rb:39 - remove unused methods (User#find_first_by_auth_conditions)
+app/models/user.rb:66 - remove unused methods (User#registered?)
+
+app/views/messages/_message.html.haml:8 - simplify render in views
+app/controllers/application_controller.rb:88 - use model association (for order)
+app/models/ability.rb:14 - remove trailing whitespace
+app/models/order.rb:33 - remove trailing whitespace
+app/controllers/profiles_controller.rb:5 - remove trailing whitespace
+app/views/moderations/_moderation.html.haml:3 - remove trailing whitespace
+app/views/personal_accounts/history.html.haml:26 - remove trailing whitespace
+[1;32m
+Please go to http://rails-bestpractices.com to see more useful Rails Best Practices.
+[1;31m
+Found 76 warnings.

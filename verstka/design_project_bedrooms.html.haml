@@ -1,0 +1,248 @@
+!!!
+%html
+  %head
+    %title Дизайн сервис.
+    %link{:href => "/assets/common/form_style.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/common/drop_zone.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/common/application.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/unregistered/application.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/unregistered/unregistred.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/unregistered/welcome.css?body=1", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "unregistred.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+  %script{:language => "javascript", :src => "jquery-1.10.1.js"}
+  %script{:language => "javascript", :src => "jquery.corner.js"}
+  /[if lt IE 9]
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+  :javascript
+    $(function() {
+    function black_content(){
+    	$("#black_content").css("height",$(document).height());
+    	$("#black_content").css("display","block");
+    };
+    
+    
+    $(".registration").click(function(){
+    black_content();
+    $("#register").css("display","block");
+    });
+    
+    $(".login").click(function(){
+    black_content();
+    $("#login").css("display","block");
+    });
+    
+    $(".close_fly_window").click(function(){
+    //alert($(this).attr("class"));
+    $(this).parent().css("display","none").parent().css("display","none");
+    });
+	
+
+    });
+
+    function show_next(element){
+    var checker = $(element).is(':checked');
+    var li_near = $(element).parent().next('li');
+    if(checker==true){
+    li_near.css("display","block");
+    }
+    else{
+    li_near.css("display","none");
+    }
+    }
+  %body
+    %noindex
+      / ------------------------------------------------- BLACK_PALET START--------------
+      #black_content
+        #register.rounded-corners.border_x1.shadow_x1
+          .close_fly_window
+          %form{:action => ""}
+            .head_register
+            .info
+              Логин:
+              %span *
+            .text_fields
+              %span.caution (латинские символы и цифры)
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .info
+              E-mail:
+              %span *
+            .text_fields
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .info
+              Пароль:
+              %span *
+            .text_fields
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .info
+              Повторите&nbsp;&nbsp; пароль:
+              %span *
+            .text_fields
+              %input.reg_client_tfeild{:name => "", :type => "text"}/
+            .control
+              %input.submit_button{:alt => "Submit Form", :src => "ok_button.png", :type => "image"}/
+        #login.rounded-corners.border_x2.shadow_x1
+          .close_fly_window
+          %form{:action => ""}
+            .head_register
+            .info Логин или E-mail :
+            .text_fields
+              %input.log_client_tfeild{:name => "", :type => "text"}/
+            .info Пароль :
+            .text_fields
+              %input.log_client_tfeild{:name => "", :type => "text"}/
+            .control
+              %span
+                %a{:href => "#"} Забыли?
+              %input.login_button{:alt => "Submit Form", :src => "ok_button_green.png", :type => "image"}/
+      / ------------------------------------------------- BLACK_PALET END--------------
+      .twoColFixRtHdr
+        .border_ornements
+          / ------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+          .header_top
+            / ------------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+            .coconut_leaves
+              / --------------------------------------------------------------------------------- NEW CLASS ADDED--------------
+              #container
+                #header
+                  #designService.headerLayer1
+                  .login_panel
+                    .login Вход
+                    .registration Регистрация
+                / ------------------------ END HEADER --------------------------------------------------------------------------------------------------
+                #maincontent_default
+                  / --------------------------------------------------------------CHANGE ID NAME
+                  .page_content_default
+                    .collage_design.mode2
+                      %ul#main_menu.default_pages
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Архитекторы
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Дизайнеры
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Инженеры
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Строительные фирмы
+                        %li
+                          %a{:href => "#"}
+                            %span/
+                          %p Строительные бригады
+                    %ul#navigation
+                      %li.first
+                        %a{:href => "#"} Главная
+                      %li
+                        %a{:href => "#"} Дизайн-проекты
+                      %li.last
+                        %a{:href => "#"} концепция
+                    .page_description.design_p-workin-docs
+                      %span.design_p-workin-docs Дизайн спальни
+                    .msg_caution
+                      %span.design_p-workin-docs Заполните заявку
+                    %form#all_forms{:action => ""}
+                      .design_p-workin-docs_form1.border_x1.rounded-corners_l2.shadow_x1
+                        .number
+                        .form_description
+                        .file_attaching.border_x5.rounded-corners_l3
+                          %span.caution Прикрепите: 1. план с расстановкой мебели!
+                          %span.attach Вы можете перетащить файлы сюда
+                        .number_second
+                        .form_description_second
+                        %span.text
+                          Площадь помещения:
+                          %input.textlines_default.textline_l6{:name => "plojad", :type => "text"}/
+                        .interior
+                          Какой стиль интерьера Вы предпочитаете?
+                          %ul.answer
+                            %li
+                              %input#classicism{:name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "classicism"} Классицизм
+                            %li
+                              %input#minimalism{:checked => "checked", :name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "minimalism"} Современный минимализм
+                            %li
+                              %input#East{:name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "East"} Восток
+                            %li
+                              %input#Art-Deco{:name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "Art-Deco"} Современный Art-Deco
+                            %li
+                              %input#any{:name => "interior", :type => "radio", :value => ""}/
+                              %label{:for => "any"}
+                                Другое
+                                %input.textlines_default.textline_l5{:name => "plojad", :type => "text"}/
+                        .present_results
+                          Как Вам представить результат?
+                          %ul.answer
+                            %li
+                              %input#3d{:name => "present_results", :type => "radio", :value => ""}/
+                              %label{:for => "3d"} 3-D визуализация
+                            %li
+                              %input#drawing{:name => "present_results", :type => "radio", :value => ""}/
+                              %label{:for => "drawing"} Рисунок от руки
+                      .design_p-workin-docs_form2.border_x3.rounded-corners_l2.shadow_x1
+                        .number
+                        .form_description
+                        %input.var_form3_default.textline_l12{:name => "", :type => "text"}/
+                        %input.var_form3_default.textline_l12{:name => "", :type => "text"}/
+                        %input.var_form3_default.textline_l12{:name => "", :type => "text"}/
+                      %span.design_p-workin-docs-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
+                      .design_p-workin-docs_submiting
+                        %input.submit_all_forms{:alt => "", :onclick => "$('#all_forms').trigger('reset');\n; return false;", :src => "cancelButton.png", :type => "image"}/
+                        %input.submit_all_forms{:alt => "Submit Form", :src => "postButton.png", :type => "image"}/
+                  / ----------------------END page_content_default
+                  #block_menu_default
+                    %ul
+                      %li
+                        %a{:href => "PostVarPlan.html"}
+                          %span/
+                        %p
+                          Разработка
+                          = succeed "\u{432}\u{430}\u{440}\u{438}\u{430}\u{43d}\u{442}\u{43e}\u{432}" do
+                            %br/
+                          планировок
+                      %li
+                        %a{:href => "PlanRefactoring.html"}
+                          %span/
+                        %p Согласования перепланировок
+                      %li
+                        %a{:href => "design_project.html"}
+                          %span/
+                        %p Дизайн-проект
+                      %li
+                        %a{:href => "engineering_systems.html"}
+                          %span/
+                        %p
+                          Инженерные
+                          = succeed "\u{441}\u{438}\u{441}\u{442}\u{435}\u{43c}\u{44b}" do
+                            %br/
+                          и конструктив
+                / ----------------------------------------- -----------------------------------------------END maincontent_default
+              / -------------------------------------------------------------------------------------------------END container-------
+              .footer
+                / FOOTER START-------------------------------
+                .footer_elements
+                  .contact_with_us
+                    Связаться с нами:
+                    %br/
+                    Тел: +7 (495) 123-45-67
+                    %br/
+                    E-mail: info@design-servis.ru
+                  .rights Дизайн-Сервис©2О12
+                  .partners
+                    Партнеры:
+                    %br/
+                    Банк-Идей
+                    %br/
+                    www-студия
+              / -------------- FOOTER END -------
+            / coconut_leaves ----------------------------------------------------- END CLASS-
+          / header_top  ----------------------------------------------------- END CLASS-
+        / border_ornements ---------------------------------------------------- END CLASS

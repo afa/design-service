@@ -8,8 +8,7 @@ class EngineeringSystemsController < InheritedResources::Base
   end
 
   def update
-    resource.update_attributes(permitted_params[:engineering_system])
-    resource.save!
+    resource.update_attributes!(permitted_params[:engineering_system])
     respond_with do |format|
       format.json { render json: {text: attachments_text} }
     end
@@ -17,8 +16,8 @@ class EngineeringSystemsController < InheritedResources::Base
 
 private
   def permitted_params
-    params.permit(:engineering_system => [:address, :stage, :wishes, :section, :electrical_equipment, 
-                                          :water_supply_and_sewerage, :heating, :ventilation, 
+    params.permit(:engineering_system => [:address, :stage, :wishes, :section, :electrical_equipment,
+                                          :water_supply_and_sewerage, :heating, :ventilation,
                                           :low_voltage_systems, :constructive_solutions])
   end
 

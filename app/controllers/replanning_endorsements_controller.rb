@@ -9,8 +9,7 @@ class ReplanningEndorsementsController < InheritedResources::Base
   end
 
   def update
-    resource.update_attributes(permitted_params[:replanning_endorsement])
-    resource.save!
+    resource.update_attributes!(permitted_params[:replanning_endorsement])
     respond_with do |format|
       format.json { render json: {text: attachments_text} }
     end

@@ -9,8 +9,7 @@ class PlanDevelopmentsController < InheritedResources::Base
   end
 
   def update
-    resource.update_attributes(permitted_params[:plan_development])
-    resource.save!
+    resource.update_attributes!(permitted_params[:plan_development])
     respond_with do |format|
       format.json { render json: {text: attachments_text} }
     end

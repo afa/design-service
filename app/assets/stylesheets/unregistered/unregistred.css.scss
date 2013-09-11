@@ -59,7 +59,7 @@ body  {
   text-align: left; /* this overrides the text-align: center on the body element. */
   height:auto;
   padding:0px;
-  
+
 }
 
 
@@ -199,7 +199,7 @@ div.copyright_text{ padding-left:45px; margin-top:20px;   width:750px;  position
 span.copyright_ques ul.answer{list-style:none;  margin:0px;  padding-left:10px; float: right; padding-right:120px;}
 span.copyright_ques ul.answer li{ float: none;  margin-right:10px; }
 
-span.copyright_ques ul.select{list-style:none;  margin:0px;  padding-left:10px; float: right; padding-right:240px;} 
+span.copyright_ques ul.select{list-style:none;  margin:0px;  padding-left:10px; float: right; padding-right:240px;}
 span.copyright_ques ul.select li{ float: none;  margin-right:10px; }
 div.copyright_ques_submiting{  height:80px; width:550px; margin-left:160px; padding:40px 0px 60px 0px;  }
 
@@ -490,8 +490,8 @@ ul#navigation.blue li.last a{ color:#6d95c3; }
 .main_page{ margin:5px 0px 0px 130px; }
 .default_pages{ margin:5px 0px 0px 220px; }
 ul#main_menu{ float:left; position:absolute; list-style:none; padding:0px; }
-ul#main_menu li{ width:331px; height:67px; margin-bottom:8px;  } 
-ul#main_menu li span{ width:331px; height:67px;   background-image:image-url("menu-spec.png"); float:left; } 
+ul#main_menu li{ width:331px; height:67px; margin-bottom:8px;  }
+ul#main_menu li span{ width:331px; height:67px;   background-image:image-url("menu-spec.png"); float:left; }
 ul#main_menu li span:hover{ background-image:image-url("menu-spec-hover.png");}
 ul#main_menu li span p{ padding-left:60px; width:260px;  text-align:center; padding-top:5px; color:#FFFFFF; font-size:18px;}
 
@@ -528,7 +528,7 @@ div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; back
    }
 
 /*  REGISTER CLIENT BLOCK*/
-#register{ width:477px; height:394px; background-color: #FFFFFF; margin:0px auto; position:relative; margin-top:130px;   font-family: Tahoma; display:none;} 
+#register{ width:477px; height:394px; background-color: #FFFFFF; margin:0px auto; position:relative; margin-top:130px;   font-family: Tahoma; display:none;}
 #register div.head_register{ height:29px; width:100%; background-image:image-url("register_logo.png"); background-position:center; background-repeat:no-repeat; padding:20px 0px 40px 0px;}
 #register div.info{ width:120px; float:left; margin-left:10px; text-align:right; padding-right:10px; margin-bottom:30px; font-size:16px; color:#4c4c4c;}
 #register div.info span{ color:#990000;}
@@ -538,7 +538,7 @@ div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; back
 .submit_button{ float:right; padding-right:40px;}
 
 /*  LOGIN CLIENT BLOCK*/
-#login{ width:412px; height:232px; background-color: #FFFFFF; margin:0px auto; position:relative; margin-top:200px;   font-family: Tahoma; display: none;} 
+#login{ width:412px; height:232px; background-color: #FFFFFF; margin:0px auto; position:relative; margin-top:200px;   font-family: Tahoma; display: none;}
 #login div.head_register{ height:29px; width:100%; background-image:image-url("enter_logo.png"); background-position:25px; background-repeat:no-repeat; padding:20px 0px 30px 0px;}
 #login div.info{ width:165px; float:left; margin-left:0px; text-align:right; padding-right:4px; margin-bottom:25px; font-size:16px; color:#4c4c4c;}
 #login div.text_fields{  float:left; width:200px; margin-bottom:25px; border-bottom:1px solid #acacac; padding-top:2px;}
@@ -599,7 +599,7 @@ div.var_form1 span.subtitle{ font-size:12px; position: relative; margin-left:70p
 
 input[type='radio']
 {
- 
+
     float: left;
     width:0px;
     height: 0px;

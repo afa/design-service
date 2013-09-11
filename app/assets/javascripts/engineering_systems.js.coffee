@@ -30,7 +30,7 @@ $(document).ready ->
       li_near.css("display","block");
     else
       li_near.css("display","none");
-    
+
 
 
 

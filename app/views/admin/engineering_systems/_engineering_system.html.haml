@@ -1,0 +1,4 @@
+= show_for resource do |s|
+  = s.association :client do |c|
+    = c.decorate.admin_link
+  = s.attribute :price

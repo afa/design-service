@@ -45,4 +45,12 @@ private
   end
 
   helper_method :specialist_group_specialization
+
+  def specialist_page_subtitle
+    if params[:action] == 'show'
+      render_to_string partial: 'specialist_groups/specialist/subtitle_with_avatar', locals: {specialist_group: resource}
+    else
+      super
+    end
+  end
 end

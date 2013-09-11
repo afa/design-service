@@ -1,0 +1,36 @@
+= simple_form_for selected_form, remote: true, html: {id: 'all_forms'},  defaults: { input_html: { disabled: disabled } } do |f|
+  .design_p-workin-docs_form1.border_x1.rounded-corners_l2.shadow_x1
+    .number
+    .form_description
+    .file_attaching.border_x5.rounded-corners_l3.multiattach
+      .attach_place_for_box{:style=>"width:350px; height:120px; float:left; position:relative;"}
+
+    .number_second
+    .form_description_second
+    %span.text
+      Площадь помещения:#{ f.input_field :room_space, class: 'textlines_default textline_l6' }
+    .interior
+      Какой стиль интерьера Вы предпочитаете?
+      = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
+      = f.input_field :interior_style_comment, as: :string, class: ['textlines_default', 'textline_l5'], size:10
+    .present_results
+      Как Вам представить результат?
+      = f.input_field :show_results, as: :radio_buttons, collection: SelectedForm.show_results.options
+  .design_p-workin-docs_form2.border_x3.rounded-corners_l2.shadow_x1
+    .number
+    .form_description
+    = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
+  %span.design_p-workin-docs-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
+  .design_p-workin-docs_submiting
+    %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;"}
+    %input.postRequest.submit_all_forms{:alt => "Отправить форму", :src => "#{ asset_path('postButton.png')}", :type => "image"}
+
+.attach_box
+  %span.dropZone
+    = simple_form_for resource.attachments.build(kind: 'design_project'), url: selected_form_attachments_url(resource, format: 'json'), remote: true, multipart: true, defaults: { input_html: { disabled: disabled } }  do |f|
+      = f.input_field :file, as: :file
+      = f.input_field :kind, as: :hidden
+
+    .hint Вы можете перетащить файлы сюда
+  %span.caution{:style=>"color: #e51600; float: left; font-size: 12px; padding-left: 20px; padding-top:20px;"} Прикрепите: 1. план с расстановкой мебели!
+  %span.attach Вы можете перетащить файлы сюда
