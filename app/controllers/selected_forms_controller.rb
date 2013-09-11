@@ -11,7 +11,7 @@ class SelectedFormsController < InheritedResources::Base
 
 protected
   def permitted_params
-    params.permit(selected_form: [:room_space, :interior_style, :interior_style_comment, :show_results,:wishes])
+    params.permit(selected_form: [:room_space, :interior_style, :interior_style_comment, :show_results,:wishes, :typename])
   end
 
   def attachments_text
@@ -29,4 +29,5 @@ protected
   def typename
     params[:type]
   end
+  helper_method :typename
 end

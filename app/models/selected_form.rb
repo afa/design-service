@@ -16,4 +16,11 @@ class SelectedForm < ActiveRecord::Base
     {  }
   end
   def title; I18n.t "titles.#{self.class.name.underscore}.#{order_customizer.typename}"; end
+
+  def typename
+    order_customizer.typename
+  end
+  def typename=(type)
+    order_customizer = OrderCustomizer.by_type(type)
+  end
 end

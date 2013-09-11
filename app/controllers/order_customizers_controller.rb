@@ -5,12 +5,18 @@ class OrderCustomizersController < ApplicationController
 private
 
   def load_draft
-    @selected_form = SelectedForm.find_or_create_order( SelectedForm.by_type(params[:type]) )
+    @selected_form = SelectedForm.find_or_create_order( SelectedForm.by_type(params[:type]) ) do |selected_form|
+      selected_form.order_customizer = OrderCustomizer.by_type(typename)
+    end
+  end
+
+  def typename
+    params[:type]
   end
 
   def resource
     @selected_form
   end
 
-  helper_method :resource
+  helper_method :resource, :typename
 end

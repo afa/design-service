@@ -22,7 +22,7 @@ module ActsAsOrderable
         o.build_order(client: User.current)
       end
       yield orderable  if block_given?
-      #puts "\n=====================\n#{orderable.order_customizer}\n===================\n"
+      puts "\n=====================\n#{orderable.order_customizer}\n===================\n"
       orderable.save
       orderable
     end
