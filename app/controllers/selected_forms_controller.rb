@@ -21,6 +21,12 @@ protected
   end
 
   def load_draft
-    @selected_form = SelectedForm.find_or_create_order( SelectedForm.by_type(params[:type]) )
+    @selected_form = SelectedForm.find_or_create_order( SelectedForm.by_type(typename) ) do |selected_form|
+      selected_form.order_customizer = OrderCustomizer.by_type(typename)
+    end
+  end
+
+  def typename
+    params[:type]
   end
 end

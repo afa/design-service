@@ -17,11 +17,13 @@ module ActsAsOrderable
     # creates stubby saved order with associated model and linked client
     # given block is called after save so it's a good place to build some associations
     def generate_order
+      
       orderable = new(default_params) do |o|
         o.build_order(client: User.current)
       end
-      orderable.save
       yield orderable  if block_given?
+      #puts "\n=====================\n#{orderable.order_customizer}\n===================\n"
+      orderable.save
       orderable
     end
 
@@ -29,8 +31,13 @@ module ActsAsOrderable
       raise NotImplementedError, "Specify #{self.name}.default_params class-method with default order parameters"
     end
 
-    def find_or_create_order(scope = where({}))
-      scope.by_client(User.current).by_work_state('draft').first || generate_order
+    def find_draft(scope = where({}))
+      scope.by_client(User.current).by_work_state('draft').first
+    end
+    
+    # block is run only for created object
+    def find_or_create_order(scope = where({}), &block)
+      find_draft(scope) || generate_order(&block)
     end
   end
 
