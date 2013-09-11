@@ -10,7 +10,7 @@ $(document).ready ->
   order_form = $('form#all_forms')
   attach_box = $('.attach_box')
   attach_form = attach_box.find('form')
-  attach_box.css("position":"absolute", "top": "300"+"px" ,"z-index": "10", "float":"left","margin-left":"120"+"px" )
+  attach_box.offset( order_form.find('.attach_place_for_box').offset() )
   attachment_and_form_ajax_submission(
       order_form
       attach_form
@@ -20,8 +20,8 @@ $(document).ready ->
 
   $('.loaded_files').on 'change', ->
     register_destroy_attachment_buttons()
-    register_destroy_attachment_buttons()
-    register_drag_n_drop(attach_box.find('.dropZone'), attach_form.find('input[type=file]'), attach_box.find('.hint'))
+  register_destroy_attachment_buttons()
+  register_drag_n_drop(attach_box.find('.dropZone'), attach_form.find('input[type=file]'), attach_box.find('.hint'))
 
   #////IMAGE HOVER///
   $(".img_").mouseenter ->
@@ -43,3 +43,5 @@ $(document).ready ->
     $(this).addClass "selected"
 
   $('.interior ul li:last-child label').append($('.interior ul + input[type="text"]'))
+  $('.interior input[type="text"]').change ->
+    $('.interior input[type="radio"]').last().get(0).checked = true

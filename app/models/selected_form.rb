@@ -9,7 +9,7 @@ class SelectedForm < ActiveRecord::Base
   scope :by_type, ->(type){ joins(:order_customizer).where(order_customizers: {typename: type}) }
 
   def attachment_kinds
-    ['plan_of_flat']
+    ['plan_with_furniture']
   end
 
   def self.default_params

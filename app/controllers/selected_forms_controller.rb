@@ -20,17 +20,7 @@ protected
                     formats: [:html], handlers: [:haml])
   end
 
-end
-
-private
-
   def load_draft
     @selected_form = SelectedForm.find_or_create_order( SelectedForm.by_type(params[:type]) )
   end
-
-  def resource
-    @selected_form
-  end
-
-  helper_method :resource
 end
