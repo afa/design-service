@@ -15,4 +15,5 @@ class SelectedForm < ActiveRecord::Base
   def self.default_params
     {  }
   end
+  def title; I18n.t "titles.#{self.class.name.underscore}.#{order_customizer.typename}"; end
 end

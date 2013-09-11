@@ -9,5 +9,10 @@ class SelectedFormDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-
+  def border_class
+    'border_x4'
+  end
+  def border_class_mild
+    'border_x2'
+  end
 end

@@ -57,6 +57,7 @@ ru:
     #  type1: 'ToDo Дизайн-проект'
     #  type2: 'ToDo Дизайн-проект'
     #  TODO: 'To Do'
+    selected_form: 'Дизайн-проект'
   controller_titles: # header of page
     welcome: ''
     plan_developments: 'Разработка вариантов планировок'
