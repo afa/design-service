@@ -7,12 +7,12 @@
       Рабочая
       = succeed "\u{434}\u{43e}\u{43a}\u{443}\u{43c}\u{435}\u{43d}\u{442}\u{430}\u{446}\u{438}\u{44f}" do
         %br/
-  %a{:href => "copyright_supervision.html"}
-  .copyright
   %ul.concept
     - %w[ hallway bedroom living_room color_solutions child_room bathroom kitchen kitchen_plus_living_room lounges cabinet ].each do |project_type|
       %li
         = render partial: 'order_customizers/project', locals: {type: project_type}
+  %a{:href => "copyright_supervision.html"}
+    .copyright
   %ul.working_documents
     - %w[ sweep_wall floor_plans ceiling_fixtures ventilation draping_materials ].each do |project_type|
       %li
