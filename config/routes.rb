@@ -13,11 +13,14 @@ DesignService::Application.routes.draw do
   end
 
   resources :messages
+  resources :reviews
   resources :specialist_groups do
     resources :messages
+    resources :reviews, only: [:index]
   end
   resources :specialists do
     resources :messages
+    resources :reviews, only: [:index]
   end
   resources :photo_collections
   resources :photos

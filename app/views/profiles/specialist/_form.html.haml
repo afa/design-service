@@ -1,23 +1,30 @@
 .specialist_img_
   %span.specialist_img_border
   = image_tag 'specialist_img.jpg'
-.send_message.msg
 .info_specialist
   %span.heading
     Обо Мне
-    = image_tag 'edit.png', alt: 'edit', class: 'change_text'
+    = image_tag 'edit.png', alt: 'edit', class: 'change_text bio_info'
   %p= profile.user.specialist.bio_info
   %span.heading
     О Работе
-    = image_tag 'edit.png', alt: 'edit', class: 'change_text'
+    = image_tag 'edit.png', alt: 'edit', class: 'change_text work_info'
   %p= profile.user.specialist.work_info
   %span.heading.margine Портфолио
-  - profile.user.specialist.portfolios.first(3).each do |portfolio|
+  - profile.user.specialist.portfolios.each do |portfolio|
     %ul.portfolio
       %li.projects.rounded-corners_l3
         %span.project_name= portfolio.name
         %span.edit.change_portfolio{:alt => "edit"}
         = render partial: 'shared/portfolio_editable', locals: {portfolio_items: portfolio.portfolio_items, example_set: portfolio.id, ul_class: 'portfolio_list'}
-  .see_all смотреть все
   .add_new
     = image_tag 'add_new_project.png', alt: 'add_new', class: 'change_portfolio'
+
+.hidden_form
+  = simple_form_for profile.specialist, remote: true do |f|
+    .bio_info
+      .border_x4.rounded-corners_l2.shadow_x1
+        = f.input_field :bio_info
+    .work_info
+      .border_x4.rounded-corners_l2.shadow_x1
+        = f.input_field :work_info

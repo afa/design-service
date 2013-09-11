@@ -1,4 +1,5 @@
 //= require ./specialists
+//= require ./gallery
 
 /*  PAGE CONCEPT DESIGNERS_INFO.HTML */
 span.designers{ color:#ca3932; padding-top:10px; float:left; }
@@ -34,3 +35,17 @@ ul.rel_portfolio{ list-style:none; width:775px;  overflow:auto; padding-bottom:4
 ul.rel_portfolio li:nth-child(4){ margin:0px;}
 ul.rel_portfolio li{ float:left; padding-top:15px; margin-right:45px;}
 ul.rel_portfolio li img{ width:120px; height:120px;}
+
+div.info_specialist ul.members{ float: left; position:relative; list-style:none; max-width:550px; margin:0px 0px 20px 0px; padding:0px; max-height:150px; }
+div.info_specialist ul.members li.content{ float:left; width:500px; max-height:150px; margin-left:1px; margin-right:5px;}
+div.info_specialist ul.members li.left_controller{ position:relative; float:left; width:15px; height:136px; padding-top:15px}
+div.info_specialist ul.members li.right_controller{position:relative; float:left; width:15px; margin:0px; height:136px; padding-top:15px}
+div.info_specialist ul.members li.content ul{ list-style:none; float:left; position:relative; margin:0px; padding:0px; max-height:146px; overflow: hidden;}
+div.info_specialist ul.members li.content ul li{ width:118px; height:146px; margin-right:5px; background-color:#c5dde4; float: left}
+
+div.info_specialist ul.comments{ margin:0px; padding:0px; float: left; position:relative; list-style:none; width:550px; margin-top:15px;}
+div.info_specialist ul.comments li{ margin-bottom:5px; float:left; background-color:#d2d2d2; width:550px;}
+div.info_specialist ul.comments li ul{ float:left; position:relative; list-style:none; margin:0px; padding:10px; width:510px; }
+div.info_specialist ul.comments li ul li{ margin:0px; padding:0px; float:none; width:510px; font-size:12px;}
+div.info_specialist ul.comments li ul li:nth-child(1){ font-weight:bold; font-size:14px;}
+div.info_specialist ul.comments li ul li:nth-child(1) span{ color:#6d6d6d; font-weight:normal; font-size:11px; margin-left:5px;}

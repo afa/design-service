@@ -26,7 +26,10 @@ class SpecialistDecorator < Draper::Decorator
   #     end
   #   end
 
-  def avatar
-    user.decorate.avatar
+  def avatar(options = {})
+    user.decorate.avatar(options)
+  end
+  def to_s
+    source.to_s
   end
 end

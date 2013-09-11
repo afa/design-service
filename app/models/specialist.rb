@@ -7,6 +7,8 @@ class Specialist < ActiveRecord::Base
   has_many :transactions_inbound, :class_name => 'Transaction', :foreign_key => :destination_id
   has_many :transactions_outbound, :class_name => 'Transaction', :foreign_key => :source_id
 
+  has_many :reviews, through: :orders
+
   def transactions
    transactions_inbound + transactions_outbound
   end

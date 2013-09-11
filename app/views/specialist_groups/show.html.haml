@@ -1,4 +1,7 @@
 - content_for :outer_box do
   = render 'shared/msg_box', messages: @messages
 #specialization_data{:data => {:specialization => specialist_group_specialization} }
-= render resource
+- if User.current.specialist?
+  = render partial: 'specialist_groups/specialist/specialist_group', locals: {specialist_group: resource}
+- else
+  = render partial: 'specialist_groups/client/specialist_group', locals: {specialist_group: resource}
