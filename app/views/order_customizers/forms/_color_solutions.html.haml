@@ -1,0 +1,94 @@
+.msg_caution
+  %span.design_p_color_scheme Заполните заявку
+%form#all_forms{:action => ""}
+  .design_p_color_scheme_form1.border_x1.rounded-corners_l2.shadow_x1
+    .number
+    .form_description
+    .file_attaching.border_x5.rounded-corners_l3
+      %span.caution Прикрепите: 1. план с расстановкой мебели!
+      %span.attach Вы можете перетащить файлы сюда
+    .number_second
+    .form_description_second
+    %span.text
+      Площадь помещения: Помещение
+      %input.textlines_default.textline_l6-5{:name => "room_block1plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999')}; return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000')}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
+    .interior
+      Какой стиль интерьера Вы предпочитаете?
+      %ul.answer
+        %li
+          %input#classicism{:name => "interior", :type => "radio", :value => ""}
+          %label{:for => "classicism"} Классицизм
+        %li
+          %input#minimalism{:checked => "checked", :name => "interior", :type => "radio", :value => ""}
+          %label{:for => "minimalism"} Современный минимализм
+        %li
+          %input#East{:name => "interior", :type => "radio", :value => ""}
+          %label{:for => "East"} Восток
+        %li
+          %input#Art-Deco{:name => "interior", :type => "radio", :value => ""}
+          %label{:for => "Art-Deco"} Современный Art-Deco
+        %li
+          %input#any{:name => "interior", :type => "radio", :value => ""}
+          %label{:for => "any"}
+            Другое
+            %input.textlines_default.textline_l5{:name => "plojad", :type => "text"}
+    .range_and_tone
+      Какие гамму и тональность Вы предпочитаете?
+      %ul.answer
+        %li
+          %input#cold_gamma{:checked => "checked", :name => "cold_gamma", :type => "checkbox", :value => ""}
+          %label{:for => "cold_gamma"} Холодная гамма
+        %li
+          %input#saturated_colors{:name => "saturated_colors", :type => "checkbox", :value => ""}
+          %label{:for => "saturated_colors"} Яркие насыщенные цвета
+        %li
+          %input#warm_color{:name => "warm_color", :type => "checkbox", :value => ""}
+          %label{:for => "warm_color"} Теплая гамма
+        %li
+          %input#pastel_shades{:name => "pastel_shades", :type => "checkbox", :value => ""}
+          %label{:for => "pastel_shades"} Пастельные оттенки
+    .color_keyboard_block
+      %span Главный цвет в колористической композиции?
+      .color_keyboard
+        %ul.wide
+          %li{:value => "#fdabb2"}
+          %li{:value => "#faa486"}
+          %li{:value => "#ffbf64"}
+          %li{:value => "#f0d167"}
+          %li{:value => "#b3e360"}
+          %li{:value => "#87ffb4"}
+          %li{:value => "#a4efff"}
+          %li{:value => "#719bfc"}
+          %li{:value => "#928afa"}
+          %li{:value => "#cf83ce"}
+        %ul.short
+          %li{:value => "#fb3737"}
+          %li.dis_short{:value => "#fd9437"}
+          %li.dis_long{:value => "#fdf037"}
+          %li.dis_short{:value => "#42cd37"}
+          %li.dis_short{:value => "#37f1fd"}
+          %li.dis_long{:value => "#4037fd"}
+          %li.dis_short{:value => "#9937fd"}
+        %input#selected_color{:name => "key_color", :type => "hidden", :value => ""}
+    .present_results
+      Как Вам представить результат?
+      %ul.answer
+        %li
+          %input#palette_combinations{:checked => "checked", :name => "present_results", :type => "radio", :value => ""}/
+          %label{:for => "palette_combinations"} Палитра сочетаний
+        %li
+          %input#3d{:name => "present_results", :type => "radio", :value => ""}
+          %label{:for => "3d"} 3-D визуализация
+        %li
+          %input#drawing{:name => "present_results", :type => "radio", :value => ""}
+          %label{:for => "drawing"} Рисунок от руки
+  .design_p_color_scheme_form2.border_x3.rounded-corners_l2.shadow_x1
+    .number
+    .form_description
+    %input.var_form3_default.textline_l12{:name => "", :type => "text"}
+    %input.var_form3_default.textline_l12{:name => "", :type => "text"}
+    %input.var_form3_default.textline_l12{:name => "", :type => "text"}
+  %span.design_p_color_scheme-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
+  .design_p_color_scheme_submiting
+    %input.submit_all_forms{:alt => "", :onclick => "$('#all_forms').trigger('reset');\n; return false;", :src => "cancelButton.png", :type => "image"}/
+    %input.submit_all_forms{:alt => "Submit Form", :src => "postButton.png", :type => "image"}

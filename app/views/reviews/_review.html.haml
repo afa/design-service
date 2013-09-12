@@ -1,3 +1,5 @@
-= show_for review do |f|
-  = f.association :order
-  = f.association :text
+%ul
+  %li
+    = review.user
+    %span= review.created_at
+  %li= review.text

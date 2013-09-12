@@ -21,12 +21,6 @@ class PlanDevelopment < ActiveRecord::Base
   def family_composition_first_line=(val); @family_composition_first_line = val; mk_family_composition; end
   def family_composition_second_line=(val); @family_composition_second_line = val; mk_family_composition; end
 
-  def self.generate
-    generate_order do
-      orderable.attachments.build
-    end
-  end
-
   def self.default_params
     { join_kitchen_with_living_room: true,
       big_kitchen: :greater_than_fifteen,

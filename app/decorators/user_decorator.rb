@@ -19,7 +19,7 @@ class UserDecorator < Draper::Decorator
   #       source.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-  def avatar
-    h.image_tag (source.avatar || source.build_avatar).photo.url
+  def avatar(options = {})
+    h.image_tag((source.avatar || source.build_avatar).photo.url, options)
   end
 end

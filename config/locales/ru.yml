@@ -4,6 +4,8 @@
 ru:
   attachment_kinds:
     plan_of_flat: 'План квартиры'
+    supplementary_files: 'Вспомогательные файлы'
+    design_project: 'Дизайн-проект'
   http_status:
     unauthorized: 'Вы не авторизованы для просмотра этого файла'
   date:
@@ -50,7 +52,27 @@ ru:
   titles:
     plan_development: 'Разработка вариантов планировок'
     replanning_endorsement: 'Согласование перепланировок'
-    engineering_systems: 'Инженерые системы и конструктив'
+    engineering_system: 'Инженерые системы и конструктив'
+    #design_project:
+    #  type1: 'ToDo Дизайн-проект'
+    #  type2: 'ToDo Дизайн-проект'
+    #  TODO: 'To Do'
+    selected_form:
+      hallway: 'Дизайн прихожей'
+      bedroom: 'Дизайн спальни'
+      living_room: 'Дизайн гостиной'
+      color_solutions: 'Цветовые решения (идеи сочетаний)'
+      child_room: 'Дизайн детской комнаты'
+      bathroom: 'Дизайн санузла'
+      kitchen: 'Дизайн кухни'
+      kitchen_plus_living_room: 'Дизайн кухни+гостиной'
+      lounges: 'Дизайн комнаты отдыха'
+      cabinet: 'Дизайн кабинета'
+      sweep_wall: 'Развертки стен'
+      floor_plans: 'Планы полов'
+      ceiling_fixtures: 'Планы потолков и освещение'
+      ventilation: 'Вентиляция и кондиционирование'
+      draping_materials: 'Подбор отделочных материалов'
   controller_titles: # header of page
     welcome: ''
     plan_developments: 'Разработка вариантов планировок'
@@ -70,6 +92,11 @@ ru:
     devise/sessions:
       new: 'Вход'
       create: 'Регистрация'
+    devise/passwords:
+      new: 'Забыли пароль'
+      create: 'Забыли пароль'
+      edit: 'Смена пароля'
+      update: 'Смена пароля'
   specialist_controller_titles:
     profiles:
       orders: 'МОИ ПРОЕКТЫ'
@@ -233,6 +260,16 @@ ru:
         building_brigades: 'Строительные бригады'
         not_a_specialists: 'Не специалисты'
   enumerize:
+    interior_style:
+      classicism: 'Классицизм'
+      modern_minimalism: 'Современный минимализм'
+      east: 'Восток'
+      modernart_deco: 'Современный Art-Deco'
+      any: 'Другое'
+
+    show_results:
+      3d_visualization: '3D-Визуализация'
+      freehand_drawing: 'Рисунок от руки'
     specialization:
       architector: 'Архитектор'
       engineer: 'Инженер'
@@ -264,3 +301,15 @@ ru:
       accepted_first_stage: 'Принято модератором первого уровня'
       accepted_complete: 'Принято главным модератором'
       accepted_automatically: 'Принято модератором первого уровня и подтверждено по истечении срока проверки'
+  order:
+    work_state:
+      draft: 'Черновик заказа'
+      moderator_suggested: 'Модератор предложил цену'
+      specialist_agreed: 'Специалист подтвердил предложенную цену'
+      client_agreed: 'Заказчик подтвердил предложенную цену'
+      in_work: 'В работе'
+      work_accepted: 'Выполненная работа принята'
+    payment_state:
+      not_paid: 'Заказ не оплачен'
+      advance_paid: 'Аванс за заказ оплачен'
+      paid: 'Заказ оплачен'

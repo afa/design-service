@@ -10,7 +10,8 @@ $(document).ready ->
   order_form = $('form#all_forms')
   attach_box = $('.attach_box')
   attach_form= attach_box.find('form')
-  attach_box.css("position":"absolute", "top": "760"+"px" ,"z-index": "10", "float":"left","margin-left":"120"+"px" )
+  attach_box.offset( order_form.find('.attach_place_for_box').offset() )
+  $('.attach_place_for_box').after($('.loaded_files'))
   attachment_and_form_ajax_submission(
       order_form
       attach_form
@@ -30,7 +31,7 @@ $(document).ready ->
       li_near.css("display","block");
     else
       li_near.css("display","none");
-    
+
 
 
 

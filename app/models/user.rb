@@ -85,10 +85,6 @@ class User < ActiveRecord::Base
     Message.by_user(id)
   end
 
-  def specialization
-    specialist ? specialist.specialization : :not_a_specialist
-  end
-
   def new_profile
     return if profile
     build_profile do |p|

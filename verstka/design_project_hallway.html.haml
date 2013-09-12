@@ -1,0 +1,53 @@
+.msg_caution
+  %span.design_p-workin-docs Заполните заявку
+%form#all_forms{:action => ""}
+  .design_p-workin-docs_form1.border_x1.rounded-corners_l2.shadow_x1
+    .number
+    .form_description
+    .file_attaching.border_x5.rounded-corners_l3
+      %span.caution Прикрепите: 1. план с расстановкой мебели!
+      %span.attach Вы можете перетащить файлы сюда
+    .number_second
+    .form_description_second
+    %span.text
+      Площадь помещения:
+      %input.textlines_default.textline_l6{:name => "plojad", :type => "text"}/
+    .interior
+      Какой стиль интерьера Вы предпочитаете?
+      %ul.answer
+        %li
+          %input#classicism{:name => "interior", :type => "radio", :value => ""}/
+          %label{:for => "classicism"} Классицизм
+        %li
+          %input#minimalism{:checked => "checked", :name => "interior", :type => "radio", :value => ""}/
+          %label{:for => "minimalism"} Современный минимализм
+        %li
+          %input#East{:name => "interior", :type => "radio", :value => ""}/
+          %label{:for => "East"} Восток
+        %li
+          %input#Art-Deco{:name => "interior", :type => "radio", :value => ""}/
+          %label{:for => "Art-Deco"} Современный Art-Deco
+        %li
+          %input#any{:name => "interior", :type => "radio", :value => ""}/
+          %label{:for => "any"}
+            Другое
+            %input.textlines_default.textline_l5{:name => "plojad", :type => "text"}/
+    .present_results
+      Как Вам представить результат?
+      %ul.answer
+        %li
+          %input#3d{:name => "present_results", :type => "radio", :value => ""}/
+          %label{:for => "3d"} 3-D визуализация
+        %li
+          %input#drawing{:name => "present_results", :type => "radio", :value => ""}/
+          %label{:for => "drawing"} Рисунок от руки
+  .design_p-workin-docs_form2.border_x3.rounded-corners_l2.shadow_x1
+    .number
+    .form_description
+    %input.var_form3_default.textline_l12{:name => "", :type => "text"}/
+    %input.var_form3_default.textline_l12{:name => "", :type => "text"}/
+    %input.var_form3_default.textline_l12{:name => "", :type => "text"}/
+  %span.design_p-workin-docs-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
+  .design_p-workin-docs_submiting
+    %input.submit_all_forms{:alt => "", :onclick => "$('#all_forms').trigger('reset');\n; return false;", :src => "cancelButton.png", :type => "image"}/
+    %input.submit_all_forms{:alt => "Submit Form", :src => "postButton.png", :type => "image"}/   

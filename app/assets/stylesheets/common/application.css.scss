@@ -3,17 +3,26 @@
 //= require ../lightbox/lightbox
 
 ul.list_of_attachments {
+  list-style:none;
+  line-height: 20px;
   li {
     position: relative;
     .delete_attachment {
       height: 16px;
       width: 16px;
-      position:absolute;
+      position:relative;
       left: 5px;
+      float:left;
     }
     .attachment_link {
-      position:absolute;
-      left: 25px;
+    margin-left:15px;
+    font-size:14px;
+      a:link, a:active, a:visited{ 
+      color:#4B4548;
+      text-decoration:none;
+      border-bottom:1px dotted #bc9c09;
+      }
+      a:hover{ color:#434242; border-bottom:1px dotted #ff0000;}
     }
   }
 }
@@ -23,8 +32,10 @@ ul.list_of_attachments {
     li {
       position: relative;
       .delete_attachment {
-        background-image: image-url('delete_attachment.png');
+        background-image: image-url('delete_attachment_2.png');
         background-repeat: no-repeat;
+        width:13px;
+        height:13px;
       }
     }
   }
@@ -41,3 +52,14 @@ ul.list_of_attachments {
   margin: 0px;
   font-size:16px;
 }
+
+.attach_place_for_box{
+  float:left;
+  position:relative;
+  width:500px;
+  min-height:140px;
+  overflow: auto;
+  margin-top:5px;
+
+}
+

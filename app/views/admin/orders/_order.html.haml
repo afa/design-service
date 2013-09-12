@@ -7,7 +7,7 @@
     = s.attribute :created_at
     = s.attribute :updated_at
   = simple_form_for [:admin, resource] do |f|
-    = f.association :executor, collection: SpecialistDecorator.decorate_collection(Specialist.all)
+    = f.association :executor, collection: SpecialistDecorator.decorate_collection(resource.possible_executors)
     = f.input :price
     = f.submit
 .message_list

@@ -92,9 +92,6 @@ class Order < ActiveRecord::Base
     orderable.title
   end
 
-  #def num_of_unfinished_works
-  #  orderable.num_plans.to_i - attachments.size
-  #end
   def unfinished_attachments
     orderable.attachment_kinds - attachments.pluck(:kind)
   end
@@ -114,6 +111,15 @@ class Order < ActiveRecord::Base
    return advance_price.to_f - amount_paid.to_f
   end
 
+  def possible_executors
+    if executor.is_a?(Specialist)
+      [executor]
+    elsif executor.is_a?(SpecialistGroup)
+      executor.specialists
+    elsif !executor
+      Specialist.all
+     end
+  end
 private
   def self.accepted_to_start_work_arel
     arel_table[:work_state].eq_any([:client_agreed, :in_work, :work_accepted])

@@ -45,6 +45,8 @@ body  {
   padding: 0;
   text-align: center;
   color: #000000;
+  font-size:16px;
+  font-size-adjust: 0.495;
   overflow:visible;
    -webkit-font-smoothing: antialiased;
      font-smoothing: antialiased;
@@ -181,19 +183,19 @@ div.var_form3 div.form_description{ background-image:image-url("comments.png"); 
 .var_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#eae9e9; height:30px; }
 
 
-div.var_form4{ width:505px; height:140px;  margin-left:45px; margin-top:15px; padding:20px; margin-bottom:25px; }
-div.attach_box{ padding: 20px 10px 10px 2px;}
+div.var_form4{ width:505px; margin-left:45px; margin-top:15px; padding:20px; margin-bottom:25px; float:left; overflow: auto; }
+div.attach_box{ padding: 20px 10px 10px 2px; position:absolute;}
 div.attach_box.plan_development div.number{ background-image:image-url("4_number_yellow_small.png"); float:left; width:54px; height:30px; float:left; margin:0px; padding:0px; background-repeat:no-repeat;}
 div.attach_box.plan_development div.form_description{ background-image:image-url("file_attach_refactoring_small.png"); width:449px; float:left; height:30px; background-repeat:no-repeat; margin:0px; padding:0px;}
 
 div.postvar_plan_submiting{  height:50px; width:550px; margin-left:60px; padding:20px 0px 20px 0px;}
 .submit_all_forms{ float:left; margin-right:25px;}
 
-div.calculator{ width:433px; height:126px; background-color:#ebebeb; margin-left:80px; margin-bottom:25px;}
+div.calculator{ width:433px; height:126px; background-color:#ebebeb; margin-left:80px; margin-bottom:25px; clear:both;}
 div.calculator div.form_description{ background-image:image-url("full_amount.png"); width:300px; float:left; margin-left:70px; margin-top:15px; padding:0px;  width:370px; height:29px; background-repeat:no-repeat;}
 div.calculator span{ width:200px; margin-left:60px; float:left; margin-top:6px; }
 .total{ width:300px; height:25px; text-align:center;}
-div.calculator span.count{float: left; color:#666; padding-left:220px; text-decoration:underline;}
+div.calculator span.count{float: left; color:#666; padding-left:220px; text-decoration:underline; }
 
 
 /* PAGE CONCEPT REG_ENGINEERING_SYSTEMS.HTML */
@@ -201,14 +203,14 @@ div.engineering_systems_form1{ width:500px;   margin-left:30px; margin-top:20px;
 div.engineering_systems_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; width:86px; height:29px; }
 div.engineering_systems_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height:29px; margin-left:10px; }
 div.engineering_systems_form1 div.head_part{ background-image:image-url("engineering_systems_form1-small.png"); width:430px; height:28px;  clear:both; margin:40px 0px 0px 35px; }
-div.engineering_systems_form1  div.file_attaching{ width:495px; height:150px; margin-top:15px; float:left; font-size:14px; }
+div.engineering_systems_form1  div.file_attaching{ width:495px; margin-top:15px; float:left; font-size:14px; }
 div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:11px; height:30px;  float:left; line-height:14px; text-align:center; margin-left:100px; margin-top:30px;}
 div.engineering_systems_form1  div.file_attaching span.attach{ padding:30px 0px 0px 140px; margin-top:0px;  color: #8e8e8e; float:left; background-image:image-url("file_att.png"); background-repeat: no-repeat; background-position: 80px 15px;}
 
 div.engineering_systems_form2{ width:450px; min-height:200px;  margin-left:90px; margin-top:15px; padding:30px; margin-bottom:25px; float:left; }
 div.engineering_systems_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right; width:86px; height:29px; }
 div.engineering_systems_form2 div.form_description{ background-image:image-url("task.png"); width:196px; float:right; height:29px; margin-left:10px; }
-div.engineering_systems_form2 ul{ list-style:none; font-size:16px;}
+div.engineering_systems_form2 ul{ list-style:none; }
 div.engineering_systems_form2 ul li{ margin-bottom:15px;}
 div.engineering_systems_form2 ul li span{ width:25px;  height:30px; float:left; padding-right:15px;  }
 div.engineering_systems_form2 ul li.caution{ font-size:12px; color:#e51600; display:none;}
@@ -229,14 +231,14 @@ span.design_project{ color:#c67700; }
 div.design_project{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
 div.msg_caution span.design_project{color:#f89f65;   padding:15px 0px 10px 115px; float:left; }
 
-div.design_project_all{ background-color:#e4efd5; min-height:900px; height:auto;  width:625px; clear: left; position:relative; overflow:auto; margin-top:5px; }
+div.design_project_all{ background-color:#e4efd5; min-height:900px; height:auto;  width:625px; clear: left; position:relative; overflow:auto; margin-top:5px;}
 
 div.design_project_all div.headers{ position:absolute; }
 div.design_project_all div.headers span{ float:left; width:150px; text-align:center; font-weight:bold; font-size:18px; padding-top:5px;}
 div.design_project_all div.headers span.first{ padding-right:150px; padding-top:13px; color:#b5d48c; padding-left:150px;}
 div.design_project_all div.headers span.second{color:#a3bfdd}
 
-div.design_project_all ul.concept{ margin:0px;  list-style:none; width:400px; height:auto;   position: relative; clear:both; overflow:auto; float:left; padding:60px 12px 0px 12px;}
+div.design_project_all ul.concept{ margin:0px;  list-style:none; width:400px; height:auto;   position: relative; clear:both; overflow:auto; float:left; padding:60px 12px 0px 12px; font-size:14px;}
 div.design_project_all ul.concept li{ margin:0px 30px 10px 20px;   width:150px; height:280px; position:static; float:left; }
 div.design_project_all ul.concept li img{ width:150px; height:150px;}
 div.design_project_all ul.concept li span.hover{ position:absolute;  width:150px; height:150px; background-image:image-url("hover_black.png"); background-repeat:repeat; display:none;}
@@ -251,7 +253,7 @@ div.design_project_all ul.working_documents li{  width:150px; height:280px; posi
 div.design_project_all ul.working_documents li img{ width:150px; height:150px;}
 
 div.design_project_all ul li span.heading{ text-align:center; width:auto; color:#383a3e; font-size:14px; font-weight:bold; width:150px; float:left; }
-div.design_project_all ul li span.text{ font-size:12px; color:#82848a; float:left; padding-top:15px; height:38px;}
+div.design_project_all ul li span.text{ font-size:13px; color:#82848a; float:left; padding-top:15px; height:38px;}
 div.design_project_all ul li span.order{ background-image:image-url("order.png"); background-repeat:no-repeat; width:101px; height:26px; float: right; padding-top:5px;}
 div.design_project_all ul li span.order:hover{ cursor:pointer; background-image:image-url("order_hover.png");}
 
@@ -292,7 +294,7 @@ div.design_p-workin-docs_form1{ width:480px;  margin-left:45px;  padding:30px; l
 div.design_p-workin-docs_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; height: 29px; width: 86px; margin-right:10px; }
 div.design_p-workin-docs_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
 
-div.design_p-workin-docs_form1  div.file_attaching{ width:470px; height:150px; margin-top:10px; float:left;}
+div.design_p-workin-docs_form1  div.file_attaching{ width:485px; height:150px; margin-top:10px; float:left;}
 div.design_p-workin-docs_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; }
 div.design_p-workin-docs_form1  div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:0px 0px 0px 140px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:80px 0px; margin-top:10px;}
 
@@ -600,7 +602,7 @@ div.header_page_specialist{ float:left; margin-top:100px; margin-left:20px; font
 
 /* ----------- */
 div.header_page_specialist img{ width:50px; height:50px; margin-right:15px; float:left; }
-div.header_page_specialist span.heaading{ padding-top:12px; float:left;}
+div.header_page_specialist span.heading{ padding-top:12px; float:left;}
 div.header_page_specialist span.members{ color:#9b9898; float:left; padding-top:20px; padding-left:10px; font-size:14px;}
 
 div.sidebar_left_specialist div.groups{ width:250px;  background-color:#ececec; float:left; margin-top:5px; margin-left:5px; margin-top:15px;}
@@ -641,24 +643,6 @@ div.info_specialist ul li.projects ul li.add:hover{ background-image: image-url(
 div.info_specialist ul li.projects ul li img{ width:75px; height:68px; margin:0px; padding:0px; }
 div.info_specialist div.see_all{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:right}
 div.info_specialist div.add_new{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:left; cursor:pointer;}
-/* ----------- */
-
-
-/* SPECIALIST REG_GROUP_SPACIALIST.HTML */
-
-div.info_specialist ul.members{ float: left; position:relative; list-style:none; max-width:550px; margin:0px 0px 20px 0px; padding:0px; max-height:150px; }
-div.info_specialist ul.members li.content{ float:left; width:500px; max-height:150px; margin-left:10px;}
-div.info_specialist ul.members li.left_controller{ position:relative; float:left; width:15px; height:136px; padding-top:15px}
-div.info_specialist ul.members li.right_controller{position:relative; float: right; width:15px; margin:0px; height:136px; padding-top:15px}
-div.info_specialist ul.members li.content ul{ list-style:none; float:left; position:relative; margin:0px; padding:0px; max-width:500px; max-height:146px; overflow: hidden;}
-div.info_specialist ul.members li.content ul li{ width:118px; height:146px; margin-right:5px; background-color:#c5dde4; float: left}
-
-div.info_specialist ul.comments{ margin:0px; padding:0px; float: left; position:relative; list-style:none; width:550px; margin-top:15px;}
-div.info_specialist ul.comments li{ margin-bottom:5px; float:left; background-color:#d2d2d2; width:550px;}
-div.info_specialist ul.comments li ul{ float:left; position:relative; list-style:none; margin:0px; padding:10px; width:510px; }
-div.info_specialist ul.comments li ul li{ margin:0px; padding:0px; float:none; width:510px; font-size:12px;}
-div.info_specialist ul.comments li ul li:nth-child(1){ font-weight:bold; font-size:14px;}
-div.info_specialist ul.comments li ul li:nth-child(1) span{ color:#6d6d6d; font-weight:normal; font-size:11px; margin-left:5px;}
 
 /* PORTFOLIO */
 #portfolio_changes{ width:660px;  background-color:#FFFFFF; margin: 0 auto; position:relative;  margin-top:50px; display:none;  clear:left; padding-bottom:5px; }
@@ -688,10 +672,10 @@ div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; back
 .coconut_leaves{ background-image:image-url("coconut_leaves.png"); background-repeat:no-repeat; background-position:center 0px; width: auto; position: relative; z-index:1; min-width:980px; height:auto }
 .springs{width:50px; height: 100%; position: absolute; z-index:60; background:image-url("repeating_bar.png"); background-repeat:repeat-y; margin:0px; padding:0px; right:620px; }
 .border_right{ width:12px; height:100%;	position: absolute;	z-index:60;	right:0px; background-image:image-url("right_border.png"); background-repeat:repeat-y; }
-div.border_right div.top_corner{ position:relative; width:12px; height:26px; background-image:image-url("right_top_corner.jpg"); }	
+div.border_right div.top_corner{ position:relative; width:12px; height:26px; background-image:image-url("right_top_corner.jpg"); }
 div.border_right div.bottom_corner{  position: absolute; width:12px; height:33px; bottom:0px; background-image:image-url("right_bottom_corner.jpg");}
 .border_left{ width:6px; height:100%; position: absolute; z-index:60; right:934px; background-image:image-url("left_border.png"); background-repeat:repeat-y; }
-div.border_left div.top_corner{ position:relative; width:6px; height:22px; background-image:image-url("left_top_corner.jpg"); }	
+div.border_left div.top_corner{ position:relative; width:6px; height:22px; background-image:image-url("left_top_corner.jpg"); }
 div.border_left div.bottom_corner{background-color:#000; position: absolute; width:6px; height:31px; bottom:0px; background-image:image-url("left_bottom_corner.jpg");}
 
 #black_content{ position:absolute; width:100%; height:100%;  z-index:20; background-image:image-url("black_content.png"); background-repeat:repeat; display: none;  min-width:980px; }
@@ -756,10 +740,10 @@ ul#navigation.blue li.last a{ color:#6d95c3; }
 /* TOP MENU MAIN*/
 #header {  height:131px;  margin: 0px;  padding: 0px;  width:auto;  clear:both;  }
 .headerLayer1 {  background-image:image-url("logo-2.png");    float: left;    width: 354px; /* Ширина слоя */    height:41px;  margin:46px 0px 0px 0px;   }
-#header ul{ float:left; position: absolute; top:138px; margin-left:365px; z-index:1; color:#6f2d2d; font-size:13px; }
+#header ul{ float:left; position: absolute; top:138px; margin-left:365px; z-index:1; color:#6f2d2d; font-size:0.9em;  }
 #header ul li{ float:left; list-style:none;  display: inline-block;  position:absolute; bottom:0px; text-align:center; line-height:15px; }
 
-#header ul li a:link span,#header ul li a:visited span{ color: #6f2d2d; font-size:13px; font-weight:bold;}
+#header ul li a:link span,#header ul li a:visited span{ color: #6f2d2d; }
 #header ul li:nth-child(1){ background-color:#a8d868; width:130px; height:78px; left:0px; }  /* Варианты планировки */
 #header ul li:nth-child(1) span{  width:130px; height:78px; float:left; margin-top:15px;}
 #header ul li:nth-child(2){ background-color:#e6c941; width:160px; height:60px; left:138px; } /* Согласования перепланировок */
@@ -788,12 +772,12 @@ ul#left_menu li a, ul#left_menu li a:link, ul#left_menu li a:visited, ul#left_me
 ul#left_menu li a:hover{ text-decoration:none; }
 ul#left_menu li:nth-child(1),ul#left_menu li:nth-child(1) a,ul#left_menu li:nth-child(2),ul#left_menu li:nth-child(2) a{ color:#d55400;}
 ul#left_menu li:nth-child(3),ul#left_menu li:nth-child(3) a{ color:#434242; padding-top:10px; padding-bottom:50px;}
-ul#left_menu li:nth-child(4),ul#left_menu li:nth-child(4) a{ color:#8d0606; margin-bottom:5px; font-size:18px;}
+ul#left_menu li:nth-child(4),ul#left_menu li:nth-child(4) a{ color:#8d0606; margin-bottom:5px; font-size:14px;}
 ul#left_menu li:nth-child(5),ul#left_menu li:nth-child(5) a,ul#left_menu li:nth-child(6),ul#left_menu li:nth-child(6) a{ color:#447801;}
 
 /* LEFT MENU BOTTOM */
 ul#menu_sub_left{ float:left; list-style: none; margin:0px;  }
-ul#menu_sub_left li{ float:left; font-size:14px; }
+ul#menu_sub_left li{ float:left; font-size:16px; }
 ul#menu_sub_left li span{ width:203px; height:35px; background-image:image-url("menu-spec-reg.png"); float:left; margin-bottom:5px; cursor:pointer; text-align:center; background-repeat:no-repeat; float:left; padding-top:14px;}
 ul#menu_sub_left li span:hover{ background-image:image-url("menu-spec-reg-hover.png"); text-decoration:underline;}
 ul#menu_sub_left li a, ul#menu_sub_left li a:visited{ color:#FFFFFF;}
@@ -811,8 +795,10 @@ div.footer_elements div.partners{ text-align:right; float: right;  margin-top:15
 .light_green{ background-color:#cfe4b4; color:#4d8701;}
 .light_red{ background-color:#ecdfdf; color:#d55400;}
 .caption_left_menu{ height: 55px;  margin-top:27px;  font-size:16px; font-weight: inherit;  float:left; width:252px; padding-left:40px; line-height:25px;}
+.caption_left_menu a, .caption_left_menu a:link, .caption_left_menu a:active{ color:#434242; text-decoration:underline; font-size:14px; } 
+.caption_left_menu a:hover{ text-decoration:none;}
 .caption{ height: 40px;  margin-top:27px; padding-top:15px;  font-size:22px; font-weight: inherit; float:left; width:595px; padding-left:40px;}
-.heading_captions{ color:#8d0606; font-size:18px; font:16px; float:left; padding:20px 0px 15px 40px;}
+.heading_captions{ color:#8d0606; font-size:16px; font:16px; float:left; padding:20px 0px 15px 40px;}
 .green_header{ color:#609c11;}
 .blue_header{ color: #5180a9;}
 .brown_header{color: #773129; }
@@ -879,8 +865,8 @@ box-shadow: 2px -2px 10px #8c8c8c;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
 	border-radius:15px;
-}	
-	
+}
+
 .textlines_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #333; height:20px; font-size:16px; background-color:#eae9e9; }
 
 .textline_l2{ width:45px; }
@@ -939,14 +925,14 @@ position:absolute;
 input[type='checkbox'] + label {
 	background-image:image-url("box_not_cheked.png");
 	background-repeat:no-repeat;
-  padding: 0px 0 0px 40px;
+  padding: 3px 0 0px 40px;
   cursor: pointer;
   height:35px;
 }
 input[type='checkbox']:checked + label {
 	background-image:image-url("box_checked.png");
 	background-repeat:no-repeat;
-	padding: 0px 0 0px 40px;
+	padding: 3px 0 0px 40px;
 	cursor: pointer;
 }
 
@@ -957,3 +943,9 @@ textarea:focus{ outline:none !important;}
 .log_client_tfeild{ width:200px; padding:0px; margin:0px; border:none; height:25px; font-size:16px; color:#4c4c4c;}
 .close_fly_window{ background-image:image-url("close.png"); width:30px; height:26px; position:absolute; right:0px; margin-top:-40px; cursor:pointer;}
 .slimScrollDiv { border-right:1px solid #eee; float:left;}
+
+div.msg_caution span{ color: #3d6804; font-size: 18px; margin-left: 35px; }
+div.msg_caution span.design_project{color: #f89f65; font-size: 18px; margin-left: 0px; padding-left:35px;}
+
+
+

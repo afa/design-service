@@ -1,5 +1,5 @@
 class SpecialistGroup < ActiveRecord::Base
-  has_many :specialists
+  has_and_belongs_to_many :specialists
 
   has_many :portfolios, as: :owner
   has_many :portfolio_items, through: :portfolios
@@ -9,9 +9,12 @@ class SpecialistGroup < ActiveRecord::Base
   has_many :received_messages, as: :recipient, class_name: 'Message'
 
   has_many :orders, as: :executor
+  has_many :reviews, through: :specialists
 
   def messages; received_messages; end
 
+  extend Enumerize
+  enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
   scope :by_specialization, ->(specialization) { where(specialization: specialization) }
 
 #  def positive_feedback; specialists.map(&:positive_feedback).inject(0,&:+); end
@@ -20,7 +23,7 @@ class SpecialistGroup < ActiveRecord::Base
 #  def number_of_completed_orders; specialists.map(&:number_of_completed_orders).inject(0,&:+); end
 
   def rating;  "#{reliability_rating}/#{quality_rating}"; end
-  def to_s; name; end
+  def to_s; "#{union_name} [#{name}]"; end
 
   def number_of_participants
     specialists.count
