@@ -29,6 +29,7 @@ class PurchasesController < ApplicationController
    render :text => 'fail' and return if sum.blank? || pay.blank?
    purchase = Purchase.find_by_id(pay)
    render :text => 'fail' and return unless purchase
+   purchase.bad
    redirect_to new_order_path
   end
 end

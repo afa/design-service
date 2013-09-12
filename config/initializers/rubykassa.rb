@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 Rubykassa.configure do |c|
-  c.login = ENV["ROBOKASSA_LOGIN"]
+  c.login = ENV["ROBOKASSA_LOGIN"] || 'instyle'
   c.first_password = ENV["ROBOKASSA_FIRST_PASSWORD"]
   c.second_password = ENV["ROBOKASSA_SECOND_PASSWORD"]
   c.mode = :test # or :production

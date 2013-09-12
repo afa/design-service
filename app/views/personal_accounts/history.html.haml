@@ -1,61 +1,134 @@
-%ul.personal_account
- %li.select
-  %a{:href=>"#"} История
- %li
-  %a{:href=>"#"} Пополнение
- %li
-  %a{:href=>"#"} Договора
- %li
-  %a{:href=>"#"} Акты
-.personal_account
- На лицевом счете: #{10000.to_s} руб.
-.content_header Отложенные услуги
-%table.deferred_services
- %tr.heading
-  %td Услуга
-  %td Сумма
-  %td Статус
- %tr
-  %td
-   %span.term Разработка дизайн-проекта
-   %span.term_info Заказ от #{Date.new(2013, 01, 23).to_s}
-   %span.order
-    %a{:href=>"#"}Заказать
-  %td #{50000} руб.
-  %td
-   Не оплачен 
-   %br по счету 
-   %br №18003/2
+- if current_user.is_a? User
+ %ul.personal_account
+  %li.select
+   %a{:href=>"#"} История
+  %li
+   %a{:href=>"#"} Пополнение
+  %li
+   %a{:href=>"#"} Договора
+  %li
+   %a{:href=>"#"} Акты
+ .personal_account
+  На лицевом счете: #{(@amount || 0.0).to_s} руб.
+ .content_header Отложенные услуги
+ %table.deferred_services
+  %tr.heading
+   %td Услуга
+   %td Сумма
+   %td Статус
+  - @orders.each do |order|
+   %tr
+    %td
+     %span.term= link_to order.orderable.title, order_path(order.id) 
+     %span.term_info Заказ от #{order.created_at.to_date}
+     %span.order
+      = link_to "Заказать", robo_pay(order)
+    %td #{order.price} руб.
+    %td
+     = t order.work_state 
+     /%br по счету 
+     /%br №18003/2
            
-.content_header История пополнения и расхода
-%table.history_recharge
- %tr.heading
-  %td Дата
-  %td Сумма
-  %td Услуга
-  %td Статус
- %tr
-  %td 01.02.2013
-  %td 20 000 руб.
-  %td согласование
-  %td Оплачен
- %tr.green
-  %td 27.01.2013
-  %td 25 000 руб.
-  %td Пополнение
-  %td Выполнено
- %tr
-  %td 23.01.2013
-  %td 35 000 руб.
-  %td согласование
-  %td Оплачен
- %tr
-  %td 19.01.2013
-  %td 20 000 руб.
-  %td согласование
-  %td Оплачен
- %tr.green
-  %td 15.01.2013
-  %td 60 000 руб.
-  %td Пополнение
-  %td Выполнено
+ .content_header История пополнения и расхода
+ %table.history_recharge
+  %tr.heading
+   %td Дата
+   %td Сумма
+   %td Услуга
+   %td Статус
+  - @transactions.each do |ta|
+   %tr{:class => [ta.done? ? 'green' : nil]}
+    %td ta.created_at.to_date
+    %td #{ta.amount} руб.
+    %td ?согласование
+    %td ta.state
+
+
+
+-# #maincontent_specialist.rounded-corners_l4
+ .main_content_specialist_inside
+  .sidebar_left_specialist
+   .name.rounded-corners NAME
+   .events.rounded-corners
+    %span.heading_event ПОСЛЕДНИЕ СОБЫТИЯ
+    %ul.last_events
+     %li
+      %span 25.04.2013
+      Отправлены варианты планировки для LEX
+     %li
+      %span 15.04.2013
+      Заказ от Lex в работе
+     %li
+      %span 13.04.2013
+      Новый заказ
+     %li
+      %span 11.04.2013
+      Поступление денежных средств на лицевой счет
+     %li.last
+      %span 10.04.2013
+      Выполнен заказ от STIFF
+  
+- if current_user.is_a? Specialist
+ .page_contener_specialist
+  .header_page_specialist.orrange_header ЛИЦЕВОЙ СЧЕТ
+ 
+  .personal_account_specialist
+   %ul.personal_account
+    %li.select
+     %a{:href=>"#"} История
+    %li
+     %a{:href=>"#"} Пополнение
+    %li
+     %a{:href=>"#"} Договора
+    %li
+     %a{:href=>"#"} Акты
+  .personal_account
+   На лицевом счете: 10 000 руб.
+ 
+  .content_header Отложенные услуги
+  %table.deferred_services
+   %tr.heading
+    %td Услуга
+    %td Сумма
+    %td Статус
+   %tr
+    %td
+     %span.term Разработка дизайн-проекта
+     %span.term_info Заказ от 23.01.2013
+    %td 50 000 руб.
+    %td
+     Не оплачен
+     %br по счету
+     %br №18003/2
+  .content_header История пополнения
+  %table.history_recharge
+   %tr.heading
+    %td Дата
+    %td Сумма
+    %td Услуга
+    %td Статус
+   %tr
+    %td 01.02.2013
+    %td 20 000 руб.
+    %td согласование
+    %td Оплачен
+   %tr.green
+    %td 27.01.2013
+    %td 25 000 руб.
+    %td Пополнение
+    %td Выполнено
+   %tr
+    %td 23.01.2013
+    %td 35 000 руб.
+    %td согласование
+    %td Оплачен
+    %tr
+     %td 19.01.2013
+     %td 20 000 руб.
+     %td согласование
+    %td>Оплачен
+   %tr.green
+    %td 15.01.2013
+    %td 60 000 руб.
+    %td Пополнение
+    %td Выполнено
