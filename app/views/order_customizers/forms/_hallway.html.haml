@@ -1,4 +1,5 @@
 = simple_form_for selected_form, remote: true, html: {id: 'all_forms'},  defaults: { input_html: { disabled: disabled } } do |f|
+  = f.input_field :typename, as: :hidden
   .design_p-workin-docs_form1.border_x1.rounded-corners_l2.shadow_x1
     .number
     .form_description
@@ -9,7 +10,6 @@
     .form_description_second
     %span.text
       Площадь помещения:#{ f.input_field :room_space, class: 'textlines_default textline_l6' }
-      = selected_form.order_customizer_id
     .interior
       Какой стиль интерьера Вы предпочитаете?
       = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
@@ -36,4 +36,4 @@
       = f.input_field :kind, as: :hidden
 
     .hint Вы можете перетащить файлы сюда
-  %span.caution{:style=>"color: #e51600; float: left; clear:left; font-size: 12px; padding-left: 20px; padding-top:20px;"} Прикрепите: 1. план с расстановкой мебели!
+  %span.caution{:style=>"color: #e51600; float: left; font-size: 12px; padding-left: 20px; padding-top:20px;"} Прикрепите: 1. план с расстановкой мебели!    

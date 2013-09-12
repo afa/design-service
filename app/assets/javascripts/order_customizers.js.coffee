@@ -11,6 +11,7 @@ $(document).ready ->
   attach_box = $('.attach_box')
   attach_form = attach_box.find('form')
   attach_box.offset( order_form.find('.attach_place_for_box').offset() )
+  $('.attach_place_for_box').after($('.loaded_files'))
   attachment_and_form_ajax_submission(
       order_form
       attach_form

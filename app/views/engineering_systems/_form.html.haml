@@ -8,7 +8,7 @@
       Подъезд/Секция: #{ f.input_field :section, class: 'textlines_default textline_l4' }
     .head_part
     .file_attaching.border_x5.rounded-corners_l3.multiattach
-      .attach_place_for_box{:style=>"width:350px; height:120px; float:left; position:relative;"}
+      .attach_place_for_box
 
   .engineering_systems_form2.border_x2.rounded-corners_l2.shadow_x1
     .form_description
@@ -58,4 +58,4 @@
       = f.input_field :kind, as: :hidden
 
     .hint Вы можете перетащить файлы сюда
-  %span.caution{:style=>"color: #e51600; float: left; font-size: 12px; padding-left: 20px; padding-top:20px;"} Обязательно необходима планировка с расстановкой мебели и сантехнического оборудования
+  %span.caution{:style=>"color: #e51600; float: left; font-size: 12px; padding-left: 10px; padding-top:5px; width:450px;"} Обязательно необходима планировка с расстановкой мебели и сантехнического оборудования

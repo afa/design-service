@@ -27,7 +27,7 @@ protected
     params.permit(profile: [:name, :surname, :middle_name])
   end
 
-  def specialist_page_subtitle
+  def header
     if params[:action] == 'edit'
       resource.to_s
     else

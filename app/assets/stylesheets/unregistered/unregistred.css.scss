@@ -47,6 +47,8 @@ body  {
   */
   margin: 0;
   padding: 0;
+  font-size:16px;
+  font-size-adjust: 0.495;
   text-align: center;
   color: #000000;
   overflow:visible;
@@ -138,8 +140,8 @@ div.engineering_systems_form1  div.file_attaching{ width:595px; height:150px; ma
 div.engineering_systems_form2{ width:450px; min-height:200px;  margin-left:250px; margin-top:15px; padding:30px; margin-bottom:25px;  }
 div.engineering_systems_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right }
 div.engineering_systems_form2 div.form_description{ background-image:image-url("task.png"); width:196px; float:right }
-div.engineering_systems_form2 ul{ list-style:none; font-size:16px;}
-div.engineering_systems_form2 ul li{ margin-bottom:15px;}
+div.engineering_systems_form2 ul{ list-style:none;  }
+div.engineering_systems_form2 ul li{ margin-bottom:15px; }
 div.engineering_systems_form2 ul li span{ width:25px;  height:30px; float:left; padding-right:15px;  }
 div.engineering_systems_form2 ul li.caution{ font-size:12px; color:#e51600; display:none;}
 div.engineering_systems_form2 ul li.caution span{ background-image:image-url("icon_red.png"); background-repeat: no-repeat; background-position:5px;}
@@ -173,7 +175,7 @@ div.design_project_all ul.working_documents{ margin:0px;  list-style:none; heigh
 div.design_project_all ul.working_documents li{  width:185px; min-height:298px; position:static; float:left;  margin-bottom:10px; }
 
 div.design_project_all ul li span.heading{ text-align:center; width:auto; color:#383a3e; font-size:14px; font-weight:bold; width:185px; float:left;}
-div.design_project_all ul li span.text{ font-size:12px; color:#82848a; float:left; padding-top:15px; height:38px;}
+div.design_project_all ul li span.text{ font-size:13px; color:#82848a; float:left; padding-top:15px; height:38px;}
 div.design_project_all ul li span.order{ background-image:image-url("order.png"); background-repeat:no-repeat; width:101px; height:26px; float: right; }
 div.design_project_all ul li span.order:hover{ cursor:pointer; background-image:image-url("order_hover.png");}
 
@@ -473,8 +475,8 @@ ul#navigation.blue li.last a{ color:#6d95c3; }
 #block_menu_default{ position: absolute;  font-family: Tahoma; float:left; right:0px; top:0px;}
 #block_menu_default ul{ width:163px;   padding:0px; float:none; list-style:none; margin:0px; padding:0px; }
 #block_menu_default ul li{width:163px; height:163px;}
-#block_menu_default ul li span{width:163px; height:163px; float:left;  padding:0px; background-repeat:no-repeat; color:#6f2d2d; text-align:center; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26); font-size:14px;}
-#block_menu_default ul li span p{ padding-top:40px;}
+#block_menu_default ul li span{width:163px; height:163px; float:left;  padding:0px; background-repeat:no-repeat; color:#6f2d2d; text-align:center; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26); font-size:0.95em; font-size-adjust: 0.43; }
+#block_menu_default ul li span p{ padding-top:40px; width: 120px; float: left; margin-left: 20px;}
 #block_menu_default ul li:nth-child(1) span{ background-image:image-url("block_menu_2.jpg"); }
 #block_menu_default ul li:nth-child(1) span:hover{ background-image:image-url("block_menu_2_hover.jpg");  }
 #block_menu_default ul li:nth-child(2) span{ background-image:image-url("block_menu_3.jpg"); }
@@ -614,7 +616,7 @@ position:absolute;
 input[type='radio'] + label
 {
   clear: none;
-  padding: 0px 0 0px 24px;
+  padding: 2px 0 0px 24px;
   cursor: pointer;
 	background-image:image-url("circleN.png");
 	background-repeat:no-repeat;
@@ -624,6 +626,7 @@ input[type='radio'] + label
 input[type='radio']:checked + label {
 	background-image:image-url("circleY.png");
 	background-repeat:no-repeat;
+  padding: 2px 0 0px 24px;
 }
 
 
@@ -643,14 +646,14 @@ position:absolute;
 input[type='checkbox'] + label {
 	background-image:image-url("box_not_cheked.png");
 	background-repeat:no-repeat;
-  padding: 0px 0 0px 40px;
+  padding: 3px 0 0px 40px;
   cursor: pointer;
   height:35px;
 }
 input[type='checkbox']:checked + label {
 	background-image:image-url("box_checked.png");
 	background-repeat:no-repeat;
-  padding: 0px 0 0px 40px;
+  padding: 3px 0 0px 40px;
 	cursor: pointer;
 }
 
@@ -666,3 +669,4 @@ div.calculator div.form_description{ background-image:image-url("full_amount.png
 div.calculator span{ width:200px; margin-left:60px; float:left; margin-top:6px; }
 .total{ width:300px; height:25px; text-align:center;}
 div.calculator span.count{float: left; color:#666; padding-left:220px; text-decoration:underline;}
+
