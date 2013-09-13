@@ -1,1 +1,10 @@
-//= require jquery.ui.all
+//=require jquery.ui.core
+//=require jquery.ui.widget
+//=require jquery.ui.accordion
+//=require jquery.ui.position
+//=require jquery.ui.autocomplete
+//=require jquery.ui.button
+//=require jquery.ui.datepicker
+//=require jquery.ui.mouse
+//=require jquery.ui.resizable
+//=require jquery.ui.spinner

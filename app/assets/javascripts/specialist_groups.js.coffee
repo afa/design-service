@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 //= require jquery.mousewheel
+//= require lightbox/lightbox-2.6.min.js
 
 $(document).ready ->
   specialization = $('#specialization_data').data('specialization')
