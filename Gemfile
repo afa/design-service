@@ -51,7 +51,7 @@ gem 'paper_trail', '~> 2'
 gem 'carrierwave'
 gem 'mime-types'
 gem 'mini_magick', github: 'minimagick/minimagick'
-gem 'draper'
+gem 'draper', github: 'drapergem/draper'
 gem 'jquery-ui-rails'
 gem 'activeadmin'
 
