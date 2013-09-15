@@ -5,7 +5,6 @@
 //= require orderable
 
 $(document).ready ->
-  $('.attach_box').append( $('.attach_info_block') )
   $(".warning_show").click ->
     checker = $(this).is(':checked');
     li_near = $(this).parent().next('li');

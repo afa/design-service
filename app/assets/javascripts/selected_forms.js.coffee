@@ -5,8 +5,6 @@
 //= require orderable
 
 $(document).ready ->
-  $('.attach_box').append( $('.attach_info_block') )
-
   #////IMAGE HOVER///
   $(".img_").mouseenter ->
     $(this).parent().find(".heading").addClass "heading_h"
@@ -15,10 +13,6 @@ $(document).ready ->
   $(".black_opacity").mouseleave ->
     $(".black_opacity_on").removeClass "black_opacity_on"
     $(this).parent().parent().find(".heading").removeClass "heading_h"
-
-  #///////////
-  $(".close_fly_window").click ->
-    $(this).parent().css("display", "none").parent().css "display", "none"
 
   #////KEY_BOARD///
   $(".color_keyboard ul li").click ->
