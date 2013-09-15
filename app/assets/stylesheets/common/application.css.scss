@@ -2,6 +2,10 @@
 //= require ./drop_zone
 //= require ../lightbox/lightbox
 
+.black_content_blocks {
+  display: none;
+}
+
 ul.list_of_attachments {
   list-style:none;
   line-height: 20px;
