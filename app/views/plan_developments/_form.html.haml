@@ -1,82 +1,76 @@
-= simple_nested_form_for plan_development, remote: true, html: {id: 'all_forms'},  defaults: { input_html: { disabled: disabled } } do |f|
-  .var_form1.border_x1.rounded-corners_l2.shadow_x1
-    .number
-    .form_description
-    Адрес:#{ f.input_field :address, class: 'textlines_default textline_l8' }
-    Этаж: #{ f.input_field :floor, class: 'textlines_default textline_l4' } Подъезд/Секция: #{ f.input_field :section, class: 'textlines_default textline_l4' }
-    Площадь квартиры: #{ f.input_field :flat_area, class: 'textlines_default textline_l6'}
-    %br/
-    Кол-во стояков водопровода:#{ f.input_field :num_standpipes, class: 'textlines_default textline_l6' }
-    Состав семьи:#{ f.input_field :family_composition_first_line, class: 'textlines_default textline_l7'}
-    = f.input_field :family_composition_second_line, class: 'textlines_default textline_l10'
-    %span.subtitle (укажите количество и пол детей)
+.order_fields
+  = simple_nested_form_for plan_development, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
+    .var_form1.border_x1.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      Адрес:#{ f.input_field :address, class: 'textlines_default textline_l8' }
+      Этаж: #{ f.input_field :floor, class: 'textlines_default textline_l4' } Подъезд/Секция: #{ f.input_field :section, class: 'textlines_default textline_l4' }
+      Площадь квартиры: #{ f.input_field :flat_area, class: 'textlines_default textline_l6'}
+      %br/
+      Кол-во стояков водопровода:#{ f.input_field :num_standpipes, class: 'textlines_default textline_l6' }
+      Состав семьи:#{ f.input_field :family_composition_first_line, class: 'textlines_default textline_l7'}
+      = f.input_field :family_composition_second_line, class: 'textlines_default textline_l10'
+      %span.subtitle (укажите количество и пол детей)
 
-  .var_form2.border_x2.rounded-corners_l2.shadow_x1
-    .form_description
-    .number
-    .kithen_split
-      Объединить кухню <br>с гостиной?
-      = f.input_field :join_kitchen_with_living_room, as: :radio_buttons
+    .var_form2.border_x2.rounded-corners_l2.shadow_x1
+      .form_description
+      .number
+      .kithen_split
+        Объединить кухню <br>с гостиной?
+        = f.input_field :join_kitchen_with_living_room, as: :radio_buttons
 
-    .kithen_size
-      Размер кухни:
-      = f.input_field :big_kitchen, as: :radio_buttons, collection: PlanDevelopment.big_kitchen.options
+      .kithen_size
+        Размер кухни:
+        = f.input_field :big_kitchen, as: :radio_buttons, collection: PlanDevelopment.big_kitchen.options
 
-    .changing_rooms
-      Наличие гардеробных <br>комнат:
-      = f.input_field :cloakroom_needed, as: :radio_buttons
+      .changing_rooms
+        Наличие гардеробных <br>комнат:
+        = f.input_field :cloakroom_needed, as: :radio_buttons
 
-    .number_of_rooms
-      Количество встроенных <br>шкафов, включая <br>гардеробные комнаты:
-      = f.input_field :num_builtin_closets, as: :string, class: 'textlines_default textline_l2'
+      .number_of_rooms
+        Количество встроенных <br>шкафов, включая <br>гардеробные комнаты:
+        = f.input_field :num_builtin_closets, as: :string, class: 'textlines_default textline_l2'
 
-    .cabinets
-      Нужен кабинет?
-      = f.input_field :cabinet_needed, as: :radio_buttons
+      .cabinets
+        Нужен кабинет?
+        = f.input_field :cabinet_needed, as: :radio_buttons
 
-    .guests
-      Любите ли Вы <br>принимать гостей?
-      = f.input_field :num_guests, as: :radio_buttons, collection: PlanDevelopment.num_guests.options
+      .guests
+        Любите ли Вы <br>принимать гостей?
+        = f.input_field :num_guests, as: :radio_buttons, collection: PlanDevelopment.num_guests.options
 
 
-    .sleeping_places
-      Количество спальных мест: #{ f.input_field :num_bedrooms, as: :string, class: 'textlines_default textline_l2' }
+      .sleeping_places
+        Количество спальных мест: #{ f.input_field :num_bedrooms, as: :string, class: 'textlines_default textline_l2' }
 
-    .washing_machin
-      Наличие постирочной:
-      = f.input_field :washing_room_needed, as: :radio_buttons
+      .washing_machin
+        Наличие постирочной:
+        = f.input_field :washing_room_needed, as: :radio_buttons
 
-    .options
-      Сколько представить Вам вариантов планировок?
-      = f.input_field :num_plans, as: :radio_buttons, collection: PlanDevelopment.num_plans.options
+      .options
+        Сколько представить Вам вариантов планировок?
+        = f.input_field :num_plans, as: :radio_buttons, collection: PlanDevelopment.num_plans.options
 
-  .var_form3.border_x3.rounded-corners_l2.shadow_x1
-    .number
-    .form_description
-    = f.input_field :comment, as: :text, cols: 60, rows:3, class: 'postComment textline_l12'
+    .var_form3.border_x3.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      = f.input_field :comment, as: :text, cols: 60, rows:3, class: 'postComment textline_l12'
 
-  .var_form4.border_x4.rounded-corners_l2.shadow_x1.multiattach
-    .attach_place_for_box
+    .var_form4.border_x4.rounded-corners_l2.shadow_x1.multiattach
+      .attach_place_for_box
 
-  .calculator.border_x5.rounded-corners_l2.shadow_x2
-    .form_description
-    %span
-      <input name="" type="text" class="total">
-    %span.count
+    .calculator.border_x5.rounded-corners_l2.shadow_x2
+      .form_description
+      %span
+        <input name="" type="text" class="total">
+      %span.count
 
-  - unless disabled
-    .postvar_plan_submiting
-      %input.submit_all_forms{:type => "image", :src=> "#{asset_path('cancelButton.png')}", :alt => "Сбросить форму", :onClick => "$('#all_forms').trigger('reset'); return false;" }
-      %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+    - unless disabled
+      .postvar_plan_submiting
+        %input.submit_all_forms{:type => "image", :src=> "#{asset_path('cancelButton.png')}", :alt => "Сбросить форму", :onClick => "$('form.orderable').trigger('reset'); return false;" }
+        %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
 
-.loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
-  = render partial: 'attachments/list_of_attachments', locals:{attachments: resource.attachments, has_remove_button: !disabled}
+  .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
+    = render partial: 'attachments/list_of_attachments', locals:{attachments: plan_development.attachments, has_remove_button: !disabled}
+  = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: plan_development, kind: 'plan_of_flat', disabled: disabled, wrapper_class: 'plan_development'}
 
-.attach_box.plan_development
-  .form_description
-  .number
-  %span.dropZone
-    = simple_form_for resource.attachments.build(kind: 'plan_of_flat'), url: plan_development_attachments_url(resource, format: 'json'), remote: true, multipart: true, defaults: { input_html: { disabled: disabled } } do |f|
-      = f.input_field :file, as: :file
-      = f.input_field :kind, as: :hidden
-    .hint Вы можете перетащить файлы сюда
