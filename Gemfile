@@ -23,7 +23,7 @@ end
 gem 'jquery-rails'
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder'
+gem 'jbuilder'
 
 # Use unicorn as the app server
 gem 'unicorn', :platforms => :ruby
@@ -54,6 +54,7 @@ gem 'mini_magick', github: 'minimagick/minimagick'
 gem 'draper', github: 'drapergem/draper'
 gem 'jquery-ui-rails'
 gem 'activeadmin'
+gem 'js-routes'
 
 group :development do
   gem 'sextant'

@@ -36,7 +36,8 @@ class MessagesController < InheritedResources::Base
         render json: {msgs_text: messages_text,
                       executor_name: executor_name,
                       executor_avatar_url: executor_avatar_url,
-                      attachment_previews_text: attachment_previews_text
+                      attachment_previews_text: attachment_previews_text,
+                      attached_to_name: parent.to_s
                     }
       }
     end
