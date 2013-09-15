@@ -1,61 +1,55 @@
-= simple_nested_form_for engineering_systems, remote: true, html: {id: 'all_forms'}, defaults: { input_html: { disabled: disabled } }  do |f|
-  .engineering_systems_form1.border_x1.rounded-corners_l2.shadow_x1
-    .number
-    .form_description
-    %span{:style => "float:left; width:400px; padding-bottom:15px;"}
-      Адрес: #{ f.input_field :address, class: 'textlines_default textline_l8' }
-      Этаж:  #{ f.input_field :stage, class: 'textlines_default textline_l4' }
-      Подъезд/Секция: #{ f.input_field :section, class: 'textlines_default textline_l4' }
-    .head_part
-    .file_attaching.border_x5.rounded-corners_l3.multiattach
-      .attach_place_for_box
+.order_fields
+  = simple_nested_form_for engineering_system, remote: true, html: {class: 'orderable'}, defaults: { input_html: { disabled: disabled } }  do |f|
+    .engineering_systems_form1.border_x1.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      %span{:style => "float:left; width:400px; padding-bottom:15px;"}
+        Адрес: #{ f.input_field :address, class: 'textlines_default textline_l8' }
+        Этаж:  #{ f.input_field :stage, class: 'textlines_default textline_l4' }
+        Подъезд/Секция: #{ f.input_field :section, class: 'textlines_default textline_l4' }
+      .head_part
+      .file_attaching.border_x5.rounded-corners_l3.multiattach
+        .attach_place_for_box
 
-  .engineering_systems_form2.border_x2.rounded-corners_l2.shadow_x1
-    .form_description
-    .number
-    %span.select_ Выбор разделов:
-    %ul
-      %li#sss
-        = f.input_field :electrical_equipment, as: :boolean,  id:"first", value:"1", class:"warning_show"
-        %label{:for => "first"} Электрооборудование и электроосвещение &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(проект ЭОМ для согласования)
-      %li.caution
-        %span>
-        Необходим план расстановки светильников, электрооборудования,розеток и других электроприборов
-      %li
-        = f.input_field :water_supply_and_sewerage, as: :boolean,  id:"second", value:"1"
-        %label{:for => "second"} Водоснабжение и канализация - ВК
-      %li
-        = f.input_field :heating, as: :boolean,  id:"third", value:"1"
-        %label{:for => "third"} Отопление - ОВ-I
-      %li
-        = f.input_field :ventilation, as: :boolean,  id:"forth", value:"1"
-        %label{:for => "forth"} Вентиляция - ОВ-II
-      %li
-        = f.input_field :low_voltage_systems, as: :boolean,  id:"fifth", value:"1"
-        %label{:for => "fifth"} Слаботочные системы - СС
-      %li
-        = f.input_field :constructive_solutions, as: :boolean,  id:"sixth", value:"1", class:"warning_show"
-        %label{:for => "sixth"} Конструктивные решения - КР
-      %li.caution
-        %span>
-        Необходим план, где указаны привязки и размеры проемов
-  .engineering_systems_form3.border_x3.rounded-corners_l2.shadow_x1
-    .number
-    .form_description
-    = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
+    .engineering_systems_form2.border_x2.rounded-corners_l2.shadow_x1
+      .form_description
+      .number
+      %span.select_ Выбор разделов:
+      %ul
+        %li#sss
+          = f.input_field :electrical_equipment, as: :boolean,  id:"first", value:"1", class:"warning_show"
+          %label{:for => "first"} Электрооборудование и электроосвещение &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(проект ЭОМ для согласования)
+        %li.caution
+          %span>
+          Необходим план расстановки светильников, электрооборудования,розеток и других электроприборов
+        %li
+          = f.input_field :water_supply_and_sewerage, as: :boolean,  id:"second", value:"1"
+          %label{:for => "second"} Водоснабжение и канализация - ВК
+        %li
+          = f.input_field :heating, as: :boolean,  id:"third", value:"1"
+          %label{:for => "third"} Отопление - ОВ-I
+        %li
+          = f.input_field :ventilation, as: :boolean,  id:"forth", value:"1"
+          %label{:for => "forth"} Вентиляция - ОВ-II
+        %li
+          = f.input_field :low_voltage_systems, as: :boolean,  id:"fifth", value:"1"
+          %label{:for => "fifth"} Слаботочные системы - СС
+        %li
+          = f.input_field :constructive_solutions, as: :boolean,  id:"sixth", value:"1", class:"warning_show"
+          %label{:for => "sixth"} Конструктивные решения - КР
+        %li.caution
+          %span>
+          Необходим план, где указаны привязки и размеры проемов
+    .engineering_systems_form3.border_x3.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
 
-  .engineering_systems_submiting
-    %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;"}
-    %input.postRequest.submit_all_forms{:alt => "Отправить форму", :src => "#{ asset_path('postButton.png')}", :type => "image"}/
+    .engineering_systems_submiting
+      %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('form.orderable').trigger('reset'); return false;"}
+      %input.postRequest.submit_all_forms{:alt => "Отправить форму", :src => "#{ asset_path('postButton.png')}", :type => "image"}/
 
-.loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
-  = render partial: 'attachments/list_of_attachments', locals:{attachments: resource.attachments, has_remove_button: !disabled}
-
-.attach_box
-  %span.dropZone
-    = simple_form_for resource.attachments.build(kind: 'design_project'), url: engineering_system_attachments_url(resource, format: 'json'), remote: true, multipart: true, defaults: { input_html: { disabled: disabled } }  do |f|
-      = f.input_field :file, as: :file
-      = f.input_field :kind, as: :hidden
-
-    .hint Вы можете перетащить файлы сюда
-  %span.caution{:style=>"color: #e51600; float: left; font-size: 12px; padding-left: 10px; padding-top:5px; width:450px;"} Обязательно необходима планировка с расстановкой мебели и сантехнического оборудования
+  .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
+    = render partial: 'attachments/list_of_attachments', locals:{attachments: engineering_system.attachments, has_remove_button: !disabled}
+  = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: engineering_system, kind: 'design_project', disabled: disabled, wrapper_class: ''}
+  %span.attach_info_block.caution  Обязательно необходима планировка с расстановкой мебели и сантехнического оборудования

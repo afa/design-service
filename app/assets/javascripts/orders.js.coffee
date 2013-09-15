@@ -3,6 +3,3 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 //= require chat
-
-$(document).ready ->
-  register_chat()

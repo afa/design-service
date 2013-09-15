@@ -28,7 +28,7 @@ protected
   end
 
   def header
-    if params[:action] == 'edit'
+    if User.current.specialist? && params[:action] == 'edit'
       resource.to_s
     else
       super

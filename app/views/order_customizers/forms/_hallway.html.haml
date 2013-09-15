@@ -1,39 +1,33 @@
-= simple_form_for selected_form, remote: true, html: {id: 'all_forms'},  defaults: { input_html: { disabled: disabled } } do |f|
-  = f.input_field :typename, as: :hidden
-  .design_p-workin-docs_form1.border_x1.rounded-corners_l2.shadow_x1
-    .number
-    .form_description
-    .file_attaching.border_x5.rounded-corners_l3.multiattach
-      .attach_place_for_box
+.order_fields
+  = simple_form_for selected_form, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
+    = f.input_field :typename, as: :hidden
+    .design_p-workin-docs_form1.border_x1.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      .file_attaching.border_x5.rounded-corners_l3.multiattach
+        .attach_place_for_box
 
-    .number_second
-    .form_description_second
-    %span.text
-      Площадь помещения:#{ f.input_field :room_space, class: 'textlines_default textline_l6' }
-    .interior
-      Какой стиль интерьера Вы предпочитаете?
-      = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
-      = f.input_field :interior_style_comment, as: :string, class: ['textlines_default', 'textline_l5'], size:10
-    .present_results
-      Как Вам представить результат?
-      = f.input_field :show_results, as: :radio_buttons, collection: SelectedForm.show_results.options
-  .design_p-workin-docs_form2.border_x3.rounded-corners_l2.shadow_x1
-    .number
-    .form_description
-    = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
-  %span.design_p-workin-docs-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
-  .design_p-workin-docs_submiting
-    %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;"}
-    %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+      .number_second
+      .form_description_second
+      %span.text
+        Площадь помещения:#{ f.input_field :room_space, class: 'textlines_default textline_l6' }
+      .interior
+        Какой стиль интерьера Вы предпочитаете?
+        = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
+        = f.input_field :interior_style_comment, as: :string, class: ['textlines_default', 'textline_l5'], size:10
+      .present_results
+        Как Вам представить результат?
+        = f.input_field :show_results, as: :radio_buttons, collection: SelectedForm.show_results.options
+    .design_p-workin-docs_form2.border_x3.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
+    %span.design_p-workin-docs-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
+    .design_p-workin-docs_submiting
+      %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('form.orderable').trigger('reset'); return false;"}
+      %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
 
-.loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
-  = render partial: 'attachments/list_of_attachments', locals:{attachments: resource.attachments, has_remove_button: !disabled}
-
-.attach_box
-  %span.dropZone
-    = simple_form_for resource.attachments.build(kind: 'plan_with_furniture'), url: selected_form_attachments_url(resource, format: 'json'), remote: true, multipart: true, defaults: { input_html: { disabled: disabled } }  do |f|
-      = f.input_field :file, as: :file
-      = f.input_field :kind, as: :hidden
-
-    .hint Вы можете перетащить файлы сюда
-  %span.caution{:style=>"color: #e51600; float: left; font-size: 12px; padding-left: 20px; padding-top:20px;"} Прикрепите: 1. план с расстановкой мебели!    
+  .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
+    = render partial: 'attachments/list_of_attachments', locals:{attachments: selected_form.attachments, has_remove_button: !disabled}
+  = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: selected_form, kind: 'plan_with_furniture', disabled: disabled, wrapper_class: ''}
+  %span.attach_info_block.caution  Прикрепите: 1. план с расстановкой мебели!

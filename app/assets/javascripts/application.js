@@ -17,6 +17,10 @@
 //= require jquery-ui
 
 //= require jquery.corner
-//= require login_box
 //= require jquery.slimscroll
-//= require lightbox/lightbox-2.6.min.js
+
+//= require ajax_submit
+//= require attachment_submit
+//= require fly_window
+//= require login_box
+//= require js-routes

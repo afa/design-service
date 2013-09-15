@@ -1,33 +1,27 @@
-= simple_nested_form_for replanning_endorsement, remote: true, html: {id: 'all_forms'}, defaults: { input_html: { disabled: disabled } } do |f|
-  .plan_refactor
-    Проект перепланировки разработан генпроектировщиком?
+.order_fields.replanning_endorsement
+  = simple_nested_form_for replanning_endorsement, remote: true, html: {class: 'orderable'}, defaults: { input_html: { disabled: disabled } } do |f|
+    .plan_refactor
+      Проект перепланировки разработан генпроектировщиком?
 
-    %span.plan_refactor.gen_proekt
-      = f.input_field :developed_by_general_projector, as: :radio_buttons
-    %br/
-    Площадь кватиры:#{ f.input_field :flat_area, as: :string, class: 'textlines_default textline_l4' } кв.м.
+      %span.plan_refactor.gen_proekt
+        = f.input_field :developed_by_general_projector, as: :radio_buttons
+      %br/
+      Площадь кватиры:#{ f.input_field :flat_area, as: :string, class: 'textlines_default textline_l4' } кв.м.
 
-  .form_refactoring.border_x4.rounded-corners_l2.shadow_x1.multiattach
-    .attach_place_for_box
+    .form_refactoring.border_x4.rounded-corners_l2.shadow_x1.multiattach
+      .attach_place_for_box
 
-  .plan_refactor#second_ques{ :style=>"display:none;" }
-    Наличие лицензии у организации,
-    %span.plan_refactor
-      = f.input_field :replanning_organization_licensed, as: :radio_buttons
-    которая разработала проект перепланировки?
+    .plan_refactor#second_ques{ :style=>"display:none;" }
+      Наличие лицензии у организации,
+      %span.plan_refactor
+        = f.input_field :replanning_organization_licensed, as: :radio_buttons
+      которая разработала проект перепланировки?
 
-  - unless disabled
-    .planrefactoring_submiting
-      %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('#all_forms').trigger('reset'); return false;" }
-      %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+    - unless disabled
+      .planrefactoring_submiting
+        %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('form.orderable').trigger('reset'); return false;" }
+        %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
 
-.loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
-  = render partial: 'attachments/list_of_attachments', locals:{attachments: resource.attachments, has_remove_button: !disabled}
-
-.attach_box.form_refactoring
-  .form_description
-  %span.dropZone
-    = simple_form_for resource.attachments.build(kind: 'plan_of_flat'), url: replanning_endorsement_attachments_url(resource, format: 'json'), remote: true, multipart: true, defaults: { input_html: { disabled: disabled } } do |f|
-      = f.input_field :file, as: :file
-      = f.input_field :kind, as: :hidden
-    .hint Вы можете перетащить файлы сюда
+  .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
+    = render partial: 'attachments/list_of_attachments', locals:{attachments: replanning_endorsement.attachments, has_remove_button: !disabled}
+  = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: replanning_endorsement, kind: 'plan_of_flat', disabled: disabled, wrapper_class: 'form_refactoring'}

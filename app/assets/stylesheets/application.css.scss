@@ -1,6 +1,10 @@
-//= require ./form_style
-//= require ./drop_zone
-//= require ../lightbox/lightbox
+//= require common/form_style
+//= require common/drop_zone
+//= require lightbox/lightbox
+
+.black_content_blocks {
+  display: none;
+}
 
 ul.list_of_attachments {
   list-style:none;
@@ -17,7 +21,7 @@ ul.list_of_attachments {
     .attachment_link {
     margin-left:15px;
     font-size:14px;
-      a:link, a:active, a:visited{ 
+      a:link, a:active, a:visited{
       color:#4B4548;
       text-decoration:none;
       border-bottom:1px dotted #bc9c09;
