@@ -4,3 +4,9 @@
 
 //= require orders
 //= require ajax_submit
+
+$(document).ready ->
+  $('.change_text.bio_info').click ->
+    show_fly_window('.bio_info_form')
+  $('.change_text.work_info').click ->
+    show_fly_window('.work_info_form')
