@@ -4,17 +4,19 @@
 
 $(document).ready ->
   $(".msg").click (event)->
-    messages_url = $(event.target).data('msgUrl')
-    $('.msg_form').data('msg_send_url', messages_url)
+    messages_url = $(event.target).data('messages-url')
+    order_url = $(event.target).data('order-url')
+    $('#msg_dialog').data('messages-url', messages_url)
+    $('#msg_dialog').data('order-url', order_url)
     load_chat()
     show_chat()
 
   $(".close_fly_window").click ->
     close_chat()
 
-  $('.send_msg').find('img[name="submit"]').click (event)->
+  $('.send_msg').click (event)->
     event.preventDefault()
-    send_message()
+    send_message($(event.target).closest('form').get(0))
 
   fill_chat_box = (data)->
     msg_dialog = $('#msg_dialog')
@@ -27,7 +29,7 @@ $(document).ready ->
     register_destroy_attachment_in_chat_buttons(msg_dialog.find('.remove_attachment'))
 
   load_chat = ->
-    messages_url = $('.msg_form').data('msg_send_url')
+    messages_url = $('#msg_dialog').data('messages-url')
     ajax_request(messages_url, 'GET', '',
       success: (response) ->
         fill_chat_box(response)
@@ -35,16 +37,17 @@ $(document).ready ->
       error: ->
         alert('Не получилось загрузить сообщения')
     )
+    $('#msg_dialog').find('.order_info').click ->
+      window.location.href = $('#msg_dialog').data('order-url')
 
-  send_message = ->
-    msg_form = $('.msg_form')
-    messages_url = msg_form.data('msg_send_url')
-    if msg_form.find('textarea').val().trim().length == 0
+  send_message = (msg_form)->
+    messages_url = $('#msg_dialog').data('messages-url')
+    if $(msg_form).find('textarea').val().trim().length == 0
       return false
-    data = new FormData(msg_form.get(0))
+    data = new FormData(msg_form)
     ajax_request(messages_url, 'POST', data,
       success: ->
-        msg_form.resetForm()
+        msg_form.reset()
         load_chat()
       error: ->
         alert('Не получилось отправить сообщение')
