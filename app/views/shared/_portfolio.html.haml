@@ -1,5 +1,8 @@
-%ul{class: ul_class}
+- editable = false  unless defined?(editable)
+%ul{class: [ul_class, editable ? 'editable' : '']}
   - portfolio_items.each do |portfolio_item|
     %li
       = link_to portfolio_item.photo.thumb.url, data: {lightbox: example_set} do
         = image_tag portfolio_item.photo.thumb.url
+  - if editable
+    %li.add

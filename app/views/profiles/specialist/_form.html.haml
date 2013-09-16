@@ -16,7 +16,7 @@
       %li.projects.rounded-corners_l3
         %span.project_name= portfolio.name
         %span.edit.change_portfolio{:alt => "edit"}
-        = render partial: 'shared/portfolio_editable', locals: {portfolio_items: portfolio.portfolio_items, example_set: portfolio.id, ul_class: 'portfolio_list'}
+        = render partial: 'shared/portfolio', locals: {portfolio_items: portfolio.portfolio_items, example_set: portfolio.id, ul_class: 'portfolio_list', editable: true}
   .add_new
     = image_tag 'add_new_project.png', alt: 'add_new', class: 'change_portfolio'
 
