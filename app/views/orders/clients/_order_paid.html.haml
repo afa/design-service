@@ -12,9 +12,9 @@
     %a{:href=>"#", :data => {:messages_url => order_messages_path(order), :order_id => order.id, :order_url => url_for(order.orderable)} } Новое сообщение
 .completed
   завершено
-  .presentage_blocks
-    %span.presentage
-      %span.value_present #{order.completion_percent}%
+  .percentage_blocks
+    %span.percentage
+      %span.value_percent #{order.completion_percent}%
       %span.bar
 .documents
   Документы:
