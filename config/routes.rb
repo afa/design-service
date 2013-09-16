@@ -42,6 +42,7 @@ DesignService::Application.routes.draw do
 
   resource :profile do
     get 'orders'
+    put 'set_avatar'
   end
 
   get 'personal_account' => 'personal_accounts#history'

@@ -2,6 +2,11 @@ class ProfilesController < InheritedResources::Base
   defaults singleton: true
   before_filter :authenticate_user!
   respond_to :json
+  custom_actions :resource => [:set_avatar]
+
+  before_filter do
+    @profile = resource.decorate
+  end
 
   ## This code can't work in this controller, but it should be moved to nested orders controller
   ## (and #orders action will be simplified to a default method, especially if N+1 problem will be solved)
@@ -18,6 +23,12 @@ class ProfilesController < InheritedResources::Base
       @orderable = orders.decorate
     end
   end
+
+  def set_avatar
+    resource.user.create_avatar(params.require(:photo).permit(:photo))
+    respond_with(resource)
+  end
+
 protected
   def begin_of_association_chain
     current_user

@@ -6,9 +6,14 @@
 //= require ajax_submit
 
 $(document).ready ->
+  $('.specialist_img_').click ->
+    $('body').animate({scrollTop:0},"slow")
+    show_fly_window('.avatar_form')
+
   $('.change_text.bio_info').click ->
     $('body').animate({scrollTop:0},"slow")
     show_fly_window('.bio_info_form')
+
   $('.change_text.work_info').click ->
     $('body').animate({scrollTop:0},"slow")
     show_fly_window('.work_info_form')

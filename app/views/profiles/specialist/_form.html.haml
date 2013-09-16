@@ -1,17 +1,17 @@
 .specialist_img_
   %span.specialist_img_border
-  = image_tag 'specialist_img.jpg'
+  = profile.avatar
 .info_specialist
   %span.heading
     Обо Мне
     = image_tag 'edit.png', alt: 'edit', class: 'change_text bio_info'
-  %p.bio_info= profile.user.specialist.bio_info
+  %p.bio_info= profile.specialist.bio_info
   %span.heading
     О Работе
     = image_tag 'edit.png', alt: 'edit', class: 'change_text work_info'
-  %p.work_info= profile.user.specialist.work_info
+  %p.work_info= profile.specialist.work_info
   %span.heading.margine Портфолио
-  - profile.user.specialist.portfolios.each do |portfolio|
+  - profile.specialist.portfolios.each do |portfolio|
     %ul.portfolio
       %li.projects.rounded-corners_l3
         %span.project_name= portfolio.name
@@ -21,17 +21,24 @@
     = image_tag 'add_new_project.png', alt: 'add_new', class: 'change_portfolio'
 
 .black_content_blocks
-  .bio_info_form
+  .bio_info_form.edit_profile_form
     .close_fly_window
-    .bio_info_box.border_x4.rounded-corners_l2.shadow_x1
+    .box.border_x4.rounded-corners_l2.shadow_x1
       %span.header Обо мне
       = simple_form_for profile.specialist, remote: true do |f|
         = f.input_field :bio_info
         %input.put.submit{:type => 'image', :src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
-  .work_info_form
+  .work_info_form.edit_profile_form
     .close_fly_window
-    .work_info_box.border_x4.rounded-corners_l2.shadow_x1
+    .box.border_x4.rounded-corners_l2.shadow_x1
       %span.header О работе
       = simple_form_for profile.specialist, remote: true do |f|
         = f.input_field :work_info
+        %input.put.submit{:type => 'image', :src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+  .avatar_form.edit_profile_form
+    .close_fly_window
+    .box.border_x4.rounded-corners_l2.shadow_x1
+      %span.header Обо мне
+      = simple_form_for profile.user.build_avatar, url: set_avatar_profile_path, remote: true do |f|
+        = f.input_field :photo
         %input.put.submit{:type => 'image', :src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
