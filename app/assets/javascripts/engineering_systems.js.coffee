@@ -9,6 +9,6 @@ $(document).ready ->
     checker = $(this).is(':checked');
     li_near = $(this).parent().next('li');
     if checker is true
-      li_near.css("display","block");
+      li_near.show()
     else
-      li_near.css("display","none");
+      li_near.hide()

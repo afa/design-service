@@ -32,18 +32,17 @@ $(document).ready ->
     reload_attachments_list = (text)->
       loaded_files.html(text)
       loaded_files.change()
-    order_form.find('.postRequest').click (event)->
+    order_form.find('.submit').click (event)->
       event.preventDefault()
       send_file(attach_form,
         success: (data, textStatus, xhr)->
           reload_attachments_list(data['list_of_attachments'])
       )
-      ajax_sendform(order_form, 'PUT',
-        success: ->
-          alert('Изменения сохранены')
-        error: ->
-          alert('Не получилось отправить форму')
-      )
+    order_form.find('.reset').click (event)->
+      # To be rewritten (create new draft instead)
+      event.preventDefault()
+      $(event.target).closest('form').get(0).reset() # don't work
+      $(event.target).closest('form').trigger('reset')
 
     register_drag_n_drop(attach_box)
   #register_price_calculator($('.calcContainer'), 5000)

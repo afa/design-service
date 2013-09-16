@@ -44,10 +44,7 @@
       .number
       .form_description
       = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
-
-    .engineering_systems_submiting
-      %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('form.orderable').trigger('reset'); return false;"}
-      %input.postRequest.submit_all_forms{:alt => "Отправить форму", :src => "#{ asset_path('postButton.png')}", :type => "image"}/
+    = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'engineering_systems_submiting'}
 
   .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
     = render partial: 'attachments/list_of_attachments', locals:{attachments: engineering_system.attachments, has_remove_button: !disabled}

@@ -20,3 +20,23 @@ window.multipart_ajax_request = (url, method, data, callbacks)->
 window.multipart_ajax_sendform = (form_selector, method, callbacks)->
   $(form_selector).each (idx, form)->
     multipart_ajax_request(form.action, method, new FormData(form), callbacks)
+
+$(document).ready ->
+  $('.put.submit').click (event)->
+    event.preventDefault()
+    ajax_sendform($(event.target).closest('form'), 'PUT',
+      success: ->
+        alert('Изменения сохранены')
+      error: ->
+        alert('Не получилось отправить форму')
+    )
+  $('.post.submit').click (event)->
+    event.preventDefault()
+    ajax_sendform($(event.target).closest('form'), 'POST',
+      success: ->
+        alert('Изменения сохранены')
+      error: ->
+        alert('Не получилось отправить форму')
+    )
+  $('.not_ajax.submit').click (event)->
+    $(event.target).closest('form').get(0).submit()

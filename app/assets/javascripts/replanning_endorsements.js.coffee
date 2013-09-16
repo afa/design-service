@@ -7,11 +7,15 @@
 $(document).ready ->
   hide_or_show_question = ->
     if $("span.plan_refactor.gen_proekt input[type='radio'][value='true']").get(0).checked
-      $('#second_ques').css('display','none')
+      $('#second_ques').hide()
 
     if $("span.plan_refactor.gen_proekt input[type='radio'][value='false']").get(0).checked
-      $('#second_ques').css('display','block')
+      $('#second_ques').show()
 
   $("span.plan_refactor.gen_proekt input[type='radio']").change ->
     hide_or_show_question()
+  $(".orderable").on('reset', (event)->
+    event.preventDefault()
+    hide_or_show_question()
+  )
   hide_or_show_question()

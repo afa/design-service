@@ -23,9 +23,7 @@
       .form_description
       = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
     %span.design_p-workin-docs-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
-    .design_p-workin-docs_submiting
-      %input.submit_all_forms{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму", :onClick=>"$('form.orderable').trigger('reset'); return false;"}
-      %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+    = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p-workin-docs_submiting'}
 
   .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
     = render partial: 'attachments/list_of_attachments', locals:{attachments: selected_form.attachments, has_remove_button: !disabled}

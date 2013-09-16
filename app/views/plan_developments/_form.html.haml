@@ -64,11 +64,7 @@
       %span
         <input name="" type="text" class="total">
       %span.count
-
-    - unless disabled
-      .postvar_plan_submiting
-        %input.submit_all_forms{:type => "image", :src=> "#{asset_path('cancelButton.png')}", :alt => "Сбросить форму", :onClick => "$('form.orderable').trigger('reset'); return false;" }
-        %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+    = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'postvar_plan_submiting'}
 
   .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
     = render partial: 'attachments/list_of_attachments', locals:{attachments: plan_development.attachments, has_remove_button: !disabled}

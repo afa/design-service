@@ -112,6 +112,4 @@
     %input.var_form3_default.textline_l11{:name => "", :type => "text"}
     %input.var_form3_default.textline_l11{:name => "", :type => "text"}
   %span.design_p_floor_plans-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
-  .design_p_floor_plans_submiting
-    %input.submit_all_forms{:alt => "", :onclick => "$('form.orderable').trigger('reset');\n; return false;", :src => "cancelButton.png", :type => "image"}
-    %input.submit_all_forms{:alt => "Submit Form", :src => "postButton.png", :type => "image"}
+  = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p_floor_plans_submiting'}
