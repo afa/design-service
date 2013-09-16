@@ -8,4 +8,4 @@
       Отчество: #{ f.input_field :middle_name, class: 'textlines_default textline_l8' }
   = link_to 'Сменить пароль', edit_user_registration_path
   .form_submiting
-    %img.postRequest.submit_all_forms{:src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+    %input.put.submit{:type => 'image', :src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
