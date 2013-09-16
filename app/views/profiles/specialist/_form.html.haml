@@ -5,11 +5,11 @@
   %span.heading
     Обо Мне
     = image_tag 'edit.png', alt: 'edit', class: 'change_text bio_info'
-  %p= profile.user.specialist.bio_info
+  %p.bio_info= profile.user.specialist.bio_info
   %span.heading
     О Работе
     = image_tag 'edit.png', alt: 'edit', class: 'change_text work_info'
-  %p= profile.user.specialist.work_info
+  %p.work_info= profile.user.specialist.work_info
   %span.heading.margine Портфолио
   - profile.user.specialist.portfolios.each do |portfolio|
     %ul.portfolio
