@@ -1,0 +1,17 @@
+.portfolio_changes.rounded-corners
+  .close_fly_window
+  .heading Редактирование портфолио
+  = simple_form_for portfolio, remote: true do |f|
+    %ul
+      %li.title Название проекта
+      %li.title_req_border
+        = f.input_field :name
+      %li
+        /%input.add_to_group{:name => "", :type => "checkbox", :value => ""}
+        /%label Отображать проект в группах
+      %li.file_attach Прикрепить изображения
+      %li.image_preview
+        %ul#im_prev
+      %li
+        %image.reject.reset{:type => 'image', :src => asset_path('reject.png')}
+        %image.add.put.submit{:type => 'image', :src => asset_path('add_green.png')}

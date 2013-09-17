@@ -1,4 +1,7 @@
 DesignService::Application.routes.draw do
+  resources :portfolios
+
+
   resources :moderations, only: [:show] do
     member do
       post 'accept'
