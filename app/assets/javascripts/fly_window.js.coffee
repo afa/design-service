@@ -18,5 +18,4 @@ window.close_fly_window = ->
   $('.black_content_blocks').first().append( rendered_element )
 
 $(document).ready ->
-  $(".close_fly_window").click ->
-    close_fly_window()
+  $(document).on('click', ".close_fly_window", close_fly_window)
