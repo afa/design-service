@@ -1,0 +1,7 @@
+%ul.portfolio
+  %li.projects.rounded-corners_l3
+    = link_to portfolio_path(portfolio, format: 'json'), method: :delete, remote: true do
+      %span.delete_button
+    %span.project_name= portfolio.name
+    %span.edit.change_portfolio
+    = render partial: 'shared/portfolio', locals: {portfolio_items: portfolio.portfolio_items, example_set: portfolio.id, ul_class: 'portfolio_list', editable: true}
