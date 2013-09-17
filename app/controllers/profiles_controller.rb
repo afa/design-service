@@ -25,7 +25,9 @@ class ProfilesController < InheritedResources::Base
   end
 
   def set_avatar
-    resource.user.create_avatar(params.require(:photo).permit(:photo))
+    user = resource.user
+    user.avatar = params[:avatar]
+    user.save!
     respond_with(resource)
   end
 
