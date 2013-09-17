@@ -30,3 +30,7 @@ $(document).ready ->
     fill_specialist_info(data)
     close_fly_window()
   )
+  $('.avatar_form .submit').data('ajax-success', (data, status, xhr)->
+    #fill_specialist_info(data)
+    close_fly_window()
+  )
