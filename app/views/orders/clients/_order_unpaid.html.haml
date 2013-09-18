@@ -19,7 +19,7 @@
   /= link_to 'Оплатите заказ', replenishment_personal_account_path
 .msg
   %span
-    %a{:href=>"#", :data => {:msg_url => "#{order_messages_path(order)}"} } Новое сообщение
+    %a{:href=>"#", :data => {:messages_url => order_messages_path(order), :order_id => order.id, :order_url => url_for(order.orderable)} } Новое сообщение
 .completed
   завершено
   .presentage_blocks

@@ -15,56 +15,28 @@ window.multipart_ajax_request = (url, method, data, callbacks)->
     data: data
     type: method
     success: callbacks['success'] || (data, textStatus, xhr)-> {}
-    error: callbacks['error'] || (data, textStatus, xhr)-> {}
+    error: callbacks['error'] || (xhr, textStatus, error)-> {}
 
 window.multipart_ajax_sendform = (form_selector, method, callbacks)->
   $(form_selector).each (idx, form)->
     multipart_ajax_request(form.action, method, new FormData(form), callbacks)
 
-
-
-################ FOR SPECIFIC ORDER FORMS ####################
-# AJAX submission of attachment and form
-window.attachment_and_form_ajax_submission = (order_form, attach_form, submit_button_selector, output_text_field)->
-  order_form = $(order_form)
-  attach_form = $(attach_form)
-
-  $(submit_button_selector).click (event)->
+$(document).ready ->
+  $('.put.submit').click (event)->
     event.preventDefault()
-    submit_button = event.target
-    # form = $(submit_button).closest('form')
-
-    send_form = ->
-      multipart_ajax_sendform(order_form, 'PUT',
-        success: (data, textStatus, xhr)->
-          $(output_text_field).html(data['text'])
-          $(output_text_field).trigger('change')
-          alert('Изменения сохранены')
-        error: ->
-          alert('Не получилось отправить форму')
-      )
-    send_attach = ->
-      if attach_form.find('input[type=file]').get(0).files.length != 0
-        multipart_ajax_sendform(attach_form, 'POST',
-          success: ->
-            send_form()
-            alert('Файл загружен')
-            $(attach_form).get(0).reset()
-            attach_form.find('input[type=file]').trigger('change')
-          error: ->
-            alert('Ошибка при загрузке файла')
-        )
-      else
-        send_form()
-    send_attach()
-
-window.register_destroy_attachment_buttons = ->
-  $('.delete_attachment').click (event)->
-    attachment_url = $(event.target).data('attachment-url')
-    ajax_request(attachment_url, 'DELETE', '',
+    ajax_sendform($(event.target).closest('form'), 'PUT',
       success: ->
-        alert('Файл успешно удален')
-        $(event.target).closest('li.attachment_item').remove()
+        alert('Изменения сохранены')
       error: ->
-        alert('Файл не удален')
+        alert('Не получилось отправить форму')
     )
+  $('.post.submit').click (event)->
+    event.preventDefault()
+    ajax_sendform($(event.target).closest('form'), 'POST',
+      success: ->
+        alert('Изменения сохранены')
+      error: ->
+        alert('Не получилось отправить форму')
+    )
+  $('.not_ajax.submit').click (event)->
+    $(event.target).closest('form').get(0).submit()

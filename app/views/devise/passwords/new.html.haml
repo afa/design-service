@@ -4,4 +4,4 @@
       E-mail
       %span= f.input_field :email, class: 'textlines_default textline_l7'
   .form-actions
-    = image_tag('postButton.png', alt: 'Отправить форму', class: 'postRequest submit_button submit_all_forms')
+    %input.not_ajax.submit{:type => 'image', :src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}

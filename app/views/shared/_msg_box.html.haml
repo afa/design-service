@@ -1,5 +1,4 @@
-/ ------------------------------------------------- BLACK_PALET START MSGBOX--------------
-#black_content
+.black_content_blocks
   #msg_dialog.shadow_x1.border_xs.rounded-corners
     .close_fly_window
     .order_name
@@ -9,14 +8,11 @@
       %span.name
       .attachments_list
     .msg_content
-      / -----------------------------------------
       = render partial: 'messages/message_in_chat', collection: messages, as: :message
-      / -----------------------------------------
-    .send_msg
-      %form#msg_form
-        %textarea.msg_sender{:cols => "", :name => "text", :rows => ""}
-        = image_tag 'msg_send.jpg', name: 'submit', class: 'send_msg'
+    .chat_form
+      = simple_form_for Message.new, remote: true, html: {class: 'msg_form'} do |f|
+        = f.input_field :text, as: :text, class: 'msg_sender'
+        %input.send_msg{:type => 'image', :src =>"#{asset_path('msg_send.jpg')}", :alt => "Отправить"}
     .order_data_bottom
       %span
-        %a{:href => "#"} Исходные данные
-/ ------------------------------------------------- BLACK_PALET END MSGBOX--------------
+        .order_info Исходные данные

@@ -15,6 +15,12 @@ class AttachmentsController < InheritedResources::Base
     send_file resource.path, filename: resource.original_filename
   end
 
+  def create
+    create! do |format|
+      format.json { redirect_to collection_path }
+    end
+  end
+
 private
 
   def permitted_params

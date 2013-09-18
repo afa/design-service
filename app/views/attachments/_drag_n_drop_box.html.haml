@@ -1,0 +1,8 @@
+.attach_box{:class => wrapper_class}
+  .form_description
+  .number
+  %span.dropZone
+    = simple_form_for attached_to.attachments.build(kind: kind), url: polymorphic_path([attached_to, Attachment], format: 'json'), remote: true, multipart: true, defaults: { input_html: { disabled: disabled } } do |f|
+      = f.input_field :file, as: :file
+      = f.input_field :kind, as: :hidden
+    .hint Вы можете перетащить файлы сюда

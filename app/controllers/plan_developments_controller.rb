@@ -8,13 +8,6 @@ class PlanDevelopmentsController < InheritedResources::Base
     @plan_development = @plan_development.decorate
   end
 
-  def update
-    resource.update_attributes!(permitted_params[:plan_development])
-    respond_with do |format|
-      format.json { render json: {text: attachments_text} }
-    end
-  end
-
 private
   def permitted_params
     params.permit(plan_development: [:big_kitchen, :cabinet_needed, :cloakroom_needed,
@@ -29,11 +22,5 @@ private
 
   def load_draft
     @plan_development = PlanDevelopment.find_or_create_order
-  end
-
-  def attachments_text
-    render_to_string(partial: 'attachments/list_of_attachments',
-                    locals: {attachments: resource.attachments, has_remove_button: true},
-                    formats: [:html], handlers: [:haml])
   end
 end

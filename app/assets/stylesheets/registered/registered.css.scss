@@ -294,7 +294,7 @@ div.design_p-workin-docs_form1{ width:480px;  margin-left:45px;  padding:30px; l
 div.design_p-workin-docs_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; height: 29px; width: 86px; margin-right:10px; }
 div.design_p-workin-docs_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
 
-div.design_p-workin-docs_form1  div.file_attaching{ width:485px; height:150px; margin-top:10px; float:left;}
+div.design_p-workin-docs_form1  div.file_attaching{ width:485px; margin-top:10px; float:left;}
 div.design_p-workin-docs_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; }
 div.design_p-workin-docs_form1  div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:0px 0px 0px 140px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:80px 0px; margin-top:10px;}
 
@@ -680,51 +680,6 @@ div.border_left div.bottom_corner{background-color:#000; position: absolute; wid
 
 #black_content{ position:absolute; width:100%; height:100%;  z-index:20; background-image:image-url("black_content.png"); background-repeat:repeat; display: none;  min-width:980px; }
 
-/* MSG_DIALOG */
-#msg_dialog{ width:750px; min-height:650px; background-color:#ffffff; margin:0 auto; position:relative; margin-top:50px; display:none;}
-#msg_dialog div.order_name{ width:750px; font-size:24px; padding-top:15px; float:left; padding-bottom:15px; border-bottom:5px solid #f89f65; color:#5b5b5b}
-#msg_dialog div.order_data_bottom{ width:750px; float:left; padding-bottom:15px; padding-top:15px; border-top:3px solid #f89f65; position: absolute; text-align:left; bottom:0px;}
-#msg_dialog div.order_data_bottom span{ font-size:16px; float:left; padding-left:15px;}
-#msg_dialog div.order_data_bottom span a, #msg_dialog div.order_data_bottom span a:visited{ text-decoration:underline; color:#000000}
-#msg_dialog div.order_data_bottom span a:hover{ text-decoration:none; color:#000000;}
-#msg_dialog div.left_bar{ width:220px; height:520px; margin-top:5px; margin-bottom:5px; float:left;  overflow:hidden; border-right:1px solid #d3d3d3;}
-#msg_dialog div.left_bar span.heading{ width:200px; float:left; text-align: center; padding:5px 0px 10px 0px; font-size:18px}
-#msg_dialog div.left_bar span.photo{ width:46px; height:46px; border:1px solid #999999; float:left; background-color:#e6e6e6; margin-left:20px;}
-#msg_dialog div.left_bar span.photo img{ width:46px; height:46px;}
-#msg_dialog div.left_bar span.name{ width:120px; float:left; margin-left:10px; text-align:left; color:#5b5b5b;}
-
-/*
-#msg_dialog div.left_bar span.heading_done{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}
-#msg_dialog ul.done{ width:147px; float:left; list-style:none; margin-left:30px; padding:0px;}
-#msg_dialog ul.done li{ float: left; font-size:14px; text-decoration:underline; padding-bottom:10px;}
-#msg_dialog ul.done li span.preview{ width:147px; height:109px; border:1px solid #999999; float:left; background-color:#e6e6e6; background-repeat:no-repeat;}
-*/
-#msg_dialog div.left_bar span.heading_done{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}
-#msg_dialog ul.done{ width:147px; float:left; list-style:none; margin-left:30px; padding:0px;}
-#msg_dialog ul.done li{ font-size:14px; text-decoration:underline; padding-bottom:10px;}
-#msg_dialog ul.done li span.preview{ width:147px; height:109px; border:1px solid #999999; background-color:#e6e6e6; background-repeat:no-repeat;}
-
-#msg_dialog div.left_bar span.heading_working{ width:200px; float:left; text-align: center; padding:15px 0px 0px 0px; font-size:18px}
-#msg_dialog ul.working{ width:147px; float:left; list-style:none; margin-left:30px; padding:0px;}
-#msg_dialog ul.working li{ float: none; font-size:16px; padding-bottom:10px;  }
-#msg_dialog ul.working li a, #msg_dialog ul.working li a:visited{ color:#5c0404; text-decoration:none;  }
-#msg_dialog ul.working li a:hover{color:#5c0404; text-decoration:underline;}
-
-div.msg_content{ float: left; position:relative; width:500px; height:400px; overflow: hidden ;}
-div.msg_from{ float:left; margin-left:25px;}
-div.msg_to{ float: left; margin-left:65px;}
-div.msg_from ul li{ color:#7c85b4;}
-div.msg_to ul li{ color:#3acb22;}
-ul.message{ list-style:none; font-size:12px; padding-bottom:5px; padding-left:10px;}
-ul.message li{ float:left; padding-right:15px;}
-span.message{ width:380px; min-height:65px; border:1px solid; float:left; padding:15px; font-size:13px; text-align:left;}
-div.msg_from span.message{ border-color:#8f9eea; color:#7c85b4;}
-div.msg_to span.message{ border-color:#3acb22; color:#318722}
-
-div.send_msg{ float:left; width:500px; height:120px; border:1px solid #e6e6e6;}
-.msg_sender{ width:500px; height:81px;  float:left; padding:0px; margin:0px; border:none;}
-.send_msg{ float: right; cursor:pointer;}
-
 /* NAVIGATION MENU DEFAULT */
 ul#navigation{ float:left; width:600px; font-size:14px; margin:0px; padding-bottom:0px;}
 ul#navigation li{ float:left; margin-right:45px; color: #c0c0c0; list-style-image:image-url("path_default.png"); padding-top:5px; }
@@ -795,7 +750,7 @@ div.footer_elements div.partners{ text-align:right; float: right;  margin-top:15
 .light_green{ background-color:#cfe4b4; color:#4d8701;}
 .light_red{ background-color:#ecdfdf; color:#d55400;}
 .caption_left_menu{ height: 55px;  margin-top:27px;  font-size:16px; font-weight: inherit;  float:left; width:252px; padding-left:40px; line-height:25px;}
-.caption_left_menu a, .caption_left_menu a:link, .caption_left_menu a:active{ color:#434242; text-decoration:underline; font-size:14px; } 
+.caption_left_menu a, .caption_left_menu a:link, .caption_left_menu a:active{ color:#434242; text-decoration:underline; font-size:14px; }
 .caption_left_menu a:hover{ text-decoration:none;}
 .caption{ height: 40px;  margin-top:27px; padding-top:15px;  font-size:22px; font-weight: inherit; float:left; width:595px; padding-left:40px;}
 .heading_captions{ color:#8d0606; font-size:16px; font:16px; float:left; padding:20px 0px 15px 40px;}

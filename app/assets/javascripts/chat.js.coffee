@@ -1,43 +1,90 @@
+//= require jquery.slimscroll
 //= require ajax_submit
+//= require attachment_submit
 
-window.register_chat = ->
+$(document).ready ->
+  $(".msg").click (event)->
+    messages_url = $(event.target).data('messages-url')
+    order_url = $(event.target).data('order-url')
+    $('#msg_dialog').data('messages-url', messages_url)
+    $('#msg_dialog').data('order-url', order_url)
+    load_chat()
+    show_chat()
+
+  $(".close_fly_window").click ->
+    close_chat()
+
+  $('.send_msg').click (event)->
+    event.preventDefault()
+    send_message($(event.target).closest('form').get(0))
+
+  fill_chat_box = (data)->
+    msg_dialog = $('#msg_dialog')
+    msg_dialog.find('.msg_content').html(data['msgs_text'] || '')
+    msg_dialog.find('.left_bar .name').html(data['executor_name'] || '')
+    msg_dialog.find('.left_bar .photo').html('<img src="' + (data['executor_avatar_url'] || '') + '">')
+    msg_dialog.find('.attachments_list').html(data['attachment_previews_text'] || '')
+    msg_dialog.find('.order_name').html(data['attached_to_name'] || '')
+    make_attachment_forms_remote(msg_dialog.find('form.attachment_upload'))
+    register_destroy_attachment_in_chat_buttons(msg_dialog.find('.remove_attachment'))
+
+  load_chat = ->
+    messages_url = $('#msg_dialog').data('messages-url')
+    ajax_request(messages_url, 'GET', '',
+      success: (response) ->
+        fill_chat_box(response)
+        scroll_to_last()
+      error: ->
+        alert('Не получилось загрузить сообщения')
+    )
+    $('#msg_dialog').find('.order_info').click ->
+      window.location.href = $('#msg_dialog').data('order-url')
+
+  send_message = (msg_form)->
+    messages_url = $('#msg_dialog').data('messages-url')
+    if $(msg_form).find('textarea').val().trim().length == 0
+      return false
+    data = new FormData(msg_form)
+    ajax_request(messages_url, 'POST', data,
+      success: ->
+        msg_form.reset()
+        load_chat()
+      error: ->
+        alert('Не получилось отправить сообщение')
+    )
+
+  show_chat = ->
+    $('body').animate({scrollTop:0},"slow")
+    $('#msg_dialog').find('.left_bar').slimscroll( size: '7px', width:'220px', height:'520px' )
+    $('#msg_dialog').find('.msg_content').slimscroll( size: '7px', width:'500px', height:'400px' )
+    show_fly_window('#msg_dialog')
+    # $('body').css('overflow','hidden');  ## hide main window scrolling
+
+  close_chat = ->
+    fill_chat_box({})
+    # $('body').css('overflow','auto')  ## return scrollbar
+
+  scroll_to_last = ->
+    message_list = $('#msg_dialog').find('.msg_content')
+    message_list.animate({"scrollTop": message_list.get(0).scrollHeight}, "slow")
+
   make_attachment_forms_remote = (form_selector)->
     form = $(form_selector)
-    form.find('.submit').click (event)->
-      event.preventDefault()
-      multipart_ajax_sendform(form, 'POST',
-        success: ->
-          alert('Файл загружен')
-          form.get(0).reset()
-          form.find('input[type=file]').trigger('change')
-          messages_url = $('#msg_form').data('msg_send_url')
-          load_chat(messages_url)
-        error: ->
-          alert('Не удалось загрузить файл')
-      )
-    form.find('input[type=file]').change ->
-      files = this.files
+    set_filename = (files)->
       if files.length != 0
         form.find('.filename').html(files[0].name)
       else
         form.find('.filename').html('')
+    form.find('.submit').click (event)->
+      event.preventDefault()
+      send_file(form, success: load_chat)
+    form.find('input[type=file]').change (event)->
+      set_filename(event.target.files)
 
-  register_destroy_attachment_buttons = (button_selector)->
+  register_destroy_attachment_in_chat_buttons = (button_selector)->
     $(button_selector).click (event)->
-      attachment_url = $(this).data('attachment-url')
-      ajax_request(attachment_url, 'DELETE', '',
-        success: ->
-          alert('Файл удален')
-          messages_url = $('#msg_form').data('msg_send_url')
-          load_chat(messages_url)
-        error: ->
-          alert('Не удалось удалить файл')
-      )
-
-  black_content = ->
-    $('body').animate({scrollTop:0},"slow")
-    $("#black_content").css("height",$(document).height())
-    $("#black_content").css("display","block")
+      attachment_url = $(event.target).data('attachment-url')
+      destroy_attachment(attachment_url, success: load_chat)
 
   # Not used yet (due to url obtaining issues)
   load_messages = (url)->
@@ -48,71 +95,15 @@ window.register_chat = ->
       error: (response) ->
         alert('Не получилось загрузить сообщения')
     )
+
   # Not used yet (due to url obtaining issues)
   load_attachments = (url)->
     ajax_request(url, "GET", '',
       success: (response) ->
-        $('#msg_dialog .attachments_list').html(response['attachment_previews_text'])
-        make_attachment_forms_remote('form.attachment_upload')
-        register_destroy_attachment_buttons('.remove_attachment')
+        msg_dialog = $('#msg_dialog')
+        msg_dialog.find('.attachments_list').html(response['attachment_previews_text'])
+        make_attachment_forms_remote(msg_dialog.find('form.attachment_upload'))
+        register_destroy_attachment_in_chat_buttons(msg_dialog.find('.remove_attachment'))
       error: (response) ->
         alert('Не получилось загрузить сообщения')
     )
-
-  load_chat = (url)->
-    $.ajax
-      url: url
-      dataType: 'json'
-      type: 'GET'
-      success: (response) ->
-        $('#msg_dialog .msg_content').html(response['msgs_text'])
-        $('#msg_dialog .left_bar .name').html(response['executor_name'])
-        $('#msg_dialog .left_bar .photo').html('<img src="' + response['executor_avatar_url'] + '">')
-        $('#msg_dialog .attachments_list').html(response['attachment_previews_text'])
-        make_attachment_forms_remote('form.attachment_upload')
-        register_destroy_attachment_buttons('.remove_attachment')
-        scroll_to_last()
-      error: ->
-        alert('Не получилось загрузить сообщения')
-
-  scroll_to_last = ->
-    $('.msg_content').animate({"scrollTop": $('.msg_content')[0].scrollHeight},"slow")
-
-  $(".msg").click (event)->
-    messages_url = $(event.target).data('msgUrl')
-    $('#msg_form').data('msg_send_url', messages_url)
-    load_chat(messages_url)
-
-    name_order = $(this).parent().find('.name span').html();
-    $('.order_name').html(name_order);
-    black_content();
-    $('.left_bar').slimscroll({ size: '7px', width:'220px', height:'520px' } );
-    $('.msg_content').slimscroll({ size: '7px', width:'500px', height:'400px' });
-    $("#msg_dialog").css("display","block");
-    $('body').css('overflow','hidden');
-
-  $('img[name="submit"]', '.send_msg').click (event)->
-    event.preventDefault();
-    messages_url = $('#msg_form').data('msg_send_url')
-    data = jQuery.param
-      message:
-        text:  $('#msg_form textarea[name="text"]').val()
-    # scroll_to_last();
-    ajax_request(messages_url, 'POST', data,
-      success: ->
-        $('#msg_form').resetForm()
-        load_chat(messages_url)
-      error: ->
-        alert('Не получилось отправить сообщение')
-    )
-
-  clear_content = ->
-    $('#msg_dialog .msg_content').html('')
-    $('#msg_dialog .left_bar .name').html('')
-    $('#msg_dialog .left_bar .photo').html('')
-    $('#msg_dialog .attachments_list').html('')
-
-  $(".close_fly_window").click ->
-    clear_content()
-    $('body').css('overflow','auto');
-    $(this).parent().css("display","none").parent().css("display","none");

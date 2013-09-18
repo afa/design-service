@@ -92,6 +92,10 @@ class Order < ActiveRecord::Base
     orderable.title
   end
 
+  def to_s
+    title
+  end
+
   def unfinished_attachments
     orderable.attachment_kinds - attachments.pluck(:kind)
   end
