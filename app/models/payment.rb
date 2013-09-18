@@ -30,7 +30,8 @@ class Payment < ActiveRecord::Base
   end
 
   def mk_purchase
-   purchases.create 
+   amount = order.need_amount
+   purchases.create :amount => amount
   end
 
   def purchase_ok?

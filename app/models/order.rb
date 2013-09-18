@@ -35,11 +35,11 @@ class Order < ActiveRecord::Base
       transition :moderator_suggested => :specialist_agreed, if: ->{ User.current.specialist? }
       transition :specialist_agreed => :client_agreed, if: ->{ User.current.client? }
     end
+    after_transition :specialist_agreed => :client_agreed, :do => :mk_payment
 
     event :start_work do
       transition [:in_work, :client_agreed] => :in_work,  :if => :must_start_work?
     end
-    after_transition :client_agreed => :in_work, :do => :mk_payment
 
     event :accept_work do
       transition :in_work => :work_accepted
@@ -102,7 +102,8 @@ class Order < ActiveRecord::Base
 
   # FIX ME: refactor
   def amount_paid
-    purchases.where(:state => :paid).inject{|sum,purchase| sum + purchase.payments.where(:state => :paid).inject(0.0){|r,payment| r + payment.amount } }
+    payments.where(:state => :paid).inject(0.0){|r, p| r + p.amount }
+    #purchases.where(:state => :paid).inject{|sum,purchase| sum + purchase.payments.where(:state => :paid).inject(0.0){|r,payment| r + payment.amount } }
   end
 
   def need_amount
