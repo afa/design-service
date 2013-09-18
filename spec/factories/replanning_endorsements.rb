@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :replanning_endorsement do
-    developed_by_general_projector false
-    replanning_organization_licenzed false
+    developed_by_general_projector {false}
+    replanning_organization_licensed {false}
     flat_area "9.99"
   end
 end

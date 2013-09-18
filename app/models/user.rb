@@ -88,10 +88,10 @@ class User < ActiveRecord::Base
   def new_profile
     return if profile
     build_profile do |p|
-      p.fake_name = 'My fake name'
-      p.middle_name = 'My middle name'
-      p.name = 'My name'
-      p.surname = 'My surname'
+      p.fake_name = ''
+      p.middle_name = ''
+      p.name = ''
+      p.surname = ''
     end
   end
 end
