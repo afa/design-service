@@ -10,12 +10,28 @@ window.show_fly_window = (element_name) ->
   black_content = $("#black_content")
   black_content.append( element_to_render )
   black_content.css(height: $(document).height()).show()
+  $('body').animate({scrollTop:0},"slow")
   element_to_render.show()
 
 window.close_fly_window = ->
   rendered_element = $("#black_content").children()
   $("#black_content").hide()
   $('.black_content_blocks').first().append( rendered_element )
+
+window.show_fly_form_from_url = (obtain_form_url, element_name, customize_form)->
+  ajax_request(obtain_form_url, 'GET', '',
+    success: (data, status, xhr)->
+      form_html = $(data['form_html'])
+      customize_form ||= (form)->
+        form
+      form_html = customize_form(form_html)
+      form_html.find('.close_fly_window').click ->
+        form_html.remove()
+      $('.black_content_blocks').append(form_html)
+      show_fly_window(element_name)
+    error: ->
+      ;
+  )
 
 $(document).ready ->
   $(document).on('click', ".close_fly_window", close_fly_window)
