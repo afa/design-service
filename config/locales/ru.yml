@@ -178,6 +178,7 @@ ru:
         cabinet_needed: 'Нужен кабинет'
         cloakroom_needed: 'Гардеробные комнаты'
         num_plans: 'Число вариантов планировок'
+        num_rooms: 'Число комнат'
         num_guests_description: 'Число гостей'
         num_standpipes: 'Число стояков'
         full_address: 'Адрес'
