@@ -1,0 +1,8 @@
+- project = OrderCustomizer.by_type(type)
+= link_to design_project_type_path(type) do
+  %span.black_opacity
+= image_tag project.image, class: 'img_'
+%span.heading
+  = link_to project.name, design_project_type_path(type)
+%span.text= project.description
+%span.order

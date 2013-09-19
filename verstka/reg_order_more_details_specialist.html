@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Дизайн сервис.</title>
+
+<link href="registered.css" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<script language="javascript" src="jquery-1.10.1.js"/> </script>
+<script language="javascript" src="jquery.corner.js"/> </script>
+<script type="text/javascript" src="scroll/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scroll/jquery.slimscroll.js"></script>
+
+
+	<link rel="stylesheet" href="date_picker/jquery.ui.all.css">
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+		$(function() {
+		$('.more_details ul.files li').hover(function(){ 
+		$(this).children('span').css('color','#ffffff').css('background-color','#000000')
+		}, function(){$(this).children('span').css('color','#a5a0a0').css('background-color','#333333')});		
+		});
+		
+		$(function() {
+			$( "#datepicker" ).datepicker({
+				showOn: "button",
+				buttonImage: "calendar.gif",
+				buttonImageOnly: true
+			});
+		});
+		
+
+		
+</script>	
+
+<body>
+
+<noindex> 
+<!--------------------------------------------------- BLACK_PALET START---------------->
+<div id="black_content">
+	<div id="msg_dialog" class="shadow_x1 border_xs rounded-corners">
+    <div class="close_fly_window"></div>
+    	<div class="order_name"></div>
+        <div class="left_bar">
+        	<span class="heading gray_header">Заказчик</span>
+            <span class="photo"></span>
+            <span class="name">Журавлев <br>Михаил</span>
+            <span class="heading_done dark_green_header">Выполнено</span>
+        	<ul class="done">
+            	<li><span><img src="designers_1.jpg"></span>План 1 <span class="delete"></span></li>
+                <li><span><img src="designers_2.jpg"></span>План 2 <span class="delete"></span></li>
+                <li><span><img src="designers_3.jpg"></span>План 3 <span class="delete"></span></li>
+            </ul>
+            <span class="heading_working dark_red">В разработке</span>
+        	<ul class="working">
+            	<li><span></span><a href="#">План 4</a></li>
+                <li><span></span><a href="#">План 5</a></li>
+                <li><span></span><a href="#">План 6</a></li>
+                <li><span></span><a href="#">План 7</a></li>
+            </ul>
+        </div>
+        <div class="msg_content">
+        <!------------------------------------------------------- -->
+        	<div class="msg_from">
+            	<ul class="message">
+                	<li>Журавлев Михаил</li><li>24.05.2013</li><li>17:30</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+         <!------------------------------------------------------- -->  
+          <div class="msg_to">
+                <ul class="message">
+            		<li>Александр</li><li>24.05.2013</li><li>19:40</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+             <!------------------------------------------------------- -->  
+          <div class="msg_to">
+            	<ul class="message">
+                	<li>Журавлев Михаил</li><li>24.05.2013</li><li>17:30</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+         <!------------------------------------------------------- -->      
+            <div class="msg_from">
+            	<ul class="message">
+                	<li>Журавлев Михаил</li><li>24.05.2013</li><li>17:30</li>
+            	</ul>
+                <span class="message rounded-corners_l4"># По умолчанию доступны две конфигурации:# - "main": подключает виртуальный диск при загрузке;# - "reserve": подключает диск при запуске серверов.# Рекомендуется использовать "main". 
+# См. также scripts/README.txt.runlevel = main###### Настройки Apache.###
+				</span>
+            </div>
+         <!------------------------------------------------------- -->    
+        </div>
+        <div class="send_msg">
+        <form id="msg_form">
+        <input type="hidden" name="user" value="user">
+        <input type="hidden" name="date" value="date">
+        <input type="hidden" name="time" value="time">
+        <textarea name="message" cols="" rows="" class="msg_sender"></textarea>
+        <img src="msg_send.jpg" class="send_msg">
+        <!--<input name="submit" type="image" src="msg_send.jpg" class="send_msg">-->
+        </form>
+        </div>
+    	<div class="order_data_bottom"><span><a href="#">Исходные данные</a></span></div>
+    </div>
+</div>
+<!--------------------------------------------------- BLACK_PALET END---------------->
+
+<div class="twoColFixRtHdr">
+<div class="border_ornements"> <!--------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="header_top"> <!--------------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+<div class="coconut_leaves"> <!----------------------------------------------------------------------------------- NEW CLASS ADDED---------------->
+
+<div id="container">
+
+<div id="header_specialist">
+	<div class="headerLayer1"></div>
+    <ul id="menu_specialist">
+    	<li><a href="reg_my_projects_specialist.html"><span></span></a></li>
+    	<li><a href="#"><span></span></a></li>
+    	<li><a href="reg_personal_account_specialist.html"><span></span></a></li>
+    	<li><a href="reg_personal_page_specialist.html"><span></span></a></li>
+    </ul>
+   
+</div> <!-------------------------- END HEADER ---------------------------------------------------------------------------------------------------->
+
+
+<div id="maincontent_specialist" class="rounded-corners_l4">	
+	<div id="main_content_specialist_inside">	
+		 
+        <div class="sidebar_left_specialist">		
+        		<div class="name rounded-corners">NAME</div>
+                <div class="events rounded-corners">
+                	<span class="heading_event">ПОСЛЕДНИЕ СОБЫТИЯ</span>
+                	<ul class="last_events">
+                    	<li><span>25.04.2013</span>  Отправлены варианты планировки для LEX</li>
+                        <li><span>15.04.2013</span>  Заказ от Lex в работе</li>
+                        <li><span>13.04.2013</span>  Новый заказ</li>
+                    	<li><span>11.04.2013</span>  Поступление денежных средств на лицевой счет</li>
+                        <li class="last"><span>10.04.2013</span>  Выполнен заказ от STIFF</li>
+                    </ul>
+                </div>
+         </div>
+        
+        <div class="page_contener_specialist">
+        	<div class="header_page_specialist green_header">НОВЫЕ ЗАКАЗЫ</div>
+            <span class="return">назад</span>
+ 			<div class="specialist_orders border_x1 rounded-corners">
+            	<div class="date border_x1 rounded-corners_l3">30.01.2013</div>
+            	<div class="name">Наименование: <span>Дизайн кухни+гостиной</span></div>
+                <div class="client">Заказчик: <ul><li>Журавлев Михаил </li></ul></div>
+                <div class="status">предварительная цена: <span>1800 руб.</span></div>
+            </div>
+            
+            <div class="more_details">
+           		<span class="heading">1. Исходные данные</span> 
+           		<ul class="files">
+                	<li><span>скачать</span><img src="designers_3.jpg"></li>
+                    <li><span>скачать</span><img src="designers_1.jpg"></li>
+                    <li><span>скачать</span><img src="designers_2.jpg"></li>
+                	<li><span>скачать</span><img src="designers_3.jpg"></li>
+                    <li><span>скачать</span><img src="designers_1.jpg"></li>                    
+                    <li><span>скачать</span><img src="designers_1.jpg"></li>
+                </ul>
+                <span class="download"><a href="#">Скачать одним архивом</a></span>
+           		<span class="heading">2. Состав проекта</span>
+                <form>
+                    <ul class="included">
+                        <li><input name="select1" type="checkbox" id="select1"><label for="select1">план с расстановкой мебели</label></li>
+                        <li><input name="select2" type="checkbox" id="select2"><label for="select2">ИЗОБРАЖЕНИЕ концепции</label></li>
+                        <li><input name="select3" type="checkbox" id="select3"><label for="select3">план демонтанса монтанса</label></li>
+                        <li><input name="select4" type="checkbox" id="select4"><label for="select4">план с расстановкой мебели</label></li>
+                        <li class="add">Добавить Новую назьванию <input type="text" class="textlines_default textline_l5"><input name="" type="image" src="add_green_small.png"></li>
+                    </ul> 
+                    <span class="heading">2. Срок выполнения  <input type="text" id="datepicker" class="textlines_default textline_l6"></span>
+                    <span class="confirm"><input type="image"  src="order_confirm.png"></span>  
+                </form>              
+            </div>
+                                    
+        </div><!-- end page_contener_specialist-->
+    </div>
+        
+</div> <!--------------------------------------------------- -----------------------------------------------END maincontent_index -->
+
+</div><!--------------------------------------------------- --------------------------------------------------------END container--------->
+
+<!-- FOOTER START -->
+<div class="footer">
+	<div class="footer_elements">
+		<div class="contact_with_us">
+    	Связаться с нами:<br>
+    	Тел: +7 (495) 123-45-67<br>
+    	E-mail: info@design-servis.ru
+    	</div>
+        <div class="rights">Дизайн-Сервис©2О12</div>
+        <div class="partners">
+        Партнеры:<br>
+		Банк-Идей<br>
+		www-студия        
+        </div>
+	</div>
+</div> 
+ <!---------------- FOOTER END --------->
+
+</div> <!-- coconut_leaves ----------------------------------------------------- END CLASS--->
+</div> <!-- header_top  ----------------------------------------------------- END CLASS--->
+</div> <!-- border_ornements ---------------------------------------------------- END CLASS-->  
+</div>
+
+
+</noindex>
+</body>
+</html>

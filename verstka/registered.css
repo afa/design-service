@@ -599,7 +599,23 @@ div.specialist_orders_presentage_blocks span.presentage{ width:150px; height:32p
 div.specialist_orders_presentage_blocks span.presentage span.bar{ background-image:url(presentage_bar.png); width:200px; height:32px; float:left; z-index:5; position:absolute; background-image:url(presentage.png); background-repeat:no-repeat; }
 div.specialist_orders_presentage_blocks span.presentage span.value_present{ font-size:14px; padding:7px 0px 0px 85px; float:left; position: absolute;}
 
+div.specialist_orders div.show_more{ width:155px; height:35px; background-image:url(show_more.png); float:left;}
+div.specialist_orders div.show_more:hover{ background-image:url(show_more_hover.png);}
+/*  -----MORE DETAILS */
+div.page_contener_specialist span.return{ float:left; font-size:16px; margin-left:20px; clear:both;}
+div.page_contener_specialist div.more_details span.heading{ float:left; font-size:16px; margin-left:20px; clear:both;}
+div.page_contener_specialist div.more_details ul.files{ float: left; position:relative; clear:both; list-style:none;  padding:0px; margin:10px 0px 0px 25px; position:relative;}
+div.page_contener_specialist div.more_details ul.files li{ float:left; margin:0px 10px 10px 0px; padding:0px; width:100px; height:100px; position:relative; cursor: pointer;}
+div.page_contener_specialist div.more_details ul.files li span{ position:absolute; z-index:5;  width:100px; height:20px; background-color:#333333; bottom:0px; font-size:12px; color:#a5a0a0; text-align:center;}
+div.page_contener_specialist div.more_details ul.files li img{ width:100px; height:100px; }
+div.page_contener_specialist div.more_details span.download a, div.page_contener_specialist div.more_details span.download a:link, div.page_contener_specialist div.more_details span.download a:active{ float:left; font-size:12px; margin-left:20px; padding-bottom:10px; color:#666666;}
+div.page_contener_specialist div.more_details span.download a:hover{ color:#000033;}
 
+div.page_contener_specialist div.more_details ul.included{ float:left; clear:both; list-style:none; padding:0px; margin:5px 5px 5px 25px;}
+div.page_contener_specialist div.more_details ul.included li{ padding-bottom:5px;}
+div.page_contener_specialist div.more_details ul.included li.add{ font-size:14px; padding-left:40px;}
+
+div.page_contener_specialist div.more_details span.confirm{ margin-top:15px; margin-left:25px; float:left; position:relative; clear:both;}
 /*  PAGE CONCEPT REG_PERSONAL_ACCOUNT_SPECIALIST.HTML */
 
 div.personal_account_specialist ul.personal_account{ width:550px;  background-color:#dbdbdb; float:left; margin:0px 0px 0px 20px; padding:0px; list-style:none; font-size:18px}

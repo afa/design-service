@@ -1,10 +1,10 @@
 class SelectedFormsController < InheritedResources::Base
   respond_to :json, only: [:update]
-  before_filter :load_draft, only: [:show]
+  before_filter :load_draft, only: [:new, :edit]
 
 protected
   def permitted_params
-    params.permit(selected_form: [:room_space, :interior_style, :interior_style_comment, :show_results,:wishes, :typename])
+    params.permit(selected_form: [:room_space, :interior_style, :interior_style_comment, :show_results, :wishes, :typename])
   end
 
   def load_draft
@@ -14,7 +14,15 @@ protected
   end
 
   def typename
-    params[:type]
+    if params[:action] == 'new'
+      params[:type]
+    else
+      resource.typename
+    end
   end
   helper_method :typename
+
+  def page_subtitle
+    I18n.t "titles.selected_form.#{typename}"
+  end
 end

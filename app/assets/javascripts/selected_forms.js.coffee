@@ -23,3 +23,7 @@ $(document).ready ->
   $('.interior ul li:last-child label').append($('.interior ul + input[type="text"]'))
   $('.interior input[type="text"]').change ->
     $('.interior input[type="radio"]').last().get(0).checked = true
+
+#///  $(".place").find(":text").focus ->
+#///    alert ($(this).val())  
+#///    false;

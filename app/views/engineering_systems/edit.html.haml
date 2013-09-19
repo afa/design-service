@@ -1,6 +1,6 @@
 %h1 Editing engineering_system
 
-= render 'form'
+= render :partial => 'form', :locals => {:engineering_systems => @engineering_system, :disabled => false}
 
 = link_to 'Show', @engineering_system
 \|

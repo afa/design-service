@@ -47,8 +47,11 @@ set :bundle_flags, "--no_deployment"
 # Не меняйте это значение без необходимости, оно используется дальше.
 set :application,     "design-service"
 
+task :prod, :roles => :app do
+ set :deploy_server, 'design-service.ru'
+end
 # Сервер размещения проекта.
-set :deploy_server,   "lithium.locum.ru"
+#set :deploy_server,   "lithium.locum.ru"
 
 # Не включать в поставку разработческие инструменты и пакеты тестирования.
 set :bundle_without,  [:development, :test]
