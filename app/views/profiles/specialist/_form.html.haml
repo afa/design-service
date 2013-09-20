@@ -14,8 +14,7 @@
   .portfolios
     = render partial: 'portfolios/portfolio_for_profile', collection: profile.specialist.portfolios, as: :portfolio
   .add_new
-    /= link_to add_portfolio_profile_path(format: 'json'), method: :post, remote: true do
-    = image_tag 'add_new_project.png', alt: 'Добавить проект', class: 'add_portfolio'
+    = image_tag 'add_new_project.png', alt: 'Добавить проект', class: 'add_portfolio', data: {specialist_id: profile.specialist.id}
 
 .black_content_blocks
   .bio_info_form.edit_profile_form
@@ -39,4 +38,3 @@
       = form_tag set_avatar_profile_path, remote: true do
         = file_field_tag :avatar, accept: 'image/*'
         %input.put.submit{:type => 'image', :src => asset_path('postButton.png'), :alt => "Отправить форму"}
-  = render partial: 'portfolios/form', locals: {portfolio: Portfolio.new}
