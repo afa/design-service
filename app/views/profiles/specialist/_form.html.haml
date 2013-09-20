@@ -36,5 +36,6 @@
     .box.border_x4.rounded-corners_l2.shadow_x1
       %span.header Обо мне
       = form_tag set_avatar_profile_path, remote: true do
-        = file_field_tag :avatar, accept: 'image/*'
+        .dropZone
+          = file_field_tag :avatar, accept: 'image/*'
         %input.put.submit{:type => 'image', :src => asset_path('postButton.png'), :alt => "Отправить форму"}

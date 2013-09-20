@@ -627,8 +627,7 @@ div.info_specialist {
       &:nth-child(1){ clear:both; }
       span.project_name{ font-size:14px; padding:5px; float:left; color:#657d93; font-weight:bold; padding-left:15px;}
       span.edit{ width:16px; height:17px; background-image: image-url("edit.png"); background-repeat:no-repeat; position:relative; float: right; margin-right:10px; margin-top:5px; cursor:pointer;}
-      // IT LOOKS THIS PART OF CSS SHOULD BE PLACED ELSEWHERE (BECAUSE HTML LAYOUT DOESN'T ALLOW THEM BE ONE INSIDE ANOTHER(FORM INSIDE FORM))
-      ul {
+      ul.portfolio_list {
         list-style: none; float:left; margin:0px; padding:0px; clear:both; margin-left:10px; padding-bottom:10px; padding-right:8px;
         li{ float:left; padding:5px; width:75px; height:68px;}
         li.add{ background-image: image-url("add_.jpg"); background-repeat:no-repeat; margin:5px 0px 0px 5px; cursor:pointer;}
@@ -655,7 +654,11 @@ div.info_specialist {
       input:focus{ outline:0; }
     }
     li.file_attach{ margin-top:10px; margin-bottom:10px; color:#b7b6b6; }
-    li ul {
+    li img.reject{ margin-left:120px;}
+    li img.add{ margin-left:30px;}
+  }
+  .images_preview_content {
+    ul.portfolio_list {
       padding:0px; margin:0px; width:600px;  position:relative; clear:both; overflow:auto;
       li{ width:102px; height:102px; float:left; background-color:#999933; margin-right:15px; margin-bottom:10px;}
       li img{ width:102px; height:102px;}
@@ -664,8 +667,6 @@ div.info_specialist {
       li.add{ background-image: image-url("add_img_portfolio.jpg"); cursor:pointer;}
       li.add:hover{ background-image: image-url("add_img_portfolio_hover.jpg"); }
     }
-    li img.reject{ margin-left:120px;}
-    li img.add{ margin-left:30px;}
   }
 }
 
