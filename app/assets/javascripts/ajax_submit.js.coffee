@@ -7,6 +7,7 @@ window.ajax_sendform = (form_selector, method, callbacks)->
 
 # all requests made this way are multipart
 window.multipart_ajax_request = (url, method, data, callbacks)->
+  callbacks ||= {}
   $.ajax
     url: url
     dataType: 'json'
