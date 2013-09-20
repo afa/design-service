@@ -1,6 +1,9 @@
 DesignService::Application.routes.draw do
-  resources :portfolios
-
+  resources :portfolios do
+    member do
+      get 'edit_form'
+    end
+  end
 
   resources :moderations, only: [:show] do
     member do
@@ -20,10 +23,20 @@ DesignService::Application.routes.draw do
   resources :specialist_groups do
     resources :messages
     resources :reviews, only: [:index]
+    resources :portfolios do
+      collection do
+        get 'new_form'
+      end
+    end
   end
   resources :specialists do
     resources :messages
     resources :reviews, only: [:index]
+    resources :portfolios do
+      collection do
+        get 'new_form'
+      end
+    end
   end
   resources :photo_collections
   resources :photos
