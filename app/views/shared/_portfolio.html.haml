@@ -1,4 +1,5 @@
 - editable = false  unless defined?(editable)
+- skip_file_input = false  unless defined?(skip_file_input)
 %ul{class: [ul_class, editable ? 'editable' : '']}
   - portfolio_items.each do |portfolio_item|
     %li{:data => {:portfolio_item_id => portfolio_item.id}}
@@ -6,5 +7,6 @@
         = image_tag portfolio_item.photo.thumb.url
   - if editable
     %li.add.dropZone.portfolio_item_attachment
-      = simple_form_for PortfolioItem.new, url: portfolio_portfolio_items_path(portfolio_id, format: 'json'), remote: true, multipart: true do |f|
-        = f.input_field :photo, as: :file
+      - unless skip_file_input
+        = simple_form_for PortfolioItem.new, url: portfolio_portfolio_items_path(portfolio_id, format: 'json'), remote: true, multipart: true do |f|
+          = f.input_field :photo, as: :file

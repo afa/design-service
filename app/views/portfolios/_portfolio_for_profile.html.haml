@@ -1,3 +1,4 @@
+- skip_file_input = false  unless defined?(skip_file_input)
 %ul.portfolio{:data => {:portfolio_id => portfolio.id}}
   %li.projects.rounded-corners_l3
     - unless portfolio.new_record?
@@ -5,4 +6,4 @@
         %span.delete_button
     %span.project_name= portfolio.name
     %span.edit.edit_portfolio
-    = render partial: 'shared/portfolio', locals: {portfolio_items: portfolio.portfolio_items, example_set: portfolio.id, ul_class: 'portfolio_list', editable: true, portfolio_id: portfolio.id}
+    = render partial: 'shared/portfolio', locals: {portfolio_items: portfolio.portfolio_items, example_set: portfolio.id, ul_class: 'portfolio_list', editable: true, portfolio_id: portfolio.id, skip_file_input: skip_file_input}

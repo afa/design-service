@@ -12,7 +12,7 @@
   %p.work_info= profile.specialist.work_info
   %span.heading.margine Портфолио
   .portfolios
-    = render partial: 'portfolios/portfolio_for_profile', collection: profile.specialist.portfolios, as: :portfolio
+    = render partial: 'portfolios/portfolio_for_profile', collection: profile.specialist.portfolios, as: :portfolio, locals: {skip_file_input: true}
   .add_new
     = image_tag 'add_new_project.png', alt: 'Добавить проект', class: 'add_portfolio', data: {specialist_id: profile.specialist.id}
 
