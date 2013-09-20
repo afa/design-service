@@ -1,5 +1,6 @@
 DesignService::Application.routes.draw do
   resources :portfolios do
+    resources :portfolio_items
     member do
       get 'edit_form'
     end
@@ -59,6 +60,7 @@ DesignService::Application.routes.draw do
   resource :profile do
     get 'orders'
     put 'set_avatar'
+    post 'add_portfolio'
   end
 
   get 'personal_account' => 'personal_accounts#history'

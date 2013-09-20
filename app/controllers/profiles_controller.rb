@@ -31,6 +31,12 @@ class ProfilesController < InheritedResources::Base
     respond_with(resource)
   end
 
+  def add_portfolio
+    specialist = resource.specialist
+    specialist.portfolios.create
+    respond_with(resource)
+  end
+
 protected
   def begin_of_association_chain
     current_user
