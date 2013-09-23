@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_events_for_spec
-   @events = current_user.events.order("id desc").limit(5) if current_user.try(:specialist?)
+   @events = User.current.events.order("id desc").limit(5) if User.current.specialist?
    @events ||= []
   end
 
@@ -98,7 +98,7 @@ class ApplicationController < ActionController::Base
   def logging_in
     guest_orders = guest_user.try{|user| user.orders.all}
     guest_orders.each do |order|
-      order.client_id = current_user.id
+      order.client_id = User.current.id
       order.save!
     end
   end

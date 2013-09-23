@@ -46,6 +46,9 @@ DesignService::Application.routes.draw do
   resources :orders do
     member do
       get 'get_price'
+      get 'details'
+      put 'agree_price'
+      put 'accept_work'
     end
     resources :reviews
     resources :messages do
@@ -59,6 +62,7 @@ DesignService::Application.routes.draw do
 
   resource :profile do
     get 'orders'
+    get 'new_orders'
     put 'set_avatar'
     post 'add_portfolio'
   end

@@ -4,3 +4,4 @@
 
 //= require chat
 //= require completion_percent
+//= require date_selector

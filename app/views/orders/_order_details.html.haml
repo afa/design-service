@@ -1,0 +1,36 @@
+.more_details
+  %span.heading 1. Исходные данные
+  %ul.files
+    - order.attachments do |attachment|
+      %li
+        - if attachment.content_type.start_with?('image')      
+          %span= download_attachment_path(attachment)
+          = image_tag attachment_path(attachment)
+        - else
+          = link_to attachment.original_filename, download_attachment_path(attachment)
+  %span.download
+    %a{:href => "#"} Скачать одним архивом
+  %span.heading 2. Состав проекта
+  %form
+    %ul.included
+      %li
+        %input#select1{:name => "select1", :type => "checkbox"}
+        %label{:for => "select1"} план с расстановкой мебели
+      %li
+        %input#select2{:name => "select2", :type => "checkbox"}
+        %label{:for => "select2"} изображение концепции
+      %li
+        %input#select3{:name => "select3", :type => "checkbox"}
+        %label{:for => "select3"} план монтанжа/демонтажа
+      %li
+        %input#select4{:name => "select4", :type => "checkbox"}
+        %label{:for => "select4"} план с расстановкой мебели
+      %li.add
+        Добавить новый тип плана
+        %input.textlines_default.textline_l5{:type => "text"}
+        %input{:name => "", :src => asset_path('add_green_small.png'), :type => "image"}
+    %span.heading
+      2. Срок выполнения
+      %input#datepicker.textlines_default.textline_l6{:type => "text", :data => {:image_path => asset_path('calendar.gif')}}
+    %span.confirm
+      %input{:src => asset_path('order_confirm.png'), :type => "image"}
