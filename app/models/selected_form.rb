@@ -5,6 +5,7 @@ class SelectedForm < ActiveRecord::Base
   extend Enumerize
   enumerize :interior_style, in: [:classicism, :modern_minimalism, :east, :modernart_deco, :any]
   enumerize :show_results, in: [:'3d_visualization', :freehand_drawing]
+  enumerize :show_results_different, in: [:'palette_combinations', :'3d_visualization', :freehand_drawing]
 
   scope :by_type, ->(type){ joins(:order_customizer).where(order_customizers: {typename: type}) }
 

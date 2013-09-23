@@ -4,7 +4,10 @@ class SelectedFormsController < InheritedResources::Base
 
 protected
   def permitted_params
-    params.permit(selected_form: [:room_space, :interior_style, :interior_style_comment, :show_results, :wishes, :typename])
+    params.permit(selected_form: [:room_space, :interior_style, :interior_style_comment, 
+      :show_results, :wishes, :typename, :room_name, :decorative_plaster, :wallpaper, 
+      :ceramic_tiles, :tree, :natural_stone, :cold_gamma, :bright_saturated_colors, 
+      :warm_color, :pastel_shades, :main_color, :show_results_different])
   end
 
   def load_draft
