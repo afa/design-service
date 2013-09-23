@@ -23,6 +23,9 @@ class ProfilesController < InheritedResources::Base
       @orderable = orders.decorate
     end
   end
+  def new_orders
+    @orderable = current_user.orders.includes(:orderable).not_in_work.decorate
+  end
 
   def set_avatar
     user = resource.user

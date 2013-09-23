@@ -1,4 +1,4 @@
-._razrabotka_var.rounded-corners{:class => "#{order.border_class_mild}" }
+._razrabotka_var.rounded-corners{:class => ["#{order.border_class_mild}"] + (User.current.specialist? ? ['specialist_orders'] : [])  }
   .date.rounded-corners_l3{:class => "#{order.border_class_mild}" }= order.completion_time
   .name
     Наименование:

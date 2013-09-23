@@ -86,6 +86,7 @@ ru:
     personal_accounts: 'ЛИЦЕВОЙ СЧЕТ'
     profiles:
       orders: 'МОИ ЗАКАЗЫ'
+      new_orders: 'НОВЫЕ ЗАКАЗЫ'
       edit: 'Редактировать профиль'
     orders: 'Заказы'
     registrations:

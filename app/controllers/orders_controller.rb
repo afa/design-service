@@ -1,5 +1,6 @@
 class OrdersController < InheritedResources::Base
   load_and_authorize_resource
+  custom_actions resource: [:details], collection: []
   before_filter except: [:index] do
     @order = @order.decorate
   end
