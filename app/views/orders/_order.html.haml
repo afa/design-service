@@ -22,7 +22,7 @@
     %span= order.work_state
   .pay_now
     - if User.current.client? && !order.paid?
-      = robo_pay(order)
+      / = robo_pay(order) #!!!!!!!!!!!!!!!!!! It fails
       -# prch = order.payments.where(:state => :requested).order("id desc").map{|p| p.purchases.where(:state => :requested).order("id desc") }.flatten.compact.first }
       -# %script{:language => 'JavaScript', :src => "https://auth.robokassa.ru/Merchant/Handler/MrchSumPreview.ashx?MrchLogin=instyle&OutSum=#{prch.amount}&InvId=#{prch.id }"}
       /!!!!!!!!!
@@ -37,6 +37,11 @@
       %span.percentage
         %span.value_percent #{order.completion_percent}%
         %span.bar
+  .price
+    .value #{order.price} руб.
+    - if order.can_agree_price?
+      = link_to agree_price_order_path(order, format: 'json'), remote: true, method: :put do
+        %span.agree принять цену
   .documents
     Документы:
     %ul

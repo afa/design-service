@@ -47,6 +47,8 @@ DesignService::Application.routes.draw do
     member do
       get 'get_price'
       get 'details'
+      put 'agree_price'
+      put 'accept_work'
     end
     resources :reviews
     resources :messages do
