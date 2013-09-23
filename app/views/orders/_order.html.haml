@@ -4,14 +4,45 @@
     Наименование:
     %span
       = link_to order.title, url_for(order.orderable)
-
-  - if User.current.client?
-    - if order.paid?
-      = render partial: 'orders/clients/order_paid', locals: {order: order}
-    - else
-      = render partial: 'orders/clients/order_unpaid', locals: {order: order}
-  - elsif User.current.specialist?
-    - if order.paid?
-      = render partial: 'orders/specialists/order_paid', locals: {order: order}
-    - else
-      = render partial: 'orders/specialists/order_unpaid', locals: {order: order}
+  .artists
+    - if User.current.client?
+      Исполнители:
+      %ul
+        %li= order.executor
+    - elsif User.current.specialist?
+      Заказчик:
+      %ul
+        %li= order.client
+  .completion
+    %span.tit До завершения:
+    %ul
+      %li{:class => (order.completion_time ? 'payid' : '')}= order.time_to_finish
+  .status
+    Состояние:
+    %span= order.work_state
+  .pay_now
+    - if User.current.client? && !order.paid?
+      = robo_pay(order)
+      -# prch = order.payments.where(:state => :requested).order("id desc").map{|p| p.purchases.where(:state => :requested).order("id desc") }.flatten.compact.first }
+      -# %script{:language => 'JavaScript', :src => "https://auth.robokassa.ru/Merchant/Handler/MrchSumPreview.ashx?MrchLogin=instyle&OutSum=#{prch.amount}&InvId=#{prch.id }"}
+      /!!!!!!!!!
+      /= link_to 'Оплатите заказ', robo_pay(order)
+      /= link_to 'Оплатите заказ', replenishment_personal_account_path
+  .msg
+    %span
+      %a{:href=>"#", :data => {:messages_url => order_messages_path(order), :order_id => order.id, :order_url => url_for(order.orderable)} } Новое сообщение
+  .completed
+    завершено
+    .percentage_blocks
+      %span.percentage
+        %span.value_percent #{order.completion_percent}%
+        %span.bar
+  .documents
+    Документы:
+    %ul
+      %li
+        %a{:href => ""} Договор
+      %li
+        %a{:href => ""} Акты
+      %li
+        %a{:href => ""} Оплата
