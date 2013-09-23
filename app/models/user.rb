@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
   has_many :received_messages, as: :recipient
   has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id', inverse_of: :sender
 
-  has_many :transactions
+  has_many :transactions_in, :as => :destination, :class_name => 'Transaction'
+  has_many :transactions_out, :as => :source, :class_name => 'Transaction'
 
   has_many :orders, foreign_key: 'client_id' #do;  includes(:orderable); end ## in Rails 4 it'll be possible to prevent N+1 problem here, but now we should use includes in controller
   has_one :specialist
@@ -93,5 +94,9 @@ class User < ActiveRecord::Base
       p.name = ''
       p.surname = ''
     end
+  end
+
+  def qiwi
+   transactions_in.map(&:amount).sum - transactions_out.map(&:amount).sum
   end
 end
