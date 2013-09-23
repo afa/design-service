@@ -1,0 +1,3 @@
+%span.return= link_to 'Назад', :back
+= render partial: 'orders/new_order', locals: {order: resource}
+= render partial: 'orders/order_details', locals: {order: resource}

@@ -7,6 +7,7 @@ window.ajax_sendform = (form_selector, method, callbacks)->
 
 # all requests made this way are multipart
 window.multipart_ajax_request = (url, method, data, callbacks)->
+  callbacks ||= {}
   $.ajax
     url: url
     dataType: 'json'
@@ -25,18 +26,22 @@ $(document).ready ->
   $('.put.submit').click (event)->
     event.preventDefault()
     ajax_sendform($(event.target).closest('form'), 'PUT',
-      success: ->
+      success: (data, status, xhr)->
         alert('Изменения сохранены')
-      error: ->
+        ($(event.target).data('ajax-success') || ->{})(data,status,xhr)
+      error: (xhr, status, error)->
         alert('Не получилось отправить форму')
+        ($(event.target).data('ajax-error') || ->{})(xhr,status,error)
     )
   $('.post.submit').click (event)->
     event.preventDefault()
     ajax_sendform($(event.target).closest('form'), 'POST',
-      success: ->
+      success: (data, status, xhr)->
         alert('Изменения сохранены')
-      error: ->
+        ($(event.target).data('ajax-success') || ->{})(data,status,xhr)
+      error: (xhr, status, error)->
         alert('Не получилось отправить форму')
+        ($(event.target).data('ajax-error') || ->{})(xhr,status,error)
     )
   $('.not_ajax.submit').click (event)->
     $(event.target).closest('form').get(0).submit()

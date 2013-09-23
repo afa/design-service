@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   has_many :orders, foreign_key: 'client_id' #do;  includes(:orderable); end ## in Rails 4 it'll be possible to prevent N+1 problem here, but now we should use includes in controller
   has_one :specialist
-  has_one :avatar, as: :imageable_single, class_name: 'Photo'
+  mount_uploader :avatar, PhotoUploader
   has_many :events
 
   scope :with_orders, -> { where('orders_count > 0') }

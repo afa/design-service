@@ -86,6 +86,7 @@ ru:
     personal_accounts: 'ЛИЦЕВОЙ СЧЕТ'
     profiles:
       orders: 'МОИ ЗАКАЗЫ'
+      new_orders: 'НОВЫЕ ЗАКАЗЫ'
       edit: 'Редактировать профиль'
     orders: 'Заказы'
     registrations:
@@ -178,6 +179,7 @@ ru:
         cabinet_needed: 'Нужен кабинет'
         cloakroom_needed: 'Гардеробные комнаты'
         num_plans: 'Число вариантов планировок'
+        num_rooms: 'Число комнат'
         num_guests_description: 'Число гостей'
         num_standpipes: 'Число стояков'
         full_address: 'Адрес'
@@ -305,7 +307,7 @@ ru:
       accepted_automatically: 'Принято модератором первого уровня и подтверждено по истечении срока проверки'
   order:
     work_state:
-      draft: 'Черновик заказа'
+      draft: 'Заказ в черновиках'
       moderator_suggested: 'Модератор предложил цену'
       specialist_agreed: 'Специалист подтвердил предложенную цену'
       client_agreed: 'Заказчик подтвердил предложенную цену'
@@ -315,3 +317,5 @@ ru:
       not_paid: 'Заказ не оплачен'
       advance_paid: 'Аванс за заказ оплачен'
       paid: 'Заказ оплачен'
+    completion_time:
+      not_set: 'дата будет определена после оплаты'

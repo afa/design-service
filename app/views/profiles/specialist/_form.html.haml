@@ -1,30 +1,41 @@
 .specialist_img_
   %span.specialist_img_border
-  = image_tag 'specialist_img.jpg'
+  = profile.avatar
 .info_specialist
   %span.heading
     Обо Мне
     = image_tag 'edit.png', alt: 'edit', class: 'change_text bio_info'
-  %p= profile.user.specialist.bio_info
+  %p.bio_info= profile.specialist.bio_info
   %span.heading
     О Работе
     = image_tag 'edit.png', alt: 'edit', class: 'change_text work_info'
-  %p= profile.user.specialist.work_info
+  %p.work_info= profile.specialist.work_info
   %span.heading.margine Портфолио
-  - profile.user.specialist.portfolios.each do |portfolio|
-    %ul.portfolio
-      %li.projects.rounded-corners_l3
-        %span.project_name= portfolio.name
-        %span.edit.change_portfolio{:alt => "edit"}
-        = render partial: 'shared/portfolio_editable', locals: {portfolio_items: portfolio.portfolio_items, example_set: portfolio.id, ul_class: 'portfolio_list'}
+  .portfolios
+    = render partial: 'portfolios/portfolio_for_profile', collection: profile.specialist.portfolios, as: :portfolio, locals: {skip_file_input: true}
   .add_new
-    = image_tag 'add_new_project.png', alt: 'add_new', class: 'change_portfolio'
+    = image_tag 'add_new_project.png', alt: 'Добавить проект', class: 'add_portfolio', data: {specialist_id: profile.specialist.id}
 
-.hidden_form
-  = simple_form_for profile.specialist, remote: true do |f|
-    .bio_info
-      .border_x4.rounded-corners_l2.shadow_x1
+.black_content_blocks
+  .bio_info_form.edit_profile_form
+    .close_fly_window
+    .box.border_x4.rounded-corners_l2.shadow_x1
+      %span.header Обо мне
+      = simple_form_for profile.specialist, remote: true do |f|
         = f.input_field :bio_info
-    .work_info
-      .border_x4.rounded-corners_l2.shadow_x1
+        %input.put.submit{:type => 'image', :src => asset_path('postButton.png'), :alt => "Отправить форму"}
+  .work_info_form.edit_profile_form
+    .close_fly_window
+    .box.border_x4.rounded-corners_l2.shadow_x1
+      %span.header О работе
+      = simple_form_for profile.specialist, remote: true do |f|
         = f.input_field :work_info
+        %input.put.submit{:type => 'image', :src => asset_path('postButton.png'), :alt => "Отправить форму"}
+  .avatar_form.edit_profile_form
+    .close_fly_window
+    .box.border_x4.rounded-corners_l2.shadow_x1
+      %span.header Обо мне
+      = form_tag set_avatar_profile_path, remote: true do
+        .dropZone
+          = file_field_tag :avatar, accept: 'image/*'
+        %input.put.submit{:type => 'image', :src => asset_path('postButton.png'), :alt => "Отправить форму"}

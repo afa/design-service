@@ -1,0 +1,10 @@
+.new_portfolio_form.portfolio_changes.rounded-corners
+  .close_fly_window
+  .heading Создать портфолио
+  = simple_form_for portfolio, url: url, remote: true, format: 'json' do |f|
+    %ul
+      %li.title Название проекта
+      %li.title_req_border
+        = f.input_field :name
+      %li
+        %input.add{:type => 'image', :src => asset_path('add_green.png')}

@@ -4,5 +4,5 @@ class Profile < ActiveRecord::Base
   def to_s
     "#{fake_name} [#{user.username}]"
   end
-  delegate :specialist, to: :user
+  delegate :avatar, :specialist, to: :user
 end

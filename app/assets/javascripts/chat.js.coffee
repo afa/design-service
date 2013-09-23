@@ -54,7 +54,6 @@ $(document).ready ->
     )
 
   show_chat = ->
-    $('body').animate({scrollTop:0},"slow")
     $('#msg_dialog').find('.left_bar').slimscroll( size: '7px', width:'220px', height:'520px' )
     $('#msg_dialog').find('.msg_content').slimscroll( size: '7px', width:'500px', height:'400px' )
     show_fly_window('#msg_dialog')

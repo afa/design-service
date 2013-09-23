@@ -1,4 +1,5 @@
 class SpecialistsController < InheritedResources::Base
+  respond_to :json, only: [:update]
   has_scope :by_order, only: [:index]
   load_and_authorize_resource
 
@@ -17,6 +18,6 @@ private
   end
 
   def permitted_params
-    params.permit(specialist: [  ] )
+    params.permit(specialist: [:bio_info, :work_info] )
   end
 end

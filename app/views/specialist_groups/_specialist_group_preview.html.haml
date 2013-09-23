@@ -11,7 +11,7 @@
             = specialist_group.name
     %div= specialist_group.description
   .portfolio
-    %img{:src => "#{asset_path("portfolio.png")}"}
+    %img{:src => asset_path('portfolio.png')}
     %span
       = link_to 'Портфолио', specialist_group_path(specialist_group)
 = render partial: 'shared/portfolio', locals: { portfolio_items: specialist_group.portfolio_items.first(3), example_set: specialist_group.id, ul_class: 'portfolio' }

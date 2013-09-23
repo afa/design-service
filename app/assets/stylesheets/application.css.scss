@@ -1,6 +1,8 @@
 //= require common/form_style
-//= require common/drop_zone
+//= require drop_zone
 //= require lightbox/lightbox
+//= require completion_percent
+//= require datepicker/jquery.ui.all
 
 .black_content_blocks {
   display: none;
@@ -119,3 +121,5 @@ ul.message li{ float:left; padding-right:15px;}
 span.message{ width:380px; min-height:65px; border:1px solid; float:left; padding:15px; font-size:13px; text-align:left;}
 div.msg_from span.message{ border-color:#8f9eea; color:#7c85b4;}
 div.msg_to span.message{ border-color:#3acb22; color:#318722}
+
+.images_preview_box { height: 150px; }
