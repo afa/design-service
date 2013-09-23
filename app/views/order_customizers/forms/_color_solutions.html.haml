@@ -1,90 +1,69 @@
-%form.orderable{:action => ""}
-  .design_p_color_scheme_form1.border_x1.rounded-corners_l2.shadow_x1
-    .number
-    .form_description
-    .file_attaching.border_x5.rounded-corners_l3
-      %span.caution Прикрепите: 1. план с расстановкой мебели!
-      %span.attach Вы можете перетащить файлы сюда
-    .number_second
-    .form_description_second
-    %span.text
-      Площадь помещения: Помещение
-      %input.textlines_default.textline_l6-5{:name => "room_block1plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999')}; return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000')}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
-    .interior
-      Какой стиль интерьера Вы предпочитаете?
-      %ul.answer
-        %li
-          %input#classicism{:name => "interior", :type => "radio", :value => ""}
-          %label{:for => "classicism"} Классицизм
-        %li
-          %input#minimalism{:checked => "checked", :name => "interior", :type => "radio", :value => ""}
-          %label{:for => "minimalism"} Современный минимализм
-        %li
-          %input#East{:name => "interior", :type => "radio", :value => ""}
-          %label{:for => "East"} Восток
-        %li
-          %input#Art-Deco{:name => "interior", :type => "radio", :value => ""}
-          %label{:for => "Art-Deco"} Современный Art-Deco
-        %li
-          %input#any{:name => "interior", :type => "radio", :value => ""}
-          %label{:for => "any"}
-            Другое
-            %input.textlines_default.textline_l5{:name => "plojad", :type => "text"}
-    .range_and_tone
-      Какие гамму и тональность Вы предпочитаете?
-      %ul.answer
-        %li
-          %input#cold_gamma{:checked => "checked", :name => "cold_gamma", :type => "checkbox", :value => ""}
-          %label{:for => "cold_gamma"} Холодная гамма
-        %li
-          %input#saturated_colors{:name => "saturated_colors", :type => "checkbox", :value => ""}
-          %label{:for => "saturated_colors"} Яркие насыщенные цвета
-        %li
-          %input#warm_color{:name => "warm_color", :type => "checkbox", :value => ""}
-          %label{:for => "warm_color"} Теплая гамма
-        %li
-          %input#pastel_shades{:name => "pastel_shades", :type => "checkbox", :value => ""}
-          %label{:for => "pastel_shades"} Пастельные оттенки
-    .color_keyboard_block
-      %span Главный цвет в колористической композиции?
-      .color_keyboard
-        %ul.wide
-          %li{:value => "#fdabb2"}
-          %li{:value => "#faa486"}
-          %li{:value => "#ffbf64"}
-          %li{:value => "#f0d167"}
-          %li{:value => "#b3e360"}
-          %li{:value => "#87ffb4"}
-          %li{:value => "#a4efff"}
-          %li{:value => "#719bfc"}
-          %li{:value => "#928afa"}
-          %li{:value => "#cf83ce"}
-        %ul.short
-          %li{:value => "#fb3737"}
-          %li.dis_short{:value => "#fd9437"}
-          %li.dis_long{:value => "#fdf037"}
-          %li.dis_short{:value => "#42cd37"}
-          %li.dis_short{:value => "#37f1fd"}
-          %li.dis_long{:value => "#4037fd"}
-          %li.dis_short{:value => "#9937fd"}
-        %input#selected_color{:name => "key_color", :type => "hidden", :value => ""}
-    .present_results
-      Как Вам представить результат?
-      %ul.answer
-        %li
-          %input#palette_combinations{:checked => "checked", :name => "present_results", :type => "radio", :value => ""}/
-          %label{:for => "palette_combinations"} Палитра сочетаний
-        %li
-          %input#3d{:name => "present_results", :type => "radio", :value => ""}
-          %label{:for => "3d"} 3-D визуализация
-        %li
-          %input#drawing{:name => "present_results", :type => "radio", :value => ""}
-          %label{:for => "drawing"} Рисунок от руки
-  .design_p_color_scheme_form2.border_x3.rounded-corners_l2.shadow_x1
-    .number
-    .form_description
-    %input.var_form3_default.textline_l12{:name => "", :type => "text"}
-    %input.var_form3_default.textline_l12{:name => "", :type => "text"}
-    %input.var_form3_default.textline_l12{:name => "", :type => "text"}
-  %span.design_p_color_scheme-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
-  = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p_color_scheme_submiting'}
+.order_fields
+  = simple_form_for selected_form, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
+    = f.input_field :typename, as: :hidden
+    .design_p_color_scheme_form1.border_x1.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      .file_attaching.border_x5.rounded-corners_l3.multiattach
+        .attach_place_for_box
+
+      .number_second
+      .form_description_second
+      %span.text
+        Площадь помещения: #{ f.input_field :room_space, class: 'textlines_default textline_l6-5', id:"ployad_pomijenya" }
+      .interior
+        Какой стиль интерьера Вы предпочитаете?
+        = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
+        = f.input_field :interior_style_comment, as: :string, class: ['textlines_default', 'textline_l5'], size:10
+      .range_and_tone
+        Какие гамму и тональность Вы предпочитаете?
+        %ul.answer
+          %li
+            = f.input_field :cold_gamma, as: :boolean,  id:"cold_gamma", value:""
+            %label{:for => "cold_gamma"} Холодная гамма
+          %li
+            = f.input_field :bright_saturated_colors, as: :boolean,  id:"bright_saturated_colors", value:""
+            %label{:for => "bright_saturated_colors"} Яркие насыщенные цвета
+          %li
+            = f.input_field :warm_color, as: :boolean,  id:"warm_color", value:""
+            %label{:for => "warm_color"} Теплая гамма
+          %li
+            = f.input_field :pastel_shades, as: :boolean,  id:"pastel_shades", value:""
+            %label{:for => "pastel_shades"} Пастельные оттенки
+      .color_keyboard_block
+        %span Главный цвет в колористической композиции?
+        .color_keyboard
+          %ul.wide
+            %li{:value => "#fdabb2"}
+            %li{:value => "#faa486"}
+            %li{:value => "#ffbf64"}
+            %li{:value => "#f0d167"}
+            %li{:value => "#b3e360"}
+            %li{:value => "#87ffb4"}
+            %li{:value => "#a4efff"}
+            %li{:value => "#719bfc"}
+            %li{:value => "#928afa"}
+            %li{:value => "#cf83ce"}
+          %ul.short
+            %li{:value => "#fb3737"}
+            %li.dis_short{:value => "#fd9437"}
+            %li.dis_long{:value => "#fdf037"}
+            %li.dis_short{:value => "#42cd37"}
+            %li.dis_short{:value => "#37f1fd"}
+            %li.dis_long{:value => "#4037fd"}
+            %li.dis_short{:value => "#9937fd"}
+          = f.input_field :main_color, as: :hidden, id: "selected_color"
+      .present_results
+        Как Вам представить результат?
+        = f.input_field :show_results_different, as: :radio_buttons, collection: SelectedForm.show_results_different.options
+    .design_p_color_scheme_form2.border_x3.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
+    %span.design_p_color_scheme-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
+    = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p_color_scheme_submiting'}
+
+  .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
+    = render partial: 'attachments/list_of_attachments', locals:{attachments: selected_form.attachments, has_remove_button: !disabled}
+  = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: selected_form, kind: 'plan_with_furniture', disabled: disabled, wrapper_class: ''}
+  %span.attach_info_block.caution  Прикрепите: 1. план с расстановкой мебели!

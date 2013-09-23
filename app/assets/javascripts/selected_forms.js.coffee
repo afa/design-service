@@ -5,11 +5,11 @@
 //= require orderable
 
 $(document).ready ->
+
   #////IMAGE HOVER///
   $(".img_").mouseenter ->
     $(this).parent().find(".heading").addClass "heading_h"
     $(this).parent().find(".black_opacity").addClass "black_opacity_on"
-
   $(".black_opacity").mouseleave ->
     $(".black_opacity_on").removeClass "black_opacity_on"
     $(this).parent().parent().find(".heading").removeClass "heading_h"
@@ -19,11 +19,29 @@ $(document).ready ->
     $("div.color_keyboard ul *").removeClass "selected"
     $("#selected_color").val $(this).attr("value")
     $(this).addClass "selected"
+  $(".color_keyboard").find("ul li").each -> 
+    if($(this).attr('value')==$("#selected_color").val())
+      $(this).addClass "selected" 
 
+  #////RADIO BUTTONS ANY FIELD///
   $('.interior ul li:last-child label').append($('.interior ul + input[type="text"]'))
   $('.interior input[type="text"]').change ->
     $('.interior input[type="radio"]').last().get(0).checked = true
 
-#///  $(".place").find(":text").focus ->
-#///    alert ($(this).val())  
-#///    false;
+  
+  #////AUTO FILL PLOJAD_POMIJENYA///
+  prim = $("#ployad_pomijenya").ready( ->
+    if($(prim).val().length == 0)
+      $(prim).val('например, Кухня');
+      $(prim).css('color','#999999'); 
+    $(prim).focusin ->
+      if($(this).val() == 'например, Кухня')
+        $(this).val(''); $(this).css('color','#000000'); 
+    $(prim).blur ->
+      if (this.value == '') 
+        this.value="например, Кухня"; $(this).css('color','#999999'); 
+  )    
+
+
+
+ 
