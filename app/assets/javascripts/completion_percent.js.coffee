@@ -1,4 +1,5 @@
-window.draw_percentage_box = (element, value_selector, box_selector) ->
-  percentage = parseInt($(element).find(value_selector).html());
-  len = 200 * percentage/100;
-  $(element).find(box_selector).css('width', len);
+$(document).ready ->
+  $('.percentage_blocks').each (idx, element)->
+    percentage = parseInt($(element).find('.value_percent').html())
+    len = 200 * percentage/100
+    $(element).find('.percentage').css(width: len)

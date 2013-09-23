@@ -32,8 +32,8 @@ class Order < ActiveRecord::Base
     end
 
     event :agree do
-      transition :moderator_suggested => :specialist_agreed, if: ->{ User.current.specialist? }
-      transition :specialist_agreed => :client_agreed, if: ->{ User.current.client? }
+      transition :moderator_suggested => :specialist_agreed, if: :current_user_is_a_specialist?
+      transition :specialist_agreed => :client_agreed, if: :current_user_is_a_client?
     end
     after_transition :specialist_agreed => :client_agreed, :do => :mk_payment
 
@@ -72,6 +72,10 @@ class Order < ActiveRecord::Base
 
   def can_pay?
    client_agreed? || in_work? || work_accepted? && (!paid?)
+  end
+
+  def can_agree_price?
+    current_user_is_a_specialist? && moderator_suggested? || current_user_is_a_client? && specialist_agreed?
   end
 
   def interlocutor(user)
@@ -124,6 +128,13 @@ class Order < ActiveRecord::Base
     elsif !executor
       Specialist.all
      end
+  end
+
+  def current_user_is_a_specialist?
+    User.current.specialist? &&  User.current.specialist == executor
+  end
+  def current_user_is_a_client?
+    User.current.client? &&  User.current == client
   end
 private
   def self.accepted_to_start_work_arel

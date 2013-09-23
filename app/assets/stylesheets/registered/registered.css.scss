@@ -1,5 +1,5 @@
-//= require drop_zone
 //= require chat
+//= require ../orders
 
 /* Menu fonts, table fonts, PostForm font */
 @font-face {
@@ -102,12 +102,6 @@ div._razrabotka_var div.msg span a,div.specialist_orders div.msg span a:visited{
 div._razrabotka_var div.msg span a:hover{ text-decoration:none;}
 
 div._razrabotka_var div.completed{ float:left; width:310px;  padding-top:10px;}
-div.presentage_blocks{ float: right; position:relative; width:220px; height:35px; margin-top:-5px;}
-div.presentage_blocks span.presentage{ width:150px; height:32px; float: right; padding:0px; margin:0px; background-color:#adc987; background-image:image-url("presentage_bar.png"); background-repeat:no-repeat; background-position:right; position:absolute; }
-div.presentage_blocks span.presentage span.bar{ background-image:image-url("presentage_bar.png"); width:200px; height:32px; float:left; z-index:5; position:absolute; background-image:image-url("presentage.png"); background-repeat:no-repeat; }
-
-
-div.presentage_blocks span.presentage span.value_present{ font-size:14px; padding:7px 0px 0px 85px; float:left; position: absolute;}
 
 
 div._razrabotka_var div.documents{ height:30px; width:280px; float:left; padding:15px 0px 0px 15px; font-size:14px; margin:0px; }
@@ -146,7 +140,7 @@ table.history_recharge tr.green td{ color:#137702}
 
 
 /* PAGE CONCEPT REG_POSTVARPLAN.HTML */
-div.var_form1{ width:360px; height:315px;  margin-left:45px; margin-top:30px; padding:30px; line-height:45px; margin-bottom:25px; }
+div.var_form1{ width:360px; height:355px;  margin-left:45px; margin-top:30px; padding:30px; line-height:45px; margin-bottom:25px; }
 div.var_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left;   width:86px; height:29px; }
 div.var_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height:29px; margin-left:15px; }
 
@@ -517,39 +511,6 @@ div.design_p_ceiling_fixtures_form2_default{ сolor:#333; border:0px; padding:0p
 .design_p_ceiling_fixtures-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:70px; margin-bottom:15px; font-weight:bold; font-size:14px; width:450px;}
 div.design_p_ceiling_fixtures_submiting{  float: left; margin:10px 25px 15px 55px;}
 
-/* PAGE CONTENT SPECIALIST_ORDERS */
-div.specialist_orders{ width:540px; position:relative; color:#4c4c4c; margin-bottom:20px; clear:both; margin-left:0px; padding: 0px; float:left; margin-top:15px; margin-left:15px; padding-bottom:10px;}
-div.specialist_orders div.date{ width:128px; height:28px; float:right; border-top:none; border-right:none; position:absolute; right:-4px; top:-2px; text-align:center; padding-top:8px; color:#648040;  font-style:italic; font-size:20px}
-
-div.specialist_orders div.name{ height:30px; width:380px; float:left; padding:15px 0px 0px 15px; font-size:14px; margin:0px;}
-div.specialist_orders div.name span{color:#6c1407; font-size:14px; font-weight:bold; padding:0px 10px 3px 10px; border-bottom:1px solid #c8c8c8;  }
-
-div.specialist_orders div.client{ float:left; font-size:14px; padding:5px 0px 0px 15px; width:300px;}
-div.specialist_orders div.client ul{ color:#6c1407; font-size:12px;  float: right; width:200px; margin:0px; padding:0px; list-style:none; }
-div.specialist_orders div.client ul li{ border-bottom:1px solid #c8c8c8; padding:0px 10px 3px 10px;}
-
-div.specialist_orders div.completion{ font-size:13px; position:absolute; right:0px; margin-top:45px; }
-div.specialist_orders div.completion span.tit{ float:left; padding-top:5px;}
-div.specialist_orders div.completion ul{ color:#6c1407; list-style:none; width:100px; float:right; padding:0px 10px 0px 10px; margin:0px;}
-div.specialist_orders div.completion ul li:nth-child(1){ font-size:10px; padding:5px 0px 5px 5px; border-bottom:1px solid #c8c8c8; border-top:1px solid #c8c8c8;}
-div.specialist_orders div.completion ul li:nth-child(2){ color:#4c4c4c; padding-left:5px;}
-div.specialist_orders div.completion ul li.payid{ font-size:14px; font-weight:bold; font-style:italic;}
-div.specialist_orders div.completion ul li.bold_{ font-size:14px;}
-
-div.specialist_orders div.status{ height:30px; width:350px; float:left; padding:15px 0px 0px 15px; font-size:14px; margin:0px;}
-div.specialist_orders div.status span{color:#6c1407; font-size:14px; font-weight:bold; padding:0px 10px 3px 10px; border-bottom:1px solid #c8c8c8; margin-left:20px;}
-
-div.specialist_orders div.msg{ width:180px; float: left; font-size:14px; color:#6c1407; margin-left:15px; margin-top:10px; background-image:image-url("msg_icon.jpg"); background-repeat:no-repeat; height:20px; padding-left:35px;}
-div.specialist_orders div.msg span a,div.specialist_orders div.msg span a:visited{ text-decoration:underline; color:#6c1407;}
-div.specialist_orders div.msg span a:hover{ text-decoration:none;}
-
-div.specialist_orders div.completed{ float:left; width:310px;  padding-top:10px;}
-div.specialist_orders_presentage_blocks{ float: right; position:relative; width:220px; height:35px; margin-top:-5px;}
-div.specialist_orders_presentage_blocks span.presentage{ width:150px; height:32px; float: right; padding:0px; margin:0px; background-color:#adc987; background-image:image-url("presentage_bar.png"); background-repeat:no-repeat; background-position:right; position:absolute; }
-div.specialist_orders_presentage_blocks span.presentage span.bar{ background-image:image-url("presentage_bar.png"); width:200px; height:32px; float:left; z-index:5; position:absolute; background-image:image-url("presentage.png"); background-repeat:no-repeat; }
-div.specialist_orders_presentage_blocks span.presentage span.value_present{ font-size:14px; padding:7px 0px 0px 85px; float:left; position: absolute;}
-
-
 /*  PAGE CONCEPT REG_PERSONAL_ACCOUNT_SPECIALIST.HTML */
 
 div.personal_account_specialist ul.personal_account{ width:550px;  background-color:#dbdbdb; float:left; margin:0px 0px 0px 20px; padding:0px; list-style:none; font-size:18px}
@@ -624,45 +585,63 @@ div.specialist_img_{ width:145px; height:159px; float:left; margin-left:20px; po
 span.specialist_img_border{ background-image: image-url("specialist_img_border.png"); background-repeat:no-repeat;   z-index:10; position:absolute; width:145px; height:159px; float:left; }
 div.specialist_img_ img{ width:144px; height:158px; z-index:-5;}
 div.send_message{ width:227px; height:40px; background-image: image-url("msg_send2.png"); float:left; margin-left:20px; cursor:pointer;  }
-div.info_specialist{ width:546px; float: left; margin-left:20px; font-size:14px; margin-top:10px; }
-div.info_specialist span.heading{ font-size:18px; font-weight:bold;  color:#773129; float:left; }
-div.info_specialist span.margine{ margin-bottom:15px;}
-div.info_specialist p{ float:left; position:relative; clear:left; color:#4a4747;}
 
-div.info_specialist span.heading img{ margin-left:10px; clear: both; overflow:auto;}
-div.info_specialist ul.portfolio{ padding:0px; margin:0px; max-width:550px; height:250px; overflow: hidden;}
-div.info_specialist ul.portfolio li{ padding:0px; margin:0px;}
-div.info_specialist ul li.projects:nth-child(1){ clear:both; }
-div.info_specialist ul li.projects{ width: auto; height: auto; border:1px #000033 solid;  float:left;   position:relative; border-color:#98afc4; overflow:auto; clear:none; margin-right:10px; margin-bottom:10px;}
-div.info_specialist ul li.projects span.project_name{ font-size:14px; padding:5px; float:left; clear:both; color:#657d93; font-weight:bold; padding-left:15px;}
-div.info_specialist ul li.projects span.edit{ width:16px; height:17px; background-image: image-url("edit.png"); background-repeat:no-repeat; position:relative; float: right; margin-right:10px; margin-top:5px; cursor:pointer;}
-div.info_specialist ul li.projects ul{ list-style: none; float:left; margin:0px; padding:0px; clear:both; margin-left:10px; padding-bottom:10px; padding-right:8px;}
-div.info_specialist ul li.projects ul li{ float:left; padding:5px; width:75px; height:68px;}
-div.info_specialist ul li.projects ul li.add{ background-image: image-url("add_.jpg"); background-repeat:no-repeat; margin:5px 0px 0px 5px; cursor:pointer;}
-div.info_specialist ul li.projects ul li.add:hover{ background-image: image-url("add_hoover.jpg");}
-div.info_specialist ul li.projects ul li img{ width:75px; height:68px; margin:0px; padding:0px; }
-div.info_specialist div.see_all{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:right}
-div.info_specialist div.add_new{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:left; cursor:pointer;}
+div.info_specialist {
+  width:546px; float: left; margin-left:20px; font-size:14px; margin-top:10px;
+  span.heading{ font-size:18px; font-weight:bold;  color:#773129; float:left; }
+  span.margine{ margin-bottom:15px;}
+  p{ float:left; position:relative; clear:left; color:#4a4747;}
+  span.heading img{ margin-left:10px; clear: both; overflow:auto;}
+  ul {
+    &.portfolio{ padding:0px; margin:0px; max-width:550px; height:250px; overflow: hidden;}
+    &.portfolio li{ padding:0px; margin:0px;}
+    li.projects {
+      width: auto; height: auto; border:1px #000033 solid;  float:left;   position:relative; border-color:#98afc4; overflow:auto; clear:none; margin-right:10px; margin-bottom:10px;
+      &:nth-child(1){ clear:both; }
+      span.project_name{ font-size:14px; padding:5px; float:left; color:#657d93; font-weight:bold; padding-left:15px;}
+      span.edit{ width:16px; height:17px; background-image: image-url("edit.png"); background-repeat:no-repeat; position:relative; float: right; margin-right:10px; margin-top:5px; cursor:pointer;}
+      ul.portfolio_list {
+        list-style: none; float:left; margin:0px; padding:0px; clear:both; margin-left:10px; padding-bottom:10px; padding-right:8px;
+        li{ float:left; padding:5px; width:75px; height:68px;}
+        li.add{ background-image: image-url("add_.jpg"); background-repeat:no-repeat; margin:5px 0px 0px 5px; cursor:pointer;}
+        li.add:hover{ background-image: image-url("add_hoover.jpg");}
+        li img{ width:75px; height:68px; margin:0px; padding:0px; }
+      }
+    }
+  }
+  div.see_all{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:right}
+  div.add_new{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:left; cursor:pointer;}
+}
 
 /* PORTFOLIO */
-#portfolio_changes{ width:660px;  background-color:#FFFFFF; margin: 0 auto; position:relative;  margin-top:50px; display:none;  clear:left; padding-bottom:5px; }
-#portfolio_changes div.heading{ font-size:24px; color:#000000; text-align:left; padding:15px 10px 10px 25px;}
-#portfolio_changes ul{list-style:none; text-align:left; margin-left:0px;  }
-#portfolio_changes ul li{  width:500px; }
-#portfolio_changes ul li.title{ font-size:20px; color:#aeaeae; }
-#portfolio_changes ul li.title_req_border{ font-size:18px; background-image: image-url("text_field_border.png"); height:32px;  width:507px; margin-top:5px; margin-bottom:15px;}
-#title_req_border{ width:490px; border:none; padding:0px; margin:5px 3px 1px 10px; height:22px; font-size:16px;}
-#title_req_border:focus{ outline:0; }
-#portfolio_changes ul li.file_attach{ margin-top:10px; margin-bottom:10px; color:#b7b6b6; }
-#portfolio_changes ul li ul{ padding:0px; margin:0px; width:600px;  position:relative; clear:both; overflow:auto;}
-#portfolio_changes ul li ul li{ width:102px; height:102px; float:left; background-color:#999933; margin-right:15px; margin-bottom:10px;}
-#portfolio_changes ul li ul li img{ width:102px; height:102px;}
-#portfolio_changes ul li ul li span.delete{ position:absolute; z-index:5; background-image: image-url("delete_image.png"); width:21px; height:21px; margin-left:-10px; margin-top:83px; cursor:pointer;}
-#portfolio_changes ul li ul li span.delete:hover{background-image: image-url("delete_image_hover.png");}
-#portfolio_changes ul li ul li.add{ background-image: image-url("add_img_portfolio.jpg"); cursor:pointer;}
-#portfolio_changes ul li ul li.add:hover{ background-image: image-url("add_img_portfolio_hover.jpg"); }
-#portfolio_changes ul li img.reject{ margin-left:120px;}
-#portfolio_changes ul li img.add{ margin-left:30px;}
+.portfolio_changes {
+  width:660px;  background-color:#FFFFFF; margin: 0 auto; position:relative;  margin-top:50px; display:none;  clear:left; padding-bottom:5px;
+  div.heading{ font-size:24px; color:#000000; text-align:left; padding:15px 10px 10px 25px;}
+  ul {
+    list-style:none; text-align:left; margin-left:0px;
+    li{  width:500px; }
+    li.title{ font-size:20px; color:#aeaeae; }
+    li.title_req_border{
+      font-size:18px; background-image: image-url("text_field_border.png"); height:32px;  width:507px; margin-top:5px; margin-bottom:15px;
+      input { width:490px; border:none; padding:0px; margin:5px 3px 1px 10px; height:22px; font-size:16px;}
+      input:focus{ outline:0; }
+    }
+    li.file_attach{ margin-top:10px; margin-bottom:10px; color:#b7b6b6; }
+    li img.reject{ margin-left:120px;}
+    li img.add{ margin-left:30px;}
+  }
+  .images_preview_content {
+    ul.portfolio_list {
+      padding:0px; margin:0px; width:600px;  position:relative; clear:both; overflow:auto;
+      li{ width:102px; height:102px; float:left; background-color:#999933; margin-right:15px; margin-bottom:10px;}
+      li img{ width:102px; height:102px;}
+      li span.delete{ position:absolute; z-index:5; background-image: image-url("delete_image.png"); width:21px; height:21px; margin-left:80px; bottom:8px; cursor:pointer;}
+      li span.delete:hover{background-image: image-url("delete_image_hover.png");}
+      li.add{ background-image: image-url("add_img_portfolio.jpg"); cursor:pointer;}
+      li.add:hover{ background-image: image-url("add_img_portfolio_hover.jpg"); }
+    }
+  }
+}
 
 .sidebar_left {float: left; width: 292px; position:relative; padding-bottom: 10px; z-index:2; font-size:18px;  height:850px; }
 .page_contener{ float:left; width:630px;  min-height:950px; margin-left:8px; z-index:5;}

@@ -1,0 +1,15 @@
+.portfolio_changes.rounded-corners.edit_portfolio_form
+  .close_fly_window
+  .heading Редактирование портфолио
+  = simple_form_for portfolio, url: url, remote: true, format: 'json' do |f|
+    %ul
+      %li.title Название проекта
+      %li.title_req_border
+        = f.input_field :name
+      %li.file_attach Прикрепить изображения
+      %li.image_preview
+        %ul.images_preview_box
+      %li
+        %input.add{:type => 'image', :src => asset_path('add_green.png')}
+  .images_preview_content
+    = render partial: 'shared/portfolio', locals: {portfolio_items: portfolio.portfolio_items, example_set: portfolio.id, ul_class: 'portfolio_list', editable: true, portfolio_id: portfolio.id}
