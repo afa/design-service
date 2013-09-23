@@ -2,8 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
-  before_filter :load_events_for_spec
   before_filter :get_current_user
+  before_filter :load_events_for_spec
   #before_filter -> {User.current = current_or_guest_user}
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_events_for_spec
-   @events = current_user.events.order("id desc").limit(5) if current_user.specialist?
+   @events = User.current.events.order("id desc").limit(5) if User.current.specialist?
    @events ||= []
   end
 
@@ -98,7 +98,7 @@ class ApplicationController < ActionController::Base
   def logging_in
     guest_orders = guest_user.try{|user| user.orders.all}
     guest_orders.each do |order|
-      order.client_id = current_user.id
+      order.client_id = User.current.id
       order.save!
     end
   end
