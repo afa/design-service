@@ -19,7 +19,7 @@ class OrderDecorator < Draper::Decorator
   end
 
   def time_to_finish
-    source.completion_time ? h.distance_of_time_in_words(Time.now, source.completion_time) : I18n.t('order.completion_time.not_set')
+    source.completion_time ? h.distance_of_time_in_words(Time.now, source.completion_time) : 'Время завершения неизвестно'
   end
 
   # Define presentation-specific methods here. Helpers are accessed through
@@ -33,16 +33,13 @@ class OrderDecorator < Draper::Decorator
   def border_class
     orderable.border_class
   end
-
   def border_class_mild
     orderable.border_class_mild
   end
-
   def completion_time
     source.completion_time && I18n.l(source.completion_time)
   end
-
-  def work_state
-    I18n.t "order.work_state.#{source.work_state}"
+  def price
+   User.current && User.current.specialist? && User.current.labor_participation ? source.price * User.current.participation : source.price
   end
 end
