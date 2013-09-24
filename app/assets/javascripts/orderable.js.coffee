@@ -28,6 +28,7 @@ $(document).ready ->
     attach_box.offset(attach_place_for_box.offset())
     attach_place_for_box.after(loaded_files)
     attach_box.append( $(order_fields).find('.attach_info_block') )
+    attach_place_for_box.after($('.attach_info_block'))
 
     reload_attachments_list = (text)->
       loaded_files.html(text)

@@ -16,6 +16,7 @@
         = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
         = f.input_field :interior_style_comment, as: :string, class: ['textlines_default', 'textline_l5'], size:10
     .design_p_ceiling_fixtures_form2.border_x3.rounded-corners_l2.shadow_x1
+      .number
       .form_description
       = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
 

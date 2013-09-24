@@ -198,7 +198,8 @@ div.engineering_systems_form1 div.number{ background-image:image-url("1_number_o
 div.engineering_systems_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height:29px; margin-left:10px; }
 div.engineering_systems_form1 div.head_part{ background-image:image-url("engineering_systems_form1-small.png"); width:430px; height:28px;  clear:both; margin:40px 0px 0px 35px; }
 div.engineering_systems_form1  div.file_attaching{ width:495px; margin-top:15px; float:left; font-size:14px; }
-div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:11px; height:30px;  float:left; line-height:14px; text-align:center; margin-left:100px; margin-top:30px;}
+div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; height:30px; margin-top:10px;}
+
 div.engineering_systems_form1  div.file_attaching span.attach{ padding:30px 0px 0px 140px; margin-top:0px;  color: #8e8e8e; float:left; background-image:image-url("file_att.png"); background-repeat: no-repeat; background-position: 80px 15px;}
 
 div.engineering_systems_form2{ width:450px; min-height:200px;  margin-left:90px; margin-top:15px; padding:30px; margin-bottom:25px; float:left; }
@@ -289,7 +290,7 @@ div.design_p-workin-docs_form1 div.number{ background-image:image-url("1_number_
 div.design_p-workin-docs_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
 
 div.design_p-workin-docs_form1  div.file_attaching{ width:485px; margin-top:10px; float:left;}
-div.design_p-workin-docs_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; }
+div.design_p-workin-docs_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; margin-top: -30px;}
 div.design_p-workin-docs_form1  div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:0px 0px 0px 140px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:80px 0px; margin-top:10px;}
 
 div.design_p-workin-docs_form1 div.number_second{ background-image:image-url("2_number_green.png"); float:left; width:86px; height:29px;  background-repeat:no-repeat;  margin-right:10px; margin-left:0px; padding-bottom:20px; margin-top:20px;}
@@ -323,8 +324,8 @@ div.design_p_color_scheme_form1{ width:490px;  margin-left:45px;  padding:30px; 
 div.design_p_color_scheme_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; height: 29px; width: 86px; margin-right:10px; }
 div.design_p_color_scheme_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
 
-div.design_p_color_scheme_form1   div.file_attaching{ width:470px; height:150px; margin-top:10px; float:left;}
-div.design_p_color_scheme_form1   div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; }
+div.design_p_color_scheme_form1   div.file_attaching{ width:485px; min-height:150px; margin-top:10px; float:left;}
+div.design_p_color_scheme_form1   div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; margin-top: -30px;}
 div.design_p_color_scheme_form1   div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:0px 0px 0px 140px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:80px 0px; margin-top:10px;}
 
 
@@ -883,3 +884,9 @@ div.msg_caution span.design_project{color: #f89f65; font-size: 18px; margin-left
 
 
 
+div.attach_place_for_box{ position:relative; float:left;   width:500px; min-height:120px; overflow: auto; margin-top:5px; }
+
+.attach_box{ position:absolute; z-index:34;}
+
+ul.list_of_attachments{ width:460px;  position:relative; clear:both; overflow:auto; z-index:80; padding-top:8px;}
+ul.list_of_attachments li{ float:left;}
