@@ -108,6 +108,7 @@ ru:
     replanning_endorsements: 'plan_refactoring'
     engineering_systems: 'engineering_systems'
     order_customizers: 'design_project'
+    selected_forms: 'design_p-workin-docs'
     specialists: ''
   welcome:
     title: ''
