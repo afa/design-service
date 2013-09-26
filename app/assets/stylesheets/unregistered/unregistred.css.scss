@@ -445,7 +445,7 @@ div.design_p_sweep_wall_submiting{  height:50px; width:550px; margin-left:160px;
 /* //////////////////////////////////////FOR DEFAULT PAGES //////////////////////////////////////////////////////////////////*/
 div#maincontent_default{position:relative;  margin:0px; padding:0px; background-color: #dedede; height:auto; width:auto; }
 div.page_content_default{ width:817px; background-color: #f6f6f6;  padding:0px; height: auto; min-height:700px; }
-div.collage_design{ position:relative; width:817px; height:40px;  background-repeat:no-repeat; padding:0px; margin:0px; }
+div.collage_design{ position:relative; width:817px; height:50px;  background-repeat:no-repeat; padding:0px; margin:0px; background-image:image-url("collag.jpg"); background-position:1px -400px;}
 div.mode1{ } /* COLLAG CLASSES*/
 div.mode2{ background-image:image-url("default_collag.jpg"); }
 .page_description{  position:relative;  margin: 25px 0px 0px 50px;   background-repeat:no-repeat; height:31px;  padding:10px 180px 5px 0px; border-bottom:2px solid;}
@@ -494,17 +494,31 @@ ul#navigation.blue li.last a{ color:#6d95c3; }
 #block_menu_default ul li:nth-child(4) span{ background-image:image-url("block_menu_7.jpg");}
 #block_menu_default ul li:nth-child(4) span:hover{ background-image:image-url("block_menu_7_hover.jpg");}
 
+/* ACTIVE LINK BLOCK_MENU */
+#block_menu_default ul li.plan_developments.selected span{ background-image:image-url("block_menu_2_hover.jpg"); cursor:default}
+#block_menu_default ul li.replanning_endorsements.selected span{ background-image:image-url("block_menu_3_hover.jpg"); cursor:default }
+#block_menu_default ul li.order_customizers.selected span{ background-image:image-url("block_menu_6_hover.jpg"); cursor:default }
+#block_menu_default ul li.engineering_systems.selected span{ background-image:image-url("block_menu_7_hover.jpg"); cursor:default }
+
+
 /*  MAIN MENU DEFAULT*/
 .main_page{ margin:0px 0px 0px 0px; }
 .default_pages{ margin:5px 0px 0px 220px; }
 ul#main_menu{ float:left; position:absolute; list-style:none; padding:0px; background-image:image-url("back_ul.png"); height:50px; background-repeat:repeat; }
+
 ul#main_menu li{ width:163px; height:50px; margin-bottom:8px; float:left;  }
 ul#main_menu li:nth-last-child(1){ width:165px; }
-ul#main_menu li span{ width:158px; height:50px; float:left; }
+
+ul#main_menu li span{ width:163px; height:50px; float:left; background-image:image-url("menu-spec-reg-li_sec.png"); }
+
 ul#main_menu li span:hover{ background-image:image-url("menu-spec-reg-hover_sec.png"); }
-ul#main_menu li span p{  text-align:center; color:#ffffff; margin-top:8px; line-height:16px; width:148px; float:left; margin-left:8px; }
+ul#main_menu li span p{  text-align:center; color:#ffffff; margin-top:8px; line-height:16px; width:152px; float:left; margin-left:8px; }
 ul#main_menu li span p.p1{ padding-top:10px; font-size:16px;}
 ul#main_menu li span p.p2{ padding-top:10px; font-size:14px;   }
+
+/* ACTIVE LINK MAIN MENU */
+ul#main_menu li.selected span{ background-image:image-url("menu-spec-reg-hover_sec.png"); cursor:default }
+
 
 /*  MAIN MENU INDEX */
 #maincontent_index ul.main_page{ margin:5px 0px 0px 130px; }
