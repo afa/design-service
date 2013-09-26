@@ -8,6 +8,8 @@
 //= require price_calculator
 
 $(document).ready ->
+  $('li.' + $('body').attr('id')).addClass('selected')
+
   register_destroy_attachment_buttons = ->
     $('.delete_attachment').click (event)->
       attachment_url = $(event.target).data('attachment-url')
