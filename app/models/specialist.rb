@@ -16,9 +16,8 @@ class Specialist < ActiveRecord::Base
   belongs_to :user
   has_one :profile, through: :user
 
-  has_many :portfolios, as: :owner
+  has_many :portfolios
   has_many :portfolio_items, through: :portfolios
-  has_one :main_portfolio, as: :owner, class_name: 'Portfolio'
 
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
 
