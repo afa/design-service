@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :order do
+    work_state 'draft'
+    payment_state 'not_paid'
     orderable nil
     client nil
     completion_status "MyString"

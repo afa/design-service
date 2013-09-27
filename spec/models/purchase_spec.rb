@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Purchase do
-  pending "add some examples to (or delete) #{__FILE__}"
+ before do
+  @clnt = FactoryGirl.create(:user)
+  @orderable = FactoryGirl.create(:replanning_endorsement)
+  
+ end
+ describe "when new" do
+  
+ end
 end

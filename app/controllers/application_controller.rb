@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :get_current_user
+  before_filter :load_events_for_spec
   #before_filter -> {User.current = current_or_guest_user}
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -11,6 +12,11 @@ class ApplicationController < ActionController::Base
 
   def get_current_user
    User.current = current_or_guest_user
+  end
+
+  def load_events_for_spec
+   @events = User.current.events.order("id desc").limit(5) if User.current.specialist?
+   @events ||= []
   end
 
   def page_subtitle
@@ -92,7 +98,7 @@ class ApplicationController < ActionController::Base
   def logging_in
     guest_orders = guest_user.try{|user| user.orders.all}
     guest_orders.each do |order|
-      order.client_id = current_user.id
+      order.client_id = User.current.id
       order.save!
     end
   end

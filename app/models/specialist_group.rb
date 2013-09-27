@@ -1,9 +1,8 @@
 class SpecialistGroup < ActiveRecord::Base
   has_and_belongs_to_many :specialists
 
-  has_many :portfolios, as: :owner
+  has_many :portfolios
   has_many :portfolio_items, through: :portfolios
-  has_one :main_portfolio, as: :owner, class_name: 'Portfolio'
 
   has_one :avatar, as: :imageable_single, class_name: 'Photo'
   has_many :received_messages, as: :recipient, class_name: 'Message'
@@ -31,5 +30,9 @@ class SpecialistGroup < ActiveRecord::Base
 
   def union_name
     specialization ? I18n.t("specialist_groups.union_name.#{specialization}") : I18n.t('specialist_groups.union_name.not_a_specialist')
+  end
+
+  def available_portfolios
+    specialists.map(&:portfolios).flatten
   end
 end

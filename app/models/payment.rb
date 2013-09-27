@@ -6,20 +6,41 @@ class Payment < ActiveRecord::Base
 
 
   state_machine :state, :initial => :created do
-   state :created do
-   end
+   state :created
    state :requested
-   state :payed
+   state :paid
    state :failed
 
    event :request do
     transition :created => :requested
    end
+   before_transition :created => :requested, :do => :mk_purchase
    event :ok do
-    transition :requested => :payed
+    transition :requested => :paid, :if => :purchase_ok?
    end
-   event :fail do
-    transition :requested => :fail
+   event :bad do
+    transition :requested => :failed
+   end
+
+   after_transition :requested => :paid, :do => :commit_order
+  end
+
+  def commit_order
+   order.pay
+  end
+
+  def mk_purchase
+   amount = order.need_amount
+   purchases.create :amount => amount
+  end
+
+  def purchase_ok?
+   purchases.detect{|p| p.paid? }
+  end
+
+  def regen_purchase
+   unless purchase_ok? or purchases.detect{|p| p.requested? }
+    mk_purchase
    end
   end
 end

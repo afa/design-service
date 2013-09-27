@@ -1,4 +1,11 @@
 DesignService::Application.routes.draw do
+  resources :portfolios do
+    resources :portfolio_items
+    member do
+      get 'edit_form'
+    end
+  end
+
   resources :moderations, only: [:show] do
     member do
       post 'accept'
@@ -17,10 +24,20 @@ DesignService::Application.routes.draw do
   resources :specialist_groups do
     resources :messages
     resources :reviews, only: [:index]
+    resources :portfolios do
+      collection do
+        get 'new_form'
+      end
+    end
   end
   resources :specialists do
     resources :messages
     resources :reviews, only: [:index]
+    resources :portfolios do
+      collection do
+        get 'new_form'
+      end
+    end
   end
   resources :photo_collections
   resources :photos
@@ -29,6 +46,9 @@ DesignService::Application.routes.draw do
   resources :orders do
     member do
       get 'get_price'
+      get 'details'
+      put 'agree_price'
+      put 'accept_work'
     end
     resources :reviews
     resources :messages do
@@ -42,6 +62,9 @@ DesignService::Application.routes.draw do
 
   resource :profile do
     get 'orders'
+    get 'new_orders'
+    put 'set_avatar'
+    post 'add_portfolio'
   end
 
   get 'personal_account' => 'personal_accounts#history'

@@ -4,7 +4,7 @@
     %li
       .img_group
         %span.img_group_border
-        %img.group_image{:src => "#{ asset_path("designer_icon_not_reg.jpg") }"}
+        %img.group_image{:src => asset_path('designer_icon_not_reg.jpg') }
       %ul
         = link_to specialist_group_path(specialist_group) do
           %li= specialist_group.name
