@@ -14,7 +14,11 @@ class ProfilesController < InheritedResources::Base
   # has_scope :not_in_work, :type => :boolean, only: [:orders]
 
   def orders
-    orders = current_user.orders.includes(:orderable)
+    if User.current.client?
+      orders = User.current.orders.includes(:orderable)
+    elsif User.current.specialist?
+      orders = User.current.specialist.orders.includes(:orderable)
+    end
     if params[:in_work]
       @orderable = orders.in_work.decorate
     elsif params[:not_in_work]
@@ -24,7 +28,12 @@ class ProfilesController < InheritedResources::Base
     end
   end
   def new_orders
-    @orderable = current_user.orders.includes(:orderable).not_in_work.decorate
+    if User.current.client?
+      @orderable = User.current.orders.includes(:orderable).not_in_work.decorate
+    elsif User.current.specialist?
+      @orderable = User.current.specialist.orders.includes(:orderable).not_in_work.decorate
+    end
+
   end
 
   def set_avatar
