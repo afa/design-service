@@ -66,7 +66,7 @@ class User < ActiveRecord::Base
     role.to_s == 'client'
   end
   def specialist?
-    role.specialist? || role.admin?
+    role.specialist?
   end
   def moderator?
     %w{admin moderator}.include?(role.to_s)

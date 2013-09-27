@@ -136,6 +136,13 @@ class Order < ActiveRecord::Base
   def current_user_is_a_client?
     User.current.client? &&  User.current == client
   end
+
+  def price=(value)
+    write_attribute(:price, value).tap do
+      set_price(false)  if price
+    end
+  end
+
 private
   def self.accepted_to_start_work_arel
     arel_table[:work_state].eq_any([:client_agreed, :in_work, :work_accepted])
