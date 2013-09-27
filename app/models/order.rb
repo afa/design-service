@@ -115,7 +115,7 @@ class Order < ActiveRecord::Base
   end
 
   def need_amount
-   return 0.0 if amount_paid.to_f > price.to_f
+   return 0.0 if amount_paid.to_f >= price.to_f
    return price - amount_paid.to_f if amount_paid.to_f > advance_price.to_f
    return advance_price.to_f - amount_paid.to_f
   end
