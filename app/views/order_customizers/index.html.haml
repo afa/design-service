@@ -11,9 +11,10 @@
     - %w[ hallway bedroom living_room color_solutions child_room bathroom kitchen kitchen_plus_living_room lounges cabinet ].each do |project_type|
       %li
         = render partial: 'order_customizers/project', locals: {type: project_type}
-  %a{:href => "copyright_supervision.html"}
-    .copyright
   %ul.working_documents
-    - %w[ sweep_wall floor_plans ceiling_fixtures ventilation draping_materials ].each do |project_type|
+    - %w[ sweep_wall floor_plans ceiling_fixtures draping_materials ].each do |project_type|
       %li
         = render partial: 'order_customizers/project', locals: {type: project_type}
+.copyright_block        
+  %a{:href => "copyright_supervision.html"}
+    .copyright

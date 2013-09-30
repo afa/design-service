@@ -171,6 +171,8 @@ div.options{ width:420px;   float:left;   }
 div.options ul.answer{ list-style:none;  margin:0px;  padding-left:155px; padding-top:15px; }
 div.options ul.answer li{ float:left;  margin-right:10px; }
 
+div.var_form2 div.break_line{ float:left; padding-bottom:2px; padding-top:2px; width:450px; border-bottom: 1px #e9da95 dashed; height:2px;}
+
 div.var_form3{ width:470px; height:160px;  margin-left:45px; margin-top:15px; padding:30px; margin-bottom:25px;  }
 div.var_form3 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px;}
 div.var_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
@@ -226,21 +228,24 @@ span.design_project{ color:#c67700; }
 div.design_project{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
 div.msg_caution span.design_project{color:#f89f65;   padding:15px 0px 10px 115px; float:left; }
 
-div.design_project_all{ background-color:#e4efd5; min-height:900px; height:auto;  width:625px; clear: left; position:relative; overflow:auto; margin-top:5px;}
+div.design_project_all{ background-color:#e8edf1; min-height:900px; height:auto;  width:627px; clear: left; position:relative; overflow:auto; margin-top:5px;}
 
 div.design_project_all div.headers{ position:absolute; }
 div.design_project_all div.headers span{ float:left; width:150px; text-align:center; font-weight:bold; font-size:18px; padding-top:5px;}
 div.design_project_all div.headers span.first{ padding-right:150px; padding-top:13px; color:#b5d48c; padding-left:150px;}
 div.design_project_all div.headers span.second{color:#a3bfdd}
 
-div.design_project_all ul.concept{ margin:0px;  list-style:none; width:400px; height:auto;   position: relative; clear:both; overflow:auto; float:left; padding:60px 12px 0px 12px; font-size:14px;}
+div.design_project_all ul.concept{ margin:0px;  list-style:none; width:400px; height:auto;   clear:both; overflow:auto; float:left; padding:60px 12px 0px 12px; font-size:14px;  background-color:#e4efd5}
+
 div.design_project_all ul.concept li{ margin:0px 30px 10px 20px;   width:150px; height:280px; position:static; float:left; }
 div.design_project_all ul.concept li img{ width:150px; height:150px;}
 div.design_project_all ul.concept li span.hover{ position:absolute;  width:150px; height:150px; background-image:image-url("hover_black.png"); background-repeat:repeat; display:none;}
 
-div.design_project_all div.copyright{ position:relative; float:left; width:340px; height:41px;  background-image:image-url("avtor-small.png"); background-repeat:no-repeat; margin:0px 0px 30px 35px;}
-div.design_project_all div.copyright:hover{  background-image:image-url("avtor_h-small.png"); }
+div.copyright_block div.copyright{ position:relative; float:left; width:340px; height:41px;  background-image:image-url("avtor-small.png"); background-repeat:no-repeat;  margin-left:160px; margin-top:10px;}
 
+div.copyright_block div.copyright:hover{  background-image:image-url("avtor_h-small.png"); }
+
+div.copyright_block{ width:627px;  background-color:#D3DCDD; height:60px; clear:both }
 
 div.design_project_all ul.working_documents{ margin:0px;  list-style:none; height:auto; background-color:#e8edf1; overflow:auto;
 padding:60px 12px 20px 25px; width:164px;}
