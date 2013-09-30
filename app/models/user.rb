@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   attr_accessor :login
 
-  delegate :fake_name, :middle_name, :name, :surname, :to_s, to: :profile
+  delegate :fake_name, :middle_name, :name, :surname, :full_name, :to_s, to: :profile
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -39,10 +39,6 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
-  end
-
-  def full_name
-    "#{name} #{surname}"
   end
 
   def specialist_groups
@@ -70,7 +66,7 @@ class User < ActiveRecord::Base
     role.to_s == 'client'
   end
   def specialist?
-    role.specialist? || role.admin?
+    role.specialist?
   end
   def moderator?
     %w{admin moderator}.include?(role.to_s)

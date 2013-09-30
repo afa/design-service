@@ -73,7 +73,7 @@ body  {
 
 /*  /////////////////////////////////////////NEW CSS//////////////////////////////////////////////// */
 /*  PAGE CONCEPT INDEX.HTML */
-div#maincontent_index{  height:765px; position:relative;  margin:0px; padding:0px; background-image:image-url("collag.jpg");}
+div#maincontent_index{  height:760px; position:relative;  margin:0px; padding:0px; background-image:image-url("collag.jpg");}
 
 /*  PAGE CONCEPT POSTVARPLAN.HTML */
 span.post_varplan{ color:#3d6804}
@@ -116,8 +116,8 @@ div.var_form3 div.number{ background-image:image-url("3_number_blue.png"); float
 div.var_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; }
 .var_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
 
-div.var_form4{ width:685px; height:140px;  margin-left:45px; margin-top:15px; clear:left;}
-div.attach_box{ padding: 20px 10px 10px 15px;}
+div.var_form4{ width:685px;  margin-left:45px; margin-top:15px; clear:left; margin-bottom:15px;}
+div.attach_box{ padding: 15px 10px 10px 5px; }
 div.attach_box.plan_development div.number{ background-image:image-url("4_number_yellow.png"); float:left; padding-bottom: 5px; }
 div.attach_box div.form_description{ background-image:image-url("file_attach.png"); width:585px; float:left; padding-bottom: 5px;}
 
@@ -129,11 +129,11 @@ span.engineering_systems{ color:#316096; }
 div.engineering_systems{ background-image:image-url("engineering_systems_logo.jpg") ; border-bottom-color:#99bbe1; width:550px; float:left; margin-bottom:5px;  }
 div.msg_caution span.engineering_systems{color:#3d6804;   padding:15px 0px 10px 115px; float:left; }
 
-div.engineering_systems_form1{ width:600px; height:340px;  margin-left:45px; margin-top:140px; padding:30px; line-height:45px; margin-bottom:25px; }
+div.engineering_systems_form1{ width:600px;   margin-left:45px; margin-top:140px; padding:30px; line-height:45px; margin-bottom:25px; }
 div.engineering_systems_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; }
 div.engineering_systems_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; }
 div.engineering_systems_form1 div.head_part{ background-image:image-url("engineering_systems_form1.png"); width:507px; height:32px;  clear:both; margin:40px 0px 0px 45px; }
-div.engineering_systems_form1  div.file_attaching{ width:595px; height:150px; margin-top:15px;}
+div.engineering_systems_form1  div.file_attaching{ width:595px;  margin-top:15px;}
 
 div.engineering_systems_form2{ width:450px; min-height:200px;  margin-left:250px; margin-top:15px; padding:30px; margin-bottom:25px;  }
 div.engineering_systems_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right }
@@ -205,14 +205,14 @@ div.copyright_ques_submiting{  height:80px; width:550px; margin-left:160px; padd
 
 /*  DESIGN-PROJECT PAGES -----PAGE CONCEPT DESIGN_PROJECTS_XXXX 8 PAGES------------------------------------------.HTML */
 span.design_p-workin-docs{ color:#c67700; }
-div.design_p-workin-docs{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px; margin-top:0px;  }
+div.design_p-workin-docs{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
 div.msg_caution span.design_p-workin-docs{color:#3d6804;   padding:15px 0px 10px 115px; float:left; }
 
 div.design_p-workin-docs_form1{ width:600px;  margin-left:45px;  padding:30px; line-height:45px; margin-bottom:25px;  overflow:auto; clear:both; }
 div.design_p-workin-docs_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; }
 div.design_p-workin-docs_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; }
 
-div.design_p-workin-docs_form1  div.file_attaching{ width:595px; height:150px; margin-top:10px; float:left;}
+div.design_p-workin-docs_form1  div.file_attaching{ width:595px;  margin-top:10px; float:left;}
 div.design_p-workin-docs_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:125px; height:30px; }
 div.design_p-workin-docs_form1  div.file_attaching span.attach{ padding:30px 0px 0px 200px; margin-top:0px; }
 
@@ -234,7 +234,7 @@ div.design_p-workin-docs_form2 div.form_description{ background-image:image-url(
 div.design_p-workin-docs_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
 
 .design_p-workin-docs-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:90px; margin-bottom:15px; font-weight:bold; font-size:14px;}
-div.design_p-workin-docs_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; overflow:auto;}
+div.design_p-workin-docs_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; overflow:hidden;}
 
 
 /* PAGE CONCEPT DESIGN-PROJECT_COLOR_SCHEME.HTML */
@@ -247,7 +247,7 @@ div.design_p_color_scheme_form1{ width:600px;  margin-left:45px;  padding:30px; 
 div.design_p_color_scheme_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; }
 div.design_p_color_scheme_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; }
 
-div.design_p_color_scheme_form1  div.file_attaching{ width:595px; height:150px; margin-top:10px; float:left;}
+div.design_p_color_scheme_form1  div.file_attaching{ width:595px;  margin-top:10px; float:left;}
 div.design_p_color_scheme_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:125px; height:30px; }
 div.design_p_color_scheme_form1  div.file_attaching span.attach{ padding:30px 0px 0px 200px; margin-top:0px; }
 
@@ -313,7 +313,7 @@ div.design_p_color_scheme_form2 div.form_description{ background-image:image-url
 div.design_p_color_scheme_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
 
 .design_p_color_scheme-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:90px; margin-bottom:15px; font-weight:bold; font-size:14px;}
-div.design_p_color_scheme_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; overflow:auto;}
+div.design_p_color_scheme_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; overflow:hidden;}
 
 
 
@@ -385,10 +385,13 @@ div.design_p_ceiling_fixtures_form1 div.interior{ float:left;}
 div.design_p_ceiling_fixtures_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-right:60px; float: right; }
 div.design_p_ceiling_fixtures_form1 div.interior ul.answer li{ float: none; margin:0px; padding:0px; height:30px;}
 
-div.design_p_ceiling_fixtures_form2{ width:400px; height:160px;  margin-left:135px; margin-top:15px; padding:30px; margin-bottom:25px;  }
+
+
+div.design_p_ceiling_fixtures_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:25px;  }
 div.design_p_ceiling_fixtures_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; }
-div.design_p_ceiling_fixtures_form2 div.form_description{ background-image:image-url("comments_small.png"); width:370px; float:left; margin-left:150px; }
-div.design_p_ceiling_fixtures_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
+div.design_p_ceiling_fixtures_form2 div.form_description{ background-image:image-url("comments_small.png"); width:370px; float:left; }
+div.design_p_ceiling_fixtures_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px;
+}
 
 .design_p_ceiling_fixtures-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:90px; margin-bottom:15px; font-weight:bold; font-size:14px;}
 div.design_p_ceiling_fixtures_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; overflow:auto;}
@@ -424,10 +427,13 @@ div.design_p_sweep_wall_form1 div.what_materials ul.answer{ list-style:none;  fl
 div.design_p_sweep_wall_form1 div.what_materials ul.answer li{ float:left;  margin-right:10px;  height:35px;  }
 div.design_p_sweep_wall_form1 div.what_materials ul.answer li.long{ width:250px; }
 
-div.design_p_sweep_wall_form2{ width:400px; height:160px;  margin-left:135px; margin-top:15px; padding:30px; margin-bottom:25px;  }
+
+div.design_p_sweep_wall_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:25px;  }
 div.design_p_sweep_wall_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; }
-div.design_p_sweep_wall_form2 div.form_description{ background-image:image-url("comments_small.png"); width:370px; float:left; margin-left:150px; }
-div.design_p_sweep_wall_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
+div.design_p_sweep_wall_form2 div.form_description{ background-image:image-url("comments_small.png"); width:370px; float:left; }
+div.design_p_sweep_wall_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px;
+}
+
 
 .design_p_sweep_wall-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:90px; margin-bottom:15px; font-weight:bold; font-size:14px;}
 div.design_p_sweep_wall_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; overflow:auto;}
@@ -436,9 +442,9 @@ div.design_p_sweep_wall_submiting{  height:50px; width:550px; margin-left:160px;
 
 /* //////////////////////////////////////FOR DEFAULT PAGES //////////////////////////////////////////////////////////////////*/
 div#maincontent_default{position:relative;  margin:0px; padding:0px; background-color: #dedede; height:auto; width:auto; }
-div.page_content_default{ width:817px; background-color: #f6f6f6;  padding:0px; height: auto; min-height:700px;}
-div.collage_design{ position:relative; width:817px; height:375px;  background-repeat:no-repeat; padding:0px; margin:0px; }
-div.mode1{ background-image:image-url("default_collag.jpg"); } /* COLLAG CLASSES*/
+div.page_content_default{ width:817px; background-color: #f6f6f6;  padding:0px; height: auto; min-height:700px; }
+div.collage_design{ position:relative; width:817px; height:50px;  background-repeat:no-repeat; padding:0px; margin:0px; background-image:image-url("collag.jpg"); background-position:1px -400px;}
+div.mode1{ } /* COLLAG CLASSES*/
 div.mode2{ background-image:image-url("default_collag.jpg"); }
 .page_description{  position:relative;  margin: 25px 0px 0px 50px;   background-repeat:no-repeat; height:31px;  padding:10px 180px 5px 0px; border-bottom:2px solid;}
 div.page_description span{ font-size:20px; padding-left:70px; }
@@ -454,7 +460,7 @@ div.calculator span{ width:200px; margin-left:60px; float:left; margin-top:6px; 
 div.calculator span.count{float: left; color:#666; padding-left:220px; text-decoration:underline;}
 
 div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:30px 0px 0px 200px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:125px 15px; margin-top:15px;}
-div.file_attaching span.caution{ color:#e51600; float:left; font-size:12px; padding-left:20px; }
+
 
 /* NAVIGATION MENU DEFAULT */
 ul#navigation{ float:left; width:750px; font-size:14px;}
@@ -486,14 +492,41 @@ ul#navigation.blue li.last a{ color:#6d95c3; }
 #block_menu_default ul li:nth-child(4) span{ background-image:image-url("block_menu_7.jpg");}
 #block_menu_default ul li:nth-child(4) span:hover{ background-image:image-url("block_menu_7_hover.jpg");}
 
-/*  MAIN MENU */
-.main_page{ margin:5px 0px 0px 130px; }
+/* ACTIVE LINK BLOCK_MENU */
+#block_menu_default ul li.plan_developments.selected span{ background-image:image-url("block_menu_2_hover.jpg"); cursor:default}
+#block_menu_default ul li.replanning_endorsements.selected span{ background-image:image-url("block_menu_3_hover.jpg"); cursor:default }
+#block_menu_default ul li.order_customizers.selected span{ background-image:image-url("block_menu_6_hover.jpg"); cursor:default }
+#block_menu_default ul li.engineering_systems.selected span{ background-image:image-url("block_menu_7_hover.jpg"); cursor:default }
+
+
+/*  MAIN MENU DEFAULT*/
+.main_page{ margin:0px 0px 0px 0px; }
 .default_pages{ margin:5px 0px 0px 220px; }
-ul#main_menu{ float:left; position:absolute; list-style:none; padding:0px; }
-ul#main_menu li{ width:331px; height:67px; margin-bottom:8px;  }
-ul#main_menu li span{ width:331px; height:67px;   background-image:image-url("menu-spec.png"); float:left; }
-ul#main_menu li span:hover{ background-image:image-url("menu-spec-hover.png");}
-ul#main_menu li span p{ padding-left:60px; width:260px;  text-align:center; padding-top:5px; color:#FFFFFF; font-size:18px;}
+ul#main_menu{ float:left; position:absolute; list-style:none; padding:0px; background-image:image-url("back_ul.png"); height:50px; background-repeat:repeat; }
+
+ul#main_menu li{ width:163px; height:50px; margin-bottom:8px; float:left;  }
+ul#main_menu li:nth-last-child(1){ width:165px; }
+
+ul#main_menu li span{ width:163px; height:50px; float:left; background-image:image-url("menu-spec-reg-li_sec.png"); }
+
+ul#main_menu li span:hover{ background-image:image-url("menu-spec-reg-hover_sec.png"); }
+ul#main_menu li span p{  text-align:center; color:#ffffff; margin-top:8px; line-height:16px; width:152px; float:left; margin-left:8px; }
+ul#main_menu li span p.p1{ padding-top:10px; font-size:16px;}
+ul#main_menu li span p.p2{ padding-top:10px; font-size:14px;   }
+
+/* ACTIVE LINK MAIN MENU */
+ul#main_menu li.selected span{ background-image:image-url("menu-spec-reg-hover_sec.png"); cursor:default }
+
+
+/*  MAIN MENU INDEX */
+#maincontent_index ul.main_page{ margin:5px 0px 0px 130px; }
+#maincontent_index ul#main_menu{ float:left; position:absolute; list-style:none; padding:0px; background-image:none;}
+#maincontent_index ul#main_menu li{ width:331px; height:67px; margin-bottom:8px; float:none;} 
+#maincontent_index ul#main_menu li span{ width:331px; height:67px;   background-image:image-url("menu-spec.png"); float:left; } 
+#maincontent_index ul#main_menu li span:hover{ background-image:image-url("menu-spec-hover.png");}
+#maincontent_index ul#main_menu li span p{ padding-left:60px; width:260px;  text-align:center; padding-top:5px; color:#FFFFFF; font-size:18px; padding-top:15px;}
+
+
 
 /*  FOOTER */
 div.footer{ float:left; position:absolute; width:100%; background-image:image-url("footer_opacity.png"); background-repeat:repeat; clear:both;}
@@ -668,3 +701,8 @@ div.calculator span{ width:200px; margin-left:60px; float:left; margin-top:6px; 
 .total{ width:300px; height:25px; text-align:center;}
 div.calculator span.count{float: left; color:#666; padding-left:220px; text-decoration:underline;}
 
+div.attach_place_for_box{ position:relative; float:left;   width:500px; min-height:140px; overflow: auto; margin-top:5px;}
+.attach_box{ position:absolute; z-index:34;}
+
+ul.list_of_attachments{ width:480px;  position:relative; clear:both; overflow:auto; z-index:80; padding-top:8px;}
+ul.list_of_attachments li{ float:left;}

@@ -16,9 +16,8 @@ class Specialist < ActiveRecord::Base
   belongs_to :user
   has_one :profile, through: :user
 
-  has_many :portfolios, as: :owner
+  has_many :portfolios
   has_many :portfolio_items, through: :portfolios
-  has_one :main_portfolio, as: :owner, class_name: 'Portfolio'
 
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
 
@@ -26,16 +25,16 @@ class Specialist < ActiveRecord::Base
   delegate :full_name, :username, :to_s,  to: :profile
   delegate :avatar, to: :user
 
-  def rating; 666; end
-  def rating_count; 777; end
-  def positive_feedback; 10; end
-  def negative_feedback; 0; end
-  def neutral_feedback; 0; end
-  def number_of_completed_orders; 7; end
+  # def rating; 666; end
+  # def rating_count; 777; end
+  # def positive_feedback; 10; end
+  # def negative_feedback; 0; end
+  # def neutral_feedback; 0; end
+  # def number_of_completed_orders; 7; end
 
-  def description
-    "Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!"
-  end
+  # def description
+  #   "Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!Ололо, я водитель НЛО!"
+  # end
 
   def new_user
     return if user

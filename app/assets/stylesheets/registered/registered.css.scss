@@ -198,7 +198,8 @@ div.engineering_systems_form1 div.number{ background-image:image-url("1_number_o
 div.engineering_systems_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height:29px; margin-left:10px; }
 div.engineering_systems_form1 div.head_part{ background-image:image-url("engineering_systems_form1-small.png"); width:430px; height:28px;  clear:both; margin:40px 0px 0px 35px; }
 div.engineering_systems_form1  div.file_attaching{ width:495px; margin-top:15px; float:left; font-size:14px; }
-div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:11px; height:30px;  float:left; line-height:14px; text-align:center; margin-left:100px; margin-top:30px;}
+div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; height:30px; margin-top:10px;}
+
 div.engineering_systems_form1  div.file_attaching span.attach{ padding:30px 0px 0px 140px; margin-top:0px;  color: #8e8e8e; float:left; background-image:image-url("file_att.png"); background-repeat: no-repeat; background-position: 80px 15px;}
 
 div.engineering_systems_form2{ width:450px; min-height:200px;  margin-left:90px; margin-top:15px; padding:30px; margin-bottom:25px; float:left; }
@@ -289,7 +290,7 @@ div.design_p-workin-docs_form1 div.number{ background-image:image-url("1_number_
 div.design_p-workin-docs_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
 
 div.design_p-workin-docs_form1  div.file_attaching{ width:485px; margin-top:10px; float:left;}
-div.design_p-workin-docs_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; }
+div.design_p-workin-docs_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; margin-top: -30px;}
 div.design_p-workin-docs_form1  div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:0px 0px 0px 140px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:80px 0px; margin-top:10px;}
 
 div.design_p-workin-docs_form1 div.number_second{ background-image:image-url("2_number_green.png"); float:left; width:86px; height:29px;  background-repeat:no-repeat;  margin-right:10px; margin-left:0px; padding-bottom:20px; margin-top:20px;}
@@ -323,8 +324,8 @@ div.design_p_color_scheme_form1{ width:490px;  margin-left:45px;  padding:30px; 
 div.design_p_color_scheme_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; height: 29px; width: 86px; margin-right:10px; }
 div.design_p_color_scheme_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
 
-div.design_p_color_scheme_form1   div.file_attaching{ width:470px; height:150px; margin-top:10px; float:left;}
-div.design_p_color_scheme_form1   div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; }
+div.design_p_color_scheme_form1   div.file_attaching{ width:485px; min-height:150px; margin-top:10px; float:left;}
+div.design_p_color_scheme_form1   div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; margin-top: -30px;}
 div.design_p_color_scheme_form1   div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:0px 0px 0px 140px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:80px 0px; margin-top:10px;}
 
 
@@ -513,31 +514,32 @@ div.design_p_ceiling_fixtures_submiting{  float: left; margin:10px 25px 15px 55p
 
 /*  PAGE CONCEPT REG_PERSONAL_ACCOUNT_SPECIALIST.HTML */
 
-div.personal_account_specialist ul.personal_account{ width:550px;  background-color:#dbdbdb; float:left; margin:0px 0px 0px 20px; padding:0px; list-style:none; font-size:18px}
-div.personal_account_specialist ul.personal_account li a{ float:left; padding:15px 15px 15px 15px; color:#6e6e6e; text-decoration: underline}
-div.personal_account_specialist ul.personal_account li.select a{ color:#450000;}
-div.personal_account_specialist ul.personal_account li a:hover{ text-decoration:none;}
 
-div.personal_account_specialist div.personal_account{ width:520px;  background-color:#cfe4b4; float:left;  margin:20px 0px 0px 20px;  padding:15px 15px 15px 15px; color:#a70505; }
-div.personal_account_specialist div.content_header{ float:left;  margin:20px 0px 0px 10px;  padding:15px 15px 0px 15px; color:#691818; font-weight:bold; font-size:14px; }
-div.personal_account_specialist table.deferred_services{ width:550px; margin:15px 0px 0px 20px; font-size:14px; float: left; border:none; border-collapse:collapse; color:#4c4c4c; position:relative;}
-div.personal_account_specialist table.deferred_services tr.heading td{ background-color:#e3e3e3; padding:5px 0px 5px 20px; font-weight:bold;}
-div.personal_account_specialist table.deferred_services tr td{ background-color:#eae9e9; padding:5px 0px 5px 20px;  border: 1px solid #949494; border-left:none; border-right:none;  }
-div.personal_account_specialist table.deferred_services tr.heading:hover td{ background-color:#e3e3e3;}
-div.personal_account_specialist table.deferred_services tr:hover td{ background-color:#cfe4b4;}
-div.personal_account_specialist table.deferred_services tr td:nth-child(1){ width:220px;}
-div.personal_account_specialist table.deferred_services tr td span.term{ text-decoration:underline; float: left;}
-div.personal_account_specialist table.deferred_services tr td span.term_info{ float: left; font-size:12px; margin-top:5px;}
-div.personal_account_specialist table.deferred_services tr td span.order{  position: relative; left:0px; width:150px; float:left; margin-left:120px; margin-top:15px; color:#0612a4;}
-div.personal_account_specialist table.deferred_services tr td span.order a{ color:#0612a4; text-decoration:underline;}
-div.personal_account_specialist table.deferred_services tr td span.order a:hover{ text-decoration:none;}
+div.page_contener_specialist ul.personal_account{ width:550px;  background-color:#dbdbdb; float:left; margin:0px 0px 0px 20px; padding:0px; list-style:none; font-size:18px}
+div.page_contener_specialist ul.personal_account li a{ float:left; padding:15px 15px 15px 15px; color:#6e6e6e; text-decoration: underline}
+div.page_contener_specialist ul.personal_account li.select a{ color:#450000;}
+div.page_contener_specialist ul.personal_account li a:hover{ text-decoration:none;}
 
-div.personal_account_specialist table.history_recharge{ width:550px; margin:15px 0px 0px 20px; font-size:14px; float: left; border:none; border-collapse:collapse; color:#4c4c4c; position:relative;}
-div.personal_account_specialist table.history_recharge tr.heading td{ background-color:#e3e3e3; padding:5px 0px 5px 20px; font-weight:bold;}
-div.personal_account_specialist table.history_recharge tr.heading:hover td{ background-color:#e3e3e3;}
-div.personal_account_specialist table.history_recharge tr td{ background-color:#eae9e9; padding:5px 0px 5px 20px;  border: 1px solid #949494; border-left:none; border-right:none;  }
-div.personal_account_specialist table.history_recharge tr:hover td{ background-color:#cfe4b4;}
-div.personal_account_specialist table.history_recharge tr.green td{ color:#137702}
+div.page_contener_specialist div.personal_account{ width:520px;  background-color:#cfe4b4; float:left;  margin:20px 0px 0px 20px;  padding:15px 15px 15px 15px; color:#a70505; }
+div.page_contener_specialist div.content_header{ float:left;  margin:20px 0px 0px 10px;  padding:15px 15px 0px 15px; color:#691818; font-weight:bold; font-size:14px; }
+div.page_contener_specialist table.deferred_services{ width:550px; margin:15px 0px 0px 20px; font-size:14px; float: left; border:none; border-collapse:collapse; color:#4c4c4c; position:relative;}
+div.page_contener_specialist table.deferred_services tr.heading td{ background-color:#e3e3e3; padding:5px 0px 5px 20px; font-weight:bold;}
+div.page_contener_specialist table.deferred_services tr td{ background-color:#eae9e9; padding:5px 0px 5px 20px;  border: 1px solid #949494; border-left:none; border-right:none;  }
+div.page_contener_specialist table.deferred_services tr.heading:hover td{ background-color:#e3e3e3;}
+div.page_contener_specialist table.deferred_services tr:hover td{ background-color:#cfe4b4;}
+div.page_contener_specialist table.deferred_services tr td:nth-child(1){ width:220px;}
+div.page_contener_specialist table.deferred_services tr td span.term{ text-decoration:underline; float: left;}
+div.page_contener_specialist table.deferred_services tr td span.term_info{ float: left; font-size:12px; margin-top:5px;}
+div.page_contener_specialist table.deferred_services tr td span.order{  position: relative; left:0px; width:150px; float:left; margin-left:120px; margin-top:15px; color:#0612a4;}
+div.page_contener_specialist table.deferred_services tr td span.order a{ color:#0612a4; text-decoration:underline;}
+div.page_contener_specialist table.deferred_services tr td span.order a:hover{ text-decoration:none;}
+
+div.page_contener_specialist table.history_recharge{ width:550px; margin:15px 0px 0px 20px; font-size:14px; float: left; border:none; border-collapse:collapse; color:#4c4c4c; position:relative;}
+div.page_contener_specialist table.history_recharge tr.heading td{ background-color:#e3e3e3; padding:5px 0px 5px 20px; font-weight:bold;}
+div.page_contener_specialist table.history_recharge tr.heading:hover td{ background-color:#e3e3e3;}
+div.page_contener_specialist table.history_recharge tr td{ background-color:#eae9e9; padding:5px 0px 5px 20px;  border: 1px solid #949494; border-left:none; border-right:none;  }
+div.page_contener_specialist table.history_recharge tr:hover td{ background-color:#cfe4b4;}
+div.page_contener_specialist table.history_recharge tr.green td{ color:#137702}
 
 
 /*  DEFAULT PAGE STYLES */
@@ -883,3 +885,9 @@ div.msg_caution span.design_project{color: #f89f65; font-size: 18px; margin-left
 
 
 
+div.attach_place_for_box{ position:relative; float:left;   width:500px; min-height:120px; overflow: auto; margin-top:5px; }
+
+.attach_box{ position:absolute; z-index:34;}
+
+ul.list_of_attachments{ width:460px;  position:relative; clear:both; overflow:auto; z-index:80; padding-top:8px;}
+ul.list_of_attachments li{ float:left;}

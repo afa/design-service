@@ -22,12 +22,7 @@
     %span= order.work_state
   .pay_now
     - if User.current.client? && !order.paid?
-      / = robo_pay(order) #!!!!!!!!!!!!!!!!!! It fails
-      -# prch = order.payments.where(:state => :requested).order("id desc").map{|p| p.purchases.where(:state => :requested).order("id desc") }.flatten.compact.first }
-      -# %script{:language => 'JavaScript', :src => "https://auth.robokassa.ru/Merchant/Handler/MrchSumPreview.ashx?MrchLogin=instyle&OutSum=#{prch.amount}&InvId=#{prch.id }"}
-      /!!!!!!!!!
-      /= link_to 'Оплатите заказ', robo_pay(order)
-      /= link_to 'Оплатите заказ', replenishment_personal_account_path
+      = robo_pay(order)
   .msg
     %span
       %a{:href=>"#", :data => {:messages_url => order_messages_path(order), :order_id => order.id, :order_url => url_for(order.orderable)} } Новое сообщение
