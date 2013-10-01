@@ -84,32 +84,34 @@ div.var_form1{ width:360px; height:355px;  margin-left:45px; margin-top:140px; p
 div.var_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; }
 div.var_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; }
 
-div.var_form2{ width:450px; height:470px;  margin-left:250px; margin-top:15px; padding:30px; margin-bottom:25px; }
+div.var_form2{ width:450px; height:500px;  margin-left:250px; margin-top:15px; padding:30px; margin-bottom:25px; }
 div.var_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right }
 div.var_form2 div.form_description{ background-image:image-url("task.png"); width:196px; float:right }
 div.kithen_split{ width:170px; float:left;  height:72px; padding-top:15px; }
-div.kithen_split ul.answer{ width:250px;  list-style:none; padding:15px 0px 0px 60px; margin:0px; }
+div.kithen_split ul.answer{ width:250px;  list-style:none; padding:15px 0px 0px 20px; margin:0px; }
 div.kithen_split ul.answer li{ float:left;  margin-right:10px; }
 div.kithen_size{ width:280px; height:72px;  float:left; padding-top:15px;}
 div.kithen_size ul.answer{ width:160px;  list-style:none;   float: right; padding:0px; margin:0px; }
 div.kithen_size ul.answer li{ float:left;  margin-right:10px; padding-bottom:10px; }
 div.changing_rooms{width:170px; float:left;  padding-top:15px; height:67px; }
-div.changing_rooms ul.answer{ width:250px;  list-style:none; padding:10px 0px 0px 60px; margin:0px;}
+div.changing_rooms ul.answer{ width:250px;  list-style:none; padding:10px 0px 0px 20px; margin:0px;}
 div.changing_rooms ul.answer li{ float:left;  margin-right:10px; }
 div.number_of_rooms{width:260px; height:62px;  float:left; padding-left:20px; padding-top:20px; }
 div.cabinets{ width:360px;   float:left;  padding:20px 0px 20px 90px;}
-div.cabinets ul.answer{ width:150px;  list-style:none;  margin:0px;  float: right; padding-right:13px; }
+div.cabinets ul.answer{ width:220px;  list-style:none;  margin:0px;  float: right; padding-left:0px; }
 div.cabinets ul.answer li{ float:left;  margin-right:10px; }
 div.guests{  float:left; width:460px;}
 div.guests ul.answer{  list-style:none;  margin:0px;  float: right;  padding:0px; }
 div.guests ul.answer li{ float:left;  margin-right:10px; }
 div.sleeping_places{ width:360px;   float:left;  padding:20px 0px 0px 90px;}
 div.washing_machin{ width:360px;   float:left;  padding:20px 0px 20px 70px; }
-div.washing_machin ul.answer{ width:120px;  list-style:none;  margin:0px;  float: right; padding-right:25px; }
+div.washing_machin ul.answer{ width:170px;  list-style:none;  margin:0px;  float: right; padding-left:0px; }
 div.washing_machin ul.answer li{ float:left;  margin-right:10px; }
 div.options{ width:420px;   float:left;   }
 div.options ul.answer{ list-style:none;  margin:0px;  padding-left:155px; padding-top:15px; }
 div.options ul.answer li{ float:left;  margin-right:10px; }
+
+div.var_form2 div.break_line{ float:left; padding-bottom:2px; padding-top:2px; width:450px; border-bottom: 1px #a8d868 dashed; height:2px;}
 
 div.var_form3{ width:470px; height:160px;  margin-left:45px; margin-top:15px; padding:30px; margin-bottom:25px;  }
 div.var_form3 div.number{ background-image:image-url("3_number_blue.png"); float:left; }
@@ -156,20 +158,27 @@ div.engineering_systems_submiting{  height:50px; width:550px; margin-left:160px;
 span.design_project{ color:#c67700; }
 div.design_project{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
 div.msg_caution span.design_project{color:#f89f65;   padding:15px 0px 10px 115px; float:left; }
-div.design_project_all{ background-color:#e4efd5; min-height:900px; height:auto;  width:818px; clear: left; position:relative; overflow:auto;}
+
+div.design_project_all{ background-color:#e8edf1; min-height:900px; height:auto;  width:818px; clear: left; position:relative; overflow:auto;}
+
 div.design_project_all div.headers{ position:absolute; margin:7px 0px 0px 215px;}
+
 div.design_project_all div.headers span{ float:left; width:150px; text-align:center; font-weight:bold; font-size:18px;}
 div.design_project_all div.headers span.first{ padding-right:230px; padding-top:13px; color:#b5d48c;}
 div.design_project_all div.headers span.second{color:#a3bfdd}
-div.design_project_all ul.concept{ margin:0px;  list-style:none; width:510px; height:auto;   position: relative; clear:both; overflow:auto; float:left; padding:60px 12px 80px 12px; }
+
+div.design_project_all ul.concept{ margin:0px;  list-style:none; width:510px; height:auto;  clear:both; overflow:auto; float:left; padding:60px 12px 80px 12px; background-color:#e4efd5}
+
 div.design_project_all ul.concept li{ margin:0px 30px 10px 40px;   width:185px; min-height:298px; position:static; float:left; }
 div.design_project_all ul.concept li span.hover{ position:absolute;  width:184px; height:185px; background-image:image-url("hover_black.png"); background-repeat:repeat; display:none;}
 
-div.design_project_all div.copyright{ position:absolute; float:left; width:447px; height:54px;  background-image:image-url("avtor.png"); background-repeat:no-repeat; margin:35px 0px 0px 45px; bottom:20px; z-index:10;}
-div.design_project_all div.copyright:hover{  background-image:image-url("avtor_h.png"); }
+div.copyright_block div.copyright{ position:relative; float:left; width:447px; height:54px;  background-image:image-url("avtor.png"); background-repeat:no-repeat; margin-left:160px; margin-top:10px;}
 
+div.copyright_block div.copyright:hover{  background-image:image-url("avtor_h.png"); }
 
-div.design_project_all ul.working_documents{ margin:0px;  list-style:none; height:auto; background-color:#e8edf1; overflow:auto; padding:60px 20px 0px 45px;}
+div.copyright_block{ width:818px;  background-color:#D3DCDD; height:70px; clear:both }
+
+div.design_project_all ul.working_documents{ margin:0px;  list-style:none; height:auto; background-color:#e8edf1; overflow:auto; padding:60px 20px 0px 45px; width:219px;}
 div.design_project_all ul.working_documents li{  width:185px; min-height:298px; position:static; float:left;  margin-bottom:10px; }
 
 div.design_project_all ul li span.heading{ text-align:center; width:auto; color:#383a3e; font-size:14px; font-weight:bold; width:185px; float:left;}
@@ -353,13 +362,13 @@ div.design_p_floor_plans_form1 div.room_blocks ul{ float:left; overflow:auto;  m
 div.design_p_floor_plans_form1 div.room_blocks ul li{ float:none; line-height:18px; margin-bottom:10px; padding:0px;}
 div.design_p_floor_plans_form1 div.room_blocks ul li label{ width:180px; padding:0px; padding-left:30px; float:left; }
 
-div.design_p_floor_plans_form2{ width:400px; height:160px;  margin-left:135px; margin-top:15px; padding:30px; margin-bottom:25px;  }
+div.design_p_floor_plans_form2{ width:470px; height:160px;  margin-left:135px; margin-top:15px; padding:30px; margin-bottom:25px;  }
 div.design_p_floor_plans_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; }
-div.design_p_floor_plans_form2 div.form_description{ background-image:image-url("comments_small.png"); width:370px; float:left; margin-left:150px; }
+div.design_p_floor_plans_form2 div.form_description{ background-image:image-url("comments_small.png"); width:370px; float:left;  }
 div.design_p_floor_plans_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
 
 .design_p_floor_plans-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:90px; margin-bottom:15px; font-weight:bold; font-size:14px;}
-div.design_p_floor_plans_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; overflow:auto;}
+div.design_p_floor_plans_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; }
 
 
 /*  PAGE CONCEPT DESIGN_PROJECTS_CEILING_FIXTURES.HTML */
@@ -394,7 +403,7 @@ div.design_p_ceiling_fixtures_form2_default{ сolor:#333; border:0px; padding:0p
 }
 
 .design_p_ceiling_fixtures-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:90px; margin-bottom:15px; font-weight:bold; font-size:14px;}
-div.design_p_ceiling_fixtures_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; overflow:auto;}
+div.design_p_ceiling_fixtures_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; }
 
 
 /*  PAGE CONCEPT DESIGN_PROJECTS_SWEEP_WALL.HTML */
@@ -436,7 +445,7 @@ div.design_p_sweep_wall_form2_default{ сolor:#333; border:0px; padding:0px 5px 
 
 
 .design_p_sweep_wall-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:90px; margin-bottom:15px; font-weight:bold; font-size:14px;}
-div.design_p_sweep_wall_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; overflow:auto;}
+div.design_p_sweep_wall_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 40px 0px; clear:both; }
 
 
 
@@ -705,4 +714,6 @@ div.attach_place_for_box{ position:relative; float:left;   width:500px; min-heig
 .attach_box{ position:absolute; z-index:34;}
 
 ul.list_of_attachments{ width:480px;  position:relative; clear:both; overflow:auto; z-index:80; padding-top:8px;}
+
 ul.list_of_attachments li{ float:left;}
+

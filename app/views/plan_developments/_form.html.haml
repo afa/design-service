@@ -24,6 +24,8 @@
       .kithen_size
         Размер кухни:
         = f.input_field :big_kitchen, as: :radio_buttons, collection: PlanDevelopment.big_kitchen.options
+      
+      .break_line
 
       .changing_rooms
         Наличие гардеробных <br>комнат:
@@ -33,22 +35,31 @@
         Количество встроенных <br>шкафов, включая <br>гардеробные комнаты:
         = f.input_field :num_builtin_closets, as: :string, class: 'textlines_default textline_l2'
 
+      .break_line
+
       .cabinets
         Нужен кабинет?
         = f.input_field :cabinet_needed, as: :radio_buttons
+
+      .break_line
 
       .guests
         Любите ли Вы <br>принимать гостей?
         = f.input_field :num_guests, as: :radio_buttons, collection: PlanDevelopment.num_guests.options
 
+      .break_line
 
       .sleeping_places
         Количество спальных мест: #{ f.input_field :num_bedrooms, as: :string, class: 'textlines_default textline_l2' }
+
+      .break_line
 
       .washing_machin
         Наличие постирочной:
         = f.input_field :washing_room_needed, as: :radio_buttons
 
+      .break_line
+      
       .options
         Сколько представить Вам вариантов планировок?
         = f.input_field :num_plans, as: :radio_buttons, collection: PlanDevelopment.num_plans.options
