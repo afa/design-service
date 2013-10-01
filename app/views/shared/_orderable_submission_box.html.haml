@@ -1,4 +1,4 @@
 - unless disabled
   %div{:class => wrapper_class}
-    %input.reset{:type=>"image", :src=>"#{asset_path('cancelButton.png')}", :alt=>"Сбросить форму"}
-    %input.put.submit{:type => 'image', :src => "#{ asset_path('postButton.png')}", :alt => "Отправить форму"}
+    %input.reset{:type=>"image", :src => asset_path('cancelButton.png'), :alt=>"Сбросить форму"}
+    %input.put.submit{:type => 'image', :src => asset_path('postButton.png'), :alt => "Отправить форму"}

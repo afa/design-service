@@ -6,7 +6,9 @@
       Адрес:#{ f.input_field :address, class: 'textlines_default textline_l8' }
       Этаж: #{ f.input_field :floor, class: 'textlines_default textline_l4' } Подъезд/Секция: #{ f.input_field :section, class: 'textlines_default textline_l4' }
       Площадь квартиры: #{ f.input_field :flat_area, class: 'textlines_default textline_l6'}
-      %br/
+      %br
+      Число комнат: #{ f.input_field :num_rooms, class: 'textlines_default textline_l6'}
+      %br
       Кол-во стояков водопровода:#{ f.input_field :num_standpipes, class: 'textlines_default textline_l6' }
       Состав семьи:#{ f.input_field :family_composition_first_line, class: 'textlines_default textline_l7'}
       = f.input_field :family_composition_second_line, class: 'textlines_default textline_l10'

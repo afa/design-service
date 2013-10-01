@@ -97,31 +97,54 @@ group_5.specialists << spec_5.specialist
 
 portfolio_items = (1..15).map{|i| upload_portfolio_item "./db/seeds/designers_works/#{i}.jpg" }
 
-portfolio_1 = Portfolio.create(name: 'Как я отделал шалаш', description: 'Читай сабж') {|c| c.owner = spec_1; c.portfolio_items << portfolio_items[13] << portfolio_items[14] }
-spec_1.specialist.main_portfolio = portfolio_1
+portfolio_1 = Portfolio.create(name: 'Как я отделал шалаш', description: 'Читай сабж') {|p| 
+  p.specialist = spec_1.specialist
+  p.portfolio_items << portfolio_items[13] << portfolio_items[14]
+}
 
 ###
-portfolio_2 = Portfolio.create(name: 'Как я построил плотину', description: 'Читай сабж') {|c| c.owner = spec_2; c.portfolio_items << portfolio_items[6] << portfolio_items[7] << portfolio_items[8] }
-portfolio_3 = Portfolio.create(name: 'Как я обустроил мир', description: 'Читай сабж') {|c| c.owner = spec_2; c.portfolio_items << portfolio_items[9] << portfolio_items[10] << portfolio_items[11] << portfolio_items[12] }
-spec_2.specialist.main_portfolio = portfolio_3
+portfolio_2 = Portfolio.create(name: 'Как я построил плотину', description: 'Читай сабж') {|p|
+  p.specialist = spec_2.specialist
+  p.portfolio_items << portfolio_items[6] << portfolio_items[7] << portfolio_items[8]
+}
+portfolio_3 = Portfolio.create(name: 'Как я обустроил мир', description: 'Читай сабж') {|p|
+  p.specialist = spec_2.specialist
+  p.portfolio_items << portfolio_items[9] << portfolio_items[10] << portfolio_items[11] << portfolio_items[12]
+}
 
-portfolio_4 = Portfolio.create(name: 'Как я отделал хату', description: 'Читай сабж') {|c| c.owner = spec_3; c.portfolio_items << portfolio_items[0] << portfolio_items[1] << portfolio_items[2] }
-spec_3.specialist.main_portfolio = portfolio_4
+portfolio_4 = Portfolio.create(name: 'Как я отделал хату', description: 'Читай сабж') {|p|
+  p.specialist = spec_3.specialist
+  p.portfolio_items << portfolio_items[0] << portfolio_items[1] << portfolio_items[2] 
+}
 
-portfolio_5 = Portfolio.create(name: 'Как я отделал избу', description: 'Читай сабж') {|c| c.owner = spec_4; c.portfolio_items << portfolio_items[3] << portfolio_items[4] << portfolio_items[5] }
-spec_4.specialist.main_portfolio = portfolio_5
+portfolio_5 = Portfolio.create(name: 'Как я отделал избу', description: 'Читай сабж') {|p| 
+  p.specialist = spec_4.specialist
+  p.portfolio_items << portfolio_items[3] << portfolio_items[4] << portfolio_items[5]
+}
 ###
 
-portfolio_for_group_1 = Portfolio.create(name: 'Цветной мир', description: 'Читай сабж') {|c| c.owner = group_1; c.portfolio_items << portfolio_items[13] << portfolio_items[14] }
-portfolio_for_group_2 = Portfolio.create(name: 'Арматура то да сё', description: 'Читай сабж') {|c| c.owner = group_2; c.portfolio_items << portfolio_items[7] << portfolio_items[9] }
+portfolio_for_group_1 = Portfolio.create(name: 'Цветной мир', description: 'Читай сабж') {|p|
+  p.specialist_group = group_1
+  p.portfolio_items << portfolio_items[13] << portfolio_items[14]
+}
+portfolio_for_group_2 = Portfolio.create(name: 'Арматура то да сё', description: 'Читай сабж') {|p|
+  p.specialist_group = group_2
+  p.portfolio_items << portfolio_items[7] << portfolio_items[9]
+}
 
-portfolio_for_group_3_1 = Portfolio.create(name: 'Отделанные домики', description: 'Читай сабж') {|c| c.owner = group_3; c.portfolio_items << portfolio_items[0] << portfolio_items[1] << portfolio_items[4] << portfolio_items[5] }
-portfolio_for_group_3_2 = Portfolio.create(name: 'Отделанные баньки', description: 'Читай сабж') {|c| c.owner = group_3; c.portfolio_items << portfolio_items[2] << portfolio_items[3] }
+portfolio_for_group_3_1 = Portfolio.create(name: 'Отделанные домики', description: 'Читай сабж') {|p|
+  p.specialist_group = group_3
+  p.portfolio_items << portfolio_items[0] << portfolio_items[1] << portfolio_items[4] << portfolio_items[5]
+}
+portfolio_for_group_3_2 = Portfolio.create(name: 'Отделанные баньки', description: 'Читай сабж') {|p|
+  p.specialist_group = group_3
+  p.portfolio_items << portfolio_items[2] << portfolio_items[3]
+}
 
-portfolio_for_group_3_main = Portfolio.create(name: 'Всё подряд', description: 'Читай сабж') {|c| c.owner = group_3; c.portfolio_items << portfolio_items[0] << portfolio_items[1] << portfolio_items[3] }
+portfolio_for_group_3_main = Portfolio.create(name: 'Всё подряд', description: 'Читай сабж') {|p|
+  p.specialist_group = group_3
+  p.portfolio_items << portfolio_items[0] << portfolio_items[1] << portfolio_items[3]
+}
 
-group_1.main_portfolio = portfolio_for_group_1
-group_2.main_portfolio = portfolio_for_group_2
-group_3.main_portfolio = portfolio_for_group_3_main
 ###
 puts 'portfolios with items created'

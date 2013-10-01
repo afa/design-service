@@ -39,4 +39,12 @@ class OrderDecorator < Draper::Decorator
   def completion_time
     source.completion_time && I18n.l(source.completion_time)
   end
+  def price
+    if User.current.specialist?
+      labor_participation = User.current.specialist.labor_participation || 1.0
+      source.price * labor_participation
+    else
+      source.price
+    end
+  end
 end

@@ -6,6 +6,7 @@ class PersonalAccountsController < ApplicationController
    @orders = current_user.orders.where(:work_state => :draft)
    @transactions = current_user.transactions
    @events = Event.all 
+   @amount = current_user.qiwi
   end
 
   def 

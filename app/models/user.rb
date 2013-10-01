@@ -14,11 +14,12 @@ class User < ActiveRecord::Base
   has_many :received_messages, as: :recipient
   has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id', inverse_of: :sender
 
-  has_many :transactions
+  has_many :transactions_in, :as => :destination, :class_name => 'Transaction'
+  has_many :transactions_out, :as => :source, :class_name => 'Transaction'
 
   has_many :orders, foreign_key: 'client_id' #do;  includes(:orderable); end ## in Rails 4 it'll be possible to prevent N+1 problem here, but now we should use includes in controller
   has_one :specialist
-  has_one :avatar, as: :imageable_single, class_name: 'Photo'
+  mount_uploader :avatar, PhotoUploader
   has_many :events
 
   scope :with_orders, -> { where('orders_count > 0') }
@@ -29,7 +30,7 @@ class User < ActiveRecord::Base
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   attr_accessor :login
 
-  delegate :fake_name, :middle_name, :name, :surname, :to_s, to: :profile
+  delegate :fake_name, :middle_name, :name, :surname, :full_name, :to_s, to: :profile
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -38,10 +39,6 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
-  end
-
-  def full_name
-    "#{name} #{surname}"
   end
 
   def specialist_groups
@@ -69,7 +66,7 @@ class User < ActiveRecord::Base
     role.to_s == 'client'
   end
   def specialist?
-    role.specialist? || role.admin?
+    role.specialist?
   end
   def moderator?
     %w{admin moderator}.include?(role.to_s)
@@ -93,5 +90,9 @@ class User < ActiveRecord::Base
       p.name = ''
       p.surname = ''
     end
+  end
+
+  def qiwi
+   transactions_in.map(&:amount).sum - transactions_out.map(&:amount).sum
   end
 end

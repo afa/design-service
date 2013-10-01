@@ -20,6 +20,6 @@ class UserDecorator < Draper::Decorator
   #     end
   #   end
   def avatar(options = {})
-    h.image_tag((source.avatar || source.build_avatar).photo.url, options)
+    h.image_tag(source.avatar.url, options)
   end
 end

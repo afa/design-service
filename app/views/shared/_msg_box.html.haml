@@ -12,7 +12,7 @@
     .chat_form
       = simple_form_for Message.new, remote: true, html: {class: 'msg_form'} do |f|
         = f.input_field :text, as: :text, class: 'msg_sender'
-        %input.send_msg{:type => 'image', :src =>"#{asset_path('msg_send.jpg')}", :alt => "Отправить"}
+        %input.send_msg{:type => 'image', :src => asset_path('msg_send.jpg'), :alt => "Отправить"}
     .order_data_bottom
       %span
         .order_info Исходные данные

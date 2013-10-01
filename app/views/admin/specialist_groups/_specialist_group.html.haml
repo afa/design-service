@@ -1,0 +1,4 @@
+= simple_form_for [:admin, specialist_group] do |f|
+  = f.association :specialists
+  = f.association :portfolios, collection: specialist_group.available_portfolios
+  = f.submit
