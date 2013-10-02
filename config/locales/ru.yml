@@ -5,7 +5,7 @@ ru:
   attachment_kinds:
     plan_of_flat: 'План квартиры'
     supplementary_files: 'Вспомогательные файлы'
-    design_project: 'Дизайн-проект'
+    design_project: 'Дизайн-проекты'
     plan_with_furniture: 'План с расстановкой мебели'
   http_status:
     unauthorized: 'Вы не авторизованы для просмотра этого файла'
@@ -79,8 +79,8 @@ ru:
     plan_developments: 'Разработка вариантов планировок'
     replanning_endorsements: 'Согласование перепланировок'
     engineering_systems: 'Инженерые системы и конструктив'
-    order_customizers: 'Дизайн-проект'
-    selected_forms: 'Дизайн-проект'
+    order_customizers: 'Дизайн-проекты'
+    selected_forms: 'Дизайн-проекты'
     specialists: 'Специалисты'
     specialist_groups: 'Специалисты'
     personal_accounts: 'ЛИЦЕВОЙ СЧЕТ'

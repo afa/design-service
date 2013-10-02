@@ -28,6 +28,7 @@ class ProfilesController < InheritedResources::Base
     end
   end
   def new_orders
+
     if User.current.client?
       @orderable = User.current.orders.includes(:orderable).not_in_work.decorate
     elsif User.current.specialist?
