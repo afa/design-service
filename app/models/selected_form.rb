@@ -1,6 +1,7 @@
 class SelectedForm < ActiveRecord::Base
   include ActsAsOrderable
   belongs_to :order_customizer
+  has_many :floor_plans
 
   extend Enumerize
   enumerize :interior_style, in: [:classicism, :modern_minimalism, :east, :modernart_deco, :any]
@@ -8,6 +9,8 @@ class SelectedForm < ActiveRecord::Base
   enumerize :show_results_different, in: [:'palette_combinations', :'3d_visualization', :freehand_drawing]
 
   scope :by_type, ->(type){ joins(:order_customizer).where(order_customizers: {typename: type}) }
+
+  accepts_nested_attributes_for :floor_plans
 
   def attachment_kinds
     ['plan_with_furniture']
@@ -28,4 +31,7 @@ class SelectedForm < ActiveRecord::Base
   def typename=(type)
     order_customizer = OrderCustomizer.by_type(type)
   end
+
+
+
 end

@@ -79,6 +79,7 @@ DesignService::Application.routes.draw do
   get 'design_projects' => 'order_customizers#index'
 
   resources :selected_forms do
+    resources :floor_plans
     resources :attachments
   end
 

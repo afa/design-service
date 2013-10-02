@@ -5,8 +5,11 @@
       %br/
       Тел: +7 (495) 123-45-67
       %br/
-      E-mail: info@design-servis.ru
-    .rights Дизайн-Сервис©2О12
+      = mail_to 'info@design-servis.ru' do
+        E-mail: info@design-servis.ru
+    .rights 
+      = link_to root_url do
+        Дизайн-Сервис©2О12
     .partners
       Партнеры:
       %br/

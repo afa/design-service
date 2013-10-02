@@ -1,5 +1,5 @@
 .order_fields
-  = simple_form_for selected_form, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
+  = simple_nested_form_for selected_form, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
     = f.input_field :typename, as: :hidden
     .design_p_floor_plans_form1.border_x1.rounded-corners_l2.shadow_x1
       .number
@@ -9,8 +9,6 @@
 
       .number_second
       .form_description_second
-      %span.text
-        Наименование помещения:#{ f.input_field :room_name, class: 'textlines_default textline_l8' }
       .interior
         Какой стиль интерьера Вы предпочитаете?
         = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
@@ -29,64 +27,11 @@
         %span
           %input#what_meterials{:name => "", :type => "checkbox", :value => ""}
           %label{:for => "what_meterials"} На усмотрение дизайнера
-      #room_block1.room_blocks
-        .place
-          Помещение
-          %input.textlines_default.textline_l6-5{:name => "room_block1plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999')}; return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000')}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
-        %ul.border_x6.rounded-corners_l3
-          %li
-            %input#room_block1option1{:name => "room_block1option1", :type => "checkbox"}
-            %label{:for => "room_block1option1"}
-              Искусственных
-              %br
-              холодных
-          %li
-            %input#room_block1option2{:name => "room_block1option2", :type => "checkbox"}
-            %label{:for => "room_block1option2"}
-              Искусственных
-              %br
-              теплых
-          %li
-            %input#room_block1option3{:name => "room_block1option3", :type => "checkbox"}
-            %label{:for => "room_block1option3"}
-              Ковролин или набивной
-              %br
-              рисунок ковра
-          %li
-            %input#room_block1option4{:name => "room_block1option4", :type => "checkbox"}
-            %label{:for => "room_block1option4"} Камень
-          %li
-            %input#room_block1option5{:name => "room_block1option5", :type => "checkbox"}
-            %label{:for => "room_block1option5"} Дерево
-      #room_block2.room_blocks
-        .place
-          Помещение
-          %input.textlines_default.textline_l6-5{:name => "room_block2plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999'); remove_next(2)};  return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000'); make_new_block($(this),'2');}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
-        %ul.border_x6.rounded-corners_l3
-          %li
-            %input#room_block2option1{:name => "room_block2option1", :type => "checkbox"}
-            %label{:for => "room_block2option1"}
-              Искусственных
-              %br
-              холодных
-          %li
-            %input#room_block2option2{:name => "room_block2option2", :type => "checkbox"}
-            %label{:for => "room_block2option2"}
-              Искусственных
-              %br
-              теплых
-          %li
-            %input#room_block2option3{:name => "room_block2option3", :type => "checkbox"}
-            %label{:for => "room_block2option3"}
-              Ковролин или набивной
-              %br
-              рисунок ковра
-          %li
-            %input#room_block2option4{:name => "room_block2option4", :type => "checkbox"}
-            %label{:for => "room_block2option4"} Камень
-          %li
-            %input#room_block2option5{:name => "room_block2option5", :type => "checkbox"}
-            %label{:for => "room_block2option5"} Дерево
+
+
+      = render partial: 'order_customizers/forms/floor_plans/places', locals: {orderable_form: f}
+      = f.link_to_add 'Add',:floor_plans
+
     .design_p_floor_plans_form2.border_x3.rounded-corners_l2.shadow_x1
       .number
       .form_description

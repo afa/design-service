@@ -5,10 +5,20 @@
 //= require orderable
 
 $(document).ready ->
-  $(".warning_show").click ->
-    checker = $(this).is(':checked');
-    li_near = $(this).parent().next('li');
-    if checker is true
-      li_near.show()
-    else
-      li_near.hide()
+  selectChecked = (select) ->
+    $(".warning_show").each ->
+      checker = $(this).is(':checked');
+      li_near = $(this).parent().next('li');
+      if checker is true
+        li_near.show()
+        $('ol.eng_systems li.'+ $(this).attr('id')).show()
+
+      else
+        li_near.hide()
+        $('ol.eng_systems li.'+$(this).attr('id')).hide()
+
+  selectChecked(this);
+  $(".warning_show").on( "click", selectChecked );
+
+
+ 

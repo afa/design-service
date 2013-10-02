@@ -1,5 +1,6 @@
 #header
-  #designService.headerLayer1
+  = link_to root_url do
+    #designService.headerLayer1
   %ul.text_shadow_1
     %li.shadow_x3
       %a{:href => plan_developments_path}
@@ -10,7 +11,7 @@
           планировок
     %li.shadow_x3
       %a{:href => replanning_endorsements_path}
-        %span Согласования перепланировок
+        %span Согласование перепланировки
     %li.shadow_x3
       %a{:href => design_projects_path}
         %span Дизайн-проекты
@@ -20,4 +21,4 @@
           Инженерные
           = succeed "системы" do
             %br/
-          и конструктив
+          и конструкции
