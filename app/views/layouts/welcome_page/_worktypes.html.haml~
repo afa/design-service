@@ -1,23 +1,28 @@
-#header
-  #designService.headerLayer1
-  %ul.text_shadow_1
-    %li.shadow_x3
+#block_menu
+  %p Выбери
+  %ul
+    %li
+    %li
       %a{:href => plan_developments_path}
         %span
           Разработка
           = succeed "вариантов" do
             %br/
+	    %br/
           планировок
-    %li.shadow_x3
+    %li
       %a{:href => replanning_endorsements_path}
         %span Согласования перепланировок
-    %li.shadow_x3
+    %li
+    %li
+    %li
       %a{:href => design_projects_path}
-        %span Дизайн-проекты
-    %li.shadow_x3
+        %span Дизайн-проект
+    %li
       %a{:href => engineering_systems_path}
         %span
           Инженерные
           = succeed "системы" do
             %br/
           и конструктив
+    %li

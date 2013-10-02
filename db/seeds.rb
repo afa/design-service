@@ -27,10 +27,9 @@ end
   sweep_wall: 'Развертки стен',
   floor_plans: 'Планы полов',
   ceiling_fixtures: 'Планы потолков и освещение',
-  ventilation: 'Вентиляция и кондиционирование',
   draping_materials: 'Подбор отделочных материалов'
 }.each do |typename, name|
-  OrderCustomizer.create(typename: typename, name: name, image: 'concept.jpg', description: 'дизайн-сервис дизайн-сервис дизайн-сервис дизайн-сервис')
+  OrderCustomizer.create(typename: typename, name: name, image: 'concept.jpg', description: '')
 end
 
 admin = User.where(username: 'admin', email: 'prijutme4ty@gmail.com').first_or_create(password: 'VerY_str0ng_p@ssword', password_confirmation: 'VerY_str0ng_p@ssword') do |u|

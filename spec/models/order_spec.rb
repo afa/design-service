@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Order do
  before do
-  @clnt = FactoryGirl.create(:user)
+  @clnt = FactoryGirl.create(:user, :role => 'client')
+  User.current = @clnt
   @orderable = FactoryGirl.create(:replanning_endorsement)
  end
  describe "state_machine" do
@@ -16,17 +17,21 @@ describe Order do
    describe "in state moderator_suggested" do
    end
    describe "in state specialist_agreed" do
-   end
-   describe "in state client_agreed" do
     before do
-     @order = FactoryGirl.create(:order, :payment_state => 'advance_paid', :work_state => 'client_agreed', :client => @clnt, :orderable => @orderable)
+     @order = FactoryGirl.create(:order, :work_state => 'specialist_agreed', :price => 10000.0, :client => @clnt, :orderable => @orderable)
+      #:payment_state => 'advance_paid',
     end
     it "should create payment on transmit" do
      @order.payments.should be_empty
-     @order.start_work!
-     @order.should be_in_work
+     p @order, @order.payments
+     @order.agree!
+     p @order, @order.payments
+     @order.should be_client_agreed
+     p @order, @order.payments
      @order.payments.should_not be_empty
     end
+   end
+   describe "in state client_agreed" do
    end
    describe "in state in_work" do
    end

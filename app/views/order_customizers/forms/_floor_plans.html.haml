@@ -1,115 +1,104 @@
-%form.orderable{:action => ""}
-  .design_p_floor_plans_form1.border_x1.rounded-corners_l2.shadow_x1
-    .number
-    .form_description
-    .file_attaching.border_x5.rounded-corners_l3
-      %span.caution
-        Прикрепите:
-        %ul
-          %li 1. план с расстановкой мебели!
-          %li 2. ИЗОБРАЖЕНИЕ концепции или пример!
-      %span.attach Вы можете перетащить файлы сюда
-    .number_second
-    .form_description_second
-    %span.text
-      Наименование помещения:
-      %input.textlines_default.textline_l8{:name => "plojad", :type => "text"}
-    .interior
-      Какой стиль интерьера Вы предпочитаете?
-      %ul.answer
-        %li
-          %input#classicism{:name => "interior", :type => "radio", :value => ""}
-          %label{:for => "classicism"} Классицизм
-        %li
-          %input#minimalism{:checked => "checked", :name => "interior", :type => "radio", :value => ""}
-          %label{:for => "minimalism"} Современный минимализм
-        %li
-          %input#East{:name => "interior", :type => "radio", :value => ""}
-          %label{:for => "East"} Восток
-        %li
-          %input#Art-Deco{:name => "interior", :type => "radio", :value => ""}
-          %label{:for => "Art-Deco"} Современный Art-Deco
-        %li
-          %input#any{:name => "interior", :type => "radio", :value => ""}
-          %label{:for => "any"}
-            Другое
-            %input.textlines_default.textline_l5{:name => "plojad", :type => "text"}
-    .depending
-      Зависимость от потолков?
-      %ul.answer
-        %li
-          %input#depend_yes{:checked => "checked", :name => "depending", :type => "radio", :value => ""}
-          %label{:for => "depend_yes"} Да
-        %li
-          %input#depend_no{:name => "depending", :type => "radio", :value => ""}/
-          %label{:for => "depend_no"} Нет
-    .what_materials
-      Из каких материалов?
-      %span
-        %input#what_meterials{:name => "", :type => "checkbox", :value => ""}
-        %label{:for => "what_meterials"} На усмотрение дизайнера
-    #room_block1.room_blocks
-      .place
-        Помещение
-        %input.textlines_default.textline_l6-5{:name => "room_block1plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999')}; return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000')}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
-      %ul.border_x6.rounded-corners_l3
-        %li
-          %input#room_block1option1{:name => "room_block1option1", :type => "checkbox"}
-          %label{:for => "room_block1option1"}
-            Искусственных
-            %br
-            холодных
-        %li
-          %input#room_block1option2{:name => "room_block1option2", :type => "checkbox"}
-          %label{:for => "room_block1option2"}
-            Искусственных
-            %br
-            теплых
-        %li
-          %input#room_block1option3{:name => "room_block1option3", :type => "checkbox"}
-          %label{:for => "room_block1option3"}
-            Ковролин или набивной
-            %br
-            рисунок ковра
-        %li
-          %input#room_block1option4{:name => "room_block1option4", :type => "checkbox"}
-          %label{:for => "room_block1option4"} Камень
-        %li
-          %input#room_block1option5{:name => "room_block1option5", :type => "checkbox"}
-          %label{:for => "room_block1option5"} Дерево
-    #room_block2.room_blocks
-      .place
-        Помещение
-        %input.textlines_default.textline_l6-5{:name => "room_block2plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999'); remove_next(2)};  return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000'); make_new_block($(this),'2');}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
-      %ul.border_x6.rounded-corners_l3
-        %li
-          %input#room_block2option1{:name => "room_block2option1", :type => "checkbox"}
-          %label{:for => "room_block2option1"}
-            Искусственных
-            %br
-            холодных
-        %li
-          %input#room_block2option2{:name => "room_block2option2", :type => "checkbox"}
-          %label{:for => "room_block2option2"}
-            Искусственных
-            %br
-            теплых
-        %li
-          %input#room_block2option3{:name => "room_block2option3", :type => "checkbox"}
-          %label{:for => "room_block2option3"}
-            Ковролин или набивной
-            %br
-            рисунок ковра
-        %li
-          %input#room_block2option4{:name => "room_block2option4", :type => "checkbox"}
-          %label{:for => "room_block2option4"} Камень
-        %li
-          %input#room_block2option5{:name => "room_block2option5", :type => "checkbox"}
-          %label{:for => "room_block2option5"} Дерево
-  .design_p_floor_plans_form2.border_x3.rounded-corners_l2.shadow_x1
-    .form_description
-    %input.var_form3_default.textline_l11{:name => "", :type => "text"}
-    %input.var_form3_default.textline_l11{:name => "", :type => "text"}
-    %input.var_form3_default.textline_l11{:name => "", :type => "text"}
-  %span.design_p_floor_plans-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
-  = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p_floor_plans_submiting'}
+.order_fields
+  = simple_form_for selected_form, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
+    = f.input_field :typename, as: :hidden
+    .design_p_floor_plans_form1.border_x1.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      .file_attaching.border_x5.rounded-corners_l3.multiattach
+        .attach_place_for_box
+
+      .number_second
+      .form_description_second
+      %span.text
+        Наименование помещения:#{ f.input_field :room_name, class: 'textlines_default textline_l8' }
+      .interior
+        Какой стиль интерьера Вы предпочитаете?
+        = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
+        = f.input_field :interior_style_comment, as: :string, class: ['textlines_default', 'textline_l5'], size:10
+      .depending
+        Зависимость от потолков?
+        %ul.answer
+          %li
+            %input#depend_yes{:checked => "checked", :name => "depending", :type => "radio", :value => ""}
+            %label{:for => "depend_yes"} Да
+          %li
+            %input#depend_no{:name => "depending", :type => "radio", :value => ""}/
+            %label{:for => "depend_no"} Нет
+      .what_materials
+        Из каких материалов?
+        %span
+          %input#what_meterials{:name => "", :type => "checkbox", :value => ""}
+          %label{:for => "what_meterials"} На усмотрение дизайнера
+      #room_block1.room_blocks
+        .place
+          Помещение
+          %input.textlines_default.textline_l6-5{:name => "room_block1plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999')}; return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000')}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
+        %ul.border_x6.rounded-corners_l3
+          %li
+            %input#room_block1option1{:name => "room_block1option1", :type => "checkbox"}
+            %label{:for => "room_block1option1"}
+              Искусственных
+              %br
+              холодных
+          %li
+            %input#room_block1option2{:name => "room_block1option2", :type => "checkbox"}
+            %label{:for => "room_block1option2"}
+              Искусственных
+              %br
+              теплых
+          %li
+            %input#room_block1option3{:name => "room_block1option3", :type => "checkbox"}
+            %label{:for => "room_block1option3"}
+              Ковролин или набивной
+              %br
+              рисунок ковра
+          %li
+            %input#room_block1option4{:name => "room_block1option4", :type => "checkbox"}
+            %label{:for => "room_block1option4"} Камень
+          %li
+            %input#room_block1option5{:name => "room_block1option5", :type => "checkbox"}
+            %label{:for => "room_block1option5"} Дерево
+      #room_block2.room_blocks
+        .place
+          Помещение
+          %input.textlines_default.textline_l6-5{:name => "room_block2plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999'); remove_next(2)};  return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000'); make_new_block($(this),'2');}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
+        %ul.border_x6.rounded-corners_l3
+          %li
+            %input#room_block2option1{:name => "room_block2option1", :type => "checkbox"}
+            %label{:for => "room_block2option1"}
+              Искусственных
+              %br
+              холодных
+          %li
+            %input#room_block2option2{:name => "room_block2option2", :type => "checkbox"}
+            %label{:for => "room_block2option2"}
+              Искусственных
+              %br
+              теплых
+          %li
+            %input#room_block2option3{:name => "room_block2option3", :type => "checkbox"}
+            %label{:for => "room_block2option3"}
+              Ковролин или набивной
+              %br
+              рисунок ковра
+          %li
+            %input#room_block2option4{:name => "room_block2option4", :type => "checkbox"}
+            %label{:for => "room_block2option4"} Камень
+          %li
+            %input#room_block2option5{:name => "room_block2option5", :type => "checkbox"}
+            %label{:for => "room_block2option5"} Дерево
+    .design_p_floor_plans_form2.border_x3.rounded-corners_l2.shadow_x1
+      .number
+      .form_description
+      = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
+    %span.design_p_floor_plans-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
+    = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p_floor_plans_submiting'}
+
+  .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
+    = render partial: 'attachments/list_of_attachments', locals:{attachments: selected_form.attachments, has_remove_button: !disabled}
+  = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: selected_form, kind: 'plan_with_furniture', disabled: disabled, wrapper_class: ''}
+  %span.attach_info_block.caution 
+    Прикрепите:
+    %ul
+      %li 1. план с расстановкой мебели!
+      %li 2. ИЗОБРАЖЕНИЕ концепции или пример!

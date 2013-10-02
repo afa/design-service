@@ -24,4 +24,10 @@ class Purchase < ActiveRecord::Base
   def renew_payment
    payment.regen_purchase
   end
+
+  def robo_info
+   iface = Rubykassa::XmlInterface.new
+   iface.invoice_id = id
+   xml = iface.op_state.try(:[], "OperationStateResponse")
+  end
 end

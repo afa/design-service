@@ -22,6 +22,7 @@ class PurchasesController < ApplicationController
     return
    end
    begin
+   purchase.amount = sum
    purchase.ok
    rescue Exception => e
    p "---ex", e
@@ -38,7 +39,6 @@ class PurchasesController < ApplicationController
   end
 
   def bad
-   p '---payparm', params
    sum = params.delete('OutSum')
    pay = params.delete('InvId')
    sign = params.delete('SignatureValue')
