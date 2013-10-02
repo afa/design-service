@@ -17,12 +17,14 @@ class Payment < ActiveRecord::Base
    before_transition :created => :requested, :do => :mk_purchase
    event :ok do
     transition :requested => :paid, :if => :purchase_ok?
+    transition :requested => :requested
    end
    event :bad do
     transition :requested => :failed
    end
 
    after_transition :requested => :paid, :do => :commit_order
+   after_transition :requested => :requested, :do => :regen_purchase
   end
 
   def commit_order
@@ -30,17 +32,20 @@ class Payment < ActiveRecord::Base
   end
 
   def mk_purchase
-   amount = order.need_amount
+   amount = order.need_amount - paid_amount
    purchases.create :amount => amount
   end
 
   def purchase_ok?
-   purchases.detect{|p| p.paid? }
+   paid_amount >= amount
   end
 
   def regen_purchase
-   unless purchase_ok? or purchases.detect{|p| p.requested? }
-    mk_purchase
-   end
+   purchases.where(:state => :requested).update_all("state = 'failed'")
+   mk_purchase
+  end
+
+  def paid_amount
+   purchases.where(:state => :paid).inject(0.0){|r, p| r + p.amount }
   end
 end

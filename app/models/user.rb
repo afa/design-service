@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
-  has_many :received_messages, as: :recipient
+  has_many :received_messages, :class_name => 'Message', as: :recipient
   has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id', inverse_of: :sender
 
   has_many :transactions_in, :as => :destination, :class_name => 'Transaction'
@@ -94,5 +94,8 @@ class User < ActiveRecord::Base
 
   def qiwi
    transactions_in.map(&:amount).sum - transactions_out.map(&:amount).sum
+  end
+  def transactions
+   transactions_in + transactions_out
   end
 end
