@@ -32,6 +32,7 @@ class SelectedForm < ActiveRecord::Base
     order_customizer = OrderCustomizer.by_type(type)
   end
 
-
-
+  def flat_area
+    room_space
+  end
 end
