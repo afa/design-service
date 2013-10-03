@@ -4,7 +4,7 @@ module ActsAsOrderable
   def paid?; order.paid?; end
   def title; I18n.t "titles.#{self.class.name.underscore}"; end
   def authorized_user?(user)
-    user && (user == order.client || user == order.executor || user.moderator?)
+    user && (user == order.client || user == order.executor.user || user.moderator?)
   end
 
   module ClassMethods
@@ -50,7 +50,26 @@ module ActsAsOrderable
       scope :by_client, ->(user){ joins(:order).where(orders: {client_id: user}) }
       scope :by_work_state, ->(state){ joins(:order).where(orders: {work_state: state}) }
 
+      after_commit ->{ order.touch }
+
       has_paper_trail
     end
+  end
+
+  def default_price_per_square_meter
+    return nil  unless flat_area
+    points = [[10, 500],[30,200],[100,100],[250,60]].sort_by{|area,price| area}
+    if flat_area < points.first.first
+      points.first.last
+    elsif points.last.first < flat_area
+      points.last.last
+    else
+      (area_1,price_1),(area_2,price_2) = points.each_cons(2).detect{|(area_1,price_1),(area_2,price_2)| (area_1...area_2).include?(flat_area) }
+      price_1 + (price_2 - price_1) * (flat_area - area_1) / (area_2-area_1).to_f
+    end
+  end
+  def default_price
+    return nil  unless flat_area
+    default_price_per_square_meter * flat_area
   end
 end

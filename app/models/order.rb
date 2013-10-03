@@ -81,7 +81,7 @@ class Order < ActiveRecord::Base
   def interlocutor(user)
     if user == client
       executor
-    elsif user == executor
+    elsif executor.is_a?(Specialist) && user == executor.user
       client
     else
       raise "This user doesn't have access to this dialog"
@@ -139,10 +139,17 @@ class Order < ActiveRecord::Base
 
   def price=(value)
     write_attribute(:price, value).tap do
-      set_price(false)  if price
+      set_price(false)  if valid_price?
     end
   end
 
+  def default_price
+    orderable.default_price
+  end
+
+  def valid_price?
+    price && price > 0.0
+  end
 private
   def self.accepted_to_start_work_arel
     arel_table[:work_state].eq_any([:client_agreed, :in_work, :work_accepted])

@@ -10,6 +10,7 @@ class MessagesController < InheritedResources::Base
   respond_to :json, only: [:create, :index, :show_messages, :show_attachments]
 
   before_filter :check_have_recipient, only: [:new, :create]
+  before_filter :select_accepted, only: [:index]
 
   def new
     @message = Message.new do |msg|
@@ -70,5 +71,9 @@ private
     render_to_string(partial: 'messages/message_in_chat',
                     collection: collection.ordered_by_date, as: :message,
                     layout: false, formats: [:html], handlers: [:haml])
+  end
+
+  def select_accepted
+    @messages = collection.accepted_or_self
   end
 end
