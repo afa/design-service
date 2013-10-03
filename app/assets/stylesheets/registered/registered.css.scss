@@ -40,7 +40,7 @@
 body  {
   font: 100% gardensc, Arial, Helvetica, sans-serif;
   font-family: Tahoma;
-  background:image-url("fon-y.jpg") repeat-y;
+  background:image-url("fon-y.jpg") repeat;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -200,7 +200,7 @@ div.engineering_systems_form1 div.number{ background-image:image-url("1_number_o
 div.engineering_systems_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height:29px; margin-left:10px; }
 div.engineering_systems_form1 div.head_part{ background-image:image-url("engineering_systems_form1-small.png"); width:430px; height:28px;  clear:both; margin:40px 0px 0px 35px; }
 div.engineering_systems_form1  div.file_attaching{ width:495px; margin-top:15px; float:left; font-size:14px; }
-div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; height:30px; margin-top:10px;}
+div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px;  float:left;}
 
 div.engineering_systems_form1  div.file_attaching span.attach{ padding:30px 0px 0px 140px; margin-top:0px;  color: #8e8e8e; float:left; background-image:image-url("file_att.png"); background-repeat: no-repeat; background-position: 80px 15px;}
 
@@ -221,6 +221,8 @@ div.engineering_systems_form3 div.form_description{ background-image:image-url("
 
 div.engineering_systems_submiting{  height:50px; width:550px; margin-left:60px; padding:20px 0px 20px 0px; float:left;}
 
+ol.eng_systems{ float:left; list-style-type:decimal; }
+ol.eng_systems li{ margin-bottom:10px; width:450px;}
 
 
 /*  PAGE CONCEPT REG_DESIGN_PROJECT.HTML */
@@ -728,9 +730,11 @@ ul#menu_sub_left li.selected span{ background-image:image-url("menu-spec-reg-hov
 div.footer{ float:left; position:absolute; width:100%; background-image:image-url("footer_opacity.png"); background-repeat:repeat; clear:both;}
 div.footer div.footer_elements{width:980px; margin:0 auto; height:90px; background-image:image-url("coconut_leaves_footer.png"); background-repeat:no-repeat; background-position:center -110px; color:#963577; font-size:14px; font-weight: normal; line-height:22px;}
 div.footer_elements div.contact_with_us{ width:250px; float:left; text-align:left; margin-top:15px; }
-div.footer_elements div.rights{ float:left; text-align:left; margin:55px 0px 0px 120px; text-decoration:underline;}
+div.footer_elements div.rights{ float:left; text-align:left; margin:55px 0px 0px 120px; }
 div.footer_elements div.partners{ text-align:right; float: right;  margin-top:15px; }
 
+div.footer a, div.footer a:link, div.footer a:visited, div.footer a:active{ color:#963577; text-decoration:underline; }
+div.footer a:hover{ text-decoration:none; }
 
 /*  DEFAULT CLASSES */
 .light_green{ background-color:#cfe4b4; color:#4d8701;}
