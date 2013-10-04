@@ -164,6 +164,16 @@ class Order < ActiveRecord::Base
   def valid_price?
     price && price > 0.0
   end
+
+  def money_for_specialist
+    return nil  unless executor && executor.is_a?(Specialist)
+    labor_participation = executor.labor_participation || 1.0
+    if labor_participation
+      price.to_f * labor_participation
+    else
+      price
+    end
+  end
 private
   def self.accepted_to_start_work_arel
     arel_table[:work_state].eq_any([:client_agreed, :in_work, :work_accepted])

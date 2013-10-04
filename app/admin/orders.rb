@@ -16,28 +16,37 @@ ActiveAdmin.register Order do
     end
   end
 
+  table_columns = lambda do |table|
+    table.instance_eval do
+      # default_actions
+      column 'Дата обновления', :updated_at
+      column 'Действия' do |order|
+        link_to order.admin_actions, admin_order_path(order)
+      end
+      column 'Статус', sortable: :work_state do |order|
+        order.admin_work_state
+      end
+      column :client
+      # Здесь хорошо бы ещё сортировать по подтипу, но не факт, что это возможно
+      column 'Тип заказа', sortable: :orderable_type do |order|
+        link_to order.title, [:admin, order.orderable]
+      end
+      column :price
+      column :executor
+      column 'Номер заказа', :id
+      column 'Дата создания', :created_at
+    end
+  end
+
   show do
+    table_for [resource] do
+      table_columns.call(self)
+    end
     render partial: 'order', locals: {order: resource}
   end
   form partial: 'form'
 
-  index do |f|
- #   default_actions
-    column 'Дата обновления', :updated_at
-    column 'Действия' do |order|
-      link_to order.admin_actions, admin_order_path(order)
-    end
-    column 'Статус', sortable: :work_state do |order|
-      order.admin_work_state
-    end
-    column :client
-    # Здесь хорошо бы ещё сортировать по подтипу, но не факт, что это возможно
-    column 'Тип заказа', sortable: :orderable_type do |order|
-      link_to order.title, [:admin, order.orderable]
-    end
-    column :price
-    column :executor
-    column 'Номер заказа', :id
-    column 'Дата создания', :created_at
+  index do
+    table_columns.call(self)
   end
 end

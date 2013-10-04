@@ -1,16 +1,22 @@
 .order
-  = show_for order do |s|
-    = s.attribute :orderable_info
-    = s.attribute :client_info
-    = s.attribute :executor
-    = s.attribute :work_state
-    = s.attribute :payment_state
-    = s.attribute :completion_status
-    = s.attribute :created_at
-    = s.attribute :updated_at
-  = simple_form_for [:admin, resource] do |f|
-    = f.association :executor, collection: SpecialistDecorator.decorate_collection(resource.possible_executors)
-    = f.input :price
+  - if order.specialist_group
+    .group_submitted_to
+      = precede 'Отправлено группе' do
+        = order.specialist_group
+  - if order.price
+    .order_price
+      = precede 'Цена заказа' do
+        = order.price
+    .order_specialist_price
+      = precede 'Цена специалисту' do
+        = order.money_for_specialist
+  = simple_form_for [:admin, order] do |f|
+    = f.association :executor, collection: SpecialistDecorator.decorate_collection(order.possible_executors)
+    - if !order.price
+      - if order.default_price
+        = precede 'Рекомендованная цена' do
+          = order.default_price
+      = f.input :price
     = f.submit
 .message_list
   = render partial: 'messages/message_in_admin_order', collection: order.messages, as: :message, spacer_template: 'shared/hr_separator'
