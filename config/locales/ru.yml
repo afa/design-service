@@ -96,7 +96,7 @@ ru:
       new: 'Вход'
       create: 'Регистрация'
     devise/passwords:
-      new: 'Забыли пароль'
+      new: 'Восстановление пароля'
       create: 'Забыли пароль'
       edit: 'Смена пароля'
       update: 'Смена пароля'
@@ -111,6 +111,7 @@ ru:
     order_customizers: 'design_project'
     selected_forms: 'design_p-workin-docs'
     specialists: ''
+    devise/passwords: 'more_headings'
   welcome:
     title: ''
   plan_developments:
