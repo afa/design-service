@@ -6,7 +6,7 @@
 #   close_fly_window()
 
 window.show_fly_window = (element_name) ->
-  element_to_render = $('.black_content_blocks').find(element_name)
+  element_to_render = $('.black_content_blocks').find(element_name).first()
   black_content = $("#black_content")
   black_content.append( element_to_render )
   black_content.css(height: $(document).height()).show()
