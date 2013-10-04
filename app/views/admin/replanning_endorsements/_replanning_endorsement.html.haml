@@ -1,6 +1,6 @@
 = show_for resource do |s|
-  = s.association :client do |c|
-    = c.decorate.admin_link
+  = s.association :client #do |c|
+  /  = c.decorate.admin_link
   = s.attribute :developed_by_general_projector
   = s.attribute :flat_area
   = s.attribute :replanning_organization_licensed
