@@ -53,4 +53,7 @@ class OrderDecorator < Draper::Decorator
     end
 
   end
+  def work_state
+    I18n.t "order.work_state.#{source.work_state}"
+  end
 end

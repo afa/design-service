@@ -100,7 +100,12 @@ class User < ActiveRecord::Base
   def qiwi
    transactions_in.map(&:amount).sum - transactions_out.map(&:amount).sum
   end
+
   def transactions
    transactions_in + transactions_out
+  end
+
+  def user
+    self
   end
 end
