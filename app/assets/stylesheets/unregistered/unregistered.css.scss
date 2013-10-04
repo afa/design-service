@@ -720,6 +720,9 @@ input[type='checkbox']:checked + label {
 	cursor: pointer;
 }
 
+div.more_headings{  border-bottom-color:#a8d868; margin-bottom:5px; float: left; width:550px; }
+span.more_headings{ margin-left:0px; padding:0px; color:#3d6804;}
+body.unregistered div.page_description span.more_headings{ padding-left:0px; }
 
 .reg_client_tfeild{ width:280px; padding:0px; margin:0px; border:none; height:25px; font-size:16px; color:#4c4c4c;}
 .log_client_tfeild{ width:200px; padding:0px; margin:0px; border:none; height:25px; font-size:16px; color:#4c4c4c;}
@@ -736,7 +739,12 @@ div.calculator span.count{float: left; color:#666; padding-left:220px; text-deco
 div.attach_place_for_box{ position:relative; float:left;   width:500px; min-height:140px; overflow: auto; margin-top:5px;}
 .attach_box{ position:absolute; z-index:34;}
 
-ul.list_of_attachments{ width:480px;  position:relative; clear:both; overflow:auto; z-index:80; padding-top:8px;}
+ul.list_of_attachments{ width:480px;  position:relative; clear:both; overflow:auto; z-index:80; padding-top:8px;}#forgot_password div.form-actions
 
 ul.list_of_attachments li{ float:left;}
 
+
+/* PASSWORDS */
+div#forgot_password{ margin-left:185px; margin-top:4s5px; }
+div#forgot_password div.form-inputs{ margin-top:15px;}
+div#forgot_password div.form-actions{ margin-top:45px;}
