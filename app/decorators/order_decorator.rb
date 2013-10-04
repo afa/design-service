@@ -78,4 +78,8 @@ class OrderDecorator < Draper::Decorator
       work_state
     end
   end
+
+  def client
+    source.client.guest? ? source.client.try(&:email) : source.client.to_s
+  end
 end

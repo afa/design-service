@@ -74,7 +74,7 @@ class ApplicationController < ActionController::Base
     if current_user
       if session[:guest_user_id]
         logging_in
-        guest_user.destroy
+        #guest_user.destroy
         session[:guest_user_id] = nil
       end
       current_user
@@ -96,10 +96,10 @@ class ApplicationController < ActionController::Base
   # called (once) when the user logs in, insert any code your application needs
   # to hand off from guest_user to current_user.
   def logging_in
-    guest_orders = guest_user.try{|user| user.orders.all}
-    guest_orders.each do |order|
-      order.client_id = User.current.id
-      order.save!
-    end
+#    guest_orders = guest_user.try{|user| user.orders.all}
+#    guest_orders.each do |order|
+#      order.client_id = User.current.id
+#      order.save!
+#    end
   end
 end
