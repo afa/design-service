@@ -24,6 +24,7 @@ class Order < ActiveRecord::Base
     state :draft
     state :moderator_suggested
     state :specialist_agreed
+    state :specialist_disagreed
     state :client_agreed
     state :in_work
     state :work_accepted
