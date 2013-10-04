@@ -7,7 +7,9 @@ class SpecialistGroup < ActiveRecord::Base
   has_one :avatar, as: :imageable_single, class_name: 'Photo'
   has_many :received_messages, as: :recipient, class_name: 'Message'
 
-  has_many :orders, as: :executor
+  has_many :groups_orders, as: :executor, :class_name => 'Order'
+  has_many :orders
+  # привязка группы к заказу напрямую, не через исполнителя. считать цену и выбирать исплнителей. 
   has_many :reviews, through: :specialists
 
   def messages; received_messages; end
@@ -29,7 +31,7 @@ class SpecialistGroup < ActiveRecord::Base
   end
 
   def union_name
-    specialization ? I18n.t("specialist_groups.union_name.#{specialization}") : I18n.t('specialist_groups.union_name.not_a_specialist')
+    I18n.t("specialist_groups.union_name.#{specialization || :not_a_specialist}")
   end
 
   def available_portfolios

@@ -43,7 +43,11 @@ class OrderDecorator < Draper::Decorator
 
     if User.current.specialist?
       labor_participation = User.current.specialist.labor_participation || 1.0
-      source.price * labor_participation
+      if labor_participation
+       source.price.to_f * labor_participation
+      else 
+       source.price
+      end
     else
       source.price
     end

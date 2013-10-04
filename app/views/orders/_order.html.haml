@@ -37,7 +37,7 @@
     - if order.can_agree_price?
       = link_to agree_price_order_path(order, format: 'json'), remote: true, method: :put do
         %span.agree принять цену
-  .documents
+  -#.documents
     Документы:
     %ul
       %li

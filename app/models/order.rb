@@ -2,12 +2,16 @@ class Order < ActiveRecord::Base
   belongs_to :orderable, polymorphic: true
   belongs_to :client, class_name: 'User', foreign_key: 'client_id', counter_cache: true
   belongs_to :executor, polymorphic: true
+  belongs_to :specialist_group
   has_many :reviews, dependent: :destroy
   has_many :messages, as: :attached_to, dependent: :destroy
   has_many :payments
   has_many :purchases, :through => :payments
   has_many :attachments, as: :attachable
   has_many :transactions
+
+  has_many :transactions_in, :as => :destination, :class_name => 'Transaction'
+  has_many :transactions_out, :as => :source, :class_name => 'Transaction'
 
   scope :by_client, ->(client_id) { where(client_id: client_id) }
   scope :by_executor, ->(executor) { where(executor_id: executor.id, executor_type: executor.class.name) }
@@ -28,7 +32,8 @@ class Order < ActiveRecord::Base
       transition :draft => :draft
     end
     event :set_price do
-      transition [:draft, :moderator_suggested] => :moderator_suggested
+      transition [:draft, :moderator_suggested] => :moderator_suggested, :if => :test_price
+      transition :draft => :draft
     end
 
     event :agree do
@@ -70,6 +75,10 @@ class Order < ActiveRecord::Base
    pay.request!
   end
 
+  def test_price
+   not price.blank? || executor.nil?
+  end
+
   def can_pay?
    client_agreed? || in_work? || work_accepted? && (!paid?)
   end
@@ -108,6 +117,10 @@ class Order < ActiveRecord::Base
     price && price * 0.5
   end
 
+  def qiwi
+   transactions_in.map(&:amount).sum - transactions_out.map(&:amount).sum
+  end
+
   # FIX ME: refactor
   def amount_paid
     payments.where(:state => :paid).inject(0.0){|r, p| r + p.amount }
@@ -116,8 +129,8 @@ class Order < ActiveRecord::Base
 
   def need_amount
    return 0.0 if amount_paid.to_f >= price.to_f
-   return price - amount_paid.to_f if amount_paid.to_f > advance_price.to_f
-   return advance_price.to_f - amount_paid.to_f
+   return price - amount_paid.to_f #if amount_paid.to_f > advance_price.to_f
+   #return advance_price.to_f - amount_paid.to_f
   end
 
   def possible_executors

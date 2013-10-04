@@ -4,14 +4,7 @@ class Specialist < ActiveRecord::Base
   has_and_belongs_to_many :specialist_groups
   has_many :orders, as: :executor
 
-  #has_many :transactions_in, :class_name => 'Transaction', :as => :destination
-  #has_many :transactions_out, :class_name => 'Transaction', :as => :source
-
   has_many :reviews, through: :orders
-
-  #def transactions
-  # transactions_in + transactions_out
-  #end
 
   belongs_to :user
   has_one :profile, through: :user
