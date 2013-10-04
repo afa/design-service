@@ -17,6 +17,10 @@ class Purchase < ActiveRecord::Base
   after_transition :requested => :failed, :do => :renew_payment
  end
   def commit_payment
+   if amount > payment.amount
+    Transaction.create :destination => user, :amount => amount - payment.amount
+    amount = payment.amount
+   end
    order.transactions.create :destination => user, :amount => amount
    payment.ok
   end

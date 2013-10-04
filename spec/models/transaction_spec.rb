@@ -14,12 +14,8 @@ describe Transaction do
    end
    it "should create transaction" do
     @order.transactions.should be_empty
-    p @payment
     @purchase.ok
-    p @payment
     @purchase.commit_payment
-    p @payment
-    p Transaction.all
     @order.transactions.should_not be_empty
    end
   end

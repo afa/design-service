@@ -198,6 +198,7 @@ ru:
         price: 'Стоимость'
       order:
         client: 'Заказчик'
+        executor: 'Специалист'
         price: 'Стоимость'
       message:
         text: 'Текст сообщения'
@@ -280,7 +281,7 @@ ru:
       3d_visualization: '3D-Визуализация'
       freehand_drawing: 'Рисунок от руки'
       palette_combinations: 'Палитра сочетаний'
-      
+
     specialization:
       architector: 'Архитектор'
       engineer: 'Инженер'
@@ -317,6 +318,7 @@ ru:
       draft: 'Заказ в черновиках'
       moderator_suggested: 'Модератор предложил цену'
       specialist_agreed: 'Специалист подтвердил предложенную цену'
+      specialist_disagreed: 'Специалист отказался'
       client_agreed: 'Заказчик подтвердил предложенную цену'
       in_work: 'В работе'
       work_accepted: 'Выполненная работа принята'
