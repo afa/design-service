@@ -121,6 +121,11 @@ class Order < ActiveRecord::Base
    transactions_in.map(&:amount).sum - transactions_out.map(&:amount).sum
   end
 
+  def give(whom, how_many, for_order = self)
+   return false if how_many > qiwi
+   Transaction.create :source => self, :destination => whom, :order => for_order, :amount => how_many
+  end
+
   # FIX ME: refactor
   def amount_paid
     payments.where(:state => :paid).inject(0.0){|r, p| r + p.amount }
