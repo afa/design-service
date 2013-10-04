@@ -19,4 +19,7 @@
       = f.input :price
     = f.submit
 .message_list
-  = render partial: 'messages/message_in_admin_order', collection: order.messages, as: :message, spacer_template: 'shared/hr_separator'
+  .participants
+    %span.client= order.client
+    %span.executor= order.executor
+  = render partial: 'messages/message_in_admin_order', collection: order.messages, as: :message, spacer_template: 'shared/hr_separator', locals: {order: order}

@@ -1,8 +1,4 @@
-.message
-  %span.participants
-    = message.sender
-    \=>
-    = message.recipient
+.message{:class => (message.sender.source == order.source.client) ? 'from_client' : 'from_executor' }
   %span.datetime
     = surround '(', ')' do
       = I18n.l(message.created_at.to_date)
