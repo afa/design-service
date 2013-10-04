@@ -7,7 +7,7 @@ class OrderDecorator < Draper::Decorator
     h.link_to source.title, h.admin_order_path(source)
   end
   def client_info
-    client.try{|c| c.decorate.admin_link }
+    source.client.try{|c| c.decorate.admin_link }
   end
   def orderable_info
     if source.orderable
@@ -42,12 +42,13 @@ class OrderDecorator < Draper::Decorator
   def price
 
     if User.current.specialist?
-      labor_participation = User.current.specialist.labor_participation || 1.0
-      if labor_participation
-       source.price.to_f * labor_participation
-      else 
-       source.price
-      end
+      # labor_participation = User.current.specialist.labor_participation || 1.0
+      # if labor_participation
+      #  source.price.to_f * labor_participation
+      # else 
+      #  source.price
+      # end
+      source.money_for_specialist
     else
       source.price
     end

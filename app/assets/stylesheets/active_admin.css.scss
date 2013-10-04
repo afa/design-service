@@ -72,3 +72,26 @@ form.postVarPlan{
   left: 400px;
   position: absolute
 }
+
+.active_admin {
+  .order {
+    float: right;
+  }
+  .message_list {
+    float:left;
+    width: 500px;
+    .participants {
+      width: 100%;
+      border: 1px solid green;
+      height: 1.5em;
+      span.client{ position: absolute; left: 10px; }
+      span.executor{ position:absolute; right:10px; } 
+    }
+    .from_client {
+      padding-left: 10px;
+    }
+    .from_executor {
+      padding-left: 90px;
+    }
+  }
+}

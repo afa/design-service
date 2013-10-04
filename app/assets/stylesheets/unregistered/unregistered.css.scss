@@ -582,8 +582,14 @@ div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; back
 
 /*  REGISTER CLIENT BLOCK*/
 #register{ width:477px; height:394px; background-color: #FFFFFF; margin:0px auto; position:relative; margin-top:130px;   font-family: Tahoma; display:none;}
-#register div.head_register{ height:29px; width:100%; background-image:image-url("register_logo.png"); background-position:center; background-repeat:no-repeat; padding:20px 0px 40px 0px;}
-#register div.info{ width:120px; float:left; margin-left:10px; text-align:right; padding-right:10px; margin-bottom:30px; font-size:16px; color:#4c4c4c;}
+
+#register div.head_register{ height:29px; width:220px; background-image:image-url("register_logo.png"); background-position:left; background-repeat:no-repeat; padding:0px; float:left; margin:30px 0px 40px 30px; }
+
+#register div.goto_register{ height:20px; width:80px; background-image:image-url("enter_logo_small.png"); background-repeat:no-repeat; padding:0px; float:left;  margin-top:40px; margin-left:10px;}
+
+#register div.goto_register:hover{ background-image:image-url("enter_logo_small_hover.png"); cursor: pointer}
+
+#register div.info{ width:120px; float:left; margin-left:10px; text-align:right; padding-right:10px; margin-bottom:30px; font-size:16px; color:#4c4c4c; clear:both;}
 #register div.info span{ color:#990000;}
 #register div.text_fields{  float:left; width:287px; margin-bottom:30px; border-bottom:1px solid #acacac; padding-top:2px;}
 #register div.text_fields span.caution{ position:absolute; width:250px; margin-top:28px; font-size:12px;}
@@ -591,9 +597,15 @@ div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; back
 .submit_button{ float:right; padding-right:40px;}
 
 /*  LOGIN CLIENT BLOCK*/
-#login{ width:412px; height:232px; background-color: #FFFFFF; margin:0px auto; position:relative; margin-top:200px;   font-family: Tahoma; display: none;}
-#login div.head_register{ height:29px; width:100%; background-image:image-url("enter_logo.png"); background-position:25px; background-repeat:no-repeat; padding:20px 0px 30px 0px;}
-#login div.info{ width:165px; float:left; margin-left:0px; text-align:right; padding-right:4px; margin-bottom:25px; font-size:16px; color:#4c4c4c;}
+#login{ width:412px; height:270px; background-color: #FFFFFF; margin:0px auto; position:relative; margin-top:200px;   font-family: Tahoma; display: none;}
+
+#login div.head_register{ height:29px; width:115px; background-image:image-url("enter_logo.png"); background-repeat:no-repeat; margin:30px 0px 40px 30px; float:left;  }
+
+#login div.goto_register{ height:29px; width:160px; background-image:image-url("register_logo_small.png"); background-repeat:no-repeat; padding:0px; float:left;  margin-top:40px; }
+
+#login div.goto_register:hover{ background-image:image-url("register_logo_small_hover.png"); cursor: pointer }
+
+#login div.info{ width:165px; float:left; margin-left:0px; text-align:right; padding-right:4px; margin-bottom:25px; font-size:16px; color:#4c4c4c; clear:both;}
 #login div.text_fields{  float:left; width:200px; margin-bottom:25px; border-bottom:1px solid #acacac; padding-top:2px;}
 #login div.control{ height:30px;  float:left; width:412px; }
 #login div.control span{ font-size:18px; color:#a8d868; padding-left:25px; float:left; }
