@@ -12,7 +12,7 @@ describe Purchase do
  end
  context "when bad" do
   before do
-  @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @user, :payment => @payment, :amount => @payment.amount)
+  @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @clnt, :payment => @payment, :amount => @payment.amount)
    @purchase.bad
   end
   it "should be failed" do
@@ -25,13 +25,13 @@ describe Purchase do
    Order.find(@order.id).purchases.where(:state => :requested).first.amount.should == @order.need_amount
   end
   it "should create purchase for valid user" do
-   Order.find(@order.id).purchases.where(:state => :requested).first.user.should == @user
+   Order.find(@order.id).purchases.where(:state => :requested).first.user.should == @clnt
   end
   it "should markfailed all request purchases before regen"
  end
  context "when ok" do
   before do
-  @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @user, :payment => @payment, :amount => @payment.amount)
+  @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @clnt, :payment => @payment, :amount => @payment.amount)
    @purchase.ok
   end
   it "should mark payment paid" do
@@ -40,7 +40,7 @@ describe Purchase do
  end
  context "when amount less then payment amount" do
   before do
-   @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @user, :payment => @payment, :amount => @payment.amount - 1.0)
+   @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @clnt, :payment => @payment, :amount => @payment.amount - 1.0)
   end
   it "should not mark payment as paid" do
    @purchase.ok
@@ -51,7 +51,7 @@ describe Purchase do
    Payment.find(@payment.id).purchases.where(:state => :requested).inject(0.0){|r, p| r + p.amount }.should == 1.0
   end
   it "should mark failed all old request purchases before regen" do
-   FactoryGirl.create(:purchase, :order => @order, :user => @user, :payment => @payment, :amount => @payment.amount)
+   FactoryGirl.create(:purchase, :order => @order, :user => @clnt, :payment => @payment, :amount => @payment.amount)
    @purchase.ok
    Payment.find(@payment.id).purchases.where(:state => :requested).count.should == 1
    Payment.find(@payment.id).purchases.where(:state => :requested).inject(0.0){|r,p| r + p.amount }.should == 1.0
@@ -59,7 +59,7 @@ describe Purchase do
  end
  context "for xmlapi" do
   before do
-   @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @user, :payment => @payment, :amount => @payment.amount - 1.0)
+   @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @clnt, :payment => @payment, :amount => @payment.amount - 1.0)
   end
   context "on #robo_info" do
    before do

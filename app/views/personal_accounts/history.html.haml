@@ -23,6 +23,9 @@
      %span.term_info Заказ от #{order.created_at.to_date}
      %span.order
       = robo_pay(order)
+     - if order.need_amount <= current_user.qiwi
+      .pay_qiwi
+       = link_to "Оплатить из кошелька", give_money_profile_path(:order => order.id, :many => order.need_amount - order.qiwi)
     %td #{order.price} руб.
     %td
      = t order.work_state 
@@ -37,15 +40,16 @@
    %td Услуга
    %td Статус
   - @transactions.each do |ta|
-   %tr{:class => [ta.done? ? 'green' : nil]}
-    %td ta.created_at.to_date
+   %tr
+    -# {:class => [ta.done? ? 'green' : nil]}
+    %td= ta.created_at.to_date
     %td #{ta.amount} руб.
     %td ?согласование
-    %td ta.state
+    -# %td= ta.state
 
-.pay_now
-  - if User.current.client? && !order.paid?
-    = robo_pay(order)
+ .pay_now
+  - if User.current.client?
+   = robo_place
 
 
 - if current_user.is_a? Specialist

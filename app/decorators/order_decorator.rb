@@ -7,7 +7,7 @@ class OrderDecorator < Draper::Decorator
     h.link_to source.title, h.admin_order_path(source)
   end
   def client_info
-    client.try{|c| c.decorate.admin_link }
+    source.client.try{|c| c.decorate.admin_link }
   end
   def orderable_info
     if source.orderable
@@ -42,12 +42,13 @@ class OrderDecorator < Draper::Decorator
   def price
 
     if User.current.specialist?
-      labor_participation = User.current.specialist.labor_participation || 1.0
-      if labor_participation
-       source.price.to_f * labor_participation
-      else 
-       source.price
-      end
+      # labor_participation = User.current.specialist.labor_participation || 1.0
+      # if labor_participation
+      #  source.price.to_f * labor_participation
+      # else 
+      #  source.price
+      # end
+      source.money_for_specialist
     else
       source.price
     end
@@ -55,5 +56,31 @@ class OrderDecorator < Draper::Decorator
   end
   def work_state
     I18n.t "order.work_state.#{source.work_state}"
+  end
+
+  def admin_actions
+    actions = []
+    if source.draft?
+      actions << 'Выставить цену и назначить специалиста'
+    elsif source.specialist_disagreed?
+      actions << 'Назначить нового специалиста'
+    end
+    actions << 'Контроль сообщений'  unless source.messages.to_be_moderated.empty?
+    actions = ['Не требуется']  if actions.empty?
+    actions.join("\n")
+  end
+
+  def admin_work_state
+    if source.draft?
+      source.executor.is_a?(SpecialistGroup) ? 'Новый для группы' : 'Новый'
+    elsif source.specialist_disagreed?
+      'Специалист отказался'
+    else
+      work_state
+    end
+  end
+
+  def client
+    source.client.guest? ? source.client.try(&:email) : source.client.to_s
   end
 end

@@ -50,6 +50,14 @@ class ProfilesController < InheritedResources::Base
     respond_with(resource)
   end
 
+  def give_money
+   order = Order.find_by_id(params[:order])
+   amount = params[:many].to_f
+   if amount > 0.0 && amount <= curent_user.qiwi
+    User.current.give(order, amount)
+   end
+   redirect_to :back, :flash => {:message => "Деньги переведены"}
+  end
 protected
   def begin_of_association_chain
     current_user

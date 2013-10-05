@@ -14,7 +14,8 @@ class Message < ActiveRecord::Base
   scope :ordered_by_date, lambda{ order('"messages"."created_at"') }
   # scope :accepted, ->{ joins(:moderation_info).where(moderations: {status: [:accepted_complete, :accepted_automatically]}) }
   # scope :to_be_shown, ->(user_id){ ###accepted or sent### }
-  scope :accepted_or_self, ->{ includes(:moderation_info).where('"moderations"."status" IN(\'accepted_complete\',\'accepted_automatically\') OR "messages"."sender_id" = :user_id', user_id: User.current.id) }
+  scope :accepted_or_self, ->{ joins(:moderation_info).where('"moderations"."status" IN(\'accepted_complete\',\'accepted_automatically\') OR "messages"."sender_id" = :user_id', user_id: User.current.id) }
+  scope :to_be_moderated, ->{ joins(:moderation_info).where(moderations: {status: :not_accepted}) }
 
   def authorized_user?(user)
     # accepted? && (user == sender || user == recipient)

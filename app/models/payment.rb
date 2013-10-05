@@ -28,12 +28,12 @@ class Payment < ActiveRecord::Base
   end
 
   def commit_order
-   order.pay
+   order.pay if order
   end
 
   def mk_purchase
-   amount = order.need_amount - paid_amount
-   purchases.create :amount => amount
+   #amount = order.need_amount - paid_amount
+   purchases.create :amount => (amount || 0.0) - paid_amount, :user_id => user_id, :order_id => order_id
   end
 
   def purchase_ok?

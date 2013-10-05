@@ -6,7 +6,7 @@ describe Payment do
    @user = FactoryGirl.create(:user)
    @orderable = FactoryGirl.create(:replanning_endorsement)
    @order = FactoryGirl.create(:order, :price => 10000.5, :orderable => @orderable, :client => @user)
-   @payment = FactoryGirl.create(:payment, :order => @order)
+   @payment = FactoryGirl.create(:payment, :order => @order, :user => @user, :amount => @order.need_amount)
   end
   subject {@payment}
   context "in state created" do
@@ -20,7 +20,9 @@ describe Payment do
     end
     it "purchase amount should be ok" do
      @payment.request!
-     @payment.purchases.where(:state => :requested).last.amount.should == @order.need_amount
+     p "--pu", Payment.find(@payment.id)
+     p "--pay", Payment.find(@payment.id).purchases
+     Payment.find(@payment.id).purchases.where(:state => :requested).last.amount.should == @order.need_amount
     end
    end
   end

@@ -1,5 +1,6 @@
 = simple_form_for(@user ||= User.new, as: :user, :url => session_path(:user)) do |f|
   .head_register
+  .goto_register
   .info Логин или E-mail :
   .text_fields= f.input_field :login, class: 'log_client_tfeild'
   .info Пароль :
