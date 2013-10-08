@@ -18,6 +18,8 @@ ActiveAdmin.register ReplanningEndorsement do
 
   show do
     attributes_table do
+      row :id
+      row :order
       row :flat_area
       row :developed_by_general_projector do |value|
         true_false_nil value.developed_by_general_projector

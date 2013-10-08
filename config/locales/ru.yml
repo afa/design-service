@@ -192,12 +192,14 @@ ru:
         attachment_info: 'Приложенный файл'
         family_composition: 'Состав семьи'
         flat_area: 'Площадь'
+        order: 'Заказ'
       replanning_endorsement:
         developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком'
         flat_area: 'Площадь квартиры'
         replanning_organization_licensed: 'Наличие лицензии у организации, которая разработала проект перепланировки?'
         client: 'Заказчик'
         price: 'Стоимость'
+        order: 'Заказ'
       engineering_system:
         full_address: 'Адрес'
         electrical_equipment: "Электрооборудование и электроосвещение (проект ЭОМ для согласования)"
@@ -207,6 +209,7 @@ ru:
         low_voltage_systems: "Слаботочные системы - СС"
         constructive_solutions: "Конструктивные решения - КР"
         wishes: 'Пожелания'
+        order: 'Заказ'
       selected_form:
         interior_style: 'Стиль интерьера'
         interior_style_comment: 'Стиль интерьера(примечание)'
@@ -226,6 +229,7 @@ ru:
         bright_saturated_colors: 'Яркие насыщенные цвета'
         warm_color: 'Теплая гамма'
         pastel_shades: 'Пастельные оттенки'
+        order: 'Заказ'
       order:
         client: 'Заказчик'
         executor: 'Специалист'
