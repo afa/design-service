@@ -174,7 +174,7 @@ class Order < ActiveRecord::Base
     return nil  unless executor && executor.is_a?(Specialist)
     labor_participation = executor.labor_participation || 1.0
     if labor_participation
-      price.to_f * labor_participation
+      (price || default_price).to_f * labor_participation
     else
       price
     end
