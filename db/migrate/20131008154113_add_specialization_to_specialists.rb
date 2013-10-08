@@ -1,5 +1,5 @@
 class AddSpecializationToSpecialists < ActiveRecord::Migration
-  def change
+  def up
    change_table :specialists do |t|
     t.references :specialization
    end
@@ -8,5 +8,9 @@ class AddSpecializationToSpecialists < ActiveRecord::Migration
    end
    add_index :specialists, [:specialization_id]
    add_index :specialist_groups, [:specialization_id]
+  end
+  def down
+   remove_column :specialists, :specialization_id
+   remove_column :specialist_groups, :specialization_id
   end
 end
