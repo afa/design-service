@@ -7,6 +7,8 @@ class Specialist < ActiveRecord::Base
   has_many :reviews, through: :orders
 
   belongs_to :user
+
+  belongs_to :specialization
   has_one :profile, through: :user
 
   has_many :portfolios
