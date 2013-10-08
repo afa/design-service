@@ -191,12 +191,41 @@ ru:
         attachment: 'Приложенный файл'
         attachment_info: 'Приложенный файл'
         family_composition: 'Состав семьи'
+        flat_area: 'Площадь'
       replanning_endorsement:
         developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком'
         flat_area: 'Площадь квартиры'
         replanning_organization_licensed: 'Наличие лицензии у организации, которая разработала проект перепланировки?'
         client: 'Заказчик'
         price: 'Стоимость'
+      engineering_system:
+        full_address: 'Адрес'
+        electrical_equipment: "Электрооборудование и электроосвещение (проект ЭОМ для согласования)"
+        water_supply_and_sewerage: "Водоснабжение и канализация - ВК"
+        heating: "Отопление - ОВ-I"
+        ventilation: "Вентиляция - ОВ-II"
+        low_voltage_systems: "Слаботочные системы - СС"
+        constructive_solutions: "Конструктивные решения - КР"
+        wishes: 'Пожелания'
+      selected_form:
+        interior_style: 'Стиль интерьера'
+        interior_style_comment: 'Стиль интерьера(примечание)'
+        show_results: 'Как представить результат'
+        show_results_different: 'Как представить результат(примечание)'
+        title: 'Тип проекта'
+        wishes: 'Пожелания'
+        main_color: 'Главный цвет в колористической композиции'
+        flat_area: 'Площадь помещения:'
+        room_name: 'Наименование помещения'
+        decorative_plaster: 'Декоративная штукатурка'
+        wallpaper: 'Обои'
+        ceramic_tiles: 'Керамическая плитка'
+        tree: 'Дерево'
+        natural_stone: 'Натуральный камень'
+        cold_gamma: 'Холодная гамма'
+        bright_saturated_colors: 'Яркие насыщенные цвета'
+        warm_color: 'Теплая гамма'
+        pastel_shades: 'Пастельные оттенки'
       order:
         client: 'Заказчик'
         executor: 'Специалист'

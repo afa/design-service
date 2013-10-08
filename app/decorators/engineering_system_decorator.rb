@@ -23,4 +23,5 @@ class EngineeringSystemDecorator < Draper::Decorator
   def border_class_mild
     'border_xg'
   end
+  def full_address; "#{address} (подъезд: #{section}, этаж: #{stage})"; end
 end
