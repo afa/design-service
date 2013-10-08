@@ -31,7 +31,7 @@ module ActsAsOrderable
     end
 
     def find_draft(scope = where({}))
-      scope.by_client(User.current).by_work_state('draft').first
+      scope.by_client(User.current).by_work_state(['draft', 'saved_draft']).order('updated_at desc').first
     end
     
     # block is run only for created object
@@ -50,7 +50,14 @@ module ActsAsOrderable
       scope :by_client, ->(user){ joins(:order).where(orders: {client_id: user}) }
       scope :by_work_state, ->(state){ joins(:order).where(orders: {work_state: state}) }
 
-      after_commit ->{ order.touch }
+      after_commit ->{ 
+        if changed?
+          order.save_draft_drop_price
+        else
+          order.saved_draft
+        end
+        order.touch
+      }
 
       has_paper_trail
     end

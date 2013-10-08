@@ -22,6 +22,7 @@ class Order < ActiveRecord::Base
 
   state_machine :work_state, initial: :draft do
     state :draft
+    state :saved_draft
     state :moderator_suggested
     state :specialist_agreed
     state :specialist_disagreed
@@ -30,11 +31,14 @@ class Order < ActiveRecord::Base
     state :work_accepted
 
     event :save_draft do
-      transition :draft => :draft
+      transition [:draft, :saved_draft, :moderator_suggested, :specialist_agreed] => :saved_draft
+    end
+    event :save_draft_drop_price do
+      transition [:draft, :saved_draft, :moderator_suggested, :specialist_agreed] => :saved_draft, before: :reset_price
     end
     event :set_price do
-      transition [:draft, :moderator_suggested] => :moderator_suggested, :if => :test_price
-      transition :draft => :draft
+      transition [:saved_draft, :moderator_suggested] => :moderator_suggested, :if => :test_price
+      transition :saved_draft => :saved_draft
     end
 
     event :agree do
@@ -178,6 +182,10 @@ class Order < ActiveRecord::Base
     else
       price
     end
+  end
+
+  def reset_price
+    price = nil
   end
 private
   def self.accepted_to_start_work_arel

@@ -350,7 +350,8 @@ ru:
       accepted_automatically: 'Принято модератором первого уровня и подтверждено по истечении срока проверки'
   order:
     work_state:
-      draft: 'Заказ в черновиках'
+      draft: 'Пустой черновик'
+      saved_draft: 'Заказ в черновиках'
       moderator_suggested: 'Модератор предложил цену'
       specialist_agreed: 'Специалист подтвердил предложенную цену'
       specialist_disagreed: 'Специалист отказался'

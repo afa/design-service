@@ -3,7 +3,7 @@ class PersonalAccountsController < ApplicationController
 
   def history
    
-   @orders = current_user.orders.where(:work_state => :draft)
+   @orders = current_user.orders.where(:work_state => :saved_draft)
    @transactions = current_user.transactions
    @events = Event.all 
    @amount = current_user.qiwi
