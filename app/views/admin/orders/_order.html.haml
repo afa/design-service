@@ -9,7 +9,7 @@
         = order.price
     .order_specialist_price
       = precede 'Цена специалисту' do
-        = order.money_for_specialist
+        = order.specialist_price
   = simple_form_for [:admin, order] do |f|
     = f.association :executor, collection: SpecialistDecorator.decorate_collection(order.possible_executors)
     - if !order.price
@@ -17,6 +17,11 @@
         = precede 'Рекомендованная цена' do
           = order.default_price
       = f.input :price
+    - if !order.specialist_price
+      - if order.default_price
+        = precede 'Рекомендованная цена для специалиста' do
+          = order.money_for_specialist
+      = f.input :specialist_price
     = f.submit
 .message_list
   .participants
