@@ -201,6 +201,7 @@ ru:
         client: 'Заказчик'
         executor: 'Специалист'
         price: 'Стоимость'
+        specialist_price: 'Стоимость для специалиста'
       message:
         text: 'Текст сообщения'
   simple_form:
