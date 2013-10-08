@@ -4,7 +4,7 @@ ActiveAdmin.register Order do
   controller do
     respond_to :json
     has_scope :by_client, as: :client, only: [:index]
-    has_scope :from_users_by_role, default: 'client'
+    has_scope :from_users_by_role, default: 'client', only: [:index]
     # polymorphic association
     # has_scope :by_executor, as: :executor, only: [:index]
     def permitted_params
@@ -47,7 +47,7 @@ ActiveAdmin.register Order do
     end
     render partial: 'order', locals: {order: resource}
   end
-  form partial: 'form'
+
 
   index do
     div link_to('Заказы от зарегистрированных пользователей', admin_orders_path(from_users_by_role: 'client'))

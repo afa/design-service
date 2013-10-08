@@ -21,6 +21,11 @@ class Order < ActiveRecord::Base
   scope :not_in_work, -> { where(in_work_arel.not) }
   scope :from_users_by_role, ->(role) { joins(:client).where(users: {role: role}) }
 
+  before_save if: ->(order){ order.changed_attributes.has_key?('executor_id') ||
+                            order.changed_attributes.has_key?('executor_type') } do
+    assign_specialist(false)
+  end
+
   state_machine :work_state, initial: :draft do
     state :draft
     state :saved_draft
@@ -36,6 +41,11 @@ class Order < ActiveRecord::Base
     end
     event :save_draft_drop_price do
       transition [:draft, :saved_draft, :moderator_suggested, :specialist_agreed] => :saved_draft, before: :reset_price
+    end
+
+    event :assign_specialist do
+      transition [:moderator_suggested, :specialist_agreed, :specialist_disagreed] => :moderator_suggested
+      transition [:saved_draft, :client_agreed, :in_work] => same
     end
 
     event :set_price do
