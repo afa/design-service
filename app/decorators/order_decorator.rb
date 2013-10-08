@@ -48,7 +48,7 @@ class OrderDecorator < Draper::Decorator
       # else 
       #  source.price
       # end
-      source.money_for_specialist
+      source.specialist_price || source.money_for_specialist
     else
       source.price
     end

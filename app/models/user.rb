@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   has_many :transactions_out, :as => :source, :class_name => 'Transaction'
 
   has_many :orders, foreign_key: 'client_id' #do;  includes(:orderable); end ## in Rails 4 it'll be possible to prevent N+1 problem here, but now we should use includes in controller
+  has_many :payments
+  has_many :purchases
   has_one :specialist
   mount_uploader :avatar, PhotoUploader
   has_many :events
@@ -100,12 +102,11 @@ class User < ActiveRecord::Base
   def qiwi
    transactions_in.map(&:amount).sum - transactions_out.map(&:amount).sum
   end
-
   def transactions
    transactions_in + transactions_out
   end
 
   def user
-    self
+   self
   end
 end

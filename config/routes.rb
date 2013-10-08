@@ -65,6 +65,7 @@ DesignService::Application.routes.draw do
     get 'new_orders'
     put 'set_avatar'
     post 'add_portfolio'
+    get :give_money
   end
 
   get 'personal_account' => 'personal_accounts#history'
@@ -115,7 +116,7 @@ DesignService::Application.routes.draw do
               end
   end
 
-  resources :purchases do
+  resources :purchases, :only => [:index] do
    collection do
     get :ok
     get :bad

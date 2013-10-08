@@ -33,7 +33,10 @@
         %span.value_percent #{order.completion_percent}%
         %span.bar
   .price
-    .value #{order.price} руб.
+    - if User.current.specialist?
+      .value #{order.specialist_price || order.money_for_specialist} руб.
+    - elsif User.current.client?
+      .value #{order.price} руб.
     - if order.can_agree_price?
       = link_to agree_price_order_path(order, format: 'json'), remote: true, method: :put do
         %span.agree принять цену

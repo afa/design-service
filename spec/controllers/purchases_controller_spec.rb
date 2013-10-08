@@ -7,14 +7,9 @@ describe PurchasesController do
  end
  describe "on #result" do
   it "should on :get be success" do
-   #sign_in @user
    get :index
    response.should be_ok
   end
-  #it "sould :get" do
-  # get :index
-  # response.should be_ok
-  #end
   it "should return fail on empty req" do
    get :index
    response.body.should match(/fail/)

@@ -122,6 +122,11 @@ class Order < ActiveRecord::Base
    transactions_in.map(&:amount).sum - transactions_out.map(&:amount).sum
   end
 
+  def give(whom, how_many, for_order = self)
+   return false if how_many > qiwi
+   Transaction.create :source => self, :destination => whom, :order => for_order, :amount => how_many
+  end
+
   # FIX ME: refactor
   def amount_paid
     payments.where(:state => :paid).inject(0.0){|r, p| r + p.amount }
@@ -169,7 +174,7 @@ class Order < ActiveRecord::Base
     return nil  unless executor && executor.is_a?(Specialist)
     labor_participation = executor.labor_participation || 1.0
     if labor_participation
-      price.to_f * labor_participation
+      (price || default_price).to_f * labor_participation
     else
       price
     end

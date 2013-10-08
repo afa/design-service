@@ -6,7 +6,7 @@ ActiveAdmin.register Order do
     # polymorphic association
     # has_scope :by_executor, as: :executor, only: [:index]
     def permitted_params
-      params.permit(order: [:executor_id, :price])
+      params.permit(order: [:executor_id, :price, :specialist_price])
     end
     def update
       resource.assign_attributes(permitted_params[:order])
@@ -33,6 +33,7 @@ ActiveAdmin.register Order do
       end
       column :price
       column :executor
+      column "Цена для специалиста", :specialist_price
       column 'Номер заказа', :id
       column 'Дата создания', :created_at
     end
