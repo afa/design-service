@@ -18,6 +18,8 @@ ActiveAdmin.register SelectedForm do
 
   show do
     attributes_table do
+      row :id
+      row :order
       row :title
       row :wishes
       row :interior_style do |value|

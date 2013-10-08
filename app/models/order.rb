@@ -19,9 +19,16 @@ class Order < ActiveRecord::Base
   scope :at_least_advance_paid, -> { where(at_least_advance_paid_arel) }
   scope :in_work, -> { where(in_work_arel) }
   scope :not_in_work, -> { where(in_work_arel.not) }
+  scope :from_users_by_role, ->(role) { joins(:client).where(users: {role: role}) }
+
+  before_save if: ->(order){ order.changed_attributes.has_key?('executor_id') ||
+                            order.changed_attributes.has_key?('executor_type') } do
+    assign_specialist(false)
+  end
 
   state_machine :work_state, initial: :draft do
     state :draft
+    state :saved_draft
     state :moderator_suggested
     state :specialist_agreed
     state :specialist_disagreed
@@ -30,11 +37,20 @@ class Order < ActiveRecord::Base
     state :work_accepted
 
     event :save_draft do
-      transition :draft => :draft
+      transition [:draft, :saved_draft, :moderator_suggested, :specialist_agreed] => :saved_draft
     end
+    event :save_draft_drop_price do
+      transition [:draft, :saved_draft, :moderator_suggested, :specialist_agreed] => :saved_draft, before: :reset_price
+    end
+
+    event :assign_specialist do
+      transition [:moderator_suggested, :specialist_agreed, :specialist_disagreed] => :moderator_suggested
+      transition [:saved_draft, :client_agreed, :in_work] => same
+    end
+
     event :set_price do
-      transition [:draft, :moderator_suggested] => :moderator_suggested, :if => :test_price
-      transition :draft => :draft
+      transition [:saved_draft, :moderator_suggested] => :moderator_suggested, :if => :test_price
+      transition :saved_draft => :saved_draft
     end
 
     event :agree do
@@ -178,6 +194,10 @@ class Order < ActiveRecord::Base
     else
       price
     end
+  end
+
+  def reset_price
+    price = nil
   end
 private
   def self.accepted_to_start_work_arel

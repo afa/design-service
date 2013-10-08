@@ -91,3 +91,37 @@ form.postVarPlan{
     }
   }
 }
+
+
+#index_table_orders {
+  .client {
+    max-width: 100px;
+    word-wrap: break-word;
+  }
+  .moderator_action {
+    min-width: 150px;
+    background-color: yellow;
+  }
+  .order_type {
+    text-align: center;
+  }
+}
+
+.PlanDevelopment {
+  background-color: #a8d868;
+  //a, a:hover {
+  //  color: #ff0000;
+  //}
+}
+
+.ReplanningEndorsement {
+  background-color: #e6c941;
+}
+
+.EngineeringSystem {
+  background-color: #99bbe1;
+}
+
+.SelectedForm {
+  background-color: #f89f65;
+}

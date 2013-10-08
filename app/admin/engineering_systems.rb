@@ -18,6 +18,8 @@ ActiveAdmin.register EngineeringSystem do
 
   show do
     attributes_table do
+      row :id
+      row :order
      [:full_address,
       :electrical_equipment,
       :water_supply_and_sewerage,
