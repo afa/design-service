@@ -19,6 +19,7 @@ class Order < ActiveRecord::Base
   scope :at_least_advance_paid, -> { where(at_least_advance_paid_arel) }
   scope :in_work, -> { where(in_work_arel) }
   scope :not_in_work, -> { where(in_work_arel.not) }
+  scope :from_users_by_role, ->(role) { joins(:client).where(users: {role: role}) }
 
   state_machine :work_state, initial: :draft do
     state :draft
@@ -36,6 +37,7 @@ class Order < ActiveRecord::Base
     event :save_draft_drop_price do
       transition [:draft, :saved_draft, :moderator_suggested, :specialist_agreed] => :saved_draft, before: :reset_price
     end
+
     event :set_price do
       transition [:saved_draft, :moderator_suggested] => :moderator_suggested, :if => :test_price
       transition :saved_draft => :saved_draft

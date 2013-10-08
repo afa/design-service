@@ -51,6 +51,7 @@ ru:
         immutable: "поле не может быть изменено"
   title: 'Дизайн сервис'
   titles:
+    orders: 'Заказы'
     plan_development: 'Разработка вариантов планировок'
     replanning_endorsement: 'Согласование перепланировок'
     engineering_system: 'Инженерые системы и конструктив'
