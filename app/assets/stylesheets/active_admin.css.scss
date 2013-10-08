@@ -68,19 +68,15 @@ form.postVarPlan{
   }
 }
 
-.message_list{
-  left: 400px;
-  position: absolute
-}
 
 .active_admin {
   .order {
     float: right;
   }
   .message_list {
-    float:left;
     width: 500px;
     .participants {
+      position: relative;
       width: 100%;
       border: 1px solid green;
       height: 1.5em;

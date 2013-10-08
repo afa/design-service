@@ -1,25 +1,34 @@
+def true_false_nil(value)
+  if value.nil?
+    'Не определено'
+  elsif value == false
+    'Нет'
+  elsif value == true
+    'Да'
+  else
+    value
+  end    
+end
+
 ActiveAdmin.register ReplanningEndorsement do
   menu label: ->(){ I18n.t('titles.replanning_endorsement') }
   config.filters = false
 
   decorate_with ReplanningEndorsementDecorator
 
-  index do
-    column :id
-    default_actions
-    column :client
-    column :developed_by_general_projector
-    column :flat_area
-    column :replanning_organization_licensed
-
-    column :created_at
-    column :updated_at
+  show do
+    attributes_table do
+      row :flat_area
+      row :developed_by_general_projector do |value|
+        true_false_nil value.developed_by_general_projector
+      end
+      row :replanning_organization_licensed do |value|
+        true_false_nil value.replanning_organization_licensed
+      end
+    end
   end
 
   form partial: 'form'
-  show do
-    render 'replanning_endorsement'
-  end
 
   controller do
     def permitted_params
