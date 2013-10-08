@@ -28,13 +28,13 @@ ActiveAdmin.register Order do
       column 'Статус', sortable: :work_state do |order|
         order.admin_work_state
       end
-      column :client
+      column 'Заказчик', :client
       # Здесь хорошо бы ещё сортировать по подтипу, но не факт, что это возможно
       column 'Тип заказа', sortable: :orderable_type, class: 'order_type' do |order|
         link_to order.title, [:admin, order.orderable], class: order.orderable.source.class.name
       end
-      column :price
-      column :executor
+      column 'Цена', :price
+      column 'Исполнитель', :executor
       column "Цена для специалиста", :specialist_price
       column 'Номер заказа', :id
       column 'Дата создания', :created_at

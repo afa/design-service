@@ -123,6 +123,10 @@ DesignService::Application.routes.draw do
    end
   end
 
+  namespace :admin do    
+    delete 'specialist_groups/:id/remove_specialist' => 'specialist_groups#remove_specialist', as: :specialist_group_remove_specialist
+  end
+
   get "welcome/index"
 
   # The priority is based upon order of creation:

@@ -17,7 +17,8 @@ class Specialist < ActiveRecord::Base
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
 
   delegate :messages,  to: :user
-  delegate :full_name, :username, :to_s,  to: :profile
+  delegate :full_name, :to_s,  to: :profile
+  delegate :username, to: :user
   delegate :avatar, to: :user
 
   # def rating; 666; end
@@ -43,5 +44,8 @@ class Specialist < ActiveRecord::Base
         u.new_profile
       end
     end
+  end
+  def number_of_completed_orders
+    orders.where(work_state: :work_accepted).count
   end
 end
