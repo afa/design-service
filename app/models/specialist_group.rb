@@ -38,4 +38,7 @@ class SpecialistGroup < ActiveRecord::Base
   def available_portfolios
     specialists.map(&:portfolios).flatten
   end
+  def as_json(options={})
+    {id: id, name: name, specialization_id: specialization_id}
+  end
 end

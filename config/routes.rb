@@ -125,6 +125,8 @@ DesignService::Application.routes.draw do
 
   namespace :admin do    
     delete 'specialist_groups/:id/remove_specialist' => 'specialist_groups#remove_specialist', as: :specialist_group_remove_specialist
+    get "specialization/:id/specialists" => 'specialization#specialists', as: :specialization_specialists
+    get "specialization/:id/specialist_groups" => 'specialization#specialist_groups', as: :specialization_specialist_groups
   end
 
   get "welcome/index"
