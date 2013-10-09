@@ -22,4 +22,5 @@ class UserDecorator < Draper::Decorator
   def avatar(options = {})
     h.image_tag(source.avatar.url, options)
   end
+  def phone; '+7(XXX)-XXX-XXXX'; end
 end
