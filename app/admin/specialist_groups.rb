@@ -20,7 +20,7 @@ ActiveAdmin.register SpecialistGroup do
         link_to specialist_group.name, admin_specialist_group_path(specialist_group)
       end
       column 'Специальность', :specialization, sortable: :specialization do |specialist_group|
-        specialist_group.specialization.text
+        specialist_group.specialization
       end
       column 'Количество специалистов', :number_of_participants, sortable: false
       column 'Рейтинг', :rating, sortable: false
@@ -34,7 +34,9 @@ ActiveAdmin.register SpecialistGroup do
       table_columns.call(self)
     end
     table_for resource.specialists do
-      column 'ФИО', :full_name
+      column 'ФИО', :full_name do |specialist|
+        link_to specialist.full_name, [:admin, specialist]
+      end
       column 'Логин', :username, sortable: :username
       column 'Количество выполненных заказов', :number_of_completed_orders
       column 'Удалить специалиста' do |specialist|
