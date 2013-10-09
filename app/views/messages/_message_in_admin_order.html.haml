@@ -1,8 +1,10 @@
-.message{:class => (message.sender.source == order.source.client) ? 'from_client' : 'from_executor' }
+.message{:class => [(message.sender.source == order.source.client) ? 'from_client' : 'from_executor', "moderation_#{message.moderation_info.source.status}"] }
   %span.datetime
     = surround '(', ')' do
       = I18n.l(message.created_at.to_date)
       = I18n.l(message.created_at, format: :as_time)
   .message= message.text
   .moderation= render partial: 'moderations/moderation', locals: {moderation: message.moderation_info}
+  = link_to edit_admin_message_path(message) do
+    .edit Редактировать текст(заменить текст на пиктограммку)
   %br
