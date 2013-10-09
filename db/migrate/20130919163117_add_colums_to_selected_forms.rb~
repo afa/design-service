@@ -1,9 +1,0 @@
-class AddColumsToSelectedForms < ActiveRecord::Migration
-  def change
-    add_column :selected_forms, :decorative_plaster, :boolean
-    add_column :selected_forms, :wallpaper, :boolean
-    add_column :selected_forms, :ceramic_tiles, :boolean
-    add_column :selected_forms, :tree, :boolean
-    add_column :selected_forms, :natural_stone, :boolean
-  end
-end

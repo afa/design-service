@@ -51,6 +51,8 @@ ru:
         immutable: "поле не может быть изменено"
   title: 'Дизайн сервис'
   titles:
+    orders: 'Заказы'
+    specialist_groups: 'Группы специалистов'
     plan_development: 'Разработка вариантов планировок'
     replanning_endorsement: 'Согласование перепланировок'
     engineering_system: 'Инженерые системы и конструктив'
@@ -237,6 +239,16 @@ ru:
         specialist_price: 'Стоимость для специалиста'
       message:
         text: 'Текст сообщения'
+      specialist_group:
+        name: 'Название группы'
+        specialization: 'Специальность'
+        number_of_participants: 'Количество специалистов'
+        rating: 'Рейтинг'
+      specialist:
+        full_name: 'ФИО'
+        username: 'Логин'
+        number_of_completed_orders: 'Число выполненных заказов'
+        rating: 'Рейтинг'
   simple_form:
     # Labels and hints examples
     # labels:

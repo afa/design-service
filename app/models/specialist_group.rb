@@ -1,4 +1,5 @@
 class SpecialistGroup < ActiveRecord::Base
+  belongs_to :specialization
   has_and_belongs_to_many :specialists
 
   has_many :portfolios
@@ -15,7 +16,7 @@ class SpecialistGroup < ActiveRecord::Base
   def messages; received_messages; end
 
   extend Enumerize
-  enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
+  #enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
   scope :by_specialization, ->(specialization) { where(specialization: specialization) }
 
 #  def positive_feedback; specialists.map(&:positive_feedback).inject(0,&:+); end
