@@ -1,4 +1,5 @@
 class SpecialistGroup < ActiveRecord::Base
+  belongs_to :specialization
   has_and_belongs_to_many :specialists
 
   has_many :portfolios
@@ -15,8 +16,8 @@ class SpecialistGroup < ActiveRecord::Base
   def messages; received_messages; end
 
   extend Enumerize
-  enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
-  scope :by_specialization, ->(specialization) { where(specialization: specialization) }
+  #enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
+  scope :by_specialization, ->(spec) { where(specialization: Specialization.where(:name => spec).first.try(:name)) }
 
 #  def positive_feedback; specialists.map(&:positive_feedback).inject(0,&:+); end
 #  def negative_feedback; specialists.map(&:negative_feedback).inject(0,&:+); end
@@ -31,7 +32,7 @@ class SpecialistGroup < ActiveRecord::Base
   end
 
   def union_name
-    I18n.t("specialist_groups.union_name.#{specialization || :not_a_specialist}")
+    I18n.t("specialist_groups.union_name.#{specialization.try(:name) || :not_a_specialist}")
   end
 
   def available_portfolios

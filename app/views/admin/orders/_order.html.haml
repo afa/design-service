@@ -1,4 +1,7 @@
 .order
+  .specialization
+    /= form_tag  
+    /= input :specialization, collection: Specialization.all
   - if order.specialist_group
     .group_submitted_to
       = precede 'Отправлено группе' do
@@ -19,12 +22,17 @@
       = f.input :price
     - if !order.specialist_price
       - if order.default_price
-        = precede 'Рекомендованная стоимость  для специалиста' do
+        = precede 'Рекомендованная стоимость для специалиста' do
           = order.money_for_specialist
       = f.input :specialist_price
     = f.submit
 .message_list
+  %h2 Сообщения
   .participants
-    %span.client= order.client
-    %span.executor= order.executor
+    %span.client
+      От заказчика
+      = link_to order.client
+    %span.executor
+      От исполнителя(#{order.executor.specialization})
+      = link_to order.executor
   = render partial: 'messages/message_in_admin_order', collection: order.messages, as: :message, spacer_template: 'shared/hr_separator', locals: {order: order}

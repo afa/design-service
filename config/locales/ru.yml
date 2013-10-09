@@ -51,6 +51,8 @@ ru:
         immutable: "поле не может быть изменено"
   title: 'Дизайн сервис'
   titles:
+    orders: 'Заказы'
+    specialist_groups: 'Группы специалистов'
     plan_development: 'Разработка вариантов планировок'
     replanning_endorsement: 'Согласование перепланировок'
     engineering_system: 'Инженерые системы и конструктив'
@@ -192,12 +194,14 @@ ru:
         attachment_info: 'Приложенный файл'
         family_composition: 'Состав семьи'
         flat_area: 'Площадь'
+        order: 'Заказ'
       replanning_endorsement:
         developed_by_general_projector: 'Проект перепланировки разработан генпроектировщиком'
         flat_area: 'Площадь квартиры'
         replanning_organization_licensed: 'Наличие лицензии у организации, которая разработала проект перепланировки?'
         client: 'Заказчик'
         price: 'Стоимость'
+        order: 'Заказ'
       engineering_system:
         full_address: 'Адрес'
         electrical_equipment: "Электрооборудование и электроосвещение (проект ЭОМ для согласования)"
@@ -207,6 +211,7 @@ ru:
         low_voltage_systems: "Слаботочные системы - СС"
         constructive_solutions: "Конструктивные решения - КР"
         wishes: 'Пожелания'
+        order: 'Заказ'
       selected_form:
         interior_style: 'Стиль интерьера'
         interior_style_comment: 'Стиль интерьера(примечание)'
@@ -226,6 +231,7 @@ ru:
         bright_saturated_colors: 'Яркие насыщенные цвета'
         warm_color: 'Теплая гамма'
         pastel_shades: 'Пастельные оттенки'
+        order: 'Заказ'
       order:
         client: 'Заказчик'
         executor: 'Специалист'
@@ -233,6 +239,16 @@ ru:
         specialist_price: 'Стоимость для специалиста'
       message:
         text: 'Текст сообщения'
+      specialist_group:
+        name: 'Название группы'
+        specialization: 'Специальность'
+        number_of_participants: 'Количество специалистов'
+        rating: 'Рейтинг'
+      specialist:
+        full_name: 'ФИО'
+        username: 'Логин'
+        number_of_completed_orders: 'Число выполненных заказов'
+        rating: 'Рейтинг'
   simple_form:
     # Labels and hints examples
     # labels:
@@ -346,7 +362,8 @@ ru:
       accepted_automatically: 'Принято модератором первого уровня и подтверждено по истечении срока проверки'
   order:
     work_state:
-      draft: 'Заказ в черновиках'
+      draft: 'Пустой черновик'
+      saved_draft: 'Заказ в черновиках'
       moderator_suggested: 'Модератор предложил цену'
       specialist_agreed: 'Специалист подтвердил предложенную цену'
       specialist_disagreed: 'Специалист отказался'
