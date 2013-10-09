@@ -1,7 +1,7 @@
 .order
   .specialization
-    /= form_tag  
-    /= input :specialization, collection: Specialization.all
+    = form_tag admin_specialization_specialists_path(format: 'json') do
+      = select_tag :specialization, collection: Specialization.all
   - if order.specialist_group
     .group_submitted_to
       = precede 'Отправлено группе' do
@@ -33,6 +33,7 @@
       От заказчика
       = link_to order.client
     %span.executor
-      От исполнителя(#{order.executor.specialization})
-      = link_to order.executor
+      - if order.executor
+        От исполнителя
+        = link_to order.executor
   = render partial: 'messages/message_in_admin_order', collection: order.messages, as: :message, spacer_template: 'shared/hr_separator', locals: {order: order}

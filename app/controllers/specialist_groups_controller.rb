@@ -18,7 +18,7 @@ private
         I18n.t "specialists.#{params[:specialization].pluralize}.title"
       end
     else
-      I18n.t "specialists.#{resource.specialization.pluralize}.title" rescue 'Специалисты'
+      I18n.t "specialists.#{resource.specialization.name.pluralize}.title" rescue 'Специалисты'
     end
   end
 
@@ -40,7 +40,7 @@ private
         params[:specialization]
       end
     else
-      resource.specialization
+      resource.specialization.try(:name)
     end
   end
 

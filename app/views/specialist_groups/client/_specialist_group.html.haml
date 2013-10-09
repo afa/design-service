@@ -1,5 +1,5 @@
 .selected_designer
-  %a{:href => "#{specialist_groups_path(specialization: specialist_group.specialization)}"}
+  %a{:href => "#{specialist_groups_path(specialization: specialist_group.specialization.try(:name))}"}
     .go_back
   .designer_no
     = specialist_group.avatar
