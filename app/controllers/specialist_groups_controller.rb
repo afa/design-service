@@ -40,7 +40,7 @@ private
         params[:specialization]
       end
     else
-      resource.specialization.name
+      resource.specialization.try(:name)
     end
   end
 
