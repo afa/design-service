@@ -29,6 +29,8 @@ private
     # One should either remove this code and use in css and here .specialists class
     # or customize classes on each specialization basis
     #
+    # now it's preferrable to move all css and names of specializations to db (Specialization table)
+    #
     # specialist_group_specialization.try(&:pluralize)
   end
 

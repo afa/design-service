@@ -1,7 +1,5 @@
 .order
   .specialization
-    = form_tag admin_specialization_specialists_path(format: 'json') do
-      = select_tag :specialization, collection: Specialization.all
   - if order.specialist_group
     .group_submitted_to
       = precede 'Отправлено группе' do
@@ -13,8 +11,13 @@
     .order_specialist_price
       = precede 'Цена специалисту' do
         = order.specialist_price
+
   = simple_form_for [:admin, order] do |f|
-    = f.association :executor, collection: SpecialistDecorator.decorate_collection(order.possible_executors)
+    - if order.specialist_group
+      = f.association :executor, collection: SpecialistDecorator.decorate_collection(order.possible_executors)
+    - else
+      = f.input :executor_id, collection: Specialization.all, as: :grouped_select, group_method: :specialists
+
     - if !order.price
       - if order.default_price
         = precede 'Рекомендованная цена' do

@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   has_many :events
 
   scope :with_orders, -> { where('orders_count > 0') }
+  scope :by_role, ->(r) { where(:role => r) }
 
   validates :username, length: {minimum: 3}, immutable: true
 

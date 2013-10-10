@@ -1,5 +1,6 @@
 - editable = false  unless defined?(editable)
 - skip_file_input = false  unless defined?(skip_file_input)
+- ul_class = ''  unless defined?(ul_class)
 %ul{class: [ul_class, editable ? 'editable' : '']}
   - portfolio_items.each do |portfolio_item|
     %li{:data => {:portfolio_item_id => portfolio_item.id}}
