@@ -8,7 +8,7 @@ ActiveAdmin.register SpecialistGroup do
       redirect_to [:admin, resource]
     end
     def permitted_params
-      params.permit(specialist_group: {portfolio_ids: [], specialist_ids: []})
+      params.permit(specialist_group: [{portfolio_ids: []}, {specialist_ids: []}, :specialization_id, :name, :description, :reliability_rating, :quality_rating, :labor_participation, :avatar])
     end
     private :permitted_params
   end
@@ -20,20 +20,23 @@ ActiveAdmin.register SpecialistGroup do
         link_to specialist_group.name, admin_specialist_group_path(specialist_group)
       end
       column 'Специальность', :specialization, sortable: :specialization do |specialist_group|
-        specialist_group.specialization
+        specialist_group.specialization.title
       end
       column 'Количество специалистов', :number_of_participants, sortable: false
       column 'Рейтинг', :rating, sortable: false
       column 'Коэффициент участия', :labor_participation
     end
   end
+
   index do
    table_columns.call(self)
   end
+
   show do
     table_for [resource] do
       table_columns.call(self)
     end
+    div image_tag resource.avatar
     table_for resource.specialists do
       column 'ФИО', :full_name do |specialist|
         link_to specialist.full_name, [:admin, specialist]
@@ -70,5 +73,18 @@ ActiveAdmin.register SpecialistGroup do
         link_to review.order.title, admin_order_path(review.order)
       end
     end
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :specialization, collection: Specialization.all.map{|s| [s.title, s.id]}
+        f.input :name
+        f.input :description
+        f.input :quality_rating
+        f.input :reliability_rating
+        f.input :labor_participation
+        f.input :avatar
+    end
+    f.actions
   end
 end
