@@ -100,31 +100,54 @@ form.postVarPlan{
   }
   .moderator_action {
     min-width: 150px;
-    background-color: yellow;
+    background-color: #f8f87b;
   }
   .order_type {
     text-align: center;
   }
 }
 
-.PlanDevelopment {
-  background-color: #a8d868;
-  //a, a:hover {
-  //  color: #ff0000;
-  //}
+
+
+table#index_table_orders tbody tr td:nth-child(4) { 
+  color: #D6540B; 
+  a, a:link, a:active, a:visited, a:hover{ 
+    color: #D6540B; 
+    }
 }
 
-.ReplanningEndorsement {
-  background-color: #e6c941;
+table#index_table_orders tbody tr td:nth-child(7) { 
+  color: #921D5A; 
+  a, a:link, a:active, a:visited, a:hover{ 
+    color: #921D5A; 
+    }
 }
 
-.EngineeringSystem {
-  background-color: #99bbe1;
+table#index_table_orders tbody tr td:nth-child(9) { 
+  color: #38678b; 
+  a, a:link, a:active, a:visited, a:hover{ 
+    color: #38678b; 
+    }
 }
 
-.SelectedForm {
-  background-color: #f89f65;
+table#index_table_orders tbody tr.even, table#index_table_orders tbody tr.odd {
+  .PlanDevelopment {
+    background-color: #a8d868;
+  }
+
+  .ReplanningEndorsement {
+    background-color: #e6c941;
+  }
+
+  .EngineeringSystem {
+    background-color: #99bbe1;
+  }
+
+  .SelectedForm {
+    background-color: #f89f65;
+  }
 }
+
 
 .used_portfolio {
   background-color: lightgreen;
