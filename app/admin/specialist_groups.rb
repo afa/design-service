@@ -40,6 +40,11 @@ ActiveAdmin.register SpecialistGroup do
       end
       column 'Логин', :username, sortable: :username
       column 'Количество выполненных заказов', :number_of_completed_orders
+      column 'Портфолио' do |specialist|
+        raw specialist.portfolios.map{|portfolio|
+          link_to portfolio.name, admin_portfolio_path(portfolio), class: (resource.portfolios.include?(portfolio) ? 'used_portfolio' : 'unused_portfolio')
+        }.join("<br>")
+      end
       column 'Удалить специалиста' do |specialist|
        link_to 'Удалить из группы', admin_specialist_group_remove_specialist_path(resource, specialist_id: specialist), method: :delete
       end
