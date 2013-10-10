@@ -1,5 +1,6 @@
 //= require active_admin/base
 //= require ajax_submit
+//= require js-routes
 
 $(document).ready ->
   register_ajax_reloadable_handler = (selector)->

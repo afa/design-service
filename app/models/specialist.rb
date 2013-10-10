@@ -8,7 +8,7 @@ class Specialist < ActiveRecord::Base
 
   belongs_to :user
 
-  belongs_to :specialization
+  has_many :specializations, through: :specialist_groups
   has_one :profile, through: :user
 
   has_many :portfolios
@@ -47,5 +47,8 @@ class Specialist < ActiveRecord::Base
   end
   def number_of_completed_orders
     orders.where(work_state: :work_accepted).count
+  end
+  def as_json(options={})
+    {id: id, full_name: full_name, specializations: specializations}
   end
 end
