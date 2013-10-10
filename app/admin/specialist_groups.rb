@@ -24,6 +24,7 @@ ActiveAdmin.register SpecialistGroup do
       end
       column 'Количество специалистов', :number_of_participants, sortable: false
       column 'Рейтинг', :rating, sortable: false
+      column 'Коэффициент участия', :labor_participation
     end
   end
   index do
