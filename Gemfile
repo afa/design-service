@@ -86,3 +86,6 @@ gem 'simplecov', :require => false, :group => :test
 gem 'rb-readline', "~> 0.5.0", require: 'readline'
 gem "rubykassa"
 gem "state_machine"
+
+gem "airbrake"
+gem "newrelic_rpm"
