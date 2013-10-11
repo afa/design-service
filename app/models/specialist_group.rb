@@ -18,7 +18,7 @@ class SpecialistGroup < ActiveRecord::Base
 
   extend Enumerize
   #enumerize :specialization, in: [:designer, :architector, :engineer, :building_company, :building_brigade, :not_a_specialist]
-  scope :by_specialization, ->(spec) { where(specialization: Specialization.where(:name => spec).first.try(:name)) }
+  scope :by_specialization, ->(spec) { where(specialization_id: Specialization.where(:name => spec).first.try(:id)) }
 
 #  def positive_feedback; specialists.map(&:positive_feedback).inject(0,&:+); end
 #  def negative_feedback; specialists.map(&:negative_feedback).inject(0,&:+); end
