@@ -78,10 +78,6 @@ form.postVarPlan{
     .participants {
       position: relative;
       width: 100%;
-      border: 1px solid green;
-      height: 1.5em;
-      span.client{ position: absolute; left: 10px; }
-      span.executor{ position:absolute; right:10px; } 
     }
     .from_client {
       padding-left: 10px;
@@ -100,30 +96,98 @@ form.postVarPlan{
   }
   .moderator_action {
     min-width: 150px;
-    background-color: yellow;
+    background-color: #f8f87b;
   }
   .order_type {
     text-align: center;
   }
 }
 
-.PlanDevelopment {
-  background-color: #a8d868;
-  //a, a:hover {
-  //  color: #ff0000;
-  //}
+
+
+table#index_table_orders tbody tr td:nth-child(4) { 
+  color: #D6540B; 
+  a, a:link, a:active, a:visited, a:hover{ 
+    color: #D6540B; 
+    }
 }
 
-.ReplanningEndorsement {
-  background-color: #e6c941;
+table#index_table_orders tbody tr td:nth-child(7) { 
+  color: #921D5A; 
+  a, a:link, a:active, a:visited, a:hover{ 
+    color: #921D5A; 
+    }
 }
 
-.EngineeringSystem {
-  background-color: #99bbe1;
+table#index_table_orders tbody tr td:nth-child(9) { 
+  color: #38678b; 
+  a, a:link, a:active, a:visited, a:hover{ 
+    color: #38678b; 
+    }
 }
 
-.SelectedForm {
-  background-color: #f89f65;
+table#index_table_orders tbody tr.even, table#index_table_orders tbody tr.odd {
+  .PlanDevelopment {
+    background-color: #a8d868;
+  }
+
+  .ReplanningEndorsement {
+    background-color: #e6c941;
+  }
+
+  .EngineeringSystem {
+    background-color: #99bbe1;
+  }
+
+  .SelectedForm {
+    background-color: #f89f65;
+  }
+}
+
+div.message_list{
+  div.participants{
+    span.client{ 
+    left: 10px;
+      a, a:link, a:active, a:visited, a:hover{ color:#fffff; width:100px;  } 
+    }
+    span.executor{ 
+    right:10px; 
+    } 
+  }
+  div.from_client{
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid #38678b;
+    width:420px;
+    div.message{ margin-top:5px;}
+  }
+  div.moderation_not_accepted{
+    background-color: #FAD6DA;
+    span.datetime{
+      position:absolute;
+      margin-left:440px;
+      margin-top:30px;
+    }
+    div.moderation{ color:#97192D}
+  }
+  div.moderation_accepted_complete{
+    background-color: #E2E7EB;
+    margin-left:150px;
+    span.datetime{
+      position:absolute;
+      margin-left:-150px;
+      margin-top:30px;
+    } 
+    div.moderation{ color:#13A8A2 }   
+  }
+  div.moderation_rejected_complete{
+    background-color: #E5EBA9; 
+    span.datetime{
+      position:absolute;
+      margin-left:440px;
+      margin-top:30px;
+    }  
+    div.moderation{ color:#A58542 }   
+  }
 }
 
 .used_portfolio {

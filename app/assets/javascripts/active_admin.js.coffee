@@ -15,3 +15,8 @@ $(document).ready ->
           alert('Operation failed')
       )
   register_ajax_reloadable_handler('.remote_link.post')
+  
+  $('table#index_table_orders tbody tr td.order_type').each ->
+    $(this).addClass($(this).find('a').attr('class'))
+
+  

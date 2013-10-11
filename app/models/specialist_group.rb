@@ -5,7 +5,8 @@ class SpecialistGroup < ActiveRecord::Base
   has_many :portfolios
   has_many :portfolio_items, through: :portfolios
 
-  has_one :avatar, as: :imageable_single, class_name: 'Photo'
+  #has_one :avatar, as: :imageable_single, class_name: 'Photo'
+  mount_uploader :avatar, PhotoUploader
   has_many :received_messages, as: :recipient, class_name: 'Message'
 
   has_many :groups_orders, as: :executor, :class_name => 'Order'

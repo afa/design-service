@@ -41,8 +41,8 @@ ActiveAdmin.register Order do
     end
   end
 
-  show do
-    table_for [resource] do
+  show do 
+    table_for [resource] , :id => "index_table_orders", :class => "index_table index" do 
       table_columns.call(self)
     end
     render partial: 'order', locals: {order: resource}
