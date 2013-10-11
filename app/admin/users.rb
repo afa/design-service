@@ -1,4 +1,5 @@
 ActiveAdmin.register User do
+  menu label: -> { I18n.t 'titles.users' }
   decorate_with UserDecorator
 
   controller do
@@ -8,26 +9,24 @@ ActiveAdmin.register User do
     end
   end
 
-  index do |f|
-    span do
-      div link_to('Зарегистрированные специалисты', admin_users_path(role: 'specialist'))
-      div link_to('Зарегистрированные пользователи', admin_users_path(role: 'client'))
-    end
-    default_actions
+  table_columns = lambda do |tab|
+   tab.instance_eval do
     if params[:role].nil? || params[:role] == 'specialist'
-     column 'Номер ID', :id
+     column 'Номер ID', :sortable => :id do |u|
+      link_to u.id.to_s, admin_user_path(u)
+     end
      column 'ФИО', :sortable => :name do |u|
       u.full_name
      end
      column "Логин", :username
      column "Специальность" do |u|
-      u.specialist.specialization.try(:title)
+      (u.specialist.try(:specializations) || []).map(&:title)
      end
      column 'Статус' do |u|
-      u.specialist.orders.where(:work_state => [:in_work, :client_agreed]).count > 0 ? 'Занят' : 'Свободен'
+      u.specialist ? u.specialist.orders.where(:work_state => [:in_work, :client_agreed]).count > 0 ? 'Занят' : 'Свободен' : ''
      end
      column "Группа", :sortable => :specialist_groups do |u|
-      u.specialist.specialist_groups.map(&:name)
+      u.specialist ? u.specialist.specialist_groups.map(&:name) : []
      end
      column 'Е-Майл', :email
      column "Телефон", :phone
@@ -45,9 +44,21 @@ ActiveAdmin.register User do
      end
      column "Дата регистрации", :created_at
     end
+
+   end
+  end
+  index do |f|
+    span do
+      div link_to('Зарегистрированные специалисты', admin_users_path(role: 'specialist'))
+      div link_to('Зарегистрированные пользователи', admin_users_path(role: 'client'))
+    end
+    table_columns.call(self)
   end
 
   show do
+    table_for [resource] do
+      table_columns.call(self)
+    end
     render partial: 'user'
   end
   form partial: 'form'

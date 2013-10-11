@@ -18,7 +18,7 @@ class SpecialistGroupDecorator < Draper::Decorator
     "-#{source.negative_feedback}"
   end
   def avatar(options = {})
-    h.image_tag((source.avatar || source.build_avatar).photo.avatar_size.url, options)
+    h.image_tag((source.avatar || source.build_avatar).avatar_size.url, options)
   end
   def number_of_participants
     "#{source.number_of_participants} участников"
