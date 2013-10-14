@@ -10,7 +10,7 @@ window.register_drag_n_drop = (attach_box, loaded_files)->
   attachment_input = attach_form.find('input[type=file]')
   dropZone_hint = attach_box.find('.hint')
 
-  if Modernizr.draganddrop
+  if Modernizr.draganddrop && !!window.FileReader
     dropZone_hint.text('Вы можете перетащить файлы сюда')
     dropZone.on('drop', (event) ->
       event.preventDefault()
@@ -39,7 +39,7 @@ window.register_drag_n_drop = (attach_box, loaded_files)->
     files = event.target.files
     if files.length == 0
       dropZone.removeClass('drop')
-      if Modernizr.draganddrop
+      if Modernizr.draganddrop && !!window.FileReader
         dropZone_hint.text('Вы можете перетащить файлы сюда')
       else
         dropZone_hint.text('Выбрать файлы')
