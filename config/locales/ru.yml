@@ -56,6 +56,7 @@ ru:
     plan_development: 'Разработка вариантов планировок'
     replanning_endorsement: 'Согласование перепланировок'
     engineering_system: 'Инженерые системы и конструктив'
+    users: 'Пользователи'
     #design_project:
     #  type1: 'ToDo Дизайн-проект'
     #  type2: 'ToDo Дизайн-проект'

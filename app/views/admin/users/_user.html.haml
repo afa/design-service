@@ -1,13 +1,55 @@
-= show_for resource do |s|
-  = s.attribute :role
-  = s.attribute :username
-  = s.attribute :surname
-  = s.attribute :name
-  = s.attribute :middle_name
-  = s.attribute :email
-  = s.attribute :orders_info_link
-  = s.attribute :specialist_info_link
-  = s.attribute :current_sign_in_at
-  = s.attribute :last_sign_in_at
-  = s.attribute :sign_in_count
-  = s.attribute :qiwi
+.user
+ - if resource.client?
+  .orders
+   .head
+    Заказы клиента
+    %table
+     %tr
+      %th Номер заказа
+      %th Тип заказа
+      %th Статус заказа
+      %th Стоимость
+      %th Выполнено (в %)
+      %th Дата завершения
+      %th Специалист ФИО
+     - resource.orders.each do |order|
+      %tr
+       %td= link_to order.id.to_s, admin_order_path(order)
+       %td= order.orderable.class.name
+       %td= order.work_state
+       %td= order.price
+       %td= order.completion_percent
+       %td= order.completion_time
+       %td= order.executor.try(:full_name)
+  .qiwi
+   На счету: #{resource.qiwi} руб.
+ - elsif resource.specialist?
+  .orders
+   .head
+    Работы специалиста
+   %table
+    %tr
+     %th Номер заказа
+     %th Тип заказа
+     %th Статус заказа
+     %th Стоимость заказа
+     %th Выполнено (в %)
+     %th Дата завершения
+     %th Клиент ФИО
+    - resource.specialist.orders.each do |order|
+     %tr
+      %td= link_to order.id.to_s, admin_order_path(order)
+      %td= order.orderable.class.name
+      %td= order.work_state
+      %td= order.specialist_price
+      %td= order.completion_percent
+      %td= order.completion_time
+      %td= order.client.try(:full_name)
+
+  .qiwi
+   На счету #{resource.qiwi} руб.
+
+  .groups
+   - resource.specialist.specialist_groups.each do |grp|
+    .group
+     grp.name
