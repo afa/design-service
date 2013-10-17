@@ -124,6 +124,8 @@ DesignService::Application.routes.draw do
   end
 
   namespace :admin do    
+    post 'users/:id/group_remove' => 'users#group_remove', :as => :user_group_remove
+    post 'users/:id/group_add' => 'users#group_add', :as => :user_group_add
     delete 'specialist_groups/:id/remove_specialist' => 'specialist_groups#remove_specialist', as: :specialist_group_remove_specialist
     get "specialization/:id/specialists" => 'specialization#specialists', as: :specialization_specialists
     get "specialization/:id/specialist_groups" => 'specialization#specialist_groups', as: :specialization_specialist_groups
