@@ -16,6 +16,7 @@
 //= require jquery_nested_form
 //= require jquery.form
 //= require jquery-ui
+//= require_tree .
 
 //= require jquery.corner
 //= require jquery.slimscroll

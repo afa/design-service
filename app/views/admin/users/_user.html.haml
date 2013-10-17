@@ -23,6 +23,20 @@
        %td= order.executor.try(:full_name)
   .qiwi
    На счету: #{resource.qiwi} руб.
+  .transactions
+   %h4 Денежные переводы
+   %table
+    %tr
+     %th Дата
+     %th Сумма
+     %th Откуда
+     %th Куда
+    - transactions.each do |tr|
+     %tr
+      %td= tr.created_at.to_s
+      %td= tr.amount
+      %td= tr.source
+      %td= tr.destination
  - elsif resource.specialist?
   .orders
    .head
@@ -48,8 +62,24 @@
 
   .qiwi
    На счету #{resource.qiwi} руб.
+  .transactions
+   %h4 Денежные переводы
+   %table
+    %tr
+     %th Дата
+     %th Сумма
+     %th Откуда
+     %th Куда
+    - transactions.each do |tr|
+     %tr
+      %td= tr.created_at
+      %td= tr.amount
+      %td= tr.source
+      %td= tr.destination
 
   .groups
-   - resource.specialist.specialist_groups.each do |grp|
-    .group
-     grp.name
+   = render :partial => "admin/users/spec_groups", :locals => {resource: resource}
+  .portfolios
+   - resource.specialist.portfolios.each do |portfolio|
+    .portfolio
+     =render :partial => 'shared/portfolio', :locals => {:portfolio_items => resource.specialist.portfolio_items, :editable => true, :example_set => portfolio.id}
