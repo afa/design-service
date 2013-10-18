@@ -6,10 +6,11 @@
 
 $(document).ready ->
   hide_or_show_question = ->
-    if $("span.plan_refactor.gen_proekt input[type='radio'][value='true']").get(0).checked
+    chk_true = $("span.plan_refactor.gen_proekt input[type='radio'][value='true']").get(0)
+    if typeof(chk_true) != 'undefined' && chk_true.checked
       $('#second_ques').hide()
-
-    if $("span.plan_refactor.gen_proekt input[type='radio'][value='false']").get(0).checked
+    chk_false = $("span.plan_refactor.gen_proekt input[type='radio'][value='false']").get(0)
+    if typeof(chk_false) != 'undefined' && chk_false.checked
       $('#second_ques').show()
 
   $("span.plan_refactor.gen_proekt input[type='radio']").change ->

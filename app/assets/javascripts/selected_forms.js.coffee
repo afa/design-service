@@ -31,7 +31,7 @@ $(document).ready ->
   
   #////AUTO FILL PLOJAD_POMIJENYA///
   prim = $("#ployad_pomijenya").ready( ->
-    if($(prim).val().length == 0)
+    if(typeof($(prim).val()) != 'undefined' && $(prim).val().length == 0)
       $(prim).val('например, Кухня');
       $(prim).css('color','#999999'); 
     $(prim).focusin ->
