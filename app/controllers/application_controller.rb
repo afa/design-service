@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
    @events ||= []
   end
 
+  #def after
   def page_subtitle
     result = I18n.t :"controller_titles.#{params[:controller]}.#{params[:action]}",  default: [:"controller_titles.#{params[:controller]}"]
     result.is_a?(String) ? result : "#{self.class.name.underscore}##{params[:action]}"
