@@ -19,17 +19,13 @@
         Какие гамму и тональность Вы предпочитаете?
         %ul.answer
           %li
-            = f.input_field :cold_gamma, as: :boolean,  id:"cold_gamma", value:""
-            %label{:for => "cold_gamma"} Холодная гамма
+            = f.input :cold_gamma, as: :boolean, label: 'Холодная гамма', wrapper: false
           %li
-            = f.input_field :bright_saturated_colors, as: :boolean,  id:"bright_saturated_colors", value:""
-            %label{:for => "bright_saturated_colors"} Яркие насыщенные цвета
+            = f.input :bright_saturated_colors, as: :boolean, label: 'Яркие насыщенные цвета', wrapper: false
           %li
-            = f.input_field :warm_color, as: :boolean,  id:"warm_color", value:""
-            %label{:for => "warm_color"} Теплая гамма
+            = f.input :warm_color, as: :boolean, label: 'Теплая гамма', wrapper: false
           %li
-            = f.input_field :pastel_shades, as: :boolean,  id:"pastel_shades", value:""
-            %label{:for => "pastel_shades"} Пастельные оттенки
+            = f.input :pastel_shades, as: :boolean, label: 'Пастельные оттенки', wrapper: false
       .color_keyboard_block
         %span Главный цвет в колористической композиции?
         .color_keyboard
