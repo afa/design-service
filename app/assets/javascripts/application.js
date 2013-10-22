@@ -16,11 +16,8 @@
 //= require jquery_nested_form
 //= require jquery.form
 //= require jquery-ui
-//= require users
-
 //= require jquery.corner
 //= require jquery.slimscroll
-
 //= require fly_window
 //= require login_box
 //= require js-routes
