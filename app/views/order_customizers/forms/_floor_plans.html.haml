@@ -28,9 +28,10 @@
           %input#what_meterials{:name => "", :type => "checkbox", :value => ""}
           %label{:for => "what_meterials"} На усмотрение дизайнера
 
-
-      = render partial: 'order_customizers/forms/floor_plans/places', locals: {orderable_form: f}
-      = f.link_to_add 'Add',:floor_plans
+      .rooms
+        = render partial: 'order_customizers/forms/floor_plans/places', locals: {orderable_form: f}
+        = f.link_to_add :floor_plans do
+          %span.add_room Добавить помещение
 
     .design_p_floor_plans_form2.border_x3.rounded-corners_l2.shadow_x1
       .number

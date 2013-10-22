@@ -2,8 +2,10 @@
   .room_blocks
     .place
       Помещение
-      = f.input_field :room, class: 'textlines_default textline_l6-5'
+      = f.input_field :room, class: 'room_name textlines_default textline_l6-5'
       /%input.textlines_default.textline_l6-5{:name => "room_block1plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999')}; return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000')}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
+      = f.link_to_remove do
+        %span.remove_room
     %ul.border_x6.rounded-corners_l3
       %li
         = f.input_field :artificial_cold, class: 'room_block1option1'
