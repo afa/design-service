@@ -13,20 +13,14 @@
         Какой стиль интерьера Вы предпочитаете?
         = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
         = f.input_field :interior_style_comment, as: :string, class: ['textlines_default', 'textline_l5'], size:10
+
       .depending
         Зависимость от потолков?
-        %ul.answer
-          %li
-            %input#depend_yes{:checked => "checked", :name => "depending", :type => "radio", :value => ""}
-            %label{:for => "depend_yes"} Да
-          %li
-            %input#depend_no{:name => "depending", :type => "radio", :value => ""}/
-            %label{:for => "depend_no"} Нет
+        = f.input_field :ceiling_dependence, as: :radio_buttons
+
       .what_materials
         Из каких материалов?
-        %span
-          %input#what_meterials{:name => "", :type => "checkbox", :value => ""}
-          %label{:for => "what_meterials"} На усмотрение дизайнера
+        = f.input :materials_designer_choise, label: 'На усмотрение дизайнера', wrapper_tag: 'span'
 
       .rooms
         = render partial: 'order_customizers/forms/floor_plans/places', locals: {orderable_form: f}
@@ -37,6 +31,7 @@
       .number
       .form_description
       = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
+
     %span.design_p_floor_plans-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
     = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p_floor_plans_submiting'}
 

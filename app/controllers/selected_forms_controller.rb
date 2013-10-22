@@ -8,6 +8,7 @@ protected
       :show_results, :wishes, :typename, :room_name, :decorative_plaster, :wallpaper,
       :ceramic_tiles, :tree, :natural_stone, :cold_gamma, :bright_saturated_colors,
       :warm_color, :pastel_shades, :main_color, :show_results_different,
+      :ceiling_dependence, :materials_designer_choise,
       floor_plans_attributes: [:id, :_destroy, :room, :artificial_cold, :artificial_warm,
       :carpet_or_printed_carpet, :stone, :tree]])
   end
