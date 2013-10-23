@@ -5,7 +5,6 @@
 //= require orderable
 
 $(document).ready ->
-
   #////IMAGE HOVER///
   $(".img_").mouseenter ->
     $(this).parent().find(".heading").addClass "heading_h"
@@ -19,29 +18,35 @@ $(document).ready ->
     $("div.color_keyboard ul *").removeClass "selected"
     $("#selected_color").val $(this).attr("value")
     $(this).addClass "selected"
-  $(".color_keyboard").find("ul li").each -> 
+  $(".color_keyboard").find("ul li").each ->
     if($(this).attr('value')==$("#selected_color").val())
-      $(this).addClass "selected" 
+      $(this).addClass "selected"
 
   #////RADIO BUTTONS ANY FIELD///
   $('.interior ul li:last-child label').append($('.interior ul + input[type="text"]'))
   $('.interior input[type="text"]').change ->
     $('.interior input[type="radio"]').last().get(0).checked = true
 
-  
-  #////AUTO FILL PLOJAD_POMIJENYA///
-  prim = $("#ployad_pomijenya").ready( ->
-    if(typeof($(prim).val()) != 'undefined' && $(prim).val().length == 0)
-      $(prim).val('например, Кухня');
-      $(prim).css('color','#999999'); 
-    $(prim).focusin ->
-      if($(this).val() == 'например, Кухня')
-        $(this).val(''); $(this).css('color','#000000'); 
-    $(prim).blur ->
-      if (this.value == '') 
-        this.value="например, Кухня"; $(this).css('color','#999999'); 
-  )    
+  # room materials
+  $(document).on 'nested:fieldAdded', (event)->
+    field = event.field
+    room_name_field = field.find('.room_name')
+    room_name_field.val('например, Кухня')
+    room_name_field.css('color','#999999')
 
+  $('.rooms').on 'change', '.fields', ->
+    unless $(this).next().is('.fields')
+      $('.add_room').click()
+    false
 
+  $('.rooms').on 'change blur', '.room_name', ->
+    if $(this).val().length == 0
+      $(this).val('например, Кухня');
+      $(this).css('color','#999999');
 
- 
+  $('.rooms').on 'focusin', '.room_name', ->
+    if $(this).val() == 'например, Кухня'
+      $(this).val('');
+      $(this).css('color','#000000');
+
+  $('.add_room').click() # one empty room to fill (should be done after nested:fieldAdded handler created)

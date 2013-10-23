@@ -2,26 +2,18 @@
   .room_blocks
     .place
       Помещение
-      = f.input_field :room, class: 'textlines_default textline_l6-5'
-      /%input.textlines_default.textline_l6-5{:name => "room_block1plojad", :onblur => "if($(this).val()==''){$(this).val('например, Кухня'); $(this).css('color','#999999')}; return false;", :onfocus => "if($(this).val()=='например, Кухня'){$(this).val(''); $(this).css('color','#000000')}; return false;", :style => "color:#999999", :type => "text", :value => "например, Кухня"}
+      = f.input_field :room, class: 'room_name textlines_default textline_l6-5'
+      = f.link_to_remove do
+        %span.remove_room
     %ul.border_x6.rounded-corners_l3
       %li
-        = f.input_field :artificial_cold, class: 'room_block1option1'
-        = f.label :artificial_cold, 'Искусственных холодных'
-          
+        = f.input :artificial_cold, class: 'room_block1option1', label: 'Искусственных холодных', wrapper: false
       %li
-        = f.input_field :artificial_warm, class: 'room_block1option2'
-        = f.label :artificial_warm, 'Искусственных теплых'
-          
+        = f.input :artificial_warm, class: 'room_block1option2', label: 'Искусственных теплых', wrapper: false
       %li
-        = f.input_field :carpet_or_printed_carpet, class: 'room_block1option3'
-        = f.label :carpet_or_printed_carpet, 'Ковролин или набивной рисунок ковра'        
-          
+        = f.input :carpet_or_printed_carpet, class: 'room_block1option3', label: 'Ковролин или набивной рисунок ковра', wrapper: false
       %li
-        = f.input_field :stone, class: 'room_block1option4'
-        = f.label :stone, 'Камень'
-
+        = f.input :stone, class: 'room_block1option4', label: 'Камень', wrapper: false
       %li
-        = f.input_field :tree, class: 'room_block1option5'
-        = f.label :tree, 'Дерево'
+        = f.input :tree, class: 'room_block1option5', label: 'Дерево', wrapper: false
 
