@@ -1,12 +1,14 @@
 = simple_form_for(@user ||= User.new, as: :user, :url => registration_path(:user)) do |f|
-  .head_register
-  .goto_register
-  .messages
+  - if params[:controller] == 'registrations'
+    .head_none
+  - else
+    .head_register
+    .goto_register
   .info
     Логин:
     %span *
   .text_fields
-    %span.caution (латинские символы и цифры, не меньше трех символов)
+    %span.caution (латинские символы и цифры, не меньше 3 символов)
     = f.input_field :username, class: 'reg_client_tfeild'
   .info
     E-mail:
@@ -16,7 +18,7 @@
     Пароль:
     %span *
   .text_fields
-    %span.caution (не меньше восьми символов)
+    %span.caution (не меньше 8 символов)
     = f.input_field :password, class: 'reg_client_tfeild'
   .info
     Повторите&nbsp;&nbsp; пароль:

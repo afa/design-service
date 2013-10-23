@@ -1,7 +1,8 @@
-.black_content_blocks
-  #register.rounded-corners.border_x1.shadow_x1
-    .close_fly_window
-    = render 'layouts/unregistered/registration_form'
-  #login.rounded-corners.border_x2.shadow_x1
-    .close_fly_window
-    = render 'layouts/unregistered/login_form'
+- unless params[:controller] == "registrations"
+  .black_content_blocks
+    #register.rounded-corners.border_x1.shadow_x1
+      .close_fly_window
+      = render 'layouts/unregistered/registration_form'
+    #login.rounded-corners.border_x2.shadow_x1
+      .close_fly_window
+      = render 'layouts/unregistered/login_form'

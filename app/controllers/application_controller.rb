@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :log_params
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :get_current_user
   before_filter :load_events_for_spec
@@ -8,6 +9,10 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: exception.message
+  end
+
+  def log_params
+   p "---app-parm", params
   end
 
   def get_current_user
@@ -66,7 +71,11 @@ class ApplicationController < ActionController::Base
         "registered_layout"
       end
     else
-      "unregistered_layout"
+      if params[:controller] == 'registrations' || (params[:controller] == 'devise/sessions' && params[:action] == 'new') || (params[:controller] == 'devise/sessions' && params[:action] == 'create')
+        "login_layout"
+      else
+        "unregistered_layout"
+      end
     end
   end
 
