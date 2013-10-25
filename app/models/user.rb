@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   cattr_accessor :current
 
   has_one :profile
+  #after_initialize :prepare_new_profile
   before_create :new_profile
   accepts_nested_attributes_for :profile
 
@@ -33,7 +34,7 @@ class User < ActiveRecord::Base
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
   attr_accessor :login
 
-  delegate :fake_name, :middle_name, :name, :surname, :full_name, :to_s, :phone, to: :profile
+  delegate :fake_name, :middle_name, :name, :surname, :full_name, :to_s, to: :profile
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -109,5 +110,20 @@ class User < ActiveRecord::Base
 
   def user
    self
+  end
+
+  #def prepare_new_profile
+  # return if profile
+  # #return if guest?
+  # profile = Profile.new
+  #end
+
+  def phone
+   profile.try(:phone)
+  end
+
+  def phone=(ph)
+   profile = Profile.new unless profile
+   profile.phone = ph
   end
 end

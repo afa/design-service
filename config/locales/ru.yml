@@ -95,9 +95,11 @@ ru:
     registrations:
       edit: 'Смена пароля'
       create: 'Регистрация'
+      new: 'Регистрация'
     devise/sessions:
       new: 'Вход'
-      create: 'Регистрация'
+      create: 'Вход'
+      #create: 'Регистрация'
     devise/passwords:
       new: 'Восстановление пароля'
       create: 'Забыли пароль'

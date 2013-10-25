@@ -1,4 +1,10 @@
-.black_content_blocks
+-# .black_content_blocks
   #login.rounded-corners.border_x2.shadow_x1
     .close_fly_window
     = render 'layouts/unregistered/login_form'
+.messages
+  - flash.each do |k, v|
+    %div{:class => [k]}
+      = v
+#login.rounded-corners.border_x2.shadow_x1{:style => "display: block; margin-top: 0.5cm;"}
+  = render 'layouts/unregistered/login_form'
