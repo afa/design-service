@@ -1,0 +1,33 @@
+/* Menu fonts, table fonts, PostForm font */
+@font-face {
+    font-family: 'gardensc';
+    src: font-url('gardensc/gardensc_03_1-webfont.eot');
+    src: font-url('gardensc/gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('gardensc/gardensc_03_1-webfont.woff') format('woff'),
+         font-url('gardensc/gardensc_03_1-webfont.ttf') format('truetype');
+  src: local("gardensc"), font-url('gardensc/gardensc_03_1-webfont.ttf') format("truetype"); /* for Firefox 3, Safari */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Page captions */
+@font-face {
+    font-family: 'dejavu_sans';
+    src: font-url('dejavu_sans/dejavusanscondensed-webfont.eot');
+    src: font-url('dejavu_sans/dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('dejavu_sans/dejavusanscondensed-webfont.woff') format('woff'),
+         font-url('dejavu_sans/dejavusanscondensed-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* lol wtf */
+@font-face {
+    font-family: 'minion_pro';
+    src: font-url('minion_pro/minion_pro-webfont.eot');
+    src: font-url('minion_pro/minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('minion_pro/minion_pro-webfont.woff') format('woff'),
+         font-url('minion_pro/minion_pro-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
