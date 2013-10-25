@@ -1,40 +1,8 @@
 //= require chat
 //= require ../orders
-
-/* Menu fonts, table fonts, PostForm font */
-@font-face {
-    font-family: 'gardensc';
-    src: font-url('gardensc/gardensc_03_1-webfont.eot');
-    src: font-url('gardensc/gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('gardensc/gardensc_03_1-webfont.woff') format('woff'),
-         font-url('gardensc/gardensc_03_1-webfont.ttf') format('truetype');
-	src: local("gardensc"), font-url('gardensc/gardensc_03_1-webfont.ttf') format("truetype"); /* for Firefox 3, Safari */
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-/*Page captions */
-@font-face {
-    font-family: 'dejavu_sans';
-    src: font-url('dejavu_sans/dejavusanscondensed-webfont.eot');
-    src: font-url('dejavu_sans/dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('dejavu_sans/dejavusanscondensed-webfont.woff') format('woff'),
-         font-url('dejavu_sans/dejavusanscondensed-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* lol wtf*/
-@font-face {
-    font-family: 'minion_pro';
-    src: font-url('minion_pro/minion_pro-webfont.eot');
-    src: font-url('minion_pro/minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('minion_pro/minion_pro-webfont.woff') format('woff'),
-         font-url('minion_pro/minion_pro-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+//= require ../interiors
+//= require engineering_systems
+//= require profile_orders
 
 /* LayOut Config */
 body  {
@@ -73,42 +41,7 @@ body  {
 
 /*  /////////////////////////////////////////NEW CSS//////////////////////////////////////////////// */
 /*  PAGE CONCEPT REG_MY_ORDERS.HTML */
-div._razrabotka_var{ float:left; width:540px; margin-left:45px; min-height:200px; position:relative; color:#4c4c4c; margin-bottom:50px; }
-div._razrabotka_var div.date{ width:128px; height:28px; float:right; border-top:none; border-right:none; position:absolute; right:-4px; top:-2px; text-align:center; padding-top:8px; color:#648040;  font-style:italic; font-size:20px}
 
-div._razrabotka_var div.name{ height:30px; width:380px; float:left; padding:15px 0px 0px 15px; font-size:14px; margin:0px;}
-div._razrabotka_var div.name span{color:#6c1407; font-size:14px; font-weight:bold; padding:0px 10px 3px 10px; border-bottom:1px solid #c8c8c8;  }
-
-div._razrabotka_var div.artists{ float:left; font-size:14px; padding:5px 0px 0px 15px; width:300px;}
-div._razrabotka_var div.artists ul{ color:#6c1407; font-size:12px;  float: right; width:200px; margin:0px; padding:0px; list-style:none; }
-div._razrabotka_var div.artists ul li{ border-bottom:1px solid #c8c8c8; padding:0px 10px 3px 10px;}
-
-div._razrabotka_var div.completion{ font-size:13px; position:absolute; right:0px; margin-top:45px; }
-div._razrabotka_var div.completion span.tit{ float:left; padding-top:5px;}
-div._razrabotka_var div.completion ul{ color:#6c1407; list-style:none; width:100px; float:right; padding:0px 10px 0px 10px; margin:0px;}
-div._razrabotka_var div.completion ul li:nth-child(1){ font-size:10px; padding:5px 0px 5px 5px; border-bottom:1px solid #c8c8c8; border-top:1px solid #c8c8c8;}
-div._razrabotka_var div.completion ul li:nth-child(2){ color:#4c4c4c; padding-left:5px;}
-div._razrabotka_var div.completion ul li.payid{ font-size:14px; font-weight:bold; font-style:italic;}
-
-div._razrabotka_var div.status{ height:30px; width:350px; float:left; padding:5px 0px 0px 15px; font-size:14px; margin:0px;}
-div._razrabotka_var div.status span{color:#6c1407; font-size:14px; font-weight:bold; padding:0px 10px 3px 10px; border-bottom:1px solid #c8c8c8; margin-left:20px;}
-
-div._razrabotka_var div.pay_now{ float:left;  font-size:14px; color:#03129e; font-weight:bold; margin-left:280px; padding-top:5px; height:15px;  width:250px;}
-div._razrabotka_var div.pay_now a,div._razrabotka_var div.pay_now a:link, div._razrabotka_var div.pay_now a:visited, div._razrabotka_var div.pay_now a:active{ text-decoration:underline; color:#03129e;}
-div._razrabotka_var div.pay_now a:hover{ text-decoration:none;}
-
-div._razrabotka_var div.msg{ width:180px; float: left; font-size:14px; color:#6c1407; margin-left:15px; margin-top:10px; background-image:image-url("msg_icon.jpg"); background-repeat:no-repeat; height:20px; padding-left:35px;}
-div._razrabotka_var div.msg span a,div.specialist_orders div.msg span a:visited{ text-decoration:underline; color:#6c1407;}
-div._razrabotka_var div.msg span a:hover{ text-decoration:none;}
-
-div._razrabotka_var div.completed{ float:left; width:310px;  padding-top:10px;}
-
-
-div._razrabotka_var div.documents{ height:30px; width:280px; float:left; padding:15px 0px 0px 15px; font-size:14px; margin:0px; }
-div._razrabotka_var div.documents ul{color:#085775; font-size:14px; font-weight:bold; padding:0px; margin:0px; list-style:none; float:right;}
-div._razrabotka_var div.documents ul li{ float:left; padding-left:10px;}
-div._razrabotka_var div.documents ul li a,div._razrabotka_var div.documents ul li a:link,div._razrabotka_var div.documents ul li a:visited, div._razrabotka_var div.documents ul li a:active{ text-decoration:underline; color:#085775;}
-div._razrabotka_var div.documents ul li a:hover{ text-decoration:none;}
 
 
 /*  PAGE CONCEPT REG_PERSONAL_ACCOUNT.HTML */
@@ -195,34 +128,6 @@ div.calculator span.count{float: left; color:#666; padding-left:220px; text-deco
 
 
 /* PAGE CONCEPT REG_ENGINEERING_SYSTEMS.HTML */
-div.engineering_systems_form1{ width:500px;   margin-left:30px; margin-top:20px; padding:30px; line-height:45px; margin-bottom:25px; float:left;}
-div.engineering_systems_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; width:86px; height:29px; }
-div.engineering_systems_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height:29px; margin-left:10px; }
-div.engineering_systems_form1 div.head_part{ background-image:image-url("engineering_systems_form1-small.png"); width:430px; height:28px;  clear:both; margin:40px 0px 0px 35px; }
-div.engineering_systems_form1  div.file_attaching{ width:495px; margin-top:15px; float:left; font-size:14px; }
-div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px;  float:left;}
-
-div.engineering_systems_form1  div.file_attaching span.attach{ padding:30px 0px 0px 140px; margin-top:0px;  color: #8e8e8e; float:left; background-image:image-url("file_att.png"); background-repeat: no-repeat; background-position: 80px 15px;}
-
-div.engineering_systems_form2{ width:450px; min-height:200px;  margin-left:90px; margin-top:15px; padding:30px; margin-bottom:25px; float:left; }
-div.engineering_systems_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right; width:86px; height:29px; }
-div.engineering_systems_form2 div.form_description{ background-image:image-url("task.png"); width:196px; float:right; height:29px; margin-left:10px; }
-div.engineering_systems_form2 ul{ list-style:none; }
-div.engineering_systems_form2 ul li{ margin-bottom:15px;}
-div.engineering_systems_form2 ul li span{ width:25px;  height:30px; float:left; padding-right:15px;  }
-div.engineering_systems_form2 ul li.caution{ font-size:12px; color:#e51600; display:none;}
-div.engineering_systems_form2 ul li.caution span{ background-image:image-url("icon_red.png"); background-repeat: no-repeat; background-position:5px;}
-
-
-div.engineering_systems_form3{ width:470px; height:160px;  margin-left:35px; margin-top:15px; padding:30px; margin-bottom:25px; float:left;}
-div.engineering_systems_form3 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px;}
-div.engineering_systems_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-.engineering_systems_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#eae9e9; height:30px; }
-
-div.engineering_systems_submiting{  height:50px; width:550px; margin-left:60px; padding:20px 0px 20px 0px; float:left;}
-
-ol.eng_systems{ float:left; list-style-type:decimal; }
-ol.eng_systems li{ margin-bottom:10px; width:450px;}
 
 
 /*  PAGE CONCEPT REG_DESIGN_PROJECT.HTML */
@@ -304,9 +209,6 @@ div.design_p-workin-docs_form1 div.number_second{ background-image:image-url("2_
 div.design_p-workin-docs_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
 
 div.design_p-workin-docs_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p-workin-docs_form1 div.interior{ float:left;}
-div.design_p-workin-docs_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p-workin-docs_form1 div.interior ul.answer li{ float:left;  margin-right:10px;  }
 
 div.design_p-workin-docs_form1 div.present_results{ float:left;}
 div.design_p-workin-docs_form1 div.present_results ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
@@ -340,9 +242,6 @@ div.design_p_color_scheme_form1 div.number_second{ background-image:image-url("2
 div.design_p_color_scheme_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
 
 div.design_p_color_scheme_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p_color_scheme_form1 div.interior{ float:left;}
-div.design_p_color_scheme_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p_color_scheme_form1 div.interior ul.answer li{ float:left;  margin-right:10px;  }
 
 div.design_p_color_scheme_form1 div.range_and_tone{ float:left;}
 div.design_p_color_scheme_form1 div.range_and_tone ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
@@ -420,9 +319,6 @@ div.design_p_sweep_wall_form1 div.number_second{ background-image:image-url("2_n
 div.design_p_sweep_wall_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
 
 div.design_p_sweep_wall_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p_sweep_wall_form1 div.interior{ float:left;}
-div.design_p_sweep_wall_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p_sweep_wall_form1 div.interior ul.answer li{ float:left;  margin-right:10px;  }
 
 div.design_p_sweep_wall_form1 div.what_materials{ float:left; width:500px;}
 div.design_p_sweep_wall_form1 div.what_materials ul.answer{ list-style:none;  float: right;  width:400px; padding:0px 0px 10px 0px; margin-left:15px;}
@@ -459,9 +355,6 @@ div.design_p_floor_plans_form1 div.number_second{ background-image:image-url("2_
 div.design_p_floor_plans_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
 
 div.design_p_floor_plans_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p_floor_plans_form1 div.interior{ float:left;}
-div.design_p_floor_plans_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p_floor_plans_form1 div.interior ul.answer li{ float:left;  margin-right:10px;  }
 
 div.design_p_floor_plans_form1 div.depending{ float:left; width:370px; padding-left:110px}
 div.design_p_floor_plans_form1 div.depending ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float: right;  }
@@ -506,10 +399,6 @@ div.design_p_ceiling_fixtures_form1 div.number_second{ background-image:image-ur
 div.design_p_ceiling_fixtures_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
 
 div.design_p_ceiling_fixtures_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p_ceiling_fixtures_form1 div.interior{ float:left;}
-div.design_p_ceiling_fixtures_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-right:60px; float: right; }
-div.design_p_ceiling_fixtures_form1 div.interior ul.answer li{ float: none; margin:0px; padding:0px; height:30px;}
-
 
 div.design_p_ceiling_fixtures_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:15px; float:left; margin-left:45px;  }
 div.design_p_ceiling_fixtures_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px; }
