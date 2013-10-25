@@ -1,1 +1,49 @@
+span.post_varplan{ color:#3d6804}
+div.msg_caution span.post_varplan{color:#3d6804;   padding:15px 0px 10px 115px; float:left; }
+div.post_varplan{ background-image:image-url("post_var_plan_logo_big.jpg") ; border-bottom-color:#a8d868; margin-bottom:5px; float: left; width:550px; }
 
+div.var_form1{ width:360px; height:355px;  margin-left:45px; margin-top:140px; padding:30px; line-height:45px; margin-bottom:25px; }
+div.var_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; }
+div.var_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; }
+
+div.var_form2{ width:450px; height:500px;  margin-left:250px; margin-top:15px; padding:30px; margin-bottom:25px; }
+div.var_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right }
+div.var_form2 div.form_description{ background-image:image-url("task.png"); width:196px; float:right }
+div.kithen_split{ width:170px; float:left;  height:72px; padding-top:15px; }
+div.kithen_split ul.answer{ width:250px;  list-style:none; padding:15px 0px 0px 20px; margin:0px; }
+div.kithen_split ul.answer li{ float:left;  margin-right:10px; }
+div.kithen_size{ width:280px; height:72px;  float:left; padding-top:15px;}
+div.kithen_size ul.answer{ width:160px;  list-style:none;   float: right; padding:0px; margin:0px; }
+div.kithen_size ul.answer li{ float:left;  margin-right:10px; padding-bottom:10px; }
+div.changing_rooms{width:170px; float:left;  padding-top:15px; height:67px; }
+div.changing_rooms ul.answer{ width:250px;  list-style:none; padding:10px 0px 0px 20px; margin:0px;}
+div.changing_rooms ul.answer li{ float:left;  margin-right:10px; }
+div.number_of_rooms{width:260px; height:62px;  float:left; padding-left:20px; padding-top:20px; }
+div.cabinets{ width:360px;   float:left;  padding:20px 0px 20px 90px;}
+div.cabinets ul.answer{ width:220px;  list-style:none;  margin:0px;  float: right; padding-left:0px; }
+div.cabinets ul.answer li{ float:left;  margin-right:10px; }
+div.guests{  float:left; width:460px;}
+div.guests ul.answer{  list-style:none;  margin:0px;  float: right;  padding:0px; }
+div.guests ul.answer li{ float:left;  margin-right:10px; }
+div.sleeping_places{ width:360px;   float:left;  padding:20px 0px 0px 90px;}
+div.washing_machin{ width:360px;   float:left;  padding:20px 0px 20px 70px; }
+div.washing_machin ul.answer{ width:170px;  list-style:none;  margin:0px;  float: right; padding-left:0px; }
+div.washing_machin ul.answer li{ float:left;  margin-right:10px; }
+div.options{ width:420px;   float:left;   }
+div.options ul.answer{ list-style:none;  margin:0px;  padding-left:155px; padding-top:15px; }
+div.options ul.answer li{ float:left;  margin-right:10px; }
+
+div.var_form2 div.break_line{ float:left; padding-bottom:2px; padding-top:2px; width:450px; border-bottom: 1px #a8d868 dashed; height:2px;}
+
+div.var_form3{ width:470px; height:160px;  margin-left:45px; margin-top:15px; padding:30px; margin-bottom:25px;  }
+div.var_form3 div.number{ background-image:image-url("3_number_blue.png"); float:left; }
+div.var_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; }
+.var_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
+
+div.var_form4{ width:685px;  margin-left:45px; margin-top:15px; clear:left; margin-bottom:15px;}
+div.attach_box{ padding: 15px 10px 10px 5px; }
+div.attach_box.plan_development div.number{ background-image:image-url("4_number_yellow.png"); float:left; padding-bottom: 5px; }
+div.attach_box div.form_description{ background-image:image-url("file_attach.png"); width:585px; float:left; padding-bottom: 5px;}
+
+div.postvar_plan_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 20px 0px;}
+.submit_all_forms{ float:left; margin-right:25px;}

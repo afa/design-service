@@ -1,0 +1,74 @@
+span.design_project{ color:#c67700; }
+div.design_project{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
+div.msg_caution span.design_project{color:#f89f65;   padding:15px 0px 10px 115px; float:left; }
+
+div.design_project_all{ background-color:#e8edf1; min-height:900px; height:auto;  width:627px; clear: left; position:relative; overflow:auto; margin-top:5px;}
+
+div.design_project_all div.headers{ position:absolute; }
+div.design_project_all div.headers span{ float:left; width:150px; text-align:center; font-weight:bold; font-size:18px; padding-top:5px;}
+div.design_project_all div.headers span.first{ padding-right:150px; padding-top:13px; color:#b5d48c; padding-left:150px;}
+div.design_project_all div.headers span.second{color:#a3bfdd}
+
+div.design_project_all ul.concept{ margin:0px;  list-style:none; width:400px; height:auto;   clear:both; overflow:auto; float:left; padding:60px 12px 0px 12px; font-size:14px;  background-color:#e4efd5}
+
+div.design_project_all ul.concept li{ margin:0px 30px 10px 20px;   width:150px; height:280px; position:static; float:left; }
+div.design_project_all ul.concept li img{ width:150px; height:150px;}
+div.design_project_all ul.concept li span.hover{ position:absolute;  width:150px; height:150px; background-image:image-url("hover_black.png"); background-repeat:repeat; display:none;}
+
+div.copyright_block div.copyright{ position:relative; float:left; width:340px; height:41px;  background-image:image-url("avtor-small.png"); background-repeat:no-repeat;  margin-left:160px; margin-top:10px;}
+
+div.copyright_block div.copyright:hover{  background-image:image-url("avtor_h-small.png"); }
+
+div.copyright_block{ width:627px;  background-color:#D3DCDD; height:60px; clear:both }
+
+div.design_project_all ul.working_documents{ margin:0px;  list-style:none; height:auto; background-color:#e8edf1; overflow:auto;
+padding:60px 12px 20px 25px; width:164px;}
+div.design_project_all ul.working_documents li{  width:150px; height:280px; position:static; float:left;  margin-bottom:10px; }
+div.design_project_all ul.working_documents li img{ width:150px; height:150px;}
+
+div.design_project_all ul li span.heading{ text-align:center; width:auto; color:#383a3e; font-size:14px; font-weight:bold; width:150px; float:left; }
+div.design_project_all ul li span.text{ font-size:13px; color:#82848a; float:left; padding-top:15px; height:38px;}
+div.design_project_all ul li span.order{ background-image:image-url("order.png"); background-repeat:no-repeat; width:101px; height:26px; float: right; padding-top:5px;}
+div.design_project_all ul li span.order:hover{ cursor:pointer; background-image:image-url("order_hover.png");}
+
+div.design_project_all ul li span.black_opacity{ display: none; position:absolute; background-image:image-url("hover_black.png"); width:150px; height:150px;}
+div.design_project_all ul li span.black_opacity_on{ display: block; cursor:pointer;}
+
+.heading_h{ text-decoration:underline;}
+.heading a, .heading a:active, .heading:link{ color:#383a3e; text-decoration:none;}
+.heading a:hover{ text-decoration:underline;}
+
+
+/*******************************************************/
+
+span.design_p-workin-docs{ color:#c67700; }
+div.design_p-workin-docs{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px; margin-top:0px;  }
+div.msg_caution span.design_p-workin-docs{color:#3d6804;    float:left; }
+
+div.design_p-workin-docs_form1{ width:480px;  margin-left:45px;  padding:30px; line-height:45px; margin-bottom:10px;  overflow:auto; clear:both; float:left; }
+div.design_p-workin-docs_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; height: 29px; width: 86px; margin-right:10px; }
+div.design_p-workin-docs_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
+
+div.design_p-workin-docs_form1  div.file_attaching{ width:485px; margin-top:10px; float:left;}
+div.design_p-workin-docs_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; margin-top: -30px;}
+div.design_p-workin-docs_form1  div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:0px 0px 0px 140px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:80px 0px; margin-top:10px;}
+
+div.design_p-workin-docs_form1 div.number_second{ background-image:image-url("2_number_green.png"); float:left; width:86px; height:29px;  background-repeat:no-repeat;  margin-right:10px; margin-left:0px; padding-bottom:20px; margin-top:20px;}
+div.design_p-workin-docs_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
+
+div.design_p-workin-docs_form1 span.text{ clear:both; position: relative;  float: left;}
+
+div.design_p-workin-docs_form1 div.present_results{ float:left;}
+div.design_p-workin-docs_form1 div.present_results ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
+div.design_p-workin-docs_form1 div.present_results ul.answer li{ float:left;  margin-right:10px;  }
+
+div.design_p-workin-docs_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:15px; float:left; margin-left:45px;  }
+div.design_p-workin-docs_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px; }
+div.design_p-workin-docs_form2 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
+div.design_p-workin-docs_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
+
+
+
+.design_p-workin-docs-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:70px; margin-bottom:15px; font-weight:bold; font-size:14px; width:450px;}
+div.design_p-workin-docs_submiting{ float: left; margin:10px 25px 15px 55px;}
+

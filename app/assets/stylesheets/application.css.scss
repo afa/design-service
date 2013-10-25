@@ -5,6 +5,31 @@
 //= require completion_percent
 //= require datepicker/jquery.ui.all
 
+/* LayOut Config */
+body  {
+  font: 100% gardensc, Arial, Helvetica, sans-serif;
+  font-family: Tahoma;
+  background:image-url("fon-y.jpg") repeat;
+  margin: 0;
+  padding: 0;
+  font-size:16px;
+  font-size-adjust: 0.495;
+  text-align: center;
+  color: #000000;
+  overflow:visible;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.twoColFixRtHdr #container {
+  width: 980px;
+  /* background:#dedede; */
+  margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+  text-align: left; /* this overrides the text-align: center on the body element. */
+  padding:0px;
+  height:auto;
+}
+
 .black_content_blocks {
   display: none;
 }
