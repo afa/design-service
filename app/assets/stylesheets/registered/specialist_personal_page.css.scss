@@ -1,34 +1,148 @@
 // What the style real filename should be?
 body.registered {
-  div.specialist_img_{ width:145px; height:159px; float:left; margin-left:20px; position:relative;}
-  span.specialist_img_border{ background-image: image-url("specialist_img_border.png"); background-repeat:no-repeat;   z-index:10; position:absolute; width:145px; height:159px; float:left; }
-  div.specialist_img_ img{ width:144px; height:158px; z-index:-5;}
-  div.send_message{ width:227px; height:40px; background-image: image-url("msg_send2.png"); float:left; margin-left:20px; cursor:pointer;  }
+  div.specialist_img_ {
+    width: 145px;
+    height: 159px;
+    float: left;
+    margin-left: 20px;
+    position: relative;
+    img {
+      width: 144px;
+      height: 158px;
+      z-index: -5;
+    }
+  }
+  span.specialist_img_border {
+    background-image: image-url("specialist_img_border.png");
+    background-repeat: no-repeat;
+    z-index: 10;
+    position: absolute;
+    width: 145px;
+    height: 159px;
+    float: left;
+  }
+
+  div.send_message {
+    width: 227px;
+    height: 40px;
+    background-image: image-url("msg_send2.png");
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+  }
 
   div.info_specialist {
-    width:546px; float: left; margin-left:20px; font-size:14px; margin-top:10px;
-    span.heading{ font-size:18px; font-weight:bold;  color:#773129; float:left; }
-    span.margine{ margin-bottom:15px;}
-    p{ float:left; position:relative; clear:left; color:#4a4747;}
-    span.heading img{ margin-left:10px; clear: both; overflow:auto;}
+    width: 546px;
+    float: left;
+    margin-left: 20px;
+    font-size: 14px;
+    margin-top: 10px;
+    span.heading {
+      font-size: 18px;
+      font-weight: bold;
+      color: #773129;
+      float: left;
+    }
+    span.margine { margin-bottom: 15px; }
+    p {
+      float: left;
+      position: relative;
+      clear: left;
+      color: #4a4747;
+    }
+    span.heading img {
+      margin-left: 10px;
+      clear: both;
+      overflow: auto;
+    }
     ul {
-      &.portfolio{ padding:0px; margin:0px; max-width:550px; height:250px; overflow: hidden;}
-      &.portfolio li{ padding:0px; margin:0px;}
+      &.portfolio {
+        padding: 0px;
+        margin: 0px;
+        max-width: 550px;
+        height: 250px;
+        overflow: hidden;
+        li {
+          padding: 0px;
+          margin: 0px;
+        }
+      }
+
       li.projects {
-        width: auto; height: auto; border:1px #000033 solid;  float:left;   position:relative; border-color:#98afc4; overflow:auto; clear:none; margin-right:10px; margin-bottom:10px;
-        &:nth-child(1){ clear:both; }
-        span.project_name{ font-size:14px; padding:5px; float:left; color:#657d93; font-weight:bold; padding-left:15px;}
-        span.edit{ width:16px; height:17px; background-image: image-url("edit.png"); background-repeat:no-repeat; position:relative; float: right; margin-right:10px; margin-top:5px; cursor:pointer;}
+        width: auto;
+        height: auto;
+        border: 1px #000033 solid;
+        float: left;
+        position: relative;
+        border-color: #98afc4;
+        overflow: auto;
+        clear: none;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        &:nth-child(1) { clear: both; }
+        span.project_name {
+          font-size: 14px;
+          padding: 5px;
+          float: left;
+          color: #657d93;
+          font-weight: bold;
+          padding-left: 15px;
+        }
+        span.edit {
+          width: 16px;
+          height: 17px;
+          background-image: image-url("edit.png");
+          background-repeat: no-repeat;
+          position: relative;
+          float: right;
+          margin-right: 10px;
+          margin-top: 5px;
+          cursor: pointer;
+        }
         ul.portfolio_list {
-          list-style: none; float:left; margin:0px; padding:0px; clear:both; margin-left:10px; padding-bottom:10px; padding-right:8px;
-          li{ float:left; padding:5px; width:75px; height:68px;}
-          li.add{ background-image: image-url("add_.jpg"); background-repeat:no-repeat; margin:5px 0px 0px 5px; cursor:pointer;}
-          li.add:hover{ background-image: image-url("add_hoover.jpg");}
-          li img{ width:75px; height:68px; margin:0px; padding:0px; }
+          list-style: none;
+          float: left;
+          margin: 0px;
+          padding: 0px;
+          clear: both;
+          margin-left: 10px;
+          padding-bottom: 10px;
+          padding-right: 8px;
+          li {
+            float: left;
+            padding: 5px;
+            width: 75px;
+            height: 68px;
+            &.add {
+              background-image: image-url("add_.jpg");
+              background-repeat: no-repeat;
+              margin: 5px 0px 0px 5px;
+              cursor: pointer;
+              &:hover { background-image: image-url("add_hoover.jpg"); }
+            }
+            img {
+              width: 75px;
+              height: 68px;
+              margin: 0px;
+              padding: 0px;
+            }
+          }
         }
       }
     }
-    div.see_all{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:right}
-    div.add_new{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:left; cursor:pointer;}
+    div.see_all, div.add_new {
+      color: #7993ab;
+      float: left;
+      width: 550px;
+      margin: 0px;
+      padding: 0px;
+    }
+    div.see_all {
+      text-align: right;
+    }
+    div.add_new {
+      text-align: left;
+      cursor: pointer;
+    }
   }
 }
