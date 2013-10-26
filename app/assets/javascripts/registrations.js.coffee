@@ -1,4 +1,5 @@
 //= require login_box
 
 $(document).ready ->
-  show_fly_window('#register')
+  if $('body').is('.create_action, .new_action')
+    show_fly_window('#register')

@@ -15,8 +15,7 @@
   - else 
     - iget = params[:controller]                 
  
-  %body.unregistered{:id => "#{iget}", :class => "#{params[:controller]}_controller"}
-
+  %body.unregistered{:id => "#{iget}", :class => ["#{params[:controller]}_controller", "#{params[:action]}_action"]}
     %noindex
       -# #black_content
       -# = render 'layouts/unregistered/login_popup'

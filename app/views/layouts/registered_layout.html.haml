@@ -9,7 +9,7 @@
     = csrf_meta_tags
     /[if lt IE 9]
       <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-  %body.registered{:class => "#{params[:controller]}_controller"}
+  %body.registered{:class => ["#{params[:controller]}_controller", "#{params[:action]}_action"]}
     %noindex
       #black_content
       .twoColFixRtHdr
