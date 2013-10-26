@@ -23,7 +23,7 @@ body.registered {
         padding-top: 0px;
         a { color:#6da029;  }
       }
-      
+
       a {
         text-decoration: none;
         color: #c0c0c0;
@@ -64,11 +64,11 @@ body.registered {
         text-align: center;
         line-height: 15px;
         a:link, a:visited {
-          span{ color: #6f2d2d; }
+          span { color: #6f2d2d; }
         }
       }
 
-      li:nth-child(1){ /* Варианты планировки */
+      li:nth-child(1) { /* Варианты планировки */
         background-color: $plan_developments_color;
         width: 130px;
         height: 78px;
@@ -81,7 +81,7 @@ body.registered {
         }
       }
 
-      li:nth-child(2){ /* Согласования перепланировок */
+      li:nth-child(2) { /* Согласования перепланировок */
         background-color: $replanning_endorsement_color;
         width: 160px;
         height: 60px;
@@ -94,7 +94,7 @@ body.registered {
         }
       }
 
-      li:nth-child(3){ /* Дизайн-проект */
+      li:nth-child(3) { /* Дизайн-проект */
         background-color: $design_projects_color;
         width: 132px;
         height: 78px;
@@ -107,7 +107,7 @@ body.registered {
         }
       }
 
-      li:nth-child(4){ /* Инженерные системы и конструктив */
+      li:nth-child(4) { /* Инженерные системы и конструктив */
         background-color: $engineering_systems_color;
         width: 132px;
         height: 58px;
@@ -131,7 +131,13 @@ body.registered {
   }
 
   // TOP MENU FOR SPECIALIST
-  #header_specialist {  height:131px;  margin: 0px;  padding: 0px;  width:auto;  clear:both;  }
+  #header_specialist {
+    height: 131px;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    clear: both;
+  }
 
   ul#menu_specialist {
     float: left;
