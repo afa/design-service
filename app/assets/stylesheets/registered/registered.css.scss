@@ -1,260 +1,242 @@
-//= require ./chat
-//= require ../orders
-//= require ../interiors
-//= require ./profile_orders
-//= require ./personal_accounts
-//= require ./personal_account_specialists
-//= require ./portfolio
-//= require ./specialist_personal_page
-//= require ./specialist
-//= require ./navigation
-
-//= require ./plan_developments
-//= require ./design_projects
-//= require ./engineering_systems
-//= require ./copyright_supervisions
-//= require ./color_schemes
-//= require ./floor_plans
-//= require ./sweep_walls
-//= require ./ceiling_fixtures
-
-
-/*  DEFAULT PAGE STYLES */
-div.caution_x2 {
-  color: #f89f65;
-  font-size: 18px;
-  margin-left: 35px;
-}
-
-div.caution {
-  color: #3d6804;
-  font-size: 18px;
-  margin-left: 35px;
-}
-
-div#maincontent_index {
-  height: auto;
-  width: 980px;
-  position: relative;
-  margin: 0px;
-  padding: 0px;
-  background-color: #666666;
-  background: image-url("coverpatter.png") repeat;
-  clear: both;
-  overflow: auto;
-}
-
-#main_content {
-  position: relative;
-  background-color: #eae9e9;
-  margin: 20px 0px 0px 20px;
-  margin-bottom: 20px;
-  width: 940px;
-  float: left;
-  height: auto;
-}
-
-/*  DEFAULT CLASSES */
-.light_green {
-  background-color: #cfe4b4;
-  color: #4d8701;
-}
-
-.light_red {
-  background-color: #ecdfdf;
-  color: #d55400;
-}
-
-.caption_left_menu {
-  height: 55px;
-  margin-top: 27px;
-  font-size: 16px;
-  font-weight: inherit;
-  float: left;
-  width: 252px;
-  padding-left: 40px;
-  line-height: 25px;
-
-  a, a:link, a:active {
-    color: #434242;
-    text-decoration: underline;
-    font-size: 14px;
-  }
-  a:hover { text-decoration:none; }
-}
-
-.caption {
-  height: 40px;
-  margin-top: 27px;
-  padding-top: 15px;
-  font-size: 22px;
-  font-weight: inherit;
-  float: left;
-  width: 595px;
-  padding-left: 40px;
-}
-
-.heading_captions {
-  color: #8d0606;
-  font-size: 16px;
-  font: 16px;
-  float: left;
-  padding: 20px 0px 15px 40px;
-}
-
-.green_header {  color:#609c11;  }
-.blue_header {  color: #5180a9;  }
-.brown_header {  color: #773129;  }
-.dark_green_header {  color:#236e02;  }
-.orrange_header {  color:#f89f65;  }
-.gray_header {  color:#5b5b5b;  }
-.dark_red {  color:#5c0404;  }
-
-.border_x1 {  border:6px solid #efd4c2;  }    /* Дизайн-проект (мягкий) */
-.border_xs {  border:6px solid #f89f65;  }    /* Дизайн-проект */
-.border_xg {  border:6px solid #a8d868;  }    /* Варианты планировки */
-.border_x2 {  border:6px solid #e9da95;  }    /* Согласования перепланировок (мягкий) */
-.border_x3 {  border:6px solid #99bbe1;  }    /* Инженерные системы и конструктив */
-.border_x4 {  border:6px solid #e6c941;  }    /* Согласования перепланировок */
-.border_x5 {  border:1px solid #c1c1c1;  }
-.border_x6 {  border:1px solid #a8d868;  }
-
-div.var_form1 span.subtitle {
-  font-size: 12px;
-  position: relative;
-  margin-left: 70px;
-  left: 0px;
-  float: left;
-  margin-top: -20px;
-}
-
-input[type='radio'] {
-  float: left;
-  width: 0px;
-  height: 0px;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  overflow: hidden;
-  opacity: 0;
-  position: absolute;
-}
-
-input[type='radio'] + label {
-  clear: none;
-  padding: 0px 0 0px 24px;
-  cursor: pointer;
-  background-image: image-url("circleN.png");
-  background-repeat: no-repeat;
-  /* display: inline-block; */
-}
-
-input[type='radio']:checked + label {
-  background-image: image-url("circleY.png");
-  background-repeat: no-repeat;
-}
-
-input[type='checkbox'] {
-  float: left;
-  width: 0px;
-  height: 0px;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  overflow: hidden;
-  opacity: 0;
-  position: absolute;
-}
-
-input[type='checkbox'] + label {
-  background-image: image-url("box_not_cheked.png");
-  background-repeat: no-repeat;
-  padding: 3px 0 0px 40px;
-  cursor: pointer;
-  height: 35px;
-}
-
-input[type='checkbox']:checked + label {
-  background-image: image-url("box_checked.png");
-  background-repeat: no-repeat;
-  padding: 3px 0 0px 40px;
-  cursor: pointer;
-}
-
-textarea:focus { outline:none !important; }
-.text_shadow_1 { text-shadow: 1px 1px 3px #6b5c5c; }
-
-.reg_client_tfeild {
-  width: 280px;
-  padding: 0px;
-  margin: 0px;
-  border: none;
-  height: 25px;
-  font-size: 16px;
-  color: #4c4c4c;
-}
-
-.log_client_tfeild {
-  width: 200px;
-  padding: 0px;
-  margin: 0px;
-  border: none;
-  height: 25px;
-  font-size: 16px;
-  color: #4c4c4c;
-}
-.close_fly_window {
-  background-image: image-url("close.png");
-  width: 30px;
-  height: 26px;
-  position: absolute;
-  right: 0px;
-  margin-top: -40px;
-  cursor: pointer;
-}
-
-.slimScrollDiv { border-right: 1px solid #eee;
-  float: left;
-}
-
-div.msg_caution span {
-  color: #3d6804;
-  font-size: 18px;
-  margin-left: 35px;
-
-  &.design_project {
+body.registered {
+  /*  DEFAULT PAGE STYLES */
+  div.caution_x2 {
     color: #f89f65;
     font-size: 18px;
-    margin-left: 0px;
-    padding-left: 35px;
+    margin-left: 35px;
   }
-}
 
-div.attach_place_for_box {
-  position: relative;
-  float: left;
-  width: 500px;
-  min-height: 120px;
-  overflow: auto;
-  margin-top: 5px;
-}
+  div.caution {
+    color: #3d6804;
+    font-size: 18px;
+    margin-left: 35px;
+  }
 
-.attach_box {
-  position: absolute;
-  z-index: 34;
-}
+  div#maincontent_index {
+    height: auto;
+    width: 980px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background-color: #666666;
+    background: image-url("coverpatter.png") repeat;
+    clear: both;
+    overflow: auto;
+  }
 
-ul.list_of_attachments {
-  width: 460px;
-  position: relative;
-  clear: both;
-  overflow: auto;
-  z-index: 80;
-  padding-top: 8px;
-  li { float:left; }
-}
+  #main_content {
+    position: relative;
+    background-color: #eae9e9;
+    margin: 20px 0px 0px 20px;
+    margin-bottom: 20px;
+    width: 940px;
+    float: left;
+    height: auto;
+    input { background-color: #eae9e9; }
+  }
+
+  /*  DEFAULT CLASSES */
+  .light_green {
+    background-color: #cfe4b4;
+    color: #4d8701;
+  }
+
+  .light_red {
+    background-color: #ecdfdf;
+    color: #d55400;
+  }
+
+  .caption_left_menu {
+    height: 55px;
+    margin-top: 27px;
+    font-size: 16px;
+    font-weight: inherit;
+    float: left;
+    width: 252px;
+    padding-left: 40px;
+    line-height: 25px;
+
+    a, a:link, a:active {
+      color: #434242;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+    a:hover { text-decoration:none; }
+  }
+
+  .caption {
+    height: 40px;
+    margin-top: 27px;
+    padding-top: 15px;
+    font-size: 22px;
+    font-weight: inherit;
+    float: left;
+    width: 595px;
+    padding-left: 40px;
+  }
+
+  .heading_captions {
+    color: #8d0606;
+    font-size: 16px;
+    font: 16px;
+    float: left;
+    padding: 20px 0px 15px 40px;
+  }
+
+  .green_header {  color:#609c11;  }
+  .blue_header {  color: #5180a9;  }
+  .brown_header {  color: #773129;  }
+  .dark_green_header {  color:#236e02;  }
+  .orrange_header {  color:#f89f65;  }
+  .gray_header {  color:#5b5b5b;  }
+  .dark_red {  color:#5c0404;  }
+
+  .border_x1 {  border:6px solid #efd4c2;  }    /* Дизайн-проект (мягкий) */
+  .border_xs {  border:6px solid #f89f65;  }    /* Дизайн-проект */
+  .border_xg {  border:6px solid #a8d868;  }    /* Варианты планировки */
+  .border_x2 {  border:6px solid #e9da95;  }    /* Согласования перепланировок (мягкий) */
+  .border_x3 {  border:6px solid #99bbe1;  }    /* Инженерные системы и конструктив */
+  .border_x4 {  border:6px solid #e6c941;  }    /* Согласования перепланировок */
+  .border_x5 {  border:1px solid #c1c1c1;  }
+  .border_x6 {  border:1px solid #a8d868;  }
+
+  div.var_form1 span.subtitle {
+    font-size: 12px;
+    position: relative;
+    margin-left: 70px;
+    left: 0px;
+    float: left;
+    margin-top: -20px;
+  }
+
+  input[type='radio'] {
+    float: left;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+  }
+
+  input[type='radio'] + label {
+    clear: none;
+    padding: 0px 0 0px 24px;
+    cursor: pointer;
+    background-image: image-url("circleN.png");
+    background-repeat: no-repeat;
+    /* display: inline-block; */
+  }
+
+  input[type='radio']:checked + label {
+    background-image: image-url("circleY.png");
+    background-repeat: no-repeat;
+  }
+
+  input[type='checkbox'] {
+    float: left;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+  }
+
+  input[type='checkbox'] + label {
+    background-image: image-url("box_not_cheked.png");
+    background-repeat: no-repeat;
+    padding: 3px 0 0px 40px;
+    cursor: pointer;
+    height: 35px;
+  }
+
+  input[type='checkbox']:checked + label {
+    background-image: image-url("box_checked.png");
+    background-repeat: no-repeat;
+    padding: 3px 0 0px 40px;
+    cursor: pointer;
+  }
+
+  textarea:focus { outline:none !important; }
+  .text_shadow_1 { text-shadow: 1px 1px 3px #6b5c5c; }
+
+  .reg_client_tfeild {
+    width: 280px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 25px;
+    font-size: 16px;
+    color: #4c4c4c;
+  }
+
+  .log_client_tfeild {
+    width: 200px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 25px;
+    font-size: 16px;
+    color: #4c4c4c;
+  }
+  .close_fly_window {
+    background-image: image-url("close.png");
+    width: 30px;
+    height: 26px;
+    position: absolute;
+    right: 0px;
+    margin-top: -40px;
+    cursor: pointer;
+  }
+
+  .slimScrollDiv { border-right: 1px solid #eee;
+    float: left;
+  }
+
+  div.msg_caution span {
+    color: #3d6804;
+    font-size: 18px;
+    margin-left: 35px;
+
+    &.design_project {
+      color: #f89f65;
+      font-size: 18px;
+      margin-left: 0px;
+      padding-left: 35px;
+    }
+  }
+
+  div.attach_place_for_box {
+    position: relative;
+    float: left;
+    width: 500px;
+    min-height: 120px;
+    overflow: auto;
+    margin-top: 5px;
+  }
+
+  .attach_box {
+    position: absolute;
+    z-index: 34;
+  }
+
+  ul.list_of_attachments {
+    width: 460px;
+    position: relative;
+    clear: both;
+    overflow: auto;
+    z-index: 80;
+    padding-top: 8px;
+    li { float:left; }
+  }
 
 
-div.calculator {
-  margin-left: 80px;
+  div.calculator {
+    margin-left: 80px;
+  }
 }

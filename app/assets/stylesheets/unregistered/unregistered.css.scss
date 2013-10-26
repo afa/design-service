@@ -1,301 +1,289 @@
-//= require ../interiors
-//= require ./navigation
-//= require ./login_box
-
-//= require ./plan_developments
-//= require ./design_projects
-//= require ./engineering_systems
-//= require ./copyright_supervisions
-//= require ./color_schemes
-//= require ./floor_plans
-//= require ./sweep_walls
-//= require ./ceiling_fixtures
-
-
-/*  PAGE CONCEPT INDEX.HTML */
-div#maincontent_index {
-  height: 760px;
-  position: relative;
-  margin: 0px;
-  padding: 0px;
-  background-image: image-url("collag.jpg");
-}
-
-// FOR DEFAULT PAGES
-div#maincontent_default {
-  position: relative;
-  margin: 0px;
-  padding: 0px;
-  background-color: #dedede;
-  height: auto;
-  width: auto;
-}
-div.page_content_default {
-  width: 817px;
-  background-color: #f6f6f6;
-  padding: 0px;
-  height: auto;
-  min-height: 740px;
-}
-div.collage_design {
-  position: relative;
-  width: 817px;
-  height: 50px;
-  background-repeat: no-repeat;
-  padding: 0px;
-  margin: 0px;
-  background-image: image-url("collag.jpg");
-  background-position: 1px -400px;
-}
-div.mode1{ } /* COLLAG CLASSES*/
-div.mode2{ background-image:image-url("default_collag.jpg"); }
-
-.page_description {
-  position: relative;
-  margin: 25px 0px 0px 50px;
-  background-repeat: no-repeat;
-  height: 31px;
-  padding: 10px 180px 25px 0px;
-  border-bottom: 2px solid;
-  span {
-    font-size: 20px;
-    padding-left: 85px;
-    font-size: 30px;
+body.unregistered {
+  /*  PAGE CONCEPT INDEX.HTML */
+  div#maincontent_index {
+    height: 760px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background-image: image-url("collag.jpg");
   }
-}
 
-div.msg_caution {
-  font-size: 17px;
-  position: relative;
-  width: 680px;
-  float: left;
-}
-div.number {
-  width: 86px;
-  height: 29px;
-  background-repeat: no-repeat;
-  margin-right: 10px;
-  margin-left: 0px;
-  padding-bottom: 20px;
-}
-div.form_description {
-  height: 29px;
-  background-repeat: no-repeat;
-  padding-bottom: 20px;
-}
+  // FOR DEFAULT PAGES
+  div#maincontent_default {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background-color: #dedede;
+    height: auto;
+    width: auto;
+  }
+  div.page_content_default {
+    width: 817px;
+    background-color: #f6f6f6;
+    padding: 0px;
+    height: auto;
+    min-height: 740px;
+  }
+  div.collage_design {
+    position: relative;
+    width: 817px;
+    height: 50px;
+    background-repeat: no-repeat;
+    padding: 0px;
+    margin: 0px;
+    background-image: image-url("collag.jpg");
+    background-position: 1px -400px;
+  }
+  div.mode1{ } /* COLLAG CLASSES*/
+  div.mode2{ background-image:image-url("default_collag.jpg"); }
 
-div.file_attaching span.attach {
-  font-size: 14px;
-  color: #8e8e8e;
-  padding: 30px 0px 0px 200px;
-  float: left;
-  background-image: image-url("file_att.png");
-  background-repeat: no-repeat;
-  height: 67px;
-  background-position: 125px 15px;
-  margin-top: 15px;
-}
+  .page_description {
+    position: relative;
+    margin: 25px 0px 0px 50px;
+    background-repeat: no-repeat;
+    height: 31px;
+    padding: 10px 180px 25px 0px;
+    border-bottom: 2px solid;
+    span {
+      font-size: 20px;
+      padding-left: 85px;
+      font-size: 30px;
+    }
+  }
 
+  div.msg_caution {
+    font-size: 17px;
+    position: relative;
+    width: 680px;
+    float: left;
+  }
+  div.number {
+    width: 86px;
+    height: 29px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    margin-left: 0px;
+    padding-bottom: 20px;
+  }
+  div.form_description {
+    height: 29px;
+    background-repeat: no-repeat;
+    padding-bottom: 20px;
+  }
 
-/*  PAGE STYLES */
-div.border_ornements {
-  width: auto;
-  position: relative;
-  padding-bottom: 90px;
-  background-image: image-url("fon-y.jpg");
-  background-repeat: repeat-y;
-  background-position: center 0px;
-  min-width: 980px;
-}
-.header_top {
-  background-image: image-url("fon-head.jpg");
-  background-repeat: no-repeat;
-  background-position: center 0px;
-  width: auto;
-  position: relative;
-  z-index: 1;
-  min-width: 980px;
-}
-.coconut_leaves {
-  background-image: image-url("coconut_leaves.png");
-  background-repeat: no-repeat;
-  background-position: center 0px;
-  width: auto;
-  position: relative;
-  z-index: 1;
-  min-width: 980px;
-}
-#black_content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 20;
-  background-image: image-url("black_content.png");
-  background-repeat: repeat;
-  display: none;
-  min-width: 980px;
-}
-#header {
-  height: 131px;
-  margin: 0px;
-  padding: 0px;
-  width: auto;
-  clear: both;
-}
-.headerLayer1 {
-  background-image: image-url("logo.png");
-  float: left;
-  width: 527px; /* Ширина слоя */
-  height: 49px;
-  margin: 46px 0px 0px 0px; /*top36px */
-}
-
-/*  DEFAULT CLASSES */
-.border_x1{border:8px solid #f89f65; }
-.border_x2{border:8px solid #a8d868; }
-.border_x3{border:8px solid #99bbe1; }
-.border_x4{border:8px solid #e6c941; }
-.border_x5{border:1px solid #c1c1c1; }
-.border_x6{ border:1px solid #a8d868; }
-
-.textlines_default {
-  background-color: #f6f6f6;
-}
-
-div.var_form1 span.subtitle {
-  font-size: 12px;
-  position: relative;
-  margin-left: 70px;
-  left: 0px;
-  float: left;
-  margin-top: -20px;
-}
-
-input[type='radio'] {
-  float: left;
-  width: 0px;
-  height: 0px;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  overflow: hidden;
-  opacity: 0;
-  position: absolute;
-}
-
-input[type='radio'] + label {
-  clear: none;
-  padding: 2px 0 0px 24px;
-  cursor: pointer;
-	background-image: image-url("circleN.png");
-	background-repeat: no-repeat;
-	/*display: inline-block; */
-}
-
-input[type='radio']:checked + label {
-	background-image: image-url("circleY.png");
-	background-repeat: no-repeat;
-  padding: 2px 0 0px 24px;
-}
+  div.file_attaching span.attach {
+    font-size: 14px;
+    color: #8e8e8e;
+    padding: 30px 0px 0px 200px;
+    float: left;
+    background-image: image-url("file_att.png");
+    background-repeat: no-repeat;
+    height: 67px;
+    background-position: 125px 15px;
+    margin-top: 15px;
+  }
 
 
-input[type='checkbox'] {
-  float: left;
-  width: 0px;
-  height: 0px;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  overflow: hidden;
-  opacity: 0;
-  position: absolute;
-}
+  /*  PAGE STYLES */
+  div.border_ornements {
+    width: auto;
+    position: relative;
+    padding-bottom: 90px;
+    background-image: image-url("fon-y.jpg");
+    background-repeat: repeat-y;
+    background-position: center 0px;
+    min-width: 980px;
+  }
+  .header_top {
+    background-image: image-url("fon-head.jpg");
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    width: auto;
+    position: relative;
+    z-index: 1;
+    min-width: 980px;
+  }
+  .coconut_leaves {
+    background-image: image-url("coconut_leaves.png");
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    width: auto;
+    position: relative;
+    z-index: 1;
+    min-width: 980px;
+  }
+  #black_content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-image: image-url("black_content.png");
+    background-repeat: repeat;
+    display: none;
+    min-width: 980px;
+  }
+  #header {
+    height: 131px;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    clear: both;
+  }
+  .headerLayer1 {
+    background-image: image-url("logo.png");
+    float: left;
+    width: 527px; /* Ширина слоя */
+    height: 49px;
+    margin: 46px 0px 0px 0px; /*top36px */
+  }
 
-input[type='checkbox'] + label {
-	background-image: image-url("box_not_cheked.png");
-	background-repeat: no-repeat;
-  padding: 3px 0 0px 40px;
-  cursor: pointer;
-  height: 35px;
-}
+  /*  DEFAULT CLASSES */
+  .border_x1{border:8px solid #f89f65; }
+  .border_x2{border:8px solid #a8d868; }
+  .border_x3{border:8px solid #99bbe1; }
+  .border_x4{border:8px solid #e6c941; }
+  .border_x5{border:1px solid #c1c1c1; }
+  .border_x6{ border:1px solid #a8d868; }
 
-input[type='checkbox']:checked + label {
-	background-image: image-url("box_checked.png");
-	background-repeat: no-repeat;
-  padding: 3px 0 0px 40px;
-	cursor: pointer;
-}
+  .textlines_default {
+    background-color: #f6f6f6;
+  }
 
-div.more_headings {
-  border-bottom-color: #a8d868;
-  margin-bottom: 5px;
-  float: left;
-  width: 550px;
-}
+  div.var_form1 span.subtitle {
+    font-size: 12px;
+    position: relative;
+    margin-left: 70px;
+    left: 0px;
+    float: left;
+    margin-top: -20px;
+  }
 
-span.more_headings {
-  margin-left: 0px;
-  padding: 0px;
-  color: #3d6804;
-}
+  input[type='radio'] {
+    float: left;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+  }
 
-body.unregistered div.page_description span.more_headings{ padding-left:0px; }
+  input[type='radio'] + label {
+    clear: none;
+    padding: 2px 0 0px 24px;
+    cursor: pointer;
+  	background-image: image-url("circleN.png");
+  	background-repeat: no-repeat;
+  	/*display: inline-block; */
+  }
 
-.reg_client_tfeild {
-  width: 280px;
-  padding: 0px;
-  margin: 0px;
-  border: none;
-  height: 25px;
-  font-size: 16px;
-  color: #4c4c4c;
-}
-.log_client_tfeild {
-  width: 200px;
-  padding: 0px;
-  margin: 0px;
-  border: none;
-  height: 25px;
-  font-size: 16px;
-  color: #4c4c4c;
-}
-.close_fly_window {
-  background-image: image-url("close.png");
-  width: 30px;
-  height: 26px;
-  position: absolute;
-  right: 0px;
-  margin-top: -40px;
-  cursor: pointer;
-}
-
-/*.submit_button{ background-image: image-url("ok_button.png"); }*/
+  input[type='radio']:checked + label {
+  	background-image: image-url("circleY.png");
+  	background-repeat: no-repeat;
+    padding: 2px 0 0px 24px;
+  }
 
 
-div.attach_place_for_box {
-  position: relative;
-  float: left;
-  width: 500px;
-  min-height: 140px;
-  overflow: auto;
-  margin-top: 5px;
-}
-.attach_box {
-  position: absolute;
-  z-index: 34;
-}
+  input[type='checkbox'] {
+    float: left;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+  }
 
-ul.list_of_attachments {
-  width: 480px;
-  position: relative;
-  clear: both;
-  overflow: auto;
-  z-index: 80;
-  padding-top: 8px;
-  li { float:left;}
-}
+  input[type='checkbox'] + label {
+  	background-image: image-url("box_not_cheked.png");
+  	background-repeat: no-repeat;
+    padding: 3px 0 0px 40px;
+    cursor: pointer;
+    height: 35px;
+  }
+
+  input[type='checkbox']:checked + label {
+  	background-image: image-url("box_checked.png");
+  	background-repeat: no-repeat;
+    padding: 3px 0 0px 40px;
+  	cursor: pointer;
+  }
+
+  div.more_headings {
+    border-bottom-color: #a8d868;
+    margin-bottom: 5px;
+    float: left;
+    width: 550px;
+  }
+
+  span.more_headings {
+    margin-left: 0px;
+    padding: 0px;
+    color: #3d6804;
+  }
+
+  body.unregistered div.page_description span.more_headings{ padding-left:0px; }
+
+  .reg_client_tfeild {
+    width: 280px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 25px;
+    font-size: 16px;
+    color: #4c4c4c;
+  }
+  .log_client_tfeild {
+    width: 200px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 25px;
+    font-size: 16px;
+    color: #4c4c4c;
+  }
+  .close_fly_window {
+    background-image: image-url("close.png");
+    width: 30px;
+    height: 26px;
+    position: absolute;
+    right: 0px;
+    margin-top: -40px;
+    cursor: pointer;
+  }
+
+  /*.submit_button{ background-image: image-url("ok_button.png"); }*/
 
 
-div.calculator {
-  margin-left: 170px;
+  div.attach_place_for_box {
+    position: relative;
+    float: left;
+    width: 500px;
+    min-height: 140px;
+    overflow: auto;
+    margin-top: 5px;
+  }
+  .attach_box {
+    position: absolute;
+    z-index: 34;
+  }
+
+  ul.list_of_attachments {
+    width: 480px;
+    position: relative;
+    clear: both;
+    overflow: auto;
+    z-index: 80;
+    padding-top: 8px;
+    li { float:left;}
+  }
+
+
+  div.calculator {
+    margin-left: 170px;
+  }
 }

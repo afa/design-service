@@ -1,246 +1,248 @@
-// NAVIGATION
-ul#navigation {
-  float: left;
-  width: 600px;
-  font-size: 14px;
-  margin: 0px;
-  padding-bottom: 0px;
-  li {
+body.registered {
+  // NAVIGATION
+  ul#navigation {
     float: left;
-    margin-right: 45px;
-    color: #c0c0c0;
-    list-style-image: image-url("path_default.png");
-    padding-top: 5px;
-
-    &.first {
-    &.last {
-      color: #6da029;
-      font-size: 20px;
-      list-style-image: image-url("path_selected.png");
-      padding-top: 0px;
-      a { color:#6da029;  }
-    }
-    
-    a {
-      text-decoration: none;
+    width: 600px;
+    font-size: 14px;
+    margin: 0px;
+    padding-bottom: 0px;
+    li {
+      float: left;
+      margin-right: 45px;
       color: #c0c0c0;
-      &:hover { text-decoration:underline; }
+      list-style-image: image-url("path_default.png");
+      padding-top: 5px;
+
+      &.first { list-style:none; }
+      &.last {
+        color: #6da029;
+        font-size: 20px;
+        list-style-image: image-url("path_selected.png");
+        padding-top: 0px;
+        a { color:#6da029;  }
+      }
+      
+      a {
+        text-decoration: none;
+        color: #c0c0c0;
+        &:hover { text-decoration:underline; }
+      }
+    }
+
+    &.blue li.last {
+      list-style-image: image-url("path_selected_blue.png");
+      a { color:#6d95c3; }
     }
   }
 
-  &.blue li.last {
-    list-style-image: image-url("path_selected_blue.png");
-    a { color:#6d95c3; }
+
+  // TOP MENU
+  #header {
+    height: 131px;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    clear: both;
+
+    ul {
+      float: left;
+      position: absolute;
+      top: 138px;
+      margin-left: 365px;
+      z-index: 1;
+      color: #6f2d2d;
+      font-size: 0.9em;
+
+      li {
+        float: left;
+        list-style: none;
+        display: inline-block;
+        position: absolute;
+        bottom: 0px;
+        text-align: center;
+        line-height: 15px;
+        a:link, a:visited {
+          span{ color: #6f2d2d; }
+        }
+      }
+
+      li:nth-child(1){ /* Варианты планировки */
+        background-color: #a8d868;
+        width: 130px;
+        height: 78px;
+        left: 0px;
+        span {
+          width: 130px;
+          height: 78px;
+          float: left;
+          margin-top: 15px;
+        }
+      }
+
+      li:nth-child(2){ /* Согласования перепланировок */
+        background-color: #e6c941;
+        width: 160px;
+        height: 60px;
+        left: 138px;
+        span {
+          width: 160px;
+          height: 60px;
+          float: left;
+          margin-top: 13px;
+        }
+      }
+
+      li:nth-child(3){ /* Дизайн-проект */
+        background-color: #f89f65;
+        width: 132px;
+        height: 78px;
+        left: 306px;
+        span {
+          width: 132px;
+          height: 78px;
+          float: left;
+          margin-top: 30px;
+        }
+      }
+
+      li:nth-child(4){ /* Инженерные системы и конструктив */
+        background-color: #99bbe1;
+        width: 132px;
+        height: 58px;
+        left: 446px;
+        span {
+          width: 132px;
+          height: 58px;
+          float: left;
+          margin-top: 5px;
+        }
+      }
+    }
   }
-}
 
-
-// TOP MENU
-#header {
-  height: 131px;
-  margin: 0px;
-  padding: 0px;
-  width: auto;
-  clear: both;
-
-  ul {
+  .headerLayer1 {
+    background-image: image-url("logo-2.png");
     float: left;
-    position: absolute;
-    top: 138px;
-    margin-left: 365px;
+    width: 354px;
+    height: 41px;
+    margin: 46px 0px 0px 0px;
+  }
+
+  // TOP MENU FOR SPECIALIST
+  #header_specialist {  height:131px;  margin: 0px;  padding: 0px;  width:auto;  clear:both;  }
+
+  ul#menu_specialist {
+    float: left;
+    top: 115px;
+    margin-left: 290px;
     z-index: 1;
     color: #6f2d2d;
-    font-size: 0.9em;
+    font-size: 13px;
+    position: absolute;
 
     li {
       float: left;
       list-style: none;
       display: inline-block;
-      position: absolute;
-      bottom: 0px;
-      text-align: center;
-      line-height: 15px;
-      a:link, a:visited {
-        span {
+      position: absolute; top:0px;
+      span {
+        float: left;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 10;
       }
     }
 
-    li:nth-child(1){ /* Варианты планировки */
-      background-color: #a8d868;
-      width: 130px;
-      height: 78px;
-      left: 0px;
-      span {
-        width: 130px;
-        height: 78px;
-        float: left;
-        margin-top: 15px;
-      }
+    li:nth-child(1) span {
+      width: 165px;
+      height: 134px;
+      background-image: image-url("my_projects.png");
     }
-
-    li:nth-child(2){ /* Согласования перепланировок */
-      background-color: #e6c941;
-      width: 160px;
-      height: 60px;
-      left: 138px;
-      span {
-        width: 160px;
-        height: 60px;
-        float: left;
-        margin-top: 13px;
-      }
+    li:nth-child(2) span {
+      width: 155px;
+      height: 120px;
+      background-image: image-url("new_orders.png");
+      margin-left: 165px;
     }
-
-    li:nth-child(3){ /* Дизайн-проект */
-      background-color: #f89f65;
-      width: 132px;
-      height: 78px;
-      left: 306px;
-      span {
-        width: 132px;
-        height: 78px;
-        float: left;
-        margin-top: 30px;
-      }
+    li:nth-child(3) span {
+      width: 155px;
+      height: 118px;
+      background-image: image-url("my_account.png");
+      margin-left: 325px;
     }
-
-    li:nth-child(4){ /* Инженерные системы и конструктив */
-      background-color: #99bbe1;
-      width: 132px;
-      height: 58px;
-      left: 446px;
-      span {
-        width: 132px;
-        height: 58px;
-        float: left;
-        margin-top: 5px;
-      }
+    li:nth-child(4) span {
+      width: 145px;
+      height: 112px;
+      background-image: image-url("portfolio_specialist.png");
+      margin-left: 480px;
     }
   }
-}
 
-.headerLayer1 {
-  background-image: image-url("logo-2.png");
-  float: left;
-  width: 354px;
-  height: 41px;
-  margin: 46px 0px 0px 0px;
-}
 
-// TOP MENU FOR SPECIALIST
-#header_specialist {  height:131px;  margin: 0px;  padding: 0px;  width:auto;  clear:both;  }
-
-ul#menu_specialist {
-  float: left;
-  top: 115px;
-  margin-left: 290px;
-  z-index: 1;
-  color: #6f2d2d;
-  font-size: 13px;
-  position: absolute;
-
-  li {
+  /* LEFT MENU TOP */
+  ul#left_menu {
     float: left;
     list-style: none;
-    display: inline-block;
-    position: absolute; top:0px;
-    span {
-      float: left;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 10;
-    }
-  }
+    font-size: 17px;
 
-  li:nth-child(1) span {
-    width: 165px;
-    height: 134px;
-    background-image: image-url("my_projects.png");
-  }
-  li:nth-child(2) span {
-    width: 155px;
-    height: 120px;
-    background-image: image-url("new_orders.png");
-    margin-left: 165px;
-  }
-  li:nth-child(3) span {
-    width: 155px;
-    height: 118px;
-    background-image: image-url("my_account.png");
-    margin-left: 325px;
-  }
-  li:nth-child(4) span {
-    width: 145px;
-    height: 112px;
-    background-image: image-url("portfolio_specialist.png");
-    margin-left: 480px;
-  }
-}
-
-
-/* LEFT MENU TOP */
-ul#left_menu {
-  float: left;
-  list-style: none;
-  font-size: 17px;
-
-  li {
-    padding-bottom: 4px;
-    a, a:link, a:visited, a:active {
-      text-decoration: underline;
-      color: #CCCCCC;
-    }
-    a:hover {
-  }
-
-  li:nth-child(1), li:nth-child(1) a, li:nth-child(2), li:nth-child(2) a {
-    color: #d55400;
-  }
-  li:nth-child(3), li:nth-child(3) a {
-    color: #434242;
-    padding-top: 10px;
-    padding-bottom: 50px;
-  }
-  li:nth-child(4), li:nth-child(4) a {
-    color: #8d0606;
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-  li:nth-child(5), li:nth-child(5) a, li:nth-child(6), li:nth-child(6) a {
-    color: #447801;
-  }
-}
-
-/* LEFT MENU BOTTOM */
-ul#menu_sub_left {
-  float: left;
-  list-style: none;
-  margin: 0px;
-
-  li {
-    float: left;
-    font-size: 16px;
-    a, a:visited { color:#FFFFFF;}
-
-    span {
-      width: 203px;
-      height: 35px;
-      background-image: image-url("menu-spec-reg.png");
-      float: left;
-      margin-bottom: 5px;
-      cursor: pointer;
-      text-align: center;
-      background-repeat: no-repeat;
-      float: left;
-      padding-top: 14px;
-      &:hover {
-        background-image: image-url("menu-spec-reg-hover.png");
+    li {
+      padding-bottom: 4px;
+      a, a:link, a:visited, a:active {
         text-decoration: underline;
+        color: #CCCCCC;
       }
+      a:hover { text-decoration:none; }
     }
 
-    &.selected span {
-      background-image: image-url("menu-spec-reg-hover.png");
+    li:nth-child(1), li:nth-child(1) a, li:nth-child(2), li:nth-child(2) a {
+      color: #d55400;
+    }
+    li:nth-child(3), li:nth-child(3) a {
+      color: #434242;
+      padding-top: 10px;
+      padding-bottom: 50px;
+    }
+    li:nth-child(4), li:nth-child(4) a {
+      color: #8d0606;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    li:nth-child(5), li:nth-child(5) a, li:nth-child(6), li:nth-child(6) a {
+      color: #447801;
+    }
+  }
+
+  /* LEFT MENU BOTTOM */
+  ul#menu_sub_left {
+    float: left;
+    list-style: none;
+    margin: 0px;
+
+    li {
+      float: left;
+      font-size: 16px;
+      a, a:visited { color:#FFFFFF;}
+
+      span {
+        width: 203px;
+        height: 35px;
+        background-image: image-url("menu-spec-reg.png");
+        float: left;
+        margin-bottom: 5px;
+        cursor: pointer;
+        text-align: center;
+        background-repeat: no-repeat;
+        float: left;
+        padding-top: 14px;
+        &:hover {
+          background-image: image-url("menu-spec-reg-hover.png");
+          text-decoration: underline;
+        }
+      }
+
+      &.selected span {
+        background-image: image-url("menu-spec-reg-hover.png");
+      }
     }
   }
 }

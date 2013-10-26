@@ -1,32 +1,34 @@
-/*  PAGE CONCEPT DESIGNERS.HTML */
-span.designers{ color:#ca3932; padding-top:10px; float:left; }
-div.designers{ background-image:image-url("designers.png") ; border-bottom-color:#f89f65; width:550px; float:left; background-repeat:no-repeat; background-position:left -2px; height:40px;}
-div.designers_list{ float:left; clear:both; height:104px; width:817px; margin-top:40px; background-color:#f5eae4;}
-div.designers_list div.designer_no{ width:93px; height:103px; background-color:#f5e1d8; float:left; margin-left:50px;}
-div.designers_list div.designer_no img{ width:92px; height:71px; float:left;}
-div.designers_list div.designer_no span{ color:#b70682; font-size:16px; text-align:center; width:92px; float:left; padding-top:5px;}
-div.designers_list div.designer_info{ width:487px; position:relative; padding:5px 5px 5px 15px; float:left; color:#4c4c4c;  }
-div.designers_list div.designer_info div{ width:470px; float:left;}
-div.designers_list div.designer_info div span { padding:0px; margin:0px; float:left; }
+body.unregistered {
+  /*  PAGE CONCEPT DESIGNERS.HTML */
+  span.designers{ color:#ca3932; padding-top:10px; float:left; }
+  div.designers{ background-image:image-url("designers.png") ; border-bottom-color:#f89f65; width:550px; float:left; background-repeat:no-repeat; background-position:left -2px; height:40px;}
+  div.designers_list{ float:left; clear:both; height:104px; width:817px; margin-top:40px; background-color:#f5eae4;}
+  div.designers_list div.designer_no{ width:93px; height:103px; background-color:#f5e1d8; float:left; margin-left:50px;}
+  div.designers_list div.designer_no img{ width:92px; height:71px; float:left;}
+  div.designers_list div.designer_no span{ color:#b70682; font-size:16px; text-align:center; width:92px; float:left; padding-top:5px;}
+  div.designers_list div.designer_info{ width:487px; position:relative; padding:5px 5px 5px 15px; float:left; color:#4c4c4c;  }
+  div.designers_list div.designer_info div{ width:470px; float:left;}
+  div.designers_list div.designer_info div span { padding:0px; margin:0px; float:left; }
 
-div.designers_list div.designer_info div a, div.designers_list div.designer_info div:visited{ color: #4c4c4c;}
+  div.designers_list div.designer_info div a, div.designers_list div.designer_info div:visited{ color: #4c4c4c;}
 
-div.designers_list div.designer_info div span:nth-child(2){ color:#50880f; padding-left:10px;}
-div.designers_list div.designer_info div:nth-child(1){ padding-top:10px; padding-bottom:15px; font-weight:bold; font-size:18px; }
-div.designers_list div.designer_info div:nth-child(2){ font-size:14px;}
+  div.designers_list div.designer_info div span:nth-child(2){ color:#50880f; padding-left:10px;}
+  div.designers_list div.designer_info div:nth-child(1){ padding-top:10px; padding-bottom:15px; font-weight:bold; font-size:18px; }
+  div.designers_list div.designer_info div:nth-child(2){ font-size:14px;}
 
-div.designers_list div.portfolio{ float: left; width:105px; height:89px; margin-top:5px;}
-div.designers_list div.portfolio img{ padding:5px 5px 5px 5px}
-div.designers_list div.portfolio span{ text-align:center; width:105px; font-size:14px; color:#9c4a0c;}
-div.designers_list div.portfolio span a{  color:#9c4a0c; text-decoration:underline;  }
-div.designers_list div.portfolio span a:hover{ text-decoration:none;}
+  div.designers_list div.portfolio{ float: left; width:105px; height:89px; margin-top:5px;}
+  div.designers_list div.portfolio img{ padding:5px 5px 5px 5px}
+  div.designers_list div.portfolio span{ text-align:center; width:105px; font-size:14px; color:#9c4a0c;}
+  div.designers_list div.portfolio span a{  color:#9c4a0c; text-decoration:underline;  }
+  div.designers_list div.portfolio span a:hover{ text-decoration:none;}
 
-ul.portfolio{ list-style:none; width:775px;  overflow:auto; padding-bottom:25px; margin:0px; margin-left:10px;}
-ul.portfolio li:nth-child(3){ margin:0px;}
-ul.portfolio li{ float:left; padding-top:15px; margin-right:85px;}
-ul.portfolio li img{ width:185px; height:185px;}
+  ul.portfolio{ list-style:none; width:775px;  overflow:auto; padding-bottom:25px; margin:0px; margin-left:10px;}
+  ul.portfolio li:nth-child(3){ margin:0px;}
+  ul.portfolio li{ float:left; padding-top:15px; margin-right:85px;}
+  ul.portfolio li img{ width:185px; height:185px;}
 
-/*  PAGE CONCEPT DESIGNERS_INFO.HTML */
+  /*  PAGE CONCEPT DESIGNERS_INFO.HTML */
 
-div.selected_designer  div.go_back{ width:93px; height:86px; float:left; margin-left:50px; background-image:image-url("go_back.png"); margin-top:9px;}
-div.selected_designer  div.go_back:hover{  background-image:image-url("go_back_hover.png");}
+  div.selected_designer  div.go_back{ width:93px; height:86px; float:left; margin-left:50px; background-image:image-url("go_back.png"); margin-top:9px;}
+  div.selected_designer  div.go_back:hover{  background-image:image-url("go_back_hover.png");}
+}

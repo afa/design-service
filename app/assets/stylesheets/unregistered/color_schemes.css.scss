@@ -1,176 +1,176 @@
-//= require ../color_keyboard
-
-span.design_p_color_scheme {
-  color: #c67700;
-}
-div.design_p_color_scheme {
-  background-image: image-url("design_project_logo_big.jpg");
-  border-bottom-color: #f89f65;
-  width: 550px;
-  float: left;
-  margin-bottom: 5px;
-  margin-top: 0px;
-}
-div.msg_caution span.design_p_color_scheme {
-  color: #3d6804;
-  padding: 15px 0px 10px 115px;
-  float: left;
-}
-
-div.design_p_color_scheme_form1 {
-  width: 600px;
-  margin-left: 45px;
-  padding: 30px;
-  line-height: 45px;
-  margin-bottom: 25px;
-  overflow: auto;
-  clear: both;
-  div.number {
-    background-image: image-url("1_number_orrange.png");
-    float: left;
+body.unregistered {
+  span.design_p_color_scheme {
+    color: #c67700;
   }
-  div.form_description {
-    background-image: image-url("form_input_data.png");
-    width: 250px;
+  div.design_p_color_scheme {
+    background-image: image-url("design_project_logo_big.jpg");
+    border-bottom-color: #f89f65;
+    width: 550px;
+    float: left;
+    margin-bottom: 5px;
+    margin-top: 0px;
+  }
+  div.msg_caution span.design_p_color_scheme {
+    color: #3d6804;
+    padding: 15px 0px 10px 115px;
     float: left;
   }
 
-  div.file_attaching {
-    width: 595px;
-    margin-top: 10px;
-    float: left;
-    span.caution {
-      color: #c10000;
-      font-size: 17px;
-      padding-left: 125px;
-      height: 30px;
-    }
-    span.attach {
-      padding: 30px 0px 0px 200px;
-      margin-top: 0px;
-    }
-  }
-
-
-  div.number_second {
-    background-image: image-url("2_number_green.png");
-    float: left;
-    width: 86px;
-    height: 29px;
-    background-repeat: no-repeat;
-    margin-right: 10px;
-    margin-left: 0px;
-    padding-bottom: 20px;
-    margin-top: 20px;
-  }
-  div.form_description_second {
-    background-image: image-url("task.png");
-    width: 250px;
-    float: left;
-    height: 29px;
-    background-repeat: no-repeat;
-    padding-bottom: 20px;
-    margin-top: 20px;
-    position: relative;
-  }
-
-  span.text {
+  div.design_p_color_scheme_form1 {
+    width: 600px;
+    margin-left: 45px;
+    padding: 30px;
+    line-height: 45px;
+    margin-bottom: 25px;
+    overflow: auto;
     clear: both;
-    position: relative;
-    float: left;
-  }
-
-  div.range_and_tone {
-    float: left;
-    ul.answer {
-      list-style: none;
-      margin: 0px;
-      padding-left: 55px;
+    div.number {
+      background-image: image-url("1_number_orrange.png");
       float: left;
-      li {
-        float: left;
-        margin-right: 10px;
-        width: 240px;
+    }
+    div.form_description {
+      background-image: image-url("form_input_data.png");
+      width: 250px;
+      float: left;
+    }
+
+    div.file_attaching {
+      width: 595px;
+      margin-top: 10px;
+      float: left;
+      span.caution {
+        color: #c10000;
+        font-size: 17px;
+        padding-left: 125px;
         height: 30px;
       }
+      span.attach {
+        padding: 30px 0px 0px 200px;
+        margin-top: 0px;
+      }
     }
-  }
 
-  div.present_results {
-    float: left;
-    ul.answer {
-      list-style: none;
-      margin: 0px;
-      padding-left: 55px;
+
+    div.number_second {
+      background-image: image-url("2_number_green.png");
       float: left;
-      li {
+      width: 86px;
+      height: 29px;
+      background-repeat: no-repeat;
+      margin-right: 10px;
+      margin-left: 0px;
+      padding-bottom: 20px;
+      margin-top: 20px;
+    }
+    div.form_description_second {
+      background-image: image-url("task.png");
+      width: 250px;
+      float: left;
+      height: 29px;
+      background-repeat: no-repeat;
+      padding-bottom: 20px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    span.text {
+      clear: both;
+      position: relative;
+      float: left;
+    }
+
+    div.range_and_tone {
+      float: left;
+      ul.answer {
+        list-style: none;
+        margin: 0px;
+        padding-left: 55px;
         float: left;
-        margin-right: 10px;
+        li {
+          float: left;
+          margin-right: 10px;
+          width: 240px;
+          height: 30px;
+        }
+      }
+    }
+
+    div.present_results {
+      float: left;
+      ul.answer {
+        list-style: none;
+        margin: 0px;
+        padding-left: 55px;
+        float: left;
+        li {
+          float: left;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    div.color_keyboard_block {
+      float: left;
+      padding-top: 10px;
+      span {
+        text-align: center;
+        width: 630px;
+        height: 30px;
+        float: left;
+      }
+      div.color_keyboard {
+        float: left;
+        margin-left: 160px;
       }
     }
   }
 
-  div.color_keyboard_block {
-    float: left;
-    padding-top: 10px;
-    span {
-      text-align: center;
-      width: 630px;
-      height: 30px;
+
+  div.design_p_color_scheme_form2 {
+    width: 470px;
+    height: 160px;
+    margin-left: 115px;
+    margin-top: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+
+    div.number {
+      background-image: image-url("3_number_blue.png");
       float: left;
     }
-    div.color_keyboard {
+    div.form_description {
+      background-image: image-url("comments_small.png");
+      width: 370px;
       float: left;
-      margin-left: 160px;
     }
   }
-}
-
-
-div.design_p_color_scheme_form2 {
-  width: 470px;
-  height: 160px;
-  margin-left: 115px;
-  margin-top: 15px;
-  padding: 30px;
-  margin-bottom: 25px;
-
-  div.number {
-    background-image: image-url("3_number_blue.png");
-    float: left;
+  div.design_p_color_scheme_form2_default {
+    сolor: #333;
+    border: 0px;
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    border-bottom: 1px solid #99bbe1;
+    height: 20px;
+    font-size: 16px;
+    background-color: #f6f6f6;
+    height: 30px;
   }
-  div.form_description {
-    background-image: image-url("comments_small.png");
-    width: 370px;
-    float: left;
-  }
-}
-div.design_p_color_scheme_form2_default {
-  сolor: #333;
-  border: 0px;
-  padding: 0px 5px 0px 5px;
-  margin: 0px;
-  border-bottom: 1px solid #99bbe1;
-  height: 20px;
-  font-size: 16px;
-  background-color: #f6f6f6;
-  height: 30px;
-}
 
-.design_p_color_scheme-caution2 {
-  color: #e23a3a;
-  text-align: center;
-  float: left;
-  margin-left: 90px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  font-size: 14px;
-}
-div.design_p_color_scheme_submiting {
-  height: 50px;
-  width: 550px;
-  margin-left: 160px;
-  padding: 20px 0px 40px 0px;
-  clear: both;
-  overflow: hidden;
+  .design_p_color_scheme-caution2 {
+    color: #e23a3a;
+    text-align: center;
+    float: left;
+    margin-left: 90px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  div.design_p_color_scheme_submiting {
+    height: 50px;
+    width: 550px;
+    margin-left: 160px;
+    padding: 20px 0px 40px 0px;
+    clear: both;
+    overflow: hidden;
+  }
 }

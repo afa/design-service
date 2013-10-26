@@ -1,43 +1,45 @@
-/*  PAGE CONCEPT REG_DESIGNERS.HTML */
-div.pagianter{ float:right; margin-right:10px; font-size:12px; color:#989898; width:150px; }
-div.pagianter span{ float:left; padding-right:10px;}
-div.styled-select select {background: transparent;width: 58px;font-size: 13px;line-height: 1;border: 0;border-radius: 0;height: 17px;-webkit-appearance:none;color:#787676; }
-div.styled-select {width: 41px; height: 17px; overflow: hidden; background:image-url("select_menu_button.png") no-repeat #FFFFFF; background-position:24px -3px; border: 1px solid #838282; position:relative; }
+body.registered {
+  /*  PAGE CONCEPT REG_DESIGNERS.HTML */
+  div.pagianter{ float:right; margin-right:10px; font-size:12px; color:#989898; width:150px; }
+  div.pagianter span{ float:left; padding-right:10px;}
+  div.styled-select select {background: transparent;width: 58px;font-size: 13px;line-height: 1;border: 0;border-radius: 0;height: 17px;-webkit-appearance:none;color:#787676; }
+  div.styled-select {width: 41px; height: 17px; overflow: hidden; background:image-url("select_menu_button.png") no-repeat #FFFFFF; background-position:24px -3px; border: 1px solid #838282; position:relative; }
 
-div.designers{ background-image:image-url("designers.png") ; border-bottom-color:#f89f65; width:500px; float:left; background-repeat:no-repeat; background-position:left -2px; height:40px;}
-div.designers_list{ float:left; clear:both; height:104px; width:630px; margin-top:15px; background-color:#f5eae4;}
-div.designers_list div.designer_no{ width:70px; height:85px; background-color:#f5e1d8; float:left; margin-left:35px;}
-div.designers_list div.designer_no img{ width:70px; height:50px; float:left;}
-div.designers_list div.designer_no span{ color:#b70682; font-size:16px; text-align:center; width:70px; float:left; padding-top:5px;}
-div.designers_list div.designer_info{ width:380px; position:relative; padding:5px 5px 5px 15px; float:left; color:#4c4c4c;  }
-div.designers_list div.designer_info div{ width:470px; float:left;}
-div.designers_list div.designer_info div span { padding:0px; margin:0px; float:left; }
-div.designers_list div.designer_info div span:nth-child(2){ color:#50880f; padding-left:10px;}
-div.designers_list div.designer_info div:nth-child(1){ padding-top:10px; padding-bottom:15px; font-weight:bold; font-size:18px; }
-div.designers_list div.designer_info div:nth-child(2){ font-size:14px;}
+  div.designers{ background-image:image-url("designers.png") ; border-bottom-color:#f89f65; width:500px; float:left; background-repeat:no-repeat; background-position:left -2px; height:40px;}
+  div.designers_list{ float:left; clear:both; height:104px; width:630px; margin-top:15px; background-color:#f5eae4;}
+  div.designers_list div.designer_no{ width:70px; height:85px; background-color:#f5e1d8; float:left; margin-left:35px;}
+  div.designers_list div.designer_no img{ width:70px; height:50px; float:left;}
+  div.designers_list div.designer_no span{ color:#b70682; font-size:16px; text-align:center; width:70px; float:left; padding-top:5px;}
+  div.designers_list div.designer_info{ width:380px; position:relative; padding:5px 5px 5px 15px; float:left; color:#4c4c4c;  }
+  div.designers_list div.designer_info div{ width:470px; float:left;}
+  div.designers_list div.designer_info div span { padding:0px; margin:0px; float:left; }
+  div.designers_list div.designer_info div span:nth-child(2){ color:#50880f; padding-left:10px;}
+  div.designers_list div.designer_info div:nth-child(1){ padding-top:10px; padding-bottom:15px; font-weight:bold; font-size:18px; }
+  div.designers_list div.designer_info div:nth-child(2){ font-size:14px;}
 
-div.designers_list div.portfolio{ float: left; width:105px; height:89px; margin-top:5px;}
-div.designers_list div.portfolio img{ padding:5px 5px 5px 5px}
-div.designers_list div.portfolio span{ text-align:center; width:105px; font-size:14px; color:#9c4a0c;}
-div.designers_list div.portfolio span a{  color:#9c4a0c; text-decoration:underline;  }
-div.designers_list div.portfolio span a:hover{ text-decoration:none;}
+  div.designers_list div.portfolio{ float: left; width:105px; height:89px; margin-top:5px;}
+  div.designers_list div.portfolio img{ padding:5px 5px 5px 5px}
+  div.designers_list div.portfolio span{ text-align:center; width:105px; font-size:14px; color:#9c4a0c;}
+  div.designers_list div.portfolio span a{  color:#9c4a0c; text-decoration:underline;  }
+  div.designers_list div.portfolio span a:hover{ text-decoration:none;}
 
-ul.portfolio{ list-style:none; width:600px;  overflow:auto; padding-bottom:25px; margin:0px; margin-left:0px;}
-ul.portfolio li:nth-child(3){ margin:0px;}
-ul.portfolio li{ float:left; padding-top:15px; margin-right:25px;}
-ul.portfolio li img{ width:160px; height:160px;}
+  ul.portfolio{ list-style:none; width:600px;  overflow:auto; padding-bottom:25px; margin:0px; margin-left:0px;}
+  ul.portfolio li:nth-child(3){ margin:0px;}
+  ul.portfolio li{ float:left; padding-top:15px; margin-right:25px;}
+  ul.portfolio li img{ width:160px; height:160px;}
 
-div.pages ul{ float:left; width:200px; list-style:none; margin-left:250px;  padding:0px; padding-top:15px;}
-div.pages ul li{ float:left; padding:5px;}
-div.pages ul li.selected a{ color:#46a815; font-weight:bold;}
-div.pages ul li a{ text-decoration:underline; color:#858585;}
-div.pages ul li a:hover{ text-decoration:none; color:#46a815;}
+  div.pages ul{ float:left; width:200px; list-style:none; margin-left:250px;  padding:0px; padding-top:15px;}
+  div.pages ul li{ float:left; padding:5px;}
+  div.pages ul li.selected a{ color:#46a815; font-weight:bold;}
+  div.pages ul li a{ text-decoration:underline; color:#858585;}
+  div.pages ul li a:hover{ text-decoration:none; color:#46a815;}
 
-div.pages span{ border:none; color:#46a815; float: right; background-image:image-url("next.png"); background-repeat:no-repeat; padding-right:35px; margin-right:35px; margin-top:30px; background-position:right;}
-div.pages span a{ border:none; color:#46a815; float:left; text-decoration:underline;}
-div.pages span a:hover{ text-decoration:none; }
+  div.pages span{ border:none; color:#46a815; float: right; background-image:image-url("next.png"); background-repeat:no-repeat; padding-right:35px; margin-right:35px; margin-top:30px; background-position:right;}
+  div.pages span a{ border:none; color:#46a815; float:left; text-decoration:underline;}
+  div.pages span a:hover{ text-decoration:none; }
 
-/*  PAGE CONCEPT DESIGNERS_INFO.HTML */
+  /*  PAGE CONCEPT DESIGNERS_INFO.HTML */
 
-div.selected_designer  div.go_back{ width:93px; height:86px; float:left; margin-left:10px; background-image:image-url("go_back.png"); margin-top:9px;}
-div.selected_designer  div.go_back:hover{  background-image:image-url("go_back_hover.png");}
+  div.selected_designer  div.go_back{ width:93px; height:86px; float:left; margin-left:10px; background-image:image-url("go_back.png"); margin-top:9px;}
+  div.selected_designer  div.go_back:hover{  background-image:image-url("go_back_hover.png");}
+}

@@ -1,10 +1,5 @@
-//= require ./fonts
-//= require ./footer
-//= require common/form_style
-//= require ./drop_zone
-//= require ./calculator
+//= require_tree ./common
 //= require lightbox/lightbox
-//= require ./completion_percent
 //= require datepicker/jquery.ui.all
 
 /* LayOut Config */
