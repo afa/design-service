@@ -1,6 +1,8 @@
+@import "settings";
+
 /*  PAGE CONCEPT DESIGNERS_INFO.HTML */
 span.designers{ color:#ca3932; padding-top:10px; float:left; }
-div.designers{ background-image:image-url("designers.png") ; border-bottom-color:#f89f65; width:550px; float:left; background-repeat:no-repeat; background-position:left -2px; height:40px;}
+div.designers{ background-image:image-url("designers.png") ; border-bottom-color:$design_projects_color; width:550px; float:left; background-repeat:no-repeat; background-position:left -2px; height:40px;}
 div.selected_designer{ float:left; clear:both; height:104px; width:817px; margin-top:40px; background-color:#f5eae4; }
 body.registered div.selected_designer{ float:left; clear:both; height:104px; width:630px; margin-top:40px; background-color:#f5eae4; }
 

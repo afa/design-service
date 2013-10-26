@@ -1,6 +1,8 @@
+@import "settings";
+
 body.unregistered {
   span.copyright{ color:#1d71cc; }
-  div.copyright{ background-image:image-url("design_project_logo_big.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
+  div.copyright{ background-image:image-url("design_project_logo_big.jpg") ; border-bottom-color:$design_projects_color; width:550px; float:left; margin-bottom:5px;  }
   div.msg_caution span.copyright{color:#3d6804;   padding:15px 0px 10px 115px; float:left; }
 
   div.form_copyright{ width:685px; height:140px;  margin-left:45px; padding:20px; margin-top:45px; margin-bottom:25px; clear:left; }

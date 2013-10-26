@@ -1,3 +1,5 @@
+@import "settings";
+
 body.unregistered {
   /*  PAGE CONCEPT INDEX.HTML */
   div#maincontent_index {
@@ -138,12 +140,12 @@ body.unregistered {
   }
 
   /*  DEFAULT CLASSES */
-  .border_x1{border:8px solid #f89f65; }
-  .border_x2{border:8px solid #a8d868; }
-  .border_x3{border:8px solid #99bbe1; }
-  .border_x4{border:8px solid #e6c941; }
+  .border_x1{border:8px solid $design_projects_color; }
+  .border_x2{border:8px solid $plan_developments_color; }
+  .border_x3{border:8px solid $engineering_systems_color; }
+  .border_x4{border:8px solid $replanning_endorsement_color; }
   .border_x5{border:1px solid #c1c1c1; }
-  .border_x6{ border:1px solid #a8d868; }
+  .border_x6{ border:1px solid $plan_developments_color; }
 
   .textlines_default {
     background-color: #f6f6f6;
@@ -214,7 +216,7 @@ body.unregistered {
   }
 
   div.more_headings {
-    border-bottom-color: #a8d868;
+    border-bottom-color: $plan_developments_color;
     margin-bottom: 5px;
     float: left;
     width: 550px;

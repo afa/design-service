@@ -1,3 +1,5 @@
+@import "settings";
+
 body.unregistered {
   /*  LOGIN/ REGISTER */
   .messages .alert {
@@ -198,11 +200,11 @@ body.unregistered {
       width:412px;
       span {
         font-size:18px;
-        color:#a8d868;
+        color:$plan_developments_color;
         padding-left:25px;
         float:left;
         a, a:link, a:visited, a:active {
-          color:#a8d868;
+          color:$plan_developments_color;
           text-decoration:underline;
         }
         a:hover { text-decoration:none; }

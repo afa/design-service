@@ -1,3 +1,5 @@
+@import "settings";
+
 // SASS variable overrides must be declared before loading up Active Admin's styles.
 //
 // To view the variables that Active Admin provides, take a look at
@@ -128,19 +130,19 @@ table#index_table_orders tbody tr td:nth-child(9) {
 
 table#index_table_orders tbody tr.even, table#index_table_orders tbody tr.odd {
   .PlanDevelopment {
-    background-color: #a8d868;
+    background-color: $plan_developments_color;
   }
 
   .ReplanningEndorsement {
-    background-color: #e6c941;
+    background-color: $replanning_endorsement_color;
   }
 
   .EngineeringSystem {
-    background-color: #99bbe1;
+    background-color: $engineering_systems_color;
   }
 
   .SelectedForm {
-    background-color: #f89f65;
+    background-color: $design_projects_color;
   }
 }
 

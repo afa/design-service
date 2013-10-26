@@ -1,7 +1,9 @@
+@import "settings";
+
 body.registered {
   /*  DEFAULT PAGE STYLES */
   div.caution_x2 {
-    color: #f89f65;
+    color: $design_projects_color;
     font-size: 18px;
     margin-left: 35px;
   }
@@ -87,18 +89,18 @@ body.registered {
   .blue_header {  color: #5180a9;  }
   .brown_header {  color: #773129;  }
   .dark_green_header {  color:#236e02;  }
-  .orrange_header {  color:#f89f65;  }
+  .orrange_header {  color:$design_projects_color;  }
   .gray_header {  color:#5b5b5b;  }
   .dark_red {  color:#5c0404;  }
 
   .border_x1 {  border:6px solid #efd4c2;  }    /* Дизайн-проект (мягкий) */
-  .border_xs {  border:6px solid #f89f65;  }    /* Дизайн-проект */
-  .border_xg {  border:6px solid #a8d868;  }    /* Варианты планировки */
+  .border_xs {  border:6px solid $design_projects_color;  }    /* Дизайн-проект */
+  .border_xg {  border:6px solid $plan_developments_color;  }    /* Варианты планировки */
   .border_x2 {  border:6px solid #e9da95;  }    /* Согласования перепланировок (мягкий) */
-  .border_x3 {  border:6px solid #99bbe1;  }    /* Инженерные системы и конструктив */
-  .border_x4 {  border:6px solid #e6c941;  }    /* Согласования перепланировок */
+  .border_x3 {  border:6px solid $engineering_systems_color;  }    /* Инженерные системы и конструктив */
+  .border_x4 {  border:6px solid $replanning_endorsement_color;  }    /* Согласования перепланировок */
   .border_x5 {  border:1px solid #c1c1c1;  }
-  .border_x6 {  border:1px solid #a8d868;  }
+  .border_x6 {  border:1px solid $plan_developments_color;  }
 
   div.var_form1 span.subtitle {
     font-size: 12px;
@@ -204,7 +206,7 @@ body.registered {
     margin-left: 35px;
 
     &.design_project {
-      color: #f89f65;
+      color: $design_projects_color;
       font-size: 18px;
       margin-left: 0px;
       padding-left: 35px;

@@ -1,7 +1,9 @@
+@import "settings";
+
 body.unregistered {
   /*  PAGE CONCEPT DESIGNERS.HTML */
   span.designers{ color:#ca3932; padding-top:10px; float:left; }
-  div.designers{ background-image:image-url("designers.png") ; border-bottom-color:#f89f65; width:550px; float:left; background-repeat:no-repeat; background-position:left -2px; height:40px;}
+  div.designers{ background-image:image-url("designers.png") ; border-bottom-color:$design_projects_color; width:550px; float:left; background-repeat:no-repeat; background-position:left -2px; height:40px;}
   div.designers_list{ float:left; clear:both; height:104px; width:817px; margin-top:40px; background-color:#f5eae4;}
   div.designers_list div.designer_no{ width:93px; height:103px; background-color:#f5e1d8; float:left; margin-left:50px;}
   div.designers_list div.designer_no img{ width:92px; height:71px; float:left;}

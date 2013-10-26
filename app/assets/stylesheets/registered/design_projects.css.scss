@@ -1,7 +1,9 @@
+@import "settings";
+
 body.registered {
   span.design_project{ color:#c67700; }
-  div.design_project{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
-  div.msg_caution span.design_project{color:#f89f65;   padding:15px 0px 10px 115px; float:left; }
+  div.design_project{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:$design_projects_color; width:550px; float:left; margin-bottom:5px;  }
+  div.msg_caution span.design_project{color:$design_projects_color;   padding:15px 0px 10px 115px; float:left; }
 
   div.design_project_all{ background-color:#e8edf1; min-height:900px; height:auto;  width:627px; clear: left; position:relative; overflow:auto; margin-top:5px;}
 
@@ -43,7 +45,7 @@ body.registered {
   /*******************************************************/
 
   span.design_p-workin-docs{ color:#c67700; }
-  div.design_p-workin-docs{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px; margin-top:0px;  }
+  div.design_p-workin-docs{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:$design_projects_color; width:550px; float:left; margin-bottom:5px; margin-top:0px;  }
   div.msg_caution span.design_p-workin-docs{color:#3d6804;    float:left; }
 
   div.design_p-workin-docs_form1{ width:480px;  margin-left:45px;  padding:30px; line-height:45px; margin-bottom:10px;  overflow:auto; clear:both; float:left; }
@@ -66,7 +68,7 @@ body.registered {
   div.design_p-workin-docs_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:15px; float:left; margin-left:45px;  }
   div.design_p-workin-docs_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px; }
   div.design_p-workin-docs_form2 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-  div.design_p-workin-docs_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
+  div.design_p-workin-docs_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid $engineering_systems_color; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
 
   .design_p-workin-docs-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:70px; margin-bottom:15px; font-weight:bold; font-size:14px; width:450px;}
   div.design_p-workin-docs_submiting{ float: left; margin:10px 25px 15px 55px;}

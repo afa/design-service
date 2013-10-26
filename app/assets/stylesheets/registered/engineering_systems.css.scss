@@ -1,3 +1,5 @@
+@import "settings";
+
 body.registered {
   div.engineering_systems_form1{ width:500px;   margin-left:30px; margin-top:20px; padding:30px; line-height:45px; margin-bottom:25px; float:left;}
   div.engineering_systems_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; width:86px; height:29px; }
@@ -21,7 +23,7 @@ body.registered {
   div.engineering_systems_form3{ width:470px; height:160px;  margin-left:35px; margin-top:15px; padding:30px; margin-bottom:25px; float:left;}
   div.engineering_systems_form3 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px;}
   div.engineering_systems_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-  .engineering_systems_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#eae9e9; height:30px; }
+  .engineering_systems_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid $engineering_systems_color; height:20px; font-size:16px; background-color:#eae9e9; height:30px; }
 
   div.engineering_systems_submiting{  height:50px; width:550px; margin-left:60px; padding:20px 0px 20px 0px; float:left;}
 

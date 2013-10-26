@@ -1,10 +1,12 @@
+@import "settings";
+
 body.unregistered {
   span.design_p_color_scheme {
     color: #c67700;
   }
   div.design_p_color_scheme {
     background-image: image-url("design_project_logo_big.jpg");
-    border-bottom-color: #f89f65;
+    border-bottom-color: $design_projects_color;
     width: 550px;
     float: left;
     margin-bottom: 5px;
@@ -149,7 +151,7 @@ body.unregistered {
     border: 0px;
     padding: 0px 5px 0px 5px;
     margin: 0px;
-    border-bottom: 1px solid #99bbe1;
+    border-bottom: 1px solid $engineering_systems_color;
     height: 20px;
     font-size: 16px;
     background-color: #f6f6f6;

@@ -1,3 +1,5 @@
+@import "settings";
+
 body.registered {
   div.var_form1 {
     width: 360px;
@@ -213,7 +215,7 @@ body.registered {
     border: 0px;
     padding: 0px 5px 0px 5px;
     margin: 0px;
-    border-bottom: 1px solid #99bbe1;
+    border-bottom: 1px solid $engineering_systems_color;
     height: 20px;
     font-size: 16px;
     background-color: #eae9e9;
