@@ -12,12 +12,6 @@ ul#navigation {
     list-style-image: image-url("path_default.png");
     padding-top: 5px;
 
-    a {
-      text-decoration: none;
-      color: #c0c0c0;
-      &:hover { text-decoration:underline; }
-    }
-
     &.first {
     &.last {
       color: #6da029;
@@ -25,6 +19,12 @@ ul#navigation {
       list-style-image: image-url("path_selected.png");
       padding-top: 0px;
       a { color:#6da029;  }
+    }
+    
+    a {
+      text-decoration: none;
+      color: #c0c0c0;
+      &:hover { text-decoration:underline; }
     }
   }
 
