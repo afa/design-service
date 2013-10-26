@@ -36,8 +36,8 @@ body.unregistered {
     background-image: image-url("collag.jpg");
     background-position: 1px -400px;
   }
-  div.mode1{ } /* COLLAG CLASSES*/
-  div.mode2{ background-image:image-url("default_collag.jpg"); }
+  div.mode1 { } /* COLLAG CLASSES*/
+  div.mode2 { background-image:image-url("default_collag.jpg"); }
 
   .page_description {
     position: relative;
@@ -140,12 +140,12 @@ body.unregistered {
   }
 
   /*  DEFAULT CLASSES */
-  .border_x1{border:8px solid $design_projects_color; }
-  .border_x2{border:8px solid $plan_developments_color; }
-  .border_x3{border:8px solid $engineering_systems_color; }
-  .border_x4{border:8px solid $replanning_endorsement_color; }
-  .border_x5{border:1px solid #c1c1c1; }
-  .border_x6{ border:1px solid $plan_developments_color; }
+  .border_x1 {border:8px solid $design_projects_color; }
+  .border_x2 {border:8px solid $plan_developments_color; }
+  .border_x3 {border:8px solid $engineering_systems_color; }
+  .border_x4 {border:8px solid $replanning_endorsement_color; }
+  .border_x5 {border:1px solid #c1c1c1; }
+  .border_x6 { border:1px solid $plan_developments_color; }
 
   .textlines_default {
     background-color: #f6f6f6;
@@ -227,7 +227,7 @@ body.unregistered {
     color: #3d6804;
   }
 
-  body.unregistered div.page_description span.more_headings{ padding-left:0px; }
+  body.unregistered div.page_description span.more_headings { padding-left:0px; }
 
   .reg_client_tfeild {
     width: 280px;
@@ -277,7 +277,7 @@ body.unregistered {
     overflow: auto;
     z-index: 80;
     padding-top: 8px;
-    li { float:left;}
+    li { float:left; }
   }
 
 

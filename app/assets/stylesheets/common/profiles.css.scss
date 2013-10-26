@@ -1,13 +1,13 @@
 .profile {
-  width:450px; height:145px;
-  margin-left:15px;
-  margin-top:30px;
-  padding:30px;
-  line-height:45px;
-  margin-bottom:25px;
-  clear:both;
+  width: 450px; height:145px;
+  margin-left: 15px;
+  margin-top: 30px;
+  padding: 30px;
+  line-height: 45px;
+  margin-bottom: 25px;
+  clear: both;
 }
-.form_submiting{
+.form_submiting {
   margin-right: 50px;
   margin-left: 300px;
 }
@@ -30,14 +30,14 @@
 .edit_profile_form {
   height: 400px;
   width: 500px;
-  margin-top:100px;
-  margin-left:250px;
+  margin-top: 100px;
+  margin-left: 250px;
   position: relative;
   .box {
     background-color: #fff;
     min-height: 350px;
     form {
-      position:relative;
+      position: relative;
       min-height: 350px;
       .submit {
         position: absolute;
@@ -56,9 +56,9 @@
 
 #black_content {
   span.header {
-    width:200px;
+    width: 200px;
     text-align: center;
-    padding:5px 0px 10px 0px;
-    font-size:18px;
+    padding: 5px 0px 10px 0px;
+    font-size: 18px;
   }
 }

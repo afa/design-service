@@ -1,271 +1,271 @@
 @import "settings";
 
 /*Form 1 container form consisnt of split divs so STFU*/
-.postContainer{
-  position:relative;
+.postContainer {
+  position: relative;
   behavior: url(scripts/PIE.htc);
-  background-repeat:no-repeat;
-  -moz-border-radius:50px;
-  -webkit-border-radius:50px;
-  border-radius:50px;
-  border-width:6px;
-  border:solid;
+  background-repeat: no-repeat;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  border-width: 6px;
+  border: solid;
 }
 
 
 /* Post 1 Ishodnie Dannie aka Adress */
-#post1Forms{
-  position:relative;
-  top:-15px;
-  height:235px;
+#post1Forms {
+  position: relative;
+  top: -15px;
+  height: 235px;
 }
 
-.postFormText{
-  line-height:40px;
-  font-family:gardensc, Geneva, sans-serif;
-  font-style:italic;
-  font-size:18px;
-  text-align:left;
+.postFormText {
+  line-height: 40px;
+  font-family: gardensc, Geneva, sans-serif;
+  font-style: italic;
+  font-size: 18px;
+  text-align: left;
 }
 
-.postFormNote{
+.postFormNote {
   padding: 0 20px;
-  font-family:gardensc, Geneva, sans-serif;
-  font-style:italic;
-  font-size:14px;
+  font-family: gardensc, Geneva, sans-serif;
+  font-style: italic;
+  font-size: 14px;
   margin: -18px auto;
-  text-align:center;
+  text-align: center;
 }
 
 
-#post1Adress{
-  height:320px;
-  width:420px;
-  border-color:$design_projects_color;
-  margin-left:60px;
-  margin-top:50px;
-  background-repeat:no-repeat;
-  -moz-border-radius:50px;
-  -webkit-border-radius:50px;
-  border-radius:50px;
-  border-width:6px;
+#post1Adress {
+  height: 320px;
+  width: 420px;
+  border-color: $design_projects_color;
+  margin-left: 60px;
+  margin-top: 50px;
+  background-repeat: no-repeat;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  border-width: 6px;
   behavior: url(scripts/PIE.htc);
 }
-.adress{
+.adress {
   margin: 0 10px;
-  width:280px;
-  border:none;
-  background:image-url("textformbg.png") repeat-x;
+  width: 280px;
+  border: none;
+  background: image-url("textformbg.png") repeat-x;
 }
-.floor{
-  margin: 0 10px;
-  width:50px;
-  border:none;
-  background:image-url("textformbg.png") repeat-x;
-}
-.section{
+.floor {
   margin: 0 10px;
   width: 50px;
-  border:none;
-  background:image-url("textformbg.png") repeat-x;
+  border: none;
+  background: image-url("textformbg.png") repeat-x;
 }
-.waterFlows{
+.section {
+  margin: 0 10px;
+  width: 50px;
+  border: none;
+  background: image-url("textformbg.png") repeat-x;
+}
+.waterFlows {
   margin: 0 10px;
   width: 60px;
-  border:none;
-  background:image-url("textformbg.png") repeat-x;
+  border: none;
+  background: image-url("textformbg.png") repeat-x;
 }
-.family{
+.family {
   margin: 0 10px;
-  width:230px;
-  border:none;
-  background:image-url("textformbg.png") repeat-x;
+  width: 230px;
+  border: none;
+  background: image-url("textformbg.png") repeat-x;
 }
-.children{
+.children {
   margin: 0 10px;
-  width:350px;
-  border:none;
-  background:image-url("textformbg.png") repeat-x;
+  width: 350px;
+  border: none;
+  background: image-url("textformbg.png") repeat-x;
 }
 
-#post2Quest{
-  height:620px;
-  width:580px;
-  margin:50px 0 0 225px;
-  -moz-border-radius:50px;
-  -webkit-border-radius:50px;
-  border-width:6px;
-  border-radius:50px;
-  border-color:$plan_developments_color;
+#post2Quest {
+  height: 620px;
+  width: 580px;
+  margin: 50px 0 0 225px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-width: 6px;
+  border-radius: 50px;
+  border-color: $plan_developments_color;
   behavior: url(scripts/PIE.htc);
 }
-#post2Forms{
-  padding:20px;
+#post2Forms {
+  padding: 20px;
 }
-#post2Text{
+#post2Text {
   margin: 40px 0 0 0;
 }
 
-#TextKitchenSplit{
-  position:absolute;
-  top:80px;
-  left:20px;
+#TextKitchenSplit {
+  position: absolute;
+  top: 80px;
+  left: 20px;
 }
-#yn1{
-  position:absolute;
-  top:130px;
-  left:100px;
+#yn1 {
+  position: absolute;
+  top: 130px;
+  left: 100px;
 }
-#KitchenSquare{
-  position:absolute;
-  top:80px;
-  left:240px;
+#KitchenSquare {
+  position: absolute;
+  top: 80px;
+  left: 240px;
 }
-#yn2{
-  position:absolute;
-  top:80px;
-  left:360px;
+#yn2 {
+  position: absolute;
+  top: 80px;
+  left: 360px;
 }
-#TextClothRoom{
-  position:absolute;
-  top:192px;
-  left:20px;
+#TextClothRoom {
+  position: absolute;
+  top: 192px;
+  left: 20px;
 }
-#yn3{
-  position:absolute;
-  top:232px;
-  left:50px;
+#yn3 {
+  position: absolute;
+  top: 232px;
+  left: 50px;
 }
-#TextWardrobes{
-  position:absolute;
-  top:232px;
-  left:264px;
+#TextWardrobes {
+  position: absolute;
+  top: 232px;
+  left: 264px;
 }
-#Wardrobes{
+#Wardrobes {
   width: 60px;
-  border:none;
-  background:image-url("textformbg.png") repeat-x;
+  border: none;
+  background: image-url("textformbg.png") repeat-x;
 }
-#TextCabinet{
-  position:absolute;
-  top:292px;
-  left:20px;
+#TextCabinet {
+  position: absolute;
+  top: 292px;
+  left: 20px;
 }
-#yn4{
-  position:absolute;
-  top:292px;
-  left:265px;
+#yn4 {
+  position: absolute;
+  top: 292px;
+  left: 265px;
 }
-#GuestText{
-  position:absolute;
-  top:355px;
-  left:20px;
+#GuestText {
+  position: absolute;
+  top: 355px;
+  left: 20px;
 }
-#SleepersText{
-  position:absolute;
-  left:265px;
-  top:360px;
+#SleepersText {
+  position: absolute;
+  left: 265px;
+  top: 360px;
 }
-#LaundryText{
-  position:absolute;
-  top:470px;
-  left:20px;
+#LaundryText {
+  position: absolute;
+  top: 470px;
+  left: 20px;
 }
-#yn5{
-  position:absolute;
-  top:470px;
-  left:320px;
+#yn5 {
+  position: absolute;
+  top: 470px;
+  left: 320px;
 }
-#CountText{
-  position:absolute;
-  top:540px;
-  left:24px;
+#CountText {
+  position: absolute;
+  top: 540px;
+  left: 24px;
 }
-#SleepersCount, #PlanCount{
+#SleepersCount, #PlanCount {
   width: 60px;
-  border:none;
-  background:image-url("textformbg.png") repeat-x;
+  border: none;
+  background: image-url("textformbg.png") repeat-x;
 }
 
-.checkYNkitchen{
+.checkYNkitchen {
 
 }
 
-#post3Wish{
-  width:635px;
-  height:240px;
-  margin-top:50px;
-  margin-left:60px;
-  border-color:$engineering_systems_color;
-  -moz-border-radius:50px;
-  -webkit-border-radius:50px;
-  border-width:6px;
-  border-radius:50px;
+#post3Wish {
+  width: 635px;
+  height: 240px;
+  margin-top: 50px;
+  margin-left: 60px;
+  border-color: $engineering_systems_color;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-width: 6px;
+  border-radius: 50px;
   behavior: url(scripts/PIE.htc);
 }
 
 
-#post4Attach{
-  width:745px;
-  height:220px;
-  margin-left:60px;
-  margin-top:50px;
-  -moz-border-radius:50px;
-  -webkit-border-radius:50px;
-  border-width:6px;
-  border-radius:50px;
-  border-color:#e5c941;
+#post4Attach {
+  width: 745px;
+  height: 220px;
+  margin-left: 60px;
+  margin-top: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-width: 6px;
+  border-radius: 50px;
+  border-color: #e5c941;
   behavior: url(scripts/PIE.htc);
 }
-.postNumber{
-  height:30px;
-  width:90px;
-  float:left;
+.postNumber {
+  height: 30px;
+  width: 90px;
+  float: left;
   margin: 27px 0 0 26px;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 }
 
-#postNumber1{
-  background-image:image-url("num1.png");
+#postNumber1 {
+  background-image: image-url("num1.png");
 }
 
-#postNumber2{
-  float:right;
-  margin-right:20px;
-  background-image:image-url("num2.png");
+#postNumber2 {
+  float: right;
+  margin-right: 20px;
+  background-image: image-url("num2.png");
 }
 
-#postNumber3{
-  background-image:image-url("num3.png");
+#postNumber3 {
+  background-image: image-url("num3.png");
 }
-#postNumber4{
-  background-image:image-url("num4.png");
+#postNumber4 {
+  background-image: image-url("num4.png");
 }
 
-.postCaption{
-  height:30px;
-  float:left;
+.postCaption {
+  height: 30px;
+  float: left;
   margin: 27px 0 0 20px;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 }
-#postCaption1{
-  width:255px;
-  background-image:image-url("post1Caption.png");
+#postCaption1 {
+  width: 255px;
+  background-image: image-url("post1Caption.png");
 }
-#postCaption2{
+#postCaption2 {
   margin: 27px 40px 0 0;
-  float:right;
-  width:196px;
-  background-image:image-url("post2caption.png");
+  float: right;
+  width: 196px;
+  background-image: image-url("post2caption.png");
 }
 
-#postCaption3{
-  background:image-url("post3caption.png") no-repeat;
-  width:370px;
-  height:30px;
+#postCaption3 {
+  background: image-url("post3caption.png") no-repeat;
+  width: 370px;
+  height: 30px;
 }
-#postCaption4{
-  background:image-url("post4caption.png") no-repeat;
-  width:585px;
-  height:30px;
+#postCaption4 {
+  background: image-url("post4caption.png") no-repeat;
+  width: 585px;
+  height: 30px;
 }

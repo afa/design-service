@@ -1,26 +1,26 @@
 @import "settings";
 
-form.postVarPlan{
+form.postVarPlan {
   div.input {
     clear: both;
-    label{
+    label {
       float: left;
       width: 200px;
     }
-    input{
+    input {
       float: left;
       width: 50px;
     }
   }
   input[type=submit] {
-    float:left;
+    float: left;
     clear: both;
   }
 }
-.show_for{
+.show_for {
   .wrapper {
-    float:left;
-    clear:both;
+    float: left;
+    clear: both;
   }
 }
 .accept {
@@ -76,18 +76,18 @@ form.postVarPlan{
 }
 
 
-table#index_table_orders tbody tr{
-  td:nth-child(4) { 
-    color: #D6540B; 
-    a, a:link, a:active, a:visited, a:hover{ color: #D6540B; }
+table#index_table_orders tbody tr {
+  td:nth-child(4) {
+    color: #D6540B;
+    a, a:link, a:active, a:visited, a:hover { color: #D6540B; }
   }
-  td:nth-child(7) { 
-    color: #921D5A; 
-    a, a:link, a:active, a:visited, a:hover{ color: #921D5A; }
+  td:nth-child(7) {
+    color: #921D5A;
+    a, a:link, a:active, a:visited, a:hover { color: #921D5A; }
   }
-  td:nth-child(9) { 
-    color: #38678b; 
-    a, a:link, a:active, a:visited, a:hover{ color: #38678b; }
+  td:nth-child(9) {
+    color: #38678b;
+    a, a:link, a:active, a:visited, a:hover { color: #38678b; }
   }
 
   &.even, &.odd {
@@ -109,50 +109,50 @@ table#index_table_orders tbody tr{
   }
 }
 
-div.message_list{
-  div.participants{
-    span.client{ 
+div.message_list {
+  div.participants {
+    span.client {
     left: 10px;
-      a, a:link, a:active, a:visited, a:hover{ 
-        color:#fffff; 
-        width:100px;  
-      } 
+      a, a:link, a:active, a:visited, a:hover {
+        color: #fffff;
+        width: 100px;
+      }
     }
-    span.executor{ right:10px; } 
+    span.executor { right:10px; }
   }
-  div.from_client{
+  div.from_client {
     border-radius: 15px 15px 15px 15px;
     border: 1px solid #38678b;
-    width:420px;
-    div.message{ margin-top:5px;}
+    width: 420px;
+    div.message { margin-top:5px; }
   }
-  div.moderation_not_accepted{
+  div.moderation_not_accepted {
     background-color: #FAD6DA;
-    span.datetime{
-      position:absolute;
-      margin-left:440px;
-      margin-top:30px;
+    span.datetime {
+      position: absolute;
+      margin-left: 440px;
+      margin-top: 30px;
     }
-    div.moderation{ color:#97192D; }
+    div.moderation { color:#97192D; }
   }
-  div.moderation_accepted_complete{
+  div.moderation_accepted_complete {
     background-color: #E2E7EB;
-    margin-left:150px;
-    span.datetime{
-      position:absolute;
-      margin-left:-150px;
-      margin-top:30px;
-    } 
-    div.moderation{ color:#13A8A2; }   
+    margin-left: 150px;
+    span.datetime {
+      position: absolute;
+      margin-left: -150px;
+      margin-top: 30px;
+    }
+    div.moderation { color:#13A8A2; }
   }
-  div.moderation_rejected_complete{
-    background-color: #E5EBA9; 
-    span.datetime{
-      position:absolute;
-      margin-left:440px;
-      margin-top:30px;
-    }  
-    div.moderation{ color:#A58542; }   
+  div.moderation_rejected_complete {
+    background-color: #E5EBA9;
+    span.datetime {
+      position: absolute;
+      margin-left: 440px;
+      margin-top: 30px;
+    }
+    div.moderation { color:#A58542; }
   }
 }
 

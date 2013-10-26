@@ -24,7 +24,7 @@ body.registered {
     position: relative;
     overflow: auto;
     margin-top: 5px;
-  
+
     div.headers {
       position: absolute;
       span {
@@ -35,14 +35,14 @@ body.registered {
         font-size: 18px;
         padding-top: 5px;
       }
-    
+
       span.first {
         padding-right: 150px;
         padding-top: 13px;
         color: #b5d48c;
         padding-left: 150px;
       }
-      
+
       span.second { color: #a3bfdd; }
     }
     ul.concept {
@@ -63,12 +63,12 @@ body.registered {
         height: 280px;
         position: static;
         float: left;
-      
+
         img {
           width: 150px;
           height: 150px;
         }
-      
+
         span.hover {
           position: absolute;
           width: 150px;
@@ -88,14 +88,14 @@ body.registered {
       overflow: auto;
       padding: 60px 12px 20px 25px;
       width: 164px;
-    
+
       li {
         width: 150px;
         height: 280px;
         position: static;
         float: left;
         margin-bottom: 10px;
-      
+
         img {
           width: 150px;
           height: 150px;
@@ -132,7 +132,7 @@ body.registered {
           background-image: image-url("order_hover.png");
         }
       }
-      
+
       span.black_opacity {
         display: none;
         position: absolute;
@@ -146,7 +146,7 @@ body.registered {
       }
     }
   }
-  
+
 
   div.copyright_block {
     width: 627px;
@@ -163,7 +163,7 @@ body.registered {
       margin-left: 160px;
       margin-top: 10px;
       &:hover { background-image: image-url("avtor_h-small.png"); }
-    }    
+    }
   }
 
   .heading_h {
@@ -206,7 +206,7 @@ body.registered {
     overflow: auto;
     clear: both;
     float: left;
-  
+
     div.number {
       background-image: image-url("1_number_orrange.png");
       float: left;
@@ -244,7 +244,7 @@ body.registered {
         margin-top: 10px;
       }
     }
-    
+
     div.number_second {
       background-image: image-url("2_number_green.png");
       float: left;
@@ -297,7 +297,7 @@ body.registered {
     margin-bottom: 15px;
     float: left;
     margin-left: 45px;
-  
+
     div.number {
       background-image: image-url("3_number_blue.png");
       float: left;
@@ -313,7 +313,7 @@ body.registered {
       margin-left: 10px;
     }
   }
-  
+
   div.design_p-workin-docs_form2_default {
     сolor: #333;
     border: 0px;

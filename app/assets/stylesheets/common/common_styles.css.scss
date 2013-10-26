@@ -1,7 +1,7 @@
 @import "settings";
 
 /* LayOut Config */
-body  {
+body {
   font: 100% gardensc, Arial, Helvetica, sans-serif;
   font-family: Tahoma;
   background: image-url("fon-y.jpg") repeat;
@@ -48,7 +48,7 @@ ul.list_of_attachments {
       text-decoration: none;
       border-bottom: 1px dotted #bc9c09;
       }
-      a:hover{ color:#434242; border-bottom:1px dotted #ff0000;}
+      a:hover { color:#434242; border-bottom:1px dotted #ff0000; }
     }
   }
 }
@@ -251,7 +251,7 @@ div.msg_content {
 div.msg_from {
   float: left;
   margin-left: 25px;
-  ul li{ color:#7c85b4;}
+  ul li { color:#7c85b4; }
   span.message {
     border-color: #8f9eea;
     color: #7c85b4;
@@ -260,7 +260,7 @@ div.msg_from {
 div.msg_to {
   float: left;
   margin-left: 65px;
-  ul li{ color:#3acb22;}
+  ul li { color:#3acb22; }
   span.message {
     border-color: #3acb22;
     color: #318722;

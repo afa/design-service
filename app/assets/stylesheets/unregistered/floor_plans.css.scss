@@ -1,206 +1,206 @@
 @import "settings";
 
 body.unregistered {
-  span.design_p_floor_plans{ color:#c67700; }
-  div.design_p_floor_plans{ 
-    background-image:image-url("design_project_logo_big.jpg");
-    border-bottom-color:$design_projects_color; 
-    width:550px; 
-    float:left; 
-    margin-bottom:5px; 
-    margin-top:0px;  
+  span.design_p_floor_plans { color:#c67700; }
+  div.design_p_floor_plans {
+    background-image: image-url("design_project_logo_big.jpg");
+    border-bottom-color: $design_projects_color;
+    width: 550px;
+    float: left;
+    margin-bottom: 5px;
+    margin-top: 0px;
   }
-  div.msg_caution span.design_p_floor_plans{
-    color:#3d6804;   
-    padding:15px 0px 10px 115px; 
-    float:left; 
+  div.msg_caution span.design_p_floor_plans {
+    color: #3d6804;
+    padding: 15px 0px 10px 115px;
+    float: left;
   }
 
-  div.design_p_floor_plans_form1{ 
-    width:600px;  
-    margin-left:45px;  
-    padding:30px; 
-    line-height:45px; 
-    margin-bottom:25px;  
-    overflow:auto; 
-    clear:both; 
+  div.design_p_floor_plans_form1 {
+    width: 600px;
+    margin-left: 45px;
+    padding: 30px;
+    line-height: 45px;
+    margin-bottom: 25px;
+    overflow: auto;
+    clear: both;
 
-    div.number{ 
-      background-image:image-url("1_number_orrange.png"); 
-      float:left; 
+    div.number {
+      background-image: image-url("1_number_orrange.png");
+      float: left;
     }
-    div.form_description{ 
-      background-image:image-url("form_input_data.png"); 
-      width:250px; 
-      float:left; 
-    }
-
-    div.file_attaching{ 
-      width:595px; 
-      min-height:150px; 
-      margin-top:10px; 
-      float:left;
-      
-      span.caution{ 
-        color:#c10000; 
-        font-size:17px;  
-        float:left; 
-        width:480px; 
-        padding:15px 0px 0px 55px;
-        ul{ 
-          float: right; 
-          list-style:none; 
-          margin:0px; 
-          padding:0x; 
-          line-height:20px;
-
-          li{ float:none;}
-        }
-      }
-      
-      span.attach{ 
-        padding:20px 0px 20px 200px; 
-        margin-top:0px; 
-        float:left; 
-        margin-top:0px;  
-        height:45px; 
-        background-position:110px 0px;
-      }
-    }
-
-    div.number_second{ 
-      background-image:image-url("2_number_green.png"); 
-      float:left; 
-      width:86px; 
-      height:29px;  
-      background-repeat:no-repeat;  
-      margin-right:10px; 
-      margin-left:0px; 
-      padding-bottom:20px; 
-      margin-top:20px;
-    }
-
-    div.form_description_second{ 
-      background-image:image-url("task.png"); 
-      width:250px; 
-      float:left; 
-      height:29px;  
-      background-repeat:no-repeat;  
-      padding-bottom:20px; 
-      margin-top:20px; 
-      position:relative; 
-    }
-
-    span.text{ 
-      clear:both; 
-      position: relative;  
+    div.form_description {
+      background-image: image-url("form_input_data.png");
+      width: 250px;
       float: left;
     }
 
-    div.depending{ 
-      float:left; 
-      width:370px; 
-      padding-left:110px;
+    div.file_attaching {
+      width: 595px;
+      min-height: 150px;
+      margin-top: 10px;
+      float: left;
+
+      span.caution {
+        color: #c10000;
+        font-size: 17px;
+        float: left;
+        width: 480px;
+        padding: 15px 0px 0px 55px;
+        ul {
+          float: right;
+          list-style: none;
+          margin: 0px;
+          padding: 0x;
+          line-height: 20px;
+
+          li { float:none; }
+        }
+      }
+
+      span.attach {
+        padding: 20px 0px 20px 200px;
+        margin-top: 0px;
+        float: left;
+        margin-top: 0px;
+        height: 45px;
+        background-position: 110px 0px;
+      }
     }
-    ul.answer{ 
-      list-style:none;  
-      margin:0px;  
-      padding-left:55px; 
+
+    div.number_second {
+      background-image: image-url("2_number_green.png");
+      float: left;
+      width: 86px;
+      height: 29px;
+      background-repeat: no-repeat;
+      margin-right: 10px;
+      margin-left: 0px;
+      padding-bottom: 20px;
+      margin-top: 20px;
+    }
+
+    div.form_description_second {
+      background-image: image-url("task.png");
+      width: 250px;
+      float: left;
+      height: 29px;
+      background-repeat: no-repeat;
+      padding-bottom: 20px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    span.text {
+      clear: both;
+      position: relative;
+      float: left;
+    }
+
+    div.depending {
+      float: left;
+      width: 370px;
+      padding-left: 110px;
+    }
+    ul.answer {
+      list-style: none;
+      margin: 0px;
+      padding-left: 55px;
       float: right;
-      li{ 
-        float:left;  
-        margin-right:10px;  
+      li {
+        float: left;
+        margin-right: 10px;
       }
     }
-    
 
-    div.what_materials{ 
-      float:left; 
-      width:530px; 
-      padding-left:90px; 
-      float:left;
-      span{ 
-        padding-left:35px; 
-        width:450px;
+
+    div.what_materials {
+      float: left;
+      width: 530px;
+      padding-left: 90px;
+      float: left;
+      span {
+        padding-left: 35px;
+        width: 450px;
       }
     }
-    
 
-    div.room_blocks{ 
-      float:left; 
-      width:285px; 
-      min-height: 266px;  
-      padding:0px; 
-      margin-right:15px;
-      div.place{ float:left;}
-      ul{ 
-        float:left; 
-        overflow:auto;  
-        margin:5px 0px 0px 5px; 
-        list-style:none; 
-        padding:10px 15px 10px 25px; 
-        font-size:15px;
-        li{ 
-          float:none; 
-          line-height:18px; 
-          margin-bottom:10px; 
-          padding:0px;
-          label{ 
-            width:180px; 
-            padding:0px; 
-            padding-left:30px; 
-            float:left; 
+
+    div.room_blocks {
+      float: left;
+      width: 285px;
+      min-height: 266px;
+      padding: 0px;
+      margin-right: 15px;
+      div.place { float:left; }
+      ul {
+        float: left;
+        overflow: auto;
+        margin: 5px 0px 0px 5px;
+        list-style: none;
+        padding: 10px 15px 10px 25px;
+        font-size: 15px;
+        li {
+          float: none;
+          line-height: 18px;
+          margin-bottom: 10px;
+          padding: 0px;
+          label {
+            width: 180px;
+            padding: 0px;
+            padding-left: 30px;
+            float: left;
           }
         }
       }
-    }    
-  }
-  
-
-  div.design_p_floor_plans_form2{ 
-    width:470px; 
-    height:160px;  
-    margin-left:135px; 
-    margin-top:15px; 
-    padding:30px; 
-    margin-bottom:25px;  
-    div.number{ 
-      background-image:image-url("3_number_blue.png"); 
-      float:left; 
-    }
-    div.form_description{ 
-      background-image:image-url("comments_small.png"); 
-      width:370px; 
-      float:left;  
     }
   }
-    
-  div.design_p_floor_plans_form2_default{ 
-    сolor:#333; 
-    border:0px; 
-    padding:0px 5px 0px 5px; 
-    margin:0px; 
-    border-bottom:1px solid $engineering_systems_color; 
-    height:20px; 
-    font-size:16px; 
-    background-color:#f6f6f6; 
-    height:30px; 
+
+
+  div.design_p_floor_plans_form2 {
+    width: 470px;
+    height: 160px;
+    margin-left: 135px;
+    margin-top: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    div.number {
+      background-image: image-url("3_number_blue.png");
+      float: left;
+    }
+    div.form_description {
+      background-image: image-url("comments_small.png");
+      width: 370px;
+      float: left;
+    }
   }
 
-  .design_p_floor_plans-caution2{ 
-    color:#e23a3a; 
-    text-align:center; 
-    float:left; 
-    margin-left:90px; 
-    margin-bottom:15px; 
-    font-weight:bold; 
-    font-size:14px;
+  div.design_p_floor_plans_form2_default {
+    сolor: #333;
+    border: 0px;
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    border-bottom: 1px solid $engineering_systems_color;
+    height: 20px;
+    font-size: 16px;
+    background-color: #f6f6f6;
+    height: 30px;
   }
-  div.design_p_floor_plans_submiting{  
-    height:50px; 
-    width:550px; 
-    margin-left:160px; 
-    padding:20px 0px 40px 0px; 
-    clear:both; 
+
+  .design_p_floor_plans-caution2 {
+    color: #e23a3a;
+    text-align: center;
+    float: left;
+    margin-left: 90px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  div.design_p_floor_plans_submiting {
+    height: 50px;
+    width: 550px;
+    margin-left: 160px;
+    padding: 20px 0px 40px 0px;
+    clear: both;
   }
 }

@@ -1,5 +1,5 @@
 div.color_keyboard {
-  ul li:hover { cursor:pointer;}
+  ul li:hover { cursor:pointer; }
 
   ul.wide {
     float: left;
@@ -34,16 +34,16 @@ div.color_keyboard {
       cursor: default;
     }
 
-    li:nth-child(1){ background-color:#fdabb2;}
-    li:nth-child(2){ background-color:#faa486;}
-    li:nth-child(3){ background-color:#ffbf64;}
-    li:nth-child(4){ background-color:#f0d167;}
-    li:nth-child(5){ background-color:#b3e360;}
-    li:nth-child(6){ background-color:#87ffb4;}
-    li:nth-child(7){ background-color:#a4efff;}
-    li:nth-child(8){ background-color:#719bfc;}
-    li:nth-child(9){ background-color:#928afa;}
-    li:nth-child(10){ background-color:#cf83ce;}
+    li:nth-child(1) { background-color:#fdabb2; }
+    li:nth-child(2) { background-color:#faa486; }
+    li:nth-child(3) { background-color:#ffbf64; }
+    li:nth-child(4) { background-color:#f0d167; }
+    li:nth-child(5) { background-color:#b3e360; }
+    li:nth-child(6) { background-color:#87ffb4; }
+    li:nth-child(7) { background-color:#a4efff; }
+    li:nth-child(8) { background-color:#719bfc; }
+    li:nth-child(9) { background-color:#928afa; }
+    li:nth-child(10) { background-color:#cf83ce; }
   }
 
   ul.short {
@@ -78,15 +78,15 @@ div.color_keyboard {
       cursor: default;
     }
 
-    li.dis_short { margin-left:8px;}
-    li.dis_long { margin-left:31px;}
+    li.dis_short { margin-left:8px; }
+    li.dis_long { margin-left:31px; }
 
-    li:nth-child(1){ background-color:#fb3737;}
-    li:nth-child(2){ background-color:#fd9437;}
-    li:nth-child(3){ background-color:#fdf037;}
-    li:nth-child(4){ background-color:#42cd37;}
-    li:nth-child(5){ background-color:#37f1fd;}
-    li:nth-child(6){ background-color:#4037fd;}
-    li:nth-child(7){ background-color:#9937fd;}
+    li:nth-child(1) { background-color:#fb3737; }
+    li:nth-child(2) { background-color:#fd9437; }
+    li:nth-child(3) { background-color:#fdf037; }
+    li:nth-child(4) { background-color:#42cd37; }
+    li:nth-child(5) { background-color:#37f1fd; }
+    li:nth-child(6) { background-color:#4037fd; }
+    li:nth-child(7) { background-color:#9937fd; }
   }
 }

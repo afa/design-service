@@ -4,18 +4,18 @@ body.registered {
       .add_file_button {
         background-image: image-url("add_file_button.png");
         background-repeat: no-repeat;
-        height:32px;
+        height: 32px;
         width: 32px;
       }
       .filename {
       }
       input[type=file] {
         opacity: 0;
-        height:32px;
+        height: 32px;
         width: 32px;
       }
       .submit {
-        height:32px;
+        height: 32px;
         width: 32px;
       }
     }
