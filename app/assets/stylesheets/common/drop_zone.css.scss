@@ -31,7 +31,10 @@
   }
 
   &.portfolio_item_attachment {
-    background-image: image-url("add_.jpg"); background-repeat:no-repeat; margin:5px 0px 0px 5px; cursor:pointer;
+    background-image: image-url("add_.jpg"); 
+    background-repeat:no-repeat; 
+    margin:5px 0px 0px 5px; 
+    cursor:pointer;
   }
 
   border: none;
@@ -65,7 +68,7 @@
   }
 }
 
-body.registered, body.specialist {
+body.registered {
   .dropZone.orderable_attachment {
     left: 149px;
     margin-left: 10px;

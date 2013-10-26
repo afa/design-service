@@ -176,14 +176,14 @@ body.unregistered {
     clear: none;
     padding: 2px 0 0px 24px;
     cursor: pointer;
-  	background-image: image-url("circleN.png");
-  	background-repeat: no-repeat;
-  	/*display: inline-block; */
+    background-image: image-url("circleN.png");
+    background-repeat: no-repeat;
+    /*display: inline-block; */
   }
 
   input[type='radio']:checked + label {
-  	background-image: image-url("circleY.png");
-  	background-repeat: no-repeat;
+    background-image: image-url("circleY.png");
+    background-repeat: no-repeat;
     padding: 2px 0 0px 24px;
   }
 
@@ -201,18 +201,18 @@ body.unregistered {
   }
 
   input[type='checkbox'] + label {
-  	background-image: image-url("box_not_cheked.png");
-  	background-repeat: no-repeat;
+    background-image: image-url("box_not_cheked.png");
+    background-repeat: no-repeat;
     padding: 3px 0 0px 40px;
     cursor: pointer;
     height: 35px;
   }
 
   input[type='checkbox']:checked + label {
-  	background-image: image-url("box_checked.png");
-  	background-repeat: no-repeat;
+    background-image: image-url("box_checked.png");
+    background-repeat: no-repeat;
     padding: 3px 0 0px 40px;
-  	cursor: pointer;
+    cursor: pointer;
   }
 
   div.more_headings {

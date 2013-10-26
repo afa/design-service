@@ -1,7 +1,6 @@
 @import "settings";
 
 body.unregistered {
-
   span.design_project { color: #c67700; }
   div.design_project {
     background-image: image-url("design_project_logo_big.jpg") ;
@@ -72,8 +71,6 @@ body.unregistered {
       }
     }
 
-
-
     ul.working_documents {
       margin: 0px;
       list-style: none;
@@ -133,8 +130,6 @@ body.unregistered {
       }
     }
   }
-
-  
 
   div.copyright_block {
     width: 818px;

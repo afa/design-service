@@ -16,21 +16,23 @@ div.percentage_blocks {
     background-repeat:no-repeat;
     background-position:right;
     position:absolute;
-  }
-  span.percentage span.bar {
-    background-image:image-url("percentage_bar.png");
-    width:200px;
-    height:32px;
-    float:left;
-    z-index:5;
-    position:absolute;
-    background-image:image-url("percentage.png");
-    background-repeat:no-repeat;
-  }
-  span.percentage span.value_percent{
-    font-size:14px;
-    padding:7px 0px 0px 85px;
-    float:left;
-    position: absolute;
+
+    span.bar {
+      background-image:image-url("percentage_bar.png");
+      width:200px;
+      height:32px;
+      float:left;
+      z-index:5;
+      position:absolute;
+      background-image:image-url("percentage.png");
+      background-repeat:no-repeat;
+    }
+
+    span.value_percent{
+      font-size:14px;
+      padding:7px 0px 0px 85px;
+      float:left;
+      position: absolute;
+    }
   }
 }

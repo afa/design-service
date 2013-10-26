@@ -1,66 +1,272 @@
 body.specialist {
   div.specialist_orders {
-    width:540px; position:relative; color:#4c4c4c; margin-bottom:20px; clear:both; margin-left:0px; padding: 0px; float:left; margin-top:15px; margin-left:15px; padding-bottom:10px;
-    div.date{ width:128px; height:28px; float:right; border-top:none; border-right:none; position:absolute; right:-4px; top:-2px; text-align:center; padding-top:8px; color:#648040;  font-style:italic; font-size:20px}
+    width:540px; 
+    position:relative; 
+    color:#4c4c4c; 
+    margin-bottom:20px; 
+    clear:both; 
+    margin-left:0px; 
+    padding: 0px; 
+    float:left; 
+    margin-top:15px; 
+    margin-left:15px; 
+    padding-bottom:10px;
 
-    div.name{ height:30px; width:380px; float:left; padding:15px 0px 0px 15px; font-size:14px; margin:0px;}
-    div.name span{color:#6c1407; font-size:14px; font-weight:bold; padding:0px 10px 3px 10px; border-bottom:1px solid #c8c8c8;  }
+    div.date{ 
+      width:128px; 
+      height:28px; 
+      float:right; 
+      border-top:none; 
+      border-right:none; 
+      position:absolute; 
+      right:-4px; 
+      top:-2px; 
+      text-align:center; 
+      padding-top:8px; 
+      color:#648040;  
+      font-style:italic; 
+      font-size:20px;
+    }
 
+    div.name{ 
+      height:30px; 
+      width:380px; 
+      float:left; 
+      padding:15px 0px 0px 15px; 
+      font-size:14px; 
+      margin:0px;
+      span{ 
+        color:#6c1407; 
+        font-size:14px; 
+        font-weight:bold; 
+        padding:0px 10px 3px 10px; 
+        border-bottom:1px solid #c8c8c8;  
+      }
+    }
+    
     div.client {
-      float:left; font-size:14px; padding:5px 0px 0px 15px; width:300px;
-      ul{ color:#6c1407; font-size:12px;  float: right; width:200px; margin:0px; padding:0px; list-style:none; }
-      ul li{ border-bottom:1px solid #c8c8c8; padding:0px 10px 3px 10px;}
+      float:left; 
+      font-size:14px; 
+      padding:5px 0px 0px 15px; 
+      width:300px;
+      ul{ 
+        color:#6c1407; 
+        font-size:12px;  
+        float: right; 
+        width:200px; 
+        margin:0px; 
+        padding:0px; 
+        list-style:none; 
+        li{ 
+          border-bottom:1px solid #c8c8c8; 
+          padding:0px 10px 3px 10px;
+        }
+      }
     }
 
     div.completion {
-      font-size:13px; position:absolute; right:0px; margin-top:45px;
-      span.tit{ float:left; padding-top:5px;}
+      font-size:13px; 
+      position:absolute; 
+      right:0px; 
+      margin-top:45px;
+      
+      span.tit{ 
+        float:left; 
+        padding-top:5px;
+      }
+      
       ul {
-        color:#6c1407; list-style:none; width:100px; float:right; padding:0px 10px 0px 10px; margin:0px;
-        li:nth-child(1){ font-size:10px; padding:5px 0px 5px 5px; border-bottom:1px solid #c8c8c8; border-top:1px solid #c8c8c8;}
-        li:nth-child(2){ color:#4c4c4c; padding-left:5px;}
-        li.payid{ font-size:14px; font-weight:bold; font-style:italic;}
+        color:#6c1407; 
+        list-style:none; 
+        width:100px; 
+        float:right; 
+        padding:0px 10px 0px 10px; 
+        margin:0px;
+        li:nth-child(1){ 
+          font-size:10px; 
+          padding:5px 0px 5px 5px; 
+          border-bottom:1px solid #c8c8c8; 
+          border-top:1px solid #c8c8c8;
+        }
+        li:nth-child(2){ 
+          color:#4c4c4c; 
+          padding-left:5px;
+        }
+        li.payid{ 
+          font-size:14px; 
+          font-weight:bold; 
+          font-style:italic;
+        }
         li.bold_{ font-size:14px;}
       }
     }
-    div.status{ height:30px; width:350px; float:left; padding:15px 0px 0px 15px; font-size:14px; margin:0px;}
-    div.status span{color:#6c1407; font-size:14px; font-weight:bold; padding:0px 10px 3px 10px; border-bottom:1px solid #c8c8c8; margin-left:20px;}
-
-    div.msg{ width:180px; float: left; font-size:14px; color:#6c1407; margin-left:15px; margin-top:10px; background-image:image-url("msg_icon.jpg"); background-repeat:no-repeat; height:20px; padding-left:35px;}
-    div.msg span a,div.msg span a:visited{ text-decoration:underline; color:#6c1407;}
-    div.msg span a:hover{ text-decoration:none;}
-
-    div.completed{ float:left; width:310px;  padding-top:10px;}
-    div.show_more{ width:155px; height:35px; background-image:image-url("show_more.png"); float:left;}
-    div.show_more:hover{ background-image:image-url("show_more_hover.png");}
+    div.status{ 
+      height:30px; 
+      width:350px; 
+      float:left; 
+      padding:15px 0px 0px 15px; 
+      font-size:14px; 
+      margin:0px;
+      span{
+        color:#6c1407;
+        font-size:14px; 
+        font-weight:bold; 
+        padding:0px 10px 3px 10px; 
+        border-bottom:1px solid #c8c8c8; 
+        margin-left:20px;
+      }
+    }
+    
+    div.msg{ 
+      width:180px; 
+      float: left; 
+      font-size:14px; 
+      color:#6c1407; 
+      margin-left:15px; 
+      margin-top:10px; 
+      background-image:image-url("msg_icon.jpg"); 
+      background-repeat:no-repeat; 
+      height:20px; 
+      padding-left:35px;
+      span {
+        a, a:visited{ 
+          text-decoration:underline; 
+          color:#6c1407;
+        }
+        a:hover{ text-decoration:none;}
+      }
+    }
+    
+    div.completed{ 
+      float:left; 
+      width:310px;  
+      padding-top:10px;
+    }
+    div.show_more{ 
+      width:155px; 
+      height:35px; 
+      background-image:image-url("show_more.png"); 
+      float:left;
+      &:hover{ background-image:image-url("show_more_hover.png"); }
+    }
+    
   }
 
-  div.specialist_orders_percentage_blocks{ float: right; position:relative; width:220px; height:35px; margin-top:-5px;}
-  div.specialist_orders_percentage_blocks span.percentage{ width:150px; height:32px; float: right; padding:0px; margin:0px; background-color:#adc987; background-image:image-url("percentage_bar.png"); background-repeat:no-repeat; background-position:right; position:absolute; }
-  div.specialist_orders_percentage_blocks span.percentage span.bar{ background-image:image-url("percentage_bar.png"); width:200px; height:32px; float:left; z-index:5; position:absolute; background-image:image-url("percentage.png"); background-repeat:no-repeat; }
-  div.specialist_orders_percentage_blocks span.percentage span.value_percent{ font-size:14px; padding:7px 0px 0px 85px; float:left; position: absolute;}
-
+  div.specialist_orders_percentage_blocks{ 
+    float: right; 
+    position:relative; 
+    width:220px; 
+    height:35px; 
+    margin-top:-5px;
+    
+    span.percentage{ 
+      width:150px; 
+      height:32px; 
+      float: right; 
+      padding:0px; 
+      margin:0px; 
+      background-color:#adc987; 
+      background-image:image-url("percentage_bar.png"); 
+      background-repeat:no-repeat; 
+      background-position:right; 
+      position:absolute; 
+      span.bar{ 
+        background-image:image-url("percentage_bar.png");
+        width:200px;
+        height:32px;
+        float:left;
+        z-index:5;
+        position:absolute;
+        background-image:image-url("percentage.png");
+        background-repeat:no-repeat; 
+      }
+      span.value_percent{ 
+        font-size:14px; 
+        padding:7px 0px 0px 85px; 
+        float:left; 
+        position: absolute;
+      }
+    }
+  }
+  
   /*  -----MORE DETAILS */
   div.page_contener_specialist {
-    span.return{ float:left; font-size:16px; margin-left:20px; clear:both;}
+    span.return{ 
+      float:left; 
+      font-size:16px; 
+      margin-left:20px; 
+      clear:both;
+    }
     div.more_details {
-      span.heading{ float:left; font-size:16px; margin-left:20px; clear:both;}
+      span.heading{ 
+        float:left; 
+        font-size:16px; 
+        margin-left:20px; 
+        clear:both;
+      }
       ul.files{
-        float: left; position:relative; clear:both; list-style:none;  padding:0px; margin:10px 0px 0px 25px; position:relative;
-        li{ float:left; margin:0px 10px 10px 0px; padding:0px; width:100px; height:100px; position:relative; cursor: pointer;}
-        li span{ position:absolute; z-index:5;  width:100px; height:20px; background-color:#333333; bottom:0px; font-size:12px; color:#a5a0a0; text-align:center;}
-        li img{ width:100px; height:100px; }
+        float: left; 
+        position:relative; 
+        clear:both; 
+        list-style:none;  
+        padding:0px; 
+        margin:10px 0px 0px 25px; 
+        position:relative;
+        
+        li{ 
+          float:left; 
+          margin:0px 10px 10px 0px; 
+          padding:0px; 
+          width:100px; 
+          height:100px; 
+          position:relative; 
+          cursor: pointer;
+          span{ 
+            position:absolute; 
+            z-index:5;  
+            width:100px; 
+            height:20px; 
+            background-color:#333333; 
+            bottom:0px; 
+            font-size:12px; 
+            color:#a5a0a0; 
+            text-align:center;
+          }
+          img{ 
+            width:100px; 
+            height:100px; 
+          }
+        }
       }
       span.download {
-        a, a:link, a:active{ float:left; font-size:12px; margin-left:20px; padding-bottom:10px; color:#666666;}
+        a, a:link, a:active{ 
+          float:left; 
+          font-size:12px; 
+          margin-left:20px; 
+          padding-bottom:10px; 
+          color:#666666;
+        }
         a:hover{ color:#000033;}
       }
       ul.included {
-        float:left; clear:both; list-style:none; padding:0px; margin:5px 5px 5px 25px;
+        float:left; 
+        clear:both; 
+        list-style:none; 
+        padding:0px; 
+        margin:5px 5px 5px 25px;
         li{ padding-bottom:5px;}
-        li.add{ font-size:14px; padding-left:40px;}
+        li.add{ 
+          font-size:14px; 
+          padding-left:40px;
+        }
       }
-      span.confirm{ margin-top:15px; margin-left:25px; float:left; position:relative; clear:both;}
+      span.confirm{ 
+        margin-top:15px; 
+        margin-left:25px; 
+        float:left; 
+        position:relative; 
+        clear:both;
+      }
     }
   }
 }
