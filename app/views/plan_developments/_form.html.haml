@@ -72,11 +72,7 @@
     .var_form4.border_x4.rounded-corners_l2.shadow_x1.multiattach
       .attach_place_for_box
 
-    .calculator.border_x5.rounded-corners_l2.shadow_x2
-      .form_description
-      %span
-        <input name="" type="text" class="total">
-      %span.count
+    = render partial: 'shared/price_calculator'
     = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'postvar_plan_submiting'}
 
   .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
