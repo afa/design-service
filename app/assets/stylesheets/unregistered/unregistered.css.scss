@@ -134,9 +134,9 @@ body.unregistered {
   .headerLayer1 {
     background-image: image-url("logo.png");
     float: left;
-    width: 527px; /* Ширина слоя */
+    width: 527px;
     height: 49px;
-    margin: 46px 0px 0px 0px; /*top36px */
+    margin: 46px 0px 0px 0px;
   }
 
   /*  DEFAULT CLASSES */
@@ -178,7 +178,6 @@ body.unregistered {
     cursor: pointer;
     background-image: image-url("circleN.png");
     background-repeat: no-repeat;
-    /*display: inline-block; */
   }
 
   input[type='radio']:checked + label {
@@ -257,9 +256,6 @@ body.unregistered {
     margin-top: -40px;
     cursor: pointer;
   }
-
-  /*.submit_button{ background-image: image-url("ok_button.png"); }*/
-
 
   div.attach_place_for_box {
     position: relative;

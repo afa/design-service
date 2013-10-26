@@ -22,16 +22,11 @@
 
 .postFormText{
   line-height:40px;
-  /*padding: 0 20px;*/
   font-family:gardensc, Geneva, sans-serif;
   font-style:italic;
   font-size:18px;
   text-align:left;
 }
-/*.postFormText label{
-  font-style:italic;
-  }*/
-
 
 .postFormNote{
   padding: 0 20px;
@@ -44,7 +39,6 @@
 
 
 #post1Adress{
-  /*background-image:url(../MyPages/post1Check.png);*/
   height:320px;
   width:420px;
   border-color:$design_projects_color;
@@ -95,7 +89,6 @@
 }
 
 #post2Quest{
-  /*background-image:url(../MyPages/post2Check.png);*/
   height:620px;
   width:580px;
   margin:50px 0 0 225px;
@@ -110,7 +103,6 @@
   padding:20px;
 }
 #post2Text{
-  /*height:300px;  */
   margin: 40px 0 0 0;
 }
 
@@ -156,8 +148,6 @@
 }
 #TextCabinet{
   position:absolute;
-  /*top:292px;
-  left:105px;*/
   top:292px;
   left:20px;
 }
@@ -173,8 +163,6 @@
 }
 #SleepersText{
   position:absolute;
-/*  left:60px;
-  top:416px;*/
   left:265px;
   top:360px;
 }
@@ -204,7 +192,6 @@
 }
 
 #post3Wish{
-  /*background-image:url(../MyPages/post3Check.png); */
   width:635px;
   height:240px;
   margin-top:50px;
@@ -219,7 +206,6 @@
 
 
 #post4Attach{
-  /*background-image:url(../MyPages/post4Check.png);*/
   width:745px;
   height:220px;
   margin-left:60px;
