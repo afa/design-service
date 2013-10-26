@@ -1,0 +1,198 @@
+/* NAVIGATION MENU DEFAULT */
+ul#navigation {
+  float: left;
+  width: 750px;
+  font-size: 14px;
+
+  li {
+    float: left;
+    margin-right: 45px;
+    color: #c0c0c0;
+    list-style-image: image-url("path_default.png");
+    padding-top: 5px;
+
+    &.first { list-style:none; }
+    &.last {
+      color: #6da029;
+      font-size: 20px;
+      list-style-image: image-url("path_selected.png");
+      padding-top: 0px;
+      a { color:#6da029; }
+    }
+
+    a {
+      text-decoration: none;
+      color: #c0c0c0;
+      &:hover { text-decoration:underline; }
+    }
+  }
+
+  &.blue li.last {
+    list-style-image: image-url("path_selected_blue.png");
+    a { color:#6d95c3; }
+  }
+}
+
+
+/*  BLOCK MENU DEFAULT */
+#block_menu_default {
+  position: absolute;
+  font-family: Tahoma;
+  float: left;
+  right: 0px;
+  top: 0px;
+  ul {
+    width: 163px;
+    padding: 0px;
+    float: none;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    li {
+      width: 163px;
+      height: 163px;
+      span {
+        width: 163px;
+        height: 163px;
+        float: left;
+        padding: 0px;
+        background-repeat: no-repeat;
+        color: #6f2d2d;
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+        font-size: 0.95em;
+        font-size-adjust: 0.43;
+
+        p {
+          padding-top: 40px;
+          width: 120px;
+          float: left;
+          margin-left: 20px;
+        }
+      }
+    }
+
+    li:nth-child(1) span {
+      background-image: image-url("block_menu_2.jpg");
+      &:hover { background-image:image-url("block_menu_2_hover.jpg"); }
+    }
+
+    li:nth-child(2) span {
+      background-image: image-url("block_menu_3.jpg");
+      p { padding-top:50px; }
+      &:hover { background-image:image-url("block_menu_3_hover.jpg"); }
+    }
+
+    li:nth-child(3) span {
+      background-image: image-url("block_menu_6.jpg");
+      p { padding-top:55px; }
+      &:hover { background-image:image-url("block_menu_6_hover.jpg"); }
+    }
+
+    li:nth-child(4) span {
+      background-image: image-url("block_menu_7.jpg");
+      &:hover { background-image:image-url("block_menu_7_hover.jpg"); }
+    }
+
+    //// Active links
+    li.selected {
+      span { cursor:default; }
+      &.plan_developments span { background-image:image-url("block_menu_2_hover.jpg"); }
+      &.replanning_endorsements span { background-image:image-url("block_menu_3_hover.jpg"); }
+      &.order_customizers span { background-image:image-url("block_menu_6_hover.jpg"); }
+      &.engineering_systems span { background-image:image-url("block_menu_7_hover.jpg"); }
+    }
+  }
+}
+
+
+/*  MAIN MENU DEFAULT*/
+.main_page { margin:0px 0px 0px 0px; }
+.default_pages { margin:5px 0px 0px 220px; }
+ul#main_menu {
+  float: left;
+  position: absolute;
+  list-style: none;
+  padding: 0px;
+  background-image: image-url("back_ul.png");
+  height: 50px;
+  background-repeat: repeat;
+  li {
+    width: 163px;
+    &:nth-last-child(1){ width:165px; }
+    height: 50px;
+    margin-bottom: 8px;
+    float: left;
+    span {
+      width: 163px;
+      height: 50px;
+      float: left;
+      background-image: image-url("menu-spec-reg-li_sec.png");
+      &:hover { background-image:image-url("menu-spec-reg-hover_sec.png"); }
+      p {
+        text-align: center;
+        color: #ffffff;
+        margin-top: 8px;
+        line-height: 16px;
+        width: 152px;
+        float: left;
+        margin-left: 8px;
+        &.p1 {
+          padding-top: 10px;
+          font-size: 16px;
+        }
+        &.p2 {
+          padding-top: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &.selected span {
+      background-image: image-url("menu-spec-reg-hover_sec.png");
+      cursor: default;
+    }
+  }
+}
+
+
+
+/*  MAIN MENU INDEX */
+#maincontent_index {
+  ul.main_page { margin:5px 0px 0px 130px; }
+  ul#main_menu {
+    float: left;
+    position: absolute;
+    list-style: none;
+    padding: 0px;
+    background-image: none;
+
+    li {
+      width: 331px;
+      height: 67px;
+      margin-bottom: 8px;
+      float: none;
+
+      span {
+        width: 331px;
+        height: 67px;
+        background-image: image-url("menu-spec.png");
+        float: left;
+        &:hover { background-image:image-url("menu-spec-hover.png"); }
+
+        p {
+          padding-left: 60px;
+          width: 260px;
+          text-align: center;
+          padding-top: 5px;
+          color: #FFFFFF;
+          font-size: 18px;
+          padding-top: 15px;
+        }
+
+      }
+    }
+
+  }
+}

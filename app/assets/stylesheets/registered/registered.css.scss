@@ -1,370 +1,260 @@
-//= require chat
+//= require ./chat
 //= require ../orders
 //= require ../interiors
-//= require profile_orders
-//= require personal_accounts
-//= require personal_account_specialists
+//= require ./profile_orders
+//= require ./personal_accounts
+//= require ./personal_account_specialists
+//= require ./portfolio
+//= require ./specialist_personal_page
+//= require ./specialist
+//= require ./navigation
 
-//= require plan_developments
-//= require design_projects
-//= require engineering_systems
-//= require copyright_supervisions
-//= require color_schemes
-//= require floor_plans
-//= require sweep_walls
-//= require ceiling_fixtures
+//= require ./plan_developments
+//= require ./design_projects
+//= require ./engineering_systems
+//= require ./copyright_supervisions
+//= require ./color_schemes
+//= require ./floor_plans
+//= require ./sweep_walls
+//= require ./ceiling_fixtures
 
 
 /*  DEFAULT PAGE STYLES */
-div.caution_x2{ color:#f89f65; font-size:18px; margin-left:35px;}
-div.caution{ color:#3d6804; font-size:18px; margin-left:35px;}
-div#maincontent_index{ height:auto; width:980px; position:relative;  margin:0px; padding:0px; background-color:#666666;  background:image-url("coverpatter.png") repeat; clear: both;  overflow:auto; }
-#main_content{  position:relative; background-color:#eae9e9; margin:20px 0px 0px 20px; margin-bottom:20px; width:940px; float:left; height:auto}
-
-/* SPECIALIST */
-div#maincontent_specialist{ height:auto; width:980px; position:relative;  margin:0px; padding:0px; background-color:#b69c80;  background:image-url("specialist_back.jpg"); background-repeat:repeat-y; clear: both;  overflow:auto; }
-#main_content_specialist_inside{  position:relative; margin:40px 0px 0px 10px; margin-bottom:20px; width:970px; float:left; height:auto;}
-.sidebar_left_specialist {float: left; width: 270px; position:relative; padding-bottom: 10px; z-index:2; font-size:18px;  min-height:850px; }
-div.sidebar_left_specialist div.name{ width:250px; background-color:#ececec; height:30px; text-align:center; padding-top:5px; margin-left:5px; font-size:16px; color:#5a5a5a; float:left;}
-div.sidebar_left_specialist div.events{ width:250px;  background-color:#ececec; float:left; margin-top:5px; margin-left:5px; }
-div.sidebar_left_specialist span.heading_event{ float:left; color:#5a5a5a; margin-top:10px; border-bottom:2px solid #acacac; padding:10px 15px 7px 15px; width:200px; margin-left:10px; text-align:center; }
-
-ul.last_events{ list-style:none; padding:0px; float:left; font-size:13px; margin:0px; padding:0px 10px 20px 10px;}
-ul.last_events li{ padding-bottom:10px; padding-top:10px; border-bottom:1px dotted #515151; color:#515151 }
-ul.last_events li.last{ border: none; }
-ul.last_events li span{ color:#6c1407; font-weight:bold; font-size:12px; padding-right:5px;}
-.page_contener_specialist{ float:left; width:590px;  min-height:950px; margin-left:80px; z-index:5; background-color:#ececec; }
-div.header_page_specialist{ float:left; margin-top:100px; margin-left:20px; font-size:20px; font-weight: normal; border-bottom:2px solid #b3b2b2; width:550px; padding-bottom:5px; margin-bottom:15px;}
-
-/* ----------- */
-div.header_page_specialist img{ width:50px; height:50px; margin-right:15px; float:left; }
-div.header_page_specialist span.heading{ padding-top:12px; float:left;}
-div.header_page_specialist span.members{ color:#9b9898; float:left; padding-top:20px; padding-left:10px; font-size:14px;}
-
-div.sidebar_left_specialist div.groups{ width:250px;  background-color:#ececec; float:left; margin-top:5px; margin-left:5px; margin-top:15px;}
-div.sidebar_left_specialist span.heading_groups{ float:left; color:#5a5a5a; margin-top:10px; padding:10px 15px 7px 15px; width:200px; margin-left:10px; text-align:center; }
-ul.my_groups{ list-style:none; padding:0px; float:left; font-size:13px; margin:0px; padding:0px 10px 10px 10px;}
-ul.my_groups li:nth-child(1){ margin-top:10px;}
-ul.my_groups li{ float: left; margin-bottom:10px; width:205px; margin-left:8px; }
-ul.my_groups li div.img_group{ width:51px; height:50px; float: left;}
-ul.my_groups li div.img_group span.img_group_border{ width:50px; height:51px; float: left; z-index:10; background-image: image-url("small_img_border.png"); position:absolute; background-repeat:no-repeat;}
-ul.my_groups li div.img_group img{ width:50px; height:51px;}
-ul.my_groups li ul{ margin-left:8px; padding:0px; float:left; list-style:none; position:relative; width:145px; }
-ul.my_groups li ul li{ width:145px; margin:0px; float:left; }
-ul.my_groups li ul li:nth-child(1){ color:#773129; font-size:14px;}
-ul.my_groups li ul li:nth-child(2){color:#9b9898}
-
-
-/* SPECIALIST REG_PERSONAL_PAGE_SPACIALIST.HTML */
-div.specialist_img_{ width:145px; height:159px; float:left; margin-left:20px; position:relative;}
-span.specialist_img_border{ background-image: image-url("specialist_img_border.png"); background-repeat:no-repeat;   z-index:10; position:absolute; width:145px; height:159px; float:left; }
-div.specialist_img_ img{ width:144px; height:158px; z-index:-5;}
-div.send_message{ width:227px; height:40px; background-image: image-url("msg_send2.png"); float:left; margin-left:20px; cursor:pointer;  }
-
-div.info_specialist {
-  width:546px; float: left; margin-left:20px; font-size:14px; margin-top:10px;
-  span.heading{ font-size:18px; font-weight:bold;  color:#773129; float:left; }
-  span.margine{ margin-bottom:15px;}
-  p{ float:left; position:relative; clear:left; color:#4a4747;}
-  span.heading img{ margin-left:10px; clear: both; overflow:auto;}
-  ul {
-    &.portfolio{ padding:0px; margin:0px; max-width:550px; height:250px; overflow: hidden;}
-    &.portfolio li{ padding:0px; margin:0px;}
-    li.projects {
-      width: auto; height: auto; border:1px #000033 solid;  float:left;   position:relative; border-color:#98afc4; overflow:auto; clear:none; margin-right:10px; margin-bottom:10px;
-      &:nth-child(1){ clear:both; }
-      span.project_name{ font-size:14px; padding:5px; float:left; color:#657d93; font-weight:bold; padding-left:15px;}
-      span.edit{ width:16px; height:17px; background-image: image-url("edit.png"); background-repeat:no-repeat; position:relative; float: right; margin-right:10px; margin-top:5px; cursor:pointer;}
-      ul.portfolio_list {
-        list-style: none; float:left; margin:0px; padding:0px; clear:both; margin-left:10px; padding-bottom:10px; padding-right:8px;
-        li{ float:left; padding:5px; width:75px; height:68px;}
-        li.add{ background-image: image-url("add_.jpg"); background-repeat:no-repeat; margin:5px 0px 0px 5px; cursor:pointer;}
-        li.add:hover{ background-image: image-url("add_hoover.jpg");}
-        li img{ width:75px; height:68px; margin:0px; padding:0px; }
-      }
-    }
-  }
-  div.see_all{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:right}
-  div.add_new{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:left; cursor:pointer;}
+div.caution_x2 {
+  color: #f89f65;
+  font-size: 18px;
+  margin-left: 35px;
 }
 
-/* PORTFOLIO */
-.portfolio_changes {
-  width:660px;  background-color:#FFFFFF; margin: 0 auto; position:relative;  margin-top:50px; display:none;  clear:left; padding-bottom:5px;
-  div.heading{ font-size:24px; color:#000000; text-align:left; padding:15px 10px 10px 25px;}
-  ul {
-    list-style:none; text-align:left; margin-left:0px;
-    li{  width:500px; }
-    li.title{ font-size:20px; color:#aeaeae; }
-    li.title_req_border{
-      font-size:18px; background-image: image-url("text_field_border.png"); height:32px;  width:507px; margin-top:5px; margin-bottom:15px;
-      input { width:490px; border:none; padding:0px; margin:5px 3px 1px 10px; height:22px; font-size:16px;}
-      input:focus{ outline:0; }
-    }
-    li.file_attach{ margin-top:10px; margin-bottom:10px; color:#b7b6b6; }
-    li img.reject{ margin-left:120px;}
-    li img.add{ margin-left:30px;}
-  }
-  .images_preview_content {
-    ul.portfolio_list {
-      padding:0px; margin:0px; width:600px;  position:relative; clear:both; overflow:auto;
-      li{ width:102px; height:102px; float:left; background-color:#999933; margin-right:15px; margin-bottom:10px;}
-      li img{ width:102px; height:102px;}
-      li span.delete{ position:absolute; z-index:5; background-image: image-url("delete_image.png"); width:21px; height:21px; margin-left:80px; bottom:8px; cursor:pointer;}
-      li span.delete:hover{background-image: image-url("delete_image_hover.png");}
-      li.add{ background-image: image-url("add_img_portfolio.jpg"); cursor:pointer;}
-      li.add:hover{ background-image: image-url("add_img_portfolio_hover.jpg"); }
-    }
-  }
+div.caution {
+  color: #3d6804;
+  font-size: 18px;
+  margin-left: 35px;
 }
 
-.sidebar_left {float: left; width: 292px; position:relative; padding-bottom: 10px; z-index:2; font-size:18px;  height:850px; }
-.page_contener{ float:left; width:630px;  min-height:950px; margin-left:8px; z-index:5;}
-.breaker{ width:580px; float: left; height:2px; background-color:#949494; margin:15px 0px 30px 30px;}
-div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; background-image:image-url("fon-y.jpg"); background-repeat:repeat-y; background-position:center 0px; min-width:980px; height:auto }
-.header_top{ background-image:image-url("fon-head.jpg"); background-repeat:no-repeat; background-position:center 0px; width: auto; position: relative; z-index:1; min-width:980px; height:auto  }
-.coconut_leaves{ background-image:image-url("coconut_leaves.png"); background-repeat:no-repeat; background-position:center 0px; width: auto; position: relative; z-index:1; min-width:980px; height:auto }
-.springs{width:50px; height: 100%; position: absolute; z-index:60; background:image-url("repeating_bar.png"); background-repeat:repeat-y; margin:0px; padding:0px; right:620px; }
-.border_right{ width:12px; height:100%;	position: absolute;	z-index:60;	right:0px; background-image:image-url("right_border.png"); background-repeat:repeat-y; }
-div.border_right div.top_corner{ position:relative; width:12px; height:26px; background-image:image-url("right_top_corner.jpg"); }
-div.border_right div.bottom_corner{  position: absolute; width:12px; height:33px; bottom:0px; background-image:image-url("right_bottom_corner.jpg");}
-.border_left{ width:6px; height:100%; position: absolute; z-index:60; right:934px; background-image:image-url("left_border.png"); background-repeat:repeat-y; }
-div.border_left div.top_corner{ position:relative; width:6px; height:22px; background-image:image-url("left_top_corner.jpg"); }
-div.border_left div.bottom_corner{background-color:#000; position: absolute; width:6px; height:31px; bottom:0px; background-image:image-url("left_bottom_corner.jpg");}
+div#maincontent_index {
+  height: auto;
+  width: 980px;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  background-color: #666666;
+  background: image-url("coverpatter.png") repeat;
+  clear: both;
+  overflow: auto;
+}
 
-#black_content{ position:absolute; width:100%; height:100%;  z-index:20; background-image:image-url("black_content.png"); background-repeat:repeat; display: none;  min-width:980px; }
-
-/* NAVIGATION MENU DEFAULT */
-ul#navigation{ float:left; width:600px; font-size:14px; margin:0px; padding-bottom:0px;}
-ul#navigation li{ float:left; margin-right:45px; color: #c0c0c0; list-style-image:image-url("path_default.png"); padding-top:5px; }
-ul#navigation li a{  text-decoration:none; color: #c0c0c0; }
-ul#navigation li a:hover{ text-decoration:underline;}
-ul#navigation li.first{ list-style:none;}
-ul#navigation li.last{ color:#6da029; font-size:20px; list-style-image:image-url("path_selected.png"); padding-top:0px;}
-ul#navigation li.last a{ color:#6da029;  }
-
-ul#navigation.blue li.last{ list-style-image:image-url("path_selected_blue.png"); }
-ul#navigation.blue li.last a{ color:#6d95c3; }
-
-/* TOP MENU MAIN*/
-#header {  height:131px;  margin: 0px;  padding: 0px;  width:auto;  clear:both;  }
-.headerLayer1 {  background-image:image-url("logo-2.png");    float: left;    width: 354px; /* Ширина слоя */    height:41px;  margin:46px 0px 0px 0px;   }
-#header ul{ float:left; position: absolute; top:138px; margin-left:365px; z-index:1; color:#6f2d2d; font-size:0.9em;  }
-#header ul li{ float:left; list-style:none;  display: inline-block;  position:absolute; bottom:0px; text-align:center; line-height:15px; }
-
-#header ul li a:link span,#header ul li a:visited span{ color: #6f2d2d; }
-#header ul li:nth-child(1){ background-color:#a8d868; width:130px; height:78px; left:0px; }  /* Варианты планировки */
-#header ul li:nth-child(1) span{  width:130px; height:78px; float:left; margin-top:15px;}
-#header ul li:nth-child(2){ background-color:#e6c941; width:160px; height:60px; left:138px; } /* Согласования перепланировок */
-#header ul li:nth-child(2) span{ width:160px; height:60px; float:left; margin-top:13px;}
-#header ul li:nth-child(3){ background-color:#f89f65; width:132px; height:78px; left:306px; }  /* Дизайн-проект */
-#header ul li:nth-child(3) span{width:132px; height:78px; float:left; margin-top:30px;}
-#header ul li:nth-child(4){ background-color:#99bbe1; width:132px; height:58px; left:446px; } /* Инженерные системы и конструктив */
-#header ul li:nth-child(4) span{ width:132px; height:58px; float:left; margin-top:5px; }
-
-/* TOP MENU MAIN SPECIALIST*/
-#header_specialist {  height:131px;  margin: 0px;  padding: 0px;  width:auto;  clear:both;  }
-ul#menu_specialist{ float:left; top:115px; margin-left:290px; z-index:1; color:#6f2d2d; font-size:13px;  position:absolute; }
-
-ul#menu_specialist li{ float:left; list-style:none;  display: inline-block;  position:absolute; top:0px;  }
-ul#menu_specialist li span{ float: left; background-repeat:no-repeat; position:relative; z-index:10 }
-ul#menu_specialist li:nth-child(1) span{ width:165px; height:134px; background-image:image-url("my_projects.png");}
-ul#menu_specialist li:nth-child(2) span{ width:155px; height:120px; background-image:image-url("new_orders.png"); margin-left:165px;}
-ul#menu_specialist li:nth-child(3) span{ width:155px; height:118px; background-image:image-url("my_account.png"); margin-left:325px; }
-ul#menu_specialist li:nth-child(4) span{ width:145px; height:112px; background-image:image-url("portfolio_specialist.png");  margin-left:480px;}
-
-
-/* LEFT MENU TOP */
-ul#left_menu{ float:left; list-style:none; font-size:17px}
-ul#left_menu li{ padding-bottom:4px;  }
-ul#left_menu li a, ul#left_menu li a:link, ul#left_menu li a:visited, ul#left_menu li a:active{ text-decoration:underline; color:#CCCCCC }
-ul#left_menu li a:hover{ text-decoration:none; }
-ul#left_menu li:nth-child(1),ul#left_menu li:nth-child(1) a,ul#left_menu li:nth-child(2),ul#left_menu li:nth-child(2) a{ color:#d55400;}
-ul#left_menu li:nth-child(3),ul#left_menu li:nth-child(3) a{ color:#434242; padding-top:10px; padding-bottom:50px;}
-ul#left_menu li:nth-child(4),ul#left_menu li:nth-child(4) a{ color:#8d0606; margin-bottom:5px; font-size:14px;}
-ul#left_menu li:nth-child(5),ul#left_menu li:nth-child(5) a,ul#left_menu li:nth-child(6),ul#left_menu li:nth-child(6) a{ color:#447801;}
-
-/* LEFT MENU BOTTOM */
-ul#menu_sub_left{ float:left; list-style: none; margin:0px;  }
-ul#menu_sub_left li{ float:left; font-size:16px; }
-ul#menu_sub_left li span{ width:203px; height:35px; background-image:image-url("menu-spec-reg.png"); float:left; margin-bottom:5px; cursor:pointer; text-align:center; background-repeat:no-repeat; float:left; padding-top:14px;}
-ul#menu_sub_left li span:hover{ background-image:image-url("menu-spec-reg-hover.png"); text-decoration:underline;}
-ul#menu_sub_left li a, ul#menu_sub_left li a:visited{ color:#FFFFFF;}
-ul#menu_sub_left li.selected span{ background-image:image-url("menu-spec-reg-hover.png"); }
-
-/*  FOOTER */
-div.footer{ float:left; position:absolute; width:100%; background-image:image-url("footer_opacity.png"); background-repeat:repeat; clear:both;}
-div.footer div.footer_elements{width:980px; margin:0 auto; height:90px; background-image:image-url("coconut_leaves_footer.png"); background-repeat:no-repeat; background-position:center -110px; color:#963577; font-size:14px; font-weight: normal; line-height:22px;}
-div.footer_elements div.contact_with_us{ width:250px; float:left; text-align:left; margin-top:15px; }
-div.footer_elements div.rights{ float:left; text-align:left; margin:55px 0px 0px 120px; }
-div.footer_elements div.partners{ text-align:right; float: right;  margin-top:15px; }
-
-div.footer a, div.footer a:link, div.footer a:visited, div.footer a:active{ color:#963577; text-decoration:underline; }
-div.footer a:hover{ text-decoration:none; }
+#main_content {
+  position: relative;
+  background-color: #eae9e9;
+  margin: 20px 0px 0px 20px;
+  margin-bottom: 20px;
+  width: 940px;
+  float: left;
+  height: auto;
+}
 
 /*  DEFAULT CLASSES */
-.light_green{ background-color:#cfe4b4; color:#4d8701;}
-.light_red{ background-color:#ecdfdf; color:#d55400;}
-.caption_left_menu{ height: 55px;  margin-top:27px;  font-size:16px; font-weight: inherit;  float:left; width:252px; padding-left:40px; line-height:25px;}
-.caption_left_menu a, .caption_left_menu a:link, .caption_left_menu a:active{ color:#434242; text-decoration:underline; font-size:14px; }
-.caption_left_menu a:hover{ text-decoration:none;}
-.caption{ height: 40px;  margin-top:27px; padding-top:15px;  font-size:22px; font-weight: inherit; float:left; width:595px; padding-left:40px;}
-.heading_captions{ color:#8d0606; font-size:16px; font:16px; float:left; padding:20px 0px 15px 40px;}
-.green_header{ color:#609c11;}
-.blue_header{ color: #5180a9;}
-.brown_header{color: #773129; }
-.dark_green_header{color:#236e02;}
-.orrange_header{ color:#f89f65;}
-.gray_header{ color:#5b5b5b;}
-.dark_red{ color:#5c0404;}
-
-.border_x1{border:6px solid #efd4c2; }    /* Дизайн-проект (мягкий) */
-.border_xs{border:6px solid #f89f65; }    /* Дизайн-проект */
-.border_xg{border:6px solid #a8d868; }    /* Варианты планировки */
-.border_x2{border:6px solid #e9da95; }    /* Согласования перепланировок (мягкий) */
-.border_x3{border:6px solid #99bbe1; }    /* Инженерные системы и конструктив */
-.border_x4{border:6px solid #e6c941; }    /* Согласования перепланировок */
-.border_x5{border:1px solid #c1c1c1; }
-.border_x6{ border:1px solid #a8d868; }
-.shadow_x1{
-moz-box-shadow: inset 0 3px 15px 1px #888;
--webkit-box-shadow: inset 0 3px 15px 1px #888;
-box-shadow: inset 0 3px 15px 1px #888;}
-.shadow_x2{
-moz-box-shadow: inset 0 -7px 15px 1px #888;
--webkit-box-shadow: inset 0 -7px 15px 1px #888;
-box-shadow: inset 0 -7px 15px 1px #888;}
-
-.shadow_x3{
-moz-box-shadow: 2px -2px 10px #8c8c8c;
--webkit-box-shadow: 2px -2px 10px #8c8c8c;
-box-shadow: 2px -2px 10px #8c8c8c;
- behavior:url("ie-css3.htc");
+.light_green {
+  background-color: #cfe4b4;
+  color: #4d8701;
 }
 
-.rounded-corners {
-     -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-	/*behavior:url("border-radius.htc"); */
-}
-.rounded-corners_l2 {
-     -moz-border-radius: 35px;
-    -webkit-border-radius: 35px;
-    -khtml-border-radius: 35px;
-    border-radius: 35px;
-	/*behavior:url("border-radius.htc"); */
-}
-.rounded-corners_l3 {
-     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px 10px 10px 10px;
-	/*behavior:url("border-radius.htc"); */
+.light_red {
+  background-color: #ecdfdf;
+  color: #d55400;
 }
 
-.rounded-corners_l5 {
-     -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    border-radius: 5px 5px 5px 5px;
-	/*behavior: url("border-radius.htc"); */
+.caption_left_menu {
+  height: 55px;
+  margin-top: 27px;
+  font-size: 16px;
+  font-weight: inherit;
+  float: left;
+  width: 252px;
+  padding-left: 40px;
+  line-height: 25px;
+
+  a, a:link, a:active {
+    color: #434242;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+  a:hover { text-decoration:none; }
 }
 
-.rounded-corners_l4 {
-	-moz-border-radius:15px;
-	-webkit-border-radius:15px;
-	border-radius:15px;
+.caption {
+  height: 40px;
+  margin-top: 27px;
+  padding-top: 15px;
+  font-size: 22px;
+  font-weight: inherit;
+  float: left;
+  width: 595px;
+  padding-left: 40px;
 }
 
-.textlines_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #333; height:20px; font-size:16px; background-color:#eae9e9; }
+.heading_captions {
+  color: #8d0606;
+  font-size: 16px;
+  font: 16px;
+  float: left;
+  padding: 20px 0px 15px 40px;
+}
 
-.textline_l2{ width:45px; }
-.textline_l4{ width:76px; }
-.textline_l6{ width:130px;}
-.textline_l6-5{ width:170px;}
-.textline_l7{ width:243px;}
-.textline_l8{ width:300px;}
-.textline_l10{ width:350px;}
-.textline_l11{ width:390px;}
-.textline_l12{ width:450px; }
-div.var_form1 span.subtitle{ font-size:12px; position: relative; margin-left:70px; left:0px; float:left; margin-top:-20px;  }
+.green_header {  color:#609c11;  }
+.blue_header {  color: #5180a9;  }
+.brown_header {  color: #773129;  }
+.dark_green_header {  color:#236e02;  }
+.orrange_header {  color:#f89f65;  }
+.gray_header {  color:#5b5b5b;  }
+.dark_red {  color:#5c0404;  }
 
-input[type='radio']
-{
-    float: left;
-    width:0px;
-    height: 0px;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+.border_x1 {  border:6px solid #efd4c2;  }    /* Дизайн-проект (мягкий) */
+.border_xs {  border:6px solid #f89f65;  }    /* Дизайн-проект */
+.border_xg {  border:6px solid #a8d868;  }    /* Варианты планировки */
+.border_x2 {  border:6px solid #e9da95;  }    /* Согласования перепланировок (мягкий) */
+.border_x3 {  border:6px solid #99bbe1;  }    /* Инженерные системы и конструктив */
+.border_x4 {  border:6px solid #e6c941;  }    /* Согласования перепланировок */
+.border_x5 {  border:1px solid #c1c1c1;  }
+.border_x6 {  border:1px solid #a8d868;  }
+
+div.var_form1 span.subtitle {
+  font-size: 12px;
+  position: relative;
+  margin-left: 70px;
+  left: 0px;
+  float: left;
+  margin-top: -20px;
+}
+
+input[type='radio'] {
+  float: left;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
   overflow: hidden;
-opacity: 0;
-position:absolute;
+  opacity: 0;
+  position: absolute;
 }
 
-input[type='radio'] + label
-{
+input[type='radio'] + label {
   clear: none;
   padding: 0px 0 0px 24px;
   cursor: pointer;
-	background-image:image-url("circleN.png");
-	background-repeat:no-repeat;
-	/*display:inline-block; */
+  background-image: image-url("circleN.png");
+  background-repeat: no-repeat;
+  /* display: inline-block; */
 }
 
 input[type='radio']:checked + label {
-	background-image:image-url("circleY.png");
-	background-repeat:no-repeat;
+  background-image: image-url("circleY.png");
+  background-repeat: no-repeat;
 }
 
-
-input[type='checkbox']
-{
-    float: left;
-    width:0px;
-    height: 0px;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+input[type='checkbox'] {
+  float: left;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
   overflow: hidden;
-opacity: 0;
-position:absolute;
+  opacity: 0;
+  position: absolute;
 }
 
 input[type='checkbox'] + label {
-	background-image:image-url("box_not_cheked.png");
-	background-repeat:no-repeat;
+  background-image: image-url("box_not_cheked.png");
+  background-repeat: no-repeat;
   padding: 3px 0 0px 40px;
   cursor: pointer;
-  height:35px;
+  height: 35px;
 }
+
 input[type='checkbox']:checked + label {
-	background-image:image-url("box_checked.png");
-	background-repeat:no-repeat;
-	padding: 3px 0 0px 40px;
-	cursor: pointer;
+  background-image: image-url("box_checked.png");
+  background-repeat: no-repeat;
+  padding: 3px 0 0px 40px;
+  cursor: pointer;
 }
 
-textarea:focus{ outline:none !important;}
-.text_shadow_1{text-shadow: 1px 1px 3px #6b5c5c;}
+textarea:focus { outline:none !important; }
+.text_shadow_1 { text-shadow: 1px 1px 3px #6b5c5c; }
 
-.reg_client_tfeild{ width:280px; padding:0px; margin:0px; border:none; height:25px; font-size:16px; color:#4c4c4c;}
-.log_client_tfeild{ width:200px; padding:0px; margin:0px; border:none; height:25px; font-size:16px; color:#4c4c4c;}
-.close_fly_window{ background-image:image-url("close.png"); width:30px; height:26px; position:absolute; right:0px; margin-top:-40px; cursor:pointer;}
-.slimScrollDiv { border-right:1px solid #eee; float:left;}
+.reg_client_tfeild {
+  width: 280px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  height: 25px;
+  font-size: 16px;
+  color: #4c4c4c;
+}
 
-div.msg_caution span{ color: #3d6804; font-size: 18px; margin-left: 35px; }
-div.msg_caution span.design_project{color: #f89f65; font-size: 18px; margin-left: 0px; padding-left:35px;}
+.log_client_tfeild {
+  width: 200px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  height: 25px;
+  font-size: 16px;
+  color: #4c4c4c;
+}
+.close_fly_window {
+  background-image: image-url("close.png");
+  width: 30px;
+  height: 26px;
+  position: absolute;
+  right: 0px;
+  margin-top: -40px;
+  cursor: pointer;
+}
+
+.slimScrollDiv { border-right: 1px solid #eee;
+  float: left;
+}
+
+div.msg_caution span {
+  color: #3d6804;
+  font-size: 18px;
+  margin-left: 35px;
+
+  &.design_project {
+    color: #f89f65;
+    font-size: 18px;
+    margin-left: 0px;
+    padding-left: 35px;
+  }
+}
+
+div.attach_place_for_box {
+  position: relative;
+  float: left;
+  width: 500px;
+  min-height: 120px;
+  overflow: auto;
+  margin-top: 5px;
+}
+
+.attach_box {
+  position: absolute;
+  z-index: 34;
+}
+
+ul.list_of_attachments {
+  width: 460px;
+  position: relative;
+  clear: both;
+  overflow: auto;
+  z-index: 80;
+  padding-top: 8px;
+  li { float:left; }
+}
 
 
-
-div.attach_place_for_box{ position:relative; float:left;   width:500px; min-height:120px; overflow: auto; margin-top:5px; }
-
-.attach_box{ position:absolute; z-index:34;}
-
-ul.list_of_attachments{ width:460px;  position:relative; clear:both; overflow:auto; z-index:80; padding-top:8px;}
-
-ul.list_of_attachments li{ float:left;}
-
+div.calculator {
+  margin-left: 80px;
+}
