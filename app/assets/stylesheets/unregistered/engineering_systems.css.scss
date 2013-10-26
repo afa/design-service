@@ -1,32 +1,135 @@
 @import "settings";
 
 body.unregistered {
-  span.engineering_systems{ color:#316096; }
-  div.engineering_systems{ background-image:image-url("engineering_systems_logo_big.jpg") ; border-bottom-color:$engineering_systems_color; width:550px; float:left; margin-bottom:5px;  }
-  div.msg_caution span.engineering_systems{color:#3d6804;   padding:15px 0px 10px 115px; float:left; }
+  span.engineering_systems { color: #316096; }
 
-  div.engineering_systems_form1{ width:600px;   margin-left:45px; margin-top:140px; padding:30px; line-height:45px; margin-bottom:25px; }
-  div.engineering_systems_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; }
-  div.engineering_systems_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; }
-  div.engineering_systems_form1 div.head_part{ background-image:image-url("engineering_systems_form1.png"); width:507px; height:32px;  clear:both; margin:40px 0px 0px 45px; }
-  div.engineering_systems_form1  div.file_attaching{ width:595px;  margin-top:15px;}
+  div.msg_caution span.engineering_systems {
+    color: #3d6804;
+    padding: 15px 0px 10px 115px;
+    float: left;
+  }
 
-  div.engineering_systems_form2{ width:450px; min-height:200px;  margin-left:250px; margin-top:15px; padding:30px; margin-bottom:25px;  }
-  div.engineering_systems_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right }
-  div.engineering_systems_form2 div.form_description{ background-image:image-url("task.png"); width:196px; float:right }
-  div.engineering_systems_form2 ul{ list-style:none;  }
-  div.engineering_systems_form2 ul li{ margin-bottom:15px; }
-  div.engineering_systems_form2 ul li span{ width:25px;  height:30px; float:left; padding-right:15px;  }
-  div.engineering_systems_form2 ul li.caution{ font-size:12px; color:#e51600; display:none;}
-  div.engineering_systems_form2 ul li.caution span{ background-image:image-url("icon_red.png"); background-repeat: no-repeat; background-position:5px;}
+  div.engineering_systems {
+    background-image: image-url("engineering_systems_logo_big.jpg");
+    border-bottom-color: $engineering_systems_color;
+    width: 550px;
+    float: left;
+    margin-bottom: 5px;
+  }
 
-  div.engineering_systems_form3{ width:470px; height:160px;  margin-left:45px; margin-top:15px; padding:30px; margin-bottom:25px;  }
-  div.engineering_systems_form3 div.number{ background-image:image-url("3_number_blue.png"); float:left; }
-  div.engineering_systems_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; }
-  .engineering_systems_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid $engineering_systems_color; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
+  div.engineering_systems_form1 {
+    width: 600px;
+    margin-left: 45px;
+    margin-top: 140px;
+    padding: 30px;
+    line-height: 45px;
+    margin-bottom: 25px;
+    div.number {
+      background-image: image-url("1_number_orrange.png");
+      float: left;
+    }
+    div.form_description {
+      background-image: image-url("form_input_data.png");
+      width: 250px;
+      float: left;
+    }
+    div.head_part {
+      background-image: image-url("engineering_systems_form1.png");
+      width: 507px;
+      height: 32px;
+      clear: both;
+      margin: 40px 0px 0px 45px;
+    }
+    div.file_attaching {
+      width: 595px;
+      margin-top: 15px;
+    }
+  }
 
-  div.engineering_systems_submiting{  height:50px; width:550px; margin-left:160px; padding:20px 0px 20px 0px;}
+  div.engineering_systems_form2 {
+    width: 450px;
+    min-height: 200px;
+    margin-left: 250px;
+    margin-top: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
 
-  ol.eng_systems{ float:left; list-style-type:decimal; }
-  ol.eng_systems li{ margin-bottom:10px; width:500px;}
+    div.number {
+      background-image: image-url("2_number_green.png");
+      margin-left: 115px;
+      float: right;
+    }
+    div.form_description {
+      background-image: image-url("task.png");
+      width: 196px;
+      float: right;
+    }
+    ul {
+      list-style: none;
+      li { margin-bottom: 15px; }
+      li span {
+        width: 25px;
+        height: 30px;
+        float: left;
+        padding-right: 15px;
+      }
+      li.caution {
+        font-size: 12px;
+        color: #e51600;
+        display: none;
+        span {
+          background-image: image-url("icon_red.png");
+          background-repeat: no-repeat;
+          background-position: 5px;
+        }
+      }
+    }
+  }
+
+
+  div.engineering_systems_form3 {
+    width: 470px;
+    height: 160px;
+    margin-left: 45px;
+    margin-top: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    div.number {
+      background-image: image-url("3_number_blue.png");
+      float: left;
+    }
+    div.form_description {
+      background-image: image-url("comments.png");
+      width: 370px;
+      float: left;
+    }
+  }
+
+  .engineering_systems_form3_default {
+    сolor: #333;
+    border: 0px;
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    border-bottom: 1px solid $engineering_systems_color;
+    height: 20px;
+    font-size: 16px;
+    background-color: #f6f6f6;
+    height: 30px;
+  }
+
+  div.engineering_systems_submiting {
+    height: 50px;
+    width: 550px;
+    margin-left: 160px;
+    padding: 20px 0px 20px 0px;
+  }
+
+  ol.eng_systems {
+    float: left;
+    list-style-type: decimal;
+    li {
+      margin-bottom: 10px;
+      width: 500px;
+    }
+  }
 }

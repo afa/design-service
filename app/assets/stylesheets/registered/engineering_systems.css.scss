@@ -1,32 +1,152 @@
 @import "settings";
 
 body.registered {
-  div.engineering_systems_form1{ width:500px;   margin-left:30px; margin-top:20px; padding:30px; line-height:45px; margin-bottom:25px; float:left;}
-  div.engineering_systems_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; width:86px; height:29px; }
-  div.engineering_systems_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height:29px; margin-left:10px; }
-  div.engineering_systems_form1 div.head_part{ background-image:image-url("engineering_systems_form1-small.png"); width:430px; height:28px;  clear:both; margin:40px 0px 0px 35px; }
-  div.engineering_systems_form1  div.file_attaching{ width:495px; margin-top:15px; float:left; font-size:14px; }
-  div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px;  float:left;}
+  div.engineering_systems_form1 {
+    width: 500px;
+    margin-left: 30px;
+    margin-top: 20px;
+    padding: 30px;
+    line-height: 45px;
+    margin-bottom: 25px;
+    float: left;
 
-  div.engineering_systems_form1  div.file_attaching span.attach{ padding:30px 0px 0px 140px; margin-top:0px;  color: #8e8e8e; float:left; background-image:image-url("file_att.png"); background-repeat: no-repeat; background-position: 80px 15px;}
+    div.number {
+      background-image: image-url("1_number_orrange.png");
+      float: left;
+      width: 86px;
+      height: 29px;
+    }
+    div.form_description {
+      background-image: image-url("form_input_data.png");
+      width: 250px;
+      float: left;
+      height: 29px;
+      margin-left: 10px;
+    }
+    div.head_part {
+      background-image: image-url("engineering_systems_form1-small.png");
+      width: 430px;
+      height: 28px;
+      clear: both;
+      margin: 40px 0px 0px 35px;
+    }
+    div.file_attaching {
+      width: 495px;
+      margin-top: 15px;
+      float: left;
+      font-size: 14px;
+      span.caution {
+        color: #c10000;
+        font-size: 17px;
+        float: left;
+      }
+      span.attach {
+        padding: 30px 0px 0px 140px;
+        margin-top: 0px;
+        color: #8e8e8e;
+        float: left;
+        background-image: image-url("file_att.png");
+        background-repeat: no-repeat;
+        background-position: 80px 15px;
+      }
+    }
+  }
 
-  div.engineering_systems_form2{ width:450px; min-height:200px;  margin-left:90px; margin-top:15px; padding:30px; margin-bottom:25px; float:left; }
-  div.engineering_systems_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right; width:86px; height:29px; }
-  div.engineering_systems_form2 div.form_description{ background-image:image-url("task.png"); width:196px; float:right; height:29px; margin-left:10px; }
-  div.engineering_systems_form2 ul{ list-style:none; }
-  div.engineering_systems_form2 ul li{ margin-bottom:15px;}
-  div.engineering_systems_form2 ul li span{ width:25px;  height:30px; float:left; padding-right:15px;  }
-  div.engineering_systems_form2 ul li.caution{ font-size:12px; color:#e51600; display:none;}
-  div.engineering_systems_form2 ul li.caution span{ background-image:image-url("icon_red.png"); background-repeat: no-repeat; background-position:5px;}
+  div.engineering_systems_form2 {
+    width: 450px;
+    min-height: 200px;
+    margin-left: 90px;
+    margin-top: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    float: left;
+    div.number {
+      background-image: image-url("2_number_green.png");
+      margin-left: 115px;
+      float: right;
+      width: 86px;
+      height: 29px;
+    }
+    div.form_description {
+      background-image: image-url("task.png");
+      width: 196px;
+      float: right;
+      height: 29px;
+      margin-left: 10px;
+    }
+    ul {
+      list-style: none;
+      li { margin-bottom: 15px;}
+      li span {
+        width: 25px;
+        height: 30px;
+        float: left;
+        padding-right: 15px;
+      }
+      li.caution {
+        font-size: 12px;
+        color: #e51600;
+        display: none;
+        span {
+          background-image: image-url("icon_red.png");
+          background-repeat: no-repeat;
+          background-position: 5px;
+        }
+      }
+    }
+  }
 
 
-  div.engineering_systems_form3{ width:470px; height:160px;  margin-left:35px; margin-top:15px; padding:30px; margin-bottom:25px; float:left;}
-  div.engineering_systems_form3 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px;}
-  div.engineering_systems_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-  .engineering_systems_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid $engineering_systems_color; height:20px; font-size:16px; background-color:#eae9e9; height:30px; }
+  div.engineering_systems_form3 {
+    width: 470px;
+    height: 160px;
+    margin-left: 35px;
+    margin-top: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    float: left;
+    div.number {
+      background-image: image-url("3_number_blue.png");
+      float: left;
+      width: 86px;
+      height: 29px;
+    }
+    div.form_description {
+      background-image: image-url("comments.png");
+      width: 370px;
+      float: left;
+      height: 29px;
+      margin-bottom: 15px;
+      margin-left: 10px;
+    }
+  }
 
-  div.engineering_systems_submiting{  height:50px; width:550px; margin-left:60px; padding:20px 0px 20px 0px; float:left;}
+  .engineering_systems_form3_default {
+    сolor: #333;
+    border: 0px;
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    border-bottom: 1px solid $engineering_systems_color;
+    height: 20px;
+    font-size: 16px;
+    background-color: #eae9e9;
+    height: 30px;
+  }
 
-  ol.eng_systems{ float:left; list-style-type:decimal; }
-  ol.eng_systems li{ margin-bottom:10px; width:450px;}
+  div.engineering_systems_submiting {
+    height: 50px;
+    width: 550px;
+    margin-left: 60px;
+    padding: 20px 0px 20px 0px;
+    float: left;
+  }
+
+  ol.eng_systems {
+    float: left;
+    list-style-type: decimal;
+    li {
+      margin-bottom: 10px;
+      width: 450px;
+    }
+  }
 }
