@@ -1,0 +1,68 @@
+@import "settings";
+
+span.copyright { color: #1d71cc; }
+div.copyright {
+  border-bottom-color: $design_projects_color;
+  width: 550px;
+  float: left;
+  margin-bottom: 5px;
+}
+div.msg_caution span.copyright {
+  color: #3d6804;
+  padding: 15px 0px 10px 115px;
+  float: left;
+}
+
+div.form_copyright {
+  height: 140px;
+  margin-left: 45px;
+  padding: 20px;
+  margin-bottom: 25px;
+  clear: left;
+  div.form_description {
+    background-image: image-url("file_attach_2.png");
+    width: 585px;
+    float: left;
+  }
+  span {
+    font-size: 14px;
+    color: #8e8e8e;
+    float: left;
+    background-image: image-url("file_att.png");
+    background-repeat: no-repeat;
+    height: 67px;
+  }
+}
+
+div.copyright_text {
+  margin-top: 20px;
+  position: relative;
+  float: left;
+  position: relative;
+  line-height: 25px;
+}
+
+span.copyright_ques {
+  ul.answer {
+    list-style: none;
+    margin: 0px;
+    padding-left: 10px;
+    float: right;
+    li { float: none; }
+  }
+
+  ul.select {
+    list-style: none;
+    margin: 0px;
+    float: right;
+    li {
+      float: none;
+      margin-right: 10px;
+    }
+  }
+}
+div.copyright_ques_submiting {
+  height: 80px;
+  width: 550px;
+  padding: 40px 0px 60px 0px;
+}
