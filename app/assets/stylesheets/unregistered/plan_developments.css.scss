@@ -212,18 +212,14 @@ body.unregistered {
     margin-top: 15px;
     clear: left;
     margin-bottom: 15px;
-  }
 
-  div.attach_box {
     padding: 15px 10px 10px 5px;
-    &.plan_development {
-      .number {
-        background-image: image-url("4_number_yellow.png");
-        float: left;
-        padding-bottom: 5px;
-      }
+    .number._4 {
+      background-image: image-url("4_number_yellow.png");
+      float: left;
+      padding-bottom: 5px;
     }
-    .form_description {
+    .form_description.attach_file {
       background-image: image-url("file_attach.png");
       width: 585px;
       float: left;

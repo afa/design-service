@@ -47,14 +47,11 @@ body.unregistered {
     padding: 20px;
     margin-top: 15px;
     clear: left;
-    div.form_description {
-      background-image: image-url("file_attach_refactoring.png");
-      width: 585px;
-      float: left;
-      height: 30px;
-      background-repeat: no-repeat;
-      padding-bottom: 0px;
-    }
+
+  }
+  .form_description.attach_plan_for_refactoring {
+    float: left;
+    padding-bottom: 0px;
   }
 
   div.planrefactoring_submiting {

@@ -29,6 +29,10 @@
     width: 283px;
     height: 17px;
   }
+  &.attach_plan_for_refactoring {
+    background-image: image-url("file_attach_refactoring.png");
+    width: 584px;
+  }
 }
 
 /* LayOut Config */

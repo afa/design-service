@@ -50,8 +50,8 @@
     = render partial: 'attachments/list_of_attachments', locals:{attachments: engineering_system.attachments, has_remove_button: !disabled}
   = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: engineering_system, kind: 'design_project', disabled: disabled, wrapper_class: ''}
   %span.attach_info_block.caution  
-    Обязательно необходима Добавить; 
+    Обязательно необходимо добавить;
     %ol.eng_systems
       %li План с расстановкой мебели и сантехнического оборудования!
-      %li.first План расстановки светильников, электрооборудования,розеток и других электроприборов!
+      %li.first План расстановки светильников, электрооборудования, розеток и других электроприборов!
       %li.sixth План, где указаны привязки и размеры проемов
