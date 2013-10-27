@@ -24,18 +24,12 @@ body.registered {
     clear: both;
     float: left;
 
-    div.number {
-      background-image: image-url("1_number_orange.png");
+    .number._1 {
       float: left;
-      height: 29px;
-      width: 86px;
       margin-right: 10px;
     }
-    div.form_description {
-      background-image: image-url("form_input_data.png");
-      width: 250px;
+    .form_description.input_data {
       float: left;
-      height: 29px;
     }
 
     div.file_attaching {
@@ -64,23 +58,15 @@ body.registered {
     }
 
 
-    div.number_second {
-      background-image: image-url("2_number_green.png");
+    .number._2 {
       float: left;
-      width: 86px;
-      height: 29px;
-      background-repeat: no-repeat;
       margin-right: 10px;
       margin-left: 0px;
       padding-bottom: 20px;
       margin-top: 20px;
     }
-    div.form_description_second {
-      background-image: image-url("task.png");
-      width: 250px;
+    .form_description.job {
       float: left;
-      height: 29px;
-      background-repeat: no-repeat;
       padding-bottom: 20px;
       margin-top: 20px;
       position: relative;
@@ -147,17 +133,11 @@ body.registered {
     margin-bottom: 15px;
     float: left;
     margin-left: 45px;
-    div.number {
-      background-image: image-url("3_number_blue.png");
+    .number._3 {
       float: left;
-      width: 86px;
-      height: 29px;
     }
-    div.form_description {
-      background-image: image-url("comments.png");
-      width: 370px;
+    .form_description.wishes {
       float: left;
-      height: 29px;
       margin-bottom: 15px;
       margin-left: 10px;
     }

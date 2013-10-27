@@ -9,17 +9,9 @@ body.registered {
     padding: 30px;
     line-height: 45px;
     margin-bottom: 25px;
-    div.number {
-      background-image: image-url("1_number_orange.png");
+    .number._1 { float: left; }
+    .form_description.input_data {
       float: left;
-      width: 86px;
-      height: 29px;
-    }
-    div.form_description {
-      background-image: image-url("form_input_data.png");
-      width: 250px;
-      float: left;
-      height: 29px;
       margin-left: 15px;
     }
   }
@@ -32,18 +24,12 @@ body.registered {
     margin-top: 15px;
     padding: 30px;
     margin-bottom: 25px;
-    div.number {
-      background-image: image-url("2_number_green.png");
+    .number._2 {
       margin-left: 115px;
       float: right;
-      width: 86px;
-      height: 29px;
     }
-    div.form_description {
-      background-image: image-url("task.png");
-      width: 196px;
+    .form_description.job {
       float: right;
-      height: 29px;
       margin-left: 15px;
     }
     div.break_line {
@@ -194,17 +180,9 @@ body.registered {
     margin-top: 15px;
     padding: 30px;
     margin-bottom: 25px;
-    div.number {
-      background-image: image-url("3_number_blue.png");
+    .number { float: left; }
+    .form_description.wishes {
       float: left;
-      width: 86px;
-      height: 29px;
-    }
-    div.form_description {
-      background-image: image-url("comments.png");
-      width: 370px;
-      float: left;
-      height: 29px;
       margin-bottom: 15px;
       margin-left: 10px;
     }
@@ -223,9 +201,10 @@ body.registered {
   div.attach_box {
     padding: 20px 10px 10px 2px;
     position: absolute;
-
+    div.number, div.form_description { display: none; }
     &.plan_development {
       div.number {
+        display: block;
         background-image: image-url("4_number_yellow_small.png");
         float: left;
         width: 84px;
@@ -236,6 +215,7 @@ body.registered {
         background-repeat: no-repeat;
       }
       div.form_description {
+        display: block;
         background-image: image-url("file_attach_refactoring_small.png");
         width: 449px;
         float: left;

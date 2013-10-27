@@ -25,13 +25,8 @@ body.unregistered {
     line-height: 45px;
     margin-bottom: 25px;
 
-    div.number {
-      background-image: image-url("1_number_orange.png");
-      float: left;
-    }
-    div.form_description {
-      background-image: image-url("form_input_data.png");
-      width: 250px;
+    .number._1 { float: left; }
+    .form_description.input_data {
       float: left;
       margin-left: 0px;
     }
@@ -45,14 +40,11 @@ body.unregistered {
     padding: 30px;
     margin-bottom: 25px;
 
-    div.number {
-      background-image: image-url("2_number_green.png");
+    .number._2 {
       margin-left: 115px;
       float: right;
     }
-    div.form_description {
-      background-image: image-url("task.png");
-      width: 196px;
+    .form_description.job {
       float: right;
     }
     div.break_line {
@@ -207,13 +199,8 @@ body.unregistered {
     padding: 30px;
     margin-bottom: 25px;
 
-    div.number {
-      background-image: image-url("3_number_blue.png");
-      float: left;
-    }
-    div.form_description {
-      background-image: image-url("comments.png");
-      width: 370px;
+    .number._3 { float: left; }
+    .form_description.wishes {
       float: left;
       margin-left: 0px;
     }
@@ -230,13 +217,13 @@ body.unregistered {
   div.attach_box {
     padding: 15px 10px 10px 5px;
     &.plan_development {
-      div.number {
+      .number {
         background-image: image-url("4_number_yellow.png");
         float: left;
         padding-bottom: 5px;
       }
     }
-    div.form_description {
+    .form_description {
       background-image: image-url("file_attach.png");
       width: 585px;
       float: left;

@@ -1,5 +1,36 @@
 @import "settings";
 
+.number {
+  background-repeat: no-repeat;
+  height: 29px;
+  width: 86px;
+  &._1 { background-image: image-url("1_number_orange.png"); }
+  &._2 { background-image: image-url("2_number_green.png"); }
+  &._3 { background-image: image-url("3_number_blue.png"); }
+  &._4 { background-image: image-url("4_number_yellow.png"); }
+}
+.form_description {
+  height: 29px;
+  background-repeat: no-repeat;
+  &.input_data {
+    background-image: image-url("form_input_data.png");
+    width: 250px;
+  }
+  &.job {
+    background-image: image-url("task.png");
+    width: 196px;
+  }
+  &.wishes {
+    background-image: image-url("comments.png");
+    width: 370px;
+  }
+  &.order_price {
+    background-image: image-url("full_amount.png");
+    width: 283px;
+    height: 17px;
+  }
+}
+
 /* LayOut Config */
 body {
   font: 100% gardensc, Arial, Helvetica, sans-serif;

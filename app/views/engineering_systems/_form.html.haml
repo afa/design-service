@@ -1,8 +1,8 @@
 .order_fields
   = simple_nested_form_for engineering_system, remote: true, html: {class: 'orderable'}, defaults: { input_html: { disabled: disabled } }  do |f|
     .engineering_systems_form1.border_x1.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._1
+      .form_description.input_data
       %span{:style => "float:left; width:400px; padding-bottom:15px;"}
         Адрес: #{ f.input_field :address, class: 'textlines_default textline_l8' }
         Этаж:  #{ f.input_field :stage, class: 'textlines_default textline_l4' }
@@ -12,8 +12,8 @@
         .attach_place_for_box
 
     .engineering_systems_form2.border_x2.rounded-corners_l2.shadow_x1
-      .form_description
-      .number
+      .form_description.job
+      .number._2
       %span.select_ Выбор разделов:
       %ul
         %li#sss
@@ -41,8 +41,8 @@
           %span>
           Необходим план, где указаны привязки и размеры проемов
     .engineering_systems_form3.border_x3.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._3
+      .form_description.wishes
       = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
     = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'engineering_systems_submiting'}
 

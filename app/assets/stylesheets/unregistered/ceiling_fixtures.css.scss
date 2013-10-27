@@ -29,13 +29,10 @@ body.unregistered {
     overflow: auto;
     clear: both;
 
-    div.number {
-      background-image: image-url("1_number_orange.png");
+    .number._1 {
       float: left;
     }
-    div.form_description {
-      background-image: image-url("form_input_data.png");
-      width: 250px;
+    .form_description.input_data {
       float: left;
     }
 
@@ -71,23 +68,16 @@ body.unregistered {
         background-position: 110px 0px;
       }
     }
-    div.number_second {
-      background-image: image-url("2_number_green.png");
+
+    .number._2 {
       float: left;
-      width: 86px;
-      height: 29px;
-      background-repeat: no-repeat;
       margin-right: 10px;
       margin-left: 0px;
       padding-bottom: 20px;
       margin-top: 20px;
     }
-    div.form_description_second {
-      background-image: image-url("task.png");
-      width: 250px;
+    .form_description.job {
       float: left;
-      height: 29px;
-      background-repeat: no-repeat;
       padding-bottom: 20px;
       margin-top: 20px;
       position: relative;
@@ -107,13 +97,10 @@ body.unregistered {
     margin-top: 15px;
     padding: 30px;
     margin-bottom: 25px;
-    div.number {
-      background-image: image-url("3_number_blue.png");
+    .number._3 {
       float: left;
     }
-    div.form_description {
-      background-image: image-url("comments_small.png");
-      width: 370px;
+    .form_description.wishes {
       float: left;
     }
   }

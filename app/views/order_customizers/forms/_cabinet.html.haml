@@ -2,13 +2,13 @@
   = simple_form_for selected_form, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
     = f.input_field :typename, as: :hidden
     .design_p-workin-docs_form1.border_x1.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._1
+      .form_description.input_data
       .file_attaching.border_x5.rounded-corners_l3.multiattach
         .attach_place_for_box
 
-      .number_second
-      .form_description_second
+      .number._2
+      .form_description.job
       %span.text
         Площадь помещения:#{ f.input_field :flat_area, class: 'textlines_default textline_l6' }
       .interior
@@ -19,10 +19,9 @@
         Как Вам представить результат?
         = f.input_field :show_results, as: :radio_buttons, collection: SelectedForm.show_results.options
     .design_p-workin-docs_form2.border_x3.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._3
+      .form_description.wishes
       = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
-      
     %span.design_p-workin-docs-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
     = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p-workin-docs_submiting'}
 

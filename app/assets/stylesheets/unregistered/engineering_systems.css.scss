@@ -24,13 +24,10 @@ body.unregistered {
     padding: 30px;
     line-height: 45px;
     margin-bottom: 25px;
-    div.number {
-      background-image: image-url("1_number_orange.png");
+    .number._1 {
       float: left;
     }
-    div.form_description {
-      background-image: image-url("form_input_data.png");
-      width: 250px;
+    .form_description.input_data {
       float: left;
     }
     div.head_part {
@@ -54,14 +51,11 @@ body.unregistered {
     padding: 30px;
     margin-bottom: 25px;
 
-    div.number {
-      background-image: image-url("2_number_green.png");
+    .number._2 {
       margin-left: 115px;
       float: right;
     }
-    div.form_description {
-      background-image: image-url("task.png");
-      width: 196px;
+    .form_description.job {
       float: right;
     }
     ul {
@@ -94,13 +88,10 @@ body.unregistered {
     margin-top: 15px;
     padding: 30px;
     margin-bottom: 25px;
-    div.number {
-      background-image: image-url("3_number_blue.png");
+    .number._3 {
       float: left;
     }
-    div.form_description {
-      background-image: image-url("comments.png");
-      width: 370px;
+    .form_description.wishes {
       float: left;
     }
   }

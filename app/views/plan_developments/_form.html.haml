@@ -1,8 +1,8 @@
 .order_fields
   = simple_nested_form_for plan_development, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
     .var_form1.border_x1.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._1
+      .form_description.input_data
       Адрес:#{ f.input_field :address, class: 'textlines_default textline_l8' }
       Этаж: #{ f.input_field :floor, class: 'textlines_default textline_l4' } Подъезд/Секция: #{ f.input_field :section, class: 'textlines_default textline_l4' }
       Площадь квартиры: #{ f.input_field :flat_area, class: 'textlines_default textline_l6'}
@@ -15,8 +15,8 @@
       %span.subtitle (укажите количество и пол детей)
 
     .var_form2.border_x2.rounded-corners_l2.shadow_x1
-      .form_description
-      .number
+      .form_description.job
+      .number._2
       .kithen_split
         Объединить кухню <br>с гостиной?
         = f.input_field :join_kitchen_with_living_room, as: :radio_buttons
@@ -65,8 +65,8 @@
         = f.input_field :num_plans, as: :radio_buttons, collection: PlanDevelopment.num_plans.options
 
     .var_form3.border_x3.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._3
+      .form_description.wishes
       = f.input_field :comment, as: :text, cols: 60, rows:3, class: 'postComment textline_l12'
 
     .var_form4.border_x4.rounded-corners_l2.shadow_x1.multiattach

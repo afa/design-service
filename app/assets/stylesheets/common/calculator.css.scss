@@ -5,16 +5,11 @@ div.calculator {
   margin-bottom: 25px;
   clear: both;
 
-  div.form_description {
-    background-image: image-url("full_amount.png");
-    width: 300px;
+  .form_description.order_price {
     float: left;
     margin-left: 70px;
     margin-top: 15px;
     padding: 0px;
-    width: 370px;
-    height: 29px;
-    background-repeat: no-repeat;
   }
   span {
     width: 200px;
