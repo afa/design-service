@@ -1,3 +1,88 @@
+@import "settings";
+
+div.engineering_systems_form1 {
+  padding: 30px;
+  line-height: 45px;
+  margin-bottom: 25px;
+
+  .number._1 {
+    float: left;
+  }
+  .form_description.input_data {
+    float: left;
+  }
+  div.head_part {
+    clear: both;
+  }
+  div.file_attaching {
+    margin-top: 15px;
+  }
+}
+
+div.engineering_systems_form2 {
+  width: 450px;
+  min-height: 200px;
+  margin-top: 15px;
+  padding: 30px;
+  margin-bottom: 25px;
+  .number._2 {
+    margin-left: 115px;
+    float: right;
+  }
+  .form_description.job {
+    float: right;
+  }
+  ul {
+    list-style: none;
+    li { margin-bottom: 15px; }
+    li span {
+      width: 25px;
+      height: 30px;
+      float: left;
+      padding-right: 15px;
+    }
+    li.caution {
+      font-size: 12px;
+      color: #e51600;
+      display: none;
+      span {
+        background-image: image-url("icon_red.png");
+        background-repeat: no-repeat;
+        background-position: 5px;
+      }
+    }
+  }
+}
+
+
+div.engineering_systems_form3 {
+  width: 470px;
+  height: 160px;
+  margin-top: 15px;
+  padding: 30px;
+  margin-bottom: 25px;
+  .number._3 {
+    float: left;
+  }
+  .form_description.wishes {
+    float: left;
+  }
+}
+
+div.engineering_systems_submiting {
+  height: 50px;
+  width: 550px;
+  padding: 20px 0px 20px 0px;
+}
+
+ol.eng_systems {
+  float: left;
+  list-style-type: decimal;
+  li {
+    margin-bottom: 10px;
+  }
+}
+
 span.attach_info_block.caution {
   color: #e51600;
   float: left;
