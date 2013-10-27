@@ -1,0 +1,131 @@
+@import "settings";
+
+
+span.design_p_sweep_wall {
+  color: #c67700;
+  float: left;
+}
+
+div.design_p_sweep_wall {
+  border-bottom-color: $design_projects_color;
+  width: 550px;
+  float: left;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  div.second_row {
+    color: #c67700;
+    font-size: 18px;
+    clear: both;
+    margin-left: 70px;
+    margin-top: 40px;
+  }
+}
+div.msg_caution span.design_p_sweep_wall {
+  color: #3d6804;
+  padding: 25px 0px 10px 115px;
+  float: left;
+}
+
+div.design_p_sweep_wall_form1 {
+  margin-left: 45px;
+  padding: 30px;
+  line-height: 45px;
+  margin-bottom: 25px;
+  overflow: auto;
+  clear: both;
+
+  .number._1 {
+    float: left;
+  }
+  .form_description.input_data {
+    float: left;
+  }
+  div.file_attaching {
+    min-height: 150px;
+    margin-top: 10px;
+    float: left;
+    span.caution {
+      color: #c10000;
+      font-size: 17px;
+      float: left;
+      padding: 15px 0px 0px 30px;
+      ul {
+        float: right;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        line-height: 20px;
+        li {
+          float: none;
+        }
+      }
+    }
+    span.attach {
+      margin-top: 0px;
+      float: left;
+      margin-top: 0px;
+      height: 45px;
+    }
+  }
+
+  .number._2 {
+    float: left;
+    margin-right: 10px;
+    margin-left: 0px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+  }
+  .form_description.job {
+    float: left;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  span.text {
+    clear: both;
+    position: relative;
+    float: left;
+  }
+
+  div.what_materials {
+    float: left;
+    ul.answer {
+      list-style: none;
+      float: right;
+      width: 400px;
+      padding: 0px 0px 10px 0px;
+      margin-left: 15px;
+      li {
+        float: left;
+        margin-right: 10px;
+        height: 35px;
+        &.long { width:250px; }
+      }
+    }
+  }
+}
+
+div.design_p_sweep_wall_form2 {
+  width: 470px;
+  height: 160px;
+  margin-left: 115px;
+  margin-top: 15px;
+  padding: 30px;
+
+  .number._3 {
+    float: left;
+  }
+  .form_description.wishes {
+    float: left;
+  }
+}
+
+.design_p_sweep_wall-caution2 {
+  color: #e23a3a;
+  text-align: center;
+  float: left;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
