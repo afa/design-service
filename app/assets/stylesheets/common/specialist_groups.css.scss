@@ -1,20 +1,94 @@
 @import "settings";
 
-/* PAGE CONCEPT DESIGNERS_INFO.HTML */
-span.designers {
-  color: #ca3932;
-  padding-top: 10px;
-  float: left;
-}
-
 div.designers {
-  background-image: image-url("designers.png") ;
+  background-image: image-url("designers.png");
   border-bottom-color: $design_projects_color;
-  width: 550px;
   float: left;
   background-repeat: no-repeat;
   background-position: left -2px;
   height: 40px;
+}
+
+div.designers_list {
+  float: left;
+  clear: both;
+  height: 104px;
+  background-color: #f5eae4;
+
+  div.designer_no {
+    background-color: #f5e1d8;
+    float: left;
+    img {
+      float: left;
+    }
+    span {
+      color: #b70682;
+      font-size: 16px;
+      text-align: center;
+      float: left;
+      padding-top: 5px;
+    }
+  }
+
+  div.designer_info {
+    position: relative;
+    padding: 5px 5px 5px 15px;
+    float: left;
+    color: #4c4c4c;
+
+    div {
+      width: 470px;
+      float: left;
+      span {
+        padding: 0px;
+        margin: 0px;
+        float: left;
+        &:nth-child(2) {
+          color: #50880f;
+          padding-left: 10px;
+        }
+      }
+      &:nth-child(1) {
+        padding-top: 10px;
+        padding-bottom: 15px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      &:nth-child(2) { font-size: 14px; }
+      &:visited { color: #4c4c4c; }
+    }
+  }
+
+  div.portfolio {
+    float: left;
+    width: 105px;
+    height: 89px;
+    margin-top: 5px;
+    img { padding: 5px 5px 5px 5px; }
+    span {
+      text-align: center;
+      width: 105px;
+      font-size: 14px;
+      color: #9c4a0c;
+      a {
+        color: #9c4a0c;
+        text-decoration: underline;
+        &:hover { text-decoration: none; }
+      }
+    }
+  }
+}
+
+ul.portfolio {
+  list-style: none;
+  overflow: auto;
+  padding-bottom: 25px;
+  margin: 0px;
+  li {
+    float: left;
+    padding-top: 15px;
+  }
+  li:nth-child(3) { margin: 0px !important; }
 }
 
 div.selected_designer {
@@ -24,6 +98,7 @@ div.selected_designer {
   width: 817px;
   margin-top: 40px;
   background-color: #f5eae4;
+
   div.designer_no {
     width: 93px;
     height: 103px;
@@ -44,43 +119,7 @@ div.selected_designer {
       padding-top: 5px;
     }
   }
-}
 
-body.registered {
-  div.selected_designer {
-    float: left;
-    clear: both;
-    height: 104px;
-    width: 630px;
-    margin-top: 40px;
-    background-color: #f5eae4;
-
-    div.designer_info {
-      width: 280px;
-      position: relative;
-      padding: 5px 5px 5px 15px;
-      float: left;
-      color: #4c4c4c;
-
-      div {
-        width: 270px;
-        position: relative;
-        padding: 5px 5px 5px 15px;
-        float: left;
-        color: #4c4c4c;
-      }
-    }
-  }
-  span.project_breaker {
-    height: 1px ;
-    width: 590px;
-    float: left;
-    background-color: #999999;
-    margin-left: 25px;
-  }
-}
-
-div.selected_designer {
   div.designer_info {
     width: 380px;
     position: relative;
@@ -96,16 +135,7 @@ div.selected_designer {
         margin: 0px;
         float: left;
       }
-    }
-  }
-}
 
-div.designers_list div.designer_info div:visited {
-  color: #4c4c4c;
-}
-div.selected_designer {
-  div.designer_info {
-    div {
       a { color: #4c4c4c; }
       span:nth-child(2) {
         color: #50880f;
@@ -120,6 +150,7 @@ div.selected_designer {
       &:nth-child(2) { font-size: 14px; }
     }
   }
+  
   div.send_request {
     float: left;
     width: 102px;
@@ -127,6 +158,20 @@ div.selected_designer {
     background-image: image-url("send_request.png");
     &:hover { background-image: image-url("send_request_hover.png"); }
   }
+  div.go_back {
+    width: 93px;
+    height: 86px;
+    float: left;
+    background-image: image-url("go_back.png");
+    margin-top: 9px;
+    &:hover { background-image: image-url("go_back_hover.png"); }
+  }
+}
+
+span.designers {
+  color: #ca3932;
+  padding-top: 10px;
+  float: left;
 }
 
 div.rel_portfolio {
@@ -191,7 +236,6 @@ ul.rel_portfolio {
     &:nth-child(4) { margin: 0px; }
   }
 }
-
 
 div.info_specialist {
   ul.members {
