@@ -9,39 +9,22 @@ body.registered {
   }
 
   div.msg_caution span.design_p_color_scheme {
-    color: #3d6804;
     padding: 0px 0px 5px 40px;
-    float: left;
   }
 
   div.design_p_color_scheme_form1 {
     width: 490px;
-    margin-left: 45px;
-    padding: 30px;
-    line-height: 45px;
-    margin-bottom: 25px;
-    overflow: auto;
-    clear: both;
     float: left;
 
     .number._1 {
-      float: left;
       margin-right: 10px;
-    }
-    .form_description.input_data {
-      float: left;
     }
 
     div.file_attaching {
       width: 485px;
       min-height: 150px;
-      margin-top: 10px;
-      float: left;
       span.caution {
-        color: #c10000;
-        font-size: 17px;
         padding-left: 70px;
-        height: 30px;
         margin-top: -30px;
       }
       span.attach {
@@ -57,100 +40,28 @@ body.registered {
       }
     }
 
-
-    .number._2 {
-      float: left;
-      margin-right: 10px;
-      margin-left: 0px;
-      padding-bottom: 20px;
-      margin-top: 20px;
-    }
-    .form_description.job {
-      float: left;
-      padding-bottom: 20px;
-      margin-top: 20px;
-      position: relative;
-    }
-
-    span.text {
-      clear: both;
-      position: relative;
-      float: left;
-    }
-
-    div.range_and_tone {
-      float: left;
-      ul.answer {
-        list-style: none;
-        margin: 0px;
-        padding-left: 55px;
-        float: left;
-        li {
-          float: left;
-          margin-right: 10px;
-          width: 240px;
-          height: 30px;
-        }
-      }
-    }
-
-    div.present_results {
-      float: left;
-      ul.answer {
-        list-style: none;
-        margin: 0px;
-        padding-left: 55px;
-        float: left;
-        li {
-          float: left;
-          margin-right: 10px;
-        }
-      }
-    }
-
     div.color_keyboard_block {
-      float: left;
-      padding-top: 10px;
       span {
-        text-align: center;
         width: 500px;
-        height: 30px;
-        float: left;
       }
       div.color_keyboard {
-        float: left;
         margin-left: 105px;
       }
     }
   }
 
   div.design_p_color_scheme_form2 {
-    width: 470px;
-    height: 160px;
-    margin-left: 115px;
-    margin-top: 15px;
-    padding: 30px;
     margin-bottom: 15px;
     float: left;
     margin-left: 45px;
-    .number._3 {
-      float: left;
-    }
     .form_description.wishes {
-      float: left;
       margin-bottom: 15px;
       margin-left: 10px;
     }
   }
 
   .design_p_color_scheme-caution2 {
-    color: #e23a3a;
-    text-align: center;
-    float: left;
     margin-left: 70px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 14px;
     width: 450px;
   }
 
