@@ -7,57 +7,37 @@ body.unregistered {
     float: left;
   }
 
-  div.msg_caution span.plan_refactoring {
-    color: #bd3404;
-    text-align: center;
-    width: 780px;
-    font-size: 16px;
-    padding-top: 15px;
-    float: left;
-    margin: 0px;
-    padding-bottom: 15px;
+  div.msg_caution {
+    span.plan_refactoring {
+      text-align: center;
+      width: 780px;
+      font-size: 16px;
+      padding-top: 15px;
+    }
   }
 
   div.plan_refactor {
-    padding-left: 45px;
-    margin-top: 20px;
     width: 750px;
-    position: relative;
-    float: left;
-    margin-bottom: 35px;
-    height: 45px;
-    line-height: 25px;
   }
 
-  span.plan_refactor ul.answer {
-    list-style: none;
-    margin: 0px;
-    padding-left: 10px;
-    float: right;
-    padding-right: 120px;
-    li {
-      float: left;
-      margin-right: 10px;
+  span.plan_refactor {
+    ul.answer {
+      padding-left: 10px;
+      padding-right: 120px;
     }
   }
 
   div.form_refactoring {
     width: 685px;
-    margin-left: 45px;
     padding: 20px;
-    margin-top: 15px;
     clear: left;
-
   }
+
   .form_description.attach_plan_for_refactoring {
-    float: left;
     padding-bottom: 0px;
   }
 
   div.planrefactoring_submiting {
-    height: 80px;
-    width: 550px;
     margin-left: 160px;
-    padding: 40px 0px 60px 0px;
   }
 }

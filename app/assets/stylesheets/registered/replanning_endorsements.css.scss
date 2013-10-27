@@ -1,57 +1,36 @@
 body.registered {
-  span.plan_refactoring {
-    // color: #ccb545;
-    color: #bd3404;
-    text-align: left;
-    width: 580px;
-    font-size: 18px;
-    float: left;
-    margin: 0px;
-    padding-bottom: 15px;
+  div.msg_caution {
+    span.plan_refactoring {
+      text-align: left;
+      width: 580px;
+      font-size: 18px;
+    }
   }
 
   div.plan_refactor {
-    padding-left: 45px;
-    margin-top: 20px;
     width: 610px;
-    position: relative;
-    float: left;
-    margin-bottom: 35px;
-    height: 45px;
-    position: relative;
-    line-height: 25px;
   }
 
   span.plan_refactor {
     ul.answer {
-      list-style: none;
-      margin: 0px;
-      float: right;
       margin-right: 35px;
       padding: 0px;
-      li {
-        float: left;
-        margin-right: 10px;
-      }
     }
   }
+
   div.form_refactoring {
-    margin-left: 45px;
-    margin-top: 15px;
     padding: 10px;
     margin-bottom: 25px;
     float: left;
   }
+
   .form_description.attach_plan_for_refactoring {
     background-image: image-url("file_attach_refactoring_small.png");
     width: 450px;
     height: 22px;
-    float: left;
   }
+
   div.planrefactoring_submiting {
-    height: 80px;
-    width: 550px;
     margin-left: 100px;
-    padding: 40px 0px 60px 0px;
   }
 }
