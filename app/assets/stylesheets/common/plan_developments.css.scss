@@ -1,0 +1,201 @@
+@import "settings";
+
+div.var_form1 {
+  width: 360px;
+  height: 355px;
+  margin-left: 45px;
+  padding: 30px;
+  line-height: 45px;
+  margin-bottom: 25px;
+
+  .number._1 { float: left; }
+  .form_description.input_data {
+    float: left;
+  }
+}
+
+div.var_form2 {
+  width: 450px;
+  margin-top: 15px;
+  padding: 30px;
+  margin-bottom: 25px;
+
+  .number._2 {
+    margin-left: 115px;
+    float: right;
+  }
+  .form_description.job {
+    float: right;
+  }
+  div.break_line {
+    float: left;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    width: 450px;
+    height: 2px;
+  }
+}
+div.kithen_split {
+  width: 170px;
+  float: left;
+  height: 72px;
+  padding-top: 15px;
+
+  ul.answer {
+    width: 250px;
+    list-style: none;
+    margin: 0px;
+
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
+div.kithen_size {
+  width: 280px;
+  height: 72px;
+  float: left;
+  padding-top: 15px;
+
+  ul.answer {
+    width: 160px;
+    list-style: none;
+    float: right;
+    padding: 0px;
+    margin: 0px;
+
+    li {
+      float: left;
+      margin-right: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+div.changing_rooms {
+  width: 170px;
+  float: left;
+  padding-top: 15px;
+  height: 67px;
+  ul.answer {
+    width: 250px;
+    list-style: none;
+    margin: 0px;
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
+div.number_of_rooms {
+  width: 260px;
+  height: 62px;
+  float: left;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+div.cabinets {
+  width: 360px;
+  float: left;
+  padding: 20px 0px 20px 90px;
+  ul.answer {
+    list-style: none;
+    margin: 0px;
+    float: right;
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
+div.guests {
+  float: left;
+  width: 460px;
+  ul.answer {
+    list-style: none;
+    margin: 0px;
+    float: right;
+    padding: 0px;
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
+div.sleeping_places {
+  width: 360px;
+  float: left;
+  padding: 20px 0px 0px 90px;
+}
+
+div.washing_machin {
+  width: 360px;
+  float: left;
+  padding: 20px 0px 20px 70px;
+  ul.answer {
+    list-style: none;
+    margin: 0px;
+    float: right;
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
+div.options {
+  width: 420px;
+  float: left;
+  ul.answer {
+    list-style: none;
+    margin: 0px;
+    padding-left: 155px;
+    padding-top: 15px;
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
+div.var_form3 {
+  width: 470px;
+  height: 160px;
+  margin-left: 45px;
+  margin-top: 15px;
+  padding: 30px;
+  margin-bottom: 25px;
+
+  .number._3 { float: left; }
+  .form_description.wishes {
+    float: left;
+  }
+}
+
+div.var_form4 {
+  margin-left: 45px;
+  margin-top: 15px;
+
+  .number._4 {
+    float: left;
+  }
+  .form_description.attach_file {
+    float: left;
+  }
+}
+
+div.postvar_plan_submiting {
+  height: 50px;
+  width: 550px;
+  padding: 20px 0px 20px 0px;
+}
+.submit_all_forms {
+  float: left;
+  margin-right: 25px;
+}
