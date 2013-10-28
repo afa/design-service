@@ -17,3 +17,9 @@ span.remove_room {
 span.add_room {
   display: none;
 }
+
+.attach_info_block.caution {
+  ul {
+    list-style-type: decimal;
+  }
+}
