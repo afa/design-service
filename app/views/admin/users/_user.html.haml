@@ -82,4 +82,4 @@
   .portfolios
    - resource.specialist.portfolios.each do |portfolio|
     .portfolio
-     =render :partial => 'shared/portfolio', :locals => {:portfolio_items => resource.specialist.portfolio_items, :editable => true, :example_set => portfolio.id}
+     =render :partial => 'shared/portfolio', :locals => {:portfolio_items => resource.specialist.portfolio_items, :editable => false, :example_set => portfolio.id}
