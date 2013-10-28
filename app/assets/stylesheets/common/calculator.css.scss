@@ -1,0 +1,59 @@
+div.calculator {
+  width: 433px;
+  height: 126px;
+  background-color: #ebebeb;
+  margin-bottom: 25px;
+  clear: both;
+
+  .form_description.order_price {
+    float: left;
+    margin-left: 70px;
+    margin-top: 15px;
+    padding: 0px;
+  }
+  span {
+    width: 200px;
+    margin-left: 60px;
+    float: left;
+    margin-top: 6px;
+  }
+  span.count {
+    float: left;
+    color: #666;
+    padding-left: 220px;
+    text-decoration: underline;
+  }
+  .total {
+    width: 300px;
+    height: 25px;
+    text-align: center;
+  }
+}
+
+/**********
+
+  .calcContainer {
+    margin: 20px auto;
+    background: image-url("calcBg.png") no-repeat;
+    width: 432px;
+    height: 128px;
+    .calcCaption {
+      background: image-url("CalcCaption.png") no-repeat;
+      width: 283px;
+      height: 17px;
+      margin: 0px auto 0px;
+    }
+    .calc {
+      background: image-url("calcFieldbg.png");
+      width: 315px;
+      height: 35px;
+      margin: 35px auto 0px;
+    }
+    .count {
+      margin: -15px 8px 0 8px;
+      text-align: right;
+      font-family: gardensc, verdana, sans-seris;
+    }
+  }
+
+**********/

@@ -1,0 +1,182 @@
+body.registered {
+  div._razrabotka_var {
+    float: left;
+    width: 540px;
+    margin-left: 45px;
+    min-height: 200px;
+    position: relative;
+    color: #4c4c4c;
+    margin-bottom: 50px;
+
+    div.date {
+      width: 128px;
+      height: 28px;
+      float: right;
+      border-top: none;
+      border-right: none;
+      position: absolute;
+      right: -4px;
+      top: -2px;
+      text-align: center;
+      padding-top: 8px;
+      color: #648040;
+      font-style: italic;
+      font-size: 20px;
+    }
+
+    div.name {
+      height: 30px;
+      width: 380px;
+      float: left;
+      padding: 15px 0px 0px 15px;
+      font-size: 14px;
+      margin: 0px;
+      span {
+        color: #6c1407;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 0px 10px 3px 10px;
+        border-bottom: 1px solid #c8c8c8;
+      }
+    }
+
+    div.artists {
+      float: left;
+      font-size: 14px;
+      padding: 5px 0px 0px 15px;
+      width: 300px;
+      ul {
+        color: #6c1407;
+        font-size: 12px;
+        float: right;
+        width: 200px;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        li {
+          border-bottom: 1px solid #c8c8c8;
+          padding: 0px 10px 3px 10px;
+        }
+      }
+    }
+
+    div.completion {
+      font-size: 13px;
+      position: absolute;
+      right: 0px;
+      margin-top: 45px;
+
+      span.tit { float:left; padding-top:5px; }
+      ul {
+        color: #6c1407;
+        list-style: none;
+        width: 100px;
+        float: right;
+        padding: 0px 10px 0px 10px;
+        margin: 0px;
+        li:nth-child(1) {
+          font-size: 10px;
+          padding: 5px 0px 5px 5px;
+          border-bottom: 1px solid #c8c8c8;
+          border-top:1px solid #c8c8c8; }
+        li:nth-child(2) {
+          color: #4c4c4c;
+          padding-left: 5px;
+        }
+        li.payid {
+          font-size: 14px;
+          font-weight: bold;
+          font-style: italic;
+        }
+      }
+    }
+
+    div.status {
+      height: 30px;
+      width: 350px;
+      float: left;
+      padding: 5px 0px 0px 15px;
+      font-size: 14px;
+      margin: 0px;
+      span {
+        color: #6c1407;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 0px 10px 3px 10px;
+        border-bottom: 1px solid #c8c8c8;
+        margin-left: 20px;
+      }
+    }
+
+    div.pay_now {
+      float: left;
+      font-size: 14px;
+      color: #03129e;
+      font-weight: bold;
+      margin-left: 280px;
+      padding-top: 5px;
+      height: 15px;
+      width: 250px;
+      a, a:link, a:visited, a:active { text-decoration:underline; color:#03129e; }
+      a:hover { text-decoration:none; }
+    }
+
+    div.msg {
+      width: 180px;
+      float: left;
+      font-size: 14px;
+      color: #6c1407;
+      margin-left: 15px;
+      margin-top: 10px;
+      background-image: image-url("msg_icon.jpg");
+      background-repeat: no-repeat;
+      height: 20px;
+      padding-left: 35px;
+      span {
+        a { text-decoration:underline; color:#6c1407; }
+        a:hover { text-decoration:none; }
+      }
+    }
+    div.specialist_orders {
+      div.msg {
+        span {
+          a:visited {
+            text-decoration: underline;
+            color: #6c1407;
+          }
+        }
+      }
+    }
+
+    div.completed {
+      float: left;
+      width: 310px;
+      padding-top: 10px;
+    }
+
+
+    div.documents {
+      height: 30px;
+      width: 280px;
+      float: left;
+      padding: 15px 0px 0px 15px;
+      font-size: 14px;
+      margin: 0px;
+      ul {
+        color: #085775;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        float: right;
+        li {
+          float: left;
+          padding-left: 10px;
+          a, a:link, a:visited, a:active { text-decoration:underline; color:#085775; }
+          a:hover { text-decoration:none; }
+        }
+      }
+    }
+  }
+}

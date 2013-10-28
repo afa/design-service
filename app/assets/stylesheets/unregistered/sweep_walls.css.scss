@@ -1,0 +1,48 @@
+@import "settings";
+
+body.unregistered {
+  div.design_p_sweep_wall {
+    background-image: image-url("design_project_logo_big.jpg");
+  }
+
+  div.design_p_sweep_wall_form1 {
+    width: 600px;
+
+    div.file_attaching {
+      width: 595px;
+
+      span.caution {
+        width: 520px;
+        ul {
+          li {
+            font-size: 17px;
+          }
+        }
+      }
+
+      span.attach {
+        padding: 20px 0px 20px 200px;
+        background-position: 110px 0px;
+      }
+    }
+
+    div.what_materials {
+      width: 600px;
+    }
+  }
+
+  div.design_p_sweep_wall_form2 {
+    margin-bottom: 25px;
+  }
+
+  .design_p_sweep_wall-caution2 {
+    margin-left: 90px;
+  }
+  div.design_p_sweep_wall_submiting {
+    height: 50px;
+    width: 550px;
+    margin-left: 160px;
+    padding: 20px 0px 40px 0px;
+    clear: both;
+  }
+}

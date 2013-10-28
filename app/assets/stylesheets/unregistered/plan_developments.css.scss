@@ -1,1 +1,85 @@
+@import "settings";
 
+body.unregistered {
+  span.post_varplan { color:#3d6804; }
+  div.msg_caution span.post_varplan {
+    color: #3d6804;
+    padding: 15px 0px 10px 115px;
+    float: left;
+  }
+
+  div.post_varplan {
+    background-image: image-url("post_var_plan_logo_big.jpg");
+    border-bottom-color: $plan_developments_color;
+    margin-bottom: 5px;
+    float: left;
+    width: 550px;
+  }
+
+  div.var_form1 {
+    margin-top: 140px;
+    .form_description.input_data {
+      margin-left: 0px;
+    }
+  }
+
+  div.var_form2 {
+    height: 500px;
+    margin-left: 250px;
+    div.break_line {
+      border-bottom: 1px $plan_developments_color dashed;
+    }
+  }
+  div.kithen_split {
+    ul.answer {
+      padding: 15px 0px 0px 20px;
+    }
+  }
+
+  div.changing_rooms {
+    ul.answer {
+      padding: 10px 0px 0px 20px;
+    }
+  }
+
+  div.cabinets {
+    ul.answer {
+      width: 220px;
+      padding-left: 0px;
+    }
+  }
+
+  div.washing_machin {
+    ul.answer {
+      width: 170px;
+      padding-left: 0px;
+    }
+  }
+
+  div.var_form3 {
+    .form_description.wishes {
+      margin-left: 0px;
+    }
+  }
+
+  div.var_form4 {
+    width: 685px;
+    clear: left;
+    margin-bottom: 15px;
+
+    padding: 15px 10px 10px 5px;
+    .number._4 {
+      background-image: image-url("4_number_yellow.png");
+      padding-bottom: 5px;
+    }
+    .form_description.attach_file {
+      background-image: image-url("file_attach.png");
+      width: 585px;
+      padding-bottom: 5px;
+    }
+  }
+
+  div.postvar_plan_submiting {
+    margin-left: 160px;
+  }
+}

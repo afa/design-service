@@ -1,0 +1,118 @@
+body.registered {
+  div.page_contener_specialist {
+    ul.personal_account {
+      width: 550px;
+      background-color: #dbdbdb;
+      float: left;
+      margin: 0px 0px 0px 20px;
+      padding: 0px;
+      list-style: none;
+      font-size: 18px;
+
+      li {
+        a {
+          float: left;
+          padding: 15px 15px 15px 15px;
+          color: #6e6e6e;
+          text-decoration: underline;
+          &:hover { text-decoration:none; }
+        }
+        &.select a { color:#450000; }
+      }
+    }
+
+    div.personal_account {
+      width: 520px;
+      background-color: #cfe4b4;
+      float: left;
+      margin: 20px 0px 0px 20px;
+      padding: 15px 15px 15px 15px;
+      color: #a70505;
+    }
+
+    div.content_header {
+      float: left;
+      margin: 20px 0px 0px 10px;
+      padding: 15px 15px 0px 15px;
+      color: #691818;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    table.deferred_services {
+      width: 550px;
+      margin: 15px 0px 0px 20px;
+      font-size: 14px;
+      float: left;
+      border: none;
+      border-collapse: collapse;
+      color: #4c4c4c;
+      position: relative;
+      tr {
+        td {
+          background-color: #eae9e9;
+          padding: 5px 0px 5px 20px;
+          border: 1px solid #949494;
+          border-left: none;
+          border-right: none;
+
+          &:nth-child(1) { width:220px; }
+
+          span.term { text-decoration:underline; float: left; }
+          span.term_info { float: left; font-size:12px; margin-top:5px; }
+          span.order {
+            position: relative;
+            left: 0px;
+            width: 150px;
+            float: left;
+            margin-left: 120px;
+            margin-top: 15px;
+            color: #0612a4;
+            a {
+              color: #0612a4;
+              text-decoration: underline;
+              &:hover { text-decoration:none; }
+            }
+          }
+        }
+        &.heading td {
+          background-color: #e3e3e3;
+          padding: 5px 0px 5px 20px;
+          font-weight: bold;
+        }
+        &.heading:hover td { background-color:#e3e3e3; }
+        &:hover td { background-color:#cfe4b4; }
+      }
+    }
+
+    table.history_recharge {
+      width: 550px;
+      margin: 15px 0px 0px 20px;
+      font-size: 14px;
+      float: left;
+      border: none;
+      border-collapse: collapse;
+      color: #4c4c4c;
+      position: relative;
+
+      tr {
+        td {
+          background-color: #eae9e9;
+          padding: 5px 0px 5px 20px;
+          border: 1px solid #949494;
+          border-left: none;
+          border-right: none;
+        }
+        &:hover td { background-color:#cfe4b4; }
+        &.green td { color:#137702; }
+        &.heading {
+          td {
+            background-color: #e3e3e3;
+            padding: 5px 0px 5px 20px;
+            font-weight: bold;
+          }
+          &:hover td { background-color:#e3e3e3; }
+        }
+      }
+    }
+  }
+}

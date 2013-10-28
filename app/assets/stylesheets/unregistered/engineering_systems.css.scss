@@ -1,0 +1,53 @@
+@import "settings";
+
+body.unregistered {
+  span.engineering_systems { color: #316096; }
+
+  div.msg_caution span.engineering_systems {
+    color: #3d6804;
+    padding: 15px 0px 10px 115px;
+    float: left;
+  }
+
+  div.engineering_systems {
+    background-image: image-url("engineering_systems_logo_big.jpg");
+    border-bottom-color: $engineering_systems_color;
+    width: 550px;
+    float: left;
+    margin-bottom: 5px;
+  }
+
+  div.engineering_systems_form1 {
+    width: 600px;
+    margin-left: 45px;
+    margin-top: 140px;
+    div.head_part {
+      background-image: image-url("engineering_systems_form1.png");
+      width: 507px;
+      height: 32px;
+      margin: 40px 0px 0px 45px;
+    }
+    div.file_attaching {
+      width: 595px;
+    }
+  }
+
+  div.engineering_systems_form2 {
+    margin-left: 250px;
+  }
+
+
+  div.engineering_systems_form3 {
+    margin-left: 45px;
+  }
+
+  div.engineering_systems_submiting {
+    margin-left: 160px;
+  }
+
+  ol.eng_systems {
+    li {
+      width: 500px;
+    }
+  }
+}

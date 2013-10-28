@@ -4,15 +4,12 @@
     %title Дизайн сервис.
     = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag "registered/application", :media => "all"
-    = stylesheet_link_tag "#{params[:controller]}.css" if Rails.application.assets.find_asset("#{params[:controller]}.css")
-    = stylesheet_link_tag "common/#{params[:controller]}.css" if Rails.application.assets.find_asset("common/#{params[:controller]}.css")
-    = stylesheet_link_tag "registered/#{params[:controller]}.css" if Rails.application.assets.find_asset("registered/#{params[:controller]}.css")
     = javascript_include_tag "application"
     = javascript_include_tag "#{params[:controller]}.js" if Rails.application.assets.find_asset("#{params[:controller]}.js")
     = csrf_meta_tags
     /[if lt IE 9]
       <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-  %body.registered
+  %body.registered{:class => ["#{params[:controller]}_controller", "#{params[:action]}_action"]}
     %noindex
       #black_content
       .twoColFixRtHdr

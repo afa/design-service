@@ -1,0 +1,72 @@
+@import "settings";
+
+body.registered {
+  div.msg_caution span.design_p-workin-docs {
+    color: #3d6804;
+    padding: 0px 0px 5px 40px;
+    float: left;
+    font-size: 18px;
+  }
+
+  div.msg_caution span.design_p_color_scheme {
+    padding: 0px 0px 5px 40px;
+  }
+
+  div.design_p_color_scheme_form1 {
+    width: 490px;
+    float: left;
+
+    .number._1 {
+      margin-right: 10px;
+    }
+
+    div.file_attaching {
+      width: 485px;
+      min-height: 150px;
+      span.caution {
+        padding-left: 70px;
+        margin-top: -30px;
+      }
+      span.attach {
+        font-size: 14px;
+        color: #8e8e8e;
+        padding: 0px 0px 0px 140px;
+        float: left;
+        background-image: image-url("file_att.png");
+        background-repeat: no-repeat;
+        height: 67px;
+        background-position: 80px 0px;
+        margin-top: 10px;
+      }
+    }
+
+    div.color_keyboard_block {
+      span {
+        width: 500px;
+      }
+      div.color_keyboard {
+        margin-left: 105px;
+      }
+    }
+  }
+
+  div.design_p_color_scheme_form2 {
+    margin-bottom: 15px;
+    float: left;
+    margin-left: 45px;
+    .form_description.wishes {
+      margin-bottom: 15px;
+      margin-left: 10px;
+    }
+  }
+
+  .design_p_color_scheme-caution2 {
+    margin-left: 70px;
+    width: 450px;
+  }
+
+  div.design_p_color_scheme_submiting {
+    float: left;
+    margin: 10px 25px 15px 55px;
+  }
+}

@@ -4,22 +4,22 @@
     overflow: hidden;
     width: 500px;
     position: relative;
-    border:2px solid #4e4e4e;
+    border: 2px solid #4e4e4e;
     > ul {
       position: relative;
       left: 0;
       top: 0;
-      width:40px;
-      margin:0px;
-      padding:0px;
-      height:200px;
+      width: 40px;
+      margin: 0px;
+      padding: 0px;
+      height: 200px;
       > li {
-        list-style:none;
+        list-style: none;
         display: inline-table;
-        margin:0px;
+        margin: 0px;
         img {
-          padding:0px;
-          margin:0px;
+          padding: 0px;
+          margin: 0px;
         }
       }
     }

@@ -1,0 +1,63 @@
+@import "settings";
+
+body.registered {
+  span.design_p_ceiling_fixtures {
+    width: 550px;
+  }
+
+  div.design_p_ceiling_fixtures {
+    background-image: image-url("design_project_logo.jpg") ;
+  }
+
+  div.design_p_ceiling_fixtures_form1 {
+    width: 500px;
+    float: left;
+    margin-left: 30px;
+
+    div.file_attaching {
+      width: 485px;
+
+      span.caution {
+        width: 430px;
+        padding: 15px 0px 0px 30px;
+        ul {
+          padding: 0px;
+          li {
+            font-size: 14px;
+          }
+        }
+      }
+
+      span.attach {
+        padding: 20px 0px 20px 150px;
+        background-position: 80px 0px;
+        float: left;
+        background-image: image-url("file_att.png");
+        background-repeat: no-repeat;
+        font-size: 14px;
+        color: #8e8e8e;
+      }
+    }
+  }
+
+  div.design_p_ceiling_fixtures_form2 {
+    margin-bottom: 15px;
+    float: left;
+    margin-left: 45px;
+
+    .form_description.wishes {
+      margin-bottom: 15px;
+      margin-left: 10px;
+    }
+  }
+
+  .design_p_ceiling_fixtures-caution2 {
+    margin-left: 70px;
+    width: 450px;
+  }
+
+  div.design_p_ceiling_fixtures_submiting {
+    float: left;
+    margin: 10px 25px 15px 55px;
+  }
+}

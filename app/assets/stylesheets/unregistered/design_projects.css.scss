@@ -1,0 +1,105 @@
+@import "settings";
+
+body.unregistered {
+
+  div.design_project { background-image: image-url("design_project_logo_big.jpg"); }
+
+  div.design_project_all {
+    width: 818px;
+
+    div.headers {
+      margin: 7px 0px 0px 215px;
+      span.first {
+        padding-right: 230px;
+      }
+    }
+
+    ul.concept {
+      width: 510px;
+      padding: 60px 12px 80px 12px;
+      li {
+        margin: 0px 30px 10px 40px;
+        width: 185px;
+        min-height: 298px;
+        span.hover {
+          width: 184px;
+          height: 185px;
+        }
+      }
+    }
+
+    ul.working_documents {
+      padding: 60px 20px 0px 45px;
+      width: 219px;
+      li {
+        width: 185px;
+        min-height: 298px;
+      }
+    }
+
+    ul li {
+      span.heading {
+        width: 185px;
+      }
+
+      span.black_opacity {
+        width: 184px;
+        height: 185px;
+      }
+    }
+  }
+
+  div.copyright_block {
+    width: 818px;
+    height: 70px;
+    div.copyright {
+      width: 447px;
+      height: 54px;
+      background-image: image-url("avtor.png");
+      &:hover { background-image: image-url("avtor_h.png"); }
+    }
+  }
+
+
+
+  div.design_p-workin-docs_form1 {
+    width: 600px;
+    margin-bottom: 25px;
+
+    div.file_attaching {
+      width: 595px;
+      span.caution {
+        padding-left: 125px;
+      }
+      span.attach {
+        padding: 30px 0px 0px 200px;
+        margin-top: 0px;
+      }
+    }
+  }
+
+  .design_p-workin-docs_form2 {
+    margin-bottom: 25px;
+  }
+
+  div.msg_caution span.design_p-workin-docs {
+    padding: 15px 0px 10px 115px;
+  }
+
+  .design_p-workin-docs-caution2 {
+    margin-left: 90px;
+  }
+
+  div.design_p-workin-docs {
+    background-image: image-url("design_project_logo_big.jpg");
+  }
+
+  div.design_p-workin-docs_submiting {
+    height: 50px;
+    width: 550px;
+    margin-left: 160px;
+    padding: 20px 0px 40px 0px;
+    clear: both;
+    overflow: hidden;
+  }
+}

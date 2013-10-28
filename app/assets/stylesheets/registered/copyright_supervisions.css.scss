@@ -1,0 +1,36 @@
+@import "settings";
+
+body.registered {
+  div.copyright {
+    background-image: image-url("design_project_logo.jpg") ;
+  }
+
+  div.form_copyright {
+    width: 500px;
+    div.form_description {
+      background-repeat: no-repeat;
+      height: 25px;
+    }
+    span {
+      padding: 40px 0px 0px 190px;
+      background-position: 115px 10px;
+    }
+  }
+
+  div.copyright_text {
+    padding-left: 35px;
+    width: 590px;
+    height: auto;
+  }
+  div.copyright_text:nth-child(2) { margin-bottom: 25px; }
+
+  span.copyright_ques {
+    ul.select {
+      padding: 0px;
+      padding-right: 110px;
+    }
+  }
+  div.copyright_ques_submiting {
+    margin-left: 70px;
+  }
+}

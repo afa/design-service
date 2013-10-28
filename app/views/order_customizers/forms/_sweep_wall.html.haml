@@ -2,13 +2,13 @@
   = simple_form_for selected_form, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
     = f.input_field :typename, as: :hidden
     .design_p_sweep_wall_form1.border_x1.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._1
+      .form_description.input_data
       .file_attaching.border_x5.rounded-corners_l3.multiattach
         .attach_place_for_box
 
-      .number_second
-      .form_description_second
+      .number._2
+      .form_description.job
       %span.text
         Наименование помещения:#{ f.input_field :room_name, class: 'textlines_default textline_l8' }
       .interior
@@ -29,8 +29,8 @@
           %li.long
             = f.input :natural_stone, as: :boolean, label: 'Натуральный камень', wrapper: false
     .design_p_sweep_wall_form2.border_x3.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._3
+      .form_description.wishes
       = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
     %span.design_p_sweep_wall-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
     = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p_sweep_wall_submiting'}

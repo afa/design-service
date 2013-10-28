@@ -1,0 +1,67 @@
+@import "settings";
+
+body.registered {
+  div.design_p_floor_plans {
+    background-image: image-url("design_project_logo.jpg");
+    width: 490px;
+  }
+
+  div.design_p_floor_plans_form1 {
+    width: 550px;
+    padding: 30px 0px 30px 30px;
+    margin-left: 25px;
+
+    div.file_attaching {
+      width: 485px;
+
+      span.caution {
+        width: 430px;
+        padding: 15px 0px 0px 30px;
+        ul {
+          padding: 0px;
+          li {
+            font-size: 14px;
+          }
+        }
+      }
+
+      span.attach {
+        padding: 20px 0px 20px 150px;
+        background-position: 80px 0px;
+        background-image: image-url("file_att.png");
+        background-repeat: no-repeat;
+        font-size: 14px;
+        color: #8e8e8e;
+      }
+    }
+
+    div.what_materials {
+      width: 480px;
+      padding-left: 60px;
+    }
+
+    div.room_blocks {
+      width: 265px;
+    }
+  }
+
+  div.design_p_floor_plans_form2 {
+    margin-bottom: 15px;
+    float: left;
+    margin-left: 45px;
+    .form_description.wishes {
+      margin-bottom: 15px;
+      margin-left: 10px;
+    }
+  }
+
+  .design_p_floor_plans-caution2 {
+    margin-left: 70px;
+    width: 450px;
+  }
+
+  div.design_p_floor_plans_submiting {
+    float: left;
+    margin: 10px 25px 15px 55px;
+  }
+}

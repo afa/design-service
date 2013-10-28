@@ -1,9 +1,15 @@
-.calcContainer{:data => {:order => order_id } }
-  .calcCaption
-  .calc
-    .count
-  .hint
-    %p
-      Ваш заказ обрабатывается. Ждите $time.
-      %br/
-      Получить уведомление на e-mail.
+/ .calcContainer{:data => {:order => order_id } }
+/   .calcCaption
+/   .calc
+/     .count
+/   .hint
+/     %p
+/       Ваш заказ обрабатывается. Ждите $time.
+/       %br/
+/       Получить уведомление на e-mail.
+
+.calculator.border_x5.rounded-corners_l2.shadow_x2
+  .form_description.order_price
+  %span
+    <input name="" type="text" class="total">
+  %span.count

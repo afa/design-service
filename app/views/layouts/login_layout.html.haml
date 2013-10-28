@@ -4,9 +4,6 @@
     %title Дизайн сервис.
     = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag "unregistered/application", :media => "all"
-    = stylesheet_link_tag "#{params[:controller]}.css" if Rails.application.assets.find_asset("#{params[:controller]}.css")
-    = stylesheet_link_tag "common/#{params[:controller]}.css" if Rails.application.assets.find_asset("common/#{params[:controller]}.css")
-    = stylesheet_link_tag "unregistered/#{params[:controller]}.css" if Rails.application.assets.find_asset("unregistered/#{params[:controller]}.css")
     = javascript_include_tag "application"
     = javascript_include_tag "#{params[:controller]}.js" if Rails.application.assets.find_asset("#{params[:controller]}.js")
     = csrf_meta_tags
@@ -18,8 +15,7 @@
   - else 
     - iget = params[:controller]                 
  
-  %body.unregistered{:id => "#{iget}"}
-
+  %body.unregistered{:id => "#{iget}", :class => ["#{params[:controller]}_controller", "#{params[:action]}_action"]}
     %noindex
       -# #black_content
       -# = render 'layouts/unregistered/login_popup'

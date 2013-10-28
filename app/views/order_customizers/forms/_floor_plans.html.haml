@@ -2,13 +2,13 @@
   = simple_nested_form_for selected_form, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
     = f.input_field :typename, as: :hidden
     .design_p_floor_plans_form1.border_x1.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._1
+      .form_description.input_data
       .file_attaching.border_x5.rounded-corners_l3.multiattach
         .attach_place_for_box
 
-      .number_second
-      .form_description_second
+      .number._2
+      .form_description.job
       .interior
         Какой стиль интерьера Вы предпочитаете?
         = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
@@ -28,8 +28,8 @@
           %span.add_room Добавить помещение
 
     .design_p_floor_plans_form2.border_x3.rounded-corners_l2.shadow_x1
-      .number
-      .form_description
+      .number._3
+      .form_description.wishes
       = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
 
     %span.design_p_floor_plans-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!

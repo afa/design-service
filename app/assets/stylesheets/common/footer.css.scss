@@ -1,0 +1,44 @@
+div.footer {
+  float: left;
+  position: absolute;
+  width: 100%;
+  background-image: image-url("footer_opacity.png");
+  background-repeat: repeat;
+  clear: both;
+
+  a, a:link, a:visited, a:active {
+    color: #963577;
+    text-decoration: underline;
+  }
+  a:hover { text-decoration:none; }
+
+  div.footer_elements {
+    width: 980px;
+    margin: 0 auto;
+    height: 90px;
+    background-image: image-url("coconut_leaves_footer.png");
+    background-repeat: no-repeat;
+    background-position: center -110px;
+    color: #963577;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 22px;
+    div.contact_with_us {
+      width: 250px;
+      float: left;
+      text-align: left;
+      margin-top: 15px;
+    }
+    div.rights {
+      float: left;
+      text-align: left;
+      margin: 55px 0px 0px 120px;
+    }
+    div.partners {
+      text-align: right;
+      float: right;
+      margin-top: 15px;
+    }
+  }
+}
+

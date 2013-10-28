@@ -1,0 +1,233 @@
+@import "settings";
+
+body.unregistered {
+  /*  LOGIN/ REGISTER */
+  .messages .alert {
+    padding-top: 0.5cm;
+    padding-bottom: 0.5cm;
+    background-color: #ea7d7d;
+  }
+
+  .login_panel {
+    width: 184px;
+    height: 131px;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    padding: 19px 0px 9px 0px;
+
+    div.login {
+      width: 34px;
+      position: relative;
+      background-image: image-url("lock_enter.png");
+      background-position: top;
+      background-repeat: no-repeat;
+      padding-top: 80px;
+      color: #92716a;
+      font-size: 14px;
+      text-align: center;
+      float: left;
+      cursor: pointer;
+      &:hover { text-decoration:underline; }
+    }
+
+    div.registration {
+      width: 128px;
+      height: 80px;
+      position: relative;
+      float: left;
+      background-image: image-url("key.png");
+      background-position: 0px 15px;
+      background-repeat: no-repeat;
+      margin-left: 21px;
+      font-size: 14px;
+      color: #656565;
+      cursor: pointer;
+      &:hover { text-decoration:underline; }
+    }
+  }
+
+  /*  REGISTER CLIENT BLOCK*/
+  #register {
+    width: 477px;
+    height: 394px;
+    background-color: #FFFFFF;
+    margin: 0px auto;
+    position: relative;
+    margin-top: 130px;
+    font-family: Tahoma;
+    display: none;
+
+    div.head_register {
+      height: 29px;
+      width: 220px;
+      background-image: image-url("register_logo.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      padding: 0px;
+      float: left;
+      margin: 30px 0px 40px 30px;
+    }
+
+    div.head_none {
+      height: 29px;
+      width: 220px;
+      background-image: image-url("register_logo.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      padding: 0px;
+      float: left;
+      margin: 30px 0px 40px 30px;
+    }
+
+    div.goto_register {
+      height: 20px;
+      width: 80px;
+      background-image: image-url("enter_logo_small.png");
+      background-repeat: no-repeat;
+      padding: 0px;
+      float: left;
+      margin-top: 40px;
+      margin-left: 10px;
+      &:hover {
+        background-image: image-url("enter_logo_small_hover.png");
+        cursor: pointer;
+      }
+    }
+
+    div.info {
+      width: 120px;
+      float: left;
+      margin-left: 10px;
+      text-align: right;
+      padding-right: 10px;
+      margin-bottom: 30px;
+      font-size: 16px;
+      color: #4c4c4c;
+      clear: both;
+      span { color:#990000; }
+    }
+
+    div.text_fields {
+      float: left;
+      width: 287px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #acacac;
+      padding-top: 2px;
+      span.caution {
+        position: absolute;
+        width: 250px;
+        margin-top: 28px;
+        font-size: 12px;
+      }
+    }
+    div.control {
+      height: 30px;
+      float: left;
+      width: 477px;
+    }
+  }
+
+
+  /*  LOGIN CLIENT BLOCK*/
+  #login {
+    width: 412px;
+    height: 270px;
+    background-color: #FFFFFF;
+    margin: 0px auto;
+    position: relative;
+    margin-top: 200px;
+    font-family: Tahoma;
+    display: none;
+
+
+    div.head_register {
+      height: 29px;
+      width: 115px;
+      background-image: image-url("enter_logo.png");
+      background-repeat: no-repeat;
+      margin: 30px 0px 40px 30px;
+      float: left;
+    }
+
+    div.goto_register {
+      height: 29px;
+      width: 160px;
+      background-image: image-url("register_logo_small.png");
+      background-repeat: no-repeat;
+      padding: 0px;
+      float: left;
+      margin-top: 40px;
+      &:hover {
+        background-image: image-url("register_logo_small_hover.png");
+        cursor: pointer;
+      }
+    }
+
+    div.head_none {
+      height: 29px;
+      width: 160px;
+      background-image: image-url("register_logo_small.png");
+      background-repeat: no-repeat;
+      padding: 0px;
+      float: left;
+      margin-top: 40px;
+    }
+
+    div.info {
+      width: 165px;
+      float: left;
+      margin-left: 0px;
+      text-align: right;
+      padding-right: 4px;
+      margin-bottom: 25px;
+      font-size: 16px;
+      color: #4c4c4c;
+      clear: both;
+    }
+
+    div.text_fields {
+      float: left;
+      width: 200px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #acacac;
+      padding-top: 2px;
+    }
+
+    div.control {
+      height: 30px;
+      float: left;
+      width: 412px;
+      span {
+        font-size: 18px;
+        color: $plan_developments_color;
+        padding-left: 25px;
+        float: left;
+        a, a:link, a:visited, a:active {
+          color: $plan_developments_color;
+          text-decoration: underline;
+        }
+        a:hover { text-decoration:none; }
+      }
+    }
+  }
+
+  .submit_button {
+    float: right;
+    padding-right: 40px;
+  }
+
+  .login_button {
+    float: right;
+    padding-right: 40px;
+  }
+
+
+  /* PASSWORDS */
+  div#forgot_password {
+    margin-left: 185px;
+    margin-top: 45px;
+    div.form-inputs { margin-top:15px; }
+    div.form-actions { margin-top:45px; }
+  }
+}

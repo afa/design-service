@@ -1,904 +1,243 @@
-//= require chat
-//= require ../orders
-
-/* Menu fonts, table fonts, PostForm font */
-@font-face {
-    font-family: 'gardensc';
-    src: font-url('gardensc/gardensc_03_1-webfont.eot');
-    src: font-url('gardensc/gardensc_03_1-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('gardensc/gardensc_03_1-webfont.woff') format('woff'),
-         font-url('gardensc/gardensc_03_1-webfont.ttf') format('truetype');
-	src: local("gardensc"), font-url('gardensc/gardensc_03_1-webfont.ttf') format("truetype"); /* for Firefox 3, Safari */
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-/*Page captions */
-@font-face {
-    font-family: 'dejavu_sans';
-    src: font-url('dejavu_sans/dejavusanscondensed-webfont.eot');
-    src: font-url('dejavu_sans/dejavusanscondensed-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('dejavu_sans/dejavusanscondensed-webfont.woff') format('woff'),
-         font-url('dejavu_sans/dejavusanscondensed-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* lol wtf*/
-@font-face {
-    font-family: 'minion_pro';
-    src: font-url('minion_pro/minion_pro-webfont.eot');
-    src: font-url('minion_pro/minion_pro-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('minion_pro/minion_pro-webfont.woff') format('woff'),
-         font-url('minion_pro/minion_pro-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* LayOut Config */
-body  {
-  font: 100% gardensc, Arial, Helvetica, sans-serif;
-  font-family: Tahoma;
-  background:image-url("fon-y.jpg") repeat;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  color: #000000;
-  font-size:16px;
-  font-size-adjust: 0.495;
-  overflow:visible;
-   -webkit-font-smoothing: antialiased;
-     font-smoothing: antialiased;
-}
-
-.twoColFixRtHdr #container {
-  width: 980px;
-  /* background:#dedede; */
-  margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
-  text-align: left; /* this overrides the text-align: center on the body element. */
-  padding:0px;
-  height:auto;
-}
-
-
-
-/*Main Container  TopMenu (aka specMenu) & thisPageContent */
-.twoColFixRtHdr #mainContent {
-  margin: 0 0 0 0;
-  padding: 0 0px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
-  clear:both;
-}
-
-
-/*  /////////////////////////////////////////NEW CSS//////////////////////////////////////////////// */
-/*  PAGE CONCEPT REG_MY_ORDERS.HTML */
-div._razrabotka_var{ float:left; width:540px; margin-left:45px; min-height:200px; position:relative; color:#4c4c4c; margin-bottom:50px; }
-div._razrabotka_var div.date{ width:128px; height:28px; float:right; border-top:none; border-right:none; position:absolute; right:-4px; top:-2px; text-align:center; padding-top:8px; color:#648040;  font-style:italic; font-size:20px}
-
-div._razrabotka_var div.name{ height:30px; width:380px; float:left; padding:15px 0px 0px 15px; font-size:14px; margin:0px;}
-div._razrabotka_var div.name span{color:#6c1407; font-size:14px; font-weight:bold; padding:0px 10px 3px 10px; border-bottom:1px solid #c8c8c8;  }
-
-div._razrabotka_var div.artists{ float:left; font-size:14px; padding:5px 0px 0px 15px; width:300px;}
-div._razrabotka_var div.artists ul{ color:#6c1407; font-size:12px;  float: right; width:200px; margin:0px; padding:0px; list-style:none; }
-div._razrabotka_var div.artists ul li{ border-bottom:1px solid #c8c8c8; padding:0px 10px 3px 10px;}
-
-div._razrabotka_var div.completion{ font-size:13px; position:absolute; right:0px; margin-top:45px; }
-div._razrabotka_var div.completion span.tit{ float:left; padding-top:5px;}
-div._razrabotka_var div.completion ul{ color:#6c1407; list-style:none; width:100px; float:right; padding:0px 10px 0px 10px; margin:0px;}
-div._razrabotka_var div.completion ul li:nth-child(1){ font-size:10px; padding:5px 0px 5px 5px; border-bottom:1px solid #c8c8c8; border-top:1px solid #c8c8c8;}
-div._razrabotka_var div.completion ul li:nth-child(2){ color:#4c4c4c; padding-left:5px;}
-div._razrabotka_var div.completion ul li.payid{ font-size:14px; font-weight:bold; font-style:italic;}
-
-div._razrabotka_var div.status{ height:30px; width:350px; float:left; padding:5px 0px 0px 15px; font-size:14px; margin:0px;}
-div._razrabotka_var div.status span{color:#6c1407; font-size:14px; font-weight:bold; padding:0px 10px 3px 10px; border-bottom:1px solid #c8c8c8; margin-left:20px;}
-
-div._razrabotka_var div.pay_now{ float:left;  font-size:14px; color:#03129e; font-weight:bold; margin-left:280px; padding-top:5px; height:15px;  width:250px;}
-div._razrabotka_var div.pay_now a,div._razrabotka_var div.pay_now a:link, div._razrabotka_var div.pay_now a:visited, div._razrabotka_var div.pay_now a:active{ text-decoration:underline; color:#03129e;}
-div._razrabotka_var div.pay_now a:hover{ text-decoration:none;}
-
-div._razrabotka_var div.msg{ width:180px; float: left; font-size:14px; color:#6c1407; margin-left:15px; margin-top:10px; background-image:image-url("msg_icon.jpg"); background-repeat:no-repeat; height:20px; padding-left:35px;}
-div._razrabotka_var div.msg span a,div.specialist_orders div.msg span a:visited{ text-decoration:underline; color:#6c1407;}
-div._razrabotka_var div.msg span a:hover{ text-decoration:none;}
-
-div._razrabotka_var div.completed{ float:left; width:310px;  padding-top:10px;}
-
-
-div._razrabotka_var div.documents{ height:30px; width:280px; float:left; padding:15px 0px 0px 15px; font-size:14px; margin:0px; }
-div._razrabotka_var div.documents ul{color:#085775; font-size:14px; font-weight:bold; padding:0px; margin:0px; list-style:none; float:right;}
-div._razrabotka_var div.documents ul li{ float:left; padding-left:10px;}
-div._razrabotka_var div.documents ul li a,div._razrabotka_var div.documents ul li a:link,div._razrabotka_var div.documents ul li a:visited, div._razrabotka_var div.documents ul li a:active{ text-decoration:underline; color:#085775;}
-div._razrabotka_var div.documents ul li a:hover{ text-decoration:none;}
-
-
-/*  PAGE CONCEPT REG_PERSONAL_ACCOUNT.HTML */
-ul.personal_account{ width:550px;  background-color:#dbdbdb; float:left; margin:0px 0px 0px 45px; padding:0px; list-style:none; font-size:18px}
-ul.personal_account li a{ float:left; padding:15px 15px 15px 15px; color:#6e6e6e; text-decoration: underline}
-ul.personal_account li.select a{ color:#450000;}
-ul.personal_account li a:hover{ text-decoration:none;}
-
-div.personal_account{ width:520px;  background-color:#cfe4b4; float:left;  margin:20px 0px 0px 45px;  padding:15px 15px 15px 15px; color:#a70505; }
-div.content_header{ float:left;  margin:20px 0px 0px 45px;  padding:15px 15px 0px 15px; color:#691818; font-weight:bold; font-size:14px; }
-table.deferred_services{ width:550px; margin:15px 0px 0px 45px; font-size:14px; float: left; border:none; border-collapse:collapse; color:#4c4c4c; position:relative;}
-table.deferred_services tr.heading td{ background-color:#e3e3e3; padding:5px 0px 5px 20px; font-weight:bold;}
-table.deferred_services tr td{ background-color:#eae9e9; padding:5px 0px 5px 20px;  border: 1px solid #949494; border-left:none; border-right:none;  }
-table.deferred_services tr.heading:hover td{ background-color:#e3e3e3;}
-table.deferred_services tr:hover td{ background-color:#cfe4b4;}
-table.deferred_services tr td:nth-child(1){ width:220px;}
-table.deferred_services tr td span.term{ text-decoration:underline; float: left;}
-table.deferred_services tr td span.term_info{ float: left; font-size:12px; margin-top:5px;}
-table.deferred_services tr td span.order{  position: relative; left:0px; width:150px; float:left; margin-left:120px; margin-top:15px; color:#0612a4;}
-table.deferred_services tr td span.order a{ color:#0612a4; text-decoration:underline;}
-table.deferred_services tr td span.order a:hover{ text-decoration:none;}
-
-table.history_recharge{ width:550px; margin:15px 0px 0px 45px; font-size:14px; float: left; border:none; border-collapse:collapse; color:#4c4c4c; position:relative;}
-table.history_recharge tr.heading td{ background-color:#e3e3e3; padding:5px 0px 5px 20px; font-weight:bold;}
-table.history_recharge tr.heading:hover td{ background-color:#e3e3e3;}
-table.history_recharge tr td{ background-color:#eae9e9; padding:5px 0px 5px 20px;  border: 1px solid #949494; border-left:none; border-right:none;  }
-table.history_recharge tr:hover td{ background-color:#cfe4b4;}
-table.history_recharge tr.green td{ color:#137702}
-
-
-/* PAGE CONCEPT REG_POSTVARPLAN.HTML */
-div.var_form1{ width:360px; height:355px;  margin-left:45px; margin-top:30px; padding:30px; line-height:45px; margin-bottom:25px; }
-div.var_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left;   width:86px; height:29px; }
-div.var_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height:29px; margin-left:15px; }
-
-div.var_form2{ width:450px; height:470px;  margin-left:85px; margin-top:15px; padding:30px; margin-bottom:25px; }
-div.var_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right; width:86px; height:29px;  }
-div.var_form2 div.form_description{ background-image:image-url("task.png"); width:196px; float:right; height:29px; margin-left:15px; }
-div.kithen_split{ width:170px; float:left;  height:72px; padding-top:15px; }
-div.kithen_split ul.answer{ width:250px;  list-style:none; padding:15px 0px 0px 60px; margin:0px; }
-div.kithen_split ul.answer li{ float:left;  margin-right:10px; }
-div.kithen_size{ width:280px; height:72px;  float:left; padding-top:15px;}
-div.kithen_size ul.answer{ width:160px;  list-style:none;   float: right; padding:0px; margin:0px; }
-div.kithen_size ul.answer li{ float:left;  margin-right:10px; padding-bottom:10px; }
-div.changing_rooms{width:170px; float:left;  padding-top:15px; height:67px; }
-div.changing_rooms ul.answer{ width:250px;  list-style:none; padding:10px 0px 0px 60px; margin:0px;}
-div.changing_rooms ul.answer li{ float:left;  margin-right:10px; }
-div.number_of_rooms{width:260px; height:62px;  float:left; padding-left:20px; padding-top:20px; }
-div.cabinets{ width:360px;   float:left;  padding:20px 0px 20px 90px;}
-div.cabinets ul.answer{ width:150px;  list-style:none;  margin:0px;  float: right; padding-right:13px; }
-div.cabinets ul.answer li{ float:left;  margin-right:10px; }
-div.guests{  float:left; width:460px;}
-div.guests ul.answer{  list-style:none;  margin:0px;  float: right;  padding:0px; }
-div.guests ul.answer li{ float:left;  margin-right:10px; }
-div.sleeping_places{ width:360px;   float:left;  padding:20px 0px 0px 90px;}
-div.washing_machin{ width:360px;   float:left;  padding:20px 0px 20px 70px; }
-div.washing_machin ul.answer{ width:120px;  list-style:none;  margin:0px;  float: right; padding-right:25px; }
-div.washing_machin ul.answer li{ float:left;  margin-right:10px; }
-div.options{ width:420px;   float:left;   }
-div.options ul.answer{ list-style:none;  margin:0px;  padding-left:155px; padding-top:15px; }
-div.options ul.answer li{ float:left;  margin-right:10px; }
-
-div.var_form2 div.break_line{ float:left; padding-bottom:2px; padding-top:2px; width:450px; border-bottom: 1px #e9da95 dashed; height:2px;}
-
-div.var_form3{ width:470px; height:160px;  margin-left:45px; margin-top:15px; padding:30px; margin-bottom:25px;  }
-div.var_form3 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px;}
-div.var_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-.var_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#eae9e9; height:30px; }
-
-
-div.var_form4{ width:505px; margin-left:45px; margin-top:15px; padding:20px; margin-bottom:25px; float:left; overflow: auto; }
-div.attach_box{ padding: 20px 10px 10px 2px; position:absolute;}
-div.attach_box.plan_development div.number{ background-image:image-url("4_number_yellow_small.png"); float:left; width:54px; height:30px; float:left; margin:0px; padding:0px; background-repeat:no-repeat;}
-div.attach_box.plan_development div.form_description{ background-image:image-url("file_attach_refactoring_small.png"); width:449px; float:left; height:30px; background-repeat:no-repeat; margin:0px; padding:0px;}
-
-div.postvar_plan_submiting{  height:50px; width:550px; margin-left:60px; padding:20px 0px 20px 0px;}
-.submit_all_forms{ float:left; margin-right:25px;}
-
-div.calculator{ width:433px; height:126px; background-color:#ebebeb; margin-left:80px; margin-bottom:25px; clear:both;}
-div.calculator div.form_description{ background-image:image-url("full_amount.png"); width:300px; float:left; margin-left:70px; margin-top:15px; padding:0px;  width:370px; height:29px; background-repeat:no-repeat;}
-div.calculator span{ width:200px; margin-left:60px; float:left; margin-top:6px; }
-.total{ width:300px; height:25px; text-align:center;}
-div.calculator span.count{float: left; color:#666; padding-left:220px; text-decoration:underline; }
-
-
-/* PAGE CONCEPT REG_ENGINEERING_SYSTEMS.HTML */
-div.engineering_systems_form1{ width:500px;   margin-left:30px; margin-top:20px; padding:30px; line-height:45px; margin-bottom:25px; float:left;}
-div.engineering_systems_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; width:86px; height:29px; }
-div.engineering_systems_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height:29px; margin-left:10px; }
-div.engineering_systems_form1 div.head_part{ background-image:image-url("engineering_systems_form1-small.png"); width:430px; height:28px;  clear:both; margin:40px 0px 0px 35px; }
-div.engineering_systems_form1  div.file_attaching{ width:495px; margin-top:15px; float:left; font-size:14px; }
-div.engineering_systems_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px;  float:left;}
-
-div.engineering_systems_form1  div.file_attaching span.attach{ padding:30px 0px 0px 140px; margin-top:0px;  color: #8e8e8e; float:left; background-image:image-url("file_att.png"); background-repeat: no-repeat; background-position: 80px 15px;}
-
-div.engineering_systems_form2{ width:450px; min-height:200px;  margin-left:90px; margin-top:15px; padding:30px; margin-bottom:25px; float:left; }
-div.engineering_systems_form2 div.number{ background-image:image-url("2_number_green.png"); margin-left:115px; float:right; width:86px; height:29px; }
-div.engineering_systems_form2 div.form_description{ background-image:image-url("task.png"); width:196px; float:right; height:29px; margin-left:10px; }
-div.engineering_systems_form2 ul{ list-style:none; }
-div.engineering_systems_form2 ul li{ margin-bottom:15px;}
-div.engineering_systems_form2 ul li span{ width:25px;  height:30px; float:left; padding-right:15px;  }
-div.engineering_systems_form2 ul li.caution{ font-size:12px; color:#e51600; display:none;}
-div.engineering_systems_form2 ul li.caution span{ background-image:image-url("icon_red.png"); background-repeat: no-repeat; background-position:5px;}
-
-
-div.engineering_systems_form3{ width:470px; height:160px;  margin-left:35px; margin-top:15px; padding:30px; margin-bottom:25px; float:left;}
-div.engineering_systems_form3 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px;}
-div.engineering_systems_form3 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-.engineering_systems_form3_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#eae9e9; height:30px; }
-
-div.engineering_systems_submiting{  height:50px; width:550px; margin-left:60px; padding:20px 0px 20px 0px; float:left;}
-
-ol.eng_systems{ float:left; list-style-type:decimal; }
-ol.eng_systems li{ margin-bottom:10px; width:450px;}
-
-
-/*  PAGE CONCEPT REG_DESIGN_PROJECT.HTML */
-span.design_project{ color:#c67700; }
-div.design_project{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
-div.msg_caution span.design_project{color:#f89f65;   padding:15px 0px 10px 115px; float:left; }
-
-div.design_project_all{ background-color:#e8edf1; min-height:900px; height:auto;  width:627px; clear: left; position:relative; overflow:auto; margin-top:5px;}
-
-div.design_project_all div.headers{ position:absolute; }
-div.design_project_all div.headers span{ float:left; width:150px; text-align:center; font-weight:bold; font-size:18px; padding-top:5px;}
-div.design_project_all div.headers span.first{ padding-right:150px; padding-top:13px; color:#b5d48c; padding-left:150px;}
-div.design_project_all div.headers span.second{color:#a3bfdd}
-
-div.design_project_all ul.concept{ margin:0px;  list-style:none; width:400px; height:auto;   clear:both; overflow:auto; float:left; padding:60px 12px 0px 12px; font-size:14px;  background-color:#e4efd5}
-
-div.design_project_all ul.concept li{ margin:0px 30px 10px 20px;   width:150px; height:280px; position:static; float:left; }
-div.design_project_all ul.concept li img{ width:150px; height:150px;}
-div.design_project_all ul.concept li span.hover{ position:absolute;  width:150px; height:150px; background-image:image-url("hover_black.png"); background-repeat:repeat; display:none;}
-
-div.copyright_block div.copyright{ position:relative; float:left; width:340px; height:41px;  background-image:image-url("avtor-small.png"); background-repeat:no-repeat;  margin-left:160px; margin-top:10px;}
-
-div.copyright_block div.copyright:hover{  background-image:image-url("avtor_h-small.png"); }
-
-div.copyright_block{ width:627px;  background-color:#D3DCDD; height:60px; clear:both }
-
-div.design_project_all ul.working_documents{ margin:0px;  list-style:none; height:auto; background-color:#e8edf1; overflow:auto;
-padding:60px 12px 20px 25px; width:164px;}
-div.design_project_all ul.working_documents li{  width:150px; height:280px; position:static; float:left;  margin-bottom:10px; }
-div.design_project_all ul.working_documents li img{ width:150px; height:150px;}
-
-div.design_project_all ul li span.heading{ text-align:center; width:auto; color:#383a3e; font-size:14px; font-weight:bold; width:150px; float:left; }
-div.design_project_all ul li span.text{ font-size:13px; color:#82848a; float:left; padding-top:15px; height:38px;}
-div.design_project_all ul li span.order{ background-image:image-url("order.png"); background-repeat:no-repeat; width:101px; height:26px; float: right; padding-top:5px;}
-div.design_project_all ul li span.order:hover{ cursor:pointer; background-image:image-url("order_hover.png");}
-
-div.design_project_all ul li span.black_opacity{ display: none; position:absolute; background-image:image-url("hover_black.png"); width:150px; height:150px;}
-div.design_project_all ul li span.black_opacity_on{ display: block; cursor:pointer;}
-
-.heading_h{ text-decoration:underline;}
-.heading a, .heading a:active, .heading:link{ color:#383a3e; text-decoration:none;}
-.heading a:hover{ text-decoration:underline;}
-
-
-/*  PAGE CONCEPT COPYRIGHT_SUPERVISION.HTML */
-span.copyright{ color:#1d71cc; }
-div.copyright{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
-div.msg_caution span.copyright{color:#3d6804;   padding:15px 0px 10px 115px; float:left; }
-
-div.form_copyright{ width:500px; height:140px;  margin-left:45px; padding:20px;  margin-bottom:25px; clear:left;}
-div.form_copyright div.form_description{ background-image:image-url("file_attach_2.png"); background-repeat:no-repeat; width:585px; float:left; height:25px; }
-div.form_copyright span{ font-size:14px; color:#8e8e8e; padding:40px 0px 0px 190px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:115px 10px; }
-
-div.copyright_text{ padding-left:35px; margin-top:20px;   width:590px;  position:relative; float:left;     position: relative; line-height:25px; height:auto; }
-div.copyright_text:nth-child(2){ margin-bottom:25px;}
-span.copyright_ques ul.answer{list-style:none;  margin:0px;  padding-left:10px; float: right;}
-span.copyright_ques ul.answer li{ float: none;   }
-
-span.copyright_ques ul.select{list-style:none;  margin:0px;   float: right; padding:0px; padding-right:110px;}
-span.copyright_ques ul.select li{ float: none;  margin-right:10px; }
-
-div.copyright_ques_submiting{  height:80px; width:550px; padding:40px 0px 60px 0px; margin-left:70px;  }
-
-
-/*  DESIGN-PROJECT PAGES -----PAGE CONCEPT REG_DESIGN_PROJECTS_XXXX 8 PAGES------------------------------------------.HTML */
-span.design_p-workin-docs{ color:#c67700; }
-div.design_p-workin-docs{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px; margin-top:0px;  }
-div.msg_caution span.design_p-workin-docs{color:#3d6804;    float:left; }
-
-div.design_p-workin-docs_form1{ width:480px;  margin-left:45px;  padding:30px; line-height:45px; margin-bottom:10px;  overflow:auto; clear:both; float:left; }
-div.design_p-workin-docs_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; height: 29px; width: 86px; margin-right:10px; }
-div.design_p-workin-docs_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
-
-div.design_p-workin-docs_form1  div.file_attaching{ width:485px; margin-top:10px; float:left;}
-div.design_p-workin-docs_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; margin-top: -30px;}
-div.design_p-workin-docs_form1  div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:0px 0px 0px 140px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:80px 0px; margin-top:10px;}
-
-div.design_p-workin-docs_form1 div.number_second{ background-image:image-url("2_number_green.png"); float:left; width:86px; height:29px;  background-repeat:no-repeat;  margin-right:10px; margin-left:0px; padding-bottom:20px; margin-top:20px;}
-div.design_p-workin-docs_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
-
-div.design_p-workin-docs_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p-workin-docs_form1 div.interior{ float:left;}
-div.design_p-workin-docs_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p-workin-docs_form1 div.interior ul.answer li{ float:left;  margin-right:10px;  }
-
-div.design_p-workin-docs_form1 div.present_results{ float:left;}
-div.design_p-workin-docs_form1 div.present_results ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p-workin-docs_form1 div.present_results ul.answer li{ float:left;  margin-right:10px;  }
-
-div.design_p-workin-docs_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:15px; float:left; margin-left:45px;  }
-div.design_p-workin-docs_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px; }
-div.design_p-workin-docs_form2 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-div.design_p-workin-docs_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
-
-
-
-.design_p-workin-docs-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:70px; margin-bottom:15px; font-weight:bold; font-size:14px; width:450px;}
-div.design_p-workin-docs_submiting{ float: left; margin:10px 25px 15px 55px;}
-
-
-/* PAGE CONCEPT REG_DESIGN-PROJECT_COLOR_SCHEME.HTML */
-div.msg_caution span.design_p-workin-docs{color:#3d6804;   padding:0px 0px 5px 40px; float:left; font-size:18px; }
-div.msg_caution span.design_p_color_scheme{color:#3d6804;   padding:0px 0px 5px 40px; float:left; }
-
-div.design_p_color_scheme_form1{ width:490px;  margin-left:45px;  padding:30px; line-height:45px; margin-bottom:25px;  overflow:auto; clear:both; float:left; }
-div.design_p_color_scheme_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; height: 29px; width: 86px; margin-right:10px; }
-div.design_p_color_scheme_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
-
-div.design_p_color_scheme_form1   div.file_attaching{ width:485px; min-height:150px; margin-top:10px; float:left;}
-div.design_p_color_scheme_form1   div.file_attaching span.caution{ color:#c10000; font-size:17px; padding-left:70px; height:30px; margin-top: -30px;}
-div.design_p_color_scheme_form1   div.file_attaching span.attach{ font-size:14px; color:#8e8e8e; padding:0px 0px 0px 140px; float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; height:67px; background-position:80px 0px; margin-top:10px;}
-
-
-div.design_p_color_scheme_form1 div.number_second{ background-image:image-url("2_number_green.png"); float:left; width:86px; height:29px;  background-repeat:no-repeat;  margin-right:10px; margin-left:0px; padding-bottom:20px; margin-top:20px;}
-div.design_p_color_scheme_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
-
-div.design_p_color_scheme_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p_color_scheme_form1 div.interior{ float:left;}
-div.design_p_color_scheme_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p_color_scheme_form1 div.interior ul.answer li{ float:left;  margin-right:10px;  }
-
-div.design_p_color_scheme_form1 div.range_and_tone{ float:left;}
-div.design_p_color_scheme_form1 div.range_and_tone ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p_color_scheme_form1 div.range_and_tone ul.answer li{ float:left;  margin-right:10px; width:240px; height:30px;}
-
-div.design_p_color_scheme_form1 div.present_results{ float:left;}
-div.design_p_color_scheme_form1 div.present_results ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p_color_scheme_form1 div.present_results ul.answer li{ float:left;  margin-right:10px;  }
-
-div.design_p_color_scheme_form1 div.color_keyboard_block{ float:left; padding-top:10px;}
-div.design_p_color_scheme_form1 div.color_keyboard_block span{  text-align:center; width:500px; height:30px; float:left; }
-
-div.design_p_color_scheme_form1 div.color_keyboard_block div.color_keyboard{ float:left; margin-left:105px;}
-div.color_keyboard ul.wide{ float:left; height:143px; list-style:none; border:1px solid #000000; background-color:#99FF00; width:auto; padding:0px;}
-div.color_keyboard ul.wide li{ width:25px; height:143px; background-color:#00CC99; float:left; padding:0px; margin:0px; display:inline-block; border:1px solid #000000; background-image:image-url("key_board_default_long.png"); background-position:-6px -6px;}
-div.color_keyboard ul.wide li:hover{  background-image:image-url("key_board_hover_long.png"); background-position:-4px -4px;}
-div.color_keyboard ul.wide li.selected{  background-image:image-url("key_board_selected_long.png"); background-position:-4px -4px; cursor:default}
-
-div.color_keyboard ul.short{ float:left; height:93px; list-style:none;  width:auto; padding:0px; position: absolute; z-index:5; margin-left:16px;}
-div.color_keyboard ul.short li{ width:19px; height:93px; background-color: #99CCCC; float:left; padding:0px; margin:0px; display:inline-block; border:1px solid #000000; background-image:image-url("key_board_default_short.png"); background-position:-6px -6px; }
-div.color_keyboard ul.short li:hover{ background-image:image-url("key_board_hover_short.png"); background-position:-4px -4px; }
-div.color_keyboard ul.short li.selected{background-image:image-url("key_board_selected_short.png"); background-position:-4px -4px; cursor:default}
-
-div.color_keyboard ul.short li.dis_short{ margin-left:8px;}
-div.color_keyboard ul.short li.dis_long{ margin-left:31px;}
-
-div.color_keyboard ul li:hover{ cursor:pointer;}
-div.color_keyboard ul.wide li:nth-child(1){ background-color:#fdabb2;}
-div.color_keyboard ul.wide li:nth-child(2){ background-color:#faa486;}
-div.color_keyboard ul.wide li:nth-child(3){ background-color:#ffbf64;}
-div.color_keyboard ul.wide li:nth-child(4){ background-color:#f0d167;}
-div.color_keyboard ul.wide li:nth-child(5){ background-color:#b3e360;}
-div.color_keyboard ul.wide li:nth-child(6){ background-color:#87ffb4;}
-div.color_keyboard ul.wide li:nth-child(7){ background-color:#a4efff;}
-div.color_keyboard ul.wide li:nth-child(8){ background-color:#719bfc;}
-div.color_keyboard ul.wide li:nth-child(9){ background-color:#928afa;}
-div.color_keyboard ul.wide li:nth-child(10){ background-color:#cf83ce;}
-
-div.color_keyboard ul.short li:nth-child(1){ background-color:#fb3737;}
-div.color_keyboard ul.short li:nth-child(2){ background-color:#fd9437;}
-div.color_keyboard ul.short li:nth-child(3){ background-color:#fdf037;}
-div.color_keyboard ul.short li:nth-child(4){ background-color:#42cd37;}
-div.color_keyboard ul.short li:nth-child(5){ background-color:#37f1fd;}
-div.color_keyboard ul.short li:nth-child(6){ background-color:#4037fd;}
-div.color_keyboard ul.short li:nth-child(7){ background-color:#9937fd;}
-
-
-div.design_p_color_scheme_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:15px; float:left; margin-left:45px;  }
-div.design_p_color_scheme_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px; }
-div.design_p_color_scheme_form2 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-div.design_p_color_scheme_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
-
-.design_p_color_scheme-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:70px; margin-bottom:15px; font-weight:bold; font-size:14px; width:450px;}
-div.design_p_color_scheme_submiting{  float: left; margin:10px 25px 15px 55px;}
-
-
-/*  PAGE CONCEPT DESIGN_PROJECTS_SWEEP_WALL.HTML */
-span.design_p_sweep_wall{ color:#c67700; float:left;}
-div.design_p_sweep_wall div.second_row{ color:#c67700; font-size:18px; clear:both; margin-left:70px; margin-top:40px;}
-div.design_p_sweep_wall{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px; margin-top:0px;}
-div.msg_caution span.design_p_sweep_wall{color:#3d6804;   padding:25px 0px 10px 115px; float:left; }
-
-div.design_p_sweep_wall_form1{ width:490px;  margin-left:45px;  padding:30px; line-height:45px; margin-bottom:25px;  overflow:auto; clear:both; float:left; }
-div.design_p_sweep_wall_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; height: 29px; width: 86px; margin-right:10px; }
-div.design_p_sweep_wall_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; height: 29px;  }
-
-
-div.design_p_sweep_wall_form1  div.file_attaching{ width:485px; min-height:150px; margin-top:10px; float:left; }
-div.design_p_sweep_wall_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px;  float:left; width:430px; padding:15px 0px 0px 30px;}
-div.design_p_sweep_wall_form1  div.file_attaching span.caution ul{ float: right; list-style:none; margin:0px; padding:0px; line-height:20px;  }
-div.design_p_sweep_wall_form1  div.file_attaching span.caution ul li{ float:none; font-size:14px}
-div.design_p_sweep_wall_form1  div.file_attaching span.attach{ padding:20px 0px 20px 150px; margin-top:0px; float:left; margin-top:0px;  height:45px; background-position:80px 0px;  float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; font-size:14px; color:#8e8e8e}
-
-div.design_p_sweep_wall_form1 div.number_second{ background-image:image-url("2_number_green.png"); float:left; width:86px; height:29px;  background-repeat:no-repeat;  margin-right:10px; margin-left:0px; padding-bottom:20px; margin-top:20px;}
-div.design_p_sweep_wall_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
-
-div.design_p_sweep_wall_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p_sweep_wall_form1 div.interior{ float:left;}
-div.design_p_sweep_wall_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p_sweep_wall_form1 div.interior ul.answer li{ float:left;  margin-right:10px;  }
-
-div.design_p_sweep_wall_form1 div.what_materials{ float:left; width:500px;}
-div.design_p_sweep_wall_form1 div.what_materials ul.answer{ list-style:none;  float: right;  width:400px; padding:0px 0px 10px 0px; margin-left:15px;}
-div.design_p_sweep_wall_form1 div.what_materials ul.answer li{ float:left;  margin-right:10px;  height:35px;  }
-div.design_p_sweep_wall_form1 div.what_materials ul.answer li.long{ width:250px; }
-
-
-
-div.design_p_sweep_wall_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:15px; float:left; margin-left:45px;  }
-div.design_p_sweep_wall_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px; }
-div.design_p_sweep_wall_form2 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-div.design_p_sweep_wall_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
-
-.design_p_sweep_wall-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:70px; margin-bottom:15px; font-weight:bold; font-size:14px; width:450px;}
-div.design_p_sweep_wall_submiting{  float: left; margin:10px 25px 15px 55px;}
-
-/*  PAGE CONCEPT REG_DESIGN_PROJECTS_FLOOR_PLANS.HTML */
-span.design_p_floor_plans{ color:#c67700; }
-div.design_p_floor_plans{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:490px; float:left; margin-bottom:5px; margin-top:0px; float:left; }
-div.msg_caution span.design_p_floor_plans{color:#3d6804;   padding:15px 0px 10px 115px; float:left; }
-
-div.design_p_floor_plans_form1{ width:550px;  margin-left:45px;  padding:30px 0px 30px 30px; line-height:45px; margin-bottom:25px;  overflow:auto; clear:both; margin-left:25px;}
-div.design_p_floor_plans_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; }
-div.design_p_floor_plans_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; }
-
-
-div.design_p_floor_plans_form1  div.file_attaching{ width:485px; min-height:150px; margin-top:10px; float:left; }
-div.design_p_floor_plans_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px;  float:left; width:430px; padding:15px 0px 0px 30px;}
-div.design_p_floor_plans_form1  div.file_attaching span.caution ul{ float: right; list-style:none; margin:0px; padding:0px; line-height:20px;  }
-div.design_p_floor_plans_form1  div.file_attaching span.caution ul li{ float:none; font-size:14px}
-div.design_p_floor_plans_form1  div.file_attaching span.attach{ padding:20px 0px 20px 150px; margin-top:0px; float:left; margin-top:0px;  height:45px; background-position:80px 0px;  float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; font-size:14px; color:#8e8e8e}
-
-div.design_p_floor_plans_form1 div.number_second{ background-image:image-url("2_number_green.png"); float:left; width:86px; height:29px;  background-repeat:no-repeat;  margin-right:10px; margin-left:0px; padding-bottom:20px; margin-top:20px;}
-div.design_p_floor_plans_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
-
-div.design_p_floor_plans_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p_floor_plans_form1 div.interior{ float:left;}
-div.design_p_floor_plans_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float:left;  }
-div.design_p_floor_plans_form1 div.interior ul.answer li{ float:left;  margin-right:10px;  }
-
-div.design_p_floor_plans_form1 div.depending{ float:left; width:370px; padding-left:110px}
-div.design_p_floor_plans_form1 div.depending ul.answer{ list-style:none;  margin:0px;  padding-left:55px; float: right;  }
-div.design_p_floor_plans_form1 div.depending ul.answer li{ float:left;  margin-right:10px;  }
-
-div.design_p_floor_plans_form1 div.what_materials{ float:left; width:480px; padding-left:60px; float:left;}
-div.design_p_floor_plans_form1 div.what_materials span{ padding-left:35px; width:450px;}
-
-div.design_p_floor_plans_form1 div.room_blocks{ float:left; width:265px; min-height: 266px;  padding:0px;  }
-div.design_p_floor_plans_form1 div.room_blocks div.place{ float:left;}
-div.design_p_floor_plans_form1 div.room_blocks ul{ float:left; overflow:auto;  margin:5px 0px 0px 5px; list-style:none; padding:10px 15px 10px 25px; font-size:15px;}
-div.design_p_floor_plans_form1 div.room_blocks ul li{ float:none; line-height:18px; margin-bottom:10px; padding:0px;}
-div.design_p_floor_plans_form1 div.room_blocks ul li label{ width:180px; padding:0px; padding-left:30px; float:left; }
-
-
-div.design_p_floor_plans_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:15px; float:left; margin-left:45px;  }
-div.design_p_floor_plans_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px; }
-div.design_p_floor_plans_form2 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-div.design_p_floor_plans_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
-
-.design_p_floor_plans-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:70px; margin-bottom:15px; font-weight:bold; font-size:14px; width:450px;}
-div.design_p_floor_plans_submiting{  float: left; margin:10px 25px 15px 55px;}
-
-
-/*  PAGE CONCEPT DESIGN_PROJECTS_CEILING_FIXTURES.HTML */
-span.design_p_ceiling_fixtures{ color:#c67700; width:550px; float:left;}
-div.design_p_ceiling_fixtures{ background-image:image-url("design_project_logo.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px; margin-top:0px;  }
-div.msg_caution span.design_p_ceiling_fixtures{color:#3d6804;   padding:15px 0px 10px 115px; float:left; }
-
-div.design_p_ceiling_fixtures_form1{ width:500px; float:left;  margin-left:30px;  padding:30px; line-height:45px; margin-bottom:25px;  overflow:auto; clear:both; }
-div.design_p_ceiling_fixtures_form1 div.number{ background-image:image-url("1_number_orrange.png"); float:left; }
-div.design_p_ceiling_fixtures_form1 div.form_description{ background-image:image-url("form_input_data.png"); width:250px; float:left; }
-
-
-div.design_p_ceiling_fixtures_form1  div.file_attaching{ width:485px; min-height:150px; margin-top:10px; float:left; }
-div.design_p_ceiling_fixtures_form1  div.file_attaching span.caution{ color:#c10000; font-size:17px;  float:left; width:430px; padding:15px 0px 0px 30px;}
-div.design_p_ceiling_fixtures_form1  div.file_attaching span.caution ul{ float: right; list-style:none; margin:0px; padding:0px; line-height:20px;  }
-div.design_p_ceiling_fixtures_form1  div.file_attaching span.caution ul li{ float:none; font-size:14px}
-div.design_p_ceiling_fixtures_form1  div.file_attaching span.attach{ padding:20px 0px 20px 150px; margin-top:0px; float:left; margin-top:0px;  height:45px; background-position:80px 0px;  float:left; background-image:image-url("file_att.png"); background-repeat:no-repeat; font-size:14px; color:#8e8e8e}
-
-div.design_p_ceiling_fixtures_form1 div.number_second{ background-image:image-url("2_number_green.png"); float:left; width:86px; height:29px;  background-repeat:no-repeat;  margin-right:10px; margin-left:0px; padding-bottom:20px; margin-top:20px;}
-div.design_p_ceiling_fixtures_form1 div.form_description_second{ background-image:image-url("task.png"); width:250px; float:left; height:29px;  background-repeat:no-repeat;  padding-bottom:20px; margin-top:20px; position:relative; }
-
-div.design_p_ceiling_fixtures_form1 span.text{ clear:both; position: relative;  float: left;}
-div.design_p_ceiling_fixtures_form1 div.interior{ float:left;}
-div.design_p_ceiling_fixtures_form1 div.interior ul.answer{ list-style:none;  margin:0px;  padding-right:60px; float: right; }
-div.design_p_ceiling_fixtures_form1 div.interior ul.answer li{ float: none; margin:0px; padding:0px; height:30px;}
-
-
-div.design_p_ceiling_fixtures_form2{ width:470px; height:160px;  margin-left:115px; margin-top:15px; padding:30px; margin-bottom:15px; float:left; margin-left:45px;  }
-div.design_p_ceiling_fixtures_form2 div.number{ background-image:image-url("3_number_blue.png"); float:left; width:86px; height:29px; }
-div.design_p_ceiling_fixtures_form2 div.form_description{ background-image:image-url("comments.png"); width:370px; float:left; height:29px; margin-bottom:15px; margin-left:10px; }
-div.design_p_ceiling_fixtures_form2_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #99bbe1; height:20px; font-size:16px; background-color:#f6f6f6; height:30px; }
-
-.design_p_ceiling_fixtures-caution2{ color:#e23a3a; text-align:center; float:left; margin-left:70px; margin-bottom:15px; font-weight:bold; font-size:14px; width:450px;}
-div.design_p_ceiling_fixtures_submiting{  float: left; margin:10px 25px 15px 55px;}
-
-/*  PAGE CONCEPT REG_PERSONAL_ACCOUNT_SPECIALIST.HTML */
-
-
-div.page_contener_specialist ul.personal_account{ width:550px;  background-color:#dbdbdb; float:left; margin:0px 0px 0px 20px; padding:0px; list-style:none; font-size:18px}
-div.page_contener_specialist ul.personal_account li a{ float:left; padding:15px 15px 15px 15px; color:#6e6e6e; text-decoration: underline}
-div.page_contener_specialist ul.personal_account li.select a{ color:#450000;}
-div.page_contener_specialist ul.personal_account li a:hover{ text-decoration:none;}
-
-div.page_contener_specialist div.personal_account{ width:520px;  background-color:#cfe4b4; float:left;  margin:20px 0px 0px 20px;  padding:15px 15px 15px 15px; color:#a70505; }
-div.page_contener_specialist div.content_header{ float:left;  margin:20px 0px 0px 10px;  padding:15px 15px 0px 15px; color:#691818; font-weight:bold; font-size:14px; }
-div.page_contener_specialist table.deferred_services{ width:550px; margin:15px 0px 0px 20px; font-size:14px; float: left; border:none; border-collapse:collapse; color:#4c4c4c; position:relative;}
-div.page_contener_specialist table.deferred_services tr.heading td{ background-color:#e3e3e3; padding:5px 0px 5px 20px; font-weight:bold;}
-div.page_contener_specialist table.deferred_services tr td{ background-color:#eae9e9; padding:5px 0px 5px 20px;  border: 1px solid #949494; border-left:none; border-right:none;  }
-div.page_contener_specialist table.deferred_services tr.heading:hover td{ background-color:#e3e3e3;}
-div.page_contener_specialist table.deferred_services tr:hover td{ background-color:#cfe4b4;}
-div.page_contener_specialist table.deferred_services tr td:nth-child(1){ width:220px;}
-div.page_contener_specialist table.deferred_services tr td span.term{ text-decoration:underline; float: left;}
-div.page_contener_specialist table.deferred_services tr td span.term_info{ float: left; font-size:12px; margin-top:5px;}
-div.page_contener_specialist table.deferred_services tr td span.order{  position: relative; left:0px; width:150px; float:left; margin-left:120px; margin-top:15px; color:#0612a4;}
-div.page_contener_specialist table.deferred_services tr td span.order a{ color:#0612a4; text-decoration:underline;}
-div.page_contener_specialist table.deferred_services tr td span.order a:hover{ text-decoration:none;}
-
-div.page_contener_specialist table.history_recharge{ width:550px; margin:15px 0px 0px 20px; font-size:14px; float: left; border:none; border-collapse:collapse; color:#4c4c4c; position:relative;}
-div.page_contener_specialist table.history_recharge tr.heading td{ background-color:#e3e3e3; padding:5px 0px 5px 20px; font-weight:bold;}
-div.page_contener_specialist table.history_recharge tr.heading:hover td{ background-color:#e3e3e3;}
-div.page_contener_specialist table.history_recharge tr td{ background-color:#eae9e9; padding:5px 0px 5px 20px;  border: 1px solid #949494; border-left:none; border-right:none;  }
-div.page_contener_specialist table.history_recharge tr:hover td{ background-color:#cfe4b4;}
-div.page_contener_specialist table.history_recharge tr.green td{ color:#137702}
-
-
-/*  DEFAULT PAGE STYLES */
-div.caution_x2{ color:#f89f65; font-size:18px; margin-left:35px;}
-div.caution{ color:#3d6804; font-size:18px; margin-left:35px;}
-div#maincontent_index{ height:auto; width:980px; position:relative;  margin:0px; padding:0px; background-color:#666666;  background:image-url("coverpatter.png") repeat; clear: both;  overflow:auto; }
-#main_content{  position:relative; background-color:#eae9e9; margin:20px 0px 0px 20px; margin-bottom:20px; width:940px; float:left; height:auto}
-
-/* SPECIALIST */
-div#maincontent_specialist{ height:auto; width:980px; position:relative;  margin:0px; padding:0px; background-color:#b69c80;  background:image-url("specialist_back.jpg"); background-repeat:repeat-y; clear: both;  overflow:auto; }
-#main_content_specialist_inside{  position:relative; margin:40px 0px 0px 10px; margin-bottom:20px; width:970px; float:left; height:auto;}
-.sidebar_left_specialist {float: left; width: 270px; position:relative; padding-bottom: 10px; z-index:2; font-size:18px;  min-height:850px; }
-div.sidebar_left_specialist div.name{ width:250px; background-color:#ececec; height:30px; text-align:center; padding-top:5px; margin-left:5px; font-size:16px; color:#5a5a5a; float:left;}
-div.sidebar_left_specialist div.events{ width:250px;  background-color:#ececec; float:left; margin-top:5px; margin-left:5px; }
-div.sidebar_left_specialist span.heading_event{ float:left; color:#5a5a5a; margin-top:10px; border-bottom:2px solid #acacac; padding:10px 15px 7px 15px; width:200px; margin-left:10px; text-align:center; }
-
-ul.last_events{ list-style:none; padding:0px; float:left; font-size:13px; margin:0px; padding:0px 10px 20px 10px;}
-ul.last_events li{ padding-bottom:10px; padding-top:10px; border-bottom:1px dotted #515151; color:#515151 }
-ul.last_events li.last{ border: none; }
-ul.last_events li span{ color:#6c1407; font-weight:bold; font-size:12px; padding-right:5px;}
-.page_contener_specialist{ float:left; width:590px;  min-height:950px; margin-left:80px; z-index:5; background-color:#ececec; }
-div.header_page_specialist{ float:left; margin-top:100px; margin-left:20px; font-size:20px; font-weight: normal; border-bottom:2px solid #b3b2b2; width:550px; padding-bottom:5px; margin-bottom:15px;}
-
-/* ----------- */
-div.header_page_specialist img{ width:50px; height:50px; margin-right:15px; float:left; }
-div.header_page_specialist span.heading{ padding-top:12px; float:left;}
-div.header_page_specialist span.members{ color:#9b9898; float:left; padding-top:20px; padding-left:10px; font-size:14px;}
-
-div.sidebar_left_specialist div.groups{ width:250px;  background-color:#ececec; float:left; margin-top:5px; margin-left:5px; margin-top:15px;}
-div.sidebar_left_specialist span.heading_groups{ float:left; color:#5a5a5a; margin-top:10px; padding:10px 15px 7px 15px; width:200px; margin-left:10px; text-align:center; }
-ul.my_groups{ list-style:none; padding:0px; float:left; font-size:13px; margin:0px; padding:0px 10px 10px 10px;}
-ul.my_groups li:nth-child(1){ margin-top:10px;}
-ul.my_groups li{ float: left; margin-bottom:10px; width:205px; margin-left:8px; }
-ul.my_groups li div.img_group{ width:51px; height:50px; float: left;}
-ul.my_groups li div.img_group span.img_group_border{ width:50px; height:51px; float: left; z-index:10; background-image: image-url("small_img_border.png"); position:absolute; background-repeat:no-repeat;}
-ul.my_groups li div.img_group img{ width:50px; height:51px;}
-ul.my_groups li ul{ margin-left:8px; padding:0px; float:left; list-style:none; position:relative; width:145px; }
-ul.my_groups li ul li{ width:145px; margin:0px; float:left; }
-ul.my_groups li ul li:nth-child(1){ color:#773129; font-size:14px;}
-ul.my_groups li ul li:nth-child(2){color:#9b9898}
-
-
-/* SPECIALIST REG_PERSONAL_PAGE_SPACIALIST.HTML */
-div.specialist_img_{ width:145px; height:159px; float:left; margin-left:20px; position:relative;}
-span.specialist_img_border{ background-image: image-url("specialist_img_border.png"); background-repeat:no-repeat;   z-index:10; position:absolute; width:145px; height:159px; float:left; }
-div.specialist_img_ img{ width:144px; height:158px; z-index:-5;}
-div.send_message{ width:227px; height:40px; background-image: image-url("msg_send2.png"); float:left; margin-left:20px; cursor:pointer;  }
-
-div.info_specialist {
-  width:546px; float: left; margin-left:20px; font-size:14px; margin-top:10px;
-  span.heading{ font-size:18px; font-weight:bold;  color:#773129; float:left; }
-  span.margine{ margin-bottom:15px;}
-  p{ float:left; position:relative; clear:left; color:#4a4747;}
-  span.heading img{ margin-left:10px; clear: both; overflow:auto;}
-  ul {
-    &.portfolio{ padding:0px; margin:0px; max-width:550px; height:250px; overflow: hidden;}
-    &.portfolio li{ padding:0px; margin:0px;}
-    li.projects {
-      width: auto; height: auto; border:1px #000033 solid;  float:left;   position:relative; border-color:#98afc4; overflow:auto; clear:none; margin-right:10px; margin-bottom:10px;
-      &:nth-child(1){ clear:both; }
-      span.project_name{ font-size:14px; padding:5px; float:left; color:#657d93; font-weight:bold; padding-left:15px;}
-      span.edit{ width:16px; height:17px; background-image: image-url("edit.png"); background-repeat:no-repeat; position:relative; float: right; margin-right:10px; margin-top:5px; cursor:pointer;}
-      ul.portfolio_list {
-        list-style: none; float:left; margin:0px; padding:0px; clear:both; margin-left:10px; padding-bottom:10px; padding-right:8px;
-        li{ float:left; padding:5px; width:75px; height:68px;}
-        li.add{ background-image: image-url("add_.jpg"); background-repeat:no-repeat; margin:5px 0px 0px 5px; cursor:pointer;}
-        li.add:hover{ background-image: image-url("add_hoover.jpg");}
-        li img{ width:75px; height:68px; margin:0px; padding:0px; }
-      }
-    }
+@import "settings";
+
+body.registered {
+  /*  DEFAULT PAGE STYLES */
+  div.caution_x2 {
+    color: $design_projects_color;
+    font-size: 18px;
+    margin-left: 35px;
   }
-  div.see_all{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:right}
-  div.add_new{ color:#7993ab; float: left; width:550px; margin:0px; padding:0px; text-align:left; cursor:pointer;}
-}
 
-/* PORTFOLIO */
-.portfolio_changes {
-  width:660px;  background-color:#FFFFFF; margin: 0 auto; position:relative;  margin-top:50px; display:none;  clear:left; padding-bottom:5px;
-  div.heading{ font-size:24px; color:#000000; text-align:left; padding:15px 10px 10px 25px;}
-  ul {
-    list-style:none; text-align:left; margin-left:0px;
-    li{  width:500px; }
-    li.title{ font-size:20px; color:#aeaeae; }
-    li.title_req_border{
-      font-size:18px; background-image: image-url("text_field_border.png"); height:32px;  width:507px; margin-top:5px; margin-bottom:15px;
-      input { width:490px; border:none; padding:0px; margin:5px 3px 1px 10px; height:22px; font-size:16px;}
-      input:focus{ outline:0; }
-    }
-    li.file_attach{ margin-top:10px; margin-bottom:10px; color:#b7b6b6; }
-    li img.reject{ margin-left:120px;}
-    li img.add{ margin-left:30px;}
+  div.caution {
+    color: #3d6804;
+    font-size: 18px;
+    margin-left: 35px;
   }
-  .images_preview_content {
-    ul.portfolio_list {
-      padding:0px; margin:0px; width:600px;  position:relative; clear:both; overflow:auto;
-      li{ width:102px; height:102px; float:left; background-color:#999933; margin-right:15px; margin-bottom:10px;}
-      li img{ width:102px; height:102px;}
-      li span.delete{ position:absolute; z-index:5; background-image: image-url("delete_image.png"); width:21px; height:21px; margin-left:80px; bottom:8px; cursor:pointer;}
-      li span.delete:hover{background-image: image-url("delete_image_hover.png");}
-      li.add{ background-image: image-url("add_img_portfolio.jpg"); cursor:pointer;}
-      li.add:hover{ background-image: image-url("add_img_portfolio_hover.jpg"); }
-    }
+
+  div#maincontent_index {
+    height: auto;
+    width: 980px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background-color: #666666;
+    background: image-url("coverpatter.png") repeat;
+    clear: both;
+    overflow: auto;
   }
-}
 
-.sidebar_left {float: left; width: 292px; position:relative; padding-bottom: 10px; z-index:2; font-size:18px;  height:850px; }
-.page_contener{ float:left; width:630px;  min-height:950px; margin-left:8px; z-index:5;}
-.breaker{ width:580px; float: left; height:2px; background-color:#949494; margin:15px 0px 30px 30px;}
-div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; background-image:image-url("fon-y.jpg"); background-repeat:repeat-y; background-position:center 0px; min-width:980px; height:auto }
-.header_top{ background-image:image-url("fon-head.jpg"); background-repeat:no-repeat; background-position:center 0px; width: auto; position: relative; z-index:1; min-width:980px; height:auto  }
-.coconut_leaves{ background-image:image-url("coconut_leaves.png"); background-repeat:no-repeat; background-position:center 0px; width: auto; position: relative; z-index:1; min-width:980px; height:auto }
-.springs{width:50px; height: 100%; position: absolute; z-index:60; background:image-url("repeating_bar.png"); background-repeat:repeat-y; margin:0px; padding:0px; right:620px; }
-.border_right{ width:12px; height:100%;	position: absolute;	z-index:60;	right:0px; background-image:image-url("right_border.png"); background-repeat:repeat-y; }
-div.border_right div.top_corner{ position:relative; width:12px; height:26px; background-image:image-url("right_top_corner.jpg"); }
-div.border_right div.bottom_corner{  position: absolute; width:12px; height:33px; bottom:0px; background-image:image-url("right_bottom_corner.jpg");}
-.border_left{ width:6px; height:100%; position: absolute; z-index:60; right:934px; background-image:image-url("left_border.png"); background-repeat:repeat-y; }
-div.border_left div.top_corner{ position:relative; width:6px; height:22px; background-image:image-url("left_top_corner.jpg"); }
-div.border_left div.bottom_corner{background-color:#000; position: absolute; width:6px; height:31px; bottom:0px; background-image:image-url("left_bottom_corner.jpg");}
-
-#black_content{ position:absolute; width:100%; height:100%;  z-index:20; background-image:image-url("black_content.png"); background-repeat:repeat; display: none;  min-width:980px; }
-
-/* NAVIGATION MENU DEFAULT */
-ul#navigation{ float:left; width:600px; font-size:14px; margin:0px; padding-bottom:0px;}
-ul#navigation li{ float:left; margin-right:45px; color: #c0c0c0; list-style-image:image-url("path_default.png"); padding-top:5px; }
-ul#navigation li a{  text-decoration:none; color: #c0c0c0; }
-ul#navigation li a:hover{ text-decoration:underline;}
-ul#navigation li.first{ list-style:none;}
-ul#navigation li.last{ color:#6da029; font-size:20px; list-style-image:image-url("path_selected.png"); padding-top:0px;}
-ul#navigation li.last a{ color:#6da029;  }
-
-ul#navigation.blue li.last{ list-style-image:image-url("path_selected_blue.png"); }
-ul#navigation.blue li.last a{ color:#6d95c3; }
-
-/* TOP MENU MAIN*/
-#header {  height:131px;  margin: 0px;  padding: 0px;  width:auto;  clear:both;  }
-.headerLayer1 {  background-image:image-url("logo-2.png");    float: left;    width: 354px; /* Ширина слоя */    height:41px;  margin:46px 0px 0px 0px;   }
-#header ul{ float:left; position: absolute; top:138px; margin-left:365px; z-index:1; color:#6f2d2d; font-size:0.9em;  }
-#header ul li{ float:left; list-style:none;  display: inline-block;  position:absolute; bottom:0px; text-align:center; line-height:15px; }
-
-#header ul li a:link span,#header ul li a:visited span{ color: #6f2d2d; }
-#header ul li:nth-child(1){ background-color:#a8d868; width:130px; height:78px; left:0px; }  /* Варианты планировки */
-#header ul li:nth-child(1) span{  width:130px; height:78px; float:left; margin-top:15px;}
-#header ul li:nth-child(2){ background-color:#e6c941; width:160px; height:60px; left:138px; } /* Согласования перепланировок */
-#header ul li:nth-child(2) span{ width:160px; height:60px; float:left; margin-top:13px;}
-#header ul li:nth-child(3){ background-color:#f89f65; width:132px; height:78px; left:306px; }  /* Дизайн-проект */
-#header ul li:nth-child(3) span{width:132px; height:78px; float:left; margin-top:30px;}
-#header ul li:nth-child(4){ background-color:#99bbe1; width:132px; height:58px; left:446px; } /* Инженерные системы и конструктив */
-#header ul li:nth-child(4) span{ width:132px; height:58px; float:left; margin-top:5px; }
-
-/* TOP MENU MAIN SPECIALIST*/
-#header_specialist {  height:131px;  margin: 0px;  padding: 0px;  width:auto;  clear:both;  }
-ul#menu_specialist{ float:left; top:115px; margin-left:290px; z-index:1; color:#6f2d2d; font-size:13px;  position:absolute; }
-
-ul#menu_specialist li{ float:left; list-style:none;  display: inline-block;  position:absolute; top:0px;  }
-ul#menu_specialist li span{ float: left; background-repeat:no-repeat; position:relative; z-index:10 }
-ul#menu_specialist li:nth-child(1) span{ width:165px; height:134px; background-image:image-url("my_projects.png");}
-ul#menu_specialist li:nth-child(2) span{ width:155px; height:120px; background-image:image-url("new_orders.png"); margin-left:165px;}
-ul#menu_specialist li:nth-child(3) span{ width:155px; height:118px; background-image:image-url("my_account.png"); margin-left:325px; }
-ul#menu_specialist li:nth-child(4) span{ width:145px; height:112px; background-image:image-url("portfolio_specialist.png");  margin-left:480px;}
-
-
-/* LEFT MENU TOP */
-ul#left_menu{ float:left; list-style:none; font-size:17px}
-ul#left_menu li{ padding-bottom:4px;  }
-ul#left_menu li a, ul#left_menu li a:link, ul#left_menu li a:visited, ul#left_menu li a:active{ text-decoration:underline; color:#CCCCCC }
-ul#left_menu li a:hover{ text-decoration:none; }
-ul#left_menu li:nth-child(1),ul#left_menu li:nth-child(1) a,ul#left_menu li:nth-child(2),ul#left_menu li:nth-child(2) a{ color:#d55400;}
-ul#left_menu li:nth-child(3),ul#left_menu li:nth-child(3) a{ color:#434242; padding-top:10px; padding-bottom:50px;}
-ul#left_menu li:nth-child(4),ul#left_menu li:nth-child(4) a{ color:#8d0606; margin-bottom:5px; font-size:14px;}
-ul#left_menu li:nth-child(5),ul#left_menu li:nth-child(5) a,ul#left_menu li:nth-child(6),ul#left_menu li:nth-child(6) a{ color:#447801;}
-
-/* LEFT MENU BOTTOM */
-ul#menu_sub_left{ float:left; list-style: none; margin:0px;  }
-ul#menu_sub_left li{ float:left; font-size:16px; }
-ul#menu_sub_left li span{ width:203px; height:35px; background-image:image-url("menu-spec-reg.png"); float:left; margin-bottom:5px; cursor:pointer; text-align:center; background-repeat:no-repeat; float:left; padding-top:14px;}
-ul#menu_sub_left li span:hover{ background-image:image-url("menu-spec-reg-hover.png"); text-decoration:underline;}
-ul#menu_sub_left li a, ul#menu_sub_left li a:visited{ color:#FFFFFF;}
-ul#menu_sub_left li.selected span{ background-image:image-url("menu-spec-reg-hover.png"); }
-
-/*  FOOTER */
-div.footer{ float:left; position:absolute; width:100%; background-image:image-url("footer_opacity.png"); background-repeat:repeat; clear:both;}
-div.footer div.footer_elements{width:980px; margin:0 auto; height:90px; background-image:image-url("coconut_leaves_footer.png"); background-repeat:no-repeat; background-position:center -110px; color:#963577; font-size:14px; font-weight: normal; line-height:22px;}
-div.footer_elements div.contact_with_us{ width:250px; float:left; text-align:left; margin-top:15px; }
-div.footer_elements div.rights{ float:left; text-align:left; margin:55px 0px 0px 120px; }
-div.footer_elements div.partners{ text-align:right; float: right;  margin-top:15px; }
-
-div.footer a, div.footer a:link, div.footer a:visited, div.footer a:active{ color:#963577; text-decoration:underline; }
-div.footer a:hover{ text-decoration:none; }
-
-/*  DEFAULT CLASSES */
-.light_green{ background-color:#cfe4b4; color:#4d8701;}
-.light_red{ background-color:#ecdfdf; color:#d55400;}
-.caption_left_menu{ height: 55px;  margin-top:27px;  font-size:16px; font-weight: inherit;  float:left; width:252px; padding-left:40px; line-height:25px;}
-.caption_left_menu a, .caption_left_menu a:link, .caption_left_menu a:active{ color:#434242; text-decoration:underline; font-size:14px; }
-.caption_left_menu a:hover{ text-decoration:none;}
-.caption{ height: 40px;  margin-top:27px; padding-top:15px;  font-size:22px; font-weight: inherit; float:left; width:595px; padding-left:40px;}
-.heading_captions{ color:#8d0606; font-size:16px; font:16px; float:left; padding:20px 0px 15px 40px;}
-.green_header{ color:#609c11;}
-.blue_header{ color: #5180a9;}
-.brown_header{color: #773129; }
-.dark_green_header{color:#236e02;}
-.orrange_header{ color:#f89f65;}
-.gray_header{ color:#5b5b5b;}
-.dark_red{ color:#5c0404;}
-
-.border_x1{border:6px solid #efd4c2; }    /* Дизайн-проект (мягкий) */
-.border_xs{border:6px solid #f89f65; }    /* Дизайн-проект */
-.border_xg{border:6px solid #a8d868; }    /* Варианты планировки */
-.border_x2{border:6px solid #e9da95; }    /* Согласования перепланировок (мягкий) */
-.border_x3{border:6px solid #99bbe1; }    /* Инженерные системы и конструктив */
-.border_x4{border:6px solid #e6c941; }    /* Согласования перепланировок */
-.border_x5{border:1px solid #c1c1c1; }
-.border_x6{ border:1px solid #a8d868; }
-.shadow_x1{
-moz-box-shadow: inset 0 3px 15px 1px #888;
--webkit-box-shadow: inset 0 3px 15px 1px #888;
-box-shadow: inset 0 3px 15px 1px #888;}
-.shadow_x2{
-moz-box-shadow: inset 0 -7px 15px 1px #888;
--webkit-box-shadow: inset 0 -7px 15px 1px #888;
-box-shadow: inset 0 -7px 15px 1px #888;}
-
-.shadow_x3{
-moz-box-shadow: 2px -2px 10px #8c8c8c;
--webkit-box-shadow: 2px -2px 10px #8c8c8c;
-box-shadow: 2px -2px 10px #8c8c8c;
- behavior:url("ie-css3.htc");
-}
-
-.rounded-corners {
-     -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-	/*behavior:url("border-radius.htc"); */
-}
-.rounded-corners_l2 {
-     -moz-border-radius: 35px;
-    -webkit-border-radius: 35px;
-    -khtml-border-radius: 35px;
-    border-radius: 35px;
-	/*behavior:url("border-radius.htc"); */
-}
-.rounded-corners_l3 {
-     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px 10px 10px 10px;
-	/*behavior:url("border-radius.htc"); */
-}
-
-.rounded-corners_l5 {
-     -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    border-radius: 5px 5px 5px 5px;
-	/*behavior: url("border-radius.htc"); */
-}
-
-.rounded-corners_l4 {
-	-moz-border-radius:15px;
-	-webkit-border-radius:15px;
-	border-radius:15px;
-}
-
-.textlines_default{ сolor:#333; border:0px; padding:0px 5px 0px 5px; margin:0px; border-bottom:1px solid #333; height:20px; font-size:16px; background-color:#eae9e9; }
-
-.textline_l2{ width:45px; }
-.textline_l4{ width:76px; }
-.textline_l6{ width:130px;}
-.textline_l6-5{ width:170px;}
-.textline_l7{ width:243px;}
-.textline_l8{ width:300px;}
-.textline_l10{ width:350px;}
-.textline_l11{ width:390px;}
-.textline_l12{ width:450px; }
-div.var_form1 span.subtitle{ font-size:12px; position: relative; margin-left:70px; left:0px; float:left; margin-top:-20px;  }
-
-input[type='radio']
-{
+  #main_content {
+    position: relative;
+    background-color: #eae9e9;
+    margin: 20px 0px 0px 20px;
+    margin-bottom: 20px;
+    width: 940px;
     float: left;
-    width:0px;
+    height: auto;
+    input { background-color: #eae9e9; }
+  }
+
+  /*  DEFAULT CLASSES */
+  .light_green {
+    background-color: #cfe4b4;
+    color: #4d8701;
+  }
+
+  .light_red {
+    background-color: #ecdfdf;
+    color: #d55400;
+  }
+
+  .caption_left_menu {
+    height: 55px;
+    margin-top: 27px;
+    font-size: 16px;
+    font-weight: inherit;
+    float: left;
+    width: 252px;
+    padding-left: 40px;
+    line-height: 25px;
+
+    a, a:link, a:active {
+      color: #434242;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+    a:hover { text-decoration:none; }
+  }
+
+  .caption {
+    height: 40px;
+    margin-top: 27px;
+    padding-top: 15px;
+    font-size: 22px;
+    font-weight: inherit;
+    float: left;
+    width: 595px;
+    padding-left: 40px;
+  }
+
+  .heading_captions {
+    color: #8d0606;
+    font-size: 16px;
+    font: 16px;
+    float: left;
+    padding: 20px 0px 15px 40px;
+  }
+
+  .green_header {  color:#609c11; }
+  .blue_header {  color: #5180a9; }
+  .brown_header {  color: #773129; }
+  .dark_green_header {  color:#236e02; }
+  .orrange_header {  color:$design_projects_color; }
+  .gray_header {  color:#5b5b5b; }
+  .dark_red {  color:#5c0404; }
+
+  .border_x1 {  border:6px solid #efd4c2; }    /* Дизайн-проект (мягкий) */
+  .border_xs {  border:6px solid $design_projects_color; }    /* Дизайн-проект */
+  .border_xg {  border:6px solid $plan_developments_color; }    /* Варианты планировки */
+  .border_x2 {  border:6px solid #e9da95; }    /* Согласования перепланировок (мягкий) */
+  .border_x3 {  border:6px solid $engineering_systems_color; }    /* Инженерные системы и конструктив */
+  .border_x4 {  border:6px solid $replanning_endorsement_color; }    /* Согласования перепланировок */
+  .border_x5 {  border:1px solid #c1c1c1; }
+  .border_x6 {  border:1px solid $plan_developments_color; }
+
+  div.var_form1 span.subtitle {
+    font-size: 12px;
+    position: relative;
+    margin-left: 70px;
+    left: 0px;
+    float: left;
+    margin-top: -20px;
+  }
+
+  input[type='radio'] {
+    float: left;
+    width: 0px;
     height: 0px;
     margin: 0px;
     padding: 0px;
     border: 0px;
-  overflow: hidden;
-opacity: 0;
-position:absolute;
-}
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+  }
 
-input[type='radio'] + label
-{
-  clear: none;
-  padding: 0px 0 0px 24px;
-  cursor: pointer;
-	background-image:image-url("circleN.png");
-	background-repeat:no-repeat;
-	/*display:inline-block; */
-}
+  input[type='radio'] + label {
+    clear: none;
+    padding: 0px 0 0px 24px;
+    cursor: pointer;
+    background-image: image-url("circleN.png");
+    background-repeat: no-repeat;
+  }
 
-input[type='radio']:checked + label {
-	background-image:image-url("circleY.png");
-	background-repeat:no-repeat;
-}
+  input[type='radio']:checked + label {
+    background-image: image-url("circleY.png");
+    background-repeat: no-repeat;
+  }
 
-
-input[type='checkbox']
-{
+  input[type='checkbox'] {
     float: left;
-    width:0px;
+    width: 0px;
     height: 0px;
     margin: 0px;
     padding: 0px;
     border: 0px;
-  overflow: hidden;
-opacity: 0;
-position:absolute;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+  }
+
+  input[type='checkbox'] + label {
+    background-image: image-url("box_not_cheked.png");
+    background-repeat: no-repeat;
+    padding: 3px 0 0px 40px;
+    cursor: pointer;
+    height: 35px;
+  }
+
+  input[type='checkbox']:checked + label {
+    background-image: image-url("box_checked.png");
+    background-repeat: no-repeat;
+    padding: 3px 0 0px 40px;
+    cursor: pointer;
+  }
+
+  textarea:focus { outline:none !important; }
+  .text_shadow_1 { text-shadow: 1px 1px 3px #6b5c5c; }
+
+  .reg_client_tfeild {
+    width: 280px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 25px;
+    font-size: 16px;
+    color: #4c4c4c;
+  }
+
+  .log_client_tfeild {
+    width: 200px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 25px;
+    font-size: 16px;
+    color: #4c4c4c;
+  }
+  .close_fly_window {
+    background-image: image-url("close.png");
+    width: 30px;
+    height: 26px;
+    position: absolute;
+    right: 0px;
+    margin-top: -40px;
+    cursor: pointer;
+  }
+
+  .slimScrollDiv { border-right: 1px solid #eee;
+    float: left;
+  }
+
+  div.msg_caution span {
+    color: #3d6804;
+    font-size: 18px;
+    margin-left: 35px;
+
+    &.design_project {
+      color: $design_projects_color;
+      font-size: 18px;
+      margin-left: 0px;
+      padding-left: 35px;
+    }
+  }
+
+  div.attach_place_for_box {
+    position: relative;
+    float: left;
+    width: 500px;
+    min-height: 80px;
+    overflow: auto;
+    margin-top: 5px;
+  }
+
+  .attach_box {
+    position: absolute;
+    z-index: 34;
+  }
+
+  ul.list_of_attachments {
+    width: 460px;
+    position: relative;
+    clear: both;
+    overflow: auto;
+    z-index: 80;
+    padding-top: 8px;
+    li { float:left; }
+  }
+
+
+  div.calculator {
+    margin-left: 80px;
+  }
 }
-
-input[type='checkbox'] + label {
-	background-image:image-url("box_not_cheked.png");
-	background-repeat:no-repeat;
-  padding: 3px 0 0px 40px;
-  cursor: pointer;
-  height:35px;
-}
-input[type='checkbox']:checked + label {
-	background-image:image-url("box_checked.png");
-	background-repeat:no-repeat;
-	padding: 3px 0 0px 40px;
-	cursor: pointer;
-}
-
-textarea:focus{ outline:none !important;}
-.text_shadow_1{text-shadow: 1px 1px 3px #6b5c5c;}
-
-.reg_client_tfeild{ width:280px; padding:0px; margin:0px; border:none; height:25px; font-size:16px; color:#4c4c4c;}
-.log_client_tfeild{ width:200px; padding:0px; margin:0px; border:none; height:25px; font-size:16px; color:#4c4c4c;}
-.close_fly_window{ background-image:image-url("close.png"); width:30px; height:26px; position:absolute; right:0px; margin-top:-40px; cursor:pointer;}
-.slimScrollDiv { border-right:1px solid #eee; float:left;}
-
-div.msg_caution span{ color: #3d6804; font-size: 18px; margin-left: 35px; }
-div.msg_caution span.design_project{color: #f89f65; font-size: 18px; margin-left: 0px; padding-left:35px;}
-
-
-
-div.attach_place_for_box{ position:relative; float:left;   width:500px; min-height:120px; overflow: auto; margin-top:5px; }
-
-.attach_box{ position:absolute; z-index:34;}
-
-ul.list_of_attachments{ width:460px;  position:relative; clear:both; overflow:auto; z-index:80; padding-top:8px;}
-
-ul.list_of_attachments li{ float:left;}
-

@@ -1,0 +1,135 @@
+@import "settings";
+
+body.registered {
+
+  div.design_project { background-image: image-url("design_project_logo.jpg"); }
+
+  div.design_project_all {
+    width: 627px;
+    margin-top: 5px;
+
+    div.headers {
+      span { padding-top: 5px; }
+      span.first {
+        padding-right: 150px;
+        padding-left: 150px;
+      }
+    }
+    ul.concept {
+      width: 400px;
+      padding: 60px 12px 0px 12px;
+      font-size: 14px;
+      li {
+        margin: 0px 30px 10px 20px;
+        width: 150px;
+        height: 280px;
+        img {
+          width: 150px;
+          height: 150px;
+        }
+        span.hover {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+
+    ul.working_documents {
+      padding: 60px 12px 20px 25px;
+      width: 164px;
+      li {
+        width: 150px;
+        height: 280px;
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+
+    ul li {
+      span.heading {
+        width: 150px;
+      }
+      span.order {
+        padding-top: 5px;
+      }
+
+      span.black_opacity {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+
+  div.copyright_block {
+    width: 627px;
+    height: 60px;
+    div.copyright {
+      width: 340px;
+      height: 41px;
+      background-image: image-url("avtor-small.png");
+      &:hover { background-image: image-url("avtor_h-small.png"); }
+    }
+  }
+
+
+
+  div.design_p-workin-docs_form1 {
+    width: 480px;
+    margin-bottom: 10px;
+    float: left;
+
+    div.file_attaching {
+      width: 485px;
+      span.caution {
+        padding-left: 70px;
+        margin-top: -30px;
+      }
+      span.attach {
+        font-size: 14px;
+        color: #8e8e8e;
+        padding: 0px 0px 0px 140px;
+        float: left;
+        background-image: image-url("file_att.png");
+        background-repeat: no-repeat;
+        height: 67px;
+        background-position: 80px 0px;
+        margin-top: 10px;
+      }
+    }
+  }
+  .design_p-workin-docs_form2 {
+    float: left;
+    margin-bottom: 15px;
+    margin-left: 45px;
+
+    .form_description {
+      margin-bottom: 15px;
+      margin-left: 10px;
+    }
+  }
+  .design_p-workin-docs-caution2 {
+    margin-left: 70px;
+    width: 450px;
+  }
+
+
+  div.design_p-workin-docs {
+    background-image: image-url("design_project_logo.jpg");
+    margin-top: 0px;
+  }
+
+  div.design_p-workin-docs_submiting {
+    float: left;
+    margin: 10px 25px 15px 55px;
+  }
+
+/*
+  .form_description.wishes {
+    background-image: image-url("comments_small.png");
+    width: 243px;
+  }
+*/
+
+}

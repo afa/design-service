@@ -1,0 +1,232 @@
+@import "settings";
+
+span.design_project { color: #c67700; }
+div.design_project {
+  border-bottom-color: $design_projects_color;
+  width: 550px;
+  float: left;
+  margin-bottom: 5px;
+}
+div.msg_caution span.design_project {
+  color: $design_projects_color;
+  padding: 15px 0px 10px 115px;
+  float: left;
+}
+
+div.design_p-workin-docs_form1 {
+  margin-left: 45px;
+  padding: 30px;
+  line-height: 45px;
+  overflow: auto;
+  clear: both;
+
+  .number._1 {
+    float: left;
+    margin-right: 10px;
+  }
+  .number._2 {
+    float: left;
+    margin-right: 10px;
+    margin-left: 0px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+  .form_description.input_data { float: left; }
+
+  .form_description.job {
+    float: left;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  span.text {
+    clear: both;
+    position: relative;
+    float: left;
+  }
+  
+  div.present_results {
+    float: left;
+    ul.answer {
+      list-style: none;
+      margin: 0px;
+      padding-left: 55px;
+      float: left;
+      li {
+        float: left;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  div.file_attaching {
+    margin-top: 10px;
+    float: left;
+    span.caution {
+      color: #c10000;
+      font-size: 17px;
+      height: 30px;
+    }
+  }
+}
+
+.design_p-workin-docs_form2 {
+  width: 470px;
+  height: 160px;
+  margin-left: 115px;
+  margin-top: 15px;
+  padding: 30px;
+  .number._3 { float: left; }
+
+  .form_description.wishes {
+    float: left;
+  }
+}
+
+span.design_p-workin-docs {
+  color: #c67700;
+}
+
+div.msg_caution span.design_p-workin-docs {
+  color: #3d6804;
+  float: left;
+}
+
+.design_p-workin-docs-caution2 {
+  color: #e23a3a;
+  text-align: center;
+  float: left;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+div.design_p-workin-docs {
+  border-bottom-color: $design_projects_color;
+  width: 550px;
+  float: left;
+  margin-bottom: 5px;
+}
+
+
+.heading_h {
+  text-decoration: underline;
+}
+.heading {
+  a, a:active, &:link {
+    color: #383a3e;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+}
+
+div.copyright_block {
+  background-color: #D3DCDD;
+  clear: both;
+  div.copyright {
+    position: relative;
+    float: left;
+    background-repeat: no-repeat;
+    margin-left: 160px;
+    margin-top: 10px;
+  }
+}
+
+div.design_project_all {
+  background-color: #e8edf1;
+  min-height: 900px;
+  height: auto;
+  clear: left;
+  position: relative;
+  overflow: auto;
+
+  div.headers {
+    position: absolute;
+    span {
+      float: left;
+      width: 150px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    span.first {
+      padding-top: 13px;
+      color: #b5d48c;
+    }
+    span.second { color: #a3bfdd; }
+  }
+
+  ul.concept {
+    margin: 0px;
+    list-style: none;
+    height: auto;
+    clear: both;
+    overflow: auto;
+    float: left;
+    background-color: #e4efd5;
+    li {
+      position: static;
+      float: left;
+      span.hover {
+        position: absolute;
+        background-image: image-url("hover_black.png");
+        background-repeat: repeat;
+        display: none;
+      }
+    }
+  }
+
+  ul.working_documents {
+    margin: 0px;
+    list-style: none;
+    height: auto;
+    background-color: #e8edf1;
+    overflow: auto;
+
+    li {
+      position: static;
+      float: left;
+      margin-bottom: 10px;
+    }
+  }
+
+  ul li {
+    span.heading {
+      text-align: center;
+      width: auto;
+      color: #383a3e;
+      font-size: 14px;
+      font-weight: bold;
+      float: left;
+    }
+    span.text {
+      font-size: 13px;
+      color: #82848a;
+      float: left;
+      padding-top: 15px;
+      height: 38px;
+    }
+    span.order {
+      background-image: image-url("order.png");
+      background-repeat: no-repeat;
+      width: 101px;
+      height: 26px;
+      float: right;
+      &:hover {
+        cursor: pointer;
+        background-image: image-url("order_hover.png");
+      }
+    }
+
+    span.black_opacity {
+      display: none;
+      position: absolute;
+      background-image: image-url("hover_black.png");
+    }
+    span.black_opacity_on {
+      display: block;
+      cursor: pointer;
+    }
+  }
+}

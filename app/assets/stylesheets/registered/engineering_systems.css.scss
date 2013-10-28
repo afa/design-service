@@ -1,0 +1,68 @@
+@import "settings";
+
+body.registered {
+  div.engineering_systems_form1 {
+    width: 500px;
+    margin-left: 30px;
+    margin-top: 20px;
+    float: left;
+
+    .form_description.input_data {
+      margin-left: 10px;
+    }
+    div.head_part {
+      background-image: image-url("engineering_systems_form1-small.png");
+      width: 430px;
+      height: 28px;
+      margin: 40px 0px 0px 35px;
+    }
+    div.file_attaching {
+      width: 495px;
+      float: left;
+      font-size: 14px;
+      span.caution {
+        color: #c10000;
+        font-size: 17px;
+        float: left;
+      }
+      span.attach {
+        padding: 30px 0px 0px 140px;
+        margin-top: 0px;
+        color: #8e8e8e;
+        float: left;
+        background-image: image-url("file_att.png");
+        background-repeat: no-repeat;
+        background-position: 80px 15px;
+      }
+    }
+  }
+
+  div.engineering_systems_form2 {
+    margin-left: 90px;
+    float: left;
+    .form_description.job {
+      margin-left: 10px;
+    }
+  }
+
+
+  div.engineering_systems_form3 {
+    margin-left: 35px;
+    float: left;
+    .form_description.wishes {
+      margin-bottom: 15px;
+      margin-left: 10px;
+    }
+  }
+
+  div.engineering_systems_submiting {
+    margin-left: 60px;
+    float: left;
+  }
+
+  ol.eng_systems {
+    li {
+      width: 450px;
+    }
+  }
+}
