@@ -216,7 +216,7 @@ div.copyright_ques_submiting{  height:80px; width:550px; margin-left:160px; padd
 
 /*  DESIGN-PROJECT PAGES -----PAGE CONCEPT DESIGN_PROJECTS_XXXX 8 PAGES------------------------------------------.HTML */
 span.design_p-workin-docs{ color:#c67700; }
-div.design_p-workin-docs{ background-image:image-url("design_project_logo_big.jpg") ; border-bottom-color:#f89f65; width:550px; float:left; margin-bottom:5px;  }
+div.design_p-workin-docs{ background-image:image-url("design_project_logo_big.jpg") ; border-bottom-color:#f89f65;  float:left; margin-bottom:5px;  }
 div.msg_caution span.design_p-workin-docs{color:#3d6804;   padding:15px 0px 10px 115px; float:left; }
 
 div.design_p-workin-docs_form1{ width:600px;  margin-left:45px;  padding:30px; line-height:45px; margin-bottom:25px;  overflow:auto; clear:both; }
@@ -458,7 +458,7 @@ div.collage_design{ position:relative; width:817px; height:50px;  background-rep
 div.mode1{ } /* COLLAG CLASSES*/
 div.mode2{ background-image:image-url("default_collag.jpg"); }
 .page_description{  position:relative;  margin: 25px 0px 0px 50px;   background-repeat:no-repeat; height:31px;  padding:10px 180px 25px 0px; border-bottom:2px solid;}
-div.page_description span{ font-size:20px; padding-left:85px; font-size:30px;  }
+div.page_description span{ padding-left:85px; font-size:30px; float:left; width:650px;  }
 div.msg_caution{ font-size:17px; position:relative;  width:680px; float:left;}
 div.number{ width:86px; height:29px;  background-repeat:no-repeat;  margin-right:10px; margin-left:0px; padding-bottom:20px;}
 div.form_description{  height:29px;  background-repeat:no-repeat;  padding-bottom:20px; }
@@ -571,14 +571,19 @@ div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; back
   padding: 0px;
   width:auto;
   clear:both;
+  background-position: -100px;
+  background-repeat:no-repeat;
   }
 .headerLayer1 {
   background-image:image-url("logo.png");
     float: left;
     width: 527px; /* Ширина слоя */
     height:49px;
-  margin:46px 0px 0px 0px; /*top36px */
+  margin:46px 0px 0px 40px; /*top36px */
    }
+
+#header div.lighter_bar{ position:absolute; width:850px; height:150px; z-index:-4; margin-left:-100px;
+background-image:image-url("lighter.png"); background-position:left 0px;}
 
 /*  REGISTER CLIENT BLOCK*/
 #register{ width:477px; height:394px; background-color: #FFFFFF; margin:0px auto; position:relative; margin-top:130px;   font-family: Tahoma; display:none;}
@@ -614,16 +619,16 @@ div.border_ornements{ width: auto;  position:relative; padding-bottom:90px; back
 .login_button{ float:right; padding-right:40px;}
 
 /*  DEFAULT CLASSES */
-.border_x1{border:8px solid #f89f65; }
-.border_x2{border:8px solid #a8d868; }
-.border_x3{border:8px solid #99bbe1; }
-.border_x4{border:8px solid #e6c941; }
+.border_x1{border:8px solid #ffcaa8; }
+.border_x2{border:8px solid #cfe7b3; }
+.border_x3{border:8px solid #bfcee3; }
+.border_x4{border:8px solid #e6d480; }
 .border_x5{border:1px solid #c1c1c1; }
 .border_x6{ border:1px solid #a8d868; }
 .shadow_x1{
-moz-box-shadow: inset 0 3px 15px 1px #888;
--webkit-box-shadow: inset 0 3px 15px 1px #888;
-box-shadow: inset 0 3px 15px 1px #888;}
+moz-box-shadow: inset 0 3px 10px 1px #B9B3B3;
+-webkit-box-shadow: inset 0 3px 10px 1px #B9B3B3;
+box-shadow: inset 0 3px 10px 1px #B9B3B3;}
 .shadow_x2{
 moz-box-shadow: inset 0 -7px 15px 1px #888;
 -webkit-box-shadow: inset 0 -7px 15px 1px #888;
