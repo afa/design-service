@@ -38,4 +38,8 @@ class SelectedForm < ActiveRecord::Base
     (hsh[:room].blank? || hsh[:room] == 'например, Кухня') &&
       [:artificial_cold, :artificial_warm, :carpet_or_printed_carpet, :stone, :tree].all?{|attr| !hsh[attr] || hsh[attr] == '0' }
   end
+
+  def order_to_specialist?
+    order_customizer.typename.end_with?('_specialist')
+  end
 end

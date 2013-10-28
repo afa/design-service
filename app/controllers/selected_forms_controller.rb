@@ -3,6 +3,21 @@ class SelectedFormsController < InheritedResources::Base
   belongs_to :specialist_group, optional: true
   before_filter :load_draft, only: [:new, :edit]
 
+  def new
+    if !parent
+      render 'new'
+    else
+      render 'new_order_to_specialist'
+    end
+  end
+
+  def show
+    if resource.order_to_specialist?
+      render 'show_order_to_specialist'
+    else
+      render 'show'
+    end
+  end
 protected
   def permitted_params
     params.permit(selected_form: [:flat_area, :interior_style, :interior_style_comment,
