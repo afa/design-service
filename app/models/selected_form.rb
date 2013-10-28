@@ -10,6 +10,8 @@ class SelectedForm < ActiveRecord::Base
 
   scope :by_type, ->(type){ joins(:order_customizer).where(order_customizers: {typename: type}) }
 
+  has_one :specialist_group, through: :order
+
   accepts_nested_attributes_for :floor_plans, allow_destroy: true, reject_if: :room_not_filled?
 
   def attachment_kinds

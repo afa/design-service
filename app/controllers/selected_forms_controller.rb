@@ -1,5 +1,6 @@
 class SelectedFormsController < InheritedResources::Base
   respond_to :json, only: [:update]
+  belongs_to :specialist_group, optional: true
   before_filter :load_draft, only: [:new, :edit]
 
 protected
@@ -14,16 +15,27 @@ protected
   end
 
   def load_draft
-    @selected_form = SelectedForm.find_or_create_order( SelectedForm.by_type(typename) ) do |selected_form|
-      selected_form.order_customizer = OrderCustomizer.by_type(typename)
+    if !parent
+      @selected_form = SelectedForm.find_or_create_order( SelectedForm.by_type(typename) ) do |selected_form|
+        selected_form.order_customizer = OrderCustomizer.by_type(typename)
+      end
+    else
+      @selected_form = SelectedForm.find_or_create_order( parent.selected_forms ) do |selected_form|
+        selected_form.order_customizer = parent.order_customizer
+        selected_form.order.specialist_group = parent
+      end
     end
   end
 
   def typename
-    if params[:action] == 'new'
-      params[:type]
+    if !parent
+      if params[:action] == 'new'
+        params[:type]
+      else
+        resource.typename
+      end
     else
-      resource.typename
+      "#{parent.specialization.full_name}_specialist"
     end
   end
   helper_method :typename

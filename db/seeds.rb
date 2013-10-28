@@ -29,7 +29,7 @@
   ceiling_fixtures: 'Планы потолков и освещение',
   draping_materials: 'Подбор отделочных материалов'
 }.each do |typename, name|
-  OrderCustomizer.create(typename: typename, name: name, image: 'concept.jpg', description: '')
+  OrderCustomizer.where(typename: typename).first_or_create(name: name, image: 'concept.jpg', description: '')
 end
 
 [
@@ -44,7 +44,13 @@ end
   ['engineer', 'weak_current', 'Инженеры', 'Инженер по слаботочным системам'],
   ['engineer', 'constructor', 'Инженеры', 'Инженер-конструктор']
 ].each do |name,sub_name, group_title, title|
-  Specialization.where(name: name, sub_name: sub_name).first_or_create{|s| s.group_title = group_title; s.title = title; }
+  Specialization.where(name: name, sub_name: sub_name).first_or_create(group_title: group_title, title: title)
+  if sub_name && !sub_name.blank?
+    OrderCustomizer.where(typename: "#{name}_#{sub_name}_specialist").first_or_create(name: title, image: 'concept.jpg', description: '')
+  else
+    OrderCustomizer.where(typename: "#{name}_specialist").first_or_create(name: title, image: 'concept.jpg', description: '')
+  end
+  
 end
 
 admin = User.where(username: 'admin', email: 'prijutme4ty@gmail.com').first_or_create(password: 'VerY_str0ng_p@ssword', password_confirmation: 'VerY_str0ng_p@ssword') do |u|
