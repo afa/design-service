@@ -77,6 +77,17 @@ ru:
       ceiling_fixtures: 'Планы потолков и освещение'
       ventilation: 'Вентиляция и кондиционирование'
       draping_materials: 'Подбор отделочных материалов'
+
+      designer_specialist: 'Дизайн-проект'
+      architector_specialist: 'Дизайн-проект'
+      building_brigades_specialist: 'Дизайн-проект'
+      building_company_specialist: 'Дизайн-проект'
+      engineer_electricity_specialist: 'Дизайн-проект'
+      engineer_heating_specialist: 'Дизайн-проект'
+      engineer_ventilation_specialist: 'Дизайн-проект'
+      engineer_canalization_specialist: 'Дизайн-проект'
+      engineer_weak_current_specialist: 'Дизайн-проект'
+      engineer_constructor_specialist: 'Дизайн-проект'
   controller_titles: # header of page
     welcome: ''
     plan_developments: 'Разработка вариантов планировок'

@@ -6,26 +6,23 @@
       .form_description.input_data
       .file_attaching.border_x5.rounded-corners_l3
         .attach_place_for_box
-        
+
       .number._2
       .form_description.job
-      %span.text
-        Площадь помещения:#{ f.input_field :flat_area, class: 'textlines_default textline_l6' }
       .interior
         Какой стиль интерьера Вы предпочитаете?
         = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
         = f.input_field :interior_style_comment, as: :string, class: ['textlines_default', 'textline_l5'], size:10
-      .present_results
-        Как Вам представить результат?
-        = f.input_field :show_results, as: :radio_buttons, collection: SelectedForm.show_results.options
     .design_p-workin-docs_form2.border_x3.rounded-corners_l2.shadow_x1
       .number._3
       .form_description.wishes
       = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
-    %span.design_p-workin-docs-caution2 Итоговую стоимость заказа Вы можете посмотреть в личном кабинете после отправки!
     = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p-workin-docs_submiting'}
-
   .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
     = render partial: 'attachments/list_of_attachments', locals:{attachments: selected_form.attachments, has_remove_button: !disabled}
   = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: selected_form, kind: 'plan_with_furniture', disabled: disabled, wrapper_class: ''}
-  %span.attach_info_block.caution  Прикрепите: 1. план с расстановкой мебели!
+  %span.attach_info_block.caution
+    Прикрепите:
+    %ul
+      %li план с расстановкой мебели
+      %li изображение концепции или пример!

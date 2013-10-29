@@ -23,9 +23,6 @@ $(document).ready ->
       $(this).addClass "selected"
 
   #////RADIO BUTTONS ANY FIELD///
-  $('.interior ul li:last-child label').append($('.interior ul + input[type="text"]'))
-  $('.interior input[type="text"]').change ->
-    $('.interior input[type="radio"]').last().get(0).checked = true
 
   # room materials
   $(document).on 'nested:fieldAdded', (event)->

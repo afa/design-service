@@ -11,6 +11,7 @@ class SpecialistGroup < ActiveRecord::Base
 
   has_many :groups_orders, as: :executor, :class_name => 'Order'
   has_many :orders
+  has_many :selected_forms, through: :orders, source: :orderable, source_type: 'SelectedForm'
   # привязка группы к заказу напрямую, не через исполнителя. считать цену и выбирать исплнителей. 
   has_many :reviews, through: :specialists
 
@@ -41,5 +42,8 @@ class SpecialistGroup < ActiveRecord::Base
   end
   def as_json(options={})
     {id: id, name: name, specialization_id: specialization_id}
+  end
+  def order_customizer
+    OrderCustomizer.by_specialization(specialization.full_name)
   end
 end

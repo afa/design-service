@@ -1,0 +1,5 @@
+- specialist_group = parent.decorate
+= render partial: 'specialist_groups/client/specialist_group_header', locals: {specialist_group: specialist_group}
+.msg_caution
+  %span.design_p-workin-docs Заполните заявку
+= render partial: "order_customizers/forms/to_specialist/#{typename}", locals: {selected_form: resource, disabled: false}

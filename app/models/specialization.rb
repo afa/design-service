@@ -4,4 +4,7 @@ class Specialization < ActiveRecord::Base
   def to_s
     title
   end
+  def full_name
+    (sub_name && !sub_name.blank?) ? "#{name}_#{sub_name}" : name
+  end
 end

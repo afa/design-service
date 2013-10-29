@@ -1,0 +1,15 @@
+.selected_designer
+  = link_to specialist_groups_path(specialization: specialist_group.specialization.try(:name)) do
+    .go_back
+  .designer_no
+    = specialist_group.avatar
+    %span= specialist_group.rating
+  .designer_info
+    %div
+      %span= specialist_group.union_name
+      %span
+        = surround '[', ']' do
+          = specialist_group.name
+    %div= specialist_group.description
+  = link_to new_specialist_group_selected_form_path(specialist_group) do
+    .send_request
