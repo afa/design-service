@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   scope :with_orders, -> { where('orders_count > 0') }
   scope :by_role, ->(r) { where(:role => r) }
 
+  validates :username, :uniqueness => {:case_sensitive => false}
+  validates :email, :uniqueness => {:case_sensitive => false}
   validates :username, length: {minimum: 3}, immutable: true
 
   # allows user to sign in using both email and username
