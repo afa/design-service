@@ -9,5 +9,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
     flash[:alert] = "<div>#{@alerts.join("</div><div>")}</div>".html_safe
    end
+   Registration.registered(resource).deliver if resource.valid?
   end
 end

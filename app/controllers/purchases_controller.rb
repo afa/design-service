@@ -28,6 +28,7 @@ class PurchasesController < ApplicationController
    p "---ex", e
    end
    if purchase.paid?
+    Client.payment_success(purchase.user, purchase).deliver
     render :text => "OK#{pay}"
    else
     render :text => "fail"
@@ -35,6 +36,7 @@ class PurchasesController < ApplicationController
   end
 
   def ok
+   
    redirect_to orders_path
   end
 
@@ -46,6 +48,7 @@ class PurchasesController < ApplicationController
    purchase = Purchase.find_by_id(pay)
    render :text => 'fail' and return unless purchase
    purchase.bad
+   Client.payment_failed(purchase.user, purchase).deliver
    redirect_to new_order_path
   end
 end
