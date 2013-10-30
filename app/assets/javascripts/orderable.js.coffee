@@ -44,3 +44,8 @@ $(document).ready ->
 
     register_drag_n_drop(attach_box, loaded_files)
   #register_price_calculator($('.calcContainer'), 5000)
+
+  # interiors' markup need some changes with JS
+  $('.interior ul li:last-child label').append($('.interior ul + input[type="text"]'))
+  $('.interior input[type="text"]').change ->
+    $('.interior input[type="radio"]').last().get(0).checked = true

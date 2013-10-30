@@ -4,6 +4,7 @@
 
 //= require jquery.mousewheel
 //= require lightbox/lightbox-2.6.min.js
+//= require orderable
 
 $(document).ready ->
   specialization = $('#specialization_data').data('specialization')

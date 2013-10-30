@@ -22,6 +22,7 @@ DesignService::Application.routes.draw do
   resources :messages
   resources :reviews
   resources :specialist_groups do
+    resources :selected_forms
     resources :messages
     resources :reviews, only: [:index]
     resources :portfolios do

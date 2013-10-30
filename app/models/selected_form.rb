@@ -10,6 +10,8 @@ class SelectedForm < ActiveRecord::Base
 
   scope :by_type, ->(type){ joins(:order_customizer).where(order_customizers: {typename: type}) }
 
+  has_one :specialist_group, through: :order
+
   accepts_nested_attributes_for :floor_plans, allow_destroy: true, reject_if: :room_not_filled?
 
   def attachment_kinds
@@ -35,5 +37,9 @@ class SelectedForm < ActiveRecord::Base
   def room_not_filled?(hsh)
     (hsh[:room].blank? || hsh[:room] == 'например, Кухня') &&
       [:artificial_cold, :artificial_warm, :carpet_or_printed_carpet, :stone, :tree].all?{|attr| !hsh[attr] || hsh[attr] == '0' }
+  end
+
+  def order_to_specialist?
+    order_customizer.typename.end_with?('_specialist')
   end
 end

@@ -335,11 +335,20 @@ span.message {
 .textline_l11 { width:390px; }
 .textline_l12 { width:450px; }
 
+body.registered {
+  .shadow_x1 {
+    moz-box-shadow: inset 0 3px 15px 1px #888;
+    -webkit-box-shadow: inset 0 3px 15px 1px #888;
+    box-shadow: inset 0 3px 15px 1px #888;
+  }
+}
 
-.shadow_x1 {
-  moz-box-shadow: inset 0 3px 15px 1px #888;
-  -webkit-box-shadow: inset 0 3px 15px 1px #888;
-  box-shadow: inset 0 3px 15px 1px #888;
+body.unregistered {
+  .shadow_x1 {
+    moz-box-shadow: inset 0 3px 10px 1px #B9B3B3;
+    -webkit-box-shadow: inset 0 3px 10px 1px #B9B3B3;
+    box-shadow: inset 0 3px 10px 1px #B9B3B3;
+  }
 }
 .shadow_x2 {
   moz-box-shadow: inset 0 -7px 15px 1px #888;
