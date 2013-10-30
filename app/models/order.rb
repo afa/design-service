@@ -20,6 +20,7 @@ class Order < ActiveRecord::Base
   scope :in_work, -> { where(in_work_arel) }
   scope :not_in_work, -> { where(in_work_arel.not) }
   scope :from_users_by_role, ->(role) { joins(:client).where(users: {role: role}) }
+  scope :not_empty, ->{where("work_state != 'draft'")}
 
   before_save if: ->(order){ order.changed_attributes.has_key?('executor_id') ||
                             order.changed_attributes.has_key?('executor_type') } do
@@ -52,6 +53,7 @@ class Order < ActiveRecord::Base
       transition [:saved_draft, :moderator_suggested] => :moderator_suggested, :if => :test_price
       transition :saved_draft => :saved_draft
     end
+    after_transition :saved_draft => :moderator_suggested, :do => :say_to_spec
 
     event :agree do
       transition :moderator_suggested => :specialist_agreed, if: :current_user_is_a_specialist?
@@ -102,6 +104,10 @@ class Order < ActiveRecord::Base
 
   def can_agree_price?
     current_user_is_a_specialist? && moderator_suggested? || current_user_is_a_client? && specialist_agreed?
+  end
+
+  def say_to_spec
+   SpecialistMailer.new_order(self.executor.user, self)
   end
 
   def interlocutor(user)

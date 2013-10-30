@@ -15,9 +15,9 @@ class ProfilesController < InheritedResources::Base
 
   def orders
     if User.current.client?
-      orders = User.current.orders.includes(:orderable)
+      orders = User.current.orders.not_empty.includes(:orderable)
     elsif User.current.specialist?
-      orders = User.current.specialist.orders.includes(:orderable)
+      orders = User.current.specialist.orders.not_empty.includes(:orderable)
     end
     if params[:in_work]
       @orderable = orders.in_work.decorate
