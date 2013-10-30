@@ -46,6 +46,7 @@ body.unregistered {
     height: 31px;
     padding: 10px 180px 25px 0px;
     border-bottom: 2px solid;
+    width: 550px;
     span {
       padding-left: 85px;
       font-size: 30px;
@@ -121,7 +122,7 @@ body.unregistered {
     min-width: 980px;
   }
   #header {
-    height: 131px;
+    height: 128px;
     margin: 0px;
     padding: 0px;
     width: auto;
@@ -134,8 +135,9 @@ body.unregistered {
       height: 150px;
       z-index: -4;
       margin-left: -100px;
-      background-image: image-url("lighter.png");
-      background-position: left 0px;
+      background-image: image-url("lighter_long.png");
+      background-position: -60px 0px;
+      background-repeat: no-repeat;
     }
   }
   .headerLayer1 {
@@ -143,7 +145,7 @@ body.unregistered {
     float: left;
     width: 527px;
     height: 49px;
-    margin: 46px 0px 0px 40px;
+    margin: 40px 0px 0px 20px;
   }
 
   /*  DEFAULT CLASSES */
