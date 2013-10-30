@@ -2,7 +2,10 @@
 
 body.unregistered {
 
-  div.design_project { background-image: image-url("design_project_logo_big.jpg"); }
+  div.design_project {
+    background-image: image-url("design_project_logo_big.jpg");
+    border-bottom-color: $design_projects_color;
+  }
 
   div.design_project_all {
     width: 818px;
@@ -92,6 +95,8 @@ body.unregistered {
 
   div.design_p-workin-docs {
     background-image: image-url("design_project_logo_big.jpg");
+    width: 550px;
+    border-bottom-color: $design_projects_color;
   }
 
   div.design_p-workin-docs_submiting {

@@ -46,6 +46,18 @@ body.registered {
     width: auto;
     clear: both;
 
+    .lighter_bar{
+      position: absolute;
+      width: 680px;
+      height: 150px;
+      z-index: -4;
+      margin-left: -110px;
+      background-image: image-url("lighter_short.png");
+      background-position: -100px 0px;
+      background-repeat: no-repeat;
+      background-position: left 0px;
+    }
+
     ul {
       float: left;
       position: absolute;
@@ -71,13 +83,12 @@ body.registered {
       li:nth-child(1) { /* Варианты планировки */
         background-color: $plan_developments_color;
         width: 130px;
-        height: 78px;
+        height: 60px;
         left: 0px;
         span {
           width: 130px;
-          height: 78px;
           float: left;
-          margin-top: 15px;
+          margin-top: 7px;
         }
       }
 
@@ -88,7 +99,6 @@ body.registered {
         left: 138px;
         span {
           width: 160px;
-          height: 60px;
           float: left;
           margin-top: 13px;
         }
@@ -97,26 +107,24 @@ body.registered {
       li:nth-child(3) { /* Дизайн-проект */
         background-color: $design_projects_color;
         width: 132px;
-        height: 78px;
+        height: 60px;
         left: 306px;
         span {
           width: 132px;
-          height: 78px;
           float: left;
-          margin-top: 30px;
+          margin-top: 20px;
         }
       }
 
       li:nth-child(4) { /* Инженерные системы и конструктив */
         background-color: $engineering_systems_color;
         width: 132px;
-        height: 58px;
+        height: 60px;
         left: 446px;
         span {
           width: 132px;
-          height: 58px;
           float: left;
-          margin-top: 5px;
+          margin-top: 7px;
         }
       }
     }
@@ -125,9 +133,10 @@ body.registered {
   .headerLayer1 {
     background-image: image-url("logo-2.png");
     float: left;
-    width: 354px;
+    width: 500px;
     height: 41px;
-    margin: 46px 0px 0px 0px;
+    margin: 35px 0px 0px 20px;
+    background-repeat:no-repeat;
   }
 
   // TOP MENU FOR SPECIALIST

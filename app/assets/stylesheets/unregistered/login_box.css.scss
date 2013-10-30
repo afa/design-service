@@ -50,7 +50,7 @@ body.unregistered {
   /*  REGISTER CLIENT BLOCK*/
   #register {
     width: 477px;
-    height: 394px;
+    height: 450px;
     background-color: #FFFFFF;
     margin: 0px auto;
     position: relative;
@@ -81,13 +81,13 @@ body.unregistered {
     }
 
     div.goto_register {
-      height: 20px;
-      width: 80px;
+      height: 25px;
+      width: 100px;
       background-image: image-url("enter_logo_small.png");
       background-repeat: no-repeat;
       padding: 0px;
       float: left;
-      margin-top: 40px;
+      margin-top: 34px;
       margin-left: 10px;
       &:hover {
         background-image: image-url("enter_logo_small_hover.png");
@@ -152,12 +152,12 @@ body.unregistered {
 
     div.goto_register {
       height: 29px;
-      width: 160px;
+      width: 170px;
       background-image: image-url("register_logo_small.png");
       background-repeat: no-repeat;
       padding: 0px;
       float: left;
-      margin-top: 40px;
+      margin-top: 37px;
       &:hover {
         background-image: image-url("register_logo_small_hover.png");
         cursor: pointer;
