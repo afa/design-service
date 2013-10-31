@@ -1,3 +1,48 @@
+div.calculator_area {
+  ul{
+    list-style: none;
+    font-size:16px;
+    text-align:center;
+    margine:0px;
+    padding:0px;
+    clear:both;
+
+    li:nth-child(1){
+      background-color:#f4e3eb;
+      padding-top:15px;
+      padding-bottom:15px;
+      color:#7f7a7e;
+    }
+    li:nth-child(2){
+      background-color:#f0cbdc;
+      padding-top:10px;
+      padding-bottom:10px;
+      color:#7f7a7e;
+    }
+    li:nth-child(3){
+    padding-top:15px;
+    color:#de3880;
+    font-size:16px;
+    text-decoration:underline;
+    span{
+      cursor:pointer;
+    }
+    }    
+  }
+  div.order_zakaz{
+    font-size:16px;
+    text-align:center;
+    padding-top:5px;
+    padding-bottom:10px;
+    color:#5bb714;
+    font-size:18px;
+    font-weight:bold;
+    text-decoration:underline;
+    display:none;
+  }
+}
+
+
 div.calculator {
   width: 433px;
   height: 126px;
@@ -7,9 +52,10 @@ div.calculator {
 
   .form_description.order_price {
     float: left;
-    margin-left: 70px;
+    margin-left: 30px;
     margin-top: 15px;
-    padding: 0px;
+    width:380px;
+    height: 25px;
   }
   span {
     width: 200px;
@@ -27,6 +73,13 @@ div.calculator {
     width: 300px;
     height: 25px;
     text-align: center;
+    font-size:16px;
+  }
+  .grey{
+    color: #a1a1a1;
+  }
+  .green{
+    color: #5bb714;
   }
 }
 
