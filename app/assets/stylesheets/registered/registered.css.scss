@@ -166,16 +166,6 @@ body.registered {
   textarea:focus { outline:none !important; }
   .text_shadow_1 { text-shadow: 1px 1px 3px #6b5c5c; }
 
-  .close_fly_window {
-    background-image: image-url("close.png");
-    width: 30px;
-    height: 26px;
-    position: absolute;
-    right: 0px;
-    margin-top: -40px;
-    cursor: pointer;
-  }
-
   .slimScrollDiv { border-right: 1px solid #eee;
     float: left;
   }

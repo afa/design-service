@@ -35,6 +35,16 @@
   }
 }
 
+.close_fly_window {
+  background-image: image-url("close.png");
+  width: 30px;
+  height: 26px;
+  position: absolute;
+  right: 0px;
+  margin-top: -40px;
+  cursor: pointer;
+}
+
 /* LayOut Config */
 body {
   font: 100% gardensc, Arial, Helvetica, sans-serif;

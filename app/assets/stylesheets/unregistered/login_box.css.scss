@@ -8,6 +8,27 @@ body.unregistered {
     background-color: #ea7d7d;
   }
 
+  .login_form, .registration_form, .short_registration_form {
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+      padding: 0px;
+      margin: 0px;
+      border: none;
+      height: 25px;
+      font-size: 16px;
+      color: #4c4c4c;
+    }
+  }
+  .registration_form, .short_registration_form {
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+      width: 280px;
+    }
+  }
+  .login_form {
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+      width: 200px;
+    }
+  }
+
   .login_panel {
     width: 184px;
     height: 131px;

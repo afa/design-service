@@ -238,37 +238,6 @@ body.unregistered {
 
   div.page_description span.more_headings { padding-left:0px; }
 
-  .login_form, .registration_form, .short_registration_form {
-    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
-      padding: 0px;
-      margin: 0px;
-      border: none;
-      height: 25px;
-      font-size: 16px;
-      color: #4c4c4c;
-    }
-  }
-  .registration_form, .short_registration_form {
-    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
-      width: 280px;
-    }
-  }
-  .login_form {
-    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
-      width: 200px;
-    }
-  }
-
-  .close_fly_window {
-    background-image: image-url("close.png");
-    width: 30px;
-    height: 26px;
-    position: absolute;
-    right: 0px;
-    margin-top: -40px;
-    cursor: pointer;
-  }
-
   div.attach_place_for_box {
     position: relative;
     float: left;
