@@ -1,11 +1,29 @@
 class PlanDevelopmentsController < InheritedResources::Base
   #respond_to :html, except: [:create, :update]
+  respond_to :html, :json
   load_and_authorize_resource
   respond_to :json, only: [:update]
 
-  before_filter :load_draft, only: [:new, :edit]
+  before_filter :load_draft, only: [:new, :edit, :start_count, :auto_price]
   before_filter except: [:index] do
     @plan_development = @plan_development.decorate
+  end
+
+  def start_count
+   if @plan_development.price.to_f > 0.0
+    render :json => {:price => @plan_development.price}
+   else
+    render :json => {}
+   end
+  end
+
+  def auto_price
+   if @plan_development.price.to_f > 0.0
+    render :json => {:price => @plan_development.price}
+   else
+    render :json => {:price => @plan_development.locate_price}
+   end
+   
   end
 
 private

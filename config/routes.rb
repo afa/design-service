@@ -100,6 +100,10 @@ DesignService::Application.routes.draw do
 
   get 'plan_developments' => 'plan_developments#new'
   resources :plan_developments do
+    member do
+     post :start_count
+     post :auto_price
+    end
     resources :attachments
   end
 
