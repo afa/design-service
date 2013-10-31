@@ -2,8 +2,8 @@
   - if params[:controller] == 'registrations'
     .head_none
   - else
-    .head_register
     .goto_register
+    .goto_login
   .info
     E-mail:
     %span *
@@ -11,3 +11,5 @@
   .info
     Телефон:
   .text_fields= f.input_field :phone
+  .control
+    %input.submit_button{:alt => "Submit Form", :src => asset_path("ok_button.png"), :type => "image"}

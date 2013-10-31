@@ -113,7 +113,7 @@ ul.list_of_attachments {
 }
 
 .postComment {
-  сolor: #333;
+  color: #333;
   background: image-url("textformbg.png");
   width: 465px;
   height: 120px;
@@ -347,7 +347,7 @@ span.message {
 
 body.registered {
   .shadow_x1 {
-    moz-box-shadow: inset 0 3px 15px 1px #888;
+    -moz-box-shadow: inset 0 3px 15px 1px #888;
     -webkit-box-shadow: inset 0 3px 15px 1px #888;
     box-shadow: inset 0 3px 15px 1px #888;
   }
@@ -355,41 +355,42 @@ body.registered {
 
 body.unregistered {
   .shadow_x1 {
-    moz-box-shadow: inset 0 3px 10px 1px #B9B3B3;
+    -moz-box-shadow: inset 0 3px 10px 1px #B9B3B3;
     -webkit-box-shadow: inset 0 3px 10px 1px #B9B3B3;
     box-shadow: inset 0 3px 10px 1px #B9B3B3;
   }
 }
+
 .shadow_x2 {
-  moz-box-shadow: inset 0 -7px 5px 1px #E6E6E6;
+  -moz-box-shadow: inset 0 -7px 5px 1px #E6E6E6;
   -webkit-box-shadow: inset 0 -7px 5px 1px #E6E6E6;
   box-shadow: inset 0 -7px 5px 1px #E6E6E6;
 }
 
 .shadow_x3 {
-  moz-box-shadow: 2px -2px 10px #8c8c8c;
+  -moz-box-shadow: 2px -2px 10px #8c8c8c;
   -webkit-box-shadow: 2px -2px 10px #8c8c8c;
   box-shadow: 2px -2px 10px #8c8c8c;
   behavior: url("ie-css3.htc");
 }
 
 .rounded-corners {
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -khtml-border-radius: 20px;
+  border-radius: 20px;
 }
 .rounded-corners_l2 {
-    -moz-border-radius: 35px;
-    -webkit-border-radius: 35px;
-    -khtml-border-radius: 35px;
-    border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  -khtml-border-radius: 35px;
+  border-radius: 35px;
 }
 .rounded-corners_l3 {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .rounded-corners_l4 {
@@ -406,7 +407,7 @@ body.unregistered {
 }
 
 .textlines_default {
-  сolor: #333;
+  color: #333;
   border: 0px;
   padding: 0px 5px 0px 5px;
   margin: 0px;
