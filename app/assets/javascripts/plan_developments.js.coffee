@@ -16,7 +16,6 @@ request_total = (ajaxUrl, dataHash, functionSuccess, functionFailure) ->
     success: functionSuccess
     error: functionFailure
 
-    
 
 get_total = (max_time) ->
 
@@ -45,10 +44,21 @@ get_total = (max_time) ->
 
 $(document).ready ->
   $("#count_start").click ->
+    $('.black_content_blocks').append($('#order_mode'))
     event.preventDefault()
     max_time = 15
     $(this).fadeOut(800)
     $("#calculator").val('Осталось ' + max_time + ' минут')
     get_total(max_time-1)
 
+  $(".order_zakaz span").click ->
+    show_fly_window('#order_mode')
 
+
+  $("#order_mode .login").click ->
+    close_fly_window() 
+    show_fly_window('#login')
+
+  $("#order_mode .register").click ->
+    close_fly_window() 
+    show_fly_window('#register') 
