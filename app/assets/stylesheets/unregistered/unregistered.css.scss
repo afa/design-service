@@ -238,24 +238,27 @@ body.unregistered {
 
   div.page_description span.more_headings { padding-left:0px; }
 
-  .reg_client_tfeild {
-    width: 280px;
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    height: 25px;
-    font-size: 16px;
-    color: #4c4c4c;
+  .login_form, .registration_form, .short_registration_form {
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+      padding: 0px;
+      margin: 0px;
+      border: none;
+      height: 25px;
+      font-size: 16px;
+      color: #4c4c4c;
+    }
   }
-  .log_client_tfeild {
-    width: 200px;
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    height: 25px;
-    font-size: 16px;
-    color: #4c4c4c;
+  .registration_form, .short_registration_form {
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+      width: 280px;
+    }
   }
+  .login_form {
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+      width: 200px;
+    }
+  }
+
   .close_fly_window {
     background-image: image-url("close.png");
     width: 30px;

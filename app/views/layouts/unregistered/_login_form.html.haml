@@ -1,13 +1,13 @@
-= simple_form_for(@user ||= User.new, as: :user, :url => session_path(:user)) do |f|
+= simple_form_for(@user ||= User.new, as: :user, :url => session_path(:user), html: {class: 'login_form'}) do |f|
   - if params[:controller] == 'devise/sessions'
     .head_none
   - else
     .head_register
     .goto_register
   .info Логин или E-mail :
-  .text_fields= f.input_field :login, class: 'log_client_tfeild'
+  .text_fields= f.input_field :login
   .info Пароль :
-  .text_fields= f.input_field :password, class: 'log_client_tfeild'
+  .text_fields= f.input_field :password
   .control
     %span
       - if devise_mapping.recoverable? && controller_name != 'passwords'
