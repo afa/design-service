@@ -4,21 +4,33 @@
 
 //= require orderable
 
-get_total = (max_time) ->
-  check_stat = ->
-    return ''
+request_total = (ajaxUrl, dataHash, functionSuccess, functionFailure) ->
+  $.ajax
+    type: "POST"
+    url: ajaxUrl
+    
+    #contentType: "application/json; charset=utf-8",
+    data: $.param(dataHash)
+    dataType: "json"
+    processData: false
+    success: functionSuccess
+    error: functionFailure
 
-  robo_count = ->
-    return 850
+    
+
+get_total = (max_time) ->
 
   time_start = ->
     yet= max_time--
-    total = check_stat()
+    manual = $('span#count_start a.start').attr('href')
+    auto = $('span#count_start a.auto').attr('href')
+    total = request_total(manual,{})      #check price validate
     if(yet>=0)
       $("#calculator").val('Осталось '+yet+' минут')
     else
-      total = robo_count() 
+      total = request_total(auto,{})      #auto price generate
 
+ 
     if(total!="")
       abortTimer()
       $("#calculator").val(total+' рублей')
@@ -33,6 +45,7 @@ get_total = (max_time) ->
 
 $(document).ready ->
   $("#count_start").click ->
+    event.preventDefault()
     max_time = 15
     $(this).fadeOut(800)
     $("#calculator").val('Осталось ' + max_time + ' минут')
