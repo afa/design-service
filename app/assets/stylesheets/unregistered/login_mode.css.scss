@@ -1,0 +1,70 @@
+@import "settings";
+
+div#order_mode{
+  width:450px; 
+  padding-left:20px;
+  position:relative;
+  top:200px; 
+  z-index: 30;
+  margin:0px auto;
+  background-color:#f6f6f6;
+  display:none;
+
+
+  .heading{
+    padding-top:15px;
+    padding-bottom:15px;
+    width:450px;
+    text-align:center;
+    color:#ff805b;
+    font-size:20px;
+  }
+  .content{
+    font-size:18px;
+    float:left;
+    width:440px;
+    text-align: left;
+
+    .login{
+      width:120px;
+      height:30px;
+      float:left;
+      background-image: image-url("enter_logo.png");
+      background-repeat:no-repeat;
+      cursor:pointer;
+    }
+    .login{
+      background-image: image-url("enter_logo.png");
+    }
+
+  }
+
+  span{
+    padding-top:15px;
+    width:240px;
+    text-align:center;
+    float:left;
+    margin-left:90px;
+  }
+  .register{
+    width:220px;
+    height:30px;
+    background-image: image-url("register_logo.png");
+    background-repeat:no-repeat;
+    margin-top:10px;
+    float:left;
+    margin-left:100px;
+    cursor:pointer;
+  }
+  .register:hover{
+    background-image: image-url("register_logo.png");
+  }
+  .wish{
+    width:450px;
+    clear:left;
+    text-align:center;
+    padding-top:15px;
+    padding-bottom:20px;
+    color:#69b308;
+  }
+}
