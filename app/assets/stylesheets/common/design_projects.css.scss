@@ -219,12 +219,11 @@ div.design_project_all {
     }
 
     span.black_opacity {
-      display: none;
       position: absolute;
-      background-image: image-url("hover_black.png");
+      background-image: image-url("hover_white.png");
     }
     span.black_opacity_on {
-      display: block;
+      background-image: none !important;
       cursor: pointer;
     }
   }
