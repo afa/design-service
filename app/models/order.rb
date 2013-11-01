@@ -26,6 +26,9 @@ class Order < ActiveRecord::Base
                             order.changed_attributes.has_key?('executor_type') } do
     assign_specialist(false)
   end
+  before_save if: ->(order){ order.draft? && !(order.changed_attributes.keys - %w(created_at updated_at id)).empty?} do
+   work_state = 'saved_draft'
+  end
 
   state_machine :work_state, initial: :draft do
     state :draft
