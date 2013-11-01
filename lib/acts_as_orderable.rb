@@ -50,7 +50,7 @@ module ActsAsOrderable
       scope :by_client, ->(user){ joins(:order).where(orders: {client_id: user}) }
       scope :by_work_state, ->(state){ joins(:order).where(orders: {work_state: state}) }
 
-      after_commit_on_update ->{ 
+      after_commit :on => :update, ->{ 
         if changed?
           order.save_draft_drop_price
         else
