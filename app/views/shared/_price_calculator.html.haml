@@ -16,11 +16,13 @@
       Нажмите на ссылку и не закрывайте в течение 15 минут страницу!
     %li
       %span#count_start 
-        УЗНАТЬ ПРЕДВАРИТЕЛЬНУЮ СТОИМОСТЬ ЗАКАЗА!
+        %a.start{:href => start_count_plan_development_path(@plan_development.id, :format => :json)}УЗНАТЬ ПРЕДВАРИТЕЛЬНУЮ СТОИМОСТЬ ЗАКАЗА!
+        %a.auto{:href => auto_price_plan_development_path(@plan_development.id, :format => :json)}
   .calculator.border_x5.rounded-corners_l2.shadow_x2
     .form_description.order_price
     %span
       <input name="calculator" type="text" class="total grey" value="" id="calculator" readonly="readonly">
     %span.count
   .order_zakaz
-    ОФОРМИТЬ ЗАКАЗ
+    %span
+      ОФОРМИТЬ ЗАКАЗ

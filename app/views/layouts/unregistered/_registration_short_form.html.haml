@@ -1,0 +1,15 @@
+= simple_form_for(@user ||= User.new, as: :user, :url => registration_path(:user), html: {class: 'short_registration_form'}) do |f|
+  - if params[:controller] == 'registrations'
+    .head_none
+  - else
+    .goto_register
+    .goto_login
+  .info
+    E-mail:
+    %span *
+  .text_fields= f.input_field :email
+  .info
+    Телефон:
+  .text_fields= f.input_field :phone
+  .control
+    %input.submit_button{:alt => "Submit Form", :src => asset_path("ok_button.png"), :type => "image"}

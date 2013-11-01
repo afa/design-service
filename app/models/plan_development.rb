@@ -30,4 +30,14 @@ class PlanDevelopment < ActiveRecord::Base
       washing_room_needed: true,
       num_plans: 1 }
   end
+
+  def locate_price
+   return price if price? && price > 0.0
+   plans = PlanDevelopment.where(address: address, floor: floor, section: section, flat_area: flat_area, num_rooms: num_rooms, num_standpipes: num_standpipes, num_plans: num_plans).order("created_at desc").all.select{|o| o.price? && o.price > 0.0 } - [self]
+   if plans.empty?
+    default_price || 0.0
+   else
+    plans.first.price
+   end
+  end
 end
