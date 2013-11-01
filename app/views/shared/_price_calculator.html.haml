@@ -14,13 +14,14 @@
       Наш калькулятор посчитает предварительную стоимость заказа <br>исходя из Вашего задания на разработку вариантов планировок!
     %li
       Нажмите на ссылку и не закрывайте в течение 15 минут страницу!
-    %li
-      %span#count_start 
-        %a.start{:href => start_count_plan_development_path(@plan_development.id, :format => :json)}УЗНАТЬ ПРЕДВАРИТЕЛЬНУЮ СТОИМОСТЬ ЗАКАЗА!
-        %a.auto{:href => auto_price_plan_development_path(@plan_development.id, :format => :json)}
+
   .calculator.border_x5.rounded-corners_l2.shadow_x2
     .form_description.order_price
     %span
+      %span#count_start 
+        %a.start{:href => start_count_plan_development_path(@plan_development.id, :format => :json)}УЗНАТЬ !
+        %a.auto{:href => auto_price_plan_development_path(@plan_development.id, :format => :json)}
+
       <input name="calculator" type="text" class="total grey" value="" id="calculator" readonly="readonly">
     %span.count
   .order_zakaz
