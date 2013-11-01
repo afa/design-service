@@ -27,6 +27,13 @@ div.calculator_area {
     span {
       cursor: pointer;
     }
+    li:nth-child(3), li:nth-child(3) a {
+    padding-top: 15px;
+    color: #de3880;
+    font-size: 16px;
+    text-decoration: underline;
+    span {
+      cursor: pointer;
     }
   }
   div.order_zakaz {
@@ -39,6 +46,10 @@ div.calculator_area {
     font-weight: bold;
     text-decoration: underline;
     display: none;
+
+    span {
+      cursor: pointer;
+    }
   }
 }
 
