@@ -54,7 +54,7 @@ module ActsAsOrderable
         if changed?
           order.save_draft_drop_price
         else
-          order.saved_draft
+          order.save_draft
         end
         order.touch
       }
