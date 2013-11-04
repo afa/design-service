@@ -24,7 +24,7 @@ body.unregistered {
     background-color: #f6f6f6;
     padding: 0px;
     height: auto;
-    min-height: 740px;
+    min-height: 780px;
   }
   div.collage_design {
     position: relative;
@@ -223,20 +223,46 @@ body.unregistered {
     cursor: pointer;
   }
 
-  div.more_headings {
-    border-bottom-color: $plan_developments_color;
+  div.password_relative {
+    border-bottom-color: #e6d480;
     margin-bottom: 5px;
     float: left;
     width: 550px;
   }
 
-  span.more_headings {
+  span.password_relative {
     margin-left: 0px;
     padding: 0px;
-    color: #3d6804;
+    color: #e6d480;
   }
 
-  div.page_description span.more_headings { padding-left:0px; }
+  div.page_description span.password_relative { padding-left:0px; }
+
+  div.logins {
+    border-bottom-color: $plan_developments_color;
+    margin-bottom: 5px;
+    width: 550px;
+  }
+
+  span.logins {
+    margin-left: 0px;
+    padding: 0px;
+    color: $plan_developments_color;
+  }
+
+  div.page_description span.logins { padding-left:0px; }
+
+  div.registrations {
+    border-bottom-color: $design_projects_color;
+    margin-bottom: 5px;
+    width: 550px;
+  }
+  span.registrations {
+    margin-left: 0px;
+    padding: 0px;
+    color: $design_projects_color;
+  }
+  div.page_description span.registrations { padding-left:0px; }
 
   div.attach_place_for_box {
     position: relative;
