@@ -10,11 +10,7 @@ $(document).ready ->
     event.preventDefault()
 
   $('.goto_register').click ->
-    close_fly_window()  
-    if($(this).parent().parent().attr('id')=='register')
-      show_fly_window('#login')
-    else
-      show_fly_window('#register')
+    show_fly_window('#register')
 
-
-
+  $('.goto_login').click ->
+    show_fly_window('#login')

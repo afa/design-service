@@ -1,31 +1,31 @@
-= simple_form_for(@user ||= User.new, as: :user, :url => registration_path(:user)) do |f|
+= simple_form_for(@user ||= User.new, as: :user, :url => registration_path(:user), html: {class: 'registration_form'}) do |f|
   - if params[:controller] == 'registrations'
     .head_none
   - else
     .head_register
-    .goto_register
+    .goto_login
   .info
     Логин:
     %span *
   .text_fields
     %span.caution (латинские символы и цифры, не меньше 3 символов)
-    = f.input_field :username, class: 'reg_client_tfeild'
+    = f.input_field :username
   .info
     E-mail:
     %span *
-  .text_fields= f.input_field :email, class: 'reg_client_tfeild'
+  .text_fields= f.input_field :email
   .info
     Телефон:
-  .text_fields= f.input_field :phone, class: 'reg_client_tfeild'
+  .text_fields= f.input_field :phone
   .info
     Пароль:
     %span *
   .text_fields
     %span.caution (не меньше 8 символов)
-    = f.input_field :password, class: 'reg_client_tfeild'
+    = f.input_field :password
   .info
     Повторите&nbsp;&nbsp; пароль:
     %span *
-  .text_fields= f.input_field :password_confirmation, class: 'reg_client_tfeild'
+  .text_fields= f.input_field :password_confirmation
   .control
     %input.submit_button{:alt => "Submit Form", :src => asset_path("ok_button.png"), :type => "image"}

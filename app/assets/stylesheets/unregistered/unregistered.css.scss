@@ -155,7 +155,7 @@ body.unregistered {
   .border_x4 {border:8px solid $replanning_endorsement_color_light; }
   .border_x5 {border:1px solid #c1c1c1; }
   .border_x6 { border:1px solid $plan_developments_color; }
-  .border_x7 {border:8px solid #ecd563;}
+  .border_x7 {border:8px solid #ecd563; }
   .textlines_default {
     background-color: #f6f6f6;
   }
@@ -237,34 +237,6 @@ body.unregistered {
   }
 
   div.page_description span.more_headings { padding-left:0px; }
-
-  .reg_client_tfeild {
-    width: 280px;
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    height: 25px;
-    font-size: 16px;
-    color: #4c4c4c;
-  }
-  .log_client_tfeild {
-    width: 200px;
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    height: 25px;
-    font-size: 16px;
-    color: #4c4c4c;
-  }
-  .close_fly_window {
-    background-image: image-url("close.png");
-    width: 30px;
-    height: 26px;
-    position: absolute;
-    right: 0px;
-    margin-top: -40px;
-    cursor: pointer;
-  }
 
   div.attach_place_for_box {
     position: relative;

@@ -6,8 +6,8 @@
 
 $(document).ready ->
   #////IMAGE HOVER///
-  $(".img_").mouseenter ->
-    $(this).parent().find(".heading").addClass "heading_h"
+  $(".black_opacity").mouseenter ->
+    $(this).parent().parent().find(".heading").addClass "heading_h"
     $(this).parent().find(".black_opacity").addClass "black_opacity_on"
   $(".black_opacity").mouseleave ->
     $(".black_opacity_on").removeClass "black_opacity_on"

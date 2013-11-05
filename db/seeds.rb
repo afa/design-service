@@ -27,9 +27,10 @@
   sweep_wall: 'Развертки стен',
   floor_plans: 'Планы полов',
   ceiling_fixtures: 'Планы потолков и освещение',
-  draping_materials: 'Подбор отделочных материалов'
+  draping_materials: 'Подбор отделочных материалов',
+  accesories: 'Аксессуары'
 }.each do |typename, name|
-  OrderCustomizer.where(typename: typename).first_or_create(name: name, image: 'concept.jpg', description: '')
+  OrderCustomizer.where(typename: typename).first_or_create(name: name, image: "design_projects/#{typename}.jpg", description: '')
 end
 
 [

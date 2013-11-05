@@ -62,9 +62,8 @@ $(document).ready ->
     #$("#calculator").val('Осталось ' + max_time + ' минут')
     #get_total(max_time-1)
 
-  $(".order_zakaz span").click ->
+  $("body.unregistered .order_zakaz span").click ->
     show_fly_window('#order_mode')
-
 
   $("#order_mode .login").click ->
     close_fly_window() 
