@@ -4,7 +4,9 @@ ActiveAdmin.register SpecialistGroup do
   controller do
     custom_actions resource: [:remove_specialist]
     def remove_specialist
-      resource.specialists.delete(Specialist.find(params[:specialist_id]))
+      spec = Specialist.find(params[:specialist_id])
+      resource.specialists.delete(spec)
+      SpecialistMailer.group_removed(spec, resource)
       redirect_to [:admin, resource]
     end
     def permitted_params

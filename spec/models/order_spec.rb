@@ -70,15 +70,25 @@ describe Order do
   end
   it "should create two transactions for sum more than payment" do
    @purchase.ok
-   @clnt.transactions.should have(2).transactions
+   @clnt.transactions.should have(1).transactions
    @order.transactions.should have(1).transactions
-   @clnt.qiwi.should == 6000.0
+   @clnt.qiwi.should == 1000.0
+   @order.qiwi.should == 5000.0
    @order
   end
  end
 
  context "qiwi pay" do
   before do
+   FactoryGirl.create(:transaction, :destination => @clnt, :amount => 1000.0)
+   @order = FactoryGirl.create(:order, :price => 5000.0, :orderable => @orderable, :client => @clnt)
+  end
+  context "on #give" do
+   it "should move money" do
+    @clnt.give(@order, 500.0)
+    User.find(@clnt.id).qiwi.should == 500.0
+    Order.find(@order.id).qiwi.should == 500.0
+   end
   end
  end
 end

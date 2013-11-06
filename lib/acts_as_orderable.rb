@@ -67,18 +67,18 @@ module ActsAsOrderable
   def default_price_per_square_meter
     return nil  unless flat_area
     points = [[10, 500],[30,200],[100,100],[250,60]].sort_by{|area,price| area}
-    mult = {1 => 1.0, 2 => 1.9, 3 => 2.7, 4 => 3.5}[num_plans]
+    mult = {1 => 1.0, 2 => 1.9, 3 => 2.7, 4 => 3.5}[num_plans] || 1.0
     if flat_area < points.first.first
       points.first.last*mult
     elsif points.last.first < flat_area
       points.last.last*mult
     else
       (area_1,price_1),(area_2,price_2) = points.each_cons(2).detect{|(area_1,price_1),(area_2,price_2)| (area_1...area_2).include?(flat_area) }
-      (price_1 + (price_2 - price_1) * (flat_area - area_1)) * mult / (area_2-area_1).to_f
+      (price_1 + ((price_2 - price_1) * (flat_area - area_1) / (area_2-area_1).to_f)) * mult
     end
   end
   def default_price
     return nil  unless flat_area
-    default_price_per_square_meter * flat_area
+    default_price_per_square_meter * (flat_area? && flat_area >= 1.0 ? 10.0 : flat_area)
   end
 end
