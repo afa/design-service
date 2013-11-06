@@ -72,3 +72,23 @@ $(document).ready ->
   $("#order_mode .register").click ->
     close_fly_window() 
     show_fly_window('#register') 
+
+  $("body.unregistered .put.submit").off("click")
+  $("body.unregistered .put.submit").on("click", ->
+    event.preventDefault()
+    if($("#plan_development_flat_area").val().length == 0)
+      $("#plan_development_flat_area").addClass("red_border").focus()
+      return false
+    else
+      $("#plan_development_flat_area").removeClass("red_border")
+    ajax_sendform($(this).closest("form"), "PUT",
+    success: (data,status,xhr) ->
+      close_fly_window()
+      $("#register form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
+      $("#login form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
+      show_fly_window("#register")
+    error: (xhr,status,error) ->
+      alert("Не получилось отправить форму")
+    )
+    return false
+  )
