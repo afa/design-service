@@ -18,8 +18,8 @@ describe PurchasesController do
    before do
     @able = FactoryGirl.create(:replanning_endorsement)
     @order = FactoryGirl.create(:order, :orderable => @able, :price => 5000.0, :work_state => :client_agreed, :client => @user)
-    @payment = FactoryGirl.create(:payment, :state => :requested, :amount => @order.need_amount, :order => @order, :user => @user)
-    @purchase = FactoryGirl.create(:purchase, :payment => @payment, :amount => @payment.amount, :order => @order, :user => @user)
+    @payment = FactoryGirl.create(:payment, :state => :requested, :amount => 5000.0, :order => @order, :user => @user)
+    @purchase = FactoryGirl.create(:purchase, :payment => @payment, :amount => 5000.0, :order => @order, :user => @user)
     @sum = Digest::MD5.hexdigest("#{@purchase.amount.to_s}:#{@purchase.id.to_s}:")
     ROBOPASS = ''
    end
@@ -36,13 +36,13 @@ describe PurchasesController do
     Purchase.find(@purchase.id).payment.should be_paid
    end
    it "should create transaction for sum" do
-    @order.transactions.should be_empty
+    @order.transactions_in.should be_empty
     get :index, {:OutSum => @purchase.amount, :InvId => @purchase.id.to_s, :SignatureValue => @sum}
     order = Order.find(@order.id)
-    order.transactions.should_not be_empty
-    order.transactions.each{|t| t.source.should be_nil }  
-    order.transactions.each{|t| t.destination.should == @user }  
-    order.transactions.map{|t| t.amount }.sum.should == @purchase.amount  
+    order.transactions_in.should_not be_empty
+    order.transactions_in.each{|t| t.source.should be_nil }  
+    order.transactions_in.each{|t| t.destination.should == @order }  
+    order.transactions_in.map{|t| t.amount }.sum.should == @purchase.amount  
    end
    it "should update paid sum in purchase" do
     @sum = Digest::MD5.hexdigest("#{(@purchase.amount - 1.0).to_s}:#{@purchase.id.to_s}:")

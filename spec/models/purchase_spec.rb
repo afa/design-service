@@ -57,6 +57,30 @@ describe Purchase do
    Payment.find(@payment.id).purchases.where(:state => :requested).inject(0.0){|r,p| r + p.amount }.should == 1.0
   end
  end
+ context "when amount mor then payment amount" do
+  before do
+   @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @clnt, :payment => @payment, :amount => @payment.amount + 1.0)
+  end
+  it "should make two purchases" do
+   @purchase.ok
+   Payment.find(@payment.id).purchases.where(:state => :paid).count.should == 2
+  end
+  it "should make purchases for order and for user" do
+   @purchase.ok
+   Payment.find(@payment.id).purchases.where(:state => :paid, :order_id => @payment.order_id).count.should == 1
+   Payment.find(@payment.id).purchases.where(:state => :paid, :order_id => nil).count.should == 1
+  end
+  it "should create transaction for order" do
+   @purchase.ok
+   Order.find(@order.id).transactions_in.count.should == 1
+   Order.find(@order.id).qiwi.should == 10000.0
+  end
+  it "should create transaction for user" do
+   @purchase.ok
+   User.find(@clnt.id).transactions_in.count.should == 1
+   User.find(@clnt.id).qiwi.should == 1.0
+  end
+ end
  context "for xmlapi" do
   before do
    @purchase = FactoryGirl.create(:purchase, :order => @order, :user => @clnt, :payment => @payment, :amount => @payment.amount - 1.0)
