@@ -1,3 +1,46 @@
-= show_for resource do |s|
-  = s.attribute :link_to_profile_admin
-  = s.attribute :orders_info
+.specialist
+ .orders
+  .head
+   Работы специалиста
+  %table
+   %tr
+    %th Номер заказа
+    %th Тип заказа
+    %th Статус заказа
+    %th Стоимость заказа
+    %th Выполнено (в %)
+    %th Дата завершения
+    %th Клиент ФИО
+   - resource.orders.each do |order|
+    %tr
+     %td= link_to order.id.to_s, admin_order_path(order)
+     %td= order.orderable.class.name
+     %td= order.work_state
+     %td= order.specialist_price
+     %td= order.completion_percent
+     %td= order.completion_time
+     %td= order.client.try(:full_name)
+
+ .qiwi
+  На счету #{resource.qiwi} руб.
+ .transactions
+  %h4 Денежные переводы
+  %table
+   %tr
+    %th Дата
+    %th Сумма
+    %th Откуда
+    %th Куда
+   - transactions.each do |tr|
+    %tr
+     %td= tr.created_at
+     %td= tr.amount
+     %td= tr.source
+     %td= tr.destination
+
+ .groups
+  = render :partial => "admin/users/spec_groups", :locals => {resource: resource}
+ .portfolios
+  - resource.portfolios.each do |portfolio|
+   .portfolio
+    =render :partial => 'shared/portfolio', :locals => {:portfolio_items => resource.portfolio_items, :editable => true, :example_set => portfolio.id}
