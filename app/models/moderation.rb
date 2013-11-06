@@ -19,6 +19,7 @@ class Moderation < ActiveRecord::Base
       transition all => :rejected_complete, :if  => :main_moderator?
       transition (all - [:accepted_complete, :rejected_complete]) => :rejected_first_stage, :if => :moderator?
     end
+    after_transition all => [:accepted_complete, :accepted_automatically], :do => :send_mail
   end
 
   def accepted?
@@ -39,5 +40,15 @@ class Moderation < ActiveRecord::Base
 
   def can_be_auto_accepted?
     accepted_first_stage? &&  updated_at < Time.now - 45.minutes
+  end
+
+  def send_mail
+   if moderable.is_a?(Message)
+    if moderable.recipient.specialist?
+     SpecialistMailer.message_arrived(moderable.recipient).deliver
+    else
+     Client.message_arrived(moderable.recipient).deliver
+    end
+   end
   end
 end
