@@ -84,8 +84,8 @@ $(document).ready ->
     ajax_sendform($(this).closest("form"), "PUT",
     success: (data,status,xhr) ->
       close_fly_window()
-      $("#register form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
-      $("#login form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
+      #$("#register form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
+      #$("#login form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
       show_fly_window("#register")
     error: (xhr,status,error) ->
       alert("Не получилось отправить форму")

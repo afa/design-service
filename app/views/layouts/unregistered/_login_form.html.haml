@@ -8,6 +8,7 @@
   .text_fields= f.input_field :login
   .info Пароль :
   .text_fields= f.input_field :password
+  %input{:type => 'hidden', :name => "merge_order_to_user", :value => @plan_development.try(:id).to_s}
   .control
     %span
       - if devise_mapping.recoverable? && controller_name != 'passwords'

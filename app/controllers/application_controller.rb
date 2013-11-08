@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_filter :log_params
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :get_current_user
+  before_filter :get_mergeable_order #, :if => :devise_controller?
+  after_filter :merge_order
   before_filter :load_events_for_spec
   #before_filter -> {User.current = current_or_guest_user}
 
@@ -17,6 +19,25 @@ class ApplicationController < ActionController::Base
 
   def get_current_user
    User.current = current_or_guest_user
+  end
+
+  def get_mergeable_order
+   p "---merge", params[:merge_order_to_user]
+   if params[:merge_order_to_user]
+    @mergeable_order = PlanDevelopment.find(params[:merge_order_to_user]).try(:order)
+    p "---mergeorder", @mergeable_order, User.current, User.current.client?
+    if User.current.client?
+     User.current.merge_order(@mergeable_order)
+     p "---mergeorders", User.current.orders
+    end
+   end
+  end
+
+  def merge_order
+   p "---postmerge"
+   if @mergeable_order && User.current.client?
+    User.current.merge_order(@mergeable_order)
+   end
   end
 
   def load_events_for_spec
@@ -46,9 +67,9 @@ class ApplicationController < ActionController::Base
   protected :page_subtitle, :page_subtitle_class
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :phone) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :phone, :merge_order_to_user) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:password, :password_confirmation, :current_password) }
-    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :password) }
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :password, :merge_order_to_user) }
   end
   protected :configure_permitted_parameters
 
