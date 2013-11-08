@@ -127,7 +127,10 @@ ru:
     order_customizers: 'design_project'
     selected_forms: 'design_p-workin-docs'
     specialists: ''
-    devise/passwords: 'more_headings'
+    devise/passwords: 'password_relative'
+    registrations: 'registrations'
+    devise/sessions: 'logins'
+
   welcome:
     title: ''
   plan_developments:

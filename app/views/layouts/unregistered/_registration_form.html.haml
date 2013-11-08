@@ -1,6 +1,8 @@
 = simple_form_for(@user ||= User.new, as: :user, :url => registration_path(:user), html: {class: 'registration_form'}) do |f|
   - if params[:controller] == 'registrations'
-    .head_none
+    .head_register
+    = link_to "/users/sign_in" do
+      .goto_login
   - else
     .head_register
     .goto_login

@@ -1,6 +1,8 @@
 = simple_form_for(@user ||= User.new, as: :user, :url => session_path(:user), html: {class: 'login_form'}) do |f|
   - if params[:controller] == 'devise/sessions'
-    .head_none
+    .head_login
+    = link_to "/users/sign_up" do
+      .goto_register
   - else
     .head_login
     .goto_register
