@@ -79,6 +79,6 @@ module ActsAsOrderable
   end
   def default_price
     return nil  unless flat_area
-    default_price_per_square_meter * (flat_area? && flat_area >= 1.0 ? 10.0 : flat_area)
+    default_price_per_square_meter * flat_area
   end
 end

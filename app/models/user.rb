@@ -114,11 +114,15 @@ class User < ActiveRecord::Base
    self
   end
 
-  #def prepare_new_profile
-  # return if profile
-  # #return if guest?
-  # profile = Profile.new
-  #end
+  def merge_order(order)
+   if order
+    p "---mrgord", order
+    unless order.client_id == id
+     order.client = self
+     order.save!
+    end
+   end
+  end
 
   def phone
    profile.try(:phone)
