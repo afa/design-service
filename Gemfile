@@ -90,3 +90,8 @@ gem "state_machine"
 gem "airbrake"
 gem "newrelic_rpm"
 gem 'quiet_assets', :group => :development
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
