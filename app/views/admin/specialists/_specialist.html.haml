@@ -39,7 +39,7 @@
      %td= tr.destination
 
  .groups
-  = render :partial => "admin/users/spec_groups", :locals => {specialist: specialist}
+  = render :partial => "admin/specialists/spec_groups", :locals => {specialist: specialist}
  .portfolios
   - specialist.portfolios.each do |portfolio|
    .portfolio
