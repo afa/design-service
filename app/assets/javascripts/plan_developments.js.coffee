@@ -66,11 +66,9 @@ $(document).ready ->
     show_fly_window('#order_mode')
 
   $("#order_mode .login").click ->
-    close_fly_window() 
     show_fly_window('#login')
 
   $("#order_mode .register").click ->
-    close_fly_window() 
     show_fly_window('#register') 
 
   $("body.unregistered .put.submit").off("click")
@@ -83,7 +81,6 @@ $(document).ready ->
       $("#plan_development_flat_area").removeClass("red_border")
     ajax_sendform($(this).closest("form"), "PUT",
     success: (data,status,xhr) ->
-      close_fly_window()
       #$("#register form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
       #$("#login form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
       show_fly_window("#register")
