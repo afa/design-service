@@ -1,8 +1,8 @@
-= select_tag(:group, options_from_collection_for_select(SpecialistGroup.all - resource.specialist.specialist_groups, :id, :name), :include_blank => true)
-- resource.specialist.specialist_groups.each do |grp|
+= select_tag(:group, options_from_collection_for_select(SpecialistGroup.all - specialist.specialist_groups, :id, :name), :include_blank => true)
+- specialist.specialist_groups.each do |grp|
  .group
   .name
    = grp.name
   .action
-   = link_to "-", admin_user_group_remove_path(resource.id, :group => grp.id)
+   = link_to "-", admin_user_group_remove_path(specialist.id, :group => grp.id)
 

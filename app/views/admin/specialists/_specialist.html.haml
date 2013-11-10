@@ -11,7 +11,7 @@
     %th Выполнено (в %)
     %th Дата завершения
     %th Клиент ФИО
-   - resource.orders.each do |order|
+   - specialist.orders.each do |order|
     %tr
      %td= link_to order.id.to_s, admin_order_path(order)
      %td= order.orderable.class.name
@@ -31,7 +31,7 @@
     %th Сумма
     %th Откуда
     %th Куда
-   - transactions.each do |tr|
+   - specialist.transactions.each do |tr|
     %tr
      %td= tr.created_at
      %td= tr.amount
@@ -39,8 +39,8 @@
      %td= tr.destination
 
  .groups
-  = render :partial => "admin/users/spec_groups", :locals => {resource: resource}
+  = render :partial => "admin/users/spec_groups", :locals => {specialist: specialist}
  .portfolios
-  - resource.portfolios.each do |portfolio|
+  - specialist.portfolios.each do |portfolio|
    .portfolio
-    =render :partial => 'shared/portfolio', :locals => {:portfolio_items => resource.portfolio_items, :editable => true, :example_set => portfolio.id}
+    =render :partial => 'shared/portfolio', :locals => {:portfolio_items => portfolio.portfolio_items, :editable => true, :example_set => portfolio.id}
