@@ -20,6 +20,7 @@ class Specialist < ActiveRecord::Base
   delegate :full_name, :to_s,  to: :profile
   delegate :username, to: :user
   delegate :avatar, to: :user
+  delegate :qiwi, :transactions, to: :user
 
   # def rating; 666; end
   # def rating_count; 777; end

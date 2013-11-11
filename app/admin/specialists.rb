@@ -7,6 +7,7 @@ ActiveAdmin.register Specialist do
       params.permit(:specialist => [user: [:role, :email, :profile => [:name, :surname, :middle_name]]])
     end
     custom_actions :resource => [:group_remove, :group_add]
+
     def group_add
      if params[:group]
       gr = SpecialistGroup.where(:id => params[:group]).first
@@ -18,8 +19,9 @@ ActiveAdmin.register Specialist do
       end
       resource.save
      end
-     render :json => {:group_form => render_to_string(:partial => 'admin/specialists/spec_groups.html.haml', :locals => {:resource => resource})}
+     render :json => {:group_form => render_to_string(:partial => 'admin/specialists/spec_groups.html.haml', :locals => {:specialist => resource})}
     end
+
     def group_remove
      if params[:group]
       gr = SpecialistGroup.where(:id => params[:group]).first
@@ -31,9 +33,10 @@ ActiveAdmin.register Specialist do
       end
       resource.save
      end
-     render :json => {:group_form => render_to_string(:partial => 'admin/specialists/spec_groups.html.haml', :locals => {:resource => resource})}
+     render :json => {:group_form => render_to_string(:partial => 'admin/specialists/spec_groups.html.haml', :locals => {:specialist => resource})}
     end
   end
+
   table_columns = lambda do |tab|
    tab.instance_eval do
     column 'Номер ID', :sortable => :id do |u|
@@ -65,10 +68,12 @@ ActiveAdmin.register Specialist do
     end
    end
   end
+
   index do |f|
    table_columns.call(self)
   end
+
   show do
-    render partial: 'specialist'
+    render partial: 'specialist', locals: {specialist: resource}
   end
 end

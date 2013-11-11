@@ -22,19 +22,15 @@ class ApplicationController < ActionController::Base
   end
 
   def get_mergeable_order
-   p "---merge", params[:merge_order_to_user]
-   if params[:merge_order_to_user]
+   if params[:merge_order_to_user] && ! params[:merge_order_to_user].blank?
     @mergeable_order = PlanDevelopment.where(:id => params[:merge_order_to_user]).all.first.try(:order)
-    p "---mergeorder", @mergeable_order, User.current, User.current.client?
     if User.current.client?
      User.current.merge_order(@mergeable_order)
-     p "---mergeorders", User.current.orders
     end
    end
   end
 
   def merge_order
-   p "---postmerge"
    if @mergeable_order && User.current.client?
     User.current.merge_order(@mergeable_order)
    end

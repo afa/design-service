@@ -22,6 +22,41 @@ window.multipart_ajax_sendform = (form_selector, method, callbacks)->
   $(form_selector).each (idx, form)->
     multipart_ajax_request(form.action, method, new FormData(form), callbacks)
 
+window.makeAjaxCall = (ajaxUrl, functionSuccess, functionFailure)->
+  $.ajax({
+    type: "GET",
+    url: ajaxUrl,
+    contentType: "application/json; charset=utf-8",
+    data: {},
+    dataType: "json",
+    success: functionSuccess,
+    error: functionFailure
+  })
+
+
+window.makeAjaxDestroy = (ajaxUrl, dataHash, functionSuccess, functionFailure)->
+  $.ajax({
+    type: "DELETE",
+    url: ajaxUrl,
+    contentType: "application/json; charset=utf-8",
+    data: dataHash,
+    dataType: "json",
+    success: functionSuccess,
+    error: functionFailure
+  })
+
+
+window.makeAjaxPost = (ajaxUrl, dataHash, functionSuccess, functionFailure)->
+  $.ajax
+    type: "POST",
+    url: ajaxUrl,
+    #contentType: "application/json; charset=utf-8",
+    data: $.param(dataHash),
+    dataType: "json",
+    processData: false,
+    success: functionSuccess,
+    error: functionFailure
+
 $(document).ready ->
   $('.put.submit').click (event)->
     event.preventDefault()
