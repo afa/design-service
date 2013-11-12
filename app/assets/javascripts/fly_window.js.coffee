@@ -5,35 +5,43 @@
 # to hide you invoke:
 #   close_fly_window()
 
-window.show_fly_window = (element_name) ->
-  close_fly_window()
-  element_to_render = $('.black_content_blocks').find(element_name).first()
-  black_content = $("#black_content")
-  black_content.append( element_to_render )
-  black_content.css(height: $(document).height()).show()
-  $('body').animate({scrollTop:0},"slow")
-  element_to_render.show()
+get_black_content_block = ->
+  blocks = $('.black_content_blocks')
+  if blocks.length == 0
+    new_block = $('<div class="black_content_blocks"/>')
+    $('body').append(new_block)
+    new_block
+  else
+    blocks.first()
 
 window.close_fly_window = ->
   rendered_element = $("#black_content").children()
   $("#black_content").hide()
-  $('.black_content_blocks').first().append(rendered_element)
+  get_black_content_block().append(rendered_element)
 
-window.show_fly_form_from_url = (obtain_form_url, element_name, customize_form)->
-  customize_form ||= {}
-  customize_form['preprocess'] ||= (form)->
-    form
-  customize_form['postprocess'] ||= (form)->
-    form
+window.show_fly_window_by_element = (element_to_render)->
+  close_fly_window()
+  black_content = $("#black_content")
+  black_content.append(element_to_render)
+  black_content.css(height: $(document).height()).show()
+  $('body').animate({scrollTop: 0}, 'slow')
+  element_to_render.show()
+
+window.show_fly_window = (element_name) ->
+  show_fly_window_by_element( $('.black_content_blocks').find(element_name).first() )
+
+window.show_fly_window_from_url = (obtain_form_url, customize_window)->
+  customize_window ||= {}
+  customize_window['preprocess'] ||= (window_element)-> window_element
+  customize_window['postprocess'] ||= (window_element)-> window_element
   ajax_request(obtain_form_url, 'GET', '',
     success: (data, status, xhr)->
       form_html = $(data['form_html'])
-      form_html = customize_form['preprocess'](form_html)
+      form_html = customize_window['preprocess'](form_html)
       form_html.find('.close_fly_window').click ->
         form_html.remove()
-      $('.black_content_blocks').first().append(form_html)
-      show_fly_window(element_name)
-      customize_form['postprocess'](form_html)
+      show_fly_window_by_element(form_html)
+      customize_window['postprocess'](form_html)
     error: ->
       ;
   )
