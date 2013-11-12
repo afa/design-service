@@ -1,18 +1,39 @@
-.black_content_blocks
-  #msg_dialog.shadow_x1.border_xs.rounded-corners
-    .close_fly_window
-    .order_name
-    .left_bar
-      %span.heading.gray_header Исполнители
-      %span.photo
-      %span.name
-      .attachments_list
-    .msg_content
-      = render partial: 'messages/message_in_chat', collection: messages, as: :message
-    .chat_form
-      = simple_form_for Message.new, remote: true, html: {class: 'msg_form'} do |f|
-        = f.input_field :text, as: :text, class: 'msg_sender'
-        %input.send_msg{:type => 'image', :src => asset_path('msg_send.jpg'), :alt => "Отправить"}
-    .order_data_bottom
-      %span
-        .order_info Исходные данные
+#msg_dialog.shadow_x1.border_xs.rounded-corners
+  .close_fly_window
+  .order_name= attached_to_name
+  .left_bar
+    %span.heading.gray_header Исполнители
+    %span.photo= image_tag executor_avatar_url
+    %span.name= executor_name
+    .attachments_list
+      - unless attachments.empty?
+        %span.heading_done.dark_green_header Выполнено
+        %ul.done
+          - attachments.each_with_index do |attachment, index|
+            %li
+              /%span.preview>
+              /  = image_tag attachment_path(attachment)
+              %span.remove_attachment{:data => {:attachment_url => "#{ attachment_url(attachment) }"} }
+              = link_to download_attachment_path(attachment) do
+                = attachment.decorate.kind(index)
+      - unless unfinished_attachments.empty?
+        %span.heading_working.dark_red В разработке
+        %ul.working
+          - unfinished_attachments.each do |kind|
+            %li
+              /%span.preview>
+              = I18n.t "attachment_kinds.#{kind}"
+              - if current_user.specialist?
+                .load_attachment_box
+                  = render partial: 'attachments/attachment_form', locals:{attachment: attachments.build(kind: kind)}, formats: [:html], handlers: [:haml]
+
+
+  .msg_content
+    = render partial: 'messages/message_in_chat', collection: messages.ordered_by_date, as: :message, formats: [:html], handlers: [:haml]
+  .chat_form
+    = simple_form_for Message.new, url: send_message_path, remote: true, html: {class: 'msg_form'} do |f|
+      = f.input_field :text, as: :text, class: 'msg_sender'
+      %input.send_msg{:type => 'image', :src => asset_path('msg_send.jpg'), :alt => "Отправить"}
+  .order_data_bottom
+    %span
+      .order_info= link_to 'Исходные данные', order_url

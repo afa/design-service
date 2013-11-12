@@ -25,7 +25,7 @@
       = robo_pay(order)
   .msg
     %span
-      %a{:href=>"#", :data => {:messages_url => order_messages_path(order), :order_id => order.id, :order_url => url_for(order.orderable)} } Новое сообщение
+      %a{:href=>"#", :data => {:messages_url => order_messages_path(order, format: 'json'), :order_id => order.id, :order_url => url_for(order.orderable)} } Новое сообщение
   .completed
     завершено
     .percentage_blocks
