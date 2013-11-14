@@ -107,7 +107,7 @@ ru:
       edit: 'Смена пароля'
       create: 'Регистрация'
       new: 'Регистрация'
-    devise/sessions:
+    sessions:
       new: 'Вход'
       create: 'Вход'
       #create: 'Регистрация'
