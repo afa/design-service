@@ -124,6 +124,7 @@ DesignService::Application.routes.draw do
               controller: 'registrations',
               as: :user_registration do
                 get :cancel
+                post :short
               end
   end
 
