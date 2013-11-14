@@ -27,13 +27,27 @@ show_price = (data) ->
 
 start_count = () ->
   event.preventDefault()
-  $('.black_content_blocks').append($('#order_mode'))
-  window.max_time = 15
-  window.time_start = $("span#count_start a.start").attr("href")
-  window.time_auto = $("span#count_start a.auto").attr("href")
-  $(this).fadeOut(800)
-  $("#calculator").val("Осталось " + window.max_time + " минут")
-  window.time_tid = setInterval(time_count, 1000)
+  if(!$.trim($("#plan_development_flat_area").val()).length)
+    $("#plan_development_flat_area").addClass("red_border").focus()
+    return false
+  else
+    $("#plan_development_flat_area").removeClass("red_border")
+    
+    ajax_sendform($(this).closest("form"), "PUT",
+    success: (data,status,xhr) ->
+      $('.black_content_blocks').append($('#order_mode'))
+      window.max_time = 15
+      window.time_start = $("span#count_start a.start").attr("href")
+      window.time_auto = $("span#count_start a.auto").attr("href")
+      $("span#count_start a.start").fadeOut(800)
+      $("#calculator").val("Осталось " + window.max_time + " минут")
+      window.time_tid = setInterval(time_count, 1000)
+      #$("#register form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
+      #$("#login form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
+      #show_fly_window("#register_short")
+    error: (xhr,status,error) ->
+      alert("Не получилось отправить форму")
+    )
 
 time_count = () ->
   window.max_time--
@@ -63,7 +77,7 @@ $(document).ready ->
   $("body.unregistered .put.submit").off("click")
   $("body.unregistered .put.submit").on("click", ->
     event.preventDefault()
-    if($("#plan_development_flat_area").val().length == 0)
+    if(!$.trim($("#plan_development_flat_area").val()).length)
       $("#plan_development_flat_area").addClass("red_border").focus()
       return false
     else
@@ -72,7 +86,7 @@ $(document).ready ->
     success: (data,status,xhr) ->
       #$("#register form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
       #$("#login form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
-      show_fly_window("#register")
+      show_fly_window("#register_short")
     error: (xhr,status,error) ->
       alert("Не получилось отправить форму")
     )

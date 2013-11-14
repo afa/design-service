@@ -51,6 +51,12 @@ module ActsAsOrderable
       scope :by_client, ->(user){ joins(:order).where(orders: {client_id: user}) }
       scope :by_work_state, ->(state){ joins(:order).where(orders: {work_state: state}) }
 
+      before_validation do
+       if flat_area_changed? || num_plans_changed?
+        order.calculated_price = nil
+        order.update_attribute :calculated_price, nil
+       end
+      end
       after_commit :on => :update do 
         if changed?
           order.save_draft_drop_price
@@ -79,6 +85,8 @@ module ActsAsOrderable
   end
   def default_price
     return nil  unless flat_area
-    default_price_per_square_meter * flat_area
+    calced = default_price_per_square_meter
+    order.calculated_price = ((calced*flat_area).round/100.0 + 0.5).round*100.0
+    order.update_attribute :calculated_price, order.calculated_price
   end
 end

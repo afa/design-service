@@ -18,11 +18,12 @@
   .calculator.border_x5.rounded-corners_l2.shadow_x2
     .form_description.order_price
     %span
-      %span#count_start 
-        %a.start{:href => start_count_plan_development_path(@plan_development.id, :format => :json)}УЗНАТЬ !
-        %a.auto{:href => auto_price_plan_development_path(@plan_development.id, :format => :json)}
+      - unless @plan_development.order.calculated_price
+        %span#count_start 
+          %a.start{:href => start_count_plan_development_path(@plan_development.id, :format => :json)}УЗНАТЬ !
+          %a.auto{:href => auto_price_plan_development_path(@plan_development.id, :format => :json)}
 
-      <input name="calculator" type="text" class="total grey" value="" id="calculator" readonly="readonly">
+      %input{:name=>"calculator", :type=>"text", :class=>"total grey", :value=>@plan_development.order.calculated_price.to_s, :id=>"calculator", :readonly=>"readonly"}
     %span.count
   .order_zakaz
     %span
