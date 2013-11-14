@@ -52,9 +52,11 @@ module ActsAsOrderable
       scope :by_work_state, ->(state){ joins(:order).where(orders: {work_state: state}) }
 
       before_validation do
-       if flat_area_changed? || num_plans_changed?
+       if self.is_a?(PlanDevelopment) && (flat_area_changed? || num_plans_changed?)
         order.calculated_price = nil
-        order.update_attribute :calculated_price, nil
+        unless order.id.nil?
+         order.update_attribute :calculated_price, nil
+        end
        end
       end
       after_commit :on => :update do 
