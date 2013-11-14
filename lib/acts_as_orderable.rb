@@ -88,5 +88,6 @@ module ActsAsOrderable
     calced = default_price_per_square_meter
     order.calculated_price = ((calced*flat_area).round/100.0 + 0.5).round*100.0
     order.update_attribute :calculated_price, order.calculated_price
+    order.calculated_price
   end
 end
