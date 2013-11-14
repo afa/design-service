@@ -7,6 +7,7 @@ class Registration < ActionMailer::Base
 
   def fast_registered(u)
    @text = I18n.t(:"mail.registration.fast_registered")
+   p "---mail-user", u
    mail to: "#{u.email}"
   end
 end
