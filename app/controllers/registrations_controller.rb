@@ -28,6 +28,7 @@ class RegistrationsController < Devise::RegistrationsController
    User.current.email = params[:email]
    User.current.phone = params[:phone]
    User.current.save
+   p "---usreg", User.current
    Registration.fast_registered(User.current).deliver
    redirect_to :back
   end
