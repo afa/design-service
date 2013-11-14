@@ -55,7 +55,7 @@ ru:
     specialist_groups: 'Группы специалистов'
     plan_development: 'Разработка вариантов планировок'
     replanning_endorsement: 'Согласование перепланировок'
-    engineering_system: 'Инженерые системы и конструктив'
+    engineering_system: 'Инженерные системы и конструктив'
     users: 'Пользователи'
     #design_project:
     #  type1: 'ToDo Дизайн-проект'
@@ -92,7 +92,7 @@ ru:
     welcome: ''
     plan_developments: 'Разработка вариантов планировок'
     replanning_endorsements: 'Согласование перепланировок'
-    engineering_systems: 'Инженерые системы и конструктив'
+    engineering_systems: 'Инженерные системы и конструктив'
     order_customizers: 'Дизайн-проекты'
     selected_forms: 'Дизайн-проекты'
     specialists: 'Специалисты'
@@ -138,7 +138,7 @@ ru:
   replanning_endorsements:
     title: 'Согласование перепланировок'
   engineering_systems:
-    title: 'Инженерые системы и конструктив'
+    title: 'Инженерные системы и конструктив'
   specialists:
     designers:
       title: 'Дизайнеры'
