@@ -25,4 +25,10 @@ class RegistrationsController < Devise::RegistrationsController
    end
    Registration.registered(resource).deliver if resource.valid?
   end
+
+  def short
+   User.current.update_attributes role: 'client', email: params[:email]
+   User.current.profile.update_attributes phone: params[:phone]
+   Registration.fast_registered(resource).deliver
+  end
 end

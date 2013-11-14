@@ -1,4 +1,4 @@
-= simple_form_for(@user ||= User.new, as: :user, :url => registration_path(:user), html: {class: 'short_registration_form'}) do |f|
+= simple_form_for(@user ||= User.new, as: :user, :url => short_user_registration_path, html: {class: 'short_registration_form'}) do |f|
   - if params[:controller] == 'registrations'
     .head_none
   - else

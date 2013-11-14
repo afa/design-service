@@ -72,7 +72,7 @@ $(document).ready ->
     show_fly_window('#login')
 
   $("#order_mode .register").click ->
-    show_fly_window('#register') 
+    show_fly_window('#register_short') 
 
   $("body.unregistered .put.submit").off("click")
   $("body.unregistered .put.submit").on("click", ->
@@ -86,7 +86,7 @@ $(document).ready ->
     success: (data,status,xhr) ->
       #$("#register form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
       #$("#login form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
-      show_fly_window("#register_short")
+      show_fly_window("#register")
     error: (xhr,status,error) ->
       alert("Не получилось отправить форму")
     )
