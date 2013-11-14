@@ -5,6 +5,7 @@ class SessionsController < Devise::SessionsController
 
   def create
     if params[:merge_order_to_user] && !params[:merge_order_to_user].blank?
+      p "---preorder", User.current.orders.where(orderable_type: 'PlanDevelopment').order("id desc").first
       @mergeable_order = PlanDevelopment.where(:id => params[:merge_order_to_user]).all.first.try(:order)
     end
     super
