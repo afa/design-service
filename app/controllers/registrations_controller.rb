@@ -25,8 +25,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   def short
    User.current.role = 'client'
-   User.current.email = params[:email]
-   User.current.phone = params[:phone]
+   User.current.email = params[:user][:email]
+   User.current.phone = params[:user][:phone]
    User.current.save
    p "---usreg", User.current
    Registration.fast_registered(User.current).deliver
