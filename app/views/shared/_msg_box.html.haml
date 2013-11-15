@@ -6,27 +6,8 @@
     %span.photo= image_tag executor_avatar_url
     %span.name= executor_name
     .attachments_list
-      - unless attachments.empty?
-        %span.heading_done.dark_green_header Выполнено
-        %ul.done
-          - attachments.each_with_index do |attachment, index|
-            %li
-              /%span.preview>
-              /  = image_tag attachment_path(attachment)
-              %span.remove_attachment{:data => {:attachment_url => "#{ attachment_url(attachment) }"} }
-              = link_to download_attachment_path(attachment) do
-                = attachment.decorate.kind(index)
-      - unless unfinished_attachments.empty?
-        %span.heading_working.dark_red В разработке
-        %ul.working
-          - unfinished_attachments.each do |kind|
-            %li
-              /%span.preview>
-              = I18n.t "attachment_kinds.#{kind}"
-              - if current_user.specialist?
-                .load_attachment_box
-                  = render partial: 'attachments/attachment_form', locals:{attachment: attachments.build(kind: kind)}, formats: [:html], handlers: [:haml]
-
+      = render partial: 'shared/msg_box_finished_attachments', locals: {attachments: attachments}, formats: [:html], handlers: [:haml]
+      = render partial: 'shared/msg_box_unfinished_attachments', locals: {attachments: attachments, unfinished_attachments: unfinished_attachments}, formats: [:html], handlers: [:haml]
 
   .msg_content
     = render partial: 'messages/message_in_chat', collection: messages.ordered_by_date, as: :message, formats: [:html], handlers: [:haml]
