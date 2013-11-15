@@ -1,10 +1,10 @@
 class Order < ActiveRecord::Base
   belongs_to :orderable, polymorphic: true
-  belongs_to :client, class_name: 'User', foreign_key: 'client_id', counter_cache: true
+  belongs_to :client, class_name: 'User', foreign_key: 'client_id', counter_cache: true, include: :profile
   belongs_to :executor, polymorphic: true
   belongs_to :specialist_group
   has_many :reviews, dependent: :destroy
-  has_many :messages, as: :attached_to, dependent: :destroy
+  has_many :messages, as: :attached_to, dependent: :destroy, include: :attachments
   has_many :payments
   has_many :purchases, :through => :payments
   has_many :attachments, as: :attachable

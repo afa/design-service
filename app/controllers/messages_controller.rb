@@ -24,6 +24,9 @@ class MessagesController < InheritedResources::Base
       msg.sender = current_user
       msg.attached_to = parent
       msg.recipient = parent.interlocutor(current_user)
+      msg.attachments.each do |att|
+        att.user = current_user
+      end
     end
     create! { resource }
   end
@@ -44,7 +47,7 @@ class MessagesController < InheritedResources::Base
 
 private
   def permitted_params
-    params.permit(message: [:text])
+    params.permit(message: [:text, attachments_attributes: [:file, :kind]])
   end
   #def begin_of_association_chain
   #  current_or_guest_user
