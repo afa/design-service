@@ -6,5 +6,5 @@
   %span.message.rounded-corners_l4
     = message.text
     .attachment_list
-      - message.attachments.each do |attachment|
+      - message.attachments.accepted_or_self.each do |attachment|
         = link_to attachment.original_filename, download_attachment_path(attachment)

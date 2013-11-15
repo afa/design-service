@@ -4,6 +4,7 @@ class AttachmentsController < InheritedResources::Base
   before_filter :check_permission, only: [:show, :download]
   before_filter :set_user, only: [:create]
   before_filter :check_can_destroy, only: [:destroy]
+  before_filter :select_accepted, only: [:index]
 
   respond_to :json, only: [:index, :create, :destroy]
 
@@ -45,5 +46,9 @@ private
   def set_user
     build_resource
     resource.user = current_or_guest_user
+  end
+
+  def select_accepted
+    @messages = collection.accepted_or_self
   end
 end
