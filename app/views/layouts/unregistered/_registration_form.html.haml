@@ -17,9 +17,6 @@
     %span *
   .text_fields= f.input_field :email
   .info
-    Телефон:
-  .text_fields= f.input_field :phone
-  .info
     Пароль:
     %span *
   .text_fields
@@ -29,6 +26,9 @@
     Повторите&nbsp;&nbsp; пароль:
     %span *
   .text_fields= f.input_field :password_confirmation
+  .info
+    Телефон:
+  .text_fields= f.input_field :phone
   %input{:type => 'hidden', :name => "merge_order_to_user", :value => @plan_development.try(:id).to_s}
   .control
     %input.submit_button{:alt => "Submit Form", :src => asset_path("ok_button.png"), :type => "image"}

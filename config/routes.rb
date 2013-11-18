@@ -109,6 +109,7 @@ DesignService::Application.routes.draw do
     member do
      post :start_count
      post :auto_price
+     post :to_moderator
     end
     resources :attachments
   end
@@ -123,6 +124,7 @@ DesignService::Application.routes.draw do
               path_names: { new: 'sign_up' },
               controller: 'registrations',
               as: :user_registration do
+                get :stage2
                 get :cancel
                 post :short
               end

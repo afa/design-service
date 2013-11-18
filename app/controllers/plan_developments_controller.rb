@@ -23,7 +23,12 @@ class PlanDevelopmentsController < InheritedResources::Base
    else
     render :json => {:price => @plan_development.locate_price}
    end
-   
+  end
+
+  def to_moderator
+   @plan_development.update_attributes permitted_params[:plan_development]
+   @plan_development.order.send_to_moderator
+   render :json => {}
   end
 
 private

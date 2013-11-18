@@ -5,6 +5,7 @@
 //= require orderable
 //= require ajax_submit
 
+#calculator part
 empty_cb = () ->
 
 count_cb = (data, status, xhr) ->
@@ -56,6 +57,7 @@ time_count = () ->
 abortTimer = () ->
   clearInterval window.time_tid
 #  tid = setInterval(time_start, 2000)
+#end calculator
 
 $(document).ready ->
   $("#count_start").on("click", start_count)
@@ -74,6 +76,17 @@ $(document).ready ->
   $("#order_mode .register").click ->
     show_fly_window('#register_short') 
 
+  $("body.unregistered .reset").off("click")
+  $("body.unregistered .reset").on("click", ->
+    event.preventDefault()
+    ajax_sendform($(this).closest("form"), "PUT",
+    success: (data,status,xhr) ->
+      show_fly_window("#register")
+    error: (xhr,status,error) ->
+      alert("Не получилось отправить форму")
+    )
+    return false
+  )
   $("body.unregistered .put.submit").off("click")
   $("body.unregistered .put.submit").on("click", ->
     event.preventDefault()
@@ -84,9 +97,13 @@ $(document).ready ->
       $("#plan_development_flat_area").removeClass("red_border")
     ajax_sendform($(this).closest("form"), "PUT",
     success: (data,status,xhr) ->
-      #$("#register form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
-      #$("#login form").append("<input type=\"hidden\" name=\"merge_order_to_user\" value=\"1\">")
-      show_fly_window("#register")
+      makeAjaxPost(
+        $("body.unregistered .put.submit").closest("form").attr("action")+"/to_moderator",
+        {},
+        () ->
+          show_fly_window("#register")
+        () ->
+      )
     error: (xhr,status,error) ->
       alert("Не получилось отправить форму")
     )

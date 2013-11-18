@@ -60,7 +60,7 @@ class OrderDecorator < Draper::Decorator
 
   def admin_actions
     actions = []
-    if source.saved_draft?
+    if source.sent_to_moderator?
       actions << 'Выставить цену и назначить специалиста'
     elsif source.specialist_disagreed?
       actions << 'Назначить нового специалиста'
@@ -71,7 +71,7 @@ class OrderDecorator < Draper::Decorator
   end
 
   def admin_work_state
-    if source.saved_draft?
+    if source.sent_to_moderator?
       source.executor.is_a?(SpecialistGroup) ? 'Новый для группы' : 'Новый'
     elsif source.specialist_disagreed?
       'Специалист отказался'
