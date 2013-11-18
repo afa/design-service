@@ -2,6 +2,15 @@
 class PlanDevelopment < ActiveRecord::Base
   include ActsAsOrderable
 
+  before_validation do
+   if flat_area_changed? || num_plans_changed?
+    order.calculated_price = nil
+    unless order.id.nil?
+     order.update_attribute :calculated_price, nil
+    end
+   end
+  end
+
   extend Enumerize
   enumerize :num_guests, in: [:zero, :less_than_five, :five_to_fifteen, :greater_than_fifteen]
   enumerize :big_kitchen, in: [:less_than_fifteen, :greater_than_fifteen]

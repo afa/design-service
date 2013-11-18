@@ -33,6 +33,7 @@ class Order < ActiveRecord::Base
   state_machine :work_state, initial: :draft do
     state :draft
     state :saved_draft
+    state :sent_to_moderator
     state :moderator_suggested
     state :specialist_agreed
     state :specialist_disagreed
@@ -41,22 +42,25 @@ class Order < ActiveRecord::Base
     state :work_accepted
 
     event :save_draft do
-      transition [:draft, :saved_draft, :moderator_suggested, :specialist_agreed] => :saved_draft
+      transition [:draft, :saved_draft] => :saved_draft
+    end
+    event :send_to_moderator do
+      transition [:saved_draft, :sent_to_moderator, :moderator_suggested, :specialist_agreed] => :sent_to_moderator
     end
     event :save_draft_drop_price do
-      transition [:draft, :saved_draft, :moderator_suggested, :specialist_agreed] => :saved_draft, before: :reset_price
+      transition [:draft, :saved_draft, :sent_to_moderator, :moderator_suggested, :specialist_agreed] => :saved_draft, before: :reset_price
     end
 
     event :assign_specialist do
       transition [:moderator_suggested, :specialist_agreed, :specialist_disagreed] => :moderator_suggested
-      transition [:saved_draft, :client_agreed, :in_work] => same
+      transition [:saved_draft, :client_agreed, :sent_to_moderator, :in_work] => same
     end
 
     event :set_price do
-      transition [:saved_draft, :moderator_suggested] => :moderator_suggested, :if => :test_price
+      transition [:sent_to_moderator, :moderator_suggested] => :moderator_suggested, :if => :test_price
       transition :saved_draft => :saved_draft
     end
-    after_transition :saved_draft => :moderator_suggested, :do => :say_to_spec
+    after_transition :sent_to_moderator => :moderator_suggested, :do => :say_to_spec
 
     event :agree do
       transition :moderator_suggested => :specialist_agreed, if: :current_user_is_a_specialist?
