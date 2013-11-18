@@ -58,18 +58,18 @@ div.calculator {
     float: left;
     margin-top: 20px;
 
-    input[type=text]{ border: 2px solid #dadada; border-radius: 7px;  }
+    input[type=text] { border: 2px solid #dadada; border-radius: 7px; }
     span, span a, span a:link {
-      z-index:10;
-      position:absolute;
-      margin-top:2px;
-      margin-left:55px;
+      z-index: 10;
+      position: absolute;
+      margin-top: 2px;
+      margin-left: 55px;
       cursor: pointer;
-      text-decoration:underline; 
+      text-decoration: underline;
       color: #de3880;
       font-size: 16px;
     }
-    span a:hover{ text-decoration:none; font-weight:bold; }
+    span a:hover { text-decoration:none; font-weight:bold; }
   }
   span.count {
     float: left;
