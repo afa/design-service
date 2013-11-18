@@ -1,9 +1,10 @@
 class AttachmentsController < InheritedResources::Base
-  belongs_to :order, :plan_development, :replanning_endorsement, :engineering_system, :selected_form, optional: true #, polymorphic: true
+  belongs_to :order, :plan_development, :replanning_endorsement, :engineering_system, :selected_form, :message, optional: true #, polymorphic: true
   #before_filter :authenticate_user!
   before_filter :check_permission, only: [:show, :download]
   before_filter :set_user, only: [:create]
   before_filter :check_can_destroy, only: [:destroy]
+  before_filter :select_accepted, only: [:index]
 
   respond_to :json, only: [:index, :create, :destroy]
 
@@ -45,5 +46,9 @@ private
   def set_user
     build_resource
     resource.user = current_or_guest_user
+  end
+
+  def select_accepted
+    @messages = collection.accepted_or_self
   end
 end

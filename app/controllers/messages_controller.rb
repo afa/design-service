@@ -24,23 +24,18 @@ class MessagesController < InheritedResources::Base
       msg.sender = current_user
       msg.attached_to = parent
       msg.recipient = parent.interlocutor(current_user)
+      msg.attachments.each do |att|
+        att.user = current_user
+      end
     end
     create! { resource }
   end
 
   def index
     respond_with do |format|
-      format.json {
-        executor = parent.executor
-        executor_name = executor && executor.to_s || I18n.t('orders.executor_not_assigned')
-        executor_avatar_url = executor && executor.avatar || Photo.new.photo.avatar_size.url
-        render json: {msgs_text: messages_text,
-                      executor_name: executor_name,
-                      executor_avatar_url: executor_avatar_url,
-                      attachment_previews_text: attachment_previews_text,
-                      attached_to_name: parent.to_s
-                    }
-      }
+      format.json do
+        render json: { form_html: msg_box_text }
+      end
     end
   end
   def show_attachments
@@ -52,7 +47,7 @@ class MessagesController < InheritedResources::Base
 
 private
   def permitted_params
-    params.permit(message: [:text])
+    params.permit(message: [:text, attachments_attributes: [:file, :kind]])
   end
   #def begin_of_association_chain
   #  current_or_guest_user
@@ -61,15 +56,27 @@ private
     redirect_to :back, alert: 'Невозможно создать сообщение в никуда'  unless parent
     false
   end
-  def attachment_previews_text
-    render_to_string(partial: 'attachments/attachments_in_chat',
-                    locals: { attachments: parent.attachments,
-                              unfinished_attachments: parent.unfinished_attachments},
-                    layout: false, formats: [:html], handlers: [:haml])
-  end
+
   def messages_text
     render_to_string(partial: 'messages/message_in_chat',
                     collection: collection.ordered_by_date, as: :message,
+                    layout: false, formats: [:html], handlers: [:haml])
+  end
+
+  def msg_box_text
+    executor = parent.executor
+    executor_name = executor && executor.to_s || I18n.t('orders.executor_not_assigned')
+    executor_avatar_url = executor && executor.avatar || Photo.new.photo.avatar_size.url
+    render_to_string(partial: 'shared/msg_box',
+                    locals: {messages: collection.ordered_by_date,
+                            executor_name: executor_name,
+                            executor_avatar_url: executor_avatar_url,
+                            attachments: parent.attachments,
+                            unfinished_attachments: parent.unfinished_attachments,
+                            send_message_path: collection_url(format: 'json'),
+                            order_url: url_for(parent.orderable),
+                            attached_to_name: parent.to_s
+                            },
                     layout: false, formats: [:html], handlers: [:haml])
   end
 

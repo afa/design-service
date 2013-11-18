@@ -52,7 +52,7 @@ $(document).ready ->
     element = $(event.target)
     specialist_id = element.data('specialist-id')
     obtain_form_url = Routes.new_form_specialist_portfolios_path(specialist_id)
-    show_fly_form_from_url(obtain_form_url, '.new_portfolio_form')
+    show_fly_window_from_url(obtain_form_url)
   )
 
   make_photo_removable = (form_html)->
@@ -89,13 +89,14 @@ $(document).ready ->
     element = $(event.target)
     portfolio_id = element.closest('ul.portfolio').data('portfolio-id')
     obtain_form_url = Routes.edit_form_portfolio_path(portfolio_id)
-    show_fly_form_from_url(obtain_form_url, '.edit_portfolio_form',
+    show_fly_window_from_url(obtain_form_url,
       preprocess: (form_html)->
         make_photo_removable(form_html)
         make_add_file_button(form_html)
         form_html
       postprocess: (form_html)->
         form_html.find('.images_preview_content').offset( form_html.find('.images_preview_box').offset() )
+        form_html
     )
 
   )

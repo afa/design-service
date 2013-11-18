@@ -1,18 +1,26 @@
-.black_content_blocks
-  #msg_dialog.shadow_x1.border_xs.rounded-corners
-    .close_fly_window
-    .order_name
-    .left_bar
-      %span.heading.gray_header Исполнители
-      %span.photo
-      %span.name
-      .attachments_list
-    .msg_content
-      = render partial: 'messages/message_in_chat', collection: messages, as: :message
-    .chat_form
-      = simple_form_for Message.new, remote: true, html: {class: 'msg_form'} do |f|
-        = f.input_field :text, as: :text, class: 'msg_sender'
-        %input.send_msg{:type => 'image', :src => asset_path('msg_send.jpg'), :alt => "Отправить"}
-    .order_data_bottom
-      %span
-        .order_info Исходные данные
+#msg_dialog.shadow_x1.border_xs.rounded-corners
+  .close_fly_window
+  .order_name= attached_to_name
+  .left_bar
+    %span.heading.gray_header Исполнители
+    %span.photo= image_tag executor_avatar_url
+    %span.name= executor_name
+    .attachments_list
+      = render partial: 'shared/msg_box_finished_attachments', locals: {attachments: attachments}, formats: [:html], handlers: [:haml]
+      = render partial: 'shared/msg_box_unfinished_attachments', locals: {attachments: attachments, unfinished_attachments: unfinished_attachments}, formats: [:html], handlers: [:haml]
+
+  .msg_content
+    = render partial: 'messages/message_in_chat', collection: messages.ordered_by_date, as: :message, formats: [:html], handlers: [:haml]
+  .chat_form
+    = simple_nested_form_for Message.new.tap{|m| m.attachments.build(kind: 'attached_to_message') }, url: send_message_path, remote: true, html: {class: 'msg_form'} do |f|
+      = f.input_field :text, as: :text, class: 'msg_sender'
+      %input.send_msg{:type => 'image', :src => asset_path('msg_send.jpg'), :alt => "Отправить"}
+      .load_attachment_box
+        = f.fields_for :attachments do |ff|
+          = ff.input_field :kind, as: :hidden
+          %span.add_file_button
+            = ff.input_field :file, as: :file
+          %span.filename
+  .order_data_bottom
+    %span
+      .order_info= link_to 'Исходные данные', order_url

@@ -1,0 +1,10 @@
+- unless unfinished_attachments.empty?
+  %span.heading_working.dark_red В разработке
+  %ul.working
+    - unfinished_attachments.each do |kind|
+      %li
+        /%span.preview>
+        = I18n.t "attachment_kinds.#{kind}"
+        - if current_user.specialist?
+          .load_attachment_box
+            = render partial: 'attachments/attachment_form', locals: {attachment: attachments.build(kind: kind)}, formats: [:html], handlers: [:haml]

@@ -6,7 +6,7 @@ class Specialist < ActiveRecord::Base
 
   has_many :reviews, through: :orders
 
-  belongs_to :user
+  belongs_to :user, include: :profile
 
   has_many :specializations, through: :specialist_groups
   has_one :profile, through: :user

@@ -4,6 +4,11 @@
       = I18n.l(message.created_at.to_date)
       = I18n.l(message.created_at, format: :as_time)
   .message= message.text
+  .attachment_list
+  - message.attachments.each do |attachment|
+    .attachment_moderation= render partial: 'moderations/moderation', locals: {moderation: attachment.moderation_info}
+    = link_to attachment.original_filename, download_attachment_path(attachment)
+
   .moderation= render partial: 'moderations/moderation', locals: {moderation: message.moderation_info}
   = link_to edit_admin_message_path(message) do
     .edit Редактировать текст(заменить текст на пиктограммку)

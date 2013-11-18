@@ -5,8 +5,10 @@ class Message < ActiveRecord::Base
   delegate :accepted?, :rejected?, to: :moderation_info
 
   belongs_to :recipient, polymorphic: true
-  belongs_to :sender, class_name: 'User'
+  belongs_to :sender, class_name: 'User', include: :profile
   belongs_to :attached_to, polymorphic: true
+  has_many :attachments, as: :attachable
+  accepts_nested_attributes_for :attachments
 
   scope :by_user, ->(user_id){ where("(messages.recipient_type = 'user' AND messages.recipient_id = ?) OR messages.sender_id = ?", user_id, user_id) }
   scope :received_by_user, ->(user_id){ where(recipient_type: 'user', recipient_id: user_id) }

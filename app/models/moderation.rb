@@ -42,13 +42,16 @@ class Moderation < ActiveRecord::Base
     accepted_first_stage? &&  updated_at < Time.now - 45.minutes
   end
 
+  # TODO: fix bug when message sent before executor was set, message recipient is nil (messages are not rebinded to executor on executor setup or update, 
+  #  possibly we should take info about sender/recipient from order itself, possibly message shouldn't have sender/recipient at all, only boolean flag client/ececutor.
+  # But such realization can suffer from lack of specialist-specialist interactons)
   def send_mail
-   if moderable.is_a?(Message)
-    if moderable.recipient.specialist?
-     SpecialistMailer.message_arrived(moderable.recipient).deliver
-    else
-     Client.message_arrived(moderable.recipient).deliver
+    if moderable.is_a?(Message)
+      if moderable.recipient && moderable.recipient.specialist?
+        SpecialistMailer.message_arrived(moderable.recipient).deliver
+      elsif moderable.recipient && moderable.recipient.client?
+        Client.message_arrived(moderable.recipient).deliver
+      end
     end
-   end
   end
 end
