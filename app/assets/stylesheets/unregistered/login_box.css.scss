@@ -80,10 +80,16 @@ body.unregistered {
   #register {
     height: 450px;
   }
+  #forgot_password {
+    height: 250px;
+  }
+  #register_stage2 {
+    height: 450px;
+  }
   #register_short {
     height: 260px;
   }
-  #register, #register_short {
+  #register, #register_short, #register_stage2, #forgot_password {
     width: 477px;
     background-color: #FFFFFF;
     margin: 0px auto;
@@ -91,6 +97,17 @@ body.unregistered {
     margin-top: 130px;
     font-family: Tahoma;
     display: none;
+
+    div.head_recover {
+      height: 29px;
+      width: 447px;
+      background-image: image-url("recovery.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 0px;
+      float: left;
+      margin: 30px 0px 20px 30px;
+    }
 
 
     div.head_none {
@@ -135,6 +152,14 @@ body.unregistered {
       float: left;
       width: 477px;
     }
+    div.control.ok_button {
+      input {
+        float: right;
+      }
+    }
+  }
+  div.clear {
+    clear: both;
   }
 
   /*  LOGIN CLIENT BLOCK*/

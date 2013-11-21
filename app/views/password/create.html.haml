@@ -1,0 +1,12 @@
+#forgot_password.rounded-corners.border_x4.shadow_x1{:style => "display: block;"}
+  .head_recover
+  .form-inputs
+    -# E-mail
+    -# %span= f.input_field :email, class: 'textlines_default textline_l7'
+    - p "---rndr", @mail
+    %div= I18n.t("recovery.step2.li1", :email => @mail)
+    %div= I18n.t("recovery.step2.li2")
+    %div= I18n.t("recovery.step2.li3")
+  -# .form-actions
+  -# .control
+    %input.not_ajax.submit{:type => 'image', :src => asset_path('ok_button.png'), :alt => "Отправить форму"}

@@ -111,7 +111,7 @@ ru:
       new: 'Вход'
       create: 'Вход'
       #create: 'Регистрация'
-    devise/passwords:
+    password:
       new: 'Восстановление пароля'
       create: 'Забыли пароль'
       edit: 'Смена пароля'
@@ -127,9 +127,9 @@ ru:
     order_customizers: 'design_project'
     selected_forms: 'design_p-workin-docs'
     specialists: ''
-    devise/passwords: 'password_relative'
+    password: 'password_relative'
     registrations: 'registrations'
-    devise/sessions: 'logins'
+    sessions: 'logins'
 
   welcome:
     title: ''
@@ -311,7 +311,7 @@ ru:
     hints:
       user:
         edit:
-          password: "если вы не сообираетесь менять пароль, оставьте это поле пустым"
+          #password: "если вы не сообираетесь менять пароль, оставьте это поле пустым"
           current_password: "чтобы подтвердить изменения, введите свой текущий пароль"
   specialist:
     titles:
@@ -400,3 +400,11 @@ ru:
       li2: На вашу почту %{email}
       li3: отправлено письмо для подтверждения
       li4: УСПЕХОВ В РЕАЛИЗАЦИИ ВАШИХ ПРОЕКТОВ!
+  recovery:
+    step2:
+      li1: На Вашу почту %{email}
+      li2: отправлена инструкция
+      li3: по восстановлению логина и пароля
+
+  new_password: Новый пароль
+  confirm_new_password: Повтор пароля

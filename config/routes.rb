@@ -1,10 +1,4 @@
 DesignService::Application.routes.draw do
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/destroy"
-
   resources :portfolios do
     resources :portfolio_items
     member do
@@ -116,7 +110,7 @@ DesignService::Application.routes.draw do
 
   # Disable user from destroying his account
   # https://github.com/plataformatec/devise/wiki/How-To:-Disable-user-from-destroying-his-account
-  devise_for :users, skip: :registrations, :controllers => {:sessions => 'sessions'}
+  devise_for :users, skip: :registrations, :controllers => {:sessions => 'sessions', :passwords => 'password'}
   devise_scope :user do
     resource :registration,
               only: [:new, :create, :edit, :update],

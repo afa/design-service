@@ -1,8 +1,8 @@
 #register_stage2.rounded-corners.border_x1.shadow_x1{:style => "display: block; margin-top: 0.5cm;"}
   = simple_form_for(@user ||= User.new, as: :user, :url => stage2_user_registration_path, :method => :get, html: {class: 'registration_stage2'}) do |f|
-    .info= I18n.t("registration.step2.li1")
-    .info= I18n.t("registration.step2.li2", :email => mail)
-    .info= I18n.t("registration.step2.li3")
-    .info.green= I18n.t("registration.step2.li4")
+    .control= I18n.t("registration.step2.li1")
+    .control= I18n.t("registration.step2.li2", :email => mail)
+    .control= I18n.t("registration.step2.li3")
+    .control.green= I18n.t("registration.step2.li4")
     .control
       %input.submit_button{:alt => "Submit Form", :src => asset_path("ok_button.png"), :type => "image"}
