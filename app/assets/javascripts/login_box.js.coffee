@@ -2,10 +2,9 @@
 //= require fly_window
 
 reg_stage_2 = (data, status, xhr) ->
-  close_fly_window()
   $(data.stage2).appendTo($(".black_content_blocks"))
   show_fly_window('#register_stage2')
-  return false
+  false
 
 $(document).ready ->
   $(".login_panel .registration").click ->
