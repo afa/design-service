@@ -15,6 +15,12 @@
     - %w[ sweep_wall floor_plans ceiling_fixtures draping_materials ].each do |project_type|
       %li
         = render partial: 'order_customizers/project', locals: {type: project_type}
-.copyright_block        
-  %a{:href => "copyright_supervision.html"}
-    .copyright
+    %li
+      %a{:href => "copyright_supervision.html"}
+        %span.black_opacity
+      %img{:src => "/assets/avtnadzor.jpg"}
+
+      %span.heading
+        %a{:href => "copyright_supervision.html"}
+          Авторское Сопровождение Строистельства
+
