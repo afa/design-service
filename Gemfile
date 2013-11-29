@@ -55,6 +55,7 @@ gem 'draper', github: 'drapergem/draper'
 gem 'jquery-ui-rails'
 gem 'activeadmin'
 gem 'js-routes'
+gem 'validates_email_format_of'
 
 group :development do
   gem 'sextant'
