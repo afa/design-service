@@ -179,4 +179,220 @@ body.registered {
       }
     }
   }
+
+  ul.order_profiles{
+    list-style:none;
+    width:500px;
+    margin:0px 30px;
+    padding:0px;
+    margin-top: 99px;
+    position: absolute;
+    font-size:16px;
+    li{
+      padding:10px 25px 10px 25px;
+      height:20px;
+      float:left;
+      a,a:link,a:visited,a:active{ text-decoration:none; color:#6f6f6f}
+    }
+    li.selected{ 
+      background-color:#c4c4c4;
+      a,a:link,a:visited,a:active{ text-decoration:none; color:#ffffff}
+    }
+  }
+  div.current_order{
+    float:left;
+    clear:both;
+    margin:30px;
+    margin-top:30px;
+    margin-bottom:10px;
+    width:500px;
+    position:relative;
+  }
+
+  div.left_inbox{
+    div.pink{
+      color:#b9046d;
+    }
+  }
+
+  div.left_inbox{
+    width: 250px;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: -4px;
+    left:-6px;
+
+    div.text_head{
+      div.number{
+        margin:8px 0px 3px 14px;
+        width:60px;
+        float:left;
+        line-height:12px;
+        span.date{
+          color:grey;
+          font-size:12px;
+        }
+      }
+      div.heading{
+        float:left;
+        height:100%;
+        text-align:center;
+        width:150px;
+        vertical-align: middle;
+        line-height:11px;
+        padding-top:10px;
+      }
+    }
+  }
+  div.left_msg_area{
+    width:225px;
+    margin-left:15px;
+    clear:both;
+    float:left;
+    margin-top:50px;
+    margin-bottom:15px;
+
+    div.msg_type{
+      width:220px;
+      text-align:center;
+      float:left;
+      font-size:12px;
+      span.new_msg{
+        color:#518c0c;
+      }
+      span.def_msg{
+        color:#4d4d4d;
+      }
+    }
+    div.msg_content{
+      border:1px solid #DBC4D2;
+      width:200px;
+      color:#A89FA5;
+      height:100px;
+      padding:10px;
+      font-size:14px;
+      float:left;
+    }
+  }
+
+  div.right_content{
+    width:255px;
+    height:200px;
+    float:left;
+
+    div.status{
+     padding-left:20px;
+     padding-top:10px;
+     color:#4c4c4c;
+     font-size:14px;
+
+     span.green{
+      color:#73a431
+     }
+     span.red{
+      color:#b3220d
+     }
+    }
+
+    div.price{
+      div.price_text{
+       margin-left:125px;
+       margin-top:15px;
+       color:#4c4c4c;
+       span.price{
+        padding-left:10px;
+        padding-right:10px;
+        margin-left:10px;
+        border-top:1px solid #B6AEAE;
+        border-bottom:1px solid #B6AEAE;
+       }
+       div.pay{
+        color:#ffffff;
+        font-size:12px;
+        width:80px; 
+        padding:3px 0px 3px 10px;
+        background-color:#789c45;
+        cursor:pointer;
+        margin-top:10px;
+       }
+      }
+      span.comment{
+        margin-left:25px;
+        width:200px;
+        text-align:center;
+        float:left;
+        margin-top:15px;
+        color:#b4210d;
+      }
+    }
+
+    div.progress{
+      margin-left:5px;
+      width:240px;
+      height:45px;
+      font-size:12px;
+      margin-top:10px;
+      float:left;
+
+      span{
+        padding-top:7px;
+        float:left;
+        color:#4c4c4c;
+      }
+      div.progress_block{
+        width:160px;
+        height:30px;
+        float:right;
+        position:relative;
+
+        span.progress_bar{
+          height:25px;
+          float:right;
+          margin:0px;
+          padding:0px;
+          position:absolute;
+          background-color: #adc987;
+          background-image: url(../green_prog_cut.png); 
+          background-position:right;
+          background-repeat: no-repeat;
+        }
+
+        span.value{
+          font-size:14px;
+          padding:4px 0px 0px 70px;
+          position:absolute;
+          float:left;
+        }
+        span.full_bar{
+          position:absolute;
+          background: image-url("white_prog.png") no-repeat;
+          background-position: right;
+          width: 160px;
+          height: 30px;
+          float:left;
+          z-index:5;
+          top:-6px;
+          left:-7px;
+
+        }
+      }
+    }
+    div.time{
+      color:#4c4c4c;
+      font-size:14px;
+      margin-left:35px;
+      width:220px;
+      float:left;
+      span.time{
+        padding-left:10px;
+        padding-right:10px;
+        margin-left:10px;
+        border-top:1px solid #B6AEAE;
+        border-bottom:1px solid #B6AEAE;
+      }
+    }
+  }
 }
+
+

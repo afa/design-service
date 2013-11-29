@@ -51,6 +51,9 @@ DesignService::Application.routes.draw do
       put 'agree_price'
       put 'accept_work'
     end
+    collection do
+      get 'profile1'
+    end
     resources :reviews
     resources :messages do
       member do
