@@ -25,7 +25,7 @@ protected
       :ceramic_tiles, :tree, :natural_stone, :cold_gamma, :bright_saturated_colors,
       :warm_color, :pastel_shades, :main_color, :show_results_different,
       :ceiling_dependence, :materials_designer_choise,
-      :address, :stage, :section,
+      :address, :stage, :section, :phone,
       :electrical_equipment, :water_supply_and_sewerage, :heating, :ventilation, :low_voltage_systems, :constructive_solutions,
       floor_plans_attributes: [:id, :_destroy, :room, :artificial_cold, :artificial_warm,
       :carpet_or_printed_carpet, :stone, :tree]])
