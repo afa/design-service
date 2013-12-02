@@ -1,15 +1,14 @@
 %ul.order_profiles
-  %li.selected 
-    = link_to "Текущие заказы", :controller => "orders", :action => "profile1"
   %li 
+    = link_to "Текущие заказы", :controller => "orders", :action => "profile1"
+  %li.selected 
     = link_to "Черновики", :controller => "orders", :action => "profile2"  
   %li 
     = link_to "Завершенные проекты", :controller => "orders", :action => "profile3" 
 
-
-.order_profile_default.pink_border.rounded-corners
-  .left_inbox.pink_border.rounded-corners_l3
-    .text_head.purple
+.order_profile_default.light_green_border.rounded-corners
+  .left_inbox.light_green_border.rounded-corners_l3
+    .text_head.green
       .number
         № 157 
         %span.date
@@ -44,7 +43,7 @@
       %span 
         ЗАВЕРШЕНО
       .progress_block
-        %span.progress_bar{:style => "width:0px"}
+        %span.progress_bar{:style => "width:0%"}
           %span.value
             0%
           %span.full_bar  
@@ -53,9 +52,9 @@
       %span.time
         1 нед.
 
-.order_profile_default.pink_border.rounded-corners
-  .left_inbox.pink_border.rounded-corners_l3
-    .text_head.purple
+.order_profile_default.yellow_border.rounded-corners
+  .left_inbox.yellow_border.rounded-corners_l3
+    .text_head.dark_yellow
       .number
         № 157 
         %span.date
@@ -97,9 +96,9 @@
         1 нед.
 
 
-.order_profile_default.pink_border.rounded-corners
-  .left_inbox.pink_border.rounded-corners_l3
-    .text_head.purple
+.order_profile_default.light_blue_border.rounded-corners
+  .left_inbox.light_blue_border.rounded-corners_l3
+    .text_head.blue
       .number
         № 157 
         %span.date
@@ -133,49 +132,6 @@
         %span.progress_bar{:style => "width:0%"}
           %span.value
             0%
-          %span.full_bar  
-    .time
-      Срок выполнения заказа :
-      %span.time
-        1 нед.
-
-
-.order_profile_default.pink_border.rounded-corners
-  .left_inbox.pink_border.rounded-corners_l3
-    .text_head.purple
-      .number
-        № 157 
-        %span.date
-          15.11.13
-      .heading    
-        Разработка вариантов планировок
-  .left_msg_area
-    .msg_type
-      %span.def_msg
-        СООБЩЕНИЕ
-    .msg_content
-      Журавлев Махаил 15.11.13 17:16 при появлении нового аывавыавыаыв
-      выавыавыа ва выа ывавыа ывфав афвыа выавф афавыфп авф ывпфыв афыва выаф ф
-      ав фва выав аыва фыва выавы аф пфпвв ыафыв
-
-  .right_content
-    .status
-      Статус:
-      %span.green
-        В работе
-    .price
-      .price_text
-        Цена:
-        %span.price
-          9500 руб.
-  
-    .progress
-      %span 
-        ЗАВЕРШЕНО
-      .progress_block
-        %span.progress_bar{:style => "width:80%"}
-          %span.value
-            80%
           %span.full_bar  
     .time
       Срок выполнения заказа :

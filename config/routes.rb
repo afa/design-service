@@ -53,6 +53,8 @@ DesignService::Application.routes.draw do
     end
     collection do
       get 'profile1'
+      get 'profile2'
+      get 'profile3'            
     end
     resources :reviews
     resources :messages do
