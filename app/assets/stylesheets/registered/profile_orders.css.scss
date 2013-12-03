@@ -339,9 +339,12 @@ body.registered {
         font-size:12px;
         width:80px; 
         padding:3px 0px 3px 10px;
-        background-color:#789c45;
+        background-color:#8BB94A;
         cursor:pointer;
         margin-top:10px;
+       }
+       div.pay:hover{
+        background-color:#789c45;
        }
       }
       span.comment{
@@ -469,11 +472,11 @@ body.registered {
         cursor:pointer;
         float:left;
         margin-left:30px;
-        background: image-url("ok_comment.jpg") no-repeat; 
+        background: image-url("ok_comment.png") no-repeat; 
         position:relative;
       }
       div.ok_button:hover{
-      background: image-url("ok_comment_hover.jpg") no-repeat;       
+      background: image-url("ok_comment_hover.png") no-repeat;       
       }
     }
 
