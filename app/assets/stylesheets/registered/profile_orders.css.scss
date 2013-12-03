@@ -202,12 +202,14 @@ body.registered {
   div.order_profile_default{
     float:left;
     clear:both;
-    margin:30px;
-    margin-top:30px;
+    margin:35px 0px 5px 55px;
     margin-bottom:10px;
     width:500px;
     position:relative;
   }
+  div.order_profile_default:nth-last-child(1){ 
+    margin-bottom:80px; 
+    }
 
   div.pink_border{ border:6px solid #efd4c2; }
   div.light_green_border{ border:6px solid #d1e3b3; }
@@ -453,6 +455,7 @@ body.registered {
         position:relative;
         li{
           float:left;
+          cursor:pointer;
           width:25px; 
           height:25px; 
           margin-right:10px;
@@ -468,6 +471,9 @@ body.registered {
         margin-left:30px;
         background: image-url("ok_comment.jpg") no-repeat; 
         position:relative;
+      }
+      div.ok_button:hover{
+      background: image-url("ok_comment_hover.jpg") no-repeat;       
       }
     }
 

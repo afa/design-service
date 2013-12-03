@@ -45,7 +45,7 @@
       %span 
         ЗАВЕРШЕНО
       .progress_block
-        %span.progress_bar{:style => "width:100%"}
+        %span.progress_bar
           %span.value
             100%
           %span.full_bar  
@@ -67,4 +67,70 @@
         %li.active_star
         %li
         %li
+      %input{:type => "hidden" ,:class => "rating"}/
       .ok_button
+
+
+.order_profile_default.light_green_border.rounded-corners
+  .left_inbox.light_green_border.rounded-corners_l3
+    .text_head.green
+      .number
+        № 157 
+        %span.date
+          15.11.13
+      .heading    
+        Разработка вариантов планировок
+  .left_msg_area
+    .msg_type
+      %span.def_msg
+        СООБЩЕНИЕ
+      -# span.def_msg / span.new_msg
+        
+    .msg_content
+      Журавлев Махаил 15.11.13 17:16 при появлении нового аывавыавыаыв
+      выавыавыа ва выа ывавыа ывфав афвыа выавф афавыфп авф ывпфыв афыва выаф ф
+      ав фва выав аыва фыва выавы аф пфпвв ыафыв   
+    .download     
+      %a{:href => ""} СКАЧАТЬ ФАЙЛЫ
+
+  .right_content
+    .status
+      Статус:
+      %span.green
+        -# span.red / span.green
+        Завершено
+    .price
+      .price_text
+        Цена:
+        %span.price
+          9500 руб.    
+      %span.group
+        Выполнила группа Архитекторов [#название группы]       
+    .progress
+      %span 
+        ЗАВЕРШЕНО
+      .progress_block
+        %span.progress_bar
+          %span.value
+            100%
+          %span.full_bar  
+    .time
+      Дата выполнения заказа :
+      %span.time
+        15.11.13
+
+  .comments_area.light_green_border
+    %span
+      ВАШ КОММЕНТАРИЙ 
+
+    %textarea#selected_form_wishes.text.optional.postComment.comment_text{:cols => "60", :name => "selected_form[wishes]", :rows => "3"}
+
+    .make_comments
+      %ul
+        %li.active_star
+        %li.active_star
+        %li
+        %li
+        %li
+      %input{:type => "hidden" ,:class => "rating"}/
+      .ok_button      
