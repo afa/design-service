@@ -38,6 +38,7 @@
                       = render 'layouts/registered/specialists'
                     .page_contener
                       .caption.light_red= page_subtitle
+                      = yield :rout_paths  
                       .breaker
                       = yield
             = render 'layouts/footer'

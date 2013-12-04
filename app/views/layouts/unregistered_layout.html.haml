@@ -29,6 +29,7 @@
                   .page_content_default
                     .collage_design.mode1
                       = render 'layouts/unregistered/specialists'
+                    = yield :rout_paths  
                     %div{:class => "page_description #{page_subtitle_class}"}
                       %span{:class => page_subtitle_class}= page_subtitle
                     = yield

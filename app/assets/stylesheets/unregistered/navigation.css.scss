@@ -30,6 +30,7 @@ body.unregistered {
 
     &.blue li.last {
       list-style-image: image-url("path_selected_blue.png");
+      color: #6d95c3;
       a { color:#6d95c3; }
     }
   }

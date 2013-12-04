@@ -8,6 +8,7 @@ body.registered {
     font-size: 14px;
     margin: 0px;
     padding-bottom: 0px;
+    margin-top: 10px;
     li {
       float: left;
       margin-right: 45px;
@@ -33,6 +34,7 @@ body.registered {
 
     &.blue li.last {
       list-style-image: image-url("path_selected_blue.png");
+      color: #6d95c3;
       a { color:#6d95c3; }
     }
   }
