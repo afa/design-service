@@ -32,14 +32,22 @@
           = f.input_field :ventilation, as: :boolean,  id:"forth", value:"1"
           %label{:for => "forth"} Вентиляция - ОВ-II
         %li
-          = f.input_field :low_voltage_systems, as: :boolean,  id:"fifth", value:"1"
-          %label{:for => "fifth"} Слаботочные системы - СС
-        %li
           = f.input_field :constructive_solutions, as: :boolean,  id:"sixth", value:"1", class:"warning_show"
           %label{:for => "sixth"} Конструктивные решения - КР
         %li.caution
           %span>
           Необходим план, где указаны привязки и размеры проемов
+      %span.select_ Системы «Умного дома» - СС 
+      %ul
+        %li
+          = f.input_field :light_control, as: :boolean,  id:"seven", value:"1"
+          %label{:for => "seven"} Контроль инженерного оборудования и освещения
+        %li 
+          = f.input_field :access_control, as: :boolean,  id:"eight", value:"1"
+          %label{:for => "eight"} Контроль системы доступа и оповещения
+        %li 
+          = f.input_field :mood_control, as: :boolean,  id:"nine", value:"1"
+          %label{:for => "nine"} Мультирум и управление настроением  
     .engineering_systems_form3.border_x3.rounded-corners_l2.shadow_x1
       .number._3
       .form_description.wishes
