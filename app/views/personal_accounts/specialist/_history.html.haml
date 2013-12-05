@@ -1,0 +1,63 @@
+.page_contener_specialist
+ .header_page_specialist.orrange_header ЛИЦЕВОЙ СЧЕТ
+
+ .personal_account_specialist
+  -# %ul.personal_account
+   %li.select
+    %a{:href=>"#"} История
+   %li
+    %a{:href=>"#"} Пополнение
+   %li
+    %a{:href=>"#"} Договора
+   %li
+    %a{:href=>"#"} Акты
+ .personal_account
+  На лицевом счете: #{@amount} руб.
+
+ .content_header Отложенные услуги
+ %table.deferred_services
+  %tr.heading
+   %td Услуга
+   %td Сумма
+   %td Статус
+  -# %tr
+   %td
+    %span.term Разработка дизайн-проекта
+    %span.term_info Заказ от 23.01.2013
+   %td 50 000 руб.
+   %td
+    Не оплачен
+    %br по счету
+    %br №18003/2
+ .content_header История пополнения
+ %table.history_recharge
+  %tr.heading
+   %td Дата
+   %td Сумма
+   %td Услуга
+   %td Статус
+  -# %tr
+   %td 01.02.2013
+   %td 20 000 руб.
+   %td согласование
+   %td Оплачен
+  -# %tr.green
+   %td 27.01.2013
+   %td 25 000 руб.
+   %td Пополнение
+   %td Выполнено
+  -# %tr
+   %td 23.01.2013
+   %td 35 000 руб.
+   %td согласование
+   %td Оплачен
+   %tr
+    %td 19.01.2013
+    %td 20 000 руб.
+    %td согласование
+   %td>Оплачен
+  -# %tr.green
+   %td 15.01.2013
+   %td 60 000 руб.
+   %td Пополнение
+   %td Выполнено

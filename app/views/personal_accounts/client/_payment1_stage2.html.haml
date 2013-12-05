@@ -1,0 +1,9 @@
+-# .black_content_blocks
+#payment1_stage2.rounded-corners.border_x1.shadow_x1
+  .close_fly_window
+  .head_account_grow
+  .list
+    .head Способ оплаты
+    - @groups.each do |key, val|
+      .item= link_to val, payment1_stage2_personal_account_path(:order => @order.id, :group => key, :format => :json), :class => 'ajax'
+

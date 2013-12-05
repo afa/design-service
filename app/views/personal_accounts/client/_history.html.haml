@@ -1,0 +1,21 @@
+-# %ul.personal_account
+ %li.select
+  %a{:href=>"#"} История
+ %li
+  %a{:href=>"#"} Пополнение
+ %li
+  %a{:href=>"#"} Договора
+ %li
+  %a{:href=>"#"} Акты
+%ul.personal_account.menu
+ %li.content_header.menu_item.pa_services.active{data: 'pa_services'} Отложенные услуги
+ %li.content_header.menu_item.pa_transactions{data: 'pa_transactions'} История пополнения и расхода
+.personal_account
+ На лицевом счете: #{(@amount || 0.0).to_s} руб.
+.page#pa_services
+ = render partial: "personal_accounts/client/services"
+.page#pa_transactions
+ -# = render partial: "personal_accounts/client/transactions"
+.pay_now
+ = robo_place
+

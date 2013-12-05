@@ -1,0 +1,25 @@
+%table.deferred_services
+ %tr.heading
+  %td Услуга
+  %td Сумма
+  %td Статус
+ - @orders.each do |order|
+  %tr
+   %td
+    %span.term= link_to order.orderable.title, order_path(order.id) 
+    %br
+    %span.term_info Заказ от #{order.created_at.to_date}
+    %br
+    %span.order
+     = link_to "Оплатить", payment1_stage1_personal_account_path(:order => order.id, :format => :json), :class => :ajax
+     = robo_pay(order)
+    - if order.need_amount <= current_user.qiwi
+     .pay_qiwi
+      = link_to "Оплатить из кошелька", give_money_profile_path(:order => order.id, :many => order.need_amount - order.qiwi)
+   %td #{order.price} руб.
+   %td
+    = t order.work_state 
+    /%br по счету 
+    /%br №18003/2
+          
+

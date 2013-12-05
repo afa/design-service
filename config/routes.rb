@@ -75,6 +75,12 @@ DesignService::Application.routes.draw do
     get 'replenishment'
     get 'contracts'
     get 'acts'
+    get 'pa_transactions'
+    get 'pa_services'
+    get 'payment1_stage1'
+    get 'payment1_stage2'
+    get 'payment2_stage1'
+    get 'payment2_stage2'
   end
 
   get 'design_projects/:type' => 'selected_forms#new', as: 'design_project_type'
