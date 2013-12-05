@@ -1,5 +1,5 @@
 .order_fields
-  = simple_nested_form_for engineering_system, remote: true, html: {class: 'orderable'}, defaults: { input_html: { disabled: disabled } }  do |f|
+  = simple_nested_form_for selected_form, remote: true, html: {class: 'orderable'}, defaults: { input_html: { disabled: disabled } }  do |f|
     .engineering_systems_form1.border_x1.rounded-corners_l2.shadow_x1
       .number._1
       .form_description.input_data
@@ -47,8 +47,8 @@
     = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'engineering_systems_submiting'}
 
   .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
-    = render partial: 'attachments/list_of_attachments', locals:{attachments: engineering_system.attachments, has_remove_button: !disabled}
-  = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: engineering_system, kind: 'design_project', disabled: disabled, wrapper_class: ''}
+    = render partial: 'attachments/list_of_attachments', locals:{attachments: selected_form.attachments, has_remove_button: !disabled}
+  = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: selected_form, kind: 'design_project', disabled: disabled, wrapper_class: ''}
   %span.attach_info_block.caution  
     Обязательно необходимо добавить;
     %ol.eng_systems

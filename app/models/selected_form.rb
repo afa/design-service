@@ -14,6 +14,9 @@ class SelectedForm < ActiveRecord::Base
 
   accepts_nested_attributes_for :floor_plans, allow_destroy: true, reject_if: :room_not_filled?
 
+  validates :phone, presence: true, length: {minimum: 7}, :if => ->(obj) { obj.typename.in?(['building_brigade_specialist', 'building_company_specialist']) }
+  validates :email, :email_format => true, :if => ->(obj) { obj.typename.in?(['building_brigade_specialist', 'building_company_specialist']) }
+
   def attachment_kinds
     ['plan_with_furniture']
   end

@@ -23,3 +23,9 @@ span.add_room {
     list-style-type: decimal;
   }
 }
+
+.address_details, .phone, .selected_form__email {
+  float: left;
+  width: 400px;
+  padding-bottom: 15px;
+}

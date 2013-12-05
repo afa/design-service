@@ -1,0 +1,28 @@
+.order_fields
+  = simple_form_for selected_form, remote: true, html: {class: 'orderable'},  defaults: { input_html: { disabled: disabled } } do |f|
+    = f.input_field :typename, as: :hidden
+    .design_p-workin-docs_form1.border_x1.rounded-corners_l2.shadow_x1
+      .number._1
+      .form_description.input_data
+      .file_attaching.border_x5.rounded-corners_l3
+        .attach_place_for_box
+
+      .number._2
+      .form_description.job
+      .address_details
+        Адрес: #{ f.input_field :address, class: 'textlines_default textline_l8' }
+        Этаж:  #{ f.input_field :stage, class: 'textlines_default textline_l4' }
+        Подъезд/Секция: #{ f.input_field :section, class: 'textlines_default textline_l4' }
+      .phone
+        Телефон: #{ f.input_field :phone, class: 'textlines_default textline_l7' }
+      .selected_form__email
+        E-mail: #{ f.input_field :email, class: 'textlines_default textline_l7' }
+
+    .design_p-workin-docs_form2.border_x3.rounded-corners_l2.shadow_x1
+      .number._3
+      .form_description.wishes
+      = f.input_field :wishes, as: :text, cols: 60, rows:3, class: "postComment textline_l12"
+    = render partial: 'shared/orderable_submission_box', locals: {disabled: disabled, wrapper_class: 'design_p-workin-docs_submiting'}
+  .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
+    = render partial: 'attachments/list_of_attachments', locals:{attachments: selected_form.attachments, has_remove_button: !disabled}
+  = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: selected_form, kind: 'plan_with_furniture', disabled: disabled, wrapper_class: ''}
