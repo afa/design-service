@@ -24,6 +24,10 @@
     background-image: image-url("comments.png");
     width: 370px;
   }
+  &.wishes_plan_developments {
+    background-image: image-url("comments_plan_dev.png");
+    width: 370px;
+  }  
   &.order_price {
     background-image: image-url("full_amount.png");
     width: 283px;

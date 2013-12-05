@@ -5,6 +5,7 @@ class SelectedFormsController < InheritedResources::Base
 
   def new
     if !parent
+      @work_doc_array = ['sweep_wall','floor_plans','ceiling_fixtures','draping_materials']
       render 'new'
     else
       render 'new_order_to_specialist'

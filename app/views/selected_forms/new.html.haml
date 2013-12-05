@@ -1,3 +1,21 @@
+- if @work_doc_array.include?(typename)
+  - path = 'Рабочая документация'
+  - cls = 'blue'
+- else
+  - path = 'концепция'
+
+
+= content_for :rout_paths do
+  %ul#navigation{:class => "#{cls}"}
+    %li.first
+      %a{:href => root_url}
+        Главная
+    %li
+      %a{:href => design_projects_path}
+        Дизайн-проекты
+    %li.last
+      = path
+
 .msg_caution
   %span.design_p-workin-docs Заполните заявку
 = render partial: "order_customizers/forms/#{typename}", locals: {selected_form: resource, disabled: false}
