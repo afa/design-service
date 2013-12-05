@@ -5,3 +5,4 @@
 //= require chat
 //= require completion_percent
 //= require date_selector
+//= require order_profiles

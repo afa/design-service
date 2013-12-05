@@ -11,7 +11,8 @@ private
   def permitted_params
     params.permit(:engineering_system => [:address, :stage, :wishes, :section, :electrical_equipment,
                                           :water_supply_and_sewerage, :heating, :ventilation,
-                                          :low_voltage_systems, :constructive_solutions])
+                                          :constructive_solutions, :light_control, :access_control, 
+                                          :mood_control])
   end
 
   def load_draft
