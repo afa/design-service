@@ -38,8 +38,9 @@ private
                                       :num_guests, :washing_room_needed, :num_plans,
                                       :num_standpipes, :num_rooms,
                                       :address, :floor, :section,
-                                      :family_composition_first_line, :family_composition_second_line, :comment,
-                                      :flat_area
+                                      :family_composition_first_line,
+                                      :men_total, :women_total, :below_10, :beyond_10_15, :above_15,
+                                      :comment,:flat_area
                                     ] )
   end
 

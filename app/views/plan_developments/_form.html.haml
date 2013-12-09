@@ -10,9 +10,7 @@
       Число комнат: #{ f.input_field :num_rooms, class: 'textlines_default textline_l6'}
       %br
       Кол-во стояков водопровода:#{ f.input_field :num_standpipes, class: 'textlines_default textline_l6' }
-      Состав семьи:#{ f.input_field :family_composition_first_line, class: 'textlines_default textline_l7'}
-      = f.input_field :family_composition_second_line, class: 'textlines_default textline_l10'
-      %span.subtitle (укажите количество и пол детей)
+      = render partial:  'family_members', locals:{ :f => f }
 
     .var_form2.border_x2.rounded-corners_l2.shadow_x1
       .form_description.job
