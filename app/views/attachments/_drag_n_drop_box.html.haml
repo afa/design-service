@@ -1,5 +1,6 @@
 .attach_box{:class => wrapper_class}
   %span.dropZone.orderable_attachment
+    %span.att_files_ok
     = simple_form_for attached_to.attachments.build(kind: kind), url: polymorphic_path([attached_to, Attachment], format: 'json'), remote: true, multipart: true, defaults: { input_html: { disabled: disabled } } do |f|
       = f.input_field :file, as: :file, multiple: true
       = f.input_field :kind, as: :hidden

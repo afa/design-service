@@ -24,12 +24,14 @@ window.register_drag_n_drop = (attach_box, loaded_files)->
       multipart_ajax_request attach_url, 'POST', data,
         success: (data, textStatus, xhr)->
           reload_attachments_list(data['list_of_attachments'])
+          $('.att_files_ok').css('display','block')
           alert('Файл загружен')
         error: (xhr, textStatus, error)->
           alert('Не удалось загрузить файл')
+          $('.att_files_ok').css('display','none')
 
 
-  dropZone_hint.text('Вы можете перетащить файлы сюда или выбрать файлы, кликнув на иконку слева')
+  dropZone_hint.text('Вы можете перетащить файлы сюда')
   dropZone.on('drop', (event) ->
     event.preventDefault()
     dropZone.removeClass('hover')
