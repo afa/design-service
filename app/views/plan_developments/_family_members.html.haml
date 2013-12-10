@@ -1,0 +1,27 @@
+Состав семьи:#{ f.input_field :family_composition_first_line, class: 'textlines_default textline_l7'}
+%span.family_mem
+  укажите количество и пол детей
+.family_members
+  %ul
+    %li
+      %span
+        количество
+        = f.input_field :men_total, class: 'textlines_default textline_l4'
+    %li  
+      %span
+        количество
+        = f.input_field :women_total, class: 'textlines_default textline_l4'    
+%span.family_mem
+  Возраст детей     
+.child_age
+  %ul
+    %li
+      = f.input_field :below_10, as: :boolean,  id:"below_10", value:"1"
+      %label{:for => "below_10"} До 10  
+    %li
+      = f.input_field :beyond_10_15, as: :boolean,  id:"beyond_10_15", value:"1"
+      %label{:for => "beyond_10_15"} С 10 - До 15      
+    %li
+      = f.input_field :above_15, as: :boolean,  id:"above_15", value:"1"
+      %label{:for => "above_15"} Более 15      
+      

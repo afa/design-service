@@ -20,11 +20,22 @@
   }
   &.orderable_attachment {
     width: 300px;
-    background-image: image-url("file_att.png");
+    background-image: image-url("file_attach_box.png");
     background-repeat: no-repeat;
+    background-position: 25px;
     input[type="file"] {
       width: 48px;
       height: 67px;
+    }
+    span.att_files_ok{
+      position:absolute;
+      width:33px;
+      height:33px;
+      display:none;
+      background-image: image-url("file_attach_ok.png");
+      background-repeat: no-repeat;
+      left: 45px;
+      top: 18px;
     }
   }
 
@@ -40,13 +51,14 @@
   margin: 0px;
   text-align: center;
 
-  background-color: #eee;
+  background-color: #DFDFDF;
 
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   .hint {
     margin-top: 20px;
+    margin-left: 25px;
   }
 
   &.hover {

@@ -5,6 +5,8 @@ window.destroy_attachment = (attachment_url, callbacks)->
   ajax_request(attachment_url, 'DELETE', '',
     success: (data, textStatus, xhr)->
       alert('Файл успешно удален')
+      if($('ul.list_of_attachments li').length<=1)
+        $('.att_files_ok').css('display','none')
       success_handler = callbacks['success'] || ->{}
       success_handler(data, textStatus, xhr)
     error: (xhr, textStatus, error)->
