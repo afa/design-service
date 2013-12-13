@@ -2,15 +2,55 @@
 
 div.var_form1 {
   width: 360px;
-  height: 355px;
   margin-left: 45px;
   padding: 30px;
   line-height: 45px;
   margin-bottom: 25px;
+  float:left;
 
   .number._1 { float: left; }
   .form_description.input_data {
     float: left;
+  }
+
+  span.family_mem{
+    float:left;
+    width: 320px;
+  }
+  div.family_members {
+    width : 320px;
+    ul{
+      padding:0px;
+      margin:0px 0px 0px 50px;
+      float:left;
+      list-style:none;
+      li{
+        background-repeat: no-repeat;
+        float: left;
+        line-height: 30px;
+        padding-left:40px;
+      }
+      li:nth-child(1){
+        background-image: image-url("men_x25.png");
+      }
+      li:nth-child(2){
+        background-image: image-url("woman_x25.png");
+      }      
+    }
+  }
+  div.child_age{
+    width : 320px;
+    ul{
+      float:left;
+      padding:0px;
+      margin:0px 0px 0px 20px;
+      width:360px;
+      list-style:none;
+      li{
+        float:left;
+        padding-right:15px;
+      }  
+    }
   }
 }
 
@@ -19,6 +59,7 @@ div.var_form2 {
   margin-top: 15px;
   padding: 30px;
   margin-bottom: 25px;
+  float:left;
 
   .number._2 {
     margin-left: 115px;
@@ -165,6 +206,7 @@ div.options {
 }
 
 div.var_form3 {
+  float:left;
   width: 470px;
   height: 160px;
   margin-left: 45px;
