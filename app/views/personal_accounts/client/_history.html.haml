@@ -12,10 +12,11 @@
  %li.content_header.menu_item.pa_transactions{data: 'pa_transactions'} История пополнения и расхода
 .personal_account
  На лицевом счете: #{(@amount || 0.0).to_s} руб.
+ %span= link_to "Пополнить", payment2_stage1_personal_account_path(format: 'json')
 .page#pa_services
  = render partial: "personal_accounts/client/services"
 .page#pa_transactions
  -# = render partial: "personal_accounts/client/transactions"
-.pay_now
+-# .pay_now
  = robo_place
 

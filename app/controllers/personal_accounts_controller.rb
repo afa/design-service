@@ -3,7 +3,7 @@ class PersonalAccountsController < ApplicationController
 
   def history
    
-   @orders = current_user.orders.where(:work_state => :saved_draft)
+   @orders = current_user.orders #.where(:work_state => :saved_draft)
    @transactions = current_user.transactions
    @events = Event.all 
    @amount = current_user.qiwi
@@ -49,7 +49,8 @@ class PersonalAccountsController < ApplicationController
    end
    xml_interface.invoice_id = @order.id
    xml_interface.total = @order.price
-   @groups = begin; xml_interface.get_currencies; rescue; {"CurrenciesList" => {"Groups" => {"Group" => []}}}; end["CurrenciesList"]["Groups"]["Group"].map{|g| [g["Code"], g["Description"]] }.select{|g| g[0] == @group }
+   @groups = begin; xml_interface.get_currencies; rescue; {"CurrenciesList" => {"Groups" => {"Group" => []}}}; end["CurrenciesList"]["Groups"]["Group"].map{|g| [g["Code"], g["Description"], g["Items"]] }.select{|g| g[0] == @group }.first[2]["Currency"]
+   p "---xml", @groups
    render :json => {:content => render_to_string(:partial => "personal_accounts/client/payment1_stage2.html.haml"), :what => params[:action]}
   end
 
@@ -62,5 +63,16 @@ class PersonalAccountsController < ApplicationController
    @group = params[:group]
    @order = Order.where(:id => params[:order]).first
    render :json => {:content => render_to_string(:partial => "personal_accounts/client/payment2_stage2.html.haml"), :what => params[:action]}
+  end
+
+  def payment3_stage1
+   @order = Order.where(:id => params[:order]).first
+   render :json => {:content => render_to_string(:partial => "personal_accounts/client/payment3_stage1.html.haml"), :what => params[:action]}
+  end
+
+  def payment3_stage2
+  end
+
+  def payment3_stage3
   end
 end

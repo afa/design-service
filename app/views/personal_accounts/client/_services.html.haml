@@ -10,13 +10,21 @@
     %br
     %span.term_info Заказ от #{order.created_at.to_date}
     %br
-    %span.order
-     = link_to "Оплатить", payment1_stage1_personal_account_path(:order => order.id, :format => :json), :class => :ajax
-     = robo_pay(order)
-    - if order.need_amount <= current_user.qiwi
+    - if order.can_pay?
+     %span.order
+      = link_to "Оплатить", payment1_stage1_personal_account_path(:order => order.id, :format => :json), :class => :ajax
+      -# = robo_pay(order)
+
+     - if order.need_amount > current_user.qiwi
+      .pay_qiwi
+       = link_to "Перевести", payment3_stage3_personal_account_path(:order => order.id, :format => 'json'), :class => 'ajax'
+     - else
+      .pay_qiwi
+       = link_to "Перевести", payment3_stage1_personal_account_path(:order => order.id, :format => 'json'), :class => 'ajax'
+    -# - if order.need_amount <= current_user.qiwi
      .pay_qiwi
       = link_to "Оплатить из кошелька", give_money_profile_path(:order => order.id, :many => order.need_amount - order.qiwi)
-   %td #{order.price} руб.
+   %td #{order.price || 0.0} руб.
    %td
     = t order.work_state 
     /%br по счету 

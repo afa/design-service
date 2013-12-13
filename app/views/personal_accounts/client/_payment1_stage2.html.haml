@@ -4,6 +4,6 @@
   .head_account_grow
   .list
     .head Способ оплаты
-    - @groups.each do |key, val|
-      .item= link_to val, payment1_stage2_personal_account_path(:order => @order.id, :group => key, :format => :json), :class => 'ajax'
+    - @groups.each do |grp|
+      .item= link_to grp["Name"], Rubykassa.pay_url(@order.id, @order.need_amount, :email => current_user.email, :currency => grp["Label"], :culture => :ru)
 

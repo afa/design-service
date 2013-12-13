@@ -51,11 +51,6 @@ DesignService::Application.routes.draw do
       put 'agree_price'
       put 'accept_work'
     end
-    collection do
-      get 'profile1'
-      get 'profile2'
-      get 'profile3'            
-    end
     resources :reviews
     resources :messages do
       member do
@@ -72,6 +67,9 @@ DesignService::Application.routes.draw do
     put 'set_avatar'
     post 'add_portfolio'
     get :give_money
+    get 'profile1'
+    get 'profile2'
+    get 'profile3'            
   end
 
   get 'personal_account' => 'personal_accounts#history'
@@ -86,6 +84,9 @@ DesignService::Application.routes.draw do
     get 'payment1_stage2'
     get 'payment2_stage1'
     get 'payment2_stage2'
+    get 'payment3_stage1'
+    get 'payment3_stage2'
+    get 'payment3_stage3'
   end
 
   get 'design_projects/:type' => 'selected_forms#new', as: 'design_project_type'
