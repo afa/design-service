@@ -84,7 +84,40 @@ body.unregistered {
     height: 250px;
   }
   #register_stage2 {
-    height: 450px;
+    height: 350px;
+
+    div.head_register{
+      padding: 0px;
+      margin: 30px 0px 60px 70px;
+    }
+    div.goto_login_fix{
+      padding: 0px;
+      margin-top: 34px;
+      margin-left: 10px;
+      float: left;
+    }
+
+    div.content{
+      font-size: 20px;
+      float: left;
+      width: 470px;
+      text-align: center;
+      span a, a:link, a:active, a:visited{
+        color: #ff805b;
+        text-decoration:underline;
+      }
+      span a:hover{
+        text-decoration:none;
+      }
+    }
+    div.wish{
+      width: 470px;
+      clear: left;
+      text-align: center;
+      padding-top: 35px;
+      padding-bottom: 40px;
+      color: #69b308;
+    }    
   }
   #register_short {
     height: 260px;
