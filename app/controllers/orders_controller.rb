@@ -33,4 +33,5 @@ class OrdersController < InheritedResources::Base
   def profile3
 
   end
+
 end

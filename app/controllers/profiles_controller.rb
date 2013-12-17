@@ -61,6 +61,16 @@ class ProfilesController < InheritedResources::Base
     end
    end
   end
+  
+  def profile4
+  end
+  
+  def profile5
+  end
+
+  def profile6
+  end
+
 protected
   def begin_of_association_chain
     current_user

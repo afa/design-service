@@ -5,6 +5,7 @@
 //= require orders
 //= require portfolios
 //= require ajax_submit
+//= require profiles_new_order
 
 $(document).ready ->
   fill_specialist_info = (profile)->

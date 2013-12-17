@@ -54,7 +54,8 @@ DesignService::Application.routes.draw do
     collection do
       get 'profile1'
       get 'profile2'
-      get 'profile3'            
+      get 'profile3'
+
     end
     resources :reviews
     resources :messages do
@@ -72,6 +73,9 @@ DesignService::Application.routes.draw do
     put 'set_avatar'
     post 'add_portfolio'
     get :give_money
+    get 'profile4'
+    get 'profile5'
+    get 'profile6'    
   end
 
   get 'personal_account' => 'personal_accounts#history'

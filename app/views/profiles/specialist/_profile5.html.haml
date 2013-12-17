@@ -1,10 +1,9 @@
 %ul.order_profiles
-  %li 
-    = link_to "Текущие заказы", :controller => "orders", :action => "profile1"
-  %li 
-    = link_to "Черновики", :controller => "orders", :action => "profile2"  
+  %li
+    = link_to "Текущие заказы", :controller => "profiles", :action => "profile4"
+
   %li.selected 
-    = link_to "Завершенные проекты", :controller => "orders", :action => "profile3" 
+    = link_to "Завершенные проекты", :controller => "profiles", :action => "profile5" 
 
 .order_profile_default.light_green_border.rounded-corners
   .left_inbox.light_green_border.rounded-corners_l3
@@ -40,7 +39,7 @@
         %span.price
           9500 руб.    
       %span.group
-        Выполнила группа Архитекторов [#название группы]       
+        Заказчик [#Имя]       
     .progress
       %span 
         ЗАВЕРШЕНО
@@ -56,9 +55,9 @@
 
   .comments_area.light_green_border
     %span
-      ВАШ КОММЕНТАРИЙ 
+      КОММЕНТАРИЙ ЗАКАЗЧИКА
 
-    %textarea#selected_form_wishes.text.optional.postComment.comment_text{:cols => "60", :name => "", :rows => "3"}
+    %textarea#selected_form_wishes.text.optional.postComment.comment_text{:cols => "60", :name => "selected_form[wishes]", :rows => "3"}
 
     .make_comments
       %ul
@@ -105,7 +104,7 @@
         %span.price
           9500 руб.    
       %span.group
-        Выполнила группа Архитекторов [#название группы]       
+        Заказчик [#Имя]       
     .progress
       %span 
         ЗАВЕРШЕНО
@@ -121,9 +120,9 @@
 
   .comments_area.light_green_border
     %span
-      ВАШ КОММЕНТАРИЙ 
+      КОММЕНТАРИЙ ЗАКАЗЧИКА
 
-    %textarea#selected_form_wishes.text.optional.postComment.comment_text{:cols => "60", :name => "", :rows => "3"}
+    %textarea#selected_form_wishes.text.optional.postComment.comment_text{:cols => "60", :name => "selected_form[wishes]", :rows => "3"}
 
     .make_comments
       %ul

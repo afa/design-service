@@ -1,0 +1,153 @@
+.new_orders.order_profile_default.pink_border.rounded-corners
+  .left_inbox.pink_border.rounded-corners_l3
+    .text_head.purple
+      .number
+        № 157 
+        %span.date
+          15.11.13
+      .heading    
+        Разработка вариантов планировок
+  .left_msg_area
+    %span.view_order
+      %a{:href => ""} ПОСМОТРЕТЬ ЗАКАЗ     
+
+  .right_content_top.right_content
+    .status
+      Статус:
+      %span.green
+        -# span.red / span.green
+        Новый
+    .price
+      .price_text
+        Цена:
+        %span.price
+          9500 руб.    
+      %span.comment
+  .comments_area.pink_border
+  .center_text
+    ЗАПОЛНИТЕ ФОРМУ ДЛЯ ПРИНЯТИЯ ЗАКАЗА
+  .left_msg_area_bottom
+    %span
+      Название листов,
+      которые будут разрабатываться
+      %ol.name_list#1
+        %li
+          %input.textlines_default.textline_l6
+        %li
+          %input.textlines_default.textline_l6
+        %li
+          %input.textlines_default.textline_l6
+
+  .right_content 
+    %span.h_text
+      Срок выполнения заказа:
+    .time_period 
+      %input
+        %ul
+          %li
+            %input#days{:name => "days_weeks", :type => "radio", :value => ""}
+            %label{:for => "days"} дн.
+
+
+          %li
+            %input#weeks{:name => "days_weeks", :type => "radio", :value => ""}
+            %label{:for => "weeks"} нед.  
+  .center_text
+    %input.get_order{:alt => "", :src => asset_path("take_order.png"), :type => "image"}/  
+    %input.refuce_order{:alt => "", :onClick => "", :src => asset_path("refuce_order.png"), :type => "image"}/
+  .center_text.confirmation
+    .alert
+      ЗАКАЗ ПРИНЯТ ВАМИ! 
+      %br/
+      ПОСЛЕ ОПЛАТЫ ЗАКАЗЧИКОМ ВЫ МОЖЕТЕ ПРИСТУПАТЬ 
+      %br/
+      К ИСПОЛНЕНИЮ ДАННОГО ЗАКАЗА!
+      %span.sub_alert
+        АДМИНИСТРАЦИЯ ДИЗАЙН-СЕРВИС ПРОИНФОРМИРУЕТ ВАС ОБ ЭТОМ!
+
+
+  .comments_area.pink_border.order_refuce
+    %span
+      УКАЖИТЕ ПРИЧИНУ ОТКАЗА
+    
+    %textarea#selected_form_wishes.text.optional.postComment.comment_text{:cols => "60", :name => "", :rows => "3"}
+    .exp_of_refuce   
+      %input.exp_of_refuce{:alt => "", :onClick => "", :src => asset_path("send_msg.png"), :type => "image"}/
+
+
+.new_orders.order_profile_default.pink_border.rounded-corners
+  .left_inbox.pink_border.rounded-corners_l3
+    .text_head.purple
+      .number
+        № 157 
+        %span.date
+          15.11.13
+      .heading    
+        Разработка вариантов планировок
+  .left_msg_area
+    %span.view_order
+      %a{:href => ""} ПОСМОТРЕТЬ ЗАКАЗ     
+
+  .right_content_top.right_content
+    .status
+      Статус:
+      %span.green
+        -# span.red / span.green
+        Новый
+    .price
+      .price_text
+        Цена:
+        %span.price
+          9500 руб.    
+      %span.comment
+  .comments_area.pink_border
+  .center_text
+    ЗАПОЛНИТЕ ФОРМУ ДЛЯ ПРИНЯТИЯ ЗАКАЗА
+  .left_msg_area_bottom
+    %span
+      Название листов,
+      которые будут разрабатываться
+      %ol.name_list#2
+        %li
+          %input.textlines_default.textline_l6
+        %li
+          %input.textlines_default.textline_l6
+        %li
+          %input.textlines_default.textline_l6
+
+  .right_content 
+    %span.h_text
+      Срок выполнения заказа:
+    .time_period 
+      %input
+        %ul
+          %li
+            %input#days2{:name => "days_weeks2", :type => "radio", :value => ""}
+            %label{:for => "days2"} дн.
+
+
+          %li
+            %input#weeks2{:name => "days_weeks2", :type => "radio", :value => ""}
+            %label{:for => "weeks2"} нед.  
+  .center_text
+    %input.get_order{:alt => "", :src => asset_path("take_order.png"), :type => "image"}/  
+    %input.refuce_order{:alt => "", :onClick => "", :src => asset_path("refuce_order.png"), :type => "image"}/    
+  .center_text.confirmation
+    .alert
+      ЗАКАЗ ПРИНЯТ ВАМИ! 
+      %br/
+      ПОСЛЕ ОПЛАТЫ ЗАКАЗЧИКОМ ВЫ МОЖЕТЕ ПРИСТУПАТЬ 
+      %br/
+      К ИСПОЛНЕНИЮ ДАННОГО ЗАКАЗА!
+      %span.sub_alert
+        АДМИНИСТРАЦИЯ ДИЗАЙН-СЕРВИС ПРОИНФОРМИРУЕТ ВАС ОБ ЭТОМ!
+
+
+  .comments_area.pink_border.order_refuce
+    %span
+      УКАЖИТЕ ПРИЧИНУ ОТКАЗА
+    
+    %textarea#selected_form_wishes.text.optional.postComment.comment_text{:cols => "60", :name => "", :rows => "3"}
+    .exp_of_refuce   
+      %input.exp_of_refuce{:alt => "", :onClick => "", :src => asset_path("send_msg.png"), :type => "image"}/
+    
