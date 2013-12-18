@@ -1,0 +1,9 @@
+#payment3_stage1.rounded-corners.border_x1.shadow_x1
+  .close_fly_window
+  .head_account_grow
+  .line
+    На Вашем лицевом счете: #{@amount} руб.
+  .line
+    #{@order.title}: #{@order.price} руб.
+  .button
+    = link_to 'Перевести', payment3_stage2_personal_account_path(:order => @order.id, :format => :json), :class => 'ajax'

@@ -22,15 +22,4 @@ class OrdersController < InheritedResources::Base
     respond_with(resource)
   end
 
-  def profile1
-
-  end
-
-  def profile2
-
-  end
-
-  def profile3
-
-  end
 end

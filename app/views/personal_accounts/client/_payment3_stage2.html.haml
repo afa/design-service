@@ -1,0 +1,10 @@
+#payment3_stage2.rounded-corners.border_x1.shadow_x1
+  .close_fly_window
+  .head_account_grow
+  .line
+    Разработка #{@order.title}: #{@order.price} руб.
+  .line
+    На Вашем лицевом счете: #{@amount} руб.
+  .button
+    = link_to 'OK', order_path(@order.id)
+
