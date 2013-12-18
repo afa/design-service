@@ -1,0 +1,54 @@
+%ul.order_profiles
+  %li.selected 
+    = link_to "Текущие заказы", :controller => "profiles", :action => "profile4"
+
+  %li 
+    = link_to "Завершенные проекты", :controller => "profiles", :action => "profile5" 
+
+
+.order_profile_default.pink_border.rounded-corners
+  .left_inbox.pink_border.rounded-corners_l3
+    .text_head.purple
+      .number
+        № 157 
+        %span.date
+          15.11.13
+      .heading    
+        Разработка вариантов планировок
+  .left_msg_area
+    .msg_type
+      %span.msg_icon     
+      %span.def_msg     
+        СООБЩЕНИЕ
+      -# span.def_msg / span.new_msg
+        
+    .msg_content
+      Журавлев Махаил 15.11.13 17:16 при появлении нового аывавыавыаыв
+      выавыавыа ва выа ывавыа ывфав афвыа выавф афавыфп авф ывпфыв афыва выаф ф
+      ав фва выав аыва фыва выавы аф пфпвв ыафыв      
+
+  .right_content
+    .status
+      Статус:
+      %span.green
+        -# span.red / span.green
+        В работе
+    .price
+      .price_text
+        Цена:
+        %span.price
+          9500 руб.    
+      %span.comment
+               
+    .progress
+      %span 
+        ЗАВЕРШЕНО
+      .progress_block
+        %span.progress_bar
+          %span.value
+            0%
+          %span.full_bar  
+    .time
+      Срок выполнения заказа :
+      %span.time
+        1 нед.
