@@ -71,6 +71,21 @@ class ProfilesController < InheritedResources::Base
   def profile6
   end
 
+
+  def profile1
+   @orders = User.current.orders.where(:work_state => %w(sent_to_moderator moderator_suggested specialist_agreed specialist_disagreed client_agreed in_work))
+  end
+
+  def profile2
+   @orders = User.current.orders.where(:work_state => %w(draft saved_draft))
+
+  end
+
+  def profile3
+   @orders = User.current.orders.where(:work_state => %w(work_accepted))
+
+  end
+
 protected
   def begin_of_association_chain
     current_user

@@ -1,0 +1,15 @@
+%table.history_recharge
+ %tr.heading
+  %td Дата
+  %td Сумма
+  %td Услуга
+  %td Статус
+ - @transactions.each do |ta|
+  %tr
+   -# {:class => [ta.done? ? 'green' : nil]}
+   %td= ta.created_at.to_date
+   %td #{ta.amount} руб.
+   %td ?согласование
+   -# %td= ta.state
+
+
