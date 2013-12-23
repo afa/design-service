@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddLprToSpecialist < ActiveRecord::Migration
   def change
    add_column :specialists, :labor_participation, :decimal, :precision => 6, :scale => 4

@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemoveLikesTable < ActiveRecord::Migration
   def change
     drop_table :likes

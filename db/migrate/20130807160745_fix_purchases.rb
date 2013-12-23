@@ -1,3 +1,4 @@
+# coding: utf-8
 class FixPurchases < ActiveRecord::Migration
   def up
    if (Purchase.new.attributes.has_key?(:orders_id.to_s))

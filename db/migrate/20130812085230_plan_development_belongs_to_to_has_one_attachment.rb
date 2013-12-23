@@ -1,3 +1,4 @@
+# coding: utf-8
 class PlanDevelopmentBelongsToToHasOneAttachment < ActiveRecord::Migration
   def change
     PlanDevelopment.find_each do |pd|

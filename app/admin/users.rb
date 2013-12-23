@@ -1,3 +1,4 @@
+# coding: utf-8
 ActiveAdmin.register User do
   menu label: -> { I18n.t 'titles.users' }
   decorate_with UserDecorator

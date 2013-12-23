@@ -1,3 +1,4 @@
+# coding: utf-8
 ActiveAdmin.register Portfolio do
   controller do
     def permitted_params

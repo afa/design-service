@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemoveUnusedFields < ActiveRecord::Migration
   def change
     change_table :users do |t|

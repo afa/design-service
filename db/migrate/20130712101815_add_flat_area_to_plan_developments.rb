@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddFlatAreaToPlanDevelopments < ActiveRecord::Migration
   def change
     change_table :plan_developments do |t|

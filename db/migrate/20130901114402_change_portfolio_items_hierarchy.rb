@@ -1,3 +1,4 @@
+# coding: utf-8
 class ChangePortfolioItemsHierarchy < ActiveRecord::Migration
   def change
     change_table :portfolio_items do |t|

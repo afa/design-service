@@ -1,3 +1,4 @@
+# coding: utf-8
 ActiveAdmin.register Specialist do
   decorate_with SpecialistDecorator
   menu label: -> { I18n.t 'titles.specialists' }

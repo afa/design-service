@@ -1,3 +1,4 @@
+# coding: utf-8
 def true_false_nil(value)
   if value.nil?
     'Не определено'

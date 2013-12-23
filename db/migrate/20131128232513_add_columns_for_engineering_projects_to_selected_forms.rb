@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddColumnsForEngineeringProjectsToSelectedForms < ActiveRecord::Migration
   def change
     add_column :selected_forms, :address, :string

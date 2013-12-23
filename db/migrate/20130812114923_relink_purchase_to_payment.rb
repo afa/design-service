@@ -1,3 +1,4 @@
+# coding: utf-8
 class RelinkPurchaseToPayment < ActiveRecord::Migration
   def up
    if (Purchase.new.attributes.has_key?(:order_id.to_s))

@@ -1,3 +1,4 @@
+# coding: utf-8
 class SpecialistGroup < ActiveRecord::Base
   belongs_to :specialization
   has_and_belongs_to_many :specialists

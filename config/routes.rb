@@ -1,3 +1,4 @@
+# coding: utf-8
 DesignService::Application.routes.draw do
   resources :portfolios do
     resources :portfolio_items

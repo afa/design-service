@@ -1,3 +1,4 @@
+# coding: utf-8
 class MakeMessageRecepientPolymorphic < ActiveRecord::Migration
   def change
     change_table :messages do |t|

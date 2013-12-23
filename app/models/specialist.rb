@@ -1,4 +1,4 @@
-#encoding: utf-8
+# coding: utf-8
 class Specialist < ActiveRecord::Base
   before_create :new_user
   has_and_belongs_to_many :specialist_groups
