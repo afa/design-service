@@ -152,6 +152,10 @@ DesignService::Application.routes.draw do
     get "specialization/:id/specialist_groups" => 'specialization#specialist_groups', as: :specialization_specialist_groups
   end
 
+  namespace :adm do
+    resources :orders
+  end
+
   get "welcome/index"
 
   # The priority is based upon order of creation:
