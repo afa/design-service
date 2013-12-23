@@ -201,30 +201,30 @@ body.registered {
   }
 
   div.page_contener_specialist {
-    ul.order_profiles{
+    ul.order_profiles {
       margin-top: 129px;
-      width:550px;
+      width: 550px;
     }
-    div.order_profile_default{
-      margin:35px 0px 5px 40px;
-    }    
-    div.order_profile_default:nth-child(3){ 
-      margin-top:50px; 
-    }     
-    div.order_profile_default:nth-last-child(1){ 
-      margin-bottom:80px; 
-    }      
+    div.order_profile_default {
+      margin: 35px 0px 5px 40px;
+    }
+    div.order_profile_default:nth-child(3) {
+      margin-top: 50px;
+    }
+    div.order_profile_default:nth-last-child(1) {
+      margin-bottom: 80px;
+    }
   }
 
-  div.order_profile_default{
-    float:left;
-    clear:both;
-    margin:35px 0px 10px 55px;
-    width:500px;
-    position:relative;
+  div.order_profile_default {
+    float: left;
+    clear: both;
+    margin: 35px 0px 10px 55px;
+    width: 500px;
+    position: relative;
   }
-  div.order_profile_default:nth-last-child(1){ 
-    margin-bottom:80px; 
+  div.order_profile_default:nth-last-child(1) {
+    margin-bottom: 80px;
   }
 
   div.pink_border { border:6px solid #efd4c2; }
@@ -293,44 +293,44 @@ body.registered {
       span.new_msg {
         color: #518c0c;
       }
-      span.msg_icon{
+      span.msg_icon {
         background-image: image-url("msg_icon.jpg");
-        float:left;
-        width:27px;
-        height:20px;
-        margin-left:-80px;
-        position:absolute;
+        float: left;
+        width: 27px;
+        height: 20px;
+        margin-left: -80px;
+        position: absolute;
       }
-      span.def_msg{
-        color:#4d4d4d;
-        float:left;
-        margin-left:10px;
-        margin-top:5px;
-        width:200px;
-        text-align:center;
+      span.def_msg {
+        color: #4d4d4d;
+        float: left;
+        margin-left: 10px;
+        margin-top: 5px;
+        width: 200px;
+        text-align: center;
       }
     }
-    span.view_order{
-      color:#609c11;
-      width:210px;
-      float:left;
-      text-align:center;
+    span.view_order {
+      color: #609c11;
+      width: 210px;
+      float: left;
+      text-align: center;
 
-      a,a:link, a:active{
-        color:#609c11;
-        text-decoration:underline;
+      a,a:link, a:active {
+        color: #609c11;
+        text-decoration: underline;
       }
-      a:hover{ text-decoration: none; }
+      a:hover { text-decoration: none; }
     }
 
-    div.msg_content{
-      border:1px solid #DBC4D2;
-      width:200px;
-      color:#A89FA5;
-      height:100px;
-      padding:10px;
-      font-size:14px;
-      float:left;
+    div.msg_content {
+      border: 1px solid #DBC4D2;
+      width: 200px;
+      color: #A89FA5;
+      height: 100px;
+      padding: 10px;
+      font-size: 14px;
+      float: left;
     }
     div.download {
       float: left;
@@ -345,45 +345,45 @@ body.registered {
     div.download a:hover { color: #4c4c4c; text-decoration: none; }
   }
 
-  div.right_content{
-    width:255px;
-    float:left;
-    span.h_text{
-      color:#4c4c4c;
-      padding-top:10px;
-      margin-right:30px;
-      float:right;
-      font-size:14px;
+  div.right_content {
+    width: 255px;
+    float: left;
+    span.h_text {
+      color: #4c4c4c;
+      padding-top: 10px;
+      margin-right: 30px;
+      float: right;
+      font-size: 14px;
     }
-    div.time_period{
-      float:right;
-      padding-top:10px;
-      color:#4c4c4c;
+    div.time_period {
+      float: right;
+      padding-top: 10px;
+      color: #4c4c4c;
 
-      input{
-        width:70px;
-        color:#4c4c4c;
-        font-size:14px;
-        padding-left:5px;
-        float:left;
+      input {
+        width: 70px;
+        color: #4c4c4c;
+        font-size: 14px;
+        padding-left: 5px;
+        float: left;
         background-color: #ececec;
         border: 1px solid #BEB7B7;
       }
 
-      ul{
-        margin:0px;
-        padding:0px;
-        float:right;
-        margin-left:10px;
+      ul {
+        margin: 0px;
+        padding: 0px;
+        float: right;
+        margin-left: 10px;
         margin-right: -5px;
-        list-style:none;
-        li{
+        list-style: none;
+        li {
           border-top: 1px solid #BEB7B7;
           border-bottom: 1px solid #BEB7B7;
-          padding:2px 0px 2px 10px;
+          padding: 2px 0px 2px 10px;
           width: 80px;
         }
-        li:nth-child(1){ border-bottom: none; }
+        li:nth-child(1) { border-bottom: none; }
       }
     }
 
@@ -401,18 +401,18 @@ body.registered {
      }
     }
 
-    div.price{
-      div.price_text{
-       float:right;
+    div.price {
+      div.price_text {
+       float: right;
        margin-right: -5px;
-       margin-top:15px;
-       color:#4c4c4c;
-       span.price{
-        padding-left:10px;
-        padding-right:10px;
-        margin-left:10px;
-        border-top:1px solid #B6AEAE;
-        border-bottom:1px solid #B6AEAE;
+       margin-top: 15px;
+       color: #4c4c4c;
+       span.price {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 10px;
+        border-top: 1px solid #B6AEAE;
+        border-bottom: 1px solid #B6AEAE;
        }
        div.pay {
         color: #ffffff;
@@ -510,92 +510,92 @@ body.registered {
     }
   }
 
-  div.new_orders div.right_content_top{
+  div.new_orders div.right_content_top {
     height: 50px;
-    width:255px;
-    float:left;    
+    width: 255px;
+    float: left;
   }
-  div.new_orders div.left_msg_area_bottom{
-    span{
-      float:left;
-      width:200px;
-      font-size:14px;
+  div.new_orders div.left_msg_area_bottom {
+    span {
+      float: left;
+      width: 200px;
+      font-size: 14px;
     }
-    color:#4c4c4c;
-    width:225px;
-    margin-left:15px;
-    clear:both;
-    float:left;
-    padding-top:10px;
-    margin-bottom:15px; 
+    color: #4c4c4c;
+    width: 225px;
+    margin-left: 15px;
+    clear: both;
+    float: left;
+    padding-top: 10px;
+    margin-bottom: 15px;
 
-    ol{
-      clear:both;
-      margin:10px 20px;
-      padding:0px;
-      font-size:14px;
+    ol {
+      clear: both;
+      margin: 10px 20px;
+      padding: 0px;
+      font-size: 14px;
 
-      li{
-        input{ 
-          background-color:#ececec;
-          width:150px;
-          font-size:14px;
-          color:#4c4c4c;
-          border-color:#BEB7B7;
+      li {
+        input {
+          background-color: #ececec;
+          width: 150px;
+          font-size: 14px;
+          color: #4c4c4c;
+          border-color: #BEB7B7;
         }
       }
     }
   }
-  div.confirmation{
+  div.confirmation {
     display: none;
   }
 
-  div.center_text{
-    float:left;
-    color:#b9046d;
-    width:500px;
-    padding-top:5px;
-    text-align:center;
+  div.center_text {
+    float: left;
+    color: #b9046d;
+    width: 500px;
+    padding-top: 5px;
+    text-align: center;
 
-    input.refuce_order{
-      padding-right:10px;
-      padding-bottom:15px;
-      float:right;
+    input.refuce_order {
+      padding-right: 10px;
+      padding-bottom: 15px;
+      float: right;
     }
-    input.get_order{
-      float:right;
-      padding-bottom:15px;
-      padding-right:10px;
+    input.get_order {
+      float: right;
+      padding-bottom: 15px;
+      padding-right: 10px;
     }
-    div.alert{
-      font-size:20px;
-      span.sub_alert{
-        font-size:13px;
-        margin-left:25px;
-        padding-top:15px;
-        padding-bottom:20px;
-        float:left;
+    div.alert {
+      font-size: 20px;
+      span.sub_alert {
+        font-size: 13px;
+        margin-left: 25px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        float: left;
       }
     }
   }
-  div.comments_area{
+  div.comments_area {
     width: 500px;
     float: left;
     border-right: none;
     border-left: none;
     border-bottom: none;
 
-    span{
-      padding:10px 155px;
-      font-size:14px;
-      color:#4c4c4c;
-      float:left;
+    span {
+      padding: 10px 155px;
+      font-size: 14px;
+      color: #4c4c4c;
+      float: left;
       width: 200px;
     }
-    input.exp_of_refuce{
-      float:right;
-      margin-right:10px;
-      padding-bottom:10px;
+    input.exp_of_refuce {
+      float: right;
+      margin-right: 10px;
+      padding-bottom: 10px;
     }
     .comment_text {
       margin-left: 12px;
@@ -636,7 +636,7 @@ body.registered {
     }
 
   }
-  div.order_refuce{
+  div.order_refuce {
     display: none;
   }
 }
