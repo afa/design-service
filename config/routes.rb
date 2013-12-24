@@ -93,6 +93,9 @@ DesignService::Application.routes.draw do
   get 'design_projects' => 'order_customizers#index'
 
   resources :selected_forms do
+    member do
+      post :to_moderator
+    end
     resources :floor_plans
     resources :attachments
   end
@@ -102,6 +105,9 @@ DesignService::Application.routes.draw do
 
   get 'replanning_endorsements' => 'replanning_endorsements#new'
   resources :replanning_endorsements do
+    member do
+      post :to_moderator
+    end
     resources :attachments
   end
 
