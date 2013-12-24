@@ -180,107 +180,149 @@ body.registered {
     }
   }
 
-  ul.order_profiles{
-    list-style:none;
-    width:600px;
-    margin:0px 30px;
-    padding:0px;
+  ul.order_profiles {
+    list-style: none;
+    width: 600px;
+    margin: 0px 30px;
+    padding: 0px;
     margin-top: 99px;
     position: absolute;
-    font-size:16px;
-    li{
-      padding:10px 25px 10px 25px;
-      height:20px;
-      float:left;
-      a,a:link,a:visited,a:active{ text-decoration:none; color:#6f6f6f}
+    font-size: 16px;
+    li {
+      padding: 10px 25px 10px 25px;
+      height: 20px;
+      float: left;
+      a,a:link,a:visited,a:active { text-decoration:none; color:#6f6f6f }
     }
-    li.selected{ 
-      background-color:#c4c4c4;
-      a,a:link,a:visited,a:active{ text-decoration:none; color:#ffffff}
+    li.selected {
+      background-color: #c4c4c4;
+      a,a:link,a:visited,a:active { text-decoration:none; color:#ffffff }
     }
   }
+
+  div.page_contener_specialist {
+    ul.order_profiles{
+      margin-top: 129px;
+      width:550px;
+    }
+    div.order_profile_default{
+      margin:35px 0px 5px 40px;
+    }    
+    div.order_profile_default:nth-child(3){ 
+      margin-top:50px; 
+    }     
+    div.order_profile_default:nth-last-child(1){ 
+      margin-bottom:80px; 
+    }      
+  }
+
   div.order_profile_default{
     float:left;
     clear:both;
-    margin:35px 0px 5px 55px;
-    margin-bottom:10px;
+    margin:35px 0px 10px 55px;
     width:500px;
     position:relative;
   }
   div.order_profile_default:nth-last-child(1){ 
     margin-bottom:80px; 
-    }
-
-  div.pink_border{ border:6px solid #efd4c2; }
-  div.light_green_border{ border:6px solid #d1e3b3; }
-  div.yellow_border{ border:6px solid #ecdc87; }
-  div.light_blue_border{ border:6px solid #becde0; }      
-
-  div.left_inbox{
-    div.purple{
-      color:#b9046d;
-    }
-    div.green{
-      color:#466e0b;
-    }
-    div.dark_yellow{
-      color:#505105;
-    }    
-    div.blue{
-      color:#4168a1;
-    }    
   }
 
-  div.left_inbox{
+  div.pink_border { border:6px solid #efd4c2; }
+  div.light_green_border { border:6px solid #d1e3b3; }
+  div.yellow_border { border:6px solid #ecdc87; }
+  div.light_blue_border { border:6px solid #becde0; }
+
+  div.left_inbox {
+    div.purple {
+      color: #b9046d;
+    }
+    div.green {
+      color: #466e0b;
+    }
+    div.dark_yellow {
+      color: #505105;
+    }
+    div.blue {
+      color: #4168a1;
+    }
+  }
+
+  div.left_inbox {
     width: 250px;
     border-top: none;
     border-left: none;
     position: absolute;
     top: -4px;
-    left:-6px;
+    left: -6px;
 
-    div.text_head{
-      div.number{
-        margin:8px 0px 3px 14px;
-        width:60px;
-        float:left;
-        line-height:12px;
-        span.date{
-          color:grey;
-          font-size:12px;
+    div.text_head {
+      div.number {
+        margin: 8px 0px 3px 14px;
+        width: 60px;
+        float: left;
+        line-height: 12px;
+        span.date {
+          color: grey;
+          font-size: 12px;
         }
       }
-      div.heading{
-        float:left;
-        height:100%;
-        text-align:center;
-        width:170px;
+      div.heading {
+        float: left;
+        height: 100%;
+        text-align: center;
+        width: 170px;
         vertical-align: middle;
-        line-height:11px;
-        padding-top:10px;
+        line-height: 11px;
+        padding-top: 10px;
       }
     }
   }
-  div.left_msg_area{
-    width:225px;
-    margin-left:15px;
-    clear:both;
-    float:left;
-    margin-top:50px;
-    margin-bottom:15px;
+  div.left_msg_area {
+    width: 225px;
+    margin-left: 15px;
+    clear: both;
+    float: left;
+    margin-top: 50px;
+    margin-bottom: 15px;
 
-    div.msg_type{
-      width:220px;
-      text-align:center;
-      float:left;
-      font-size:12px;
-      span.new_msg{
-        color:#518c0c;
+    div.msg_type {
+      width: 220px;
+      text-align: center;
+      float: left;
+      font-size: 12px;
+      span.new_msg {
+        color: #518c0c;
+      }
+      span.msg_icon{
+        background-image: image-url("msg_icon.jpg");
+        float:left;
+        width:27px;
+        height:20px;
+        margin-left:-80px;
+        position:absolute;
       }
       span.def_msg{
         color:#4d4d4d;
+        float:left;
+        margin-left:10px;
+        margin-top:5px;
+        width:200px;
+        text-align:center;
       }
     }
+    span.view_order{
+      color:#609c11;
+      width:210px;
+      float:left;
+      text-align:center;
+
+      a,a:link, a:active{
+        color:#609c11;
+        text-decoration:underline;
+      }
+      a:hover{ text-decoration: none; }
+    }
+
     div.msg_content{
       border:1px solid #DBC4D2;
       width:200px;
@@ -290,41 +332,79 @@ body.registered {
       font-size:14px;
       float:left;
     }
-    div.download{
-      float:left;
-      padding-top:10px;
-      padding-left:35px;
-      font-size:14px;
+    div.download {
+      float: left;
+      padding-top: 10px;
+      padding-left: 35px;
+      font-size: 14px;
     }
-    div.download a, div.download a:link, div.visited{
-      color:#4c4c4c;
+    div.download a, div.download a:link, div.visited {
+      color: #4c4c4c;
       text-decoration: underline;
     }
-    div.download a:hover{ color: #4c4c4c; text-decoration: none;}
+    div.download a:hover { color: #4c4c4c; text-decoration: none; }
   }
 
   div.right_content{
     width:255px;
-    height:200px;
     float:left;
+    span.h_text{
+      color:#4c4c4c;
+      padding-top:10px;
+      margin-right:30px;
+      float:right;
+      font-size:14px;
+    }
+    div.time_period{
+      float:right;
+      padding-top:10px;
+      color:#4c4c4c;
 
-    div.status{
-     padding-left:20px;
-     padding-top:10px;
-     color:#4c4c4c;
-     font-size:14px;
+      input{
+        width:70px;
+        color:#4c4c4c;
+        font-size:14px;
+        padding-left:5px;
+        float:left;
+        background-color: #ececec;
+        border: 1px solid #BEB7B7;
+      }
 
-     span.green{
-      color:#73a431
+      ul{
+        margin:0px;
+        padding:0px;
+        float:right;
+        margin-left:10px;
+        margin-right: -5px;
+        list-style:none;
+        li{
+          border-top: 1px solid #BEB7B7;
+          border-bottom: 1px solid #BEB7B7;
+          padding:2px 0px 2px 10px;
+          width: 80px;
+        }
+        li:nth-child(1){ border-bottom: none; }
+      }
+    }
+
+    div.status {
+     padding-left: 20px;
+     padding-top: 10px;
+     color: #4c4c4c;
+     font-size: 14px;
+
+     span.green {
+      color: #73a431
      }
-     span.red{
-      color:#b3220d
+     span.red {
+      color: #b3220d
      }
     }
 
     div.price{
       div.price_text{
-       margin-left:125px;
+       float:right;
+       margin-right: -5px;
        margin-top:15px;
        color:#4c4c4c;
        span.price{
@@ -334,104 +414,173 @@ body.registered {
         border-top:1px solid #B6AEAE;
         border-bottom:1px solid #B6AEAE;
        }
-       div.pay{
-        color:#ffffff;
-        font-size:12px;
-        width:80px; 
-        padding:3px 0px 3px 10px;
-        background-color:#8BB94A;
-        cursor:pointer;
-        margin-top:10px;
+       div.pay {
+        color: #ffffff;
+        font-size: 12px;
+        width: 80px;
+        padding: 3px 0px 3px 10px;
+        background-color: #8BB94A;
+        cursor: pointer;
+        margin-top: 10px;
        }
-       div.pay:hover{
-        background-color:#789c45;
+       div.pay:hover {
+        background-color: #789c45;
        }
       }
-      span.comment{
-        margin-left:25px;
-        width:200px;
-        text-align:center;
-        float:left;
-        margin-top:15px;
-        color:#b4210d;
+      span.comment {
+        margin-left: 25px;
+        width: 200px;
+        text-align: center;
+        float: left;
+        margin-top: 15px;
+        color: #b4210d;
       }
-      span.group{
+      span.group {
         float: left;
         color: #4c4c4c;
         font-size: 14px;
         padding-top: 10px;
-        padding-left:10px;
+        padding-left: 10px;
       }
     }
 
-    div.progress{
-      margin-left:5px;
-      width:240px;
-      height:45px;
-      font-size:12px;
-      margin-top:10px;
-      float:left;
+    div.progress {
+      margin-left: 5px;
+      width: 240px;
+      height: 45px;
+      font-size: 12px;
+      margin-top: 10px;
+      float: left;
 
-      span{
-        padding-top:7px;
-        float:left;
-        color:#4c4c4c;
+      span {
+        padding-top: 7px;
+        float: left;
+        color: #4c4c4c;
       }
-      div.progress_block{
-        width:160px;
-        height:30px;
-        float:right;
-        position:relative;
+      div.progress_block {
+        width: 160px;
+        height: 30px;
+        float: right;
+        position: relative;
 
-        span.progress_bar{
-          height:25px;
-          float:right;
-          margin:0px;
-          padding:0px;
-          position:absolute;
+        span.progress_bar {
+          height: 25px;
+          float: right;
+          margin: 0px;
+          padding: 0px;
+          position: absolute;
           background-color: #adc987;
-          background-image: url(../green_prog_cut.png); 
-          background-position:right;
+          background-image: url(../green_prog_cut.png);
+          background-position: right;
           background-repeat: no-repeat;
         }
 
-        span.value{
-          font-size:14px;
-          padding:4px 0px 0px 70px;
-          position:absolute;
-          float:left;
+        span.value {
+          font-size: 14px;
+          padding: 4px 0px 0px 70px;
+          position: absolute;
+          float: left;
         }
-        span.full_bar{
-          position:absolute;
+        span.full_bar {
+          position: absolute;
           background: image-url("white_prog.png") no-repeat;
           background-position: right;
           width: 160px;
           height: 30px;
-          float:left;
-          z-index:5;
-          top:-6px;
-          left:-7px;
+          float: left;
+          z-index: 5;
+          top: -6px;
+          left: -7px;
 
         }
       }
     }
-    div.time{
-      color:#4c4c4c;
-      font-size:14px;
-      float:right;
+    div.time {
+      color: #4c4c4c;
+      font-size: 14px;
+      float: right;
       margin-right: -5px;
-      span.time{
-        padding-left:10px;
-        padding-right:10px;
-        margin-left:10px;
-        border-top:1px solid #B6AEAE;
-        border-bottom:1px solid #B6AEAE;
+      span.time {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 10px;
+        border-top: 1px solid #B6AEAE;
+        border-bottom: 1px solid #B6AEAE;
+      }
+    }
+  }
+
+  div.new_orders div.right_content_top{
+    height: 50px;
+    width:255px;
+    float:left;    
+  }
+  div.new_orders div.left_msg_area_bottom{
+    span{
+      float:left;
+      width:200px;
+      font-size:14px;
+    }
+    color:#4c4c4c;
+    width:225px;
+    margin-left:15px;
+    clear:both;
+    float:left;
+    padding-top:10px;
+    margin-bottom:15px; 
+
+    ol{
+      clear:both;
+      margin:10px 20px;
+      padding:0px;
+      font-size:14px;
+
+      li{
+        input{ 
+          background-color:#ececec;
+          width:150px;
+          font-size:14px;
+          color:#4c4c4c;
+          border-color:#BEB7B7;
+        }
+      }
+    }
+  }
+  div.confirmation{
+    display: none;
+  }
+
+  div.center_text{
+    float:left;
+    color:#b9046d;
+    width:500px;
+    padding-top:5px;
+    text-align:center;
+
+    input.refuce_order{
+      padding-right:10px;
+      padding-bottom:15px;
+      float:right;
+    }
+    input.get_order{
+      float:right;
+      padding-bottom:15px;
+      padding-right:10px;
+    }
+    div.alert{
+      font-size:20px;
+      span.sub_alert{
+        font-size:13px;
+        margin-left:25px;
+        padding-top:15px;
+        padding-bottom:20px;
+        float:left;
       }
     }
   }
   div.comments_area{
     width: 500px;
-    float:left;
+    float: left;
     border-right: none;
     border-left: none;
     border-bottom: none;
@@ -441,45 +590,54 @@ body.registered {
       font-size:14px;
       color:#4c4c4c;
       float:left;
+      width: 200px;
     }
-    .comment_text{
-      margin-left:12px;
+    input.exp_of_refuce{
+      float:right;
+      margin-right:10px;
+      padding-bottom:10px;
+    }
+    .comment_text {
+      margin-left: 12px;
     }
     div.make_comments {
-      float:left;
-      width:500px;
-      ul{
-        margin:0px;
-        margin-left:150px;
-        padding:0px;
-        list-style:none;
-        float:left;
-        padding-bottom:20px;
-        position:relative;
-        li{
-          float:left;
-          cursor:pointer;
-          width:25px; 
-          height:25px; 
-          margin-right:10px;
+      float: left;
+      width: 500px;
+      ul {
+        margin: 0px;
+        margin-left: 150px;
+        padding: 0px;
+        list-style: none;
+        float: left;
+        padding-bottom: 20px;
+        position: relative;
+        li {
+          float: left;
+          cursor: pointer;
+          width: 25px;
+          height: 25px;
+          margin-right: 10px;
           background: image-url("star_default.jpg") no-repeat;
         }
-        li.active_star{ background: image-url("star_active.jpg") no-repeat; }
+        li.active_star { background: image-url("star_active.jpg") no-repeat; }
       }
-      div.ok_button{
-        width:100px;
-        height:30px;
-        cursor:pointer;
-        float:left;
-        margin-left:30px;
-        background: image-url("ok_comment.png") no-repeat; 
-        position:relative;
+      div.ok_button {
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+        float: left;
+        margin-left: 30px;
+        background: image-url("ok_comment.png") no-repeat;
+        position: relative;
       }
-      div.ok_button:hover{
-      background: image-url("ok_comment_hover.png") no-repeat;       
+      div.ok_button:hover {
+      background: image-url("ok_comment_hover.png") no-repeat;
       }
     }
 
+  }
+  div.order_refuce{
+    display: none;
   }
 }
 
