@@ -1,4 +1,6 @@
 class Order < ActiveRecord::Base
+  self.per_page = 20
+
   belongs_to :orderable, polymorphic: true
   belongs_to :client, class_name: 'User', foreign_key: 'client_id', counter_cache: true, include: :profile
   belongs_to :executor, polymorphic: true

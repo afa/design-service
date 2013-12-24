@@ -36,7 +36,7 @@
 
           /Box Head
           %div{:class => 'box-head'}
-            %h2{:class => 'left'} Заказы
+            %h2{:class => 'left'} Эта карочи я пирипутал как всегда, эта специалисты, а должны быть заказы
             %div{:class => 'right'}
               %label search articles
               %input{:type => 'text', :class => 'field small-field'}
@@ -46,7 +46,7 @@
           %div{:class => 'table'}
             %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
               %tr
-                %th ID
+                %th №
                 %th ФИО
                 %th Логин
                 %th Специальность
@@ -57,55 +57,35 @@
                 %th Дата
                 %th{:class => 'ac', :width => '110'} Действия
 
-              %tr
-                %td
-                  = link_to '12', 'order/12'
-                %td
-                  %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'Комков Евгений Владимирович'}
-                %td
-                  %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'panchuk35'}
-                  = link_to 'пароль', '#', class: 'ico edit'
-                %td
-                  %span Архитектор
-                  = link_to '', '#', class: 'ico edit'
+              - @orders.each_with_index do |value, index|
 
-                %td В работе
-                %td
-                  %span Лютик
-                  = link_to '', '#', class: 'ico edit'
-                %td
-                  %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'test@gmail.com'}
-                %td
-                  %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => '8926565655'}
-                %td 12.05.09
-                %td
-                  = link_to 'Сохр.', '#', class: 'ico edit' 
-                  = link_to 'Уд.', '#', class: 'ico del'
+                - if index % 2 == 0
+                  %tr
+                - else
+                  %tr{:class => 'odd'}
+                    %td
+                      = link_to "#{value.id}", "order/#{value.id}"
+                    %td
+                      %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'Комков Евгений Владимирович'}
+                    %td
+                      %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'panchuk35'}
+                      = link_to 'пароль', '#', class: 'ico edit'
+                    %td
+                      %span Архитектор
+                      = link_to '', '#', class: 'ico edit'
 
-              %tr{:class => 'odd'}
-                %td
-                  = link_to '13', 'order/13'
-                %td
-                  %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'Комков Евгений Владимирович'}
-                %td
-                  %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'panchuk35'}
-                  = link_to 'пароль', '#', class: 'ico edit'
-                %td
-                  %span Архитектор
-                  = link_to '', '#', class: 'ico edit'
-
-                %td В работе
-                %td
-                  %span Ромашка
-                  = link_to '', '#', class: 'ico edit'
-                %td
-                  %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'test@gmail.com'}
-                %td
-                  %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => '8926565655'}
-                %td 12.05.09
-                %td
-                  = link_to 'Сохр.', '#', class: 'ico edit' 
-                  = link_to 'Уд.', '#', class: 'ico del'
+                    %td В работе
+                    %td
+                      %span Лютик
+                      = link_to '', '#', class: 'ico edit'
+                    %td
+                      %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'test@gmail.com'}
+                    %td
+                      %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => '8926565655'}
+                    %td 12.05.09
+                    %td
+                      = link_to 'Сохр.', '#', class: 'ico edit' 
+                      = link_to 'Уд.', '#', class: 'ico del'
             
             /Pagging
             %div{:class => 'pagging'}
