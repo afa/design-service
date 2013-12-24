@@ -1,5 +1,5 @@
 # coding: utf-8
-class Adm::OrdersController < Adm::ApplicationController
+class Adm::SpecialistsController < Adm::ApplicationController
 
 	# страница заказов
 	def index
