@@ -1,0 +1,181 @@
+/Header
+%div{:id => 'header'}
+  %div{:class => 'shell'}
+    /Logo + Top Nav
+    %div{:id => 'top'}
+      %h1
+        = link_to 'SpringTime', '#'
+      %div{:id => 'top-navigation'}
+        Welcome 
+        %a{:href => '#'} 
+          %strong Administrator
+        %span 
+          |
+        = link_to 'Help', '#'
+        %span 
+          |
+        = link_to 'Profile Settings', '#'
+        %span 
+          |
+        = link_to 'Log out', '#'
+    /End Logo + Top Nav
+    /Main Nav
+    = render partial: 'adm/menu/top_menu'
+    /End Main Nav
+
+/Container
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+    
+    %div{:class => 'small-nav'}
+      = link_to 'Dashboard', '#'
+      %span &gt;
+      Current Articles
+    
+    /Message OK
+    %div{:class => 'msg msg-ok'}
+      %p
+        %strong Your file was uploaded succesifully!
+      %a{:class => 'close', :href => '#'}
+    
+    /Message Error
+    %div{:class => 'msg msg-error'}
+      %p
+        %strong You must select a file to upload first!
+      %a{:class => 'close', :href => '#'}
+
+    %br
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Current Articles
+            %div{:class => 'right'}
+              %label search articles
+              %input{:type => 'text', :class => 'field small-field'}
+              %input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th{:width => '13'}
+                  %input{:type => 'checkbox', :class => 'checkbox'}
+                %th Title
+                %th Date
+                %th Added by
+                %th{:width => '110', :class => 'ac'} Content Control
+
+              %tr
+                %td
+                  %input{:type => 'checkbox', :class => 'checkbox'}
+                %td
+                  %h3
+                    = link_to 'Lorem ipsum dolor sit amet, consectetur.', '#'
+                %td 12.05.09
+                %td
+                  = link_to 'Administrator', '#'
+                %td
+                  = link_to 'Delete', '#', class: 'ico del'
+                  = link_to 'Edit', '#', class: 'ico edit'
+
+              %tr{:class => 'odd'}
+                %td
+                  %input{:type => 'checkbox', :class => 'checkbox'}
+                %td
+                  %h3
+                    = link_to 'Lorem ipsum dolor sit amet, consectetur.', '#'
+                %td 12.05.09
+                %td
+                  = link_to 'Administrator', '#'
+                %td
+                  = link_to 'Delete', '#', class: 'ico del'
+                  = link_to 'Edit', '#', class: 'ico edit'   
+            
+            /Pagging
+            %div{:class => 'pagging'}
+              %div{:class => 'left'} Showing 1-12 of 44
+              %div{:class => 'right'}
+                = link_to 'Previous', '#'
+                = link_to '1', '#'
+                = link_to '2', '#'
+                = link_to '3', '#'
+                = link_to '4', '#'
+                = link_to '444', '#'
+                %span ...
+                = link_to 'Next', '#'
+        
+        /Box
+        %div{:class => 'box'}
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2 Add New Article
+          
+          %form{:action => "", :method => 'post'}
+            /Form 
+            %div{:class => 'form'}
+              %p
+                %span{:class => 'req'} max 100 symbols
+                %label Article Title %span (Required Field)
+                %input{:type => 'text', :class => 'field size1'}
+              %p
+                %label Date
+                %select{:class => 'field size2'}
+                  %option{:value => ''} 23
+                %select{:class => 'field size3'}
+                  %option{:value => ''} 23
+                %select{:class => 'field size3'}
+                  %option{:value => ''} 23
+              %p
+                %span{:class => 'req'} max 100 symbols
+                %label Content %span  (Required Field)
+                %textarea{:class => 'field size1', :rows => '10', :cols => '30'} 
+            
+            /Form Buttons 
+            %div{:class => 'buttons'}
+              %input{:type => 'button', :class => 'button'} preview
+              %input{:type => 'submit', :class => 'button'} submit
+
+      %div{:id => 'sidebar'}
+        
+        /Box 
+        %div{:class => 'box'}
+          
+          /Box Head 
+          %div{:class => 'box-head'}
+            %h2 Management
+          
+          %div{:class => 'box-content'}
+            %a{:href => '#', :class => 'add-button'}
+              %span Add new Article
+            %div{:class => 'cl'} &nbsp;
+            
+            %p{:class => 'select-all'}
+              %input{:type => 'checkbox', :class => 'checkbox'}
+              %label select all
+            
+            %p
+              %link_to 'Delete Selected', #
+            
+            /Sort 
+            %div{:class => 'sort'}
+              %label Sort by
+              %select{:class => 'field'}
+                %option{:value => ''} Title
+      
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+%div{:id => 'footer'}
+  %div{:class => 'shell'}
+    %span{:class => 'left'} &copy; 2010 - CompanyName
+    %span{:class => 'right'}

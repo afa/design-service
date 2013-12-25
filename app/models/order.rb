@@ -1,4 +1,7 @@
+# coding: utf-8
 class Order < ActiveRecord::Base
+  self.per_page = 20
+
   belongs_to :orderable, polymorphic: true
   belongs_to :client, class_name: 'User', foreign_key: 'client_id', counter_cache: true, include: :profile
   belongs_to :executor, polymorphic: true
@@ -212,6 +215,41 @@ class Order < ActiveRecord::Base
   def reset_price
     price = nil
   end
+
+  # дата обновления в нужном формате
+  def get_updated_date
+    updated_at.strftime("%d.%m.%Y")
+  end
+
+  # дата создания в нужном формате
+  def get_created_date
+    created_at.strftime("%d.%m.%Y")
+  end
+
+  # берется пачка заказов, по определенному фильтру
+  def get_bunch_on_filter(page, filter)
+    filtres = filter.split(/_/)
+
+    if filtres[0] == "state" # берем по статусу
+      name = filter[filter.index('_') + 1, filter.length - filter.index('_')]
+      Order.paginate(:page => page).where("work_state = ?", name).order("updated_at desc")
+    else
+      Order.paginate(:page => page).order("updated_at desc")
+    end
+  end
+
+  # количество заказов, по определенному фильтру
+  def count_orders(filter)
+    filtres = filter.split(/_/)
+
+    if filtres[0] == "state" # берем по статусу
+      name = filter[filter.index('_') + 1, filter.length - filter.index('_')]
+      Order.where("work_state = ?", name).count
+    else
+      Order.count
+    end
+  end
+
 private
   def self.accepted_to_start_work_arel
     arel_table[:work_state].eq_any([:client_agreed, :in_work, :work_accepted])
