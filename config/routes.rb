@@ -154,7 +154,6 @@ DesignService::Application.routes.draw do
 
   namespace :adm do
     resources :orders
-    resources :specialists
   end
 
   get "welcome/index"

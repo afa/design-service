@@ -2,7 +2,9 @@
 %html
   %head
     %title Админка
-    = stylesheet_link_tag "adm/style", :media => "all"
+    = stylesheet_link_tag "adm/axurerp_pagespecificstyles", :media => "all"
+    /[if lt IE 9]
+      = stylesheet_link_tag "adm/axurerp_pagespecificstyles_ie6", :media => "all"
     = javascript_include_tag "application"
     = javascript_include_tag "#{params[:controller]}.js" if Rails.application.assets.find_asset("#{params[:controller]}.js")
     = csrf_meta_tags
