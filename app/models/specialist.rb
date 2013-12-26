@@ -14,6 +14,8 @@ class Specialist < ActiveRecord::Base
   has_many :portfolios
   has_many :portfolio_items, through: :portfolios
 
+  belongs_to :specialization, class_name: 'Specialization', foreign_key: 'specialization_id'
+
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
 
   delegate :messages,  to: :user
