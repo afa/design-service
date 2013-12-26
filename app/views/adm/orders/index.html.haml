@@ -38,9 +38,9 @@
           %div{:class => 'box-head'}
             %h2{:class => 'left'} Заказы
             %div{:class => 'right'}
-              %label search articles
-              %input{:type => 'text', :class => 'field small-field'}
-              %input{:type => 'submit', :class => 'button', :value => 'search'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
 
           /Table
           %div{:class => 'table'}
@@ -60,45 +60,46 @@
                 %th
                 %th{:title => 'Сортировать по'}
                   %select{:class => 'field size2 select_orders'}
-                    %option{:value => 'update_date_desc'} посл.
-                    %option{:value => 'update_date_asc'} перв.
+                    %option{:value => 'update_date_desc', :selected => @filter == "update_date_desc" ? true : false} посл.
+                    %option{:value => 'update_date_asc', :selected => @filter == "update_date_asc" ? true : false} перв.
                 %th 
                 /статусы
                 %th{:title => 'Выбрать'}
                   %select{:class => 'field size2 select_orders'}
-                    %option{:value => 'null'} все
+                    %option{:value => 'update_date_desc', :selected => @filter == "update_date_desc" ? true : false} все
                     - Order.state_machine(:work_state).states.each do |value|
-                      %option{:value => "state_#{value.name}"}= I18n.t "order.work_state.#{value.name}"
+                      %option{:value => "state_#{value.name}", :selected => @filter == "state_#{value.name}" ? true : false}= I18n.t "order.work_state.#{value.name}"
                 /Заказчик
                 %th{:title => 'Сортировать по'}
                   %select{:class => 'field size2 select_orders'}
-                    %option{:value => 'null'} нет
-                    %option{:value => 'client_asc'} а-я
-                    %option{:value => 'client_desc'} я-а
-                /типы
+                    %option{:value => 'update_date_desc', :selected => @filter == "update_date_desc" ? true : false} нет
+                    %option{:value => 'client_asc', :selected => @filter == "client_asc" ? true : false} а-я
+                    %option{:value => 'client_desc', :selected => @filter == "client_desc" ? true : false} я-а
+                /Типы
                 %th{:title => 'Выбрать'}
                   %select{:class => 'field size2 select_orders'}
-                    %option{:value => 'null'} все
-                    %option{:value => 'type_'} 1
-                    %option{:value => 'type_'} 2
+                    %option{:value => 'update_date_desc', :selected => @filter == "update_date_desc" ? true : false} все
+                    - OrderCustomizer.all.each do |value|
+                      %option{:value => "type_#{value.id}", :selected => @filter == "type_#{value.id}" ? true : false}
+                        = value.name
                 /Цена
                 %th{:title => 'Сортировать по'}
                   %select{:class => 'field size2 select_orders'}
-                    %option{:value => 'null'} нет
-                    %option{:value => 'price_asc'} мин.
-                    %option{:value => 'price_desc'} макс.
+                    %option{:value => 'update_date_desc', :selected => @filter == "update_date_desc" ? true : false} нет
+                    %option{:value => 'price_asc', :selected => @filter == "price_asc" ? true : false} мин.
+                    %option{:value => 'price_desc', :selected => @filter == "price_desc" ? true : false} макс.
                 /Специалист
                 %th{:title => 'Сортировать по'}
                   %select{:class => 'field size2 select_orders'}
-                    %option{:value => 'null'} нет
-                    %option{:value => 'specialist_asc'} а-я
-                    %option{:value => 'specialist_desc'} я-а
+                    %option{:value => 'update_date_desc', :selected => @filter == "update_date_desc" ? true : false} нет
+                    %option{:value => 'specialist_asc', :selected => @filter == "specialist_asc" ? true : false} а-я
+                    %option{:value => 'specialist_desc', :selected => @filter == "specialist_desc" ? true : false} я-а
                 /Создан
                 %th{:title => 'Сортировать по'}
                   %select{:class => 'field size2 select_orders'}
-                    %option{:value => 'null'} нет
-                    %option{:value => 'create_date_desc'} посл.
-                    %option{:value => 'create_date_asc'} перв.
+                    %option{:value => 'update_date_desc', :selected => @filter == "update_date_desc" ? true : false} нет
+                    %option{:value => 'create_date_desc', :selected => @filter == "create_date_desc" ? true : false} посл.
+                    %option{:value => 'create_date_asc', :selected => @filter == "create_date_asc" ? true : false} перв.
 
               - @orders.each_with_index do |value, index|
 
@@ -125,7 +126,13 @@
 
                   %td{:title => 'Узнать подробности', :style => 'cursor: pointer;'}
                     - unless value.orderable.nil?
-                      %a= I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+                      - if value.orderable.is_a?(SelectedForm)
+                        - unless value.orderable.order_customizer.nil?
+                          %a= I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+                        - else
+                          нет
+                      - else
+                        %a= I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
 
                   %td= value.price
 

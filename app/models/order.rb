@@ -226,13 +226,55 @@ class Order < ActiveRecord::Base
     created_at.strftime("%d.%m.%Y")
   end
 
+  # НУЖНО ДОРАБОТАТЬ ЗАПРОСЫ, НАПИСАНО КОРЯВО
   # берется пачка заказов, по определенному фильтру
   def get_bunch_on_filter(page, filter)
     filtres = filter.split(/_/)
 
     if filtres[0] == "state" # берем по статусу
       name = filter[filter.index('_') + 1, filter.length - filter.index('_')]
-      Order.paginate(:page => page).where("work_state = ?", name).order("updated_at desc")
+      Order.paginate(:page => page).where("work_state = ?", name).order("orders.updated_at desc")
+    elsif filtres[0] == "type" # берем по статусу
+      id = filter[filter.index('_') + 1, filter.length - filter.index('_')].to_i
+      Order.paginate(:page => page)\
+        .joins("inner join selected_forms on selected_forms.id = orders.orderable_id")\
+        .where("orders.orderable_type = 'SelectedForm' and selected_forms.order_customizer_id = ?", id)\
+        .order("orders.updated_at desc")
+    elsif filter == "update_date_desc"
+      Order.paginate(:page => page).order("updated_at desc")
+    elsif filter == "update_date_asc"
+      Order.paginate(:page => page).order("updated_at asc")
+    elsif filter == "client_asc"
+      Order.paginate(:page => page).joins(:client)\
+        .joins("inner join profiles on profiles.user_id = users.id")\
+        .order("profiles.surname asc")
+    elsif filter == "client_desc"
+      Order.paginate(:page => page)
+        .joins("left join users on orders.client_id = users.id")\
+        .joins("left join profiles on profiles.user_id = users.id")\
+        .order("profiles.surname desc")
+    elsif filter == "price_asc"
+      Order.paginate(:page => page).order("price asc")
+    elsif filter == "price_desc"
+      Order.paginate(:page => page).order("price desc")
+    elsif filter == "specialist_asc"
+      Order.paginate(:page => page)\
+        .joins("left join specialists on specialists.user_id = orders.executor_id")\
+        .joins("left join users on specialists.user_id = users.id")\
+        .joins("left join profiles on profiles.user_id = users.id")\
+        .where("orders.executor_type = 'Specialist' or orders.executor_type is null")\
+        .order("profiles.surname asc")
+    elsif filter == "specialist_desc"
+      Order.paginate(:page => page)\
+        .joins("left join specialists on specialists.user_id = orders.executor_id")\
+        .joins("left join users on specialists.user_id = users.id")\
+        .joins("left join profiles on profiles.user_id = users.id")\
+        .where("orders.executor_type = 'Specialist' or orders.executor_type is null")\
+        .order("profiles.surname desc")
+    elsif filter == "create_date_desc"
+      Order.paginate(:page => page).order("created_at desc")
+    elsif filter == "create_date_asc"
+      Order.paginate(:page => page).order("created_at asc")
     else
       Order.paginate(:page => page).order("updated_at desc")
     end
