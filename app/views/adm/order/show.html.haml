@@ -1,0 +1,224 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', 'orders'
+      %span &gt;
+      = link_to 'Заказы', '/adm/orders'
+      %span &gt;
+      Заказ №
+      = @order_data.id
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Заказ №
+            = @order_data.id
+            %div{:class => 'right'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Дата обн.
+                %th Действие
+                %th Статус
+                %th Заказчик
+                %th Тип
+                %th Цена
+                %th Специалист
+                %th Создан
+
+              - @orders.each_with_index do |value, index|
+
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+      
+                  %td
+                    = link_to "#{value.id}", "#{value.id}"
+
+                  %td= value.get_updated_date
+
+                  %td
+                    - if value.executor.nil?
+                      =link_to 'Выставить цену и назначить специалиста', "/order/#{value.id}"
+                    - else
+                      =link_to 'Назначить нового специалиста', "/order/#{value.id}"
+
+                  %td= I18n.t "order.work_state.#{value.work_state}"
+
+                  %td
+                    - unless value.client.nil?
+                      = link_to "#{value.client.profile.full_name}", "/client/#{value.client.id}"
+                    - else
+                      нет
+
+                  %td{:title => 'Узнать подробности', :style => 'cursor: pointer;'}
+                    - unless value.orderable.nil?
+                      - if value.orderable.is_a?(SelectedForm)
+                        - unless value.orderable.order_customizer.nil?
+                          %a= I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+                        - else
+                          нет
+                      - else
+                        %a= I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+
+                  %td= value.price
+
+                  %td
+                    - unless value.executor.nil?
+                      = link_to "#{value.executor.user.profile.full_name}", "/specialist/#{value.executor.user.id}"
+                    - else
+                      нет
+
+                  %td= value.get_created_date
+
+        %div{:style => 'width: 100%'}
+          /Чат
+          %div{:class => 'box', :style => 'width: 68%; display: inline-block; float: left;'}
+            /Box Head
+            %div{:class => 'box-head'}
+              %h2 Сообщения
+            
+            %div{:style => 'width: 100%'}
+              %div{:class => 'body_message'}
+                %div{:class => 'data_message left_message'}
+                  %div{:class => 'left_message_text', :style => 'width: 41%;'}
+                    snjoidjfo non j 98 hnf jco8v 
+                  %div{:class => 'right_message_text', :style => 'float: left; width: 193px;'}
+                    %textarea{:style => 'width: 193px;'} snjoidjfo non j 98 hnf jco8v
+                    %br
+                    %input{:type => 'button', :value => 'Сохранить', :class => 'button'}
+              %div{:class => 'body_message'}
+                %div{:class => 'data_message right_message'}
+                  %div{:class => 'left_message_text'}
+                    %textarea{:style => 'width: 193px;'} snjoidjfo non j 98 hnf jco8v
+                    %br
+                    %input{:type => 'button', :value => 'Сохранить', :class => 'button'}
+                  %div{:class => 'right_message_text', :style => 'width: 40%; float: left;'}
+                    snjoidjfo non j 98 hnf jco8v 
+
+          /Специалист
+          %div{:class => 'box', :style => 'width: 30%; display: inline-block; float: left; margin-left: 15px;'}
+
+            - if @order_data.executor.nil?
+
+              /Выбор специалиста
+              %div{:class => 'box-head'}
+                %h2 Выбор специалиста
+              
+              %form{:action => "", :method => 'post'}
+                /Form 
+                %div{:class => 'form'}
+                  %p
+                    %span{:class => 'req'}= @order_data.executor.user.profile.surname
+                    %label Фамилия
+                  %p
+                    %span{:class => 'req'}= @order_data.executor.user.profile.name
+                    %label Имя
+
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3'}
+                        %option{:value => ''} 23
+                    %label Специальность
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3'}
+                        %option{:value => ''} 23
+                    %label Группа
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3'}
+                        %option{:value => ''} 23
+                    %label Имя
+
+                  %p
+                    %span{:class => 'req'}
+                      %input{:style => 'text', :class => 'field small-field'}
+                    %label{:style => 'width: 50px'} Рекомендуемая стоимость
+
+                  %p
+                    %span{:class => 'req'}
+                      %input{:style => 'text', :class => 'field small-field'}
+                    %label{:style => 'width: 50px'} Стоимость заказа
+
+                  %p
+                    %span{:class => 'req'}
+                      %input{:style => 'text', :class => 'field small-field', :value => @order_data.money_for_specialist}
+                    %label{:style => 'width: 50px'} Специалисту
+                
+                %div{:class => 'buttons'}
+                  %input{:type => 'submit', :class => 'button', :value => 'Назначить'}
+
+            - else
+
+              /Выбор специалиста
+              %div{:class => 'box-head'}
+                %h2 Поменять специалиста
+              
+              %form{:action => "", :method => 'post'}
+                /Form 
+                %div{:class => 'form'}
+                  %p
+                    %span{:class => 'req'}= @order_data.executor.user.profile.surname
+                    %label Фамилия
+                  %p
+                    %span{:class => 'req'}= @order_data.executor.user.profile.name
+                    %label Имя
+
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3 select_specialization'}
+                        - Specialization.all.each do |value|
+                          %option{:value => "#{value.id}"}
+                            = I18n.t "enumerize.specialization.#{value.name}"
+                    %label Специальность
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3 select_groups'}
+                        %option{:value => ''} не выбрана специальность
+                    %label Группа
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3 select_specialists'}
+                        %option{:value => ''} не выбрана группа
+                    %label Имя
+
+                  %p
+                    %span{:class => 'req'}
+                      %input{:style => 'text', :class => 'field small-field'}
+                    %label{:style => 'width: 50px'} Рекомендуемая стоимость
+
+                  %p
+                    %span{:class => 'req'}
+                      %input{:style => 'text', :class => 'field small-field'}
+                    %label{:style => 'width: 50px'} Стоимость заказа
+
+                  %p
+                    %span{:class => 'req'}
+                      %input{:style => 'text', :class => 'field small-field', :value => @order_data.specialist_price}
+                    %label{:style => 'width: 50px'} Специалисту
+                
+                %div{:class => 'buttons'}
+                  %input{:type => 'submit', :class => 'button', :value => 'Назначить'}
+      
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

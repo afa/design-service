@@ -10,19 +10,7 @@
       %span &gt;
       Заказы
     
-    /Message OK
-    %div{:class => 'msg msg-ok'}
-      %p
-        %strong Your file was uploaded succesifully!
-      %a{:class => 'close', :href => '#'}
-    
-    /Message Error
-    %div{:class => 'msg msg-error'}
-      %p
-        %strong You must select a file to upload first!
-      %a{:class => 'close', :href => '#'}
-
-    %br
+    = render partial: 'adm/menu/popups'
 
     /Main
     %div{:id => 'main'}

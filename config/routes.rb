@@ -155,6 +155,13 @@ DesignService::Application.routes.draw do
   namespace :adm do
     resources :orders
     resources :specialists
+    resources :order
+    resources :specialist_group do
+      get 'get_by_specialist'
+    end
+    resources :specialist do
+      get 'get_by_group_and_specialization'
+    end
   end
 
   get "welcome/index"

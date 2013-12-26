@@ -15,7 +15,6 @@ class Adm::OrdersController < Adm::ApplicationController
 		get_pages_params(@page, Order.per_page, @count_orders) # берем данные об остальных страницах
 
 		# берем пачку заказов, взятых по определенному фильтру
-		order = Order.new
 		@orders = order.get_bunch_on_filter(@page, @filter)
 	end
 end

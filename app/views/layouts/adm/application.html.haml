@@ -3,7 +3,9 @@
   %head
     %title Админка
     = stylesheet_link_tag "adm/style", :media => "all"
+    = stylesheet_link_tag "#{params[:controller]}.css", :media => "all"
     = javascript_include_tag "application"
+    = javascript_include_tag "adm/main.js"
     = javascript_include_tag "#{params[:controller]}.js" if Rails.application.assets.find_asset("#{params[:controller]}.js")
     = csrf_meta_tags
     /[if lt IE 9]

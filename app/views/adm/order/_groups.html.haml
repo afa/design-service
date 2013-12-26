@@ -1,0 +1,6 @@
+- if groups.size > 0
+  - groups.each do |value|
+    %option{:value => "#{value.id}"}
+      = value.name
+- else
+  %option{:value => ""} не выбрана группа
