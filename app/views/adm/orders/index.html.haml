@@ -67,9 +67,9 @@
                 %th{:title => 'Выбрать'}
                   %select{:class => 'field size2 select_orders'}
                     %option{:value => 'update_date_desc', :selected => @filter == "update_date_desc" ? true : false} все
-                    - OrderCustomizer.all.each do |value|
-                      %option{:value => "type_#{value.id}", :selected => @filter == "type_#{value.id}" ? true : false}
-                        = value.name
+                    - OrderCustomizer.get_all.each do |value|
+                      %option{:value => "type_#{value[:class] == 'SelectedForm' ? (value[:class] + '_' + value[:id]) : value[:class]}", :selected => @filter == "type_#{value[:class] == 'SelectedForm' ? (value[:class] + '_' + value[:id]) : value[:class]}" ? true : false}
+                        = I18n.t "titles.#{value[:class] == 'SelectedForm' ? "selected_form.#{value[:typename]}" : value[:typename]}"
                 /Цена
                 %th{:title => 'Сортировать по'}
                   %select{:class => 'field size2 select_orders'}

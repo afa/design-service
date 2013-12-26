@@ -234,12 +234,20 @@ class Order < ActiveRecord::Base
     if filtres[0] == "state" # берем по статусу
       name = filter[filter.index('_') + 1, filter.length - filter.index('_')]
       Order.paginate(:page => page).where("work_state = ?", name).order("orders.updated_at desc")
-    elsif filtres[0] == "type" # берем по статусу
-      id = filter[filter.index('_') + 1, filter.length - filter.index('_')].to_i
-      Order.paginate(:page => page)\
-        .joins("inner join selected_forms on selected_forms.id = orders.orderable_id")\
-        .where("orders.orderable_type = 'SelectedForm' and selected_forms.order_customizer_id = ?", id)\
-        .order("orders.updated_at desc")
+    elsif filtres[0] == "type" # берем по типу
+      typename = filter[filter.index('_') + 1, filter.length - filter.index('_')]
+      if typename == "EngineeringSystem" || typename == "PlanDevelopment"  || typename == "ReplanningEndorsement" 
+        Order.paginate(:page => page)\
+          .joins("inner join selected_forms on selected_forms.id = orders.orderable_id")\
+          .where("orders.orderable_type = ?", typename)\
+          .order("orders.updated_at desc")
+      else # SelectedForm_:id
+        id = typename[typename.index('_') + 1, typename.length - typename.index('_')].to_i
+        Order.paginate(:page => page)\
+          .joins("inner join selected_forms on selected_forms.id = orders.orderable_id")\
+          .where("orders.orderable_type = 'SelectedForm' and selected_forms.order_customizer_id = ?", id)\
+          .order("orders.updated_at desc")
+      end
     elsif filter == "update_date_desc"
       Order.paginate(:page => page).order("updated_at desc")
     elsif filter == "update_date_asc"
