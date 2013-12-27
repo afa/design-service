@@ -2,6 +2,7 @@
 = render partial: 'adm/menu/header'
 
 /Container
+%input{:type => 'hidden', :id => 'order_id', :value => @id}
 %div{:id => 'container'}
   %div{:class => 'shell'}
 
@@ -122,45 +123,46 @@
               %div{:class => 'box-head'}
                 %h2 Выбор специалиста
               
-              %form{:action => "", :method => 'post'}
-                /Form 
+              = simple_form_for @order_data, url: {controller: 'order', action: 'set_specialist'}, remote: true, method: 'post' do |f|
+                %input{:type => 'hidden', :name => 'order_id', :value => @id}
                 %div{:class => 'form'}
-                  %p
-                    %span{:class => 'req'}= @order_data.executor.user.profile.surname
-                    %label Фамилия
-                  %p
-                    %span{:class => 'req'}= @order_data.executor.user.profile.name
-                    %label Имя
-
+                
                   %p
                     %span{:class => 'req'}
-                      %select{:class => 'field size3'}
-                        %option{:value => ''} 23
+                      %select{:class => 'field size3 select_specialization'}
+                        - Specialization.all.each do |value|
+                          %option{:value => "#{value.id}"}
+                            = I18n.t "enumerize.specialization.#{value.name}"
                     %label Специальность
                   %p
                     %span{:class => 'req'}
-                      %select{:class => 'field size3'}
-                        %option{:value => ''} 23
+                      %select{:class => 'field size3 select_groups'}
+                        %option{:value => ''} не выбрана группа
                     %label Группа
                   %p
                     %span{:class => 'req'}
-                      %select{:class => 'field size3'}
-                        %option{:value => ''} 23
+                      %select{:class => 'field size3 select_specialists'}
+                        %option{:value => ''} не выбран специалист
                     %label Имя
+                    = f.input_field :executor_id, id: 'select_specialist_id', as: :hidden, value: 0
+
+                  - if @order_data.orderable_type == 'PlanDevelopment'
+                    %p
+                      %span{:class => 'req'}
+                        %input{:style => 'text', :class => 'field small-field', :value => @order_data.calculated_price}
+                      %label{:style => 'width: 50px'} Рекомендуемая стоимость
 
                   %p
                     %span{:class => 'req'}
-                      %input{:style => 'text', :class => 'field small-field'}
-                    %label{:style => 'width: 50px'} Рекомендуемая стоимость
-
-                  %p
-                    %span{:class => 'req'}
-                      %input{:style => 'text', :class => 'field small-field'}
+                      - if @order_data.orderable_type == 'PlanDevelopment'
+                        = f.input_field :price, class: 'field small-field', value: @order_data.calculated_price
+                      - else
+                        = f.input_field :price, class: 'field small-field'
                     %label{:style => 'width: 50px'} Стоимость заказа
 
                   %p
                     %span{:class => 'req'}
-                      %input{:style => 'text', :class => 'field small-field', :value => @order_data.money_for_specialist}
+                      = f.input_field :specialist_price, class: 'field small-field specialist_price'
                     %label{:style => 'width: 50px'} Специалисту
                 
                 %div{:class => 'buttons'}
@@ -172,8 +174,8 @@
               %div{:class => 'box-head'}
                 %h2 Поменять специалиста
               
-              %form{:action => "", :method => 'post'}
-                /Form 
+              = simple_form_for @order_data, url: {controller: 'order', action: 'set_specialist'}, remote: true, method: 'post' do |f|
+                %input{:type => 'hidden', :name => 'order_id', :value => @id}
                 %div{:class => 'form'}
                   %p
                     %span{:class => 'req'}= @order_data.executor.user.profile.surname
@@ -192,27 +194,32 @@
                   %p
                     %span{:class => 'req'}
                       %select{:class => 'field size3 select_groups'}
-                        %option{:value => ''} не выбрана специальность
+                        %option{:value => ''} не выбрана группа
                     %label Группа
                   %p
                     %span{:class => 'req'}
                       %select{:class => 'field size3 select_specialists'}
-                        %option{:value => ''} не выбрана группа
+                        %option{:value => ''} не выбран специалист
                     %label Имя
+                    = f.input_field :executor_id, id: 'select_specialist_id', as: :hidden, value: 0
+
+                  - if @order_data.orderable_type == 'PlanDevelopment'
+                    %p
+                      %span{:class => 'req'}
+                        %input{:style => 'text', :class => 'field small-field', :value => @order_data.calculated_price}
+                      %label{:style => 'width: 50px'} Рекомендуемая стоимость
 
                   %p
                     %span{:class => 'req'}
-                      %input{:style => 'text', :class => 'field small-field'}
-                    %label{:style => 'width: 50px'} Рекомендуемая стоимость
-
-                  %p
-                    %span{:class => 'req'}
-                      %input{:style => 'text', :class => 'field small-field'}
+                      - if @order_data.orderable_type == 'PlanDevelopment'
+                        = f.input_field :price, class: 'field small-field', value: @order_data.calculated_price
+                      - else
+                        = f.input_field :price, class: 'field small-field'
                     %label{:style => 'width: 50px'} Стоимость заказа
 
                   %p
                     %span{:class => 'req'}
-                      %input{:style => 'text', :class => 'field small-field', :value => @order_data.specialist_price}
+                      = f.input_field :specialist_price, class: 'field small-field specialist_price', value: @order_data.specialist_price
                     %label{:style => 'width: 50px'} Специалисту
                 
                 %div{:class => 'buttons'}

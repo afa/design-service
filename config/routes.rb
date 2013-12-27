@@ -156,11 +156,13 @@ DesignService::Application.routes.draw do
     resources :orders
     resources :specialists
     resources :order
+    post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
     resources :specialist_group do
       get 'get_by_specialist'
     end
     resources :specialist do
       get 'get_by_group_and_specialization'
+      get 'get_price'
     end
   end
 

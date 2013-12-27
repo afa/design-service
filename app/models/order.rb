@@ -212,6 +212,16 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def money_for_specialist_calc(specialist)
+    return nil  unless specialist && specialist.is_a?(Specialist)
+    labor_participation = specialist.labor_participation || 1.0
+    if labor_participation
+      (price || default_price).to_f * labor_participation
+    else
+      price
+    end
+  end
+
   def reset_price
     price = nil
   end
