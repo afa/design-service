@@ -1,5 +1,7 @@
 # coding: utf-8
 class User < ActiveRecord::Base
+  self.per_page = 20
+
   cattr_accessor :current
 
   has_one :profile
@@ -132,5 +134,21 @@ class User < ActiveRecord::Base
   def phone=(ph)
    profile = Profile.new unless profile
    profile.phone = ph
+  end
+
+  def get_created_date
+    created_at.strftime("%d.%m.%Y")
+  end
+
+  def get_bunch_on_filter(page, filter)
+    User.paginate(:page => page).where("role = 'guest' or role = 'client'").order("users.created_at desc")
+  end
+
+  def count_clients(filter)
+    User.where("role = 'guest' or role = 'client'").count
+  end
+
+  def count_orders
+    4
   end
 end

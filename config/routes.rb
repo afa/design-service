@@ -164,6 +164,9 @@ DesignService::Application.routes.draw do
       get 'get_by_group_and_specialization'
       get 'get_price'
     end
+    resources :clients
+    resources :client
+    post 'client/set_client' => 'client#set_client', :as => :client_set_client
   end
 
   get "welcome/index"
