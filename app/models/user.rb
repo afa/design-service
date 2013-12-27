@@ -149,6 +149,6 @@ class User < ActiveRecord::Base
   end
 
   def count_orders
-    4
+    Order.where("client_id = ?", self.id).count
   end
 end

@@ -1,13 +1,31 @@
 # coding: utf-8
 class Adm::ClientController < Adm::ApplicationController
-	def set_client
-		client_id = params[:client_id].to_i
-		user = User.find(client_id)
-		user.update_attributes(params[:user])
+	respond_to :html, :js, :xml
 
-		respond_to do |format|
-			format.html
-			format.js
-		end
+	def show
+
+	end
+
+	#ActiveRecord::RecordInvalid - Возникли ошибки: Username translation missing: 
+	#ru.activerecord.errors.models.user.attributes.username.immutable:
+	def set_client
+		#logger.debug "----------111-----------"
+		id = params[:id].to_i
+		user = User.find(id)
+
+		user.update_attributes(:username => params[:username], :email => params[:email])
+
+		user.profile.update_attributes(:name => params[:name], :surname => params[:surname], 
+			:phone => params[:phone])
+
+		render :json => {status: ""}
+	end
+
+	def del
+		id = params[:id].to_i
+		user = User.find(id)
+		user.destroy
+
+		render :json => {status: ""}
 	end
 end
