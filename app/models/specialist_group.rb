@@ -53,4 +53,12 @@ class SpecialistGroup < ActiveRecord::Base
     specialist = Specialist.find(specialist_id)
     SpecialistGroup.all - specialist.specialist_groups
   end
+
+  def get_bunch_on_filter(page, filter)
+    SpecialistGroup.paginate(:page => page).order("created_at desc")
+  end
+
+  def count_groups(filter)
+    SpecialistGroup.count
+  end
 end
