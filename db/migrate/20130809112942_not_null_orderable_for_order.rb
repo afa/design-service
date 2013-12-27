@@ -1,3 +1,4 @@
+# coding: utf-8
 class NotNullOrderableForOrder < ActiveRecord::Migration
   def change
     Order.where(orderable_id: nil).delete_all

@@ -1,0 +1,224 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :value => @id, :id => 'specialist_id'}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', '/adm/orders'
+      %span &gt;
+      = link_to 'Специалисты', '/adm/specialists'
+      %span &gt;
+      Специалист №
+      = @id
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /специалист
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Специалист №
+            = @id
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Фамилия
+                %th Логин
+                %th Специальность
+                %th Статус
+                %th Группы
+                %th Почта
+                %th Телефон
+                %th Дата
+                %th{:class => 'ac', :width => '110'} Действия
+
+              - @specialists.each_with_index do |value, index|
+
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  
+                  %td
+                    = link_to "#{value.id}", "/adm/specialist/#{value.id}"
+                    %input{:type => 'hidden', :class => 'specialist_id', :value => value.id}
+                  /Фамилия
+                  %td
+                    %input{:type => 'text', :class => 'field small-field specialist_surname', :style => 'width: 100px;', :value => value.user.profile.surname}
+                  /Логин
+                  %td
+                    = value.user.username
+                  /Специальность
+                  %td
+                    %span
+                      = I18n.t "enumerize.specialization.#{value.specialization.name}"
+                    = link_to '', '#', class: 'ico edit'
+                  /Статус
+                  %td В работе
+                  /Группы
+                  %td
+                    %span
+                    = value.get_first_group.name
+                    = link_to '', '#', class: 'ico edit'
+                  /Почта
+                  %td
+                    %input{:type => 'text', :class => 'field small-field specialist_email', :style => 'width: 90px;', :value => value.user.email}
+                  /Телефон
+                  %td
+                    %input{:type => 'text', :class => 'field small-field specialist_phone', :style => 'width: 90px;', :value => value.user.profile.phone}
+                  %td= value.user.get_created_date
+                  %td
+                    %a{:class => 'ico edit set_specialist'} Сохр.
+                    %a{:class => 'ico del del_specialist'} Уд.
+        
+        /Работы специалиста
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Работы специалиста
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Тип
+                %th Статус
+                %th Стоимость
+                %th Выполнено
+                %th Дата зав.
+                %th Заказчик
+                %th Группа
+
+              - @orders.each_with_index do |value, index|
+       
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  %td
+                    = link_to "#{value.id}", "/adm/order/#{value.id}"
+
+                  %td
+                    = I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+
+                  %td
+                    = I18n.t "order.work_state.#{value.work_state}"
+
+                  %td
+                    = value.price
+
+                  %td
+                    = value.completion_percent
+                    = "%"
+
+                  %td
+                    = value.completion_time
+
+                  %td
+                    - unless value.client.nil?
+                      =link_to "#{value.client.profile.full_name}", "/adm/client/#{value.client.id}"
+                    - else
+                      нет
+
+                  %td
+                    - unless value.specialist_group.nil?
+                      = value.specialist_group.name
+                    - else
+                      нет
+        
+        %div{:style => 'width: 100%'}
+          /Группы
+          %div{:class => 'box', :style => 'width: 67%; display: inline-block; float: left;'}
+
+            /Box Head
+            %div{:class => 'box-head'}
+              %h2{:class => 'left'} Группы
+              %div{:class => 'right'}
+                /%label search articles
+                /%input{:type => 'text', :class => 'field small-field'}
+                /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+            /Table
+            %div{:class => 'table'}
+              %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+                %tr
+                  %th №
+                  %th Группа
+                  %th Статус
+                  %th Удалить
+
+                - @groups.each_with_index do |value, index|
+         
+                  %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                    %td
+                      = link_to "#{value.id}", "/adm/group/#{value.id}"
+
+                    %td
+                      = value.name
+
+                    %td
+                      Статус
+
+                    %td
+                      %a{:class => 'ico del del_group'} Уд.
+                      %input{:type => 'hidden', :value => value.id}
+          
+          /Добавить в группу
+          %div{:class => 'box', :style => 'width: 31%; display: inline-block; float: left; margin-left: 15px;'}
+
+            /Добавить в группу
+            %div{:class => 'box-head'}
+              %h2{:class => 'left'} Добавить в группу
+              %div{:class => 'right'}
+                /%label search articles
+                /%input{:type => 'text', :class => 'field small-field'}
+                /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+            %div{:class => 'table'}
+              %div{:class => 'form'}
+                %p
+                  /%span{:class => 'req'} sfdgdh
+                  %label Группа
+                  %br
+
+                  %select{:class => 'field size3 select_group'}
+                    %option{:value => "0"} не выбрана группа
+                    - SpecialistGroup.get_all_not_specialist(@id).each do |value|
+                      %option{:value => "#{value.id}"}
+                        = value.name
+                  %br
+
+                  %input{:type => 'button', :class => 'button add_in_group', :value => 'Назначить'}
+        
+        /Группы
+        %div{:class => 'box', :style => 'width: 100%; float: left;'}
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Галерея
+            %div{:class => 'right'}
+
+          %div{:class => 'table'}
+            sfdgjdfjg
+
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddPicturesOfDesignProjects < ActiveRecord::Migration
   def up
     OrderCustomizer.where(typename: 'accesories').first_or_create(name: 'Аксессуары')

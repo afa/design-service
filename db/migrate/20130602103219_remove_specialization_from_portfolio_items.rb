@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemoveSpecializationFromPortfolioItems < ActiveRecord::Migration
   def change
     remove_column :portfolio_items, :specialization

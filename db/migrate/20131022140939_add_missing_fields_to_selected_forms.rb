@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddMissingFieldsToSelectedForms < ActiveRecord::Migration
   def change
     add_column :selected_forms, :ceiling_dependence, :boolean

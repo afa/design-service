@@ -1,3 +1,4 @@
+# coding: utf-8
 class OrderDecorator < Draper::Decorator
   decorates_association :orderable
   decorates_association :messages

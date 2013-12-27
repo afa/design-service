@@ -1,4 +1,7 @@
+# coding: utf-8
 class Order < ActiveRecord::Base
+  self.per_page = 20
+
   belongs_to :orderable, polymorphic: true
   belongs_to :client, class_name: 'User', foreign_key: 'client_id', counter_cache: true, include: :profile
   belongs_to :executor, polymorphic: true
@@ -54,6 +57,7 @@ class Order < ActiveRecord::Base
     event :assign_specialist do
       transition [:moderator_suggested, :specialist_agreed, :specialist_disagreed] => :moderator_suggested
       transition [:saved_draft, :client_agreed, :sent_to_moderator, :in_work] => same
+      transition [:draft] => :saved_draft
     end
 
     event :set_price do
@@ -209,9 +213,104 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def money_for_specialist_calc(specialist)
+    return nil  unless specialist && specialist.is_a?(Specialist)
+    labor_participation = specialist.labor_participation || 1.0
+    if labor_participation
+      (price || default_price).to_f * labor_participation
+    else
+      price
+    end
+  end
+
   def reset_price
     price = nil
   end
+
+  # дата обновления в нужном формате
+  def get_updated_date
+    updated_at.strftime("%d.%m.%Y")
+  end
+
+  # дата создания в нужном формате
+  def get_created_date
+    created_at.strftime("%d.%m.%Y")
+  end
+
+  # НУЖНО ДОРАБОТАТЬ ЗАПРОСЫ, НАПИСАНО КОРЯВО
+  # берется пачка заказов, по определенному фильтру
+  def get_bunch_on_filter(page, filter)
+    filtres = filter.split(/_/)
+
+    if filtres[0] == "state" # берем по статусу
+      name = filter[filter.index('_') + 1, filter.length - filter.index('_')]
+      Order.paginate(:page => page).where("work_state = ?", name).order("orders.updated_at desc")
+    elsif filtres[0] == "type" # берем по типу
+      typename = filter[filter.index('_') + 1, filter.length - filter.index('_')]
+      if typename == "EngineeringSystem" || typename == "PlanDevelopment"  || typename == "ReplanningEndorsement" 
+        Order.paginate(:page => page)\
+          .joins("inner join selected_forms on selected_forms.id = orders.orderable_id")\
+          .where("orders.orderable_type = ?", typename)\
+          .order("orders.updated_at desc")
+      else # SelectedForm_:id
+        id = typename[typename.index('_') + 1, typename.length - typename.index('_')].to_i
+        Order.paginate(:page => page)\
+          .joins("inner join selected_forms on selected_forms.id = orders.orderable_id")\
+          .where("orders.orderable_type = 'SelectedForm' and selected_forms.order_customizer_id = ?", id)\
+          .order("orders.updated_at desc")
+      end
+    elsif filter == "update_date_desc"
+      Order.paginate(:page => page).order("updated_at desc")
+    elsif filter == "update_date_asc"
+      Order.paginate(:page => page).order("updated_at asc")
+    elsif filter == "client_asc"
+      Order.paginate(:page => page).joins(:client)\
+        .joins("inner join profiles on profiles.user_id = users.id")\
+        .order("profiles.surname asc")
+    elsif filter == "client_desc"
+      Order.paginate(:page => page)
+        .joins("left join users on orders.client_id = users.id")\
+        .joins("left join profiles on profiles.user_id = users.id")\
+        .order("profiles.surname desc")
+    elsif filter == "price_asc"
+      Order.paginate(:page => page).order("price asc")
+    elsif filter == "price_desc"
+      Order.paginate(:page => page).order("price desc")
+    elsif filter == "specialist_asc"
+      Order.paginate(:page => page)\
+        .joins("left join specialists on specialists.user_id = orders.executor_id")\
+        .joins("left join users on specialists.user_id = users.id")\
+        .joins("left join profiles on profiles.user_id = users.id")\
+        .where("orders.executor_type = 'Specialist' or orders.executor_type is null")\
+        .order("profiles.surname asc")
+    elsif filter == "specialist_desc"
+      Order.paginate(:page => page)\
+        .joins("left join specialists on specialists.user_id = orders.executor_id")\
+        .joins("left join users on specialists.user_id = users.id")\
+        .joins("left join profiles on profiles.user_id = users.id")\
+        .where("orders.executor_type = 'Specialist' or orders.executor_type is null")\
+        .order("profiles.surname desc")
+    elsif filter == "create_date_desc"
+      Order.paginate(:page => page).order("created_at desc")
+    elsif filter == "create_date_asc"
+      Order.paginate(:page => page).order("created_at asc")
+    else
+      Order.paginate(:page => page).order("updated_at desc")
+    end
+  end
+
+  # количество заказов, по определенному фильтру
+  def count_orders(filter)
+    filtres = filter.split(/_/)
+
+    if filtres[0] == "state" # берем по статусу
+      name = filter[filter.index('_') + 1, filter.length - filter.index('_')]
+      Order.where("work_state = ?", name).count
+    else
+      Order.count
+    end
+  end
+
 private
   def self.accepted_to_start_work_arel
     arel_table[:work_state].eq_any([:client_agreed, :in_work, :work_accepted])

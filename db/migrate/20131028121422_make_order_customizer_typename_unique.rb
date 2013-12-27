@@ -1,3 +1,4 @@
+# coding: utf-8
 class MakeOrderCustomizerTypenameUnique < ActiveRecord::Migration
   def up
     remove_index :order_customizers, :typename

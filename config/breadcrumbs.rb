@@ -1,3 +1,4 @@
+# coding: utf-8
 # README: https://github.com/lassebunk/gretel?utm_source=rubyweekly&utm_medium=email
 
 crumb :root do

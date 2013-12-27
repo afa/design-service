@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddCounterCacheForOrders < ActiveRecord::Migration
   def up
     add_column :users, :orders_count, :integer, :default => 0

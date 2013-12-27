@@ -1,3 +1,4 @@
+# coding: utf-8
 class SpecialistGroupsController < InheritedResources::Base
   has_scope :by_specialization, as: :specialization, only: [:index]
   load_and_authorize_resource

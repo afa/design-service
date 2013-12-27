@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddClientStr < ActiveRecord::Migration
   def up
     if !(PlanDevelopment.new.attributes.has_key?(:client) && PlanDevelopment.new.attributes.has_key?(:client_id))
