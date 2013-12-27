@@ -1,3 +1,4 @@
+# coding: utf-8
 class AttachMessageToOrder < ActiveRecord::Migration
   def change
     change_table :messages do |t|

@@ -1,3 +1,4 @@
+# coding: utf-8
 ActiveAdmin.register Order do
   menu label: ->(){ I18n.t('titles.orders') }
   decorate_with OrderDecorator

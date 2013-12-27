@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemoveAccreditationLevel < ActiveRecord::Migration
   def change
     change_table :specialists do |t|

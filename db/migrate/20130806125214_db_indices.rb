@@ -1,3 +1,4 @@
+# coding: utf-8
 class DbIndices < ActiveRecord::Migration
   def change
     add_index :messages, :sender_id

@@ -1,0 +1,13 @@
+/Message OK
+%div{:class => 'msg msg-ok', :style => 'display: none;'}
+  %p
+    %strong Your file was uploaded succesifully!
+  %a{:class => 'close close_msg', :style => 'cursor: pointer;'}
+
+/Message Error
+%div{:class => 'msg msg-error', :style => 'display: none;'}
+  %p
+    %strong You must select a file to upload first!
+  %a{:class => 'close close_msg', :style => 'cursor: pointer;'}
+
+%br

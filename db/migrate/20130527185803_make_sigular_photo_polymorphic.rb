@@ -1,3 +1,4 @@
+# coding: utf-8
 class MakeSigularPhotoPolymorphic < ActiveRecord::Migration
   def change
     change_table :photos do |t|

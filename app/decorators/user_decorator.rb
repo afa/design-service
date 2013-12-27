@@ -1,3 +1,4 @@
+# coding: utf-8
 class UserDecorator < Draper::Decorator
   delegate_all
   def to_s

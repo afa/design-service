@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddDecimalArea < ActiveRecord::Migration
   def up
     change_table :selected_forms do |t|

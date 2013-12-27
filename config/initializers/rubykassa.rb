@@ -1,3 +1,4 @@
+# coding: utf-8
 # -*- encoding : utf-8 -*-
 Rubykassa.configure do |c|
   c.login = ENV["ROBOKASSA_LOGIN"] || 'instyle'

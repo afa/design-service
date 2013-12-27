@@ -1,3 +1,4 @@
+# coding: utf-8
 module OrdersHelper
   def robo_pay(order)
    if order.can_pay?

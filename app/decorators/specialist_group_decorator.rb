@@ -1,3 +1,4 @@
+# coding: utf-8
 class SpecialistGroupDecorator < Draper::Decorator
   delegate_all
   decorates_association :specialists

@@ -26,7 +26,8 @@ gem 'jquery-rails'
 gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn-rails' #, :platforms => :ruby
+
+#gem 'unicorn-rails' #, :platforms => :ruby
 
 # Deploy with Capistrano
 gem 'capistrano'
@@ -98,3 +99,5 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
+
+gem 'will_paginate', '~> 3.0'

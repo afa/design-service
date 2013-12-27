@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemoveWhatMaterialsFromSelectedForms < ActiveRecord::Migration
   def up
     remove_column :selected_forms, :what_materials

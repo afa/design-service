@@ -1,3 +1,4 @@
+# coding: utf-8
 class MakeAssociationsNotNull < ActiveRecord::Migration
   def change
     # Make sure no null value exist

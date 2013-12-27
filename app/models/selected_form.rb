@@ -1,3 +1,4 @@
+# coding: utf-8
 class SelectedForm < ActiveRecord::Base
   include ActsAsOrderable
   belongs_to :order_customizer

@@ -1,0 +1,4 @@
+%option{:value => ""} не выбрана группа
+- groups.each do |value|
+  %option{:value => "#{value.id}"}
+    = value.name

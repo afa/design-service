@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateOrderExecutorsTable < ActiveRecord::Migration
   def change
     create_table :order_executors, id: false do |t|

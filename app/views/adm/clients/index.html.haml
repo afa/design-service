@@ -1,0 +1,103 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', '/adm/orders'
+      %span &gt;
+      Заказчики
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Заказчики
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Имя
+                %th Фамилия
+                %th Логин
+                %th E-mail
+                %th Телефон
+                %th Заказы
+                %th Регистрация
+                %th Действия
+
+              - @clients.each_with_index do |value, index|
+       
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  %td
+                    = link_to "#{value.id}", "client/#{value.id}"
+                    %input{:type => 'hidden', :class => 'client_id', :value => value.id}
+
+                  %td
+                    /= f.input_field :name, class: 'field small-field', style: 'width: 90px;'
+                    %input{:type => 'text', :class => "field small-field client_name_#{value.id}", :value => value.profile.name, :style => 'width: 90px;'}
+                  %td
+                    /= f.input_field :surname, class: 'field small-field', style: 'width: 90px;'
+                    %input{:type => 'text', :class => 'field small-field client_surname', :value => value.profile.surname, :style => 'width: 90px;'}
+
+                  /Логин
+                  %td
+                    /= f.input_field :username, class: 'field small-field', style: 'width: 110px;'
+                    %input{:type => 'text', :class => 'field small-field client_username', :value => value.username, :style => 'width: 110px;'}
+                  /E-mail
+                  %td
+                    /= f.input_field :email, class: 'field small-field', style: 'width: 110px;'
+                    %input{:type => 'text', :class => 'field small-field client_email', :value => value.email, :style => 'width: 110px;'}
+                  /Телефон
+                  %td
+                    /= f.input_field :phone, class: 'field small-field', style: 'width: 90px;'
+                    %input{:type => 'text', :class => 'field small-field client_phone', :value => value.profile.phone, :style => 'width: 90px;'}
+
+                  /Заказы
+                  %td= value.count_orders
+
+                  %td= value.get_created_date
+
+                  %td
+                    %a{:class => 'ico edit set_client'} Сохр.
+                    %a{:class => 'ico del del_client'} Уд.
+            
+            /Pagging
+            %div{:class => 'pagging'}
+              %div{:class => 'left'} 
+                = "Страницы #{@page_number_left}-#{@page_number_right} из #{@count_clients}"
+              %div{:class => 'right'}
+                = link_to 'Первая', "/adm/clients?page=1&filter=#{@filter}"
+
+                - @get_left_pages.each do |value|
+                  = link_to "#{value}", "/adm/clients?page=#{value}&filter=#{@filter}"
+
+                = link_to "#{@page}", "/adm/clients?page=#{@page}&filter=#{@filter}", style: "border-color: #8c3521; background: #ba4c32;"
+
+                - @get_right_pages.each do |value|
+                  = link_to "#{value}", "/adm/clients?page=#{value}&filter=#{@filter}"
+
+                = link_to 'Последняя', "/adm/clients?page=#{@last_page}&filter=#{@filter}"
+      
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

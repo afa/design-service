@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateMissingModerationInfosForAttachments < ActiveRecord::Migration
   def up
     Attachment.find_each do |attachment|

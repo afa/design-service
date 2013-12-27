@@ -1,0 +1,104 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', '/adm/orders'
+      %span &gt;
+      Специалисты
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Специалисты
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Фамилия
+                %th Логин
+                %th Специальность
+                %th Статус
+                %th Группы
+                %th Почта
+                %th Телефон
+                %th Дата
+                %th{:class => 'ac', :width => '110'} Действия
+
+              - @specialists.each_with_index do |value, index|
+
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  
+                  %td
+                    = link_to "#{value.id}", "/adm/specialist/#{value.id}"
+                    %input{:type => 'hidden', :class => 'specialist_id', :value => value.id}
+                  /Фамилия
+                  %td
+                    %input{:type => 'text', :class => 'field small-field specialist_surname', :style => 'width: 100px;', :value => value.user.profile.surname}
+                  /Логин
+                  %td
+                    = value.user.username
+                  /Специальность
+                  %td
+                    %span
+                      = I18n.t "enumerize.specialization.#{value.specialization.name}"
+                    = link_to '', '#', class: 'ico edit'
+                  /Статус
+                  %td В работе
+                  /Группы
+                  %td
+                    %span
+                    = value.get_first_group.name
+                    = link_to '', '#', class: 'ico edit'
+                  /Почта
+                  %td
+                    %input{:type => 'text', :class => 'field small-field specialist_email', :style => 'width: 90px;', :value => value.user.email}
+                  /Телефон
+                  %td
+                    %input{:type => 'text', :class => 'field small-field specialist_phone', :style => 'width: 90px;', :value => value.user.profile.phone}
+                  %td= value.user.get_created_date
+                  %td
+                    %a{:class => 'ico edit set_specialist'} Сохр.
+                    %a{:class => 'ico del del_specialist'} Уд.
+            
+            /Pagging
+            %div{:class => 'pagging'}
+              %div{:class => 'left'} 
+                = "Страницы #{@page_number_left}-#{@page_number_right} из #{@count_specialists}"
+              %div{:class => 'right'}
+                = link_to 'Первая', "/adm/orders?page=1&filter=#{@filter}"
+
+                - @get_left_pages.each do |value|
+                  = link_to "#{value}", "/adm/orders?page=#{value}&filter=#{@filter}"
+
+                = link_to "#{@page}", "/adm/orders?page=#{@page}&filter=#{@filter}", style: "border-color: #8c3521; background: #ba4c32;"
+
+                - @get_right_pages.each do |value|
+                  = link_to "#{value}", "/adm/orders?page=#{value}&filter=#{@filter}"
+
+                = link_to 'Последняя', "/adm/orders?page=#{@last_page}&filter=#{@filter}"
+      
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'
