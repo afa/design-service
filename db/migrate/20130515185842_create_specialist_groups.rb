@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateSpecialistGroups < ActiveRecord::Migration
   def change
     create_table :specialist_groups do |t|

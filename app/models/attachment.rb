@@ -1,3 +1,4 @@
+# coding: utf-8
 class Attachment < ActiveRecord::Base
   mount_uploader :file, FileUploader
   belongs_to :attachable, polymorphic: true

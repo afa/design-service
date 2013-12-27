@@ -1,3 +1,4 @@
+# coding: utf-8
 class ChangeColumnTpeForEngineeringSystems < ActiveRecord::Migration
   def change
     change_table :engineering_systems do |t|

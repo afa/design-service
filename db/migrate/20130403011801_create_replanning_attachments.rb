@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateReplanningAttachments < ActiveRecord::Migration
   def change
     create_table :replanning_attachments do |t|

@@ -1,3 +1,4 @@
+# coding: utf-8
 DesignService::Application.routes.draw do
   resources :portfolios do
     resources :portfolio_items
@@ -152,6 +153,32 @@ DesignService::Application.routes.draw do
     delete 'specialist_groups/:id/remove_specialist' => 'specialist_groups#remove_specialist', as: :specialist_group_remove_specialist
     get "specialization/:id/specialists" => 'specialization#specialists', as: :specialization_specialists
     get "specialization/:id/specialist_groups" => 'specialization#specialist_groups', as: :specialization_specialist_groups
+  end
+
+  namespace :adm do
+    resources :orders
+    resources :specialists
+    resources :specialist
+    post 'specialist/set' => 'specialist#set', :as => :specialist_set
+    post 'specialist/del' => 'specialist#del', :as => :specialist_del
+    post 'specialist/add_to_group' => 'specialist#add_to_group', :as => :specialist_add_to_group
+    post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
+    resources :order
+    post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
+    resources :specialist_group do
+      get 'get_by_specialist'
+    end
+    resources :specialist do
+      get 'get_by_group_and_specialization'
+      get 'get_price'
+    end
+    resources :clients
+    resources :client
+    post 'client/set_client' => 'client#set_client', :as => :client_set_client
+    post 'client/del' => 'client#del', :as => :client_del
+    post 'client/set_password' => 'client#set_password', :as => :client_set_password
+    resources :groups
+    resources :group
   end
 
   get "welcome/index"

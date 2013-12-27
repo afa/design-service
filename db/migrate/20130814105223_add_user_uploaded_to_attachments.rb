@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddUserUploadedToAttachments < ActiveRecord::Migration
   def change
     change_table :attachments do |t|

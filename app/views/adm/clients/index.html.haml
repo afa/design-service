@@ -6,7 +6,7 @@
   %div{:class => 'shell'}
 
     %div{:class => 'small-nav'}
-      = link_to 'Админ-панель', 'orders'
+      = link_to 'Админ-панель', '/adm/orders'
       %span &gt;
       Заказчики
     
@@ -78,7 +78,6 @@
 
                   %td
                     %a{:class => 'ico edit set_client'} Сохр.
-                    /= link_to 'Уд.', '#', class: 'ico del'
                     %a{:class => 'ico del del_client'} Уд.
             
             /Pagging

@@ -1,3 +1,4 @@
+# coding: utf-8
 def true_false_nil(value)
   if value.nil?
     'Не определено'
@@ -9,7 +10,7 @@ def true_false_nil(value)
     value
   end    
 end
-
+# coding: utf-8
 ActiveAdmin.register EngineeringSystem do
   menu label: ->(){ I18n.t('titles.engineering_system') }
   config.filters = false

@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemoveStringyArea < ActiveRecord::Migration
   def up
     SelectedForm.find_each do |orderable|

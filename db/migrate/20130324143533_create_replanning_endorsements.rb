@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateReplanningEndorsements < ActiveRecord::Migration
   def change
     create_table :replanning_endorsements do |t|

@@ -7,9 +7,12 @@
   %div{:class => 'shell'}
 
     %div{:class => 'small-nav'}
-      = link_to 'Админ-панель', 'orders'
+      = link_to 'Админ-панель', '/adm/orders'
       %span &gt;
-      Заказчики
+      = link_to 'Заказчики', '/adm/clients'
+      %span &gt;
+      Клиент №
+      = @client_data.id
     
     = render partial: 'adm/menu/popups'
 
@@ -25,7 +28,8 @@
 
           /Box Head
           %div{:class => 'box-head'}
-            %h2{:class => 'left'} Заказчики
+            %h2{:class => 'left'} Заказчик №
+            = @client_data.id
             %div{:class => 'right'}
               /%label search articles
               /%input{:type => 'text', :class => 'field small-field'}

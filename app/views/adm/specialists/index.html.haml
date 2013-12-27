@@ -6,23 +6,11 @@
   %div{:class => 'shell'}
 
     %div{:class => 'small-nav'}
-      = link_to 'Админ-панель', 'orders'
+      = link_to 'Админ-панель', '/adm/orders'
       %span &gt;
-      Заказы
+      Специалисты
     
-    /Message OK
-    %div{:class => 'msg msg-ok'}
-      %p
-        %strong Your file was uploaded succesifully!
-      %a{:class => 'close', :href => '#'}
-    
-    /Message Error
-    %div{:class => 'msg msg-error'}
-      %p
-        %strong You must select a file to upload first!
-      %a{:class => 'close', :href => '#'}
-
-    %br
+    = render partial: 'adm/menu/popups'
 
     /Main
     %div{:id => 'main'}
@@ -36,18 +24,18 @@
 
           /Box Head
           %div{:class => 'box-head'}
-            %h2{:class => 'left'} Эта карочи я пирипутал как всегда, эта специалисты, а должны быть заказы
+            %h2{:class => 'left'} Специалисты
             %div{:class => 'right'}
-              %label search articles
-              %input{:type => 'text', :class => 'field small-field'}
-              %input{:type => 'submit', :class => 'button', :value => 'search'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
 
           /Table
           %div{:class => 'table'}
             %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
               %tr
                 %th №
-                %th ФИО
+                %th Фамилия
                 %th Логин
                 %th Специальность
                 %th Статус
@@ -57,63 +45,58 @@
                 %th Дата
                 %th{:class => 'ac', :width => '110'} Действия
 
-              %tr
-                %th №
-                %th ФИО
-                %th
-                  %select{:class => 'field size2'}
-                    %option{:value => ''} 23
-                %th Специальность
-                %th Статус
-                %th Группы
-                %th Почта
-                %th Телефон
-                %th Дата
-                %th{:class => 'ac', :width => '110'} Действия
+              - @specialists.each_with_index do |value, index|
 
-              - @orders.each_with_index do |value, index|
-
-                - if index % 2 == 0
-                  %tr
-                - else
-                  %tr{:class => 'odd'}
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
                   
                   %td
-                    = link_to "#{value.id}", "order/#{value.id}"
+                    = link_to "#{value.id}", "/adm/specialist/#{value.id}"
+                    %input{:type => 'hidden', :class => 'specialist_id', :value => value.id}
+                  /Фамилия
                   %td
-                    %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'Комков Евгений Владимирович'}
+                    %input{:type => 'text', :class => 'field small-field specialist_surname', :style => 'width: 100px;', :value => value.user.profile.surname}
+                  /Логин
                   %td
-                    %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'panchuk35'}
-                    = link_to 'пароль', '#', class: 'ico edit'
+                    = value.user.username
+                  /Специальность
                   %td
-                    %span Архитектор
+                    %span
+                      = I18n.t "enumerize.specialization.#{value.specialization.name}"
                     = link_to '', '#', class: 'ico edit'
-
+                  /Статус
                   %td В работе
+                  /Группы
                   %td
-                    %span Лютик
+                    %span
+                    = value.get_first_group.name
                     = link_to '', '#', class: 'ico edit'
+                  /Почта
                   %td
-                    %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => 'test@gmail.com'}
+                    %input{:type => 'text', :class => 'field small-field specialist_email', :style => 'width: 90px;', :value => value.user.email}
+                  /Телефон
                   %td
-                    %input{:type => 'text', :class => 'field small-field', :style => 'width: 100px;', :value => '8926565655'}
-                  %td 12.05.09
+                    %input{:type => 'text', :class => 'field small-field specialist_phone', :style => 'width: 90px;', :value => value.user.profile.phone}
+                  %td= value.user.get_created_date
                   %td
-                    = link_to 'Сохр.', '#', class: 'ico edit' 
-                    = link_to 'Уд.', '#', class: 'ico del'
+                    %a{:class => 'ico edit set_specialist'} Сохр.
+                    %a{:class => 'ico del del_specialist'} Уд.
             
             /Pagging
             %div{:class => 'pagging'}
-              %div{:class => 'left'} Showing 1-12 of 44
+              %div{:class => 'left'} 
+                = "Страницы #{@page_number_left}-#{@page_number_right} из #{@count_specialists}"
               %div{:class => 'right'}
-                = link_to 'Previous', '#'
-                = link_to '1', '#'
-                = link_to '2', '#'
-                = link_to '3', '#'
-                = link_to '4', '#'
-                = link_to '444', '#'
-                %span ...
-                = link_to 'Next', '#'
+                = link_to 'Первая', "/adm/orders?page=1&filter=#{@filter}"
+
+                - @get_left_pages.each do |value|
+                  = link_to "#{value}", "/adm/orders?page=#{value}&filter=#{@filter}"
+
+                = link_to "#{@page}", "/adm/orders?page=#{@page}&filter=#{@filter}", style: "border-color: #8c3521; background: #ba4c32;"
+
+                - @get_right_pages.each do |value|
+                  = link_to "#{value}", "/adm/orders?page=#{value}&filter=#{@filter}"
+
+                = link_to 'Последняя', "/adm/orders?page=#{@last_page}&filter=#{@filter}"
       
       %div{:class => 'cl'} &nbsp;    
 

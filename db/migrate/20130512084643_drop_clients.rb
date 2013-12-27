@@ -1,3 +1,4 @@
+# coding: utf-8
 class DropClients < ActiveRecord::Migration
   def change
     Order.find_each do |order|

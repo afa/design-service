@@ -11,7 +11,7 @@ $(function(){
 		$.post("/adm/client/set_client", {id: id, name: name, surname: surname, username: username,
 			email: email, phone: phone}, function(){
 				message_success("Данные успешно обновлены.");
-			});
+		});
 	});
 
 	$('.del_client').click(function(){
@@ -28,8 +28,14 @@ $(function(){
 	$('.client_new_password').click(function(){
 		var id = $('#client_id').attr('value');
 		var password = $(this).prev().val();
-		$.post("/adm/client/set_password", {id: id, password: password}, function(){
-			message_success("Пароль успешно сохранен.");
+		$.post("/adm/client/set_password", {id: id, password: password}, function(data){
+			if(data['status'] == "success")
+			{
+				message_success(data['message']);
+				$('.client_new_password').prev().val('');
+			}
+			else
+				message_error(data['message']);
 		});
 	});
 });

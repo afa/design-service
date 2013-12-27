@@ -1,3 +1,4 @@
+# coding: utf-8
 class RenameLicenzedToLicensedInPlanningEndorsements < ActiveRecord::Migration
   def change
     change_table :replanning_endorsements do |t|
