@@ -57,6 +57,7 @@ class Order < ActiveRecord::Base
     event :assign_specialist do
       transition [:moderator_suggested, :specialist_agreed, :specialist_disagreed] => :moderator_suggested
       transition [:saved_draft, :client_agreed, :sent_to_moderator, :in_work] => same
+      transition [:draft] => :saved_draft
     end
 
     event :set_price do

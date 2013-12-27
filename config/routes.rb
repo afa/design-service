@@ -155,6 +155,11 @@ DesignService::Application.routes.draw do
   namespace :adm do
     resources :orders
     resources :specialists
+    resources :specialist
+    post 'specialist/set' => 'specialist#set', :as => :specialist_set
+    post 'specialist/del' => 'specialist#del', :as => :specialist_del
+    post 'specialist/add_to_group' => 'specialist#add_to_group', :as => :specialist_add_to_group
+    post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
     resources :order
     post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
     resources :specialist_group do

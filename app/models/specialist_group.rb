@@ -47,4 +47,10 @@ class SpecialistGroup < ActiveRecord::Base
   def order_customizer
     OrderCustomizer.by_specialization(specialization.full_name)
   end
+
+  # ДОРАБОТАТЬ(БД)
+  def self.get_all_not_specialist(specialist_id)
+    specialist = Specialist.find(specialist_id)
+    SpecialistGroup.all - specialist.specialist_groups
+  end
 end

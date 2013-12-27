@@ -11,7 +11,7 @@ class Adm::ClientController < Adm::ApplicationController
 		@clients = Array.new
 		@clients << @client_data
 
-		@orders = Order.where("client_id = ?", @id)
+		@orders = Order.where("executor_id = ? and executor_type = 'Specialist'", @id)
 	end
 
 	#ActiveRecord::RecordInvalid - Возникли ошибки: Username translation missing: 
@@ -40,7 +40,16 @@ class Adm::ClientController < Adm::ApplicationController
 	def set_password
 		id = params[:id].to_i
 		user = User.find(id)
+		user.password = params[:password]
+		status = "success"
 
-		render :json => {status: ""}
+		if user.save
+			message = "Пароль успешно сохранен"
+		else
+			status = "error"
+			message = "Пароль должен содержать минимум 8 символов"
+		end
+
+		render :json => {status: status, message: message}
 	end
 end

@@ -22,4 +22,24 @@ $(function(){
 			});
 		}
 	});
+
+	$('.add_in_group').click(function(){
+		var group_id = $('.select_group').val();
+		var specialist_id = $('#specialist_id').attr('value');
+		$.post("/adm/specialist/add_to_group", {group_id: group_id, specialist_id: specialist_id}, function(){
+			location.reload();
+		});
+	});
+
+	$('.del_group').click(function(){
+		if(confirm("Удалить специалиста из группы?"))
+		{
+			var specialist_id = $('#specialist_id').attr('value');
+			var group_id = $(this).next().attr('value');
+			var el = $(this);
+			$.post("/adm/specialist/del_from_group", {specialist_id: specialist_id, group_id: group_id}, function(){
+				el.parent().parent().remove();
+			});
+		}
+	});
 });
