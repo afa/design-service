@@ -2,6 +2,7 @@
 = render partial: 'adm/menu/header'
 
 /Container
+%input{:type => 'hidden', :value => @id, :id => 'client_id'}
 %div{:id => 'container'}
   %div{:class => 'shell'}
 
@@ -78,25 +79,82 @@
 
                   %td
                     %a{:class => 'ico edit set_client'} Сохр.
-                    = link_to 'Уд.', '#', class: 'ico del'
-            
-            /Pagging
-            %div{:class => 'pagging'}
-              %div{:class => 'left'} 
-                = "Страницы #{@page_number_left}-#{@page_number_right} из #{@count_clients}"
-              %div{:class => 'right'}
-                = link_to 'Первая', "/adm/clients?page=1&filter=#{@filter}"
+                    /= link_to 'Уд.', '#', class: 'ico del'
+                    %a{:class => 'ico del del_client'} Уд.
+        
+        /Box
+        %div{:class => 'box'}
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2 Смена пароля
+          
+          /Form 
+          %div{:class => 'form'}
+            %p
+              /%span{:class => 'req'} max 100 symbols
+              %label Новый пароль
+              %input{:type => 'password', :class => 'field size1', :style => 'width: 150px;'}
+              %input{:type => 'button', :class => 'button client_new_password', :value => 'Сменить'}
 
-                - @get_left_pages.each do |value|
-                  = link_to "#{value}", "/adm/clients?page=#{value}&filter=#{@filter}"
+        /Заказы клиента
+        %div{:class => 'box'}
 
-                = link_to "#{@page}", "/adm/clients?page=#{@page}&filter=#{@filter}", style: "border-color: #8c3521; background: #ba4c32;"
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Заказы клиента
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
 
-                - @get_right_pages.each do |value|
-                  = link_to "#{value}", "/adm/clients?page=#{value}&filter=#{@filter}"
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Тип
+                %th Статус
+                %th Стоимость
+                %th Выполнено
+                %th Дата зав.
+                %th Специалист
+                %th Группа
 
-                = link_to 'Последняя', "/adm/clients?page=#{@last_page}&filter=#{@filter}"
-      
+              - @orders.each_with_index do |value, index|
+       
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  %td
+                    = link_to "#{value.id}", "order/#{value.id}"
+
+                  %td
+                    = I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+
+                  %td
+                    = I18n.t "order.work_state.#{value.work_state}"
+
+                  %td
+                    = value.price
+
+                  %td
+                    = value.completion_percent
+                    = "%"
+
+                  %td
+                    = value.completion_time
+
+                  %td
+                    - unless value.executor.nil?
+                      =link_to "#{value.executor.user.profile.full_name}", "specialist/#{value.executor.user.id}"
+                    - else
+                      нет
+
+                  %td
+                    - unless value.specialist_group.nil?
+                      = value.specialist_group.name
+                    - else
+                      нет
+
+
       %div{:class => 'cl'} &nbsp;    
 
 /Footer 

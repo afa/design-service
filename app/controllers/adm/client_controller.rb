@@ -3,7 +3,15 @@ class Adm::ClientController < Adm::ApplicationController
 	respond_to :html, :js, :xml
 
 	def show
+		@id = params[:id].to_i
+		client = User.new
 
+		@client_data = User.find(@id)
+		# берем пачку заказов, взятых по определенному фильтру
+		@clients = Array.new
+		@clients << @client_data
+
+		@orders = Order.where("client_id = ?", @id)
 	end
 
 	#ActiveRecord::RecordInvalid - Возникли ошибки: Username translation missing: 
@@ -25,6 +33,13 @@ class Adm::ClientController < Adm::ApplicationController
 		id = params[:id].to_i
 		user = User.find(id)
 		user.destroy
+
+		render :json => {status: ""}
+	end
+
+	def set_password
+		id = params[:id].to_i
+		user = User.find(id)
 
 		render :json => {status: ""}
 	end

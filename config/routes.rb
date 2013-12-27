@@ -168,6 +168,7 @@ DesignService::Application.routes.draw do
     resources :client
     post 'client/set_client' => 'client#set_client', :as => :client_set_client
     post 'client/del' => 'client#del', :as => :client_del
+    post 'client/set_password' => 'client#set_password', :as => :client_set_password
   end
 
   get "welcome/index"
