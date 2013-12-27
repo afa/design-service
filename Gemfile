@@ -27,7 +27,7 @@ gem 'jbuilder'
 
 # Use unicorn as the app server
 
-#gem 'unicorn-rails' #, :platforms => :ruby
+gem 'unicorn-rails' #, :platforms => :ruby
 
 # Deploy with Capistrano
 gem 'capistrano'
