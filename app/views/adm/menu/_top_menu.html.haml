@@ -1,0 +1,20 @@
+%div{:id => 'navigation'}
+  %ul
+    %li
+      %a{:href => '/adm/orders', :class => "#{params[:controller] == 'adm/orders' ? 'active' : ''}"}
+        %span Заказы
+    %li
+      %a{:href => '/adm/clients', :class => "#{params[:controller] == 'adm/clients' ? 'active' : ''}"}
+        %span Заказчики
+    %li
+      %a{:href => '#'}
+        %span Специалисты
+    %li
+      %a{:href => '#'}
+        %span Группы
+    %li
+      %a{:href => '#'}
+        %span Заявки
+    %li
+      %a{:href => '#'}
+        %span Отзывы

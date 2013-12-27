@@ -1,0 +1,4 @@
+%option{:value => ""} не выбран специалист
+- specialists.each do |value|
+  %option{:value => "#{value.id}"}
+    = value.user.profile.full_name
