@@ -25,7 +25,6 @@ class Adm::OrderController < Adm::ApplicationController
 			#order.executor = Specialist.find(executor_id)
 			order.executor_id = executor_id
 			order.executor_type = "Specialist"
-			p order
 
 			begin
 			  raise unless order.save!
