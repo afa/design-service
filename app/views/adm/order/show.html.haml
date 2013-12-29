@@ -97,8 +97,47 @@
               %h2 Сообщения
             
             %div{:style => 'width: 100%'}
-              %div{:style => ''}
-              
+              %div{:style => 'width: 100%; height: 50px; padding-top: 10px;'}
+                %div{:style => 'display: inline-block; float: left; margin-left: 90px; font-size: 16px;'}
+                  От заказчика
+                  %br
+                  =link_to "#{@order_data.client.profile.full_name}", "/adm/client/#{@order_data.client.id}"
+                %div{:style => 'display: inline-block; float: left; margin-left: 237px; font-size: 16px;'}
+                  От специалиста
+                  %br
+                  =link_to "#{@order_data.executor.user.profile.full_name}", "/adm/specialist/#{@order_data.executor.user.id}"
+
+              - @messages.each do |value|
+                %div{:class => 'body_message'}
+                  %div{:class => "data_message #{value.sender.specialist? ? 'right_message' : 'left_message'}"}
+                    %div{:class => 'left_message_text', :style => "#{value.sender.specialist? ? '' : 'width: 41%;'}"}
+                      - if value.sender.specialist?
+                        - if value.versions.length > 1
+                          = value.versions.last.reify
+                        - else
+                          %textarea{:style => 'width: 193px;'}= value.versions.last.reify
+                          %br
+                          %input{:type => 'button', :value => 'Отправить', :class => 'button send_moderator_message'}
+                          %input{:type => 'hidden', :value => 'specialist'}
+                          %input{:type => 'hidden', :value => value.sender.id}
+                          %input{:type => 'hidden', :value => value.id}
+                      - else
+                        = value.versions.first.reify
+
+                    %div{:class => 'right_message_text', :style => "float: left; #{value.sender.specialist? ? 'width: 40%;' : 'width: 193px;'}"}
+                      - if value.sender.specialist?
+                        = value.versions.first.reify
+                      - else
+                        - if value.versions.length > 1
+                          = value.versions.last.reify
+                        - else
+                          %textarea{:style => 'width: 193px;'}= value.versions.last.reify
+                          %br
+                          %input{:type => 'button', :value => 'Отправить', :class => 'button send_moderator_message'}
+                          %input{:type => 'hidden', :value => 'client'}
+                          %input{:type => 'hidden', :value => value.sender.id}
+                          %input{:type => 'hidden', :value => value.id}
+
               %div{:class => 'body_message'}
                 %div{:class => 'data_message left_message'}
                   %div{:class => 'left_message_text', :style => 'width: 41%;'}

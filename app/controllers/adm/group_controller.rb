@@ -1,2 +1,2 @@
-class Adm::GroupController < ApplicationController
+class Adm::GroupController < Adm::ApplicationController
 end

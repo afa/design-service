@@ -162,6 +162,7 @@ DesignService::Application.routes.draw do
     post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
     resources :order
     post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
+    post 'order/send_message' => 'order#send_message', :as => :order_send_message
     resources :specialist_group do
       get 'get_by_specialist'
     end
