@@ -11,6 +11,8 @@ class Adm::OrderController < Adm::ApplicationController
 			@messages = @order_data.messages
 			@user_data = get_current_user
 
+			@order_data.update_attribute(:review_admin, true) unless @order_data.review_admin
+
 			#message = Message.new
 			#message.attached_to = @order_data
 			#message.text = "Новое сообщение"
