@@ -22,8 +22,6 @@ class Adm::SpecialistController < Adm::ApplicationController
 			.where("specialists.specialization_id = ? and specialist_groups_specialists.specialist_group_id = ?", 
 				specialization_id, group_id)
 
-		logger.debug "-------------------#{group_id}-----#{specialization_id}---------------"
-
 		data = render_to_string(partial: 'adm/order/specialists',
             locals: {specialists: specialists
                     },

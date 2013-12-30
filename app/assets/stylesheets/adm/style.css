@@ -75,7 +75,8 @@ h3 a{ text-decoration: none; }
 
 
 #main {}
-#content { float:left; width:1150px !important; margin-left: -81px;}
+/*#content { float:left; width:1150px !important; margin-left: -81px;}*/
+#content { float:left; width:1024px !important;}
 #sidebar { float:right; width:225px; }
 
 

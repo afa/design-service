@@ -162,6 +162,7 @@ DesignService::Application.routes.draw do
     end
     resources :orders
     resources :specialists
+    post 'specialists/get_by_specialization' => 'specialists#get_by_specialization', :as => :specialists_get_by_specialization
     resources :specialist
     post 'specialist/set' => 'specialist#set', :as => :specialist_set
     post 'specialist/del' => 'specialist#del', :as => :specialist_del
@@ -184,6 +185,7 @@ DesignService::Application.routes.draw do
     post 'client/set_password' => 'client#set_password', :as => :client_set_password
     resources :groups
     resources :group
+    get 'group/:id/show_orders' => 'group#show_orders', :as => :group_show_orders
   end
 
   get "welcome/index"
