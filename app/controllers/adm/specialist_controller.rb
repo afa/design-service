@@ -12,6 +12,11 @@ class Adm::SpecialistController < Adm::ApplicationController
 		@groups = SpecialistGroup\
       		.joins("inner join specialist_groups_specialists on specialist_groups_specialists.specialist_group_id = specialist_groups.id")\
       		.where("specialist_groups_specialists.specialist_id = ?", @id)
+
+      	portfolio_item = PortfolioItem.new
+      	@portfolios = Portfolio.where("specialist_id = ?", @id)
+      	@groups_all = SpecialistGroup.all
+      	@portfolio_items = portfolio_item.get_bunches(@portfolios)
 	end
 
 	def get_by_group_and_specialization

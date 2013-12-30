@@ -208,7 +208,7 @@
 
                   %input{:type => 'button', :class => 'button add_in_group', :value => 'Назначить'}
         
-        /Группы
+        /Галерея
         %div{:class => 'box', :style => 'width: 100%; float: left;'}
           /Box Head
           %div{:class => 'box-head'}
@@ -216,9 +216,39 @@
             %div{:class => 'right'}
 
           %div{:class => 'table'}
-            sfdgjdfjg
+            - @portfolios.each do |value|
+              %div{:style => 'margin-top: 10px;'}
+                %div{:style => 'margin-bottom: 10px;'}
+                  %b
+                    = value.name
 
-      %div{:class => 'cl'} &nbsp;    
+                %div{:style => 'margin-bottom: 10px;'}
+                  Назначить группу:
+                  %select
+                    - @groups_all.each do |group|
+                      - if value.specialist_group_id == group.id
+                        %option{:selected => true}
+                          = group.name
+                      - else
+                        %option
+                          = group.name
+
+                - if @portfolio_items[value.id].size > 0
+                  %div{:style => 'float: left; display: inline-block;'}
+                    %div{:style => 'background: url(/assets/adm/left_adm.jpg); width: 64px; height: 65px; margin-top: 14px; cursor: pointer;', :class => 'next_portfolio_item left_portfolio_item'}
+                    %input{:type => 'hidden', :value => '1'}
+                    %input{:type => 'hidden', :value => value.id}
+
+                %div{:class => 'portfolio_items_body', :style => 'float: left; display: inline-block;'}
+                  = render partial: 'adm/specialist/portfolio_items', locals: {:value => value}
+
+                - if @portfolio_items[value.id].size > 0
+                  %div{:style => 'float: left; display: inline-block; margin-left: 20px;'}
+                    %div{:style => 'background: url(/assets/adm/right_adm.jpg); width: 64px; height: 68px; margin-top: 14px; cursor: pointer;', :class => 'next_portfolio_item right_portfolio_item'}
+                    %input{:type => 'hidden', :value => '2'}
+                    %input{:type => 'hidden', :value => value.id}
+
+      %div{:class => 'cl'} &nbsp;
 
 /Footer 
 = render partial: 'adm/menu/footer'
