@@ -38,4 +38,26 @@ $(function(){
 				message_error(data['message']);
 		});
 	});
+
+	$('.add_client').click(function(){
+		var name = $('.client_name').val();
+		var surname = $('.client_surname').val();
+		var login = $('.client_login').val();
+		var password = $('.client_password').val();
+		var email = $('.client_email').val();
+		var phone = $('.client_phone').val();
+
+		if(name == '' || surname == '' || login == '' || password == '' || email == '')
+			message_error('Не все поля введены');
+		else
+		{
+			$.post('/adm/client/add', {name: name, surname: surname, login: login, 
+				password: password, email: email, phone: phone}, function(data){
+				if(data['status'] == "true")
+					window.location.href = "/adm/client/"+data['id'];
+				else
+					message_error('Данные введены не корректно');
+			});
+		}
+	});
 });
