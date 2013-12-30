@@ -74,4 +74,14 @@ class Adm::OrderController < Adm::ApplicationController
 			redirect_to root_path
 		end
 	end
+
+	def check_new
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			
+
+			render :json => {order_last_id: Order.last.id}
+		else
+			redirect_to root_path
+		end
+	end
 end

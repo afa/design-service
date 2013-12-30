@@ -2,6 +2,7 @@
 = render partial: 'adm/menu/header'
 
 /Container
+%input{:type => 'hidden', :id => 'order_last_id', :value => @order_last.id}
 %div{:id => 'container'}
   %div{:class => 'shell'}
 

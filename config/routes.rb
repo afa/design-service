@@ -170,6 +170,7 @@ DesignService::Application.routes.draw do
     post 'specialist/add_to_group' => 'specialist#add_to_group', :as => :specialist_add_to_group
     post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
     resources :order
+    post 'order/check_new' => 'order#check_new', :as => :order_check_new
     post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
     post 'order/send_message' => 'order#send_message', :as => :order_send_message
     resources :specialist_group do
