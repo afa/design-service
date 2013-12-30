@@ -11,6 +11,14 @@ $(function(){
 		el.find('.del_client').css('display', 'block');
 		el.find('.edit_client').css('display', 'none');
 	});
+
+	$('.log_in').click(function(){
+		var login = $('.login').val();
+		var password = $('.password').val();
+		$.post("/client/autorization", {login: login, password: password}, function(data){
+			
+		});
+	});
 });
 
 function message_success(text)

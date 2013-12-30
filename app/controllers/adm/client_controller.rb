@@ -24,7 +24,7 @@ class Adm::ClientController < Adm::ApplicationController
 		id = params[:id].to_i
 		user = User.find(id)
 
-		user.update_attributes(:username => params[:username], :email => params[:email])
+		user.update_attributes(:email => params[:email])
 
 		user.profile.update_attributes(:name => params[:name], :surname => params[:surname], 
 			:phone => params[:phone])
@@ -54,5 +54,9 @@ class Adm::ClientController < Adm::ApplicationController
 		end
 
 		render :json => {status: status, message: message}
+	end
+
+	def autorization
+		
 	end
 end

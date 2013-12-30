@@ -54,7 +54,9 @@
                     %input{:type => 'hidden', :class => 'specialist_id', :value => value.id}
                   /Фамилия
                   %td
-                    %input{:type => 'text', :class => 'field small-field specialist_surname', :style => 'width: 100px;', :value => value.user.profile.surname}
+                    %span{:class => 'show_input show_input_surname'}
+                      = value.user.profile.surname
+                    %input{:type => 'text', :class => 'edit_input field small-field specialist_surname', :style => 'width: 100px;', :value => value.user.profile.surname}
                   /Логин
                   %td
                     = value.user.username
@@ -62,24 +64,32 @@
                   %td
                     %span
                       = I18n.t "enumerize.specialization.#{value.specialization.name}"
-                    = link_to '', '#', class: 'ico edit'
+                    /= link_to '', '#', class: 'ico edit'
                   /Статус
                   %td В работе
                   /Группы
                   %td
                     %span
-                    = value.get_first_group.name
-                    = link_to '', '#', class: 'ico edit'
+                    - unless value.get_first_group.nil?
+                      = value.get_first_group.name
+                    - else
+                      нет
+                    /= link_to '', '#', class: 'ico edit'
                   /Почта
                   %td
-                    %input{:type => 'text', :class => 'field small-field specialist_email', :style => 'width: 90px;', :value => value.user.email}
+                    %span{:class => 'show_input show_input_email'}
+                      = value.user.email
+                    %input{:type => 'text', :class => 'edit_input field small-field specialist_email', :style => 'width: 90px;', :value => value.user.email}
                   /Телефон
                   %td
-                    %input{:type => 'text', :class => 'field small-field specialist_phone', :style => 'width: 90px;', :value => value.user.profile.phone}
+                    %span{:class => 'show_input show_input_phone'}
+                      = value.user.profile.phone
+                    %input{:type => 'text', :class => 'edit_input field small-field specialist_phone', :style => 'width: 90px;', :value => value.user.profile.phone}
                   %td= value.user.get_created_date
                   %td
-                    %a{:class => 'ico edit set_specialist'} Сохр.
-                    %a{:class => 'ico del del_specialist'} Уд.
+                    %a{:class => 'ico edit edit_specialist', :title => 'Редактировать'} Ред.
+                    %a{:class => 'ico edit set_specialist', :style => 'display: none;'} Сохр.
+                    %a{:class => 'ico del del_specialist', :style => 'display: none;'} Уд.
             
             /Pagging
             %div{:class => 'pagging'}

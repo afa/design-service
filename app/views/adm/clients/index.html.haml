@@ -52,11 +52,11 @@
                     %input{:type => 'hidden', :class => 'client_id', :value => value.id}
 
                   %td
-                    %span{:class => 'show_input'}
+                    %span{:class => 'show_input show_input_name'}
                       = value.profile.name
-                    %input{:type => 'text', :class => "edit_input field small-field client_name_#{value.id}", :value => value.profile.name, :style => 'width: 90px;'}
+                    %input{:type => 'text', :class => "edit_input field small-field client_name client_name_#{value.id}", :value => value.profile.name, :style => 'width: 90px;'}
                   %td
-                    %span{:class => 'show_input'}
+                    %span{:class => 'show_input show_input_surname'}
                       = value.profile.surname
                     %input{:type => 'text', :class => 'edit_input field small-field client_surname', :value => value.profile.surname, :style => 'width: 90px;'}
 
@@ -65,13 +65,13 @@
                     = value.username
                   /E-mail
                   %td
-                    %span{:class => 'show_input'}
+                    %span{:class => 'show_input show_input_email'}
                       = value.email
                     %input{:type => 'text', :class => 'edit_input field small-field client_email', :value => value.email, :style => 'width: 110px;'}
                   /Телефон
                   %td
-                    %span{:class => 'show_input'}
-                      = value.email
+                    %span{:class => 'show_input show_input_phone'}
+                      = value.profile.phone
                     %input{:type => 'text', :class => 'edit_input field small-field client_phone', :value => value.profile.phone, :style => 'width: 90px;'}
 
                   /Заказы
