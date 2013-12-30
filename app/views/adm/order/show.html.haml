@@ -152,32 +152,13 @@
 
                   %div{:class => "data_message #{value.sender.specialist? ? 'right_message' : 'left_message'}", :style => 'margin-top: -8px; border: none;'}
                     %div{:style => 'float: left; display: inline-block; margin-left: 20px'}
-                      11.11.1111
+                      - if value.versions.size > 1
+                        = value.versions.last.reify.created_at.strftime("%d.%m.%Y")
+                      - else
+                        = value.created_at.strftime("%d.%m.%Y")
+
                     %div{:style => 'float: left; display: inline-block; margin-left: 236px'}
-                      11.11.1111
-
-              %div{:class => 'body_message'}
-                %div{:class => 'data_message left_message'}
-                  %div{:class => 'left_message_text', :style => 'width: 41%;'}
-                    snjoidjfo non j 98 hnf jco8v 
-                  %div{:class => 'right_message_text', :style => 'float: left; width: 193px;'}
-                    %textarea{:style => 'width: 193px;'} snjoidjfo non j 98 hnf jco8v
-                    %br
-                    %input{:type => 'button', :value => 'Сохранить', :class => 'button'}
-                %div{:class => 'data_message left_message', :style => 'margin-top: -8px; border: none;'}
-                  %div{:style => 'float: left; display: inline-block; margin-left: 20px'}
-                    11.11.1111
-                  %div{:style => 'float: left; display: inline-block; margin-left: 236px'}
-                    11.11.1111
-
-              %div{:class => 'body_message'}
-                %div{:class => 'data_message right_message'}
-                  %div{:class => 'left_message_text'}
-                    %textarea{:style => 'width: 193px;'} snjoidjfo non j 98 hnf jco8v
-                    %br
-                    %input{:type => 'button', :value => 'Сохранить', :class => 'button'}
-                  %div{:class => 'right_message_text', :style => 'width: 40%; float: left;'}
-                    snjoidjfo non j 98 hnf jco8v 
+                      = value.created_at.strftime("%d.%m.%Y")
 
           /Специалист
           %div{:class => 'box', :style => 'width: 30%; display: inline-block; float: left; margin-left: 15px;'}
