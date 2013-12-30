@@ -9,7 +9,7 @@ class Adm::SpecialistController < Adm::ApplicationController
 			@specialists = Array.new
 			@specialists << @specialist_data
 
-			@orders = Order.where("client_id = ?", @id)
+			@orders = Order.where("executor_id = ? and executor_type = 'Specialist'", @id)
 			@groups = SpecialistGroup\
 	      		.joins("inner join specialist_groups_specialists on specialist_groups_specialists.specialist_group_id = specialist_groups.id")\
 	      		.where("specialist_groups_specialists.specialist_id = ?", @id)
