@@ -7,10 +7,17 @@ class Adm::OrderController < Adm::ApplicationController
 		@orders = Array.new
 		@orders << @order_data
 
-
 		@messages = @order_data.messages
-		#.versions.first.reify
-	    logger.debug "----------------------!!!---#{@messages.inspect}-------------------------"
+
+		#message = Message.new
+		#message.attached_to = @order_data
+		#message.text = "Новое сообщение"
+		#message.sender = User.find(4)
+		#message.recipient = User.find(1)
+		#message.save
+
+		#message1 = Message.find(3)
+		#message1.update_attribute(:text, "Новое сообщение")
 	end
 
 	# назначаем специалиста и устонавливаем цены
@@ -53,7 +60,8 @@ class Adm::OrderController < Adm::ApplicationController
 		id = params[:id].to_i
 
 		message = Message.find(id)
-		message.update_attributes :text => text
+		message.update_attribute(:text, text)
+		#message.update_attribute(:text, text)
 
 		render :json => {status: ""}
 	end

@@ -14,6 +14,9 @@ class Adm::ClientController < Adm::ApplicationController
 		@orders = Order.where("executor_id = ? and executor_type = 'Specialist'", @id)
 	end
 
+	def new
+	end
+
 	#ActiveRecord::RecordInvalid - Возникли ошибки: Username translation missing: 
 	#ru.activerecord.errors.models.user.attributes.username.immutable:
 	def set_client

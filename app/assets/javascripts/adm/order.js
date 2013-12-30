@@ -23,7 +23,7 @@ $(function(){
 		var type = $(this).next().attr('value');
 		var sender_id = $(this).next().next().attr('value');
 		var id = $(this).next().next().next().attr('value');
-		var text = $(this).prev().attr('value');
+		var text = $(this).prev().prev().val();
 
 		if(confirm("Отправить это сообщение в чат?"))
 		{

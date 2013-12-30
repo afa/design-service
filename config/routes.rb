@@ -156,6 +156,10 @@ DesignService::Application.routes.draw do
   end
 
   namespace :adm do
+    get '/' => 'index#index', :as => :index_index
+    resources :index do
+      get 'index'
+    end
     resources :orders
     resources :specialists
     resources :specialist

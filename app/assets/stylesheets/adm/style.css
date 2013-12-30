@@ -75,7 +75,7 @@ h3 a{ text-decoration: none; }
 
 
 #main {}
-#content { float:left; width:750px; }
+#content { float:left; width:1150px !important; margin-left: -81px;}
 #sidebar { float:right; width:225px; }
 
 
@@ -162,3 +162,4 @@ textarea.size1 { height:180px; }
 .msg p { -moz-border-radius:6px; -webkit-border-radius:6px; }
 
 .button { -moz-box-shadow: 0 0 2px #978f6c; -webkit-box-shadow: 0 0 2px #978f6c;}
+.edit_input{display: none;}
