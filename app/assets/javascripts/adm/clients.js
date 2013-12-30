@@ -37,6 +37,6 @@ $(function(){
 	});
 
 	$('.client_new').click(function(){
-		window.location.href = "/client/new";
+		window.location.href = "/adm/client/new";
 	});
 });

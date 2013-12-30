@@ -180,6 +180,7 @@ DesignService::Application.routes.draw do
     end
     resources :clients
     resources :client
+    post 'client/add' => 'client#add', :as => :client_add
     post 'client/autorization' => 'client#autorization', :as => :client_autorization
     post 'client/set_client' => 'client#set_client', :as => :client_set_client
     post 'client/del' => 'client#del', :as => :client_del

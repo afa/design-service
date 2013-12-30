@@ -5,18 +5,11 @@
       %h1
         = link_to 'Дизайн сервис', 'http://dsn-service.ru'
       %div{:id => 'top-navigation'}
-        Welcome 
-        %a{:href => '#'} 
-          %strong Administrator
+        Привет, 
+        = @user_data.profile.name
         %span 
           |
-        = link_to 'Help', '#'
-        %span 
-          |
-        = link_to 'Profile Settings', '#'
-        %span 
-          |
-        = link_to 'Log out', '#'
+        = link_to 'Выход', '#'
     /End Logo + Top Nav
     /Main Nav
     = render partial: 'adm/menu/top_menu'
