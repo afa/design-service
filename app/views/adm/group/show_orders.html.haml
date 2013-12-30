@@ -1,0 +1,142 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :id => 'group_id', :value => @id}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', 'orders'
+      %span &gt;
+      = link_to 'Группы специалистов', '/adm/groups'
+      %span &gt;
+      Группа №
+      = @group_data.id
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Группа специалистов №
+            = @group_data.id
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Название
+                %th Специальность
+                %th Специалисты
+                %th Рейтинг
+                %th{:class => 'ac', :width => '110'} Действия
+
+              - @groups.each_with_index do |value, index|
+
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  
+                  %td
+                    = link_to "#{value.id}", "/adm/group/#{value.id}"
+                    %input{:type => 'hidden', :class => 'group_id', :value => value.id}
+                  /Фамилия
+
+                  %td
+                    %input{:type => 'text', :class => 'field small-field', :value => value.name}
+
+                  %td= I18n.t "enumerize.specialization.#{value.specialization.name}"
+
+                  %td= value.specialists.count
+
+                  %td= value.quality_rating
+
+                  %td
+                    %a{:class => 'ico edit set_specialist'} Сохр.
+                    %a{:class => 'ico del del_specialist'} Уд.
+
+        %div{:id => 'navigation'}
+          %ul
+            %li
+              %a{:href => "/adm/group/#{@id}", :style => '-webkit-border-top-left-radius: 6px; -webkit-border-top-right-radius: 6px; background: #DAD32B;'}
+                %span{:style => 'background: #DAD32B'} Состав
+            %li
+              %a{:href => "/adm/group/#{@id}/show_orders", :style => '-webkit-border-top-left-radius: 6px; -webkit-border-top-right-radius: 6px;background: #ccc'}
+                %span{:style => 'background: #ccc'} Заказы
+
+        %div{:style => 'width: 100%'}
+
+          /Чат
+          %div{:class => 'box', :style => 'width: 100%;'}
+            /Box Head
+            %div{:class => 'box-head'}
+              %h2{:class => 'left'} Работы специалиста
+              %div{:class => 'right'}
+                /%label search articles
+                /%input{:type => 'text', :class => 'field small-field'}
+                /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+            /Table
+            %div{:class => 'table'}
+              %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+                %tr
+                  %th №
+                  %th Тип
+                  %th Статус
+                  %th Стоимость
+                  %th Выполнено
+                  %th Дата зав.
+                  %th Заказчик
+                  %th Группа
+
+                - @orders.each_with_index do |value, index|
+         
+                  %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                    %td
+                      = link_to "#{value.id}", "/adm/order/#{value.id}"
+
+                    %td
+                      = I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+
+                    %td
+                      = I18n.t "order.work_state.#{value.work_state}"
+
+                    %td
+                      = value.price
+
+                    %td
+                      = value.completion_percent
+                      = "%"
+
+                    %td
+                      = value.completion_time
+
+                    %td
+                      - unless value.client.nil?
+                        =link_to "#{value.client.profile.full_name}", "/adm/client/#{value.client.id}"
+                      - else
+                        нет
+
+                    %td
+                      - unless value.specialist_group.nil?
+                        = value.specialist_group.name
+                      - else
+                        нет
+
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

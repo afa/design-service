@@ -97,22 +97,68 @@
               %h2 Сообщения
             
             %div{:style => 'width: 100%'}
-              %div{:class => 'body_message'}
-                %div{:class => 'data_message left_message'}
-                  %div{:class => 'left_message_text', :style => 'width: 41%;'}
-                    snjoidjfo non j 98 hnf jco8v 
-                  %div{:class => 'right_message_text', :style => 'float: left; width: 193px;'}
-                    %textarea{:style => 'width: 193px;'} snjoidjfo non j 98 hnf jco8v
-                    %br
-                    %input{:type => 'button', :value => 'Сохранить', :class => 'button'}
-              %div{:class => 'body_message'}
-                %div{:class => 'data_message right_message'}
-                  %div{:class => 'left_message_text'}
-                    %textarea{:style => 'width: 193px;'} snjoidjfo non j 98 hnf jco8v
-                    %br
-                    %input{:type => 'button', :value => 'Сохранить', :class => 'button'}
-                  %div{:class => 'right_message_text', :style => 'width: 40%; float: left;'}
-                    snjoidjfo non j 98 hnf jco8v 
+              %div{:style => 'width: 100%; height: 50px; padding-top: 10px;'}
+                %div{:style => 'display: inline-block; float: left; margin-left: 90px; font-size: 16px;'}
+                  От заказчика
+                  %br
+                  =link_to "#{@order_data.client.profile.full_name}", "/adm/client/#{@order_data.client.id}"
+                %div{:style => 'display: inline-block; float: left; margin-left: 237px; font-size: 16px;'}
+                  От специалиста
+                  %br
+                  =link_to "#{@order_data.executor.user.profile.full_name}", "/adm/specialist/#{@order_data.executor.user.id}"
+
+              - @messages.each do |value|
+                %div{:class => 'body_message'}
+                  %div{:class => "data_message #{value.sender.specialist? ? 'right_message' : 'left_message'}"}
+                    /Левая половина
+                    %div{:class => 'left_message_text', :style => "#{value.sender.specialist? ? 'width: 45%;' : 'width: 41%;'} border-right: 2px solid #ccc;"}
+                      /Специалист
+                      - if value.sender.specialist?
+                        - if value.versions.size > 1
+                          = value.text
+                        - else
+                          %textarea{:style => 'width: 193px;'}= value.text
+                          %br
+                          %input{:type => 'button', :value => 'Отправить', :class => 'button send_moderator_message'}
+                          %input{:type => 'hidden', :value => 'specialist'}
+                          %input{:type => 'hidden', :value => value.sender.id}
+                          %input{:type => 'hidden', :value => value.id}
+                        /Заказчик
+                      - else
+                        - if value.versions.size > 1
+                          = value.versions.last.reify.text
+                        - else
+                          = value.text
+
+                    /Правая половина
+                    %div{:class => 'right_message_text', :style => "float: left; #{value.sender.specialist? ? 'width: 40%;' : 'width: 193px;'}"}
+                      /Специалист
+                      - if value.sender.specialist?
+                        - if value.versions.size > 1
+                          = value.versions.last.reify.text
+                        - else
+                          = value.text
+                        /Заказчик
+                      - else
+                        - if value.versions.size > 1
+                          = value.text
+                        - else
+                          %textarea{:style => 'width: 193px;'}= value.text
+                          %br
+                          %input{:type => 'button', :value => 'Отправить', :class => 'button send_moderator_message'}
+                          %input{:type => 'hidden', :value => 'client'}
+                          %input{:type => 'hidden', :value => value.sender.id}
+                          %input{:type => 'hidden', :value => value.id}
+
+                  %div{:class => "data_message #{value.sender.specialist? ? 'right_message' : 'left_message'}", :style => 'margin-top: -8px; border: none;'}
+                    %div{:style => 'float: left; display: inline-block; margin-left: 20px'}
+                      - if value.versions.size > 1
+                        = value.versions.last.reify.created_at.strftime("%d.%m.%Y")
+                      - else
+                        = value.created_at.strftime("%d.%m.%Y")
+
+                    %div{:style => 'float: left; display: inline-block; margin-left: 236px'}
+                      = value.created_at.strftime("%d.%m.%Y")
 
           /Специалист
           %div{:class => 'box', :style => 'width: 30%; display: inline-block; float: left; margin-left: 15px;'}

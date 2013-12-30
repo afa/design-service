@@ -17,7 +17,7 @@
       %div{:class => 'cl'} &nbsp;
       
       /Content
-      %div{:id => 'content', :style => 'width: 100%;'}
+      %div{:id => 'content', :style => ''}
         
         /Box
         %div{:class => 'box'}
@@ -28,7 +28,7 @@
             %div{:class => 'right'}
               /%label search articles
               /%input{:type => 'text', :class => 'field small-field'}
-              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+              %input{:type => 'button', :class => 'button client_new', :value => 'Добавить'}
 
           /Table
           %div{:class => 'table'}
@@ -52,24 +52,27 @@
                     %input{:type => 'hidden', :class => 'client_id', :value => value.id}
 
                   %td
-                    /= f.input_field :name, class: 'field small-field', style: 'width: 90px;'
-                    %input{:type => 'text', :class => "field small-field client_name_#{value.id}", :value => value.profile.name, :style => 'width: 90px;'}
+                    %span{:class => 'show_input show_input_name'}
+                      = value.profile.name
+                    %input{:type => 'text', :class => "edit_input field small-field client_name client_name_#{value.id}", :value => value.profile.name, :style => 'width: 90px;'}
                   %td
-                    /= f.input_field :surname, class: 'field small-field', style: 'width: 90px;'
-                    %input{:type => 'text', :class => 'field small-field client_surname', :value => value.profile.surname, :style => 'width: 90px;'}
+                    %span{:class => 'show_input show_input_surname'}
+                      = value.profile.surname
+                    %input{:type => 'text', :class => 'edit_input field small-field client_surname', :value => value.profile.surname, :style => 'width: 90px;'}
 
                   /Логин
                   %td
-                    /= f.input_field :username, class: 'field small-field', style: 'width: 110px;'
-                    %input{:type => 'text', :class => 'field small-field client_username', :value => value.username, :style => 'width: 110px;'}
+                    = value.username
                   /E-mail
                   %td
-                    /= f.input_field :email, class: 'field small-field', style: 'width: 110px;'
-                    %input{:type => 'text', :class => 'field small-field client_email', :value => value.email, :style => 'width: 110px;'}
+                    %span{:class => 'show_input show_input_email'}
+                      = value.email
+                    %input{:type => 'text', :class => 'edit_input field small-field client_email', :value => value.email, :style => 'width: 110px;'}
                   /Телефон
                   %td
-                    /= f.input_field :phone, class: 'field small-field', style: 'width: 90px;'
-                    %input{:type => 'text', :class => 'field small-field client_phone', :value => value.profile.phone, :style => 'width: 90px;'}
+                    %span{:class => 'show_input show_input_phone'}
+                      = value.profile.phone
+                    %input{:type => 'text', :class => 'edit_input field small-field client_phone', :value => value.profile.phone, :style => 'width: 90px;'}
 
                   /Заказы
                   %td= value.count_orders
@@ -77,8 +80,9 @@
                   %td= value.get_created_date
 
                   %td
-                    %a{:class => 'ico edit set_client'} Сохр.
-                    %a{:class => 'ico del del_client'} Уд.
+                    %a{:class => 'ico edit edit_client', :title => 'Редактировать'} Ред.
+                    %a{:class => 'ico edit set_client', :title => 'Сохранить', :style => 'display: none;'} Сохр.
+                    %a{:class => 'ico del del_client', :title => 'Удалить', :style => 'display: none;'} Удал.
             
             /Pagging
             %div{:class => 'pagging'}
