@@ -15,9 +15,6 @@ class Adm::OrderController < Adm::ApplicationController
 		#message.sender = User.find(4)
 		#message.recipient = User.find(1)
 		#message.save
-
-		#message1 = Message.find(3)
-		#message1.update_attribute(:text, "Новое сообщение")
 	end
 
 	# назначаем специалиста и устонавливаем цены

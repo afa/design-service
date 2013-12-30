@@ -27,7 +27,9 @@ $(function(){
 
 		if(confirm("Отправить это сообщение в чат?"))
 		{
-			$.post("/adm/order/send_message", {type: type, sender_id: sender_id, text: text, id: id});
+			$.post("/adm/order/send_message", {type: type, sender_id: sender_id, text: text, id: id}, function(data){
+				location.reload();
+			});
 		}
 	});
 });

@@ -114,10 +114,10 @@
                     %div{:class => 'left_message_text', :style => "#{value.sender.specialist? ? 'width: 45%;' : 'width: 41%;'} border-right: 2px solid #ccc;"}
                       /Специалист
                       - if value.sender.specialist?
-                        - if value.versions.size > 3
-                          = value.versions.last.reify.text
+                        - if value.versions.size > 1
+                          = value.text
                         - else
-                          %textarea{:style => 'width: 193px;'}= value.versions.last.reify
+                          %textarea{:style => 'width: 193px;'}= value.text
                           %br
                           %input{:type => 'button', :value => 'Отправить', :class => 'button send_moderator_message'}
                           %input{:type => 'hidden', :value => 'specialist'}
@@ -125,19 +125,25 @@
                           %input{:type => 'hidden', :value => value.id}
                         /Заказчик
                       - else
-                        = value.versions.first.next.reify.text
+                        - if value.versions.size > 1
+                          = value.versions.last.reify.text
+                        - else
+                          = value.text
 
                     /Правая половина
                     %div{:class => 'right_message_text', :style => "float: left; #{value.sender.specialist? ? 'width: 40%;' : 'width: 193px;'}"}
                       /Специалист
                       - if value.sender.specialist?
-                        = value.versions.first.reify
-                        /Заказчик
-                      - else 
-                        - if value.versions.size > 3
+                        - if value.versions.size > 1
                           = value.versions.last.reify.text
                         - else
-                          %textarea{:style => 'width: 193px;'}= value.versions.last.reify.text
+                          = value.text
+                        /Заказчик
+                      - else
+                        - if value.versions.size > 1
+                          = value.text
+                        - else
+                          %textarea{:style => 'width: 193px;'}= value.text
                           %br
                           %input{:type => 'button', :value => 'Отправить', :class => 'button send_moderator_message'}
                           %input{:type => 'hidden', :value => 'client'}
