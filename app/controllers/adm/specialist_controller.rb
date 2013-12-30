@@ -24,6 +24,40 @@ class Adm::SpecialistController < Adm::ApplicationController
 		end
 	end
 
+	def new
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			@user_data = get_current_user
+			@specializations = Specialization.all
+			@groups = SpecialistGroup.all
+		else
+			redirect_to root_path
+		end
+	end
+
+	def add
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			user = User.new(:username => params[:login], :password => params[:password],
+				:email => params[:email], :role => 'specialist')
+			user.profile = Profile.new(:name => params[:name], :surname => params[:surname],
+				:phone => params[:phone])
+			status = user.save!
+
+			specialist = Specialist.new
+			specialist.user = User.last
+			specialist.specialist_groups << SpecialistGroup.find(params[:group_id].to_i)
+			specialist.specialization_id = params[:specialization_id].to_i
+			specialist.save!
+
+			if status
+				render :json => {status: "true", id: Specialist.last.id}
+			else
+				render :json => {status: "false"}
+			end
+		else
+			redirect_to root_path
+		end
+	end
+
 	def get_by_group_and_specialization
 		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
 			group_id = params[:group_id].to_i

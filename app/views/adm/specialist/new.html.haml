@@ -1,0 +1,98 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :id => 'order_id', :value => @id}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', '/adm/orders'
+      %span &gt;
+      = link_to 'Специалисты', '/adm/specialists'
+      %span &gt;
+      Новый специалист
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%; margin: 0;'}
+
+        /Специалист
+        %div{:class => 'box', :style => 'width: 100%;'}
+
+          /Выбор специалиста
+          %div{:class => 'box-head'}
+            %h2 Новый специалист
+
+          %div{:style => ''}
+
+            %table
+
+              %tr
+                %td Имя
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field client_name'}
+
+              %tr
+                %td Фамилия
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field client_surname'}
+
+              %tr
+                %td Логин
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field client_login'}
+
+              %tr
+                %td Пароль
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field client_password'}
+
+              %tr
+                %td Почтовый ящик
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field client_email'}
+
+              %tr
+                %td Телефон
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field client_phone'}
+
+              %tr
+                %td Специальность
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %select{:class => 'select_specialization'}
+                      %option{:value => 0} не выбрано
+                      = @specializations.each do |value|
+                        %option{:value => value.id}
+                          = I18n.t "enumerize.specialization.#{value.name}"
+
+              %tr
+                %td Группа
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %select{:class => 'select_group'}
+                      %option{:value => 0} не выбрано
+                      = @groups.each do |value|
+                        %option{:value => value.id}
+                          = value.name
+
+              %tr
+                %td
+                  %input{:type => 'submit', :class => 'button add_specialist', :value => 'Сохранить'}
+                %td
+
+      
+      %div{:class => 'cl'} &nbsp;    

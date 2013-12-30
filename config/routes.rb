@@ -164,6 +164,7 @@ DesignService::Application.routes.draw do
     resources :specialists
     post 'specialists/get_by_specialization' => 'specialists#get_by_specialization', :as => :specialists_get_by_specialization
     resources :specialist
+    post 'specialist/add' => 'specialist#add', :as => :client_add
     post 'specialist/set' => 'specialist#set', :as => :specialist_set
     post 'specialist/del' => 'specialist#del', :as => :specialist_del
     post 'specialist/add_to_group' => 'specialist#add_to_group', :as => :specialist_add_to_group

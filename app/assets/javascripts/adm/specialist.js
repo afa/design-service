@@ -55,7 +55,7 @@ $(function(){
 				var left = parseInt(el.find('.left_portfolio_item').attr('value'));
 				if(left > 1) el.find('.left_portfolio_item').attr('value', left - 1);
 				var right = parseInt(el.find('.right_portfolio_item').attr('value'));
-				el.find('.right_portfolio_item').attr('value', left + 1);
+				el.find('.right_portfolio_item').attr('value', left - 1);
 			}
 		}, "json");
 	});
@@ -75,5 +75,29 @@ $(function(){
 				el.find('.right_portfolio_item').attr('value', left + 1);
 			}
 		}, "json");
+	});
+
+	$('.add_specialist').click(function(){
+		var name = $('.client_name').val();
+		var surname = $('.client_surname').val();
+		var login = $('.client_login').val();
+		var password = $('.client_password').val();
+		var email = $('.client_email').val();
+		var phone = $('.client_phone').val();
+		var group_id = $('.select_group').val();
+		var specialization_id = $('.select_specialization').val();
+
+		if(name == '' || surname == '' || login == '' || password == '' || email == '' || group_id == 0 || specialization_id == 0)
+			message_error('Не все поля введены');
+		else
+		{
+			$.post('/adm/specialist/add', {name: name, surname: surname, login: login, 
+				password: password, email: email, phone: phone, group_id: group_id, specialization_id: specialization_id}, function(data){
+				if(data['status'] == "true")
+					window.location.href = "/adm/specialist/"+data['id'];
+				else
+					message_error('Данные введены не корректно');
+			});
+		}
 	});
 });
