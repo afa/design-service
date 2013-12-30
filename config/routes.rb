@@ -188,6 +188,7 @@ DesignService::Application.routes.draw do
     post 'client/set_password' => 'client#set_password', :as => :client_set_password
     resources :groups
     resources :group
+    post 'group/add' => 'group#add', :as => :client_add
     get 'group/:id/show_orders' => 'group#show_orders', :as => :group_show_orders
     resources :portfolio_item
     post 'portfolio_item/get_next' => 'portfolio_item#get_next', :as => :portfolio_item_get_next
