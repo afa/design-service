@@ -94,21 +94,21 @@
                 %tr{:class => index % 2 == 0 ? '' : 'odd'}
       
                   %td
-                    = link_to "#{value.id}", "order/#{value.id}"
+                    = link_to "#{value.id}", "/adm/order/#{value.id}"
 
                   %td= value.get_updated_date
 
                   %td
                     - if value.executor.nil?
-                      =link_to 'Выставить цену и назначить специалиста', "/order/#{value.id}"
+                      =link_to 'Выставить цену и назначить специалиста', "/adm/order/#{value.id}"
                     - else
-                      =link_to 'Назначить нового специалиста', "/order/#{value.id}"
+                      =link_to 'Назначить нового специалиста', "/adm/order/#{value.id}"
 
                   %td= I18n.t "order.work_state.#{value.work_state}"
 
                   %td
                     - unless value.client.nil?
-                      = link_to "#{value.client.profile.full_name}", "/client/#{value.client.id}"
+                      = link_to "#{value.client.profile.full_name}", "/adm/client/#{value.client.id}"
                     - else
                       нет
 
@@ -126,7 +126,7 @@
 
                   %td
                     - unless value.executor.nil?
-                      = link_to "#{value.executor.user.profile.full_name}", "/specialist/#{value.executor.user.id}"
+                      = link_to "#{value.executor.user.profile.full_name}", "/adm/specialist/#{value.executor.user.id}"
                     - else
                       нет
 

@@ -105,7 +105,8 @@
                 %div{:style => 'display: inline-block; float: left; margin-left: 237px; font-size: 16px;'}
                   От специалиста
                   %br
-                  =link_to "#{@order_data.executor.user.profile.full_name}", "/adm/specialist/#{@order_data.executor.user.id}"
+                  - unless @order_data.executor.nil?
+                    =link_to "#{@order_data.executor.user.profile.full_name}", "/adm/specialist/#{@order_data.executor.user.id}"
 
               - @messages.each do |value|
                 %div{:class => 'body_message'}
