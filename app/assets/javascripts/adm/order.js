@@ -18,4 +18,18 @@ $(function(){
 			$('.specialist_price').attr('value', data['data'])
 		});
 	});
+
+	$('.send_moderator_message').click(function(){
+		var type = $(this).next().attr('value');
+		var sender_id = $(this).next().next().attr('value');
+		var id = $(this).next().next().next().attr('value');
+		var text = $(this).prev().prev().val();
+
+		if(confirm("Отправить это сообщение в чат?"))
+		{
+			$.post("/adm/order/send_message", {type: type, sender_id: sender_id, text: text, id: id}, function(data){
+				location.reload();
+			});
+		}
+	});
 });

@@ -1,0 +1,78 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :id => 'order_id', :value => @id}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', '/adm/orders'
+      %span &gt;
+      = link_to 'Заказчики', '/adm/clients'
+      %span &gt;
+      Создать нового
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%; margin: 0;'}
+
+        /Специалист
+        %div{:class => 'box', :style => 'width: 100%;'}
+
+          /Выбор специалиста
+          %div{:class => 'box-head'}
+            %h2 Новый клиент
+
+          %div{:style => ''}
+
+            %table
+
+              %tr
+                %td Имя
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field'}
+
+              %tr
+                %td Фамилия
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field'}
+
+              %tr
+                %td Логин
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field'}
+
+              %tr
+                %td Пароль
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field'}
+
+              %tr
+                %td Почтовый ящик
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field'}
+
+              %tr
+                %td Телефон
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field'}
+
+              %tr
+                %td
+                  %input{:type => 'submit', :class => 'button', :value => 'Сохранить'}
+                %td
+
+      
+      %div{:class => 'cl'} &nbsp;    

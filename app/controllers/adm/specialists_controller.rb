@@ -17,4 +17,19 @@ class Adm::SpecialistsController < Adm::ApplicationController
 		# берем пачку заказов, взятых по определенному фильтру
 		@specialists = specialist.get_bunch_on_filter(@page, @filter)
 	end
+
+	def get_by_specialization
+		specialization_id = params[:specialization_id].to_i
+
+		specialists = Specialist\
+			.where("specialists.specialization_id = ?", 
+				specialization_id)
+
+		data = render_to_string(partial: 'adm/group/specialists',
+            locals: {specialists: specialists
+                    },
+            layout: false, formats: [:html], handlers: [:haml])
+
+		render :json => { data: data }
+	end
 end

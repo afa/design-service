@@ -10,6 +10,17 @@ $(function(){
 
 		$.post("/adm/client/set_client", {id: id, name: name, surname: surname, username: username,
 			email: email, phone: phone}, function(){
+				body.find('.show_input').css('display', 'block');
+				body.find('.edit_input').css('display', 'none');
+				body.find('.set_client').css('display', 'none');
+				body.find('.del_client').css('display', 'none');
+				body.find('.edit_client').css('display', 'block');
+
+				body.find('.show_input_name').html(body.find('.client_name').val());
+				body.find('.show_input_surname').html(body.find('.client_surname').val());
+				body.find('.show_input_email').html(body.find('.client_email').val());
+				body.find('.show_input_phone').html(body.find('.client_phone').val());
+
 				message_success("Данные успешно обновлены.");
 			});
 	});
@@ -23,5 +34,9 @@ $(function(){
 				body.remove();
 			});
 		}
+	});
+
+	$('.client_new').click(function(){
+		window.location.href = "/client/new";
 	});
 });

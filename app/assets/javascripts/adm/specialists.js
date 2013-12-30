@@ -8,6 +8,16 @@ $(function(){
 
 		$.post("/adm/specialist/set", {id: id, surname: surname,
 			email: email, phone: phone}, function(){
+				body.find('.show_input').css('display', 'block');
+				body.find('.edit_input').css('display', 'none');
+				body.find('.set_specialist').css('display', 'none');
+				body.find('.del_specialist').css('display', 'none');
+				body.find('.edit_specialist').css('display', 'block');
+
+				body.find('.show_input_surname').html(body.find('.specialist_surname').val());
+				body.find('.show_input_email').html(body.find('.specialist_email').val());
+				body.find('.show_input_phone').html(body.find('.specialist_phone').val());
+
 				message_success("Данные успешно обновлены.");
 		});
 	});
@@ -21,5 +31,14 @@ $(function(){
 				body.remove();
 			});
 		}
+	});
+
+	$('.edit_specialist').click(function(){
+		var el = $(this).parent().parent();
+		el.find('.show_input').css('display', 'none');
+		el.find('.edit_input').css('display', 'block');
+		el.find('.set_specialist').css('display', 'block');
+		el.find('.del_specialist').css('display', 'block');
+		el.find('.edit_specialist').css('display', 'none');
 	});
 });

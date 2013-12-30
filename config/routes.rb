@@ -156,8 +156,13 @@ DesignService::Application.routes.draw do
   end
 
   namespace :adm do
+    get '/' => 'index#index', :as => :index_index
+    resources :index do
+      get 'index'
+    end
     resources :orders
     resources :specialists
+    post 'specialists/get_by_specialization' => 'specialists#get_by_specialization', :as => :specialists_get_by_specialization
     resources :specialist
     post 'specialist/set' => 'specialist#set', :as => :specialist_set
     post 'specialist/del' => 'specialist#del', :as => :specialist_del
@@ -165,6 +170,7 @@ DesignService::Application.routes.draw do
     post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
     resources :order
     post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
+    post 'order/send_message' => 'order#send_message', :as => :order_send_message
     resources :specialist_group do
       get 'get_by_specialist'
     end
@@ -174,11 +180,15 @@ DesignService::Application.routes.draw do
     end
     resources :clients
     resources :client
+    post 'client/autorization' => 'client#autorization', :as => :client_autorization
     post 'client/set_client' => 'client#set_client', :as => :client_set_client
     post 'client/del' => 'client#del', :as => :client_del
     post 'client/set_password' => 'client#set_password', :as => :client_set_password
     resources :groups
     resources :group
+    get 'group/:id/show_orders' => 'group#show_orders', :as => :group_show_orders
+    resources :portfolio_item
+    post 'portfolio_item/get_next' => 'portfolio_item#get_next', :as => :portfolio_item_get_next
   end
 
   get "welcome/index"

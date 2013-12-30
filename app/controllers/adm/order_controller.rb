@@ -6,6 +6,15 @@ class Adm::OrderController < Adm::ApplicationController
 		@order_data = Order.find(@id)
 		@orders = Array.new
 		@orders << @order_data
+
+		@messages = @order_data.messages
+
+		#message = Message.new
+		#message.attached_to = @order_data
+		#message.text = "Новое сообщение"
+		#message.sender = User.find(4)
+		#message.recipient = User.find(1)
+		#message.save
 	end
 
 	# назначаем специалиста и устонавливаем цены
@@ -27,7 +36,7 @@ class Adm::OrderController < Adm::ApplicationController
 			  @message = "Специалист назначен"
 			  order.update_attributes(:price => params[:order][:price], :specialist_price => params[:order][:specialist_price])
 			rescue ActiveRecord::RecordNotSaved => e
-			  logger.debug "-------------------#{order.errors.full_messages}----------------------"
+			  #logger.debug "-------------------#{order.errors.full_messages}----------------------"
 			  @message = "Произошла ошибка при сохранении"
 			end
 		else
@@ -38,5 +47,19 @@ class Adm::OrderController < Adm::ApplicationController
 			format.html
 			format.js
 		end
+	end
+
+	# нужно отправлять на почту, что пришло сообщение
+	def send_message
+		sender_id = params[:sender_id].to_i
+		type = params[:type]
+		text = params[:text]
+		id = params[:id].to_i
+
+		message = Message.find(id)
+		message.update_attribute(:text, text)
+		#message.update_attribute(:text, text)
+
+		render :json => {status: ""}
 	end
 end

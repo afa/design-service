@@ -1,10 +1,12 @@
 .left_message{
 	float: left; 
 	margin-left: 40px;
+	border: 2px solid #1B9C02;
 }
 .right_message{
 	float: right; 
 	margin-right: 40px;
+	border: 2px solid #ba4c32;
 }
 .data_message{
 	width: 60%; 
@@ -17,8 +19,6 @@
 	-webkit-border-top-right-radius: 20px; 
 	-webkit-border-bottom-right-radius: 20px; 
 	-webkit-border-bottom-left-radius: 20px;
-
-	border: 2px solid #ba4c32;
 }
 .body_message{
 	width: 100%;
