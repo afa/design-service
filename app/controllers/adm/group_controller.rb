@@ -54,4 +54,17 @@ class Adm::GroupController < Adm::ApplicationController
 			redirect_to root_path
 		end
 	end
+
+	def set
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			id = params[:id].to_i
+			specialistGroup = SpecialistGroup.find(id)
+
+			specialistGroup.update_attributes(:name => params[:name])
+
+			render :json => {status: ""}
+		else
+			redirect_to root_path
+		end
+	end
 end
