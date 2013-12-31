@@ -11,6 +11,8 @@ class Adm::OrderController < Adm::ApplicationController
 			@messages = @order_data.messages
 			@user_data = get_current_user
 
+			@order_data.update_attribute(:review_admin, true) unless @order_data.review_admin
+
 			#message = Message.new
 			#message.attached_to = @order_data
 			#message.text = "Новое сообщение"
@@ -39,7 +41,7 @@ class Adm::OrderController < Adm::ApplicationController
 				begin
 				  raise unless order.save!
 				  @status = true
-				  @message = "Специалист назначен"
+				  @message = "Специалист назначен, обновите страницу."
 				  order.update_attributes(:price => params[:order][:price], :specialist_price => params[:order][:specialist_price])
 				rescue ActiveRecord::RecordNotSaved => e
 				  #logger.debug "-------------------#{order.errors.full_messages}----------------------"
@@ -70,6 +72,16 @@ class Adm::OrderController < Adm::ApplicationController
 			message.update_attribute(:text, text)
 
 			render :json => {status: ""}
+		else
+			redirect_to root_path
+		end
+	end
+
+	def check_new
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			
+
+			render :json => {order_last_id: Order.last.id}
 		else
 			redirect_to root_path
 		end

@@ -15,6 +15,30 @@ class Adm::GroupController < Adm::ApplicationController
 		end
 	end
 
+	def new
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			@user_data = get_current_user
+			@specializations = Specialization.all
+		else
+			redirect_to root_path
+		end
+	end
+
+	def add
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			specialistGroup = SpecialistGroup.new(:name => params[:name], :specialization_id => params[:specialization_id].to_i)
+			status = specialistGroup.save
+
+			if status
+				render :json => {status: "true", id: SpecialistGroup.last.id}
+			else
+				render :json => {status: "false"}
+			end
+		else
+			redirect_to root_path
+		end
+	end
+
 	def show_orders
 		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
 			@id = params[:id].to_i
@@ -26,6 +50,19 @@ class Adm::GroupController < Adm::ApplicationController
 			@specialists = @group_data.specialists
 			@orders = Order.where("specialist_group_id = ?", @id)
 			@user_data = get_current_user
+		else
+			redirect_to root_path
+		end
+	end
+
+	def set
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			id = params[:id].to_i
+			specialistGroup = SpecialistGroup.find(id)
+
+			specialistGroup.update_attributes(:name => params[:name])
+
+			render :json => {status: ""}
 		else
 			redirect_to root_path
 		end

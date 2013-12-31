@@ -18,6 +18,7 @@ class Adm::OrdersController < Adm::ApplicationController
 			# берем пачку заказов, взятых по определенному фильтру
 			@orders = order.get_bunch_on_filter(@page, @filter)
 			@user_data = get_current_user
+			@order_last = Order.last
 		else
 			redirect_to root_path
 		end

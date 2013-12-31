@@ -9,7 +9,7 @@ class Adm::SpecialistController < Adm::ApplicationController
 			@specialists = Array.new
 			@specialists << @specialist_data
 
-			@orders = Order.where("client_id = ?", @id)
+			@orders = Order.where("executor_id = ? and executor_type = 'Specialist'", @id)
 			@groups = SpecialistGroup\
 	      		.joins("inner join specialist_groups_specialists on specialist_groups_specialists.specialist_group_id = specialist_groups.id")\
 	      		.where("specialist_groups_specialists.specialist_id = ?", @id)
@@ -20,6 +20,40 @@ class Adm::SpecialistController < Adm::ApplicationController
 	      	@portfolio_items = portfolio_item.get_bunches(@portfolios)
 	      	@user_data = get_current_user
       	else
+			redirect_to root_path
+		end
+	end
+
+	def new
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			@user_data = get_current_user
+			@specializations = Specialization.all
+			@groups = SpecialistGroup.all
+		else
+			redirect_to root_path
+		end
+	end
+
+	def add
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			user = User.new(:username => params[:login], :password => params[:password],
+				:email => params[:email], :role => 'specialist')
+			user.profile = Profile.new(:name => params[:name], :surname => params[:surname],
+				:phone => params[:phone])
+			status = user.save!
+
+			specialist = Specialist.new
+			specialist.user = User.last
+			specialist.specialist_groups << SpecialistGroup.find(params[:group_id].to_i)
+			specialist.specialization_id = params[:specialization_id].to_i
+			specialist.save!
+
+			if status
+				render :json => {status: "true", id: Specialist.last.id}
+			else
+				render :json => {status: "false"}
+			end
+		else
 			redirect_to root_path
 		end
 	end
