@@ -2,6 +2,7 @@
 = render partial: 'adm/menu/header'
 
 /Container
+%input{:type => 'hidden', :id => 'group_id', :value => @id}
 %div{:id => 'container'}
   %div{:class => 'shell'}
 
@@ -28,7 +29,7 @@
             %div{:class => 'right'}
               /%label search articles
               /%input{:type => 'text', :class => 'field small-field'}
-              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+              %input{:type => 'button', :class => 'button group_new', :value => 'Добавить'}
 
           /Table
           %div{:class => 'table'}
@@ -51,17 +52,24 @@
                   /Фамилия
 
                   %td
-                    %input{:type => 'text', :class => 'field small-field', :value => value.name}
+                    %span{:class => 'show_input show_input_name'}
+                      = value.name
+                    %input{:type => 'text', :class => 'edit_input field small-field groupt_name', :value => value.name}
 
-                  %td= I18n.t "enumerize.specialization.#{value.specialization.name}"
+                  %td
+                    - unless value.specialization.nil?
+                      = I18n.t "enumerize.specialization.#{value.specialization.name}"
+                    - else
+                      нет
 
                   %td= value.specialists.count
 
                   %td= value.quality_rating
 
                   %td
-                    %a{:class => 'ico edit set_specialist'} Сохр.
-                    %a{:class => 'ico del del_specialist'} Уд.
+                    %a{:class => 'ico edit edit_group', :title => 'Редактировать'} Ред.
+                    %a{:class => 'ico edit set_group', :style => 'display: none;'} Сохр.
+                    %a{:class => 'ico del del_group', :style => 'display: none;'} Уд.
             
             /Pagging
             %div{:class => 'pagging'}

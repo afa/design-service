@@ -1,0 +1,61 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :id => 'order_id', :value => @id}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', '/adm/orders'
+      %span &gt;
+      = link_to 'Группы', '/adm/groups'
+      %span &gt;
+      Новая группа
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%; margin: 0;'}
+
+        /Специалист
+        %div{:class => 'box', :style => 'width: 100%;'}
+
+          /Выбор специалиста
+          %div{:class => 'box-head'}
+            %h2 Новая группа
+
+          %div{:style => ''}
+
+            %table
+
+              %tr
+                %td Название
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %input{:type => 'text', :class => 'field small-field group_name'}
+
+              %tr
+                %td Специальность
+                %td
+                  %span{:class => 'req', :style => 'margin-left: 8px;'}
+                    %select{:class => 'select_specialization'}
+                      %option{:value => 0} не выбрано
+                      = @specializations.each do |value|
+                        %option{:value => value.id}
+                          = I18n.t "enumerize.specialization.#{value.name}"
+
+              %tr
+                %td
+                  %input{:type => 'submit', :class => 'button add_group', :value => 'Сохранить'}
+                %td
+
+      
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

@@ -164,11 +164,13 @@ DesignService::Application.routes.draw do
     resources :specialists
     post 'specialists/get_by_specialization' => 'specialists#get_by_specialization', :as => :specialists_get_by_specialization
     resources :specialist
+    post 'specialist/add' => 'specialist#add', :as => :client_add
     post 'specialist/set' => 'specialist#set', :as => :specialist_set
     post 'specialist/del' => 'specialist#del', :as => :specialist_del
     post 'specialist/add_to_group' => 'specialist#add_to_group', :as => :specialist_add_to_group
     post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
     resources :order
+    post 'order/check_new' => 'order#check_new', :as => :order_check_new
     post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
     post 'order/send_message' => 'order#send_message', :as => :order_send_message
     resources :specialist_group do
@@ -187,6 +189,8 @@ DesignService::Application.routes.draw do
     post 'client/set_password' => 'client#set_password', :as => :client_set_password
     resources :groups
     resources :group
+    post 'group/set' => 'group#set', :as => :group_set
+    post 'group/add' => 'group#add', :as => :group_add
     get 'group/:id/show_orders' => 'group#show_orders', :as => :group_show_orders
     resources :portfolio_item
     post 'portfolio_item/get_next' => 'portfolio_item#get_next', :as => :portfolio_item_get_next

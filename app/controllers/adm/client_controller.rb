@@ -34,7 +34,7 @@ class Adm::ClientController < Adm::ApplicationController
 				:email => params[:email])
 			user.profile = Profile.new(:name => params[:name], :surname => params[:surname],
 				:phone => params[:phone])
-			status = user.save!
+			status = user.save
 
 			if status
 				render :json => {status: "true", id: User.last.id}

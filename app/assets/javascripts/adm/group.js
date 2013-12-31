@@ -40,4 +40,21 @@ $(function(){
 			location.reload();
 		});
 	});
+
+	$('.add_group').click(function(){
+		var name = $('.group_name').val();
+		var specialization_id = $('.select_specialization').val();
+
+		if(name == '')
+			message_error('Не все поля введены');
+		else
+		{
+			$.post('/adm/group/add', {name: name, specialization_id: specialization_id}, function(data){
+				if(data['status'] == "true")
+					window.location.href = "/adm/group/"+data['id'];
+				else
+					message_error('Данные введены не корректно');
+			});
+		}
+	});
 });

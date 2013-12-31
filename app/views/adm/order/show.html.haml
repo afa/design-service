@@ -238,12 +238,12 @@
                           %option{:value => "#{value.id}"}
                             = I18n.t "enumerize.specialization.#{value.name}"
                     %label Специальность
-                  %p
+                  %p{:style => 'display: none;'}
                     %span{:class => 'req'}
                       %select{:class => 'field size3 select_groups'}
                         %option{:value => ''} не выбрана группа
                     %label Группа
-                  %p
+                  %p{:style => 'display: none;'}
                     %span{:class => 'req'}
                       %select{:class => 'field size3 select_specialists'}
                         %option{:value => ''} не выбран специалист

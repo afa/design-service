@@ -41,4 +41,8 @@ $(function(){
 		el.find('.del_specialist').css('display', 'block');
 		el.find('.edit_specialist').css('display', 'none');
 	});
+
+	$('.specialist_new').click(function(){
+		window.location.href = "/adm/specialist/new";
+	});
 });

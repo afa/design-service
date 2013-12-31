@@ -2,6 +2,7 @@
 = render partial: 'adm/menu/header'
 
 /Container
+%input{:type => 'hidden', :id => 'order_last_id', :value => @order_last.id}
 %div{:id => 'container'}
   %div{:class => 'shell'}
 
@@ -93,26 +94,28 @@
 
                 %tr{:class => index % 2 == 0 ? '' : 'odd'}
       
-                  %td
+                  %td{:style => value.review_admin ? '' : 'background: #ccc'}
                     = link_to "#{value.id}", "/adm/order/#{value.id}"
 
-                  %td= value.get_updated_date
+                  %td{:style => value.review_admin ? '' : 'background: #ccc'}
+                    = value.get_updated_date
 
-                  %td
+                  %td{:style => value.review_admin ? '' : 'background: #ccc'}
                     - if value.executor.nil?
                       =link_to 'Выставить цену и назначить специалиста', "/adm/order/#{value.id}"
                     - else
                       =link_to 'Назначить нового специалиста', "/adm/order/#{value.id}"
 
-                  %td= I18n.t "order.work_state.#{value.work_state}"
+                  %td{:style => value.review_admin ? '' : 'background: #ccc'}
+                    = I18n.t "order.work_state.#{value.work_state}"
 
-                  %td
+                  %td{:style => value.review_admin ? '' : 'background: #ccc'}
                     - unless value.client.nil?
                       = link_to "#{value.client.profile.full_name}", "/adm/client/#{value.client.id}"
                     - else
                       нет
 
-                  %td{:title => 'Узнать подробности', :style => 'cursor: pointer;'}
+                  %td{:title => 'Узнать подробности', :style => value.review_admin ? 'cursor: pointer;' : 'background: #ccc; cursor: pointer;'}
                     - unless value.orderable.nil?
                       - if value.orderable.is_a?(SelectedForm)
                         - unless value.orderable.order_customizer.nil?
@@ -122,15 +125,17 @@
                       - else
                         %a= I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
 
-                  %td= value.price
+                  %td{:style => value.review_admin ? '' : 'background: #ccc'}
+                    = value.price
 
-                  %td
+                  %td{:style => value.review_admin ? '' : 'background: #ccc'}
                     - unless value.executor.nil?
                       = link_to "#{value.executor.user.profile.full_name}", "/adm/specialist/#{value.executor.user.id}"
                     - else
                       нет
 
-                  %td= value.get_created_date
+                  %td{:style => value.review_admin ? '' : 'background: #ccc'}
+                    = value.get_created_date
             
             /Pagging
             %div{:class => 'pagging'}
