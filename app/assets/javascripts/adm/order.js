@@ -2,12 +2,14 @@ $(function(){
 	$('.select_specialization').change(function(){
 		$.getJSON("/adm/specialist_group/" + $(this).val() + "/get_by_specialist", function(data){
 			$('.select_groups').html(data['data']);
+			$('.select_groups').parent().parent().css('display', 'block');
 		});
 	});
 
 	$('.select_groups').change(function(){
 		$.getJSON("/adm/specialist/" + $(this).val() + "/get_by_group_and_specialization?specialization_id="+$('.select_specialization').val()+"&group_id="+$(this).val(), function(data){
 			$('.select_specialists').html(data['data']);
+			$('.select_specialists').parent().parent().css('display', 'block');
 		});
 	});
 

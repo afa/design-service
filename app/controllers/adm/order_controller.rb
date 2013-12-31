@@ -41,7 +41,7 @@ class Adm::OrderController < Adm::ApplicationController
 				begin
 				  raise unless order.save!
 				  @status = true
-				  @message = "Специалист назначен"
+				  @message = "Специалист назначен, обновите страницу."
 				  order.update_attributes(:price => params[:order][:price], :specialist_price => params[:order][:specialist_price])
 				rescue ActiveRecord::RecordNotSaved => e
 				  #logger.debug "-------------------#{order.errors.full_messages}----------------------"
