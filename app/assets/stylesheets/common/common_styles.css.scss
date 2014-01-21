@@ -345,11 +345,17 @@ span.message {
 .textline_l4 { width:76px; }
 .textline_l6 { width:130px; }
 .textline_l6-5 { width:170px; }
+.textline_l6-8 { width:185px; }
 .textline_l7 { width:243px; }
 .textline_l8 { width:300px; }
 .textline_l10 { width:350px; }
 .textline_l11 { width:390px; }
 .textline_l12 { width:450px; }
+.textline_l13 { width:530px; }
+.textline_l13-5 { width:560px; }
+.textline_l14 { width:610px; }
+.textline_l15 { width:660px; }
+
 
 body.registered {
   .shadow_x1 {
@@ -420,4 +426,23 @@ body.unregistered {
   border-bottom: 1px solid #333;
   height: 20px;
   font-size: 16px;
+}
+
+.textlines_default_light {
+  color: #7C7B79;
+  border: 0px;
+  padding: 0px 5px 0px 5px;
+  margin: 0px;
+  border-bottom: 1px solid #c3c2c0;
+  height: 20px;
+  font-size: 16px;
+}
+.textlines_default_all_borders{
+  color: #7C7B79;
+  border: 0px;
+  padding: 0px 5px 0px 5px;
+  margin: 0px;
+  border: 1px solid #c3c2c0;
+  height: 20px;
+  font-size: 16px;  
 }

@@ -6,6 +6,8 @@ DesignService::Application.routes.draw do
     end
   end
 
+
+
   resources :moderations, only: [:show] do
     member do
       post 'accept'
@@ -101,6 +103,19 @@ DesignService::Application.routes.draw do
     resources :attachments
   end
 
+  resources :welcome do
+    get 'anketa1'
+    get 'anketa2'
+    get 'anketa3'
+    get 'anketa4'
+    get 'anketa5'
+    #get 'anketa1' => 'welcome#anketa1', :as => :welcome_anketa1
+    #get 'anketa2' => 'welcome#anketa2', :as => :welcome_anketa2
+    #get 'anketa3' => 'welcome#anketa3', :as => :welcome_anketa3
+    #get 'anketa4' => 'welcome#anketa4', :as => :welcome_anketa4
+    #get 'anketa5' => 'welcome#anketa5', :as => :welcome_anketa5
+  end
+
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
 
@@ -156,6 +171,9 @@ DesignService::Application.routes.draw do
   end
 
   get "welcome/index"
+  #get "welcome/anketa1"
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
