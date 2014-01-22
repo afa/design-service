@@ -7,6 +7,8 @@ DesignService::Application.routes.draw do
     end
   end
 
+
+
   resources :moderations, only: [:show] do
     member do
       post 'accept'
@@ -101,6 +103,19 @@ DesignService::Application.routes.draw do
     resources :attachments
   end
 
+  resources :welcome do
+    get 'anketa1'
+    get 'anketa2'
+    get 'anketa3'
+    get 'anketa4'
+    get 'anketa5'
+    #get 'anketa1' => 'welcome#anketa1', :as => :welcome_anketa1
+    #get 'anketa2' => 'welcome#anketa2', :as => :welcome_anketa2
+    #get 'anketa3' => 'welcome#anketa3', :as => :welcome_anketa3
+    #get 'anketa4' => 'welcome#anketa4', :as => :welcome_anketa4
+    #get 'anketa5' => 'welcome#anketa5', :as => :welcome_anketa5
+  end
+
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
 
@@ -163,12 +178,15 @@ DesignService::Application.routes.draw do
     resources :orders
     resources :specialists
     post 'specialists/get_by_specialization' => 'specialists#get_by_specialization', :as => :specialists_get_by_specialization
+    
     resources :specialist
     post 'specialist/add' => 'specialist#add', :as => :client_add
     post 'specialist/set' => 'specialist#set', :as => :specialist_set
     post 'specialist/del' => 'specialist#del', :as => :specialist_del
     post 'specialist/add_to_group' => 'specialist#add_to_group', :as => :specialist_add_to_group
     post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
+    post 'specialist/set_specialization' => 'specialist#set_specialization', :as => :specialist_set_specialization
+    
     resources :order
     post 'order/check_new' => 'order#check_new', :as => :order_check_new
     post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
@@ -197,6 +215,9 @@ DesignService::Application.routes.draw do
   end
 
   get "welcome/index"
+  #get "welcome/anketa1"
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

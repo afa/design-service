@@ -1,0 +1,207 @@
+%div.accreditation_heading
+  Заполните заявку на аккредитацию
+
+%ul.accreditation
+  %li
+    .heading
+      Основная информация
+    .full_width
+      %span.main_info_half  
+        %ul.info
+          %li.height_default 
+            %span.head_short
+              Фамилия:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'surname'}              
+          %li.height_default
+            %span.head_short
+              Имя:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'name'} 
+          %li.height_v1
+            %span.head_short 
+              Отчество:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'middle_surname'} 
+          %li.height_default
+            %span.head_short 
+              E-mail:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'email'} 
+          %li 
+            %span.head_short 
+              Тел.моб.
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'tel'}           
+      %span.main_info_half
+        %ul.info
+          %li.height_v2
+            %span.head_long
+              Дата рождения:
+            %input.textlines_default_all_borders.textline_l6-8.backg_default_light  
+          %li 
+            %span.head_long
+              Проживание:
+            %ul.places
+              %li
+                %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+              %li
+                %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+              %li
+                %input.textlines_default_all_borders.textline_l6-8.backg_default_light                                  
+      .padding_left{style:'margin-top:30px;'} 
+        Образование :
+        %ul.education
+          %li
+            %input#heigher.radio_buttons.optional{checked: "checked", type: "radio", value: "true", name:"designer_needings"}
+            %label.collection_radio_buttons{:for=>"heigher"}Высщее     
+
+          %li
+            %input#incomplete_higher.radio_buttons.optional{type: "radio", value: "true", name:"designer_needings"}
+            %label.collection_radio_buttons{:for=>"incomplete_higher"}Неполное высшее
+          %li
+            %input#paraprofessional.radio_buttons.optional{checked: "checked", type: "radio", value: "true", name:"designer_needings"}
+            %label.collection_radio_buttons{:for=>"paraprofessional"}Среднее специальное     
+
+          %li
+            %input#courses.radio_buttons.optional{type: "radio", value: "true", name:"designer_needings"}
+            %label.collection_radio_buttons{:for=>"courses"}Курсы
+        .education
+          .education_part  
+            .row
+              %span
+                Название учебного заведения:
+              %input.textlines_default_light.textline_l10.backg_default_light{type:'text', value:''}
+          
+            .row
+              %span
+                Год окончания:    
+              %input.textlines_default_light.textline_l10.backg_default_light{type:'text', value:''}
+
+          .row
+            %span.add_new                            
+  %li
+    .heading
+      Профессиональный опыт
+    .full_width
+      .padding_left{style:'margin-bottom:15px;'}    
+        Название обьектов, в разработке которых Вы принимали участие: 
+      .padding_left
+        %ul.quis
+          %li
+            1.
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}  
+          %li
+            2.
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}  
+          %li  
+            3.
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}                          
+    
+  
+  %li
+    .full_width
+      .padding_left   
+        Прикрепите Ваше портфолио с описанием файлов 
+        %div.alert
+          (Вы можете прикрепить заархививированные файлы):  
+        %ul.quis
+          %li
+            1.
+            %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''}  
+            %input.file_att{type:'button', value:'Прирепить'}
+          %li
+            2.
+            %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''} 
+            %input.file_att{type:'button', value:'Прирепить'}            
+          %li
+            3.
+            %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''}  
+            %input.file_att{type:'button', value:'Прирепить'}                                       
+      .padding_left{style:'margin-top:15px;'}
+        Перечень программ, в которых Вы работаете:  
+        %ul.manage{style:'margin-top:10px;'}
+          %li     
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}   
+          %li     
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}     
+          %li     
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}
+
+
+  %li
+    .full_width
+      .padding_left.style{style:'font-size:24px; margin-bottom:20px;'}
+        Ваш опыт работы в компаниях
+      %ul.quis
+        %li
+          %span
+            Наименование организации:
+          %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:'',style:'margin-top: 20px;'} 
+
+        %li
+          %ul.data
+            %li
+              %span.long
+                Дата начала:
+              %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+            %li
+              %span.long
+                Дата окончания:
+              %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+
+          %ul.data
+            %li
+              %span.short
+                страна:
+              %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+            %li
+              %span.short
+                Ренион:
+              %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+            %li
+              %span.short
+                Город:
+              %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+
+
+        %li
+          %span
+            Должность:
+          %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:''} 
+
+        %li
+          %span
+            Должностные обязанности:
+          %ul.manage
+            %li     
+              %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:''}   
+            %li     
+              %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:''}     
+            %li     
+              %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:''}
+            %li     
+              %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:''}              
+        %li
+          %span.add_new                                                      
+
+        %li
+          .full_width
+            Каким специалистом Вы готовы работать через web-ресурс «Дизайн-сервис»
+          %ul.quis
+            %li
+              %input#electrical_engineer{type:'checkbox', value:'1'}  
+              %label.floating{:for => "electrical_engineer"}  Инженер-электрик
+            %li
+              %input#engineer_vc{type:'checkbox', value:'1'}  
+              %label.floating{:for => "engineer_vc"}  Инженер ВК
+            %li
+              %input#heating_engineer{type:'checkbox', value:'1'}  
+              %label.floating{:for => "heating_engineer"}  Инженер по отоплению
+            %li
+              %input#ventilation_engineer{type:'checkbox', value:'1'}  
+              %label.floating{:for => "ventilation_engineer"}  Инженер по вентиляции
+            %li
+              %input#design_engineer{type:'checkbox', value:'1'}  
+              %label.floating{:for => "design_engineer"}  Инженер-конструктор                              
+            %li
+              %input#low_voltage_systems_engineer{type:'checkbox', value:'1'}  
+              %label.floating{:for => "low_voltage_systems_engineer"}  Инженер по слаботочным системам 
+  %li
+    .submiting_part 
+      %span.submit_button

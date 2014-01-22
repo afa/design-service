@@ -149,4 +149,13 @@ class Adm::SpecialistController < Adm::ApplicationController
 			redirect_to root_path
 		end
 	end
+
+	def set_specialization
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			specialist = Specialist.find(params[:id].to_i)
+			specialist.update_attribute(:specialization_id, params[:specialization].to_i)
+
+			render :json => {status: ""}
+		end
+	end
 end
