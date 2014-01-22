@@ -1,0 +1,102 @@
+%div.accreditation_heading
+  Заполните заявку на аккредитацию
+
+%ul.accreditation
+  %li
+    .heading
+      Основная информация
+    .full_width
+      .padding_left{style:'float:none'}
+        %div.alert   
+          ПРЕДСТАВИТЕЛЬ БРИГАДЫ
+      %span.main_info_half  
+        %ul.info
+          %li.height_default 
+            %span.head_short
+              Фамилия:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'surname'}              
+          %li.height_default
+            %span.head_short
+              Имя:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'name'} 
+          %li.height_v1
+            %span.head_short 
+              Отчество:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'middle_surname'}           
+      %span.main_info_half
+        %ul.info
+          %li.height_default
+            %span.head_long
+              E-mail:
+            %input.textlines_default_light.textline_l6-8.backg_default_light  
+          %li 
+            %span.head_long
+              Тел.моб.
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'email'}                                                   
+  %li
+    .heading
+      Профессиональный опыт
+    .full_width
+      .padding_left{style:'margin-bottom:15px;'}    
+        Перечень выполняемых работ: 
+      .padding_left
+        %ul.quis
+          %li
+            1.
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}  
+          %li
+            2.
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}  
+          %li  
+            3.
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}                          
+
+    .full_width
+      .padding_left{style:'margin-bottom:15px;'}    
+        Названия обьектов, в которых Вы принимали участие: 
+      .padding_left
+        %ul.quis
+          %li
+            1.
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}  
+          %li
+            2.
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}  
+          %li  
+            3.
+            %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}    
+  
+    .full_width
+      .padding_left{style:'margin-bottom:15px;'}    
+        Прикрепите Ваше портфолио с описанием файлов 
+        %div.alert
+          (Вы можете прикрепить заархививированные файлы):  
+        %ul.quis
+          %li
+            1.
+            %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''}  
+            %input.file_att{type:'button', value:'Прирепить'}
+          %li
+            2.
+            %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''} 
+            %input.file_att{type:'button', value:'Прирепить'}            
+          %li
+            3.
+            %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''}  
+            %input.file_att{type:'button', value:'Прирепить'}  
+
+    .full_width
+      .padding_left
+        %span{style:'width:515px; float:left;'}
+          Прикрепите базовые расценки и гарантийный срок на выполняемые работы
+        %input.file_att{type:'button', value:'Прирепить'}
+
+      .padding_left
+        %span{style:'width:515px; float:left; margin-top:15px;'}   
+          Прикрепите в виде списка состав рабочик в бригаде 
+          %br
+            (ФИО и навыки)
+        %input.file_att{type:'button', value:'Прирепить', style:'margin-top:10px;'}                                                                                                              
+  %li
+    .submiting_part 
+      %span.submit_button
