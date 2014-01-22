@@ -62,7 +62,7 @@
 
                   /Логин
                   %td
-                    = value.username
+                    = link_to "#{value.username}", "/adm/client/#{value.id}"
                   /E-mail
                   %td
                     %span{:class => 'show_input show_input_email'}

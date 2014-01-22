@@ -59,7 +59,7 @@
                     %input{:type => 'text', :class => 'edit_input field small-field specialist_surname', :style => 'width: 100px;', :value => value.user.profile.surname}
                   /Логин
                   %td
-                    = value.user.username
+                    = link_to "#{value.user.username}", "/adm/specialist/#{value.id}"
                   /Специальность
                   %td
                     %span
