@@ -12,4 +12,24 @@ class WelcomeController < ApplicationController
       render 'layouts/welcome_page/unregistered', layout: false
     end
   end
+
+  def anketa1
+
+  end
+
+  def anketa2
+    
+  end
+
+  def anketa3
+    
+  end
+
+  def anketa4
+    
+  end
+
+  def anketa5
+    
+  end
 end
