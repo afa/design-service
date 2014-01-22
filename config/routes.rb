@@ -197,6 +197,8 @@ DesignService::Application.routes.draw do
     get 'group/:id/show_orders' => 'group#show_orders', :as => :group_show_orders
     resources :portfolio_item
     post 'portfolio_item/get_next' => 'portfolio_item#get_next', :as => :portfolio_item_get_next
+    resources :questionnaire
+    post 'questionnaire/set_headers' => 'questionnaire#set_headers', :as => :questionnaire_set_headers
   end
 
   get "welcome/index"

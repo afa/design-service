@@ -1,0 +1,62 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :id => 'questionnaire_id', :value => @id}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', 'orders'
+      %span &gt;
+      = link_to 'Шаблоны анкет', '/adm/questionnaire'
+      %span &gt;
+      Шаблон анкеты "#{@questionnaire_data.name}"
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Шаблон анкеты "#{@questionnaire_data.name}"
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %div{:class => 'form'}
+              %p
+                %label Заголовок
+                %br
+                %input{:type => 'text', :id => 'questionnaire_name', :class => 'field small-field', :value => "#{@questionnaire_data.name}"}
+                %br
+                %span{:class => 'req', :style => 'float: none;'}
+                  %select{:class => 'field size3 select_specialization'}
+                    - @specializations.each do |value|
+                      %option{:value => "#{value.id}", :selected => value.id == @questionnaire_data.specialization_id ? true : false}
+                        = I18n.t "enumerize.specialization.#{value.name}"
+                %br
+                %input{:type => 'button', :class => 'button save_header_data', :value => 'Сохранить'}
+
+            %div{:class => 'form'}
+              %p
+                %label Основная информация
+                %br
+                - @questionnaire_data.questionnaire_fields.each do |value|
+                  = render_cell :questionnaire_field, "#{value.display}_admin", :data => value
+
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

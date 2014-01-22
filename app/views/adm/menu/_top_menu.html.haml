@@ -16,5 +16,8 @@
       %a{:href => '#'}
         %span Заявки
     %li
+      %a{:href => '/adm/questionnaire', :class => "#{(params[:controller] == 'adm/questionnaire' || params[:controller] == 'adm/questionnaire/show') ? 'active' : ''}"}
+        %span Шаблоны заявок
+    %li
       %a{:href => '#'}
         %span Отзывы
