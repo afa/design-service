@@ -53,7 +53,7 @@
 
                   %td
                     %span{:class => 'show_input show_input_name'}
-                      = value.name
+                      = link_to "#{value.name}", "/adm/group/#{value.id}"
                     %input{:type => 'text', :class => 'edit_input field small-field groupt_name', :value => value.name}
 
                   %td

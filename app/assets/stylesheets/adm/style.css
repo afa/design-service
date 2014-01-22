@@ -164,3 +164,37 @@ textarea.size1 { height:180px; }
 
 .button { -moz-box-shadow: 0 0 2px #978f6c; -webkit-box-shadow: 0 0 2px #978f6c;}
 .edit_input{display: none;}
+
+/*a {color: #333; text-decoration: none; font-size: 25px;}
+a:hover {color:#ccc; text-decoration:none}*/
+#mask {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:9000;
+	background-color:#000;
+	display:none;
+	font-family: Georgia;
+	}
+#boxes .window {
+	position:absolute;
+	left:0;
+	top:0;
+	width:440px;
+	height:200px;
+	display:none;
+	z-index:9999;
+	padding:20px;
+	text-align: center;
+	font-size: 25px;
+	}
+#boxes #dialog {
+	width:375px;
+	height:203px;
+	padding:10px;
+	background-color:#ffffff;
+	}
+/*.close {
+	float: right;
+	margin-top: 148px;
+	}*/

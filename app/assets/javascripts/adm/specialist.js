@@ -100,4 +100,10 @@ $(function(){
 			});
 		}
 	});
+
+	$('.check_specialization').click(function(){
+		$.post("/adm/specialist/set_specialization", {id: $('#specialist_id').attr('value'), specialization: $('.select_specialization').val()}, function(){
+			location.reload();
+		});
+	});
 });

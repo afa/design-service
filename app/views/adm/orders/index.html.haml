@@ -43,6 +43,7 @@
                 %th Тип
                 %th Цена
                 %th Специалист
+                %th Группа
                 %th Создан
 
               %tr
@@ -83,6 +84,7 @@
                     %option{:value => 'update_date_desc', :selected => @filter == "update_date_desc" ? true : false} нет
                     %option{:value => 'specialist_asc', :selected => @filter == "specialist_asc" ? true : false} а-я
                     %option{:value => 'specialist_desc', :selected => @filter == "specialist_desc" ? true : false} я-а
+                %th
                 /Создан
                 %th{:title => 'Сортировать по'}
                   %select{:class => 'field size2 select_orders'}
@@ -131,6 +133,12 @@
                   %td{:style => value.review_admin ? '' : 'background: #ccc'}
                     - unless value.executor.nil?
                       = link_to "#{value.executor.user.profile.full_name}", "/adm/specialist/#{value.executor.user.id}"
+                    - else
+                      нет
+
+                  %td{:style => value.review_admin ? '' : 'background: #ccc'}
+                    - unless value.specialist_group.nil?
+                      = link_to "#{value.specialist_group.name}", "/adm/group/#{value.specialist_group.id}"
                     - else
                       нет
 

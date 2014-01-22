@@ -67,14 +67,30 @@
                   %td
                     %span
                       = I18n.t "enumerize.specialization.#{value.specialization.name}"
-                    = link_to '', '#', class: 'ico edit'
+                    = link_to '', '#dialog', class: 'ico edit', name: 'modal'
+                    %div#boxes
+                      %div.window{:id => 'dialog'}
+                        Назначить специальность 
+                        %br
+                        %select{:style => 'margin-top: 30px;', :class => 'select_specialization'}
+                          - Specialization.all.each do |specialization|
+                            %option{:value => "#{specialization.id}"}
+                              = I18n.t "enumerize.specialization.#{specialization.name}"
+                        %input{:class => 'button check_specialization', :value => 'Назначить'}
+                        /%span
+                        /%a{:href => '#', :class => 'close'} Закрыть его
+                      %div#mask
                   /Статус
                   %td В работе
                   /Группы
                   %td
                     %span
-                    = value.get_first_group.name
-                    = link_to '', '#', class: 'ico edit'
+                    - unless value.get_first_group.nil?
+                      value.get_first_group.name
+                    - else
+                      нет
+
+                    /= link_to '', "#dialog", class: 'ico edit', name: 'modal'
                   /Почта
                   %td
                     %input{:type => 'text', :class => 'field small-field specialist_email', :style => 'width: 90px;', :value => value.user.email}
