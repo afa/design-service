@@ -370,6 +370,11 @@ ru:
         specialist: 'Специалист'
         moderator: 'Модератор'
         admin: 'Администратор'
+    questionnaire_field:
+      location:
+        left: 'Слева'
+        right: 'Справа'
+        center_full: 'Во весь центр'
   moderation:
     status:
       not_accepted: 'Еще не проверено'

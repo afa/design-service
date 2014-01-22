@@ -1,3 +1,7 @@
-%div
-  %span #{@name}
+%div{:class => 'block_inline'}
+  %span #{@data.name}
   %input{:type => 'text', :disabled => true, :class => 'field small-field', :placeholder => 'Не обязательно'}
+  %select{:class => 'block_inline_select'}
+    - QuestionnaireField.location.values.each do |value|
+      %option{:value => value}
+        = I18n.t "enumerize.questionnaire_field.location.#{value}"

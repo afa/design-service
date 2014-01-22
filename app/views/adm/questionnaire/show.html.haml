@@ -54,7 +54,7 @@
                 %label Основная информация
                 %br
                 - @questionnaire_data.questionnaire_fields.each do |value|
-                  = render_cell :questionnaire_field, "#{value.display}_admin", :data => value
+                  = render_cell :questionnaire_field, "#{value.display}_admin", :data => value, :details => value.details(@id)
 
       %div{:class => 'cl'} &nbsp;    
 

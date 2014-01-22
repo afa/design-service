@@ -194,7 +194,27 @@ a:hover {color:#ccc; text-decoration:none}*/
 	padding:10px;
 	background-color:#ffffff;
 	}
-/*.close {
-	float: right;
-	margin-top: 148px;
-	}*/
+
+.block_inline{
+	height: 30px;
+}
+
+.block_inline span{
+	float: left;
+	display: inline-block !important;
+	width: 100px;
+}
+
+.block_inline input{
+	float: left;
+	display: inline-block !important;
+}
+
+.block_inline select{
+	float: left;
+	display: inline-block !important;
+}
+
+.block_inline .block_inline_select{
+	margin-left: 20px;
+}
