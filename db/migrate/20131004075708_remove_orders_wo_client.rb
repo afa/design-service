@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemoveOrdersWoClient < ActiveRecord::Migration
   def up
     Order.find_each do |order|

@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddMoreSpecializations < ActiveRecord::Migration
   def up
     Specialization.delete_all

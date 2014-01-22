@@ -1,0 +1,16 @@
+%div{:id => 'header'}
+  %div{:class => 'shell'}
+    /Logo + Top Nav
+    %div{:id => 'top'}
+      %h1
+        = link_to 'Дизайн сервис', 'http://dsn-service.ru'
+      %div{:id => 'top-navigation'}
+        Привет, 
+        = @user_data.profile.name
+        %span 
+          |
+        = link_to 'Выход', '#'
+    /End Logo + Top Nav
+    /Main Nav
+    = render partial: 'adm/menu/top_menu'
+    /End Main Nav

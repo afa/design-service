@@ -1,3 +1,4 @@
+# coding: utf-8
 ActiveAdmin.register SpecialistGroup do
   menu label: ->(){ I18n.t('titles.specialist_groups') }
   # decorate_with SpecialistGroupDecorator

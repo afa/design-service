@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemovePortfolioOwnerColumn < ActiveRecord::Migration
   def change
     Portfolio.find_each do |portfolio|

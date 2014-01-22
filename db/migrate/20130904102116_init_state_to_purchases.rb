@@ -1,3 +1,4 @@
+# coding: utf-8
 class InitStateToPurchases < ActiveRecord::Migration
   def up
    add_column :purchases, :state, :string

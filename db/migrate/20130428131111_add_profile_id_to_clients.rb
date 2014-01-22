@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddProfileIdToClients < ActiveRecord::Migration
   def change
     change_table :clients do |t|

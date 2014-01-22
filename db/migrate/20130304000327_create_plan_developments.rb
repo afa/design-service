@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreatePlanDevelopments < ActiveRecord::Migration
   def change
     create_table :plan_developments do |t|

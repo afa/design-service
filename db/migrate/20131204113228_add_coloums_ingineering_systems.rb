@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddColoumsIngineeringSystems < ActiveRecord::Migration
   def up
     add_column :engineering_systems, :light_control, :boolean

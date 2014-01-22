@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateFloorPlans < ActiveRecord::Migration
   def change
     create_table :floor_plans do |t|

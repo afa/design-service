@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddNewColumsToSelectedForms < ActiveRecord::Migration
   def change
     add_column :selected_forms, :decorative_plaster, :boolean

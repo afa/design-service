@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemoveClientFromPlanDevelopments < ActiveRecord::Migration
   def up
     remove_column :plan_developments, :client

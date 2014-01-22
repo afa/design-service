@@ -1,0 +1,20 @@
+%div{:id => 'navigation'}
+  %ul
+    %li
+      %a{:href => '/adm/orders', :class => "#{(params[:controller] == 'adm/orders' || params[:controller] == 'adm/order') ? 'active' : ''}"}
+        %span Заказы
+    %li
+      %a{:href => '/adm/clients', :class => "#{(params[:controller] == 'adm/clients' || params[:controller] == 'adm/client') ? 'active' : ''}"}
+        %span Заказчики
+    %li
+      %a{:href => '/adm/specialists', :class => "#{(params[:controller] == 'adm/specialists' || params[:controller] == 'adm/specialist') ? 'active' : ''}"}
+        %span Специалисты
+    %li
+      %a{:href => '/adm/groups', :class => "#{(params[:controller] == 'adm/groups' || params[:controller] == 'adm/group') ? 'active' : ''}"}
+        %span Группы
+    %li
+      %a{:href => '#'}
+        %span Заявки
+    %li
+      %a{:href => '#'}
+        %span Отзывы
