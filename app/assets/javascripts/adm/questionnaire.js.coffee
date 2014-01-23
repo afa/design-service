@@ -38,3 +38,22 @@ $(document).ready ->
         error: error_standart
       })
   register_ajax_reloadable_handler('.del_field_from_questionnaire')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      body = $(this).parent();
+      question_id = body.find('.question_id')
+      name = body.find('.question_name')
+      count_all = body.find('.question_count_all')
+      count_true = body.find('.question_count_true')
+
+      $.ajax({
+        type: "PUT",
+        url: '/adm/question/'+question_id,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: {name: name, count_all: count_all, count_true: count_true},
+        success: success_standart,
+        error: error_standart
+      })
+  register_ajax_reloadable_handler('.save_question_headers')

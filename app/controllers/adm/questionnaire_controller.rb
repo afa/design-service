@@ -19,6 +19,8 @@ class Adm::QuestionnaireController < Adm::ApplicationController
 			@id = params[:id].to_i
 			@questionnaire_data = Questionnaire.find(@id)
 			@specializations = Specialization.all
+
+			
 		else
 			redirect_to root_path
 		end

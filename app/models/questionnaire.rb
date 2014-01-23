@@ -5,6 +5,7 @@ class Questionnaire < ActiveRecord::Base
 	has_and_belongs_to_many :questionnaire_fields
 
 	has_many :questionnaire_fields_questionnaires
+	has_many :questions
 
 	# назначается новое поле и устонавливаются его детали по умолчанию
 	def add_field(questionnaire_field_id)

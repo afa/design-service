@@ -1,0 +1,13 @@
+%div{:style => "height: 15px;"}
+  = I18n.t "enumerize.question_field.displays.#{@data.display}"
+%div{:style => "height: 110px;"}
+  %div{:class => 'block_inline', :style => 'height: 110px; width: 240px; float: left; display: inline-block;'}
+    %img{:style => 'width: 200px; height: 100px; float: left; display: inline-block;', :src => ''}
+  %div{:style => 'height: 110px; float: left; display: inline-block;'}
+    %div
+      %input{:type => 'file', :value => '', :style => ''}
+    %div{:style => 'margin-top: 10px;'}
+      %input{:type => 'button', :class => 'button', :value => 'Удалить', :style => ''}
+    %div{:style => 'margin-top: 10px;'}
+      %span Правильный ответ
+      %input{:type => 'checkbox', :value => 'Правильный ответ', :style => '', :checked => (@data.statis_is_true ? true : false)}

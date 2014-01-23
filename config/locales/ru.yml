@@ -375,6 +375,9 @@ ru:
         left: 'Слева'
         right: 'Справа'
         center_full: 'Во весь центр'
+    question_field:
+      displays:
+        photo_test: 'Фотография для выбора'
   moderation:
     status:
       not_accepted: 'Еще не проверено'

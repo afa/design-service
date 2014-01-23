@@ -1,0 +1,27 @@
+%div{:class => 'block_inline'}
+  %input{:type => 'hidden', :class => 'field_questionnaire_field_id', :value => @data.id}
+  %input{:type => 'hidden', :class => 'questionnaire_fields_questionnaire_id', :value => @details.id}
+  %span{:style => "width: 200px;"} #{@data.name}
+  %input{:type => 'text', :class => 'field small-field block_inline_select field_value', :value => @details.value}
+  
+  %select{:class => 'block_inline_select field_is_necessarily'}
+    - if @details.is_necessarily.nil?
+      %option{:value => "true", :selected => true} Обязательно
+      %option{:value => "false"} Не обязательно
+    - else
+      - if @details.is_necessarily
+        %option{:value => "true", :selected => true} Обязательно
+        %option{:value => "false"} Не обязательно
+      - else
+        %option{:value => "true"} Обязательно
+        %option{:value => "false", :selected => true} Не обязательно
+
+  %select{:class => 'block_inline_select field_location'}
+    - QuestionnaireField.location.values.each do |value|
+      %option{:value => value, :selected => (@details.location == value ? true : false)}
+        = I18n.t "enumerize.questionnaire_field.location.#{value}"
+
+  %input{:type => 'text', :class => 'field small-field block_inline_select field_position', :value => @details.position, :style => "width: 15px;"}
+
+  %input{:type => 'button', :class => 'button block_inline_select save_field_in_questionnaire', :value => "Сохранить"}
+  %input{:type => 'button', :class => 'button block_inline_select del_field_from_questionnaire', :value => "Удалить"}

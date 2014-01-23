@@ -63,6 +63,63 @@
                         #{display_value.name}
                   %input{:type => 'button', :class => 'button block_inline_select add_field_in_questionnaire', :value => "Добавить"}
 
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Список вопросов
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %div{:class => 'form'}
+              - @questionnaire_data.questions.order("position").each do |value|
+                %p
+                  %label{:style => 'font-size: 23px;'} #{value.name}
+                  %br
+                  %div
+                    %span{:style => 'font-size: 14px;'}
+                      Настройки вопроса
+                    %br
+                    %br
+
+                    %div
+                      %input{:type => 'hidden', :value => value.id, :class => 'question_id'}
+                      %div{:class => 'block_inline'}
+                        %span{:style => 'width: 200px;'} Название
+                        %input{:type => 'text', :style => "", :class => "field small-field question_name", :value => value.name}
+                      %div{:class => 'block_inline'}
+                        %span{:style => 'width: 200px;'} Кол-во ответов
+                        %input{:type => 'text', :style => "width: 20px;", :class => "field small-field question_count_all", :value => value.count_all}
+                      %div{:class => 'block_inline'}
+                        %span{:style => 'width: 200px;'} Кол-во правильных ответов
+                        %input{:type => 'text', :style => "width: 20px;", :class => "field small-field question_count_true", :value => value.count_true}
+                      %input{:type => 'button', :class => 'button block_inline_select save_question_headers', :value => "Сохранить"}
+  
+                    %br
+                    %br
+                    %span{:style => 'font-size: 14px;'}
+                      Ответы
+                    %br
+                    %br
+                    - value.question_fields.order("position").each do |question_field|
+                      = render_cell :question_field, "#{question_field.display}_admin", :data => question_field
+
+                    %br
+                    %span{:style => 'font-size: 14px;'}
+                      Добавить ответ
+                    %br
+                    %br
+                    %select
+                      - QuestionField.displays.values.each do |display|
+                        %option{:value => display}
+                          = I18n.t "enumerize.question_field.displays.#{display}"
+                    %input{:type => 'button', :class => 'button', :value => 'Добавить'}
+                
       %div{:class => 'cl'} &nbsp;    
 
 /Footer 

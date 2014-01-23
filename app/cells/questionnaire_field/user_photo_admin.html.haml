@@ -1,0 +1,14 @@
+%div{:class => 'block_inline'}
+  %input{:type => 'hidden', :class => 'field_questionnaire_field_id', :value => @data.id}
+  %input{:type => 'hidden', :class => 'questionnaire_fields_questionnaire_id', :value => @details.id}
+  %span{:style => "width: 200px;"} #{@data.name}
+
+  %select{:class => 'block_inline_select field_location'}
+    - QuestionnaireField.location.values.each do |value|
+      %option{:value => value, :selected => (@details.location == value ? true : false)}
+        = I18n.t "enumerize.questionnaire_field.location.#{value}"
+
+  %input{:type => 'text', :class => 'field small-field block_inline_select field_position', :value => @details.position, :style => "width: 15px;"}
+
+  %input{:type => 'button', :class => 'button block_inline_select save_field_in_questionnaire', :value => "Сохранить"}
+  %input{:type => 'button', :class => 'button block_inline_select del_field_from_questionnaire', :value => "Удалить"}
