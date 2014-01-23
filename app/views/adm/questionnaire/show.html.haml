@@ -53,8 +53,15 @@
               %p
                 %label Основная информация
                 %br
-                - @questionnaire_data.questionnaire_fields.each do |value|
-                  = render_cell :questionnaire_field, "#{value.display}_admin", :data => value, :details => value.details(@id)
+                - @questionnaire_data.questionnaire_fields_questionnaires.order("location, position").each do |value|
+                  = render_cell :questionnaire_field, "#{value.questionnaire_field.display}_admin", :data => value.questionnaire_field, :details => value
+                %br
+                %div{:class => 'block_inline'}
+                  %select{:class => 'block_inline_select select_field_for_add'}
+                    - QuestionnaireField.all.each do |display_value|
+                      %option{:value => display_value.id}
+                        #{display_value.name}
+                  %input{:type => 'button', :class => 'button block_inline_select add_field_in_questionnaire', :value => "Добавить"}
 
       %div{:class => 'cl'} &nbsp;    
 

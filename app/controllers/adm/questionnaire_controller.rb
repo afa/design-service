@@ -1,6 +1,5 @@
 # coding: utf-8
 class Adm::QuestionnaireController < Adm::ApplicationController
-	#include Adm::ApplicationHelper
 
 	def index
 		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
@@ -29,6 +28,15 @@ class Adm::QuestionnaireController < Adm::ApplicationController
 		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
 			data = Questionnaire.find(params[:id].to_i)
 			data.update_attributes(:name => params[:name], :specialization_id => params[:specialization_id])
+
+			render :json => {status: ""}
+		end
+	end
+
+	def add_field
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			questionnaire = Questionnaire.find(params[:id].to_i)
+			questionnaire.add_field(params[:questionnaire_field_id].to_i)
 
 			render :json => {status: ""}
 		end
