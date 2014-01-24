@@ -223,6 +223,8 @@ DesignService::Application.routes.draw do
     resources :question
     post 'question/add_field' => 'question#add_field', :as => :question_add_field
 
+    resources :question_field
+    post 'question_field/set_name' => 'question_field#set_name', :as => :question_field_set_name
     post 'question_field/add_photo_test' => 'question_field#add_photo_test', :as => :question_field_add_photo_test
   end
 

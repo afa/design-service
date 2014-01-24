@@ -1,4 +1,5 @@
 //= require adm/headers
+//= require attachment_submit
 
 $(document).ready ->
 
@@ -63,21 +64,37 @@ $(document).ready ->
   register_ajax_reloadable_handler('.add_field_in_question')
 
   register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      body = $(this).parent().parent();
+      kind = body.find('.question_new_kind').val();
+      $.post '/adm/question', {kind: kind, questionnaire_id: $('#questionnaire_id').attr('value')}, success_standart
+  register_ajax_reloadable_handler('.add_question')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      body = $(this).parent().parent();
+      if confirm('Удалить вопрос?')
+        $.ajax({
+          type: "DELETE",
+          url: '/adm/question/'+body.find('.question_id').attr('value'),
+          dataType: "json",
+          success: success_standart,
+          error: error_standart
+        })
+  register_ajax_reloadable_handler('.del_question')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      $.post '/adm/question_field/set_name', {name: $(this).prev().val(), id: $(this).next().attr('value')}, success_standart
+  register_ajax_reloadable_handler('.save_question_field_name')
+
+  register_ajax_reloadable_handler = (selector)->
     $(selector).change (event) ->
       console.info(event.target.files)
       files = event.target.files
-      $.post '/adm/question_field/add_photo_test', {file: files}, success_standart
-      
-      multipart_ajax_sendform(form, 'POST',
-        success: (data, textStatus, xhr)->
-          alert('Файл загружен')
-          form.get(0).reset()
-          file_field.change()
-          success_handler = callbacks['success'] || ->{}
-          success_handler(data, textStatus, xhr)
-        error: (xhr, textStatus, error)->
-          alert('Не удалось загрузить файл')
-          error_handler = callbacks['error'] || ->{}
-          error_handler(xhr, textStatus, error)
+
+      send_file($(this).parent(), (data)->
+        
       )
+      
   register_ajax_reloadable_handler('.photo_for_test')

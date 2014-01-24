@@ -1,0 +1,16 @@
+%div
+  %input{:type => 'hidden', :value => @data.id, :class => 'question_id'}
+  %div{:class => 'block_inline'}
+    %span{:style => 'width: 500px; font-size: 19px;'}
+      = I18n.t "enumerize.question.kinds.#{@data.kind}"
+  %div{:class => 'block_inline'}
+    %span{:style => 'width: 200px;'} Название
+    %input{:type => 'text', :style => "", :class => "field small-field question_name", :value => @data.name}
+  %div{:class => 'block_inline'}
+    %span{:style => 'width: 200px;'} Кол-во ответов
+    %input{:type => 'text', :style => "width: 20px;", :class => "field small-field question_count_all", :value => @data.count_all}
+  %div{:class => 'block_inline'}
+    %span{:style => 'width: 200px;'} Кол-во правильных ответов
+    %input{:type => 'text', :style => "width: 20px;", :class => "field small-field question_count_true", :value => @data.count_true}
+  %input{:type => 'button', :class => 'button block_inline_select save_question_headers', :value => "Сохранить"}
+  %input{:type => 'button', :class => 'button block_inline_select del_question', :value => "Удалить"}

@@ -378,6 +378,11 @@ ru:
     question_field:
       displays:
         photo_test: 'Фотография для выбора'
+        question_for_random_question: 'Рандомный вопрос'
+    question:
+      kinds:
+        photo_test: 'Тест с картинками'
+        random_question: 'Рандомный вопрос из списка доступных'
   moderation:
     status:
       not_accepted: 'Еще не проверено'
