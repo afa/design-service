@@ -4,4 +4,6 @@ class QuestionField < ActiveRecord::Base
 
 	extend Enumerize
   	enumerize :displays, in: ['photo_test']
+
+  	mount_uploader :photo, PhotoQuestionFieldUploader
 end

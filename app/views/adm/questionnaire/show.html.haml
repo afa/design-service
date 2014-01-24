@@ -83,7 +83,7 @@
                   %br
                   %div
                     %span{:style => 'font-size: 14px;'}
-                      Настройки вопроса
+                      %b Настройки вопроса
                     %br
                     %br
 
@@ -103,7 +103,7 @@
                     %br
                     %br
                     %span{:style => 'font-size: 14px;'}
-                      Ответы
+                      %b Ответы
                     %br
                     %br
                     - value.question_fields.order("position").each do |question_field|
@@ -111,14 +111,15 @@
 
                     %br
                     %span{:style => 'font-size: 14px;'}
-                      Добавить ответ
+                      %b Добавить ответ
                     %br
                     %br
-                    %select
+                    %select{:class => 'display_for_add_in_question'}
                       - QuestionField.displays.values.each do |display|
                         %option{:value => display}
                           = I18n.t "enumerize.question_field.displays.#{display}"
-                    %input{:type => 'button', :class => 'button', :value => 'Добавить'}
+                    %input{:type => 'button', :class => 'button add_field_in_question', :value => 'Добавить'}
+                    %input{:type => 'hidden', :value => value.id}
                 
       %div{:class => 'cl'} &nbsp;    
 

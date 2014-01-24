@@ -42,18 +42,42 @@ $(document).ready ->
   register_ajax_reloadable_handler = (selector)->
     $(selector).click (event)->
       body = $(this).parent();
-      question_id = body.find('.question_id')
-      name = body.find('.question_name')
-      count_all = body.find('.question_count_all')
-      count_true = body.find('.question_count_true')
+      question_id = body.find('.question_id').attr('value');
+      name = body.find('.question_name').val();
+      count_all = body.find('.question_count_all').val();
+      count_true = body.find('.question_count_true').val();
 
       $.ajax({
         type: "PUT",
         url: '/adm/question/'+question_id,
-        contentType: "application/json; charset=utf-8",
         dataType: "json",
         data: {name: name, count_all: count_all, count_true: count_true},
-        success: success_standart,
+        success: success_standart_dynamic,
         error: error_standart
       })
   register_ajax_reloadable_handler('.save_question_headers')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      $.post '/adm/question/add_field', {question_id: $(this).next().attr('value'), display: $(this).parent().find('.display_for_add_in_question').val()}, success_standart
+  register_ajax_reloadable_handler('.add_field_in_question')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).change (event) ->
+      console.info(event.target.files)
+      files = event.target.files
+      $.post '/adm/question_field/add_photo_test', {file: files}, success_standart
+      
+      multipart_ajax_sendform(form, 'POST',
+        success: (data, textStatus, xhr)->
+          alert('Файл загружен')
+          form.get(0).reset()
+          file_field.change()
+          success_handler = callbacks['success'] || ->{}
+          success_handler(data, textStatus, xhr)
+        error: (xhr, textStatus, error)->
+          alert('Не удалось загрузить файл')
+          error_handler = callbacks['error'] || ->{}
+          error_handler(xhr, textStatus, error)
+      )
+  register_ajax_reloadable_handler('.photo_for_test')

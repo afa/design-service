@@ -9,4 +9,13 @@ class Adm::QuestionController < ApplicationController
 			render :json => {status: ""}
 		end
 	end
+
+	def add_field
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			question = Question.find(params[:question_id].to_i)
+			question.add_field(params[:display])
+
+			render :json => {status: ""}
+		end
+	end
 end

@@ -221,6 +221,9 @@ DesignService::Application.routes.draw do
     post 'questionnaire_fields_questionnaire/set_field' => 'questionnaire_fields_questionnaire#set_field', :as => :questionnaire_fields_questionnaire_set_field
   
     resources :question
+    post 'question/add_field' => 'question#add_field', :as => :question_add_field
+
+    post 'question_field/add_photo_test' => 'question_field#add_photo_test', :as => :question_field_add_photo_test
   end
 
   get "welcome/index"
