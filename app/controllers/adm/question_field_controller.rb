@@ -31,4 +31,13 @@ class Adm::QuestionFieldController < Adm::ApplicationController
 			render :json => {status: ""}
 		end
 	end
+
+	def set_statis_is_true
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			question_field = QuestionField.find(params[:id].to_i)
+			status = question_field.set_statis_is_true(params[:statis_is_true] == "true")
+
+			render :json => {status: status}
+		end
+	end
 end

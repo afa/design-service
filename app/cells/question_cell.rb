@@ -69,4 +69,32 @@ class QuestionCell < Cell::Rails
 		
 		render
 	end
+
+	# опыт работы с минимальным количеством полей
+	def experience_min(args)
+		@data = args[:data]
+
+		render
+	end
+
+	# опыт работы с минимальным количеством полей. Для админки.
+	def experience_min_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# опыт работы с максимальным количеством полей
+	def experience_max(args)
+		@data = args[:data]
+
+		render
+	end
+
+	# опыт работы с максимальным количеством полей. Для админки.
+	def experience_max_admin(args)
+		@data = args[:data]
+		
+		render
+	end
 end

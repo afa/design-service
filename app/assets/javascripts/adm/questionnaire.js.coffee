@@ -109,3 +109,17 @@ $(document).ready ->
           error: error_standart
         })
   register_ajax_reloadable_handler('.del_question_field')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).change (event)->
+      if $(this).attr('checked') == "checked"
+        statis_is_true = "false"
+        $(this).removeAttr('checked')
+      else
+        statis_is_true = "true"
+        $(this).attr('checked', 'checked')
+
+      $.post '/adm/question_field/set_statis_is_true', {statis_is_true: statis_is_true, id: $(this).next().attr('value')}, (data)->
+        if data['status'] != "success"
+          alert('Вы не можете добавить еще 1 правильный ответ')
+  register_ajax_reloadable_handler('.check_true_in_question_field')

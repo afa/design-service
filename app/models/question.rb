@@ -15,7 +15,7 @@ class Question < ActiveRecord::Base
 			last_position = question_field_last.position + 1
 		end
 
-		data = QuestionField.new(:display => display, :position => last_position, :name => "", :value => "", :statis_is_true => false)
+		data = QuestionField.new(:display => display, :position => last_position, :name => "Название вопроса", :value => "", :statis_is_true => false)
 		self.question_fields << data
 		self.save
 	end

@@ -229,6 +229,7 @@ DesignService::Application.routes.draw do
     resources :question_field
     post 'question_field/set_name' => 'question_field#set_name', :as => :question_field_set_name
     post 'question_field/add_photo_test' => 'question_field#add_photo_test', :as => :question_field_add_photo_test
+    post 'question_field/set_statis_is_true' => 'question_field#set_statis_is_true', :as => :question_field_set_statis_is_true
   end
 
   get "welcome/index"

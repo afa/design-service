@@ -17,6 +17,23 @@ $(document).ready ->
   register_ajax_reloadable_handler('#add_worksheet')
 
   register_ajax_reloadable_handler = (selector)->
+    $(selector).change (event)->
+      $(this).next().attr('value', $(this).next().next().attr('value'))
+      multipart_ajax_sendform($('.add_worksheet_form'), 'POST',
+        success: (data, textStatus, xhr)->
+          console.info(111)
+          $('.user_avatar_field').attr('value', '0')
+          form.get(0).reset()
+          file_field.change()
+          success_handler = callbacks['success'] || ->{}
+          success_handler(data, textStatus, xhr)
+        error: (xhr, textStatus, error)->
+          #error_handler = callbacks['error'] || ->{}
+          #error_handler(xhr, textStatus, error)
+      )
+  register_ajax_reloadable_handler('.questionnaire_field_user_avatar')
+
+  register_ajax_reloadable_handler = (selector)->
     $(selector).click (event)->
       $(this).parent().find('.border').removeClass('border')
       $(this).addClass('border')
