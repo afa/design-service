@@ -29,4 +29,61 @@ class QuestionFieldCell < Cell::Rails
 		
 		render
 	end
+
+	# чекбокс, который просто выбирают
+	def check_select(args)
+		@data = args[:data]
+
+		render
+	end
+
+	# чекбокс, который просто выбирают. Для админки.
+	def check_select_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# чекбокс, который выбирают и записывают значение
+	def check_value(args)
+		@data = args[:data]
+
+		render
+	end
+
+	# чекбокс, который выбирают и записывают значение. Для админки.
+	def check_value_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# да, нет
+	def yes_no(args)
+		@data = args[:data]
+
+		render
+	end
+
+	# да, нет. Для админки.
+	def yes_no_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# Описание с файлом
+	def description_with_file(args)
+		@data = args[:data]
+		@index = args[:index]
+
+		render
+	end
+
+	# Описание с файлом. Для админки.
+	def description_with_file_admin(args)
+		@data = args[:data]
+		
+		render
+	end
 end

@@ -162,6 +162,9 @@ DesignService::Application.routes.draw do
    end
   end
 
+  resources :questionnaire
+  resources :worksheet
+
   namespace :admin do    
     post 'users/:id/group_remove' => 'users#group_remove', :as => :user_group_remove
     post 'users/:id/group_add' => 'users#group_add', :as => :user_group_add

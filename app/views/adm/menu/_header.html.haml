@@ -9,7 +9,7 @@
         = @user_data.profile.name
         %span 
           |
-        = link_to 'Выход', '#'
+        = link_to(t('user.session.signout'), destroy_user_session_path, :method => :delete)
     /End Logo + Top Nav
     /Main Nav
     = render partial: 'adm/menu/top_menu'

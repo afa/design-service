@@ -1,0 +1,5 @@
+%li
+  #{@index.to_i + 1}.
+  %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''}  
+  %input.file_att{type:'button', value:'Прирепить'}
+  %input{:type => 'file', :name => "photo-#{@data.id}", :style => 'opacity: 0; margin-top: 4px; margin-left: -120px; width: 121px; height: 27px; position: absolute; cursor: pointer;'}

@@ -47,12 +47,13 @@ $(document).ready ->
       name = body.find('.question_name').val();
       count_all = body.find('.question_count_all').val();
       count_true = body.find('.question_count_true').val();
+      position = body.find('.question_position').val();
 
       $.ajax({
         type: "PUT",
         url: '/adm/question/'+question_id,
         dataType: "json",
-        data: {name: name, count_all: count_all, count_true: count_true},
+        data: {name: name, count_all: count_all, count_true: count_true, position: position},
         success: success_standart_dynamic,
         error: error_standart
       })
@@ -96,5 +97,15 @@ $(document).ready ->
       send_file($(this).parent(), (data)->
         
       )
-      
   register_ajax_reloadable_handler('.photo_for_test')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      $.ajax({
+          type: "DELETE",
+          url: '/adm/question_field/'+$(this).next().attr('value'),
+          dataType: "json",
+          success: success_standart,
+          error: error_standart
+        })
+  register_ajax_reloadable_handler('.del_question_field')

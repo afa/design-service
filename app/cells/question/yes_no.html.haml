@@ -1,0 +1,4 @@
+%li
+  .heading
+    = @data.name
+  = render_cell :question_field, "yes_no", :data => @data.question_fields.first

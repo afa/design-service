@@ -1,6 +1,6 @@
 root = exports ? this
 root.success_standart = (data, status, xhr) ->
-  #location.reload()
+  location.reload()
   return false
 
 root.error_standart = (data, status, xhr) ->

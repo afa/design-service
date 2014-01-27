@@ -4,7 +4,7 @@ class Adm::QuestionController < ApplicationController
 		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
 			question = Question.find(params[:id].to_i)
 			question.update_attributes(:name => params[:name], :count_all => params[:count_all],
-				:count_true => params[:count_true])
+				:count_true => params[:count_true], :position => params[:position])
 
 			render :json => {status: ""}
 		end

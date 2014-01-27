@@ -1,0 +1,25 @@
+%li
+  %input{type:'checkbox', value:'1', id: "any-#{@data.id}"}    
+  %label{:for => "any-#{@data.id}", :class => 'check_select_label'}Другое
+  %input{:type => 'hidden', :value => 'false'}
+  %input{type:'text', value:'', class: 'textlines_default_light textline_l6-8 backg_default_light' }     
+  .knowledge_level{:style => 'display: none;'}
+    %span.comment
+      уровень владения:
+    %ul{:class => 'check_select_level'}
+      %li.1level
+        %span 
+          1            
+      %li.31level
+        %span               
+          2
+      %li.41level
+        %span               
+          3
+      %li.51level
+        %span               
+          4
+      %li.51level
+        %span               
+          5    
+    %input{:type => 'hidden', :value => '0', :class => 'check_select_level_value'}

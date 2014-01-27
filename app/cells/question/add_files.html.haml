@@ -1,0 +1,11 @@
+%li
+  .heading
+    = @data.name
+  .full_width
+    .padding_left   
+      Прикрепите Ваше портфолио с описанием файлов 
+      %div.alert
+        (Вы можете прикрепить заархививированные файлы):  
+      %ul.quis
+        - @data.get_description_with_files.each_with_index do |value, index|
+          = render_cell :question_field, "#{value.display}", :data => value, :index => index

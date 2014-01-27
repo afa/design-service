@@ -1,0 +1,25 @@
+%li
+  %input{type:'checkbox', value:'1', id: "freehand_drawing-#{@data.id}"}  
+  %label.floating{:for => "freehand_drawing-#{@data.id}", :class => 'check_select_label'}
+    = @data.name
+  %input{:type => 'hidden', :value => 'false'}
+  .knowledge_level{:style => 'display: none;'}
+    %span.comment
+      уровень владения:
+    %ul{:class => 'check_select_level'}
+      %li.1level
+        %span 
+          1            
+      %li.31level
+        %span               
+          2
+      %li.41level
+        %span               
+          3
+      %li.51level
+        %span               
+          4
+      %li.51level
+        %span               
+          5   
+    %input{:type => 'hidden', :value => '0', :class => 'check_select_level_value'}

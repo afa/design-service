@@ -1,0 +1,9 @@
+%span.main_info_half
+  .head
+    Фотография:
+  .photo  
+%span.main_info_half
+  .text
+    Прикрепите Вашу фотографию 150x150    
+  .attach
+  %input{:type => 'file', :name => "photo-#{@data.id}", :style => 'opacity: 0; margin-top: 69px; margin-left: -368px; width: 169px; height: 33px; position: absolute; cursor: pointer;'}

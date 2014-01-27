@@ -1,4 +1,4 @@
-%h1
-  QuestionnaireField#name_and_value
-%p
-  Find me in app/cells/questionnaire_field/name_and_value.html.haml
+%li.height_default 
+  %span.head_short
+    #{@data.value}:
+  %input.textlines_default_light.textline_l6-8.backg_default_light{ name: "header-#{@data.id}"}

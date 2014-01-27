@@ -1,4 +1,3 @@
-%h1
-  QuestionField#photo_test
-%p
-  Find me in app/cells/question_field/photo_test.html.haml
+%li
+  - unless @data.get_photo.nil?
+    %img{:style => 'width: 193px; height: 125px;', :src => "/uploads/attachment/file/#{@data.get_photo.id}/#{@data.get_photo.original_filename}"}

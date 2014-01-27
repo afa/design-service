@@ -4,8 +4,7 @@ class QuestionnaireFieldCell < Cell::Rails
   # нозвание поля, его значение
   def name_and_value(args)
   	@data = args[:data]
-  	@details = args[:details]
-
+    
     render
   end
 

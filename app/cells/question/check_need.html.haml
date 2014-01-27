@@ -1,0 +1,7 @@
+%li
+  .heading
+    = @data.name
+  .full_width
+    %ul.quis
+      - @data.get_check_need_answers.each do |value|
+        = render_cell :question_field, "#{value.display}", :data => value

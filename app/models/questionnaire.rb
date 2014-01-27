@@ -26,4 +26,17 @@ class Questionnaire < ActiveRecord::Base
 			:is_necessarily => true,
 			:value => "")
 	end
+
+	# берем заголовки, фильтруя по позиции их отображения
+	def get_headers(location)
+		questionnaire_fields_questionnaires.where("location = ?", location).order("position")
+	end
+
+	def get_questions(display)
+		questions.where("kind = ?", display).order("position")
+	end
+
+	def get_questions_other
+		questions.where("kind != 'photo_test'").order("position")
+	end
 end

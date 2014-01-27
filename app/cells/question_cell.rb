@@ -27,4 +27,46 @@ class QuestionCell < Cell::Rails
 		
 		render
 	end
+
+	# вопрос, в котором нужно отметить желаемые варианты
+	def check_need(args)
+		@data = args[:data]
+
+		render
+	end
+
+	# вопрос, в котором нужно отметить желаемые варианты. Для админки.
+	def check_need_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# вопрос "да-нет"
+	def yes_no(args)
+		@data = args[:data]
+
+		render
+	end
+
+	# вопрос "да-нет". Для админки.
+	def yes_no_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# вопрос для прикрепления файлов с описанием
+	def add_files(args)
+		@data = args[:data]
+
+		render
+	end
+
+	# вопрос для прикрепления файлов с описанием. Для админки.
+	def add_files_admin(args)
+		@data = args[:data]
+		
+		render
+	end
 end

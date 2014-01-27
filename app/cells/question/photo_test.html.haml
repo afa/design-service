@@ -1,0 +1,6 @@
+%li
+  .heading
+    = @data.name
+  %ul.images#first
+    - @data.get_photo_test_answers.each do |answer|
+      = render_cell :question_field, "#{answer.display}", :data => answer

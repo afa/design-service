@@ -22,4 +22,13 @@ class Adm::QuestionFieldController < Adm::ApplicationController
 			render :json => {status: ""}
 		end
 	end
+
+	def destroy
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			question_field = QuestionField.find(params[:id].to_i)
+			question_field.destroy
+
+			render :json => {status: ""}
+		end
+	end
 end
