@@ -1,0 +1,40 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :id => 'order_id', :value => @id}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%; margin: 0; margin-left: 321px;'}
+
+        /Специалист
+        %div{:class => 'box', :style => 'width: 30%;'}
+
+          /Выбор специалиста
+          %div{:class => 'box-head'}
+            %h2 Авторизация
+
+          %div{:style => 'text-align: center;'}
+
+            %p{:style => 'margin-top: 10px;'}
+              %label{:style => 'width: 50px;margin-left: 2px;'} Логин
+              %span{:class => 'req', :style => 'margin-left: 8px;'}
+                %input{:type => 'text', :class => 'field small-field login'}
+
+            %p{:style => 'margin-top: 5px; margin-bottom: 10px;'}
+              %label{:style => 'width: 50px'} Пароль
+              %span{:class => 'req'}
+                %input{:type => 'text', :class => 'field small-field password'}
+            
+            %div{:class => 'buttons'}
+              %input{:type => 'button', :class => 'button log_in', :value => 'Вход'}
+      
+      %div{:class => 'cl'} &nbsp;    

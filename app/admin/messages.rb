@@ -1,3 +1,4 @@
+# coding: utf-8
 ActiveAdmin.register Message do
   decorate_with MessageDecorator
   controller do

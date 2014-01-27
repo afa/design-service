@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddColumnsPlanDevelopments < ActiveRecord::Migration
   def up
     add_column :plan_developments, :men_total, :integer

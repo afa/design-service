@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateMainPortfolios < ActiveRecord::Migration
   def change
     create_table :main_portfolios do |t|

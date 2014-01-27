@@ -1,0 +1,8 @@
+- @portfolio_items[value.id].each do |item|
+  %div{:style => 'float: left; display: inline-block; margin-left: 20px;'}
+    %div{:style => 'width: 100px; height: 100px; background: #ccc;'}
+      %img{:src => ''}
+    %span
+      %label
+        Показать
+        %input{:type => 'checkbox'}

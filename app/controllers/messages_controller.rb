@@ -1,3 +1,4 @@
+# coding: utf-8
 class MessagesController < InheritedResources::Base
   # TODO: !!! set cancan and use load_and_authorize_resource to load only accepted messages
 

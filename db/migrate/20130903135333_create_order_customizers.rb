@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateOrderCustomizers < ActiveRecord::Migration
   def change
     create_table :order_customizers do |t|

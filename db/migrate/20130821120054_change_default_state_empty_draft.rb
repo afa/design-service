@@ -1,3 +1,4 @@
+# coding: utf-8
 class ChangeDefaultStateEmptyDraft < ActiveRecord::Migration
   def change
     change_column :orders, :work_state, :string, default: 'draft'

@@ -1,3 +1,4 @@
+# coding: utf-8
 class FixSpecialization < ActiveRecord::Migration
   def change
     remove_column :specialists, :specialization_id

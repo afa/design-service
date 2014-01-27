@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateDefaultSpecializations < ActiveRecord::Migration
   def up
    Specialization.where(:name => 'designer').first_or_create do |s|

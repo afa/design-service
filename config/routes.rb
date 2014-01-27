@@ -1,3 +1,4 @@
+# coding: utf-8
 DesignService::Application.routes.draw do
   resources :portfolios do
     resources :portfolio_items
@@ -53,7 +54,6 @@ DesignService::Application.routes.draw do
       put 'agree_price'
       put 'accept_work'
     end
-
     resources :reviews
     resources :messages do
       member do
@@ -70,12 +70,12 @@ DesignService::Application.routes.draw do
     put 'set_avatar'
     post 'add_portfolio'
     get :give_money
-    get 'profile4'
-    get 'profile5'
-    get 'profile6'    
     get 'profile1'
     get 'profile2'
     get 'profile3'            
+    get 'profile4'
+    get 'profile5'
+    get 'profile6'    
   end
 
   get 'personal_account' => 'personal_accounts#history'
@@ -168,6 +168,50 @@ DesignService::Application.routes.draw do
     delete 'specialist_groups/:id/remove_specialist' => 'specialist_groups#remove_specialist', as: :specialist_group_remove_specialist
     get "specialization/:id/specialists" => 'specialization#specialists', as: :specialization_specialists
     get "specialization/:id/specialist_groups" => 'specialization#specialist_groups', as: :specialization_specialist_groups
+  end
+
+  namespace :adm do
+    get '/' => 'index#index', :as => :index_index
+    resources :index do
+      get 'index'
+    end
+    resources :orders
+    resources :specialists
+    post 'specialists/get_by_specialization' => 'specialists#get_by_specialization', :as => :specialists_get_by_specialization
+    
+    resources :specialist
+    post 'specialist/add' => 'specialist#add', :as => :client_add
+    post 'specialist/set' => 'specialist#set', :as => :specialist_set
+    post 'specialist/del' => 'specialist#del', :as => :specialist_del
+    post 'specialist/add_to_group' => 'specialist#add_to_group', :as => :specialist_add_to_group
+    post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
+    post 'specialist/set_specialization' => 'specialist#set_specialization', :as => :specialist_set_specialization
+    
+    resources :order
+    post 'order/check_new' => 'order#check_new', :as => :order_check_new
+    post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
+    post 'order/send_message' => 'order#send_message', :as => :order_send_message
+    resources :specialist_group do
+      get 'get_by_specialist'
+    end
+    resources :specialist do
+      get 'get_by_group_and_specialization'
+      get 'get_price'
+    end
+    resources :clients
+    resources :client
+    post 'client/add' => 'client#add', :as => :client_add
+    post 'client/autorization' => 'client#autorization', :as => :client_autorization
+    post 'client/set_client' => 'client#set_client', :as => :client_set_client
+    post 'client/del' => 'client#del', :as => :client_del
+    post 'client/set_password' => 'client#set_password', :as => :client_set_password
+    resources :groups
+    resources :group
+    post 'group/set' => 'group#set', :as => :group_set
+    post 'group/add' => 'group#add', :as => :group_add
+    get 'group/:id/show_orders' => 'group#show_orders', :as => :group_show_orders
+    resources :portfolio_item
+    post 'portfolio_item/get_next' => 'portfolio_item#get_next', :as => :portfolio_item_get_next
   end
 
   get "welcome/index"

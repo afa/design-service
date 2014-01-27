@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateSpecialistLikes < ActiveRecord::Migration
   def change
     create_table :specialist_likes, id: false do |t|

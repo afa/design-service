@@ -1,3 +1,4 @@
+# coding: utf-8
 class MakeSpecializationUnique < ActiveRecord::Migration
   def change
     add_index :specializations, :name

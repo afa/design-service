@@ -1,3 +1,4 @@
+# coding: utf-8
 class DropOrderParts < ActiveRecord::Migration
   def up
     if ActiveRecord::Base.connection.table_exists?(:order_parts)

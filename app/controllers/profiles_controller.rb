@@ -1,3 +1,4 @@
+# coding: utf-8
 class ProfilesController < InheritedResources::Base
   defaults singleton: true
   before_filter :authenticate_user!
@@ -61,17 +62,6 @@ class ProfilesController < InheritedResources::Base
     end
    end
   end
-  
-  def profile4
-  end
-  
-  def profile5
-  end
-
-  def profile6
-  end
-
-
   def profile1
    @orders = User.current.orders.where(:work_state => %w(sent_to_moderator moderator_suggested specialist_agreed specialist_disagreed client_agreed in_work))
   end
@@ -84,6 +74,15 @@ class ProfilesController < InheritedResources::Base
   def profile3
    @orders = User.current.orders.where(:work_state => %w(work_accepted))
 
+  end
+  
+  def profile4
+  end
+  
+  def profile5
+  end
+
+  def profile6
   end
 
 protected

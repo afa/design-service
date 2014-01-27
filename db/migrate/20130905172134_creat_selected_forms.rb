@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreatSelectedForms < ActiveRecord::Migration
 def change
     create_table :selected_forms do |t|
