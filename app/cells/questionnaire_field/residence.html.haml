@@ -3,8 +3,8 @@
     Проживание:
   %ul.places
     %li
-      %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+      %input.textlines_default_all_borders.textline_l6-8.backg_default_light{ placeholder: 'Страна', name: "questionnaire_field[country-#{@data.id}]" }
     %li
-      %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+      %input.textlines_default_all_borders.textline_l6-8.backg_default_light{ placeholder: 'Регион', name: "questionnaire_field[region-#{@data.id}]" }
     %li
-      %input.textlines_default_all_borders.textline_l6-8.backg_default_light  
+      %input.textlines_default_all_borders.textline_l6-8.backg_default_light{ placeholder: 'Город', name: "questionnaire_field[city-#{@data.id}]" }

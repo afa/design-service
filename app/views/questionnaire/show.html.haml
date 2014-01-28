@@ -3,6 +3,7 @@
 %div.accreditation_heading{:style => 'position: absolute; margin-top: -50px; margin-left: 70px;'}
   = @questionnaire_data.name
 = form_for @worksheet, :html => {:class => 'add_worksheet_form'}, :url => {:controller => 'worksheet', :action => 'create'}, :method => 'post', remote: true, multipart: true do |f|
+  %input{:type => 'hidden', :name => 'questionnaire_id', :value => @questionnaire_data.id}
   %ul.accreditation
 
     %li
