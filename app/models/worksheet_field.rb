@@ -13,7 +13,7 @@ class WorksheetField < ActiveRecord::Base
 		attachment.save
 
 		# режется фотка
-		set(attachment.file.current_path, 152, 152)
+		#set(attachment.file.current_path, 152, 152)
 
 		{ :status => "user_avatar", :worksheet_field_id => self.id, :photo => attachment.file.url + "?#{SecureRandom.hex}" }
 	end

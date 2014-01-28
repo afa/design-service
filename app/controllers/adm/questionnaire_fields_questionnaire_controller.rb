@@ -7,7 +7,7 @@ class Adm::QuestionnaireFieldsQuestionnaireController < Adm::ApplicationControll
 			data.update_attributes(:position => params[:position].to_i, 
 				:location => params[:location], 
 				:is_necessarily => params[:is_necessarily] == "true",
-				:value => params[:value])
+				:value => params[:value], :kind => params[:kind])
 
 			render :json => {text: "Данные успешно сохранены"}
 		end

@@ -3,6 +3,7 @@ class QuestionCell < Cell::Rails
 	# вопрос для теста из фотографий
 	def photo_test(args)
 		@data = args[:data]
+		@index_question = args[:index_question]
 
 		render
 	end
@@ -17,6 +18,7 @@ class QuestionCell < Cell::Rails
 	# вопрос для отображения 1 рандомного вопроса из списка возможных
 	def random_question(args)
 		@data = args[:data]
+		@index_question = args[:index_question]
 
 		render
 	end
@@ -31,6 +33,7 @@ class QuestionCell < Cell::Rails
 	# вопрос, в котором нужно отметить желаемые варианты
 	def check_need(args)
 		@data = args[:data]
+		@index_question = args[:index_question]
 
 		render
 	end
@@ -45,6 +48,7 @@ class QuestionCell < Cell::Rails
 	# вопрос "да-нет"
 	def yes_no(args)
 		@data = args[:data]
+		@index_question = args[:index_question]
 
 		render
 	end
@@ -59,6 +63,7 @@ class QuestionCell < Cell::Rails
 	# вопрос для прикрепления файлов с описанием
 	def add_files(args)
 		@data = args[:data]
+		@index_question = args[:index_question]
 
 		render
 	end
@@ -73,6 +78,7 @@ class QuestionCell < Cell::Rails
 	# опыт работы с минимальным количеством полей
 	def experience_min(args)
 		@data = args[:data]
+		@index_question = args[:index_question]
 
 		render
 	end
@@ -87,6 +93,7 @@ class QuestionCell < Cell::Rails
 	# опыт работы с максимальным количеством полей
 	def experience_max(args)
 		@data = args[:data]
+		@index_question = args[:index_question]
 
 		render
 	end

@@ -5,7 +5,7 @@ $(document).ready ->
 
   register_ajax_reloadable_handler = (selector)->
     $(selector).click (event)->
-      $.post '/adm/questionnaire/set_headers', {id: $('#questionnaire_id').attr('value'), name: $('#questionnaire_name').val(), specialization_id: $('.select_specialization').val()}, success_standart
+      $.post '/adm/questionnaire/set_headers', {id: $('#questionnaire_id').attr('value'), name: $('#questionnaire_name').val(), specialization_id: $('.select_specialization').val(), is_numeric: $('.select_is_numeric').val()}, success_standart
   register_ajax_reloadable_handler('.save_header_data')
 
   register_ajax_reloadable_handler = (selector)->
@@ -14,10 +14,11 @@ $(document).ready ->
       position = body.find('.field_position').val();
       location = body.find('.field_location').val();
       is_necessarily = body.find('.field_is_necessarily').val();
+      kind = body.find('.field_kind').val();
       questionnaire_fields_questionnaire_id = body.find('.questionnaire_fields_questionnaire_id').attr('value');
       value = body.find('.field_value').val();
 
-      $.post '/adm/questionnaire_fields_questionnaire/set_field', {position: position, location: location, is_necessarily: is_necessarily, questionnaire_fields_questionnaire_id: questionnaire_fields_questionnaire_id, value: value}, success_standart_dynamic
+      $.post '/adm/questionnaire_fields_questionnaire/set_field', {position: position, location: location, is_necessarily: is_necessarily, questionnaire_fields_questionnaire_id: questionnaire_fields_questionnaire_id, value: value, kind: kind}, success_standart_dynamic
   register_ajax_reloadable_handler('.save_field_in_questionnaire')
 
   register_ajax_reloadable_handler = (selector)->

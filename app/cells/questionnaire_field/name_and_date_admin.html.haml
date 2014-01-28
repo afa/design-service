@@ -16,6 +16,8 @@
         %option{:value => "true"} Обязательно
         %option{:value => "false", :selected => true} Не обязательно
 
+  %span{:style => "width: 90px; height: 10px;", :class => 'block_inline_select'}
+
   %select{:class => 'block_inline_select field_location'}
     - QuestionnaireField.location.values.each do |value|
       %option{:value => value, :selected => (@details.location == value ? true : false)}

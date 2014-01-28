@@ -16,6 +16,12 @@
         %option{:value => "true"} Обязательно
         %option{:value => "false", :selected => true} Не обязательно
 
+  %select{:class => 'block_inline_select field_kind'}
+    %option{:value => "", :selected => @details.kind.nil? || @details.kind == "" ? true : false} -
+    - QuestionnaireFieldsQuestionnaire.kinds.values.each do |value|
+      %option{:value => value, :selected => @details.kind == value ? true : false}
+        = I18n.t "enumerize.questionnaire_fields_questionnaire.kinds.#{value}"
+
   %select{:class => 'block_inline_select field_location'}
     - QuestionnaireField.location.values.each do |value|
       %option{:value => value, :selected => (@details.location == value ? true : false)}

@@ -47,12 +47,39 @@
                       %option{:value => "#{value.id}", :selected => value.id == @questionnaire_data.specialization_id ? true : false}
                         = I18n.t "enumerize.specialization.#{value.name}"
                 %br
+                %span{:class => 'req', :style => 'float: none;'}
+                  %select{:class => 'field size3 select_is_numeric', :style => 'width: 200px'}
+                    %option{:value => "true", :selected => @questionnaire_data.is_numeric ? true : false}
+                      С нумерацией
+                    %option{:value => "false", :selected => !@questionnaire_data.is_numeric ? true : false}
+                      Без нумерации
+                %br
                 %input{:type => 'button', :class => 'button save_header_data', :value => 'Сохранить'}
 
             %div{:class => 'form'}
               %p
                 %label Основная информация
                 %br
+                %div{:class => 'block_inline'}
+                  %span{:style => "width: 200px;"} 
+                    %b 
+                      Тип
+                  %span{:style => "width: 140px;", :class => 'block_inline_select'} 
+                    %b 
+                      Название
+                  %span{:style => "width: 133px;", :class => 'block_inline_select'} 
+                    %b 
+                      Важность
+                  %span{:style => "width: 90px;", :class => 'block_inline_select'} 
+                    %b 
+                      Вид
+                  %span{:style => "width: 122px;", :class => 'block_inline_select'} 
+                    %b 
+                      Позиция
+                  %span{:style => "width: 50px;", :class => 'block_inline_select'} 
+                    %b 
+                      Сорт.
+
                 - @questionnaire_data.questionnaire_fields_questionnaires.order("location, position").each do |value|
                   = render_cell :questionnaire_field, "#{value.questionnaire_field.display}_admin", :data => value.questionnaire_field, :details => value
                 %br

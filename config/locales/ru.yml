@@ -395,6 +395,13 @@ ru:
         add_files: 'Прикрепленные файлы с описанием'
         experience_min: 'Опыт работы с минимумом полей'
         experience_max: 'Опыт работы с максимумом полей'
+    questionnaire_fields_questionnaire:
+      kinds:
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        patronymic: 'Отчество'
+        phone: 'Телефон'
+        email: 'Почта'
   moderation:
     status:
       not_accepted: 'Еще не проверено'

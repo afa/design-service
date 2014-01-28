@@ -29,7 +29,9 @@ class Adm::QuestionnaireController < Adm::ApplicationController
 	def set_headers
 		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
 			data = Questionnaire.find(params[:id].to_i)
-			data.update_attributes(:name => params[:name], :specialization_id => params[:specialization_id])
+			data.update_attributes(:name => params[:name], 
+				:specialization_id => params[:specialization_id].to_i,
+				:is_numeric => params[:is_numeric] == "true")
 
 			render :json => {status: ""}
 		end

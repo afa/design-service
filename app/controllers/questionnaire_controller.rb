@@ -5,6 +5,7 @@ class QuestionnaireController < ApplicationController
 	def show
 		@questionnaire_data = Questionnaire.find(params[:id].to_i)
 		@worksheet = Worksheet.new
+		@index_question = 1
 
 		@headers_left = @questionnaire_data.get_headers('left')
 		@headers_right = @questionnaire_data.get_headers('right')
