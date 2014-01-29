@@ -1,3 +1,4 @@
 %li
   - unless @data.get_photo.nil?
     %img{:style => 'width: 193px; height: 125px;', :src => "/uploads/attachment/file/#{@data.get_photo.id}/#{@data.get_photo.original_filename}"}
+    %input{:type => 'hidden', :value => 'false', :name => "question_field[photo-#{@data.id}]"}

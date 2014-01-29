@@ -5,7 +5,8 @@ class Question < ActiveRecord::Base
 	has_many :question_fields
 
 	extend Enumerize
-  	enumerize :kinds, in: ['photo_test', 'random_question', 'check_need', 'yes_no', 'add_files', 'experience_min', 'experience_max']
+  	enumerize :kinds, in: ['photo_test', 'random_question', 'check_need', 'yes_no', 'add_files', 
+  		'experience_min', 'experience_max', 'add_values']
 
 	def add_field(display)
 		question_field_last = self.question_fields.order("position asc").last
@@ -39,5 +40,10 @@ class Question < ActiveRecord::Base
 
 	def get_description_with_files
 		question_fields.where("display = 'description_with_file'").order("id asc")
+	end
+
+	# берется 1 рандомный ответ из question_fields, который является вопросом
+	def get_random_question_from_answers
+		question_fields.where("display = 'question_for_random_question'").order("RANDOM()").limit(1).first
 	end
 end

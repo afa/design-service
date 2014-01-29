@@ -104,4 +104,19 @@ class QuestionCell < Cell::Rails
 		
 		render
 	end
+
+	# строки для описания с подгружаемыми по мере заполнения
+	def add_values(args)
+		@data = args[:data]
+		@index_question = args[:index_question]
+
+		render
+	end
+
+	# строки для описания с подгружаемыми по мере заполнения. Для админки.
+	def add_values_admin(args)
+		@data = args[:data]
+		
+		render
+	end
 end

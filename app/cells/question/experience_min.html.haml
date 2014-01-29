@@ -1,0 +1,28 @@
+%li
+  .heading
+    = @index_question
+    = @data.name
+  .full_width
+    %ul.quis.break
+      %li.experience_field1
+        %span
+          Наименование организации:
+        %input.textlines_default_light.textline_l13.backg_default_light.experience_name{type:'text', style:'margin-top: 20px;', name: "question_field[experience_name_1-#{@data.id}]"} 
+      %li.experience_field2
+        %span
+          Должность:
+        %input.textlines_default_light.textline_l13.backg_default_light.experience_position{type:'text', name: "question_field[experience_position_1-#{@data.id}]"} 
+      %li.experience_field3
+        %span
+          Должностные обязанности:
+        %ul.manage
+          %li
+            %input.textlines_default_light.textline_l13.backg_default_light.experience_description1{type:'text', name: "question_field[experience_description_1_1-#{@data.id}]"}
+          %li     
+            %input.textlines_default_light.textline_l13.backg_default_light.experience_description2{type:'text', name: "question_field[experience_description_1_2-#{@data.id}]"}
+          %li     
+            %input.textlines_default_light.textline_l13.backg_default_light.experience_description3{type:'text', name: "question_field[experience_description_1_3-#{@data.id}]"}
+      %li
+        %span.add_new.add_new_fields_experience
+        %input{:type => 'hidden', :value => '2'}
+        %input{:type => 'hidden', :value => @data.id}

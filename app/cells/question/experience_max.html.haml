@@ -1,0 +1,52 @@
+%li
+  .heading
+    = @index_question
+    = @data.name
+  .full_width
+    %ul.quis.break
+      %li.experience_field1
+        %span
+          Наименование организации:
+        %input.textlines_default_light.textline_l13.backg_default_light.experience_name{type:'text', style:'margin-top: 20px;', name: "question_field[experience_name_1-#{@data.id}]"} 
+      %li.experience_field4
+        %ul.data.experience_date{:style => 'margin-top: 20px;'}
+          %li
+            %span.long
+              Дата начала:
+            %input.textlines_default_all_borders.textline_l6-8.backg_default_light.experience_date_start{:name => "question_field[experience_date_start_1-#{@data.id}]"}
+          %li
+            %span.long
+              Дата окончания:
+            %input.textlines_default_all_borders.textline_l6-8.backg_default_light.experience_date_end{:name => "question_field[experience_date_end_1-#{@data.id}]"}
+
+        %ul.data.experience_location{:style => 'margin-top: 20px;'}
+          %li
+            %span.short
+              Страна:
+            %input.textlines_default_all_borders.textline_l6-8.backg_default_light.experience_location_country{:name => "question_field[experience_country_1-#{@data.id}]"}
+          %li
+            %span.short
+              Ренион:
+            %input.textlines_default_all_borders.textline_l6-8.backg_default_light.experience_location_region{:name => "question_field[experience_region_1-#{@data.id}]"}
+          %li
+            %span.short
+              Город:
+            %input.textlines_default_all_borders.textline_l6-8.backg_default_light.experience_location_city{:name => "question_field[experience_city_1-#{@data.id}]"}
+      %li.experience_field2
+        %span
+          Должность:
+        %input.textlines_default_light.textline_l13.backg_default_light.experience_position{type:'text', name: "question_field[experience_position_1-#{@data.id}]"} 
+      %li.experience_field3
+        %span
+          Должностные обязанности:
+        %ul.manage
+          %li
+            %input.textlines_default_light.textline_l13.backg_default_light.experience_description1{type:'text', name: "question_field[experience_description_1_1-#{@data.id}]"}
+          %li     
+            %input.textlines_default_light.textline_l13.backg_default_light.experience_description2{type:'text', name: "question_field[experience_description_1_2-#{@data.id}]"}
+          %li     
+            %input.textlines_default_light.textline_l13.backg_default_light.experience_description3{type:'text', name: "question_field[experience_description_1_3-#{@data.id}]"}
+      %li
+        %span.add_new.add_new_fields_experience_max
+        %input{:type => 'hidden', :value => '2'}
+        %input{:type => 'hidden', :value => @data.id}

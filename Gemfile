@@ -102,4 +102,4 @@ end
 
 gem 'will_paginate', '~> 3.0'
 gem 'cells'
-#gem 'rmagick', "2.13.1", :require => 'RMagick'
+#gem 'rmagick'
