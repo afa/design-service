@@ -39,7 +39,7 @@ body.unregistered {
   /*  BLOCK MENU DEFAULT */
   #block_menu_default {
     position: absolute;
-    font-family: Tahoma;
+    font-family: Tahoma, Geneva, sans-serif;
     float: left;
     right: 0px;
     top: 0px;
@@ -147,7 +147,12 @@ body.unregistered {
           &.p2 {
             padding-top: 10px;
             font-size: 14px;
+            margin-left: 5px;
           }
+          &.p3 {
+            padding-top: 2px;
+            font-size: 14px;
+          }          
         }
       }
 
