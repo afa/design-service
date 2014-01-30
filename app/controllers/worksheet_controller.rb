@@ -22,7 +22,7 @@ class WorksheetController < ApplicationController
 			render :json => data
 		elsif status == "add"
 			worksheet = Worksheet.new(:questionnaire_id => params[:questionnaire_id].to_i)
-			#worksheet.add(params)
+			worksheet.add(params)
 
 			render :json => { :status => "success" }
 		else
