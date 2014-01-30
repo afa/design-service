@@ -1,5 +1,5 @@
-%li
-  #{@index.to_i + 1}.
-  %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:'', name: "question_field[description_work-#{@data.id}]"}  
+%li.file_field
+  %span.span_empty #{@index.to_i + 1}.
+  %input.textlines_default_light.textline_l12.backg_default_light.description_field{type:'text', value:'', name: "question_field[description_work_#{@index.to_i + 1}-#{@data.question_id}]"}  
   %input.file_att{type:'button', value:'Прирепить'}
-  %input{:type => 'file', :name => "question_field[file_work-#{@data.id}]", :style => 'opacity: 0; margin-top: 4px; margin-left: -120px; width: 121px; height: 27px; position: absolute; cursor: pointer;'}
+  %input{:type => 'file', :name => "question_field[file_work_#{@index.to_i + 1}-#{@data.question_id}]", :style => 'opacity: 0; margin-top: 4px; margin-left: -120px; width: 121px; height: 27px; position: absolute; cursor: pointer;', :class => "file_field"}

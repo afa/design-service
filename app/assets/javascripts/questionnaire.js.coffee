@@ -160,8 +160,65 @@ $(document).ready ->
 
       $(this).parent().before(str)
       body1 = $(this).parent().prev()
-      body1.find('.experience_name').attr('name', 'question_field[experience_name_'+number_next+'-'+data_id+']')
+      body1.find('.value_field').attr('name', 'question_field[value_'+number_next+'-'+data_id+']')
       body1.find('.span_empty').html(number_next + '.')
 
       $(this).next().attr('value', (parseInt(number_next) + 1))
   register_ajax_reloadable_handler('.add_new_fields_value')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      number_next = parseInt($(this).next().attr('value'))
+      data_id = $(this).next().next().attr('value')
+      body = $(this).parent().parent()
+      str = '<li class="file_field">'
+      str += body.find('.file_field').html()
+      str += '</li>'
+      $(this).parent().before(str)
+
+      body1 = $(this).parent().prev()
+      body1.find('.description_field').attr('name', 'question_field[description_work_'+number_next+'-'+data_id+']')
+      body1.find('.file_field').attr('name', 'question_field[file_work_'+number_next+'-'+data_id+']')
+      body1.find('.span_empty').html(number_next + '.')
+
+      $(this).next().attr('value', (parseInt(number_next) + 1))
+  register_ajax_reloadable_handler('.add_new_fields_file_load')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      $(this).parent().parent().next().attr('value', $(this).next().attr('value'))
+  register_ajax_reloadable_handler('.worksheet_education_type')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).on 'click', (event)->
+      number_next = parseInt($(this).next().attr('value'))
+      data_id = $(this).next().next().attr('value')
+      body = $(this).parent().parent().parent().prev()
+      str = '<div>'
+      str += body.html()
+      str += '</div>'
+      body.after(str)
+
+      body_new = $(this).parent().parent().parent().prev()
+      body_new.find('.worksheet_education_type').attr('name', 'worksheet_education[type_'+number_next+'-'+data_id+']')
+      body_new.find('.worksheet_education_name').attr('name', 'worksheet_education[name_'+number_next+'-'+data_id+']')
+      body_new.find('.worksheet_education_date_last').attr('name', 'worksheet_education[date_last_'+number_next+'-'+data_id+']')
+
+      body_new.find('.heigher_field').find('input').attr('id', 'heigher_'+number_next)
+      body_new.find('.heigher_field').find('label').attr('for', 'heigher_'+number_next)
+      body_new.find('.heigher_field').find('input').attr('name', 'designer_needings_'+number_next)
+
+      body_new.find('.incomplete_higher_field').find('input').attr('id', 'incomplete_higher_'+number_next)
+      body_new.find('.incomplete_higher_field').find('label').attr('for', 'incomplete_higher_'+number_next)
+      body_new.find('.incomplete_higher_field').find('input').attr('name', 'designer_needings_'+number_next)
+
+      body_new.find('.paraprofessional_field').find('input').attr('id', 'paraprofessional_'+number_next)
+      body_new.find('.paraprofessional_field').find('label').attr('for', 'paraprofessional_'+number_next)
+      body_new.find('.paraprofessional_field').find('input').attr('name', 'designer_needings_'+number_next)
+
+      body_new.find('.courses_field').find('input').attr('id', 'courses_'+number_next)
+      body_new.find('.courses_field').find('label').attr('for', 'courses_'+number_next)
+      body_new.find('.courses_field').find('input').attr('name', 'designer_needings_'+number_next)
+
+      $(this).next().attr('value', (parseInt(number_next) + 1))
+  register_ajax_reloadable_handler('.add_new_fields_education')

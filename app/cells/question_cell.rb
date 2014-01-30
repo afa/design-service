@@ -64,6 +64,7 @@ class QuestionCell < Cell::Rails
 	def add_files(args)
 		@data = args[:data]
 		@index_question = args[:index_question]
+		@index = 0
 
 		render
 	end
@@ -109,6 +110,7 @@ class QuestionCell < Cell::Rails
 	def add_values(args)
 		@data = args[:data]
 		@index_question = args[:index_question]
+		@index = 1
 
 		render
 	end

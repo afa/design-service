@@ -35,7 +35,8 @@ class Question < ActiveRecord::Base
 	end
 
 	def get_check_need_answers
-		question_fields.where("display = 'check_select' or display = 'check_value'").order("position asc")
+		question_fields.where("display = 'check_select' or display = 'check_value' or display = 'check_select_no_level'")\
+			.order("position asc")
 	end
 
 	def get_description_with_files
@@ -45,5 +46,9 @@ class Question < ActiveRecord::Base
 	# берется 1 рандомный ответ из question_fields, который является вопросом
 	def get_random_question_from_answers
 		question_fields.where("display = 'question_for_random_question'").order("RANDOM()").limit(1).first
+	end
+
+	def get_values
+		question_fields.where("display = 'value'").order("id asc")
 	end
 end

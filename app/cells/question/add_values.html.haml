@@ -7,16 +7,11 @@
       = @data.value
     .padding_left
       %ul.quis
-        %li.value_field
-          %span_empty.span_empty 1.
-          %input.textlines_default_light.textline_l14.backg_default_light.value_field_1{type:'text', name: "question_field[value-#{@data.id}]"}  
-        %li.value_field
-          %span_empty.span_empty 2.
-          %input.textlines_default_light.textline_l14.backg_default_light.value_field_2{type:'text', name: "question_field[value-#{@data.id}]"}  
-        %li.value_field
-          %span_empty.span_empty 3.
-          %input.textlines_default_light.textline_l14.backg_default_light.value_field_3{type:'text', name: "question_field[value-#{@data.id}]"}
+        - @data.get_values.each do |value|
+          = render_cell :question_field, "#{value.display}", :data => value, :index => @index
+          - @index += 1 
+
         %li
           %span.add_new.add_new_fields_value
-          %input{:type => 'hidden', :value => '4'}
+          %input{:type => 'hidden', :value => @index}
           %input{:type => 'hidden', :value => @data.id}

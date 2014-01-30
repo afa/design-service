@@ -8,5 +8,11 @@
       %div.alert
         (Вы можете прикрепить заархививированные файлы):  
       %ul.quis
-        - @data.get_description_with_files.each_with_index do |value, index|
-          = render_cell :question_field, "#{value.display}", :data => value, :index => index
+        - @data.get_description_with_files.each do |value|
+          = render_cell :question_field, "#{value.display}", :data => value, :index => @index
+          - @index += 1
+
+        %li
+          %span.add_new.add_new_fields_file_load
+          %input{:type => 'hidden', :value => @index + 1}
+          %input{:type => 'hidden', :value => @data.id}

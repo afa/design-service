@@ -6,7 +6,7 @@ class QuestionField < ActiveRecord::Base
 
 	extend Enumerize
   	enumerize :displays, in: ['photo_test', 'question_for_random_question', 'check_select', 'check_value', 'yes_no', 'description_with_file',
-  		'experience_min', 'experience_max', 'value']
+  		'experience_min', 'experience_max', 'value', 'check_select_no_level']
 
   	def get_photo
   		Attachment.where("attachable_id = ? and attachable_type = 'QuestionField'", self.id).first

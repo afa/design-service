@@ -1,0 +1,40 @@
+.padding_left{style:'margin-top:30px;'}
+  Образование :
+  %div
+    %ul.education
+      %li.heigher_field
+        %input.radio_buttons.optional{checked: "checked", type: "radio", value: "true", name:"designer_needings_1", id: "heigher_#{@data.id}"}
+        %label.collection_radio_buttons.worksheet_education_type{:for=>"heigher_#{@data.id}"}Высшее
+        %input{:type => 'hidden', :value => 'heigher'}
+      %li.incomplete_higher_field
+        %input.radio_buttons.optional{type: "radio", value: "true", name:"designer_needings_1", id: "incomplete_higher_#{@data.id}"}
+        %label.collection_radio_buttons.worksheet_education_type{:for=>"incomplete_higher_#{@data.id}"}Неполное высшее
+        %input{:type => 'hidden', :value => 'incomplete_higher'}
+      %li.paraprofessional_field
+        %input.radio_buttons.optional{checked: "checked", type: "radio", value: "true", name:"designer_needings_1", id: "paraprofessional_#{@data.id}"}
+        %label.collection_radio_buttons.worksheet_education_type{:for=>"paraprofessional_#{@data.id}"}Среднее специальное
+        %input{:type => 'hidden', :value => 'paraprofessional'}
+      %li.courses_field
+        %input.radio_buttons.optional{type: "radio", value: "true", name:"designer_needings_1", id: "courses_#{@data.id}"}
+        %label.collection_radio_buttons.worksheet_education_type{:for=>"courses_#{@data.id}"}Курсы
+        %input{:type => 'hidden', :value => 'courses'}
+    %input{:type => 'hidden', :name => "worksheet_education[type_1-#{@data.id}]", :class => 'worksheet_education_type'}
+    .education
+      .education_part
+        .row
+          %span
+            Название учебного заведения:
+          %input.textlines_default_light.textline_l10.backg_default_light{type:'text', name: "worksheet_education[name_1-#{@data.id}]", :class => 'worksheet_education_name'}
+      
+        .row
+          %span
+            Год окончания:
+          %input.textlines_default_light.textline_l10.backg_default_light{type:'text', name: "worksheet_education[date_last_1-#{@data.id}]", :class => 'worksheet_education_date_last'}
+
+  %div
+    .education
+      .education_part
+      .row.row_new_fields_education{:style => 'margin-left: 190px;'}
+        %span.add_new.add_new_fields_education
+        %input{:type => 'hidden', :value => (@index+1)}
+        %input{:type => 'hidden', :value => @data.id}

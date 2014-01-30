@@ -118,12 +118,27 @@ class QuestionFieldCell < Cell::Rails
 	# значение во всю ширину
 	def value(args)
 		@data = args[:data]
+		@index = args[:index]
 		
 		render
 	end
 
 	# значение во всю ширину. Для админки.
 	def value_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# чекбокс для выбора без оценки
+	def check_select_no_level(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# чекбокс для выбора без оценки. Для админки.
+	def check_select_no_level_admin(args)
 		@data = args[:data]
 		
 		render

@@ -100,6 +100,7 @@ class QuestionnaireFieldCell < Cell::Rails
   def education(args)
     @data = args[:data]
     @details = args[:details]
+    @index = 1
 
     render
   end
