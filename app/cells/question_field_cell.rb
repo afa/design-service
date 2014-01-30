@@ -114,4 +114,18 @@ class QuestionFieldCell < Cell::Rails
 		
 		render
 	end
+
+	# значение во всю ширину
+	def value(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# значение во всю ширину. Для админки.
+	def value_admin(args)
+		@data = args[:data]
+		
+		render
+	end
 end

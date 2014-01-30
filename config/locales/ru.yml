@@ -386,6 +386,7 @@ ru:
         description_with_file: 'Описание с файлом'
         experience_min: 'Минимум полей'
         experience_max: 'Максимум полей'
+        value: 'Поле для ввода'
     question:
       kinds:
         photo_test: 'Тест с картинками'
@@ -395,6 +396,7 @@ ru:
         add_files: 'Прикрепленные файлы с описанием'
         experience_min: 'Опыт работы с минимумом полей'
         experience_max: 'Опыт работы с максимумом полей'
+        add_values: 'Поля для записи'
     questionnaire_fields_questionnaire:
       kinds:
         first_name: 'Имя'

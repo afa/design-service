@@ -148,3 +148,20 @@ $(document).ready ->
     $(selector).click (event)->
       $(this).parent().next().attr('value', $(this).next().attr('value'))
   register_ajax_reloadable_handler('.question_field_yes_no')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      number_next = $(this).next().attr('value')
+      data_id = $(this).next().next().attr('value')
+      body = $(this).parent().parent()
+      str = '<li class="value_field">'
+      str += body.find('.value_field').html()
+      str += '</li>'
+
+      $(this).parent().before(str)
+      body1 = $(this).parent().prev()
+      body1.find('.experience_name').attr('name', 'question_field[experience_name_'+number_next+'-'+data_id+']')
+      body1.find('.span_empty').html(number_next + '.')
+
+      $(this).next().attr('value', (parseInt(number_next) + 1))
+  register_ajax_reloadable_handler('.add_new_fields_value')
