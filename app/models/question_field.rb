@@ -4,6 +4,8 @@ class QuestionField < ActiveRecord::Base
 
 	has_one :attachment, as: :attachable, class_name: 'Attachment', dependent: :destroy
 
+  has_many :worksheet_experiences
+
 	extend Enumerize
   	enumerize :displays, in: ['photo_test', 'question_for_random_question', 'check_select', 'check_value', 'yes_no', 'description_with_file',
   		'experience_min', 'experience_max', 'value', 'check_select_no_level']
