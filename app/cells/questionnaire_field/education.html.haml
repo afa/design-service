@@ -4,21 +4,21 @@
     %ul.education
       %li.heigher_field
         %input.radio_buttons.optional{checked: "checked", type: "radio", value: "true", name:"designer_needings_1", id: "heigher_#{@data.id}"}
-        %label.collection_radio_buttons.worksheet_education_type{:for=>"heigher_#{@data.id}"}Высшее
+        %label.collection_radio_buttons.worksheet_education_type{:for=>"heigher_#{@data.id}", :onclick => 'worksheet_education_type_load(this)'}Высшее
         %input{:type => 'hidden', :value => 'heigher'}
       %li.incomplete_higher_field
         %input.radio_buttons.optional{type: "radio", value: "true", name:"designer_needings_1", id: "incomplete_higher_#{@data.id}"}
-        %label.collection_radio_buttons.worksheet_education_type{:for=>"incomplete_higher_#{@data.id}"}Неполное высшее
+        %label.collection_radio_buttons.worksheet_education_type{:for=>"incomplete_higher_#{@data.id}", :onclick => 'worksheet_education_type_load(this)'}Неполное высшее
         %input{:type => 'hidden', :value => 'incomplete_higher'}
       %li.paraprofessional_field
-        %input.radio_buttons.optional{checked: "checked", type: "radio", value: "true", name:"designer_needings_1", id: "paraprofessional_#{@data.id}"}
-        %label.collection_radio_buttons.worksheet_education_type{:for=>"paraprofessional_#{@data.id}"}Среднее специальное
+        %input.radio_buttons.optional{type: "radio", value: "true", name:"designer_needings_1", id: "paraprofessional_#{@data.id}"}
+        %label.collection_radio_buttons.worksheet_education_type{:for=>"paraprofessional_#{@data.id}", :onclick => 'worksheet_education_type_load(this)'}Среднее специальное
         %input{:type => 'hidden', :value => 'paraprofessional'}
       %li.courses_field
         %input.radio_buttons.optional{type: "radio", value: "true", name:"designer_needings_1", id: "courses_#{@data.id}"}
-        %label.collection_radio_buttons.worksheet_education_type{:for=>"courses_#{@data.id}"}Курсы
+        %label.collection_radio_buttons.worksheet_education_type{:for=>"courses_#{@data.id}", :onclick => 'worksheet_education_type_load(this)'}Курсы
         %input{:type => 'hidden', :value => 'courses'}
-    %input{:type => 'hidden', :name => "worksheet_education[type_1-#{@data.id}]", :class => 'worksheet_education_type'}
+    %input{:type => 'hidden', :name => "worksheet_education[type_1-#{@data.id}]", :class => 'worksheet_education_type', :value => 'heigher'}
     .education
       .education_part
         .row

@@ -1,6 +1,13 @@
+# coding: utf-8
 class WorksheetField < ActiveRecord::Base
 	belongs_to :questionnaire_fields_questionnaire, class_name: 'QuestionnaireFieldsQuestionnaire', foreign_key: 'questionnaire_fields_questionnaire_id'
 	belongs_to :worksheet, class_name: 'Worksheet', foreign_key: 'worksheet_id'
+
+    has_one :attachment, as: :attachable, class_name: 'Attachment', dependent: :destroy
+
+    def get_photo
+        Attachment.where("attachable_id = ? and attachable_type = 'WorksheetField'", self.value.to_i).first
+    end
 
 	def add_avatar(user_avatar)
 		save
@@ -57,5 +64,39 @@ class WorksheetField < ActiveRecord::Base
             File.delete(image_path)
             "error"
         end
+    end
+
+    # возвращаем нужное поле для анкеты
+    def get_new(value)
+        data = value.last
+        data = "country-#{value.last}" unless value.first.at("country").nil?
+        data = "region-#{value.last}" unless value.first.at("region").nil?
+        data = "city-#{value.last}" unless value.first.at("city").nil?
+        field = value.first.split('-')
+        
+        WorksheetField.new(
+            :value => data, 
+            :questionnaire_fields_questionnaire_id => field.last.to_i
+        )
+    end
+
+    def get_status_necessarily(value)
+        fields = value.first.split('-')
+        status = "success"
+        field = nil
+
+        begin
+            field = QuestionnaireFieldsQuestionnaire.find(fields.last.to_i)
+        rescue
+            status = "error_field"
+        end
+
+        unless field.nil?
+            if field.is_necessarily && (value.last.nil? || value.last == "")
+                status = "nil_field_#{fields.first}"
+            end
+        end
+
+        status
     end
 end

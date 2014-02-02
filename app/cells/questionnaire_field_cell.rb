@@ -16,6 +16,14 @@ class QuestionnaireFieldCell < Cell::Rails
     render
   end
 
+  # нозвание поля, его значение для админки просмотра
+  def name_and_value_admin_show(args)
+    @data = args[:data]
+    @details = args[:details]
+    
+    render
+  end
+
   # нозвание поля, дата
   def name_and_date(args)
     @data = args[:data]
@@ -26,6 +34,14 @@ class QuestionnaireFieldCell < Cell::Rails
 
   # нозвание поля, дата для админки
   def name_and_date_admin(args)
+    @data = args[:data]
+    @details = args[:details]
+    
+    render
+  end
+
+  # нозвание поля, дата для админки
+  def name_and_date_admin_show(args)
     @data = args[:data]
     @details = args[:details]
     
@@ -48,6 +64,15 @@ class QuestionnaireFieldCell < Cell::Rails
     render
   end
 
+  # проживание: страна, город, регион для админки
+  def residence_admin_show(args)
+    @data = args[:data]
+    @details = args[:details]
+    @fields = @data.value.split("-")
+    
+    render
+  end
+
   # загружаемая фотография
   def user_photo(args)
     @data = args[:data]
@@ -58,6 +83,14 @@ class QuestionnaireFieldCell < Cell::Rails
 
   # загружаемая фотография для админки
   def user_photo_admin(args)
+    @data = args[:data]
+    @details = args[:details]
+    
+    render
+  end
+
+  # загружаемая фотография для админки
+  def user_photo_admin_show(args)
     @data = args[:data]
     @details = args[:details]
     
@@ -80,6 +113,14 @@ class QuestionnaireFieldCell < Cell::Rails
     render
   end
 
+  # нозвание поля, его значение на всю длину для админки
+  def name_and_value_full_admin_show(args)
+    @data = args[:data]
+    @details = args[:details]
+    
+    render
+  end
+
   # нозвание поля, textarea на всю длину
   def name_and_textarea_full(args)
     @data = args[:data]
@@ -90,6 +131,14 @@ class QuestionnaireFieldCell < Cell::Rails
 
   # нозвание поля, textarea на всю длину для админки
   def name_and_textarea_full_admin(args)
+    @data = args[:data]
+    @details = args[:details]
+    
+    render
+  end
+
+  # нозвание поля, textarea на всю длину для админки
+  def name_and_textarea_full_admin_show(args)
     @data = args[:data]
     @details = args[:details]
     
@@ -107,6 +156,14 @@ class QuestionnaireFieldCell < Cell::Rails
 
   # блок образования для админки
   def education_admin(args)
+    @data = args[:data]
+    @details = args[:details]
+    
+    render
+  end
+
+  # блок образования для админки
+  def education_admin_show(args)
     @data = args[:data]
     @details = args[:details]
     

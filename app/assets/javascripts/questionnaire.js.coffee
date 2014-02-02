@@ -185,11 +185,6 @@ $(document).ready ->
   register_ajax_reloadable_handler('.add_new_fields_file_load')
 
   register_ajax_reloadable_handler = (selector)->
-    $(selector).click (event)->
-      $(this).parent().parent().next().attr('value', $(this).next().attr('value'))
-  register_ajax_reloadable_handler('.worksheet_education_type')
-
-  register_ajax_reloadable_handler = (selector)->
     $(selector).on 'click', (event)->
       number_next = parseInt($(this).next().attr('value'))
       data_id = $(this).next().next().attr('value')
@@ -222,3 +217,8 @@ $(document).ready ->
 
       $(this).next().attr('value', (parseInt(number_next) + 1))
   register_ajax_reloadable_handler('.add_new_fields_education')
+
+root = exports ? this
+root.worksheet_education_type_load = (el) ->
+  $(el).parent().parent().next().attr('value', $(el).next().attr('value'))
+  console.info($(el).next().attr('value'))

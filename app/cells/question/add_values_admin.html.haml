@@ -12,6 +12,11 @@
   %div{:class => 'block_inline'}
     %span{:style => 'width: 200px;'} Приоритет
     %input{:type => 'text', :style => "width: 20px;", :class => "field small-field question_position", :value => @data.position}
+  %div{:class => 'block_inline'}
+    %span{:style => 'width: 200px;'} Заполнение
+    %select.question_is_necessarily
+      %option{:value => 'true', :selected => @data.is_necessarily} обязательно
+      %option{:value => 'false', :selected => !@data.is_necessarily} не обязательно
     
   %input{:type => 'button', :class => 'button block_inline_select save_question_headers', :value => "Сохранить"}
   %input{:type => 'button', :class => 'button block_inline_select del_question', :value => "Удалить"}

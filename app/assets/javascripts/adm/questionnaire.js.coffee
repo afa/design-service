@@ -50,12 +50,13 @@ $(document).ready ->
       count_true = body.find('.question_count_true').val();
       position = body.find('.question_position').val();
       value = body.find('.question_value').val();
+      is_necessarily = body.find('.question_is_necessarily').val();
 
       $.ajax({
         type: "PUT",
         url: '/adm/question/'+question_id,
         dataType: "json",
-        data: {name: name, count_all: count_all, count_true: count_true, position: position, value: value},
+        data: {name: name, count_all: count_all, count_true: count_true, position: position, value: value, is_necessarily: is_necessarily},
         success: success_standart_dynamic,
         error: error_standart
       })

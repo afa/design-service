@@ -444,3 +444,11 @@ ru:
 
   new_password: Новый пароль
   confirm_new_password: Повтор пароля
+
+  country: Страна
+  region: Регион
+  city: Город
+  heigher: Высшее
+  incomplete_higher: Неполное высшее
+  paraprofessional: Среднее специальное
+  courses: Курсы

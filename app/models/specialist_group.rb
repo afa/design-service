@@ -1,5 +1,7 @@
 # coding: utf-8
 class SpecialistGroup < ActiveRecord::Base
+  self.per_page = 20
+  
   belongs_to :specialization
   has_and_belongs_to_many :specialists
 
