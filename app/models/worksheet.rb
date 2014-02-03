@@ -69,11 +69,18 @@ class Worksheet < ActiveRecord::Base
 						worksheet_experience_new = worksheet_experience.get_new(value, params)
 						self.worksheet_experiences << worksheet_experience_new unless worksheet_experience_new.nil?
 						self.save
+					elsif !field_name.at("description_work").nil?
+						worksheet_question_field_new = worksheet_question_field.get_new_description_for_attachment(value, params)
+						self.worksheet_question_fields << worksheet_question_field_new unless worksheet_question_field_new.nil?
+						self.save
+						worksheet_question_field.get_new_attachment(value, params)
 					else
 						if field_name.at("experience_description").nil? && field_name.at("experience_date_start").nil? && field_name.at("experience_date_end").nil? &&
 								field_name.at("experience_city").nil? && field_name.at("experience_country").nil? && field_name.at("experience_region").nil? &&
-								field_name.at("experience_position").nil?
+								field_name.at("experience_position").nil? && field_name.at("file_work").nil? && field_name.at("description_work").nil?
 							worksheet_question_field_new = worksheet_question_field.get_new(value, params)
+							#p "----------"
+							#p worksheet_question_field_new.inspect
 							self.worksheet_question_fields << worksheet_question_field_new unless worksheet_question_field_new.nil?
 							self.save
 						end

@@ -85,6 +85,49 @@ class WorksheetQuestionField < ActiveRecord::Base
 		status
 	end
 
+	def get_new_attachment(value, params)
+		field = value.first.split('-')
+		index_id = field.last.to_i
+		field_name = field.first
+
+		value_level = nil
+		value_description = nil
+
+		value_data = value.last
+		fields = field_name.split('_')
+
+		unless fields.nil?
+			file = params[:question_field]["file_work_#{fields.last}-#{index_id}"]
+			unless file.nil?
+				attachment = Attachment.new
+				attachment.file = file
+				attachment.attachable = WorksheetQuestionField.last
+				attachment.user = User.new_guest
+				attachment.save
+			end
+		end
+	end
+
+	def get_new_description_for_attachment(value, params)
+		field = value.first.split('-')
+		index_id = field.last.to_i
+		field_name = field.first
+
+		value_level = nil
+		value_description = nil
+
+		value_data = value.last
+		fields = field_name.split('_')
+
+		WorksheetQuestionField.new(
+			:question_field_id => question_field_id,
+			:value => value_data, 
+			:question_id => question_id,
+			:value_level => value_level,
+			:value_description => value_description
+		)
+	end
+
 	def get_new(value, params)
 		field = value.first.split('-')
 		index_id = field.last.to_i
@@ -124,6 +167,8 @@ class WorksheetQuestionField < ActiveRecord::Base
 			question_id = nil
 			value_data = value.last
 			question_field_id = index_id
+			p "---------------------------------"
+			p field_name.inspect
 		end
 
 		WorksheetQuestionField.new(
