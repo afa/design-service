@@ -111,6 +111,15 @@ class WorksheetQuestionField < ActiveRecord::Base
 			value_data = value.last
 			question_field_id = nil
 			question_id = index_id
+		elsif !field_name.at("check").nil?
+			value_data = value.last
+			question_id = field.last
+			if !field_name.at("check_level").nil?
+				value_level = "true" 
+			elsif !field_name.at("check_description").nil?
+				value_description = "true"
+			end
+			question_field_id = field.last.next
 		else
 			question_id = nil
 			value_data = value.last

@@ -40,6 +40,9 @@ class QuestionCell < Cell::Rails
 	# вопрос для отображения 1 рандомного вопроса из списка возможных. Для админки.
 	def random_question_admin_show(args)
 		@data = args[:data]
+		@question_data = @data.question_field.question
+		@id = args[:id].to_i
+		@data_field = WorksheetQuestionField.where("question_field_id = ? and worksheet_id = ?", @data.question_field_id, @id).first
 		
 		render
 	end
@@ -62,6 +65,9 @@ class QuestionCell < Cell::Rails
 	# вопрос, в котором нужно отметить желаемые варианты. Для админки.
 	def check_need_admin_show(args)
 		@data = args[:data]
+		@question_data = @data.question_field.question
+		@id = args[:id].to_i
+		@data_fields = WorksheetQuestionField.where("question_field_id = ? and worksheet_id = ?", @data.question_field_id, @id)
 		
 		render
 	end
@@ -86,8 +92,6 @@ class QuestionCell < Cell::Rails
 		@data = args[:data]
 		@question_data = @data.question_field.question
 		@id = args[:id].to_i
-		p "--------------------"
-		p "#{@data.question_field_id}-#{@id}"
 		@data_field = WorksheetQuestionField.where("question_field_id = ? and worksheet_id = ?", @data.question_field_id, @id).first
 		
 		render
