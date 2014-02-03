@@ -1,10 +1,13 @@
 %div{:style => 'font-size: 20px; margin: 21px 0 10px 10px;'}
-  dfkhgfjhlf
+  = @question_data.name
 %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
   %tr
-    %th Название
-    %th Должность
+    %th Изображение
+    %th Ответ пользователя
+    %th Правильный
 
-  %tr
-    %td Название
-    %td Должность
+  - @question_data.question_fields.each do |value|
+    %tr
+      %td Название
+      %td ff
+      %td Должность

@@ -129,6 +129,10 @@
               - unless value.question_field_id.nil?
                 = render_cell :question, "#{value.question_field.question.kind}_admin_show", :data => value, :id => @id
 
+            - @worksheet_data.get_questions_on_question.each do |value|
+              - unless value.question.nil?
+                = render_cell :question, "#{value.question.kind}_admin_show", :data => value, :id => @id
+
       %div{:class => 'cl'} &nbsp;
 
 /Footer 

@@ -79,8 +79,6 @@ class Worksheet < ActiveRecord::Base
 								field_name.at("experience_city").nil? && field_name.at("experience_country").nil? && field_name.at("experience_region").nil? &&
 								field_name.at("experience_position").nil? && field_name.at("file_work").nil? && field_name.at("description_work").nil?
 							worksheet_question_field_new = worksheet_question_field.get_new(value, params)
-							#p "----------"
-							#p worksheet_question_field_new.inspect
 							self.worksheet_question_fields << worksheet_question_field_new unless worksheet_question_field_new.nil?
 							self.save
 						end
@@ -100,7 +98,17 @@ class Worksheet < ActiveRecord::Base
 		Worksheet.count
 	end
 
+	# простые вопросы по полям
 	def get_worksheet_questions
-		self.worksheet_question_fields.select("question_field_id").group("question_field_id").where("question_field_id is not null")
+		self.worksheet_question_fields.select("question_field_id")\
+			.group("question_field_id")\
+			.where("question_field_id is not null and question_id is null")
+	end
+
+	# вопросы по вопросу
+	def get_questions_on_question
+		self.worksheet_question_fields.select("question_id")\
+			.group("question_id")\
+			.where("question_id is not null")
 	end
 end

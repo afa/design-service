@@ -1,0 +1,12 @@
+- if value.value_level == "true" && value.value.to_i > 0
+  Оценка - 
+  = value.value
+- elsif value.value_description == "true"
+  Название - 
+  = value.value
+- else
+  = value.question_field.name
+  - if value.value == 'true'
+    (Выбран)
+  - else
+    (Не выбран)

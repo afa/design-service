@@ -2,6 +2,7 @@
 class WorksheetQuestionField < ActiveRecord::Base
 	belongs_to :worksheet, class_name: 'Worksheet', foreign_key: 'worksheet_id'
 	belongs_to :question_field
+	belongs_to :question
 	
 	has_one :attachment, as: :attachable, class_name: 'Attachment', dependent: :destroy
 
@@ -162,13 +163,13 @@ class WorksheetQuestionField < ActiveRecord::Base
 			elsif !field_name.at("check_description").nil?
 				value_description = "true"
 			end
-			question_field_id = field.last.next
+			question_field_id = field.last(2).first
 		else
 			question_id = nil
 			value_data = value.last
 			question_field_id = index_id
-			p "---------------------------------"
-			p field_name.inspect
+			#p "---------------------------------"
+			#p field_name.inspect
 		end
 
 		WorksheetQuestionField.new(
