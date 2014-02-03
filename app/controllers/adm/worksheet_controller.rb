@@ -25,7 +25,8 @@ class Adm::WorksheetController < Adm::ApplicationController
 	def show
 		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
 			@user_data = get_current_user
-			@worksheet_data = Worksheet.find(params[:id].to_i)
+			@id = params[:id].to_i
+			@worksheet_data = Worksheet.find(@id)
 		else
 			redirect_to root_path
 		end

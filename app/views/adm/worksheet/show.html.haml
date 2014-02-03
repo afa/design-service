@@ -116,6 +116,19 @@
                   %td
                     = value.region
 
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Вопросы
+            %div{:class => 'right'}
+
+          /Table
+          %div{:class => 'table'}
+            - @worksheet_data.get_worksheet_questions.each do |value|
+              - unless value.question_field_id.nil?
+                = render_cell :question, "#{value.question_field.question.kind}_admin_show", :data => value, :id => @id
+
       %div{:class => 'cl'} &nbsp;
 
 /Footer 

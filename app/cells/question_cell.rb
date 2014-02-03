@@ -15,6 +15,13 @@ class QuestionCell < Cell::Rails
 		render
 	end
 
+	# вопрос для теста из фотографий. Для админки.
+	def photo_test_admin_show(args)
+		@data = args[:data]
+		
+		render
+	end
+
 	# вопрос для отображения 1 рандомного вопроса из списка возможных
 	def random_question(args)
 		@data = args[:data]
@@ -25,6 +32,13 @@ class QuestionCell < Cell::Rails
 
 	# вопрос для отображения 1 рандомного вопроса из списка возможных. Для админки.
 	def random_question_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# вопрос для отображения 1 рандомного вопроса из списка возможных. Для админки.
+	def random_question_admin_show(args)
 		@data = args[:data]
 		
 		render
@@ -45,6 +59,13 @@ class QuestionCell < Cell::Rails
 		render
 	end
 
+	# вопрос, в котором нужно отметить желаемые варианты. Для админки.
+	def check_need_admin_show(args)
+		@data = args[:data]
+		
+		render
+	end
+
 	# вопрос "да-нет"
 	def yes_no(args)
 		@data = args[:data]
@@ -56,6 +77,18 @@ class QuestionCell < Cell::Rails
 	# вопрос "да-нет". Для админки.
 	def yes_no_admin(args)
 		@data = args[:data]
+		
+		render
+	end
+
+	# вопрос "да-нет". Для админки.
+	def yes_no_admin_show(args)
+		@data = args[:data]
+		@question_data = @data.question_field.question
+		@id = args[:id].to_i
+		p "--------------------"
+		p "#{@data.question_field_id}-#{@id}"
+		@data_field = WorksheetQuestionField.where("question_field_id = ? and worksheet_id = ?", @data.question_field_id, @id).first
 		
 		render
 	end
@@ -76,6 +109,13 @@ class QuestionCell < Cell::Rails
 		render
 	end
 
+	# вопрос для прикрепления файлов с описанием. Для админки.
+	def add_files_admin_show(args)
+		@data = args[:data]
+		
+		render
+	end
+
 	# опыт работы с минимальным количеством полей
 	def experience_min(args)
 		@data = args[:data]
@@ -86,6 +126,13 @@ class QuestionCell < Cell::Rails
 
 	# опыт работы с минимальным количеством полей. Для админки.
 	def experience_min_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# опыт работы с минимальным количеством полей. Для админки.
+	def experience_min_admin_show(args)
 		@data = args[:data]
 		
 		render
@@ -106,6 +153,13 @@ class QuestionCell < Cell::Rails
 		render
 	end
 
+	# опыт работы с максимальным количеством полей. Для админки.
+	def experience_max_admin_show(args)
+		@data = args[:data]
+		
+		render
+	end
+
 	# строки для описания с подгружаемыми по мере заполнения
 	def add_values(args)
 		@data = args[:data]
@@ -117,6 +171,13 @@ class QuestionCell < Cell::Rails
 
 	# строки для описания с подгружаемыми по мере заполнения. Для админки.
 	def add_values_admin(args)
+		@data = args[:data]
+		
+		render
+	end
+
+	# строки для описания с подгружаемыми по мере заполнения. Для админки.
+	def add_values_admin_show(args)
 		@data = args[:data]
 		
 		render

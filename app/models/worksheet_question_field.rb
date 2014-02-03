@@ -1,6 +1,7 @@
 # coding: utf-8
 class WorksheetQuestionField < ActiveRecord::Base
 	belongs_to :worksheet, class_name: 'Worksheet', foreign_key: 'worksheet_id'
+	belongs_to :question_field
 	
 	has_one :attachment, as: :attachable, class_name: 'Attachment', dependent: :destroy
 

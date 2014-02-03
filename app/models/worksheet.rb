@@ -70,9 +70,13 @@ class Worksheet < ActiveRecord::Base
 						self.worksheet_experiences << worksheet_experience_new unless worksheet_experience_new.nil?
 						self.save
 					else
-						worksheet_question_field_new = worksheet_question_field.get_new(value, params)
-						self.worksheet_question_fields << worksheet_question_field_new unless worksheet_question_field_new.nil?
-						self.save
+						if field_name.at("experience_description").nil? && field_name.at("experience_date_start").nil? && field_name.at("experience_date_end").nil? &&
+								field_name.at("experience_city").nil? && field_name.at("experience_country").nil? && field_name.at("experience_region").nil? &&
+								field_name.at("experience_position").nil?
+							worksheet_question_field_new = worksheet_question_field.get_new(value, params)
+							self.worksheet_question_fields << worksheet_question_field_new unless worksheet_question_field_new.nil?
+							self.save
+						end
 					end
 				end
 			end
@@ -87,5 +91,9 @@ class Worksheet < ActiveRecord::Base
 
 	def count_groups(filter)
 		Worksheet.count
+	end
+
+	def get_worksheet_questions
+		self.worksheet_question_fields.select("question_field_id").group("question_field_id").where("question_field_id is not null")
 	end
 end
