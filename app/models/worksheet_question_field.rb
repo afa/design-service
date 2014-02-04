@@ -164,12 +164,14 @@ class WorksheetQuestionField < ActiveRecord::Base
 				value_description = "true"
 			end
 			question_field_id = field.last(2).first
+		elsif !field_name.at("photo").nil?
+			question_field_id = nil
+			value_data = value.last
+			question_id = index_id
 		else
 			question_id = nil
 			value_data = value.last
 			question_field_id = index_id
-			#p "---------------------------------"
-			#p field_name.inspect
 		end
 
 		WorksheetQuestionField.new(

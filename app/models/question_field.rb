@@ -28,4 +28,18 @@ class QuestionField < ActiveRecord::Base
   			"no_update"
   		end
   	end
+
+    def set_status_is_false(status_is_false)
+      this_count_true = self.question.question_fields.where("status_is_false = true").count
+
+      if !status_is_false || self.question.count_true.to_i > this_count_true.to_i
+        if update_attribute(:status_is_false, status_is_false)
+          "success"
+        else
+          "error"
+        end
+      else
+        "no_update"
+      end
+    end
 end

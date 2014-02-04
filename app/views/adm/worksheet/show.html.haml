@@ -22,6 +22,21 @@
       
       /Content
       %div{:id => 'content', :style => 'width: 100%;'}
+
+        /специалист
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Оценка
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            = @worksheet_data.get_rating_from_test_photo
         
         /специалист
         %div{:class => 'box'}

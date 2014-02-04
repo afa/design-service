@@ -111,4 +111,39 @@ class Worksheet < ActiveRecord::Base
 			.group("question_id")\
 			.where("question_id is not null")
 	end
+
+	# вопросы 'тесты с картинками'
+	def get_questions_on_question_test_photo
+		questions = Array.new
+
+		self.worksheet_question_fields.where("question_id is not null").each do |value|
+			if value.question.kind == 'photo_test'
+				questions << value
+			end
+		end
+
+		questions
+	end
+
+	def get_questions_from_test_photo
+		self.questionnaire.questions.where("kind = 'photo_test'")
+	end
+
+	def get_rating_from_test_photo
+		rating = 0
+
+		self.get_questions_from_test_photo.each do |question|
+			self.get_questions_on_question_test_photo.each do |field|
+				if field.value.to_i == question.get_status_true_answer.id
+					rating += 1
+				end
+
+				if field.value.to_i == question.get_status_false_answer.id
+					rating -= 1
+				end
+			end
+		end
+
+		rating
+	end
 end

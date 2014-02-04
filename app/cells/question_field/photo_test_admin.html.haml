@@ -18,6 +18,11 @@
       %input{:type => 'hidden', :value => @data.id}
 
     %div{:style => 'margin-top: 10px;'}
-      %span Правильный ответ
-      %input{:type => 'checkbox', :value => 'Правильный ответ', :style => '', :checked => (@data.statis_is_true ? true : false), :class => 'check_true_in_question_field'}
+      %span Правильный ответ (+1)
+      %input{:type => 'checkbox', :value => 'Правильный ответ (+1)', :style => '', :checked => (@data.statis_is_true ? true : false), :class => 'check_true_in_question_field'}
+      %input{:type => 'hidden', :value => @data.id}
+
+    %div{:style => 'margin-top: 10px;'}
+      %span Не правильный ответ (-1)
+      %input{:type => 'checkbox', :value => 'Не правильный ответ (-1)', :style => '', :checked => (@data.status_is_false ? true : false), :class => 'check_false_in_question_field'}
       %input{:type => 'hidden', :value => @data.id}

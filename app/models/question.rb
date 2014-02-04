@@ -35,6 +35,32 @@ class Question < ActiveRecord::Base
 		question_fields.where("display = 'photo_test'").order("RANDOM()").limit(count_all)
 	end
 
+	def get_status_true_answer
+		data = nil
+
+		self.question_fields.where("display = 'photo_test'").each do |value|
+			if value.statis_is_true
+				data = value
+				break
+			end
+		end
+
+		data
+	end
+
+	def get_status_false_answer
+		data = nil
+
+		self.question_fields.where("display = 'photo_test'").each do |value|
+			if value.status_is_false
+				data = value
+				break
+			end
+		end
+
+		data
+	end
+
 	def get_check_need_answers
 		question_fields.where("display = 'check_select' or display = 'check_value' or display = 'check_select_no_level'")\
 			.order("position asc")

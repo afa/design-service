@@ -18,7 +18,9 @@ class QuestionCell < Cell::Rails
 	# вопрос для теста из фотографий. Для админки.
 	def photo_test_admin_show(args)
 		@data = args[:data]
-		@question_data = @data.question_field.question
+		@question_data = @data.question
+		@id = args[:id].to_i
+		@data_field = WorksheetQuestionField.where("question_id = ? and worksheet_id = ?", @data.question_id, @id).first
 		
 		render
 	end

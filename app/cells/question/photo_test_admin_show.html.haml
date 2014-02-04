@@ -8,6 +8,14 @@
 
   - @question_data.question_fields.each do |value|
     %tr
-      %td Название
-      %td ff
-      %td Должность
+      %td
+        - unless value.get_photo.nil?
+          %img{:src => value.get_photo.file.url, :style => 'width: 200px; height: 100px;'}
+        - else
+          нет фото
+      %td
+        - if @data_field.value.to_i == value.id
+          выбрал
+      %td
+        - if value.statis_is_true
+          правильный

@@ -126,3 +126,17 @@ $(document).ready ->
         if data['status'] != "success"
           alert('Вы не можете добавить еще 1 правильный ответ')
   register_ajax_reloadable_handler('.check_true_in_question_field')
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).change (event)->
+      if $(this).attr('checked') == "checked"
+        status_is_false = "false"
+        $(this).removeAttr('checked')
+      else
+        status_is_false = "true"
+        $(this).attr('checked', 'checked')
+
+      $.post '/adm/question_field/set_status_is_false', {status_is_false: status_is_false, id: $(this).next().attr('value')}, (data)->
+        if data['status'] != "success"
+          alert('Вы не можете добавить еще 1 не правильный ответ')
+  register_ajax_reloadable_handler('.check_false_in_question_field')
