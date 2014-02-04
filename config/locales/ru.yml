@@ -452,3 +452,9 @@ ru:
   incomplete_higher: Неполное высшее
   paraprofessional: Среднее специальное
   courses: Курсы
+
+  worksheet:
+    success: success
+    error_field: 'Поле заполнено не корректно'
+    nil_field_date: 'Дата не выбрана'
+    nil_field_value: 'Не все поля заполнены'

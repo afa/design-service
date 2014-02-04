@@ -30,13 +30,10 @@
           %div{:class => 'box-head'}
             %h2{:class => 'left'} Оценка
             %div{:class => 'right'}
-              /%label search articles
-              /%input{:type => 'text', :class => 'field small-field'}
-              /%input{:type => 'submit', :class => 'button', :value => 'search'}
 
           /Table
           %div{:class => 'table'}
-            = @worksheet_data.get_rating_from_test_photo
+            = @worksheet_data.get_calc_rating
         
         /специалист
         %div{:class => 'box'}

@@ -117,8 +117,40 @@ class Worksheet < ActiveRecord::Base
 		questions = Array.new
 
 		self.worksheet_question_fields.where("question_id is not null").each do |value|
-			if value.question.kind == 'photo_test'
-				questions << value
+			unless value.question.nil?
+				if value.question.kind == 'photo_test'
+					questions << value
+				end
+			end
+		end
+
+		questions
+	end
+
+	# вопросы 'выбор чекбоксов'
+	def get_questions_on_question_check_need
+		questions = Array.new
+
+		self.worksheet_question_fields.where("question_id is not null").each do |value|
+			unless value.question.nil?
+				if value.question.kind == 'check_need'
+					questions << value
+				end
+			end
+		end
+
+		questions
+	end
+
+	# вопросы 'без выбора правильных'
+	def get_questions_on_question_check_need
+		questions = Array.new
+
+		self.worksheet_question_fields.where("question_id is not null").each do |value|
+			unless value.question.nil?
+				if value.question.kind == 'check_need'
+					questions << value
+				end
 			end
 		end
 
@@ -145,5 +177,63 @@ class Worksheet < ActiveRecord::Base
 		end
 
 		rating
+	end
+
+	def get_calc_rating
+		calc_rating = 0
+
+		rating_from_test_photo = self.get_rating_from_test_photo
+		if rating_from_test_photo > -2
+			if rating_from_test_photo == -1
+				calc_rating += 3
+			elsif rating_from_test_photo > -1 && rating_from_test_photo < 3
+				calc_rating += 5
+			else
+				calc_rating += 10
+			end
+
+			self.get_questions_on_question_check_need.each do |value|
+				if value.value_level == "true"
+					if value.value.to_i == 4
+						calc_rating += 1
+					elsif value.value.to_i == 5
+						calc_rating += 2
+					end
+				end
+			end
+
+			status_empty = false
+			self.worksheet_question_fields.each do |value|
+				if value.value == ""
+					status_empty = true
+				end
+			end
+
+			self.worksheet_fields.each do |value|
+				if value.value == ""
+					status_empty = true
+				end
+			end
+
+			self.worksheet_experiences.each do |value|
+				if value.name == ""
+					status_empty = true
+				end
+			end
+
+			self.worksheet_educations.each do |value|
+				if value.name == ""
+					status_empty = true
+				end
+			end
+
+			if status_empty
+				calc_rating -= 2
+			else
+				calc_rating += 2
+			end
+		end
+
+		calc_rating
 	end
 end

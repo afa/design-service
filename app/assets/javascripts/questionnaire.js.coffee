@@ -7,10 +7,17 @@ $(document).ready ->
     $(selector).click (event)->
       multipart_ajax_sendform($('.add_worksheet_form'), 'POST',
         success: (data, textStatus, xhr)->
-          form.get(0).reset()
-          file_field.change()
-          success_handler = callbacks['success'] || ->{}
-          success_handler(data, textStatus, xhr)
+          console.info(data)
+          if data['type'] == 'add_worksheet'
+            if data['status'] == 'success'
+              alert('Анкета отправлена')
+            else
+              alert(data['status'])
+
+          #form.get(0).reset()
+          #file_field.change()
+          #success_handler = callbacks['success'] || ->{}
+          #success_handler(data, textStatus, xhr)
         error: (xhr, textStatus, error)->
           #error_handler = callbacks['error'] || ->{}
           #error_handler(xhr, textStatus, error)
