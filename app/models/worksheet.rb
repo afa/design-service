@@ -74,10 +74,15 @@ class Worksheet < ActiveRecord::Base
 						self.worksheet_question_fields << worksheet_question_field_new unless worksheet_question_field_new.nil?
 						self.save
 						worksheet_question_field.get_new_attachment(value, params)
+					elsif !field_name.at("name_and_file").nil?
+						worksheet_question_field_new = worksheet_question_field.get_new_name_file_for_attachment(value, params)
+						self.worksheet_question_fields << worksheet_question_field_new unless worksheet_question_field_new.nil?
+						self.save
+						worksheet_question_field.get_new_attachment_name_file(value, params)
 					else
 						if field_name.at("experience_description").nil? && field_name.at("experience_date_start").nil? && field_name.at("experience_date_end").nil? &&
 								field_name.at("experience_city").nil? && field_name.at("experience_country").nil? && field_name.at("experience_region").nil? &&
-								field_name.at("experience_position").nil? && field_name.at("file_work").nil? && field_name.at("description_work").nil?
+								field_name.at("experience_position").nil? && field_name.at("file_work").nil? && field_name.at("description_work").nil? && field_name.at("name_and_file").nil?
 							worksheet_question_field_new = worksheet_question_field.get_new(value, params)
 							self.worksheet_question_fields << worksheet_question_field_new unless worksheet_question_field_new.nil?
 							self.save
@@ -166,12 +171,17 @@ class Worksheet < ActiveRecord::Base
 
 		self.get_questions_from_test_photo.each do |question|
 			self.get_questions_on_question_test_photo.each do |field|
-				if field.value.to_i == question.get_status_true_answer.id
-					rating += 1
+				
+				unless question.get_status_true_answer.nil?
+					if field.value.to_i == question.get_status_true_answer.id
+						rating += 1
+					end
 				end
 
-				if field.value.to_i == question.get_status_false_answer.id
-					rating -= 1
+				unless question.get_status_false_answer.nil?
+					if field.value.to_i == question.get_status_false_answer.id
+						rating -= 1
+					end
 				end
 			end
 		end

@@ -7,7 +7,7 @@ class Question < ActiveRecord::Base
 
 	extend Enumerize
   	enumerize :kinds, in: ['photo_test', 'random_question', 'check_need', 'yes_no', 'add_files', 
-  		'experience_min', 'experience_max', 'add_values']
+  		'experience_min', 'experience_max', 'add_values', 'name_and_add_file']
 
 	def add_field(display)
 		question_field_last = self.question_fields.order("position asc").last

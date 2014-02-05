@@ -1,9 +1,9 @@
 # coding: utf-8
 namespace :questionarie do
-	desc "Add 4 ankete"
-	task :init4 => :environment do
+	desc "Add 5 ankete"
+	task :init5 => :environment do
 
-		questionnaire = Questionnaire.new(:name => "Строительные бригады", :specialization_id => 6, :is_numeric => false)
+		questionnaire = Questionnaire.new(:name => "Строительные фирмы", :specialization_id => 6, :is_numeric => false)
 
   	questionnaire.questionnaire_fields_questionnaires << QuestionnaireFieldsQuestionnaire.new(
   		:questionnaire_field_id => 1,
@@ -45,6 +45,31 @@ namespace :questionarie do
 		  		:is_necessarily => false,
 		  		:kind => 'phone'
 		  	)
+
+		questionnaire.questionnaire_fields_questionnaires << QuestionnaireFieldsQuestionnaire.new(
+	  		:questionnaire_field_id => 5,
+	  		:value => 'Наименование организации',
+	  		:position => 1,
+	  		:location => 'center_full',
+	  		:is_necessarily => false,
+	  		:kind => ''
+	  	)
+	  	questionnaire.questionnaire_fields_questionnaires << QuestionnaireFieldsQuestionnaire.new(
+	  		:questionnaire_field_id => 6,
+	  		:value => 'Реквизиты фирмы',
+	  		:position => 2,
+	  		:location => 'center_full',
+	  		:is_necessarily => false,
+	  		:kind => ''
+	  	)
+	  	questionnaire.questionnaire_fields_questionnaires << QuestionnaireFieldsQuestionnaire.new(
+	  		:questionnaire_field_id => 5,
+	  		:value => 'Фактический адрес',
+	  		:position => 3,
+	  		:location => 'center_full',
+	  		:is_necessarily => false,
+	  		:kind => ''
+	  	)
 		
 		
 
@@ -83,40 +108,7 @@ namespace :questionarie do
 			)
 		questionnaire.questions << question1
 
-		question11 = Question.new(
-			:position => 2,
-			:name => '',
-			:count_true => 0,
-			:count_all => 0,
-			:kind => 'add_values',
-			:is_necessarily => false,
-			:value => 'Названия объектов, в разработке которых Вы принимали участие'
-		)
-		question11.question_fields << QuestionField.new(
-				:name => '',
-				:value => '',
-				:display => 'value',
-				:position => 1,
-				:statis_is_true => false,
-				:status_is_false => false
-			)
-		question11.question_fields << QuestionField.new(
-				:name => '',
-				:value => '',
-				:display => 'value',
-				:position => 2,
-				:statis_is_true => false,
-				:status_is_false => false
-			)
-		question11.question_fields << QuestionField.new(
-				:name => '',
-				:value => '',
-				:display => 'value',
-				:position => 3,
-				:statis_is_true => false,
-				:status_is_false => false
-			)
-		questionnaire.questions << question11
+		
 
 		question2 = Question.new(
 			:position => 3,
@@ -161,16 +153,6 @@ namespace :questionarie do
 			:kind => 'name_and_add_file',
 			:is_necessarily => false,
 			:value => 'Прикрепите базовые расценки и гарантийный срок на выполняемые работы'
-		)
-
-		question5 = Question.new(
-			:position => 5,
-			:name => '',
-			:count_true => 0,
-			:count_all => 0,
-			:kind => 'name_and_add_file',
-			:is_necessarily => false,
-			:value => 'Прикрепите в виде списка состав рабочих в бригаде(ФИО и навыки)'
 		)
 
 		questionnaire.save

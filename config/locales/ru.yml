@@ -398,6 +398,7 @@ ru:
         experience_min: 'Опыт работы с минимумом полей'
         experience_max: 'Опыт работы с максимумом полей'
         add_values: 'Поля для записи'
+        name_and_add_file: 'Название с загрузкой файла'
     questionnaire_fields_questionnaire:
       kinds:
         first_name: 'Имя'
