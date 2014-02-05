@@ -26,7 +26,7 @@ div.design_p_color_scheme_form1 {
     span.caution {
       color: #c10000;
       font-size: 17px;
-      ol li{ display:none;}
+      ol li { display:none; }
     }
   }
 
@@ -93,23 +93,23 @@ div.design_p_color_scheme_form1 {
       clear: both;
     }
   }
-  .selected_objects{
-    float:left;
-    padding-top:30px;
+  .selected_objects {
+    float: left;
+    padding-top: 30px;
     width: 300px;
     span {
       text-align: left;
       line-height: 20px;
       float: left;
     }
-    ul{
-      list-style:none;
-      padding:0px;
-      clear:both;
+    ul {
+      list-style: none;
+      padding: 0px;
+      clear: both;
 
-      li{
-        padding:0px;
-        margin:0px;
+      li {
+        padding: 0px;
+        margin: 0px;
         height: 35px;
       }
     }
@@ -139,7 +139,7 @@ div.design_p_color_scheme_form2 {
   font-size: 14px;
 }
 
-ui-slider-handle{
-  background-color:blue;
+ui-slider-handle {
+  background-color: blue;
 }
 

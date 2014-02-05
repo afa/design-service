@@ -54,11 +54,11 @@ body.unregistered {
     }
   }
 
-  div.accreditation_heading{ 
-    float:left;
-    margin:20px 0px 15px 190px;
-    font-size:26px;
-    color:#c93833 
+  div.accreditation_heading {
+    float: left;
+    margin: 20px 0px 15px 190px;
+    font-size: 26px;
+    color: #c93833
     }
   ul.accreditation {
     width: 730px;
@@ -73,18 +73,18 @@ body.unregistered {
       float: left;
       margin-bottom: 20px;
 
-      div.heading{ 
-        color:#35a110; 
-        font-size:22px;       
-        margin-bottom:20px; 
+      div.heading {
+        color: #35a110;
+        font-size: 22px;
+        margin-bottom: 20px;
       }
-      span.logical_ques{ margin-left:60px; color:#4d4b4c;}  
-      div.submiting_part{
-        float:left;
-        text-align:center;
-        color:#4d4b4c;
-        font-size:18px;
-        width:100%;
+      span.logical_ques { margin-left:60px; color:#4d4b4c; }
+      div.submiting_part {
+        float: left;
+        text-align: center;
+        color: #4d4b4c;
+        font-size: 18px;
+        width: 100%;
 
         span.submit_button {
            background-image: image-url("postButton.png");
@@ -113,21 +113,21 @@ body.unregistered {
             padding: 0px;
             position: relative;
 
-            li.height_default{ margin-bottom:5px; }  
-            li.height_v1{ margin-bottom:30px; }  
-            li.height_v2{ margin-bottom:50px; }  
-            li{
-              float:left;
-              width:100%;
-              margin:0px;
-              color:#4d4b4c;
-              font-size:17px;
-              
-              span.head_short{ 
-                width:110px; 
-                float:left; 
-                text-align:right;
-                padding-right:10px;
+            li.height_default { margin-bottom:5px; }
+            li.height_v1 { margin-bottom:30px; }
+            li.height_v2 { margin-bottom:50px; }
+            li {
+              float: left;
+              width: 100%;
+              margin: 0px;
+              color: #4d4b4c;
+              font-size: 17px;
+
+              span.head_short {
+                width: 110px;
+                float: left;
+                text-align: right;
+                padding-right: 10px;
               }
               span.head_long {
                 width: 136px;
@@ -171,7 +171,7 @@ body.unregistered {
             float: left;
             color: #4d4b4c;
             margin-top: 30px;
-            font-size:17px;
+            font-size: 17px;
           }
           div.attach {
             float: left;
@@ -197,7 +197,7 @@ body.unregistered {
               color: #4c4c4c;
               float: left;
               padding-left: 30px;
-              font-size:18px;
+              font-size: 18px;
               margin: 0px;
             }
             ul.images {
@@ -233,14 +233,14 @@ body.unregistered {
           list-style: none;
           color: #4d4b4c;
           font-size: 17px;
-          padding:0px 0px 0px 30px;
-          width: 100%; 
-          float:left;
-          clear:both;
-          li{ width: 100%; padding:0px; margin: 0px 0px 10px 0px; label{ float:left}  
-            ul.data{
-              float:left;
-              margin:0px;
+          padding: 0px 0px 0px 30px;
+          width: 100%;
+          float: left;
+          clear: both;
+          li { width: 100%; padding:0px; margin: 0px 0px 10px 0px; label { float:left }
+            ul.data {
+              float: left;
+              margin: 0px;
               width: 360px;
               padding: 0px;
               list-style: none;
@@ -262,20 +262,20 @@ body.unregistered {
 
           li { padding:0px; margin:0px; }
         }
-        div.knowledge_level{
-          float:right;
-          width:420px;
-          margin-right:40px;
-          span.comment{ width:180px; float:left; clear:both; font-size:17px; padding:0px;margin:0px; text-align:left; margin-top:5px;}
-          ul{
-          margin:0px;
-          margin-top:5px;
-          list-style:none;
-          padding:0px;
-          width:220px;
-          float:left;
-          li{
-            float:left;
+        div.knowledge_level {
+          float: right;
+          width: 420px;
+          margin-right: 40px;
+          span.comment { width:180px; float:left; clear:both; font-size:17px; padding:0px;margin:0px; text-align:left; margin-top:5px; }
+          ul {
+          margin: 0px;
+          margin-top: 5px;
+          list-style: none;
+          padding: 0px;
+          width: 220px;
+          float: left;
+          li {
+            float: left;
             background-image: image-url("white_ball.png");
             width: 25px;
             height: 25px;
@@ -333,7 +333,7 @@ body.unregistered {
         div.padding_left {
           color: #4d4b4c;
           font-size: 17px;
-          padding-left:30px;
+          padding-left: 30px;
           clear: both;
           div.alert { font-size:16px; padding-bottom:20px; }
           float: left;
@@ -343,7 +343,7 @@ body.unregistered {
 
   }
 
-  .span_empty{
+  .span_empty {
     width: 10px !important;
   }
 }
