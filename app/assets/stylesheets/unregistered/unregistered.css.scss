@@ -219,11 +219,22 @@ body.unregistered {
     height: 35px;
   }
 
-  input[type='checkbox']:checked + label {
+  /*input[type='checkbox']:checked + label {
     background-image: image-url("box_checked.png");
     background-repeat: no-repeat;
     padding: 3px 0 0px 40px;
     cursor: pointer;
+  }*/
+
+  .checkbox_checked_level {
+    background-image: image-url("box_checked.png") !important;
+    background-repeat: no-repeat !important;
+    padding: 3px 0 0px 40px !important;
+    cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
   }
 
   div.password_relative {

@@ -1,0 +1,52 @@
+%div.accreditation_heading
+  Заполните заявку на аккредитацию
+%div.accreditation_heading{:style => 'position: absolute; margin-top: -50px; margin-left: 70px;'}
+  = @questionnaire_data.name
+= form_for @worksheet, :html => {:class => 'add_worksheet_form'}, :url => {:controller => 'worksheet', :action => 'create'}, :method => 'post', remote: true, multipart: true do |f|
+  %input{:type => 'hidden', :name => 'questionnaire_id', :value => @questionnaire_data.id}
+  %ul.accreditation
+
+    %li
+      .heading
+        = number_question(@index_question, @questionnaire_data.is_numeric) 
+        Основная информация
+      .full_width
+        %span.main_info_half  
+          %ul.info
+            - @headers_left.each do |value|
+              = render_cell :questionnaire_field, "#{value.questionnaire_field.display}", :data => value
+        %span.main_info_half
+          %ul.info
+            - @headers_right.each do |value|
+              = render_cell :questionnaire_field, "#{value.questionnaire_field.display}", :data => value                           
+      .full_width
+        - @headers_center_full.each do |value|
+          = render_cell :questionnaire_field, "#{value.questionnaire_field.display}", :data => value
+
+    - if @questions_photo_test.size > 0
+      %li
+        .heading
+          = number_question(@index_question, @questionnaire_data.is_numeric) 
+          Выберите из представленных изображений самую гармоничную
+        .full_width
+          %ul#image_selecter
+            - @questions_photo_test.each do |value|
+              = render_cell :question, "#{value.kind}", :data => value
+
+    - @questions_other.each do |value|
+      = render_cell :question, "#{value.kind}", :data => value, :index_question => number_question(@index_question, @questionnaire_data.is_numeric)
+                                                      
+
+    %li
+      .heading
+        Основные правила портала «Дизайн-сервис»
+      .full_width
+        %ul.quis
+          %li
+            1. Работа только по командам
+          %li
+            2. Без согласия портала Дизайн-сервис запрещается обмениваться контактными данными 
+      .submiting_part 
+        %input#agree_validation{type:'checkbox', value:'1'}  
+        %label{:for => "agree_validation"}Согласен с правилами портала «Дизайн-сервис»
+        %span.submit_button{:id => 'add_worksheet'}

@@ -24,8 +24,10 @@ body.registered {
       width: 485px;
       min-height: 150px;
       span.caution {
-        padding-left: 70px;
-        margin-top: -30px;
+        width:450px;
+        padding: 0px;
+
+        ol li{ margin-bottom:10px;}
       }
       span.attach {
         font-size: 14px;
@@ -43,11 +45,19 @@ body.registered {
     div.color_keyboard_block {
       span {
         width: 500px;
+        margin-top:15px;
+        text-align:center;
       }
       div.color_keyboard {
         margin-left: 105px;
       }
     }
+  }
+
+  .selected_objects{
+    float:left;
+    padding-top:30px;
+    width: 500px;
   }
 
   div.design_p_color_scheme_form2 {
@@ -69,4 +79,26 @@ body.registered {
     float: left;
     margin: 10px 25px 15px 55px;
   }
+
+  div.color_sliders{
+    width:500px;
+    float:left;
+    span.head{ margin-left:100px;}
+    ul{
+      width:500px;
+      float:left;
+      list-style:none;
+      padding:0px;
+      margin: 0px;
+      li{ 
+        width:auto; 
+        width: 500px;
+        float: left;
+        span{ float:left;  hight:30px; }
+        span.left{ text-align:right; width:140px;  line-height: 18px; padding-top: 20px;}
+        span.slider_bar{ width:220px; height: 3px; margin:25px 15px 0px 15px; background-color: #F3F0F0;}
+        span.right{ text-align:left; width:90px; line-height: 18px; line-height: 18px; padding-top: 20px;}
+        }
+    }
+  }  
 }

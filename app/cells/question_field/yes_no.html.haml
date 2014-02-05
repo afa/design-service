@@ -1,0 +1,9 @@
+%span.logical_ques{style:'clear:both; margin-left:450px;'}
+  %input#needed_true.radio_buttons.optional{checked: "checked", type: "radio", value: "true", name:"designer_needings"}
+  %label.collection_radio_buttons.question_field_yes_no{:for=>"needed_true"}Да 
+  %input{:type => 'hidden', :value => "true"}
+
+  %input#needed_false.radio_buttons.optional{type: "radio", value: "true", name:"designer_needings"}
+  %label.collection_radio_buttons.question_field_yes_no{:for=>"needed_false"}Нет
+  %input{:type => 'hidden', :value => "false"}
+%input{:type => 'hidden', :value => 'true', :name => "question_field[yes_no-#{@data.id}]"}

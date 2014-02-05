@@ -1,0 +1,23 @@
+%div{:style => "height: 15px;"}
+  = I18n.t "enumerize.question_field.displays.#{@data.display}"
+%div{:style => "height: 110px;"}
+  %div{:class => 'block_inline', :style => 'height: 110px; width: 240px; float: left; display: inline-block;'}
+    - unless @data.get_photo.nil?
+      %img{:style => 'width: 200px; height: 100px; float: left; display: inline-block;', :src => "/uploads/attachment/file/#{@data.get_photo.id}/#{@data.get_photo.original_filename}"}
+    - else
+      %img{:style => 'width: 200px; height: 100px; float: left; display: inline-block;', :src => @data.get_photo}
+  %div{:style => 'height: 110px; float: left; display: inline-block;'}
+
+    %div
+      = form_for @question_field, :url => {:controller => 'question_field', :action => 'add_photo_test'}, :method => 'post', remote: true, multipart: true do |f|
+        = f.file_field :photo, :class => 'photo_for_test'
+        %input{:type => 'hidden', :name => 'id', :value => @data.id}
+
+    %div{:style => 'margin-top: 10px;'}
+      %input{:type => 'button', :class => 'button del_question_field', :value => 'Удалить', :style => ''}
+      %input{:type => 'hidden', :value => @data.id}
+
+    %div{:style => 'margin-top: 10px;'}
+      %span Правильный ответ
+      %input{:type => 'checkbox', :value => 'Правильный ответ', :style => '', :checked => (@data.statis_is_true ? true : false), :class => 'check_true_in_question_field'}
+      %input{:type => 'hidden', :value => @data.id}

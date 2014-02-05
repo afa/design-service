@@ -1,0 +1,163 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :id => 'questionnaire_id', :value => @id}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', 'orders'
+      %span &gt;
+      = link_to 'Шаблоны анкет', '/adm/questionnaire'
+      %span &gt;
+      Шаблон анкеты "#{@questionnaire_data.name}"
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Шаблон анкеты "#{@questionnaire_data.name}"
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %div{:class => 'form'}
+              %p
+                %label Заголовок
+                %br
+                %input{:type => 'text', :id => 'questionnaire_name', :class => 'field small-field', :value => "#{@questionnaire_data.name}"}
+                %br
+                %span{:class => 'req', :style => 'float: none;'}
+                  %select{:class => 'field size3 select_specialization'}
+                    - @specializations.each do |value|
+                      %option{:value => "#{value.id}", :selected => value.id == @questionnaire_data.specialization_id ? true : false}
+                        = I18n.t "enumerize.specialization.#{value.name}"
+                %br
+                %span{:class => 'req', :style => 'float: none;'}
+                  %select{:class => 'field size3 select_is_numeric', :style => 'width: 200px'}
+                    %option{:value => "true", :selected => @questionnaire_data.is_numeric ? true : false}
+                      С нумерацией
+                    %option{:value => "false", :selected => !@questionnaire_data.is_numeric ? true : false}
+                      Без нумерации
+                %br
+                %input{:type => 'button', :class => 'button save_header_data', :value => 'Сохранить'}
+
+            %div{:class => 'form'}
+              %p
+                %label Основная информация
+                %br
+                %div{:class => 'block_inline'}
+                  %span{:style => "width: 200px;"} 
+                    %b 
+                      Тип
+                  %span{:style => "width: 140px;", :class => 'block_inline_select'} 
+                    %b 
+                      Название
+                  %span{:style => "width: 133px;", :class => 'block_inline_select'} 
+                    %b 
+                      Важность
+                  %span{:style => "width: 90px;", :class => 'block_inline_select'} 
+                    %b 
+                      Вид
+                  %span{:style => "width: 122px;", :class => 'block_inline_select'} 
+                    %b 
+                      Позиция
+                  %span{:style => "width: 50px;", :class => 'block_inline_select'} 
+                    %b 
+                      Сорт.
+
+                - @questionnaire_data.questionnaire_fields_questionnaires.order("location, position").each do |value|
+                  = render_cell :questionnaire_field, "#{value.questionnaire_field.display}_admin", :data => value.questionnaire_field, :details => value
+                %br
+                %div{:class => 'block_inline'}
+                  %select{:class => 'block_inline_select select_field_for_add'}
+                    - QuestionnaireField.all.each do |display_value|
+                      %option{:value => display_value.id}
+                        #{display_value.name}
+                  %input{:type => 'button', :class => 'button block_inline_select add_field_in_questionnaire', :value => "Добавить"}
+
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Список вопросов
+            %div{:class => 'right'}
+
+          /Table
+          %div{:class => 'table'}
+            %div{:class => 'form'}
+              - @questionnaire_data.questions.order("position").each do |value|
+                %p
+                  %label{:style => 'font-size: 23px;'} #{value.name}
+                  %br
+                  %div
+
+                    = render_cell :question, "#{value.kind}_admin", :data => value
+  
+                    %br
+                    %br
+                    %span{:style => 'font-size: 14px;'}
+                      %b Ответы
+                    %br
+                    %br
+                    - value.question_fields.order("position").each do |question_field|
+                      = render_cell :question_field, "#{question_field.display}_admin", :data => question_field
+
+                    %br
+                    %span{:style => 'font-size: 14px;'}
+                      %b Добавить ответ
+                    %br
+                    %br
+                    %select{:class => 'display_for_add_in_question'}
+                      - QuestionField.displays.values.each do |display|
+                        %option{:value => display}
+                          = I18n.t "enumerize.question_field.displays.#{display}"
+                    %input{:type => 'button', :class => 'button add_field_in_question', :value => 'Добавить'}
+                    %input{:type => 'hidden', :value => value.id}
+                    %br
+                    %br
+                    %hr
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Добавить новый вопрос
+            %div{:class => 'right'}
+
+          /Table
+          %div{:class => 'table'}
+            %div{:class => 'form'}
+              %p
+                %label{:style => 'font-size: 23px;'} Список параметров для добавления
+                %br
+                %div
+                  %div
+                    %div{:class => 'block_inline'}
+                      %select{:class => 'question_new_kind'}
+                        - Question.kinds.values.each do |kind|
+                          %option{:value => kind}
+                            = I18n.t "enumerize.question.kinds.#{kind}"
+                    %div{:class => 'block_inline'}
+                      %input{:type => 'button', :class => 'button add_question', :value => 'Добавить'}
+
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

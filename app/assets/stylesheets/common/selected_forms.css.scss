@@ -1,7 +1,7 @@
 span.attach_info_block.caution {
   color: #e51600;
   float: left;
-  font-size: 12px;
+  font-size: 17px;
   padding-left: 20px;
   width: 400px;
 }
@@ -12,6 +12,7 @@ span.remove_room {
   background-repeat: no-repeat;
   height: 16px;
   width: 16px;
+  
 }
 
 span.add_room {
@@ -21,6 +22,7 @@ span.add_room {
 .attach_info_block.caution {
   ul {
     list-style-type: decimal;
+
   }
 }
 
@@ -28,4 +30,8 @@ span.add_room {
   float: left;
   width: 400px;
   padding-bottom: 15px;
+}
+
+ol.selected_form{
+  li{ margin-bottom: 50px; float:left; }
 }

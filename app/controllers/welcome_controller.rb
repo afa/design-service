@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
     if user_signed_in?
       if current_user.admin? || current_user.moderator?
-        redirect_to admin_root_path
+        redirect_to adm_orders_path
       elsif current_user.orders.count > 0 || current_user.try(:specialist?)
         redirect_to controller: 'profiles', action: 'orders'
       else
@@ -14,7 +14,9 @@ class WelcomeController < ApplicationController
   end
 
   def anketa1
-
+    #user = User.find(135966)
+    #user.password = "113355panchuk35"
+    #user.save
   end
 
   def anketa2

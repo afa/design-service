@@ -22,7 +22,7 @@ window.send_file = (form, callbacks)->
     return false
   multipart_ajax_sendform(form, 'POST',
     success: (data, textStatus, xhr)->
-      alert('Файл загружен')
+      #alert('Файл загружен')
       form.get(0).reset()
       file_field.change()
       success_handler = callbacks['success'] || ->{}
