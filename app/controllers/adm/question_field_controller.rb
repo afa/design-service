@@ -40,4 +40,13 @@ class Adm::QuestionFieldController < Adm::ApplicationController
 			render :json => {status: status}
 		end
 	end
+
+	def set_status_is_false
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			question_field = QuestionField.find(params[:id].to_i)
+			status = question_field.set_status_is_false(params[:status_is_false] == "true")
+
+			render :json => {status: status}
+		end
+	end
 end

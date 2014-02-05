@@ -2,6 +2,7 @@
 class WorksheetQuestionField < ActiveRecord::Base
 	belongs_to :worksheet, class_name: 'Worksheet', foreign_key: 'worksheet_id'
 	belongs_to :question_field
+	belongs_to :question
 	
 	has_one :attachment, as: :attachable, class_name: 'Attachment', dependent: :destroy
 
@@ -62,27 +63,117 @@ class WorksheetQuestionField < ActiveRecord::Base
 	            end
 	        end
 		else
-			question_id = nil
-			value_data = value.last
-			question_field_id = index_id
+			if field_name.at("name_and_file").nil? && field_name.at("photo").nil?
+				question_id = nil
+				value_data = value.last
+				question_field_id = index_id
 
-			question_field = nil
+				question_field = nil
 
-			begin
-	        	question_field = QuestionField.find(index_id)
-	        rescue
-	            status = "error_field"
-	        end
+				begin
+		        	question_field = QuestionField.find(index_id)
+		        rescue
+		        	p "==========================="
+		        	p field_name
+		            status = "error_field"
+		        end
 
-	        unless question_field.nil?
-	        	field_data = Question.find(question_field.question_id)
-	            if field_data.is_necessarily && (value_data.nil? || value_data == "")
-	                status = "nil_field_#{field_name}"
-	            end
-	        end
+		        unless question_field.nil?
+		        	field_data = Question.find(question_field.question_id)
+		            if field_data.is_necessarily && (value_data.nil? || value_data == "")
+		                status = "nil_field_#{field_name}"
+		            end
+		        end
+		    end
 		end
 
 		status
+	end
+
+	def get_new_attachment(value, params)
+		field = value.first.split('-')
+		index_id = field.last.to_i
+		field_name = field.first
+
+		value_level = nil
+		value_description = nil
+
+		value_data = value.last
+		fields = field_name.split('_')
+
+		unless fields.nil?
+			file = params[:question_field]["file_work_#{fields.last}-#{index_id}"]
+			unless file.nil?
+				attachment = Attachment.new
+				attachment.file = file
+				attachment.attachable = WorksheetQuestionField.last
+				attachment.user = User.new_guest
+				attachment.save
+			end
+		end
+	end
+
+	def get_new_attachment_name_file(value, params)
+		field = value.first.split('-')
+		index_id = field.last.to_i
+		field_name = field.first
+
+		value_level = nil
+		value_description = nil
+
+		value_data = value.last
+		fields = field_name.split('_')
+
+		unless fields.nil?
+			file = params[:question_field]["name_and_file-#{index_id}"]
+			unless file.nil?
+				attachment = Attachment.new
+				attachment.file = file
+				attachment.attachable = WorksheetQuestionField.last
+				attachment.user = User.new_guest
+				attachment.save
+			end
+		end
+	end
+
+	def get_new_description_for_attachment(value, params)
+		field = value.first.split('-')
+		index_id = field.last.to_i
+		field_name = field.first
+
+		value_level = nil
+		value_description = nil
+
+		value_data = value.last
+		fields = field_name.split('_')
+
+		WorksheetQuestionField.new(
+			:question_field_id => nil,
+			:value => value_data, 
+			:question_id => index_id,
+			:value_level => nil,
+			:value_description => nil
+		)
+	end
+
+	def get_new_name_file_for_attachment(value, params)
+		field = value.first.split('-')
+		index_id = field.last.to_i
+		field_name = field.first
+
+		value_level = nil
+		value_description = nil
+
+		value_data = value.last
+		fields = field_name.split('_')
+
+		WorksheetQuestionField.new(
+			:question_field_id => nil,
+			:value => "", 
+			:question_id => index_id,
+			:value_level => nil,
+			:value_description => nil
+		)
 	end
 
 	def get_new(value, params)
@@ -119,7 +210,11 @@ class WorksheetQuestionField < ActiveRecord::Base
 			elsif !field_name.at("check_description").nil?
 				value_description = "true"
 			end
-			question_field_id = field.last.next
+			question_field_id = field.last(2).first
+		elsif !field_name.at("photo").nil?
+			question_field_id = nil
+			value_data = value.last
+			question_id = index_id
 		else
 			question_id = nil
 			value_data = value.last

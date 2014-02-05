@@ -22,7 +22,7 @@ class WorksheetField < ActiveRecord::Base
 		# режется фотка
 		#set(attachment.file.current_path, 152, 152)
 
-		{ :status => "user_avatar", :worksheet_field_id => self.id, :photo => attachment.file.url + "?#{SecureRandom.hex}" }
+		{ :status => "user_avatar", :type => "user_avatar", :worksheet_field_id => self.id, :photo => attachment.file.url + "?#{SecureRandom.hex}" }
 	end
 
 	# ДАННЫЙ МЕТОД ДОЛЖЕН ХРАНИТЬСЯ В АДЕКВАТНОМ КЛАССЕ, А НЕ ТУТ

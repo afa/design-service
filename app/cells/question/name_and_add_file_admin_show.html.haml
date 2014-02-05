@@ -1,0 +1,12 @@
+%div{:style => 'font-size: 20px; margin: 21px 0 10px 10px;'}
+  = @question_data.value
+%table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+  %tr
+    %th Файл
+
+  %tr
+    %td
+      - unless @data_field.attachment.nil?
+        = link_to 'Скачать', @data_field.attachment.file.url
+      - else
+        файл не прикреплен

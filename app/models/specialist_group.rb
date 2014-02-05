@@ -17,6 +17,7 @@ class SpecialistGroup < ActiveRecord::Base
   has_many :selected_forms, through: :orders, source: :orderable, source_type: 'SelectedForm'
   # привязка группы к заказу напрямую, не через исполнителя. считать цену и выбирать исплнителей. 
   has_many :reviews, through: :specialists
+  has_many :request_specialists
 
   def messages; received_messages; end
 

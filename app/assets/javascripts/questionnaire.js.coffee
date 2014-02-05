@@ -7,10 +7,17 @@ $(document).ready ->
     $(selector).click (event)->
       multipart_ajax_sendform($('.add_worksheet_form'), 'POST',
         success: (data, textStatus, xhr)->
-          form.get(0).reset()
-          file_field.change()
-          success_handler = callbacks['success'] || ->{}
-          success_handler(data, textStatus, xhr)
+          console.info(data)
+          if data['type'] == 'add_worksheet'
+            if data['status'] == 'success'
+              alert('Анкета отправлена')
+            else
+              alert(data['status'])
+
+          #form.get(0).reset()
+          #file_field.change()
+          #success_handler = callbacks['success'] || ->{}
+          #success_handler(data, textStatus, xhr)
         error: (xhr, textStatus, error)->
           #error_handler = callbacks['error'] || ->{}
           #error_handler(xhr, textStatus, error)
@@ -41,6 +48,8 @@ $(document).ready ->
     $(selector).click (event)->
       $(this).parent().find('.border').removeClass('border')
       $(this).addClass('border')
+      val = $(this).find('.photo_value').attr('value')
+      $(this).parent().next().attr('value', val)
   register_ajax_reloadable_handler('ul .images li')
 
   register_ajax_reloadable_handler = (selector)->
@@ -56,6 +65,7 @@ $(document).ready ->
         body.find('.check_select_label_true').addClass('hidden')
         body.find('.question_field_check_value').attr('value', 'false')
         body.find('.knowledge_level').css('display', 'none')
+        body.find('.check_select_level_value').attr('value', '0')
 
   register_ajax_reloadable_handler('.check_select_label')
 

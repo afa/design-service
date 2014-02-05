@@ -22,6 +22,18 @@
       
       /Content
       %div{:id => 'content', :style => 'width: 100%;'}
+
+        /специалист
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Оценка
+            %div{:class => 'right'}
+
+          /Table
+          %div{:class => 'table'}
+            = @worksheet_data.get_calc_rating
         
         /специалист
         %div{:class => 'box'}
@@ -128,6 +140,10 @@
             - @worksheet_data.get_worksheet_questions.each do |value|
               - unless value.question_field_id.nil?
                 = render_cell :question, "#{value.question_field.question.kind}_admin_show", :data => value, :id => @id
+
+            - @worksheet_data.get_questions_on_question.each do |value|
+              - unless value.question.nil?
+                = render_cell :question, "#{value.question.kind}_admin_show", :data => value, :id => @id
 
       %div{:class => 'cl'} &nbsp;
 

@@ -18,6 +18,9 @@ class Specialist < ActiveRecord::Base
 
   belongs_to :specialization, class_name: 'Specialization', foreign_key: 'specialization_id'
 
+  has_many :request_specialists
+  has_many :join_request_specialists, class_name: 'RequestSpecialist', foreign_key: 'join_specialist'
+
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
 
   delegate :messages,  to: :user

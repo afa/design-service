@@ -7,11 +7,8 @@
     %span{:style => 'width: 200px;'} Название
     %input{:type => 'text', :style => "", :class => "field small-field question_name", :value => @data.name}
   %div{:class => 'block_inline'}
-    %span{:style => 'width: 200px;'} Кол-во ответов
-    %input{:type => 'text', :style => "width: 20px;", :class => "field small-field question_count_all", :value => @data.count_all}
-  %div{:class => 'block_inline'}
-    %span{:style => 'width: 200px;'} Кол-во прав./не прав. ответов
-    %input{:type => 'text', :style => "width: 20px;", :class => "field small-field question_count_true", :value => @data.count_true}
+    %span{:style => 'width: 200px;'} Заголовок для файла
+    %input{:type => 'text', :style => "", :class => "field small-field question_value", :value => @data.value}
   %div{:class => 'block_inline'}
     %span{:style => 'width: 200px;'} Приоритет
     %input{:type => 'text', :style => "width: 20px;", :class => "field small-field question_position", :value => @data.position}

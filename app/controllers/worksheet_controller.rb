@@ -23,10 +23,15 @@ class WorksheetController < ApplicationController
 		elsif status == "add"
 			worksheet = Worksheet.new(:questionnaire_id => params[:questionnaire_id].to_i)
 			st = worksheet.add(params)
+			statuse_code = st
 
-			render :json => { :status => st }
+			if st != "success"
+				st = "Не все обязательные поля были заполнены"
+			end
+
+			render :json => { :status => st, :type => "add_worksheet", :statuse_code => statuse_code }
 		else
-			render :json => { :status => "error" }
+			render :json => { :status => "error", :type => "add_worksheet" }
 		end
 	end
 end

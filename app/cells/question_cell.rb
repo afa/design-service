@@ -18,6 +18,9 @@ class QuestionCell < Cell::Rails
 	# вопрос для теста из фотографий. Для админки.
 	def photo_test_admin_show(args)
 		@data = args[:data]
+		@question_data = @data.question
+		@id = args[:id].to_i
+		@data_field = WorksheetQuestionField.where("question_id = ? and worksheet_id = ?", @data.question_id, @id).first
 		
 		render
 	end
@@ -65,9 +68,9 @@ class QuestionCell < Cell::Rails
 	# вопрос, в котором нужно отметить желаемые варианты. Для админки.
 	def check_need_admin_show(args)
 		@data = args[:data]
-		@question_data = @data.question_field.question
+		@question_data = @data.question
 		@id = args[:id].to_i
-		@data_fields = WorksheetQuestionField.where("question_field_id = ? and worksheet_id = ?", @data.question_field_id, @id)
+		@data_fields = WorksheetQuestionField.where("question_id = ? and worksheet_id = ?", @data.question_id, @id)
 		
 		render
 	end
@@ -183,7 +186,36 @@ class QuestionCell < Cell::Rails
 	# строки для описания с подгружаемыми по мере заполнения. Для админки.
 	def add_values_admin_show(args)
 		@data = args[:data]
+		@question_data = @data.question
+		@id = args[:id].to_i
+		@data_fields = WorksheetQuestionField.where("question_id = ? and worksheet_id = ?", @data.question_id, @id)
 		
+		render
+	end
+
+	# название и загрузчик файла
+	def name_and_add_file(args)
+		@data = args[:data]
+		@index_question = args[:index_question]
+		@index = 1
+
+		render
+	end
+
+	# название и загрузчик файла. Для админки.
+	def name_and_add_file_admin(args)
+		@data = args[:data]
+
+		render
+	end
+
+	# название и загрузчик файла. Для админки просмотр.
+	def name_and_add_file_admin_show(args)
+		@data = args[:data]
+		@question_data = @data.question
+		@id = args[:id].to_i
+		@data_field = WorksheetQuestionField.where("question_id = ? and worksheet_id = ?", @data.question_id, @id).first
+
 		render
 	end
 end

@@ -3,10 +3,11 @@ class Question < ActiveRecord::Base
 	belongs_to :questionnaire, class_name: 'Questionnaire', foreign_key: 'questionnaire_id'
 
 	has_many :question_fields
+	has_many :worksheet_question_fields
 
 	extend Enumerize
   	enumerize :kinds, in: ['photo_test', 'random_question', 'check_need', 'yes_no', 'add_files', 
-  		'experience_min', 'experience_max', 'add_values']
+  		'experience_min', 'experience_max', 'add_values', 'name_and_add_file']
 
 	def add_field(display)
 		question_field_last = self.question_fields.order("position asc").last
@@ -32,6 +33,32 @@ class Question < ActiveRecord::Base
 	# беруться нужное количество рандомных ответов ответов
 	def get_photo_test_answers
 		question_fields.where("display = 'photo_test'").order("RANDOM()").limit(count_all)
+	end
+
+	def get_status_true_answer
+		data = nil
+
+		self.question_fields.where("display = 'photo_test'").each do |value|
+			if value.statis_is_true
+				data = value
+				break
+			end
+		end
+
+		data
+	end
+
+	def get_status_false_answer
+		data = nil
+
+		self.question_fields.where("display = 'photo_test'").each do |value|
+			if value.status_is_false
+				data = value
+				break
+			end
+		end
+
+		data
 	end
 
 	def get_check_need_answers
