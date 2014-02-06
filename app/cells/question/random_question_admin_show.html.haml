@@ -1,0 +1,12 @@
+%div{:style => 'font-size: 20px; margin: 21px 0 10px 10px;'}
+  = @question_data.name
+%table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+  %tr
+    %th Вопрос
+    %th Ответ
+
+  %tr
+    %td
+      = @data.question_field.name
+    %td
+      = @data_field.value

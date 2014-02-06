@@ -1,3 +1,4 @@
+# coding: utf-8
 class ReviewModerableTextToPapertrail < ActiveRecord::Migration
   def change
     change_table :reviews do |t|

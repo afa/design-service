@@ -1,3 +1,4 @@
+# coding: utf-8
 class RemoveReplanningAttachments < ActiveRecord::Migration
   def change
     drop_table :replanning_attachments

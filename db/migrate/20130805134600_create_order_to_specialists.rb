@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateOrderToSpecialists < ActiveRecord::Migration
   def change
     create_table :order_to_specialists do |t|

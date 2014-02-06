@@ -1,3 +1,4 @@
+# coding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -14,51 +15,51 @@
 #   }
 # end
 
-{ hallway: 'Концепция прихожей',
-  bedroom: 'Концепция спальни',
-  living_room: 'Концепция гостиной',
-  color_solutions: 'Цветовые решения (идеи сочетаний)',
-  child_room: 'Концепция детской комнаты',
-  bathroom: 'Концепция санузла',
-  kitchen: 'Концепция кухни',
-  kitchen_plus_living_room: 'Концепция кухни+гостиной',
-  lounges: 'Концепция комнаты отдыха',
-  cabinet: 'Концепция кабинета',
-  sweep_wall: 'Развертки стен',
-  floor_plans: 'Планы полов',
-  ceiling_fixtures: 'Планы потолков и освещение',
-  draping_materials: 'Подбор отделочных материалов',
-  accesories: 'Аксессуары'
-}.each do |typename, name|
-  OrderCustomizer.where(typename: typename).first_or_create(name: name, image: "design_projects/#{typename}.jpg", description: '')
-end
+#{ hallway: 'Концепция прихожей',
+#  bedroom: 'Концепция спальни',
+#  living_room: 'Концепция гостиной',
+#  color_solutions: 'Цветовые решения (идеи сочетаний)',
+#  child_room: 'Концепция детской комнаты',
+#  bathroom: 'Концепция санузла',
+#  kitchen: 'Концепция кухни',
+#  kitchen_plus_living_room: 'Концепция кухни+гостиной',
+#  lounges: 'Концепция комнаты отдыха',
+#  cabinet: 'Концепция кабинета',
+#  sweep_wall: 'Развертки стен',
+#  floor_plans: 'Планы полов',
+#  ceiling_fixtures: 'Планы потолков и освещение',
+#  draping_materials: 'Подбор отделочных материалов',
+#  accesories: 'Аксессуары'
+#}.each do |typename, name|
+#  OrderCustomizer.where(typename: typename).first_or_create(name: name, image: "design_projects/#{typename}.jpg", description: '')
+#end
 
-[
-  ['building_company', '', 'Строительные компании', 'Строительная компания'],
-  ['building_brigade', '', 'Строительные бригады', 'Строительная бригада'],
-  ['architector', '', 'Архитекторы', 'Архитектор'],
-  ['designer', '', 'Дизайнеры', 'Дизайнер'],
-  ['engineer', 'electricity', 'Инженеры', 'Инженер-электрик'],
-  ['engineer', 'heating', 'Инженеры', 'Инженер по отоплению'],
-  ['engineer', 'ventilation', 'Инженеры', 'Инженер по вентиляции'],
-  ['engineer', 'canalization', 'Инженеры', 'Инженер по водоснабжению и канализации'],
-  ['engineer', 'weak_current', 'Инженеры', 'Инженер по слаботочным системам'],
-  ['engineer', 'constructor', 'Инженеры', 'Инженер-конструктор']
-].each do |name,sub_name, group_title, title|
-  Specialization.where(name: name, sub_name: sub_name).first_or_create(group_title: group_title, title: title)
-  if sub_name && !sub_name.blank?
-    OrderCustomizer.where(typename: "#{name}_#{sub_name}_specialist").first_or_create(name: title, image: 'concept.jpg', description: '')
-  else
-    OrderCustomizer.where(typename: "#{name}_specialist").first_or_create(name: title, image: 'concept.jpg', description: '')
-  end
-  
-end
-
-admin = User.where(username: 'admin', email: 'prijutme4ty@gmail.com').first_or_create(password: 'VerY_str0ng_p@ssword', password_confirmation: 'VerY_str0ng_p@ssword') do |u|
-  u.role = 'admin'
-  u.build_profile(name: 'Ilya', surname: 'Vorontsov', middle_name: 'E.', fake_name: 'Admin')
-end
-puts "admin created\n"
+#[
+#  ['building_company', '', 'Строительные компании', 'Строительная компания'],
+#  ['building_brigade', '', 'Строительные бригады', 'Строительная бригада'],
+#  ['architector', '', 'Архитекторы', 'Архитектор'],
+#  ['designer', '', 'Дизайнеры', 'Дизайнер'],
+#  ['engineer', 'electricity', 'Инженеры', 'Инженер-электрик'],
+#  ['engineer', 'heating', 'Инженеры', 'Инженер по отоплению'],
+#  ['engineer', 'ventilation', 'Инженеры', 'Инженер по вентиляции'],
+#  ['engineer', 'canalization', 'Инженеры', 'Инженер по водоснабжению и канализации'],
+#  ['engineer', 'weak_current', 'Инженеры', 'Инженер по слаботочным системам'],
+#  ['engineer', 'constructor', 'Инженеры', 'Инженер-конструктор']
+#].each do |name,sub_name, group_title, title|
+#  Specialization.where(name: name, sub_name: sub_name).first_or_create(group_title: group_title, title: title)
+#  if sub_name && !sub_name.blank?
+#    OrderCustomizer.where(typename: "#{name}_#{sub_name}_specialist").first_or_create(name: title, image: 'concept.jpg', description: '')
+#  else
+#    OrderCustomizer.where(typename: "#{name}_specialist").first_or_create(name: title, image: 'concept.jpg', description: '')
+#  end
+#  
+#end
+#
+#admin = User.where(username: 'admin', email: 'prijutme4ty@gmail.com').first_or_create(password: 'VerY_str0ng_p@ssword', password_confirmation: 'VerY_str0ng_p@ssword') do |u|
+#  u.role = 'admin'
+#  u.build_profile(name: 'Ilya', surname: 'Vorontsov', middle_name: 'E.', fake_name: 'Admin')
+#end
+#puts "admin created\n"
 
 # client_1 = User.where(username: 'vasya_pupkin', email: 'vasya_pupkin@test.com').first_or_create(password: 'password', password_confirmation: 'password') do |u|
 #   u.role = 'client'

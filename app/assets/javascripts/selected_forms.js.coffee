@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 //= require orderable
+//= require slider/jquery-ui.min
 
 $(document).ready ->
   #////IMAGE HOVER///
@@ -47,3 +48,15 @@ $(document).ready ->
       $(this).css('color','#000000');
 
   $('.add_room').click() # one empty room to fill (should be done after nested:fieldAdded handler created)
+
+
+  $(".slider_bar").slider
+    value: 0
+    min: -50
+    max: 50
+    animate: "slow"
+    range: false
+    slide: (event, ui) ->
+      
+      # While sliding, update the value in the #amount div element
+      $("#amount").html ui.value

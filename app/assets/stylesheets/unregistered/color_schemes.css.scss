@@ -22,7 +22,8 @@ body.unregistered {
     div.file_attaching {
       width: 595px;
       span.caution {
-        padding-left: 125px;
+      width: 550px;
+      ol li { margin-bottom:10px; }
       }
       span.attach {
         padding: 30px 0px 0px 200px;
@@ -32,10 +33,11 @@ body.unregistered {
 
     div.color_keyboard_block {
       span {
-        width: 630px;
+        margin-top: 20px;
+        width: 300px;
       }
       div.color_keyboard {
-        margin-left: 160px;
+
       }
     }
   }
@@ -56,5 +58,27 @@ body.unregistered {
     padding: 20px 0px 40px 0px;
     clear: both;
     overflow: hidden;
+  }
+
+  div.color_sliders {
+    width: 500px;
+    float: left;
+    span.head { margin-left:100px; }
+    ul {
+      width: 610px;
+      float: left;
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+      li {
+        width: auto;
+        width: 610px;
+        float: left;
+        span { float:left;  hight:30px; }
+        span.left { text-align:right; width:140px;  line-height: 18px; padding-top: 20px; }
+        span.slider_bar { width:300px; height: 3px; margin:25px 15px 0px 15px; background-color: #F3F0F0; }
+        span.right { text-align:left; width:90px; line-height: 18px; line-height: 18px; padding-top: 20px; }
+        }
+    }
   }
 }

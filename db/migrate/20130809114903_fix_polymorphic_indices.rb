@@ -1,3 +1,4 @@
+# coding: utf-8
 class FixPolymorphicIndices < ActiveRecord::Migration
   def change
     remove_index :photos, :imageable_single_id

@@ -1,0 +1,484 @@
+%div.accreditation_heading
+  Заполните заявку на аккредитацию
+
+%ul.accreditation
+  %li
+    .heading
+      1. Основная информация
+    .full_width
+      %span.main_info_half  
+        %ul.info
+          %li.height_default 
+            %span.head_short
+              Фамилия:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'surname'}              
+          %li.height_default
+            %span.head_short
+              Имя:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'name'} 
+          %li.height_v1
+            %span.head_short 
+              Отчество:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'middle_surname'} 
+          %li.height_default
+            %span.head_short 
+              E-mail:
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'email'} 
+          %li 
+            %span.head_short 
+              Тел.моб.
+            %input.textlines_default_light.textline_l6-8.backg_default_light{ name: 'tel'}           
+      %span.main_info_half
+        %ul.info
+          %li.height_v2
+            %span.head_long
+              Дата рождения:
+            %input.textlines_default_all_borders.textline_l6-8.backg_default_light  
+          %li 
+            %span.head_long
+              Проживание:
+            %ul.places
+              %li
+                %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+              %li
+                %input.textlines_default_all_borders.textline_l6-8.backg_default_light
+              %li
+                %input.textlines_default_all_borders.textline_l6-8.backg_default_light                                  
+    .full_width
+      %span.main_info_half
+        .head
+          Фотография:
+        .photo  
+      %span.main_info_half
+        .text
+          Прикрепите Вашу фотографию 150x150    
+        .attach
+  %li
+    .heading
+      2. Выберите из представленных изображений самую гармоничную
+    .full_width
+      %ul#image_selecter
+        %li
+          .heading
+            Гармоничное решение стиля - классицизм
+          %ul.images#first
+            %li.border
+            %li
+            %li
+            %li
+            %li
+            %li
+        %li
+          .heading
+            Гармоничное решение стиля - арт-деко
+          %ul.images#second
+            %li
+            %li
+            %li.border
+            %li
+            %li
+            %li        
+        %li
+          .heading
+            Гармоничное решение восточного стиля
+          %ul.images#third
+            %li
+            %li.border
+            %li
+            %li
+            %li
+            %li         
+  %li
+    .heading
+      3. Ваши навыки 
+    .full_width
+      %ul.quis
+        %li
+          %input#freehand_drawing{type:'checkbox', value:'1'}  
+          %label.floating{:for => "freehand_drawing"}  Рисунок от руки 
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level.selected
+                %span 
+                  1            
+              %li.31level.selected
+                %span               
+                  2
+              %li.41level.selected
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5                
+        %li
+          %input#3d_vizualization{type:'checkbox', value:'1'}  
+          %label{:for => "3d_vizualization"}  3D визуализация 
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level
+                %span 
+                  1            
+              %li.31level
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5                     
+  %li
+    .heading
+      4. Перечень программ, в которых Вы работаете
+    .full_width
+      %ul.quis
+        %li
+          %input#autocad{type:'checkbox', value:'1'}  
+          %label{:for => "autocad"}  AutoCAD 
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level
+                %span 
+                  1            
+              %li.31level
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5           
+        %li
+          %input#adobe_photoshop{type:'checkbox', value:'1'}  
+          %label{:for => "adobe_photoshop"}Adobe Photoshop  
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level.selected
+                %span 
+                  1            
+              %li.31level.selected
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5             
+        %li
+          %input#archicad{type:'checkbox', value:'1'}  
+          %label{:for => "archicad"}  ArchiCAD 
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level.selected
+                %span 
+                  1            
+              %li.31level.selected
+                %span               
+                  2
+              %li.41level.selected
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5           
+        %li
+          %input#adobe_illustrator{type:'checkbox', value:'1'}  
+          %label{:for => "adobe_illustrator"}Adobe Illustrator 
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level.selected
+                %span 
+                  1            
+              %li.31level.selected
+                %span               
+                  2
+              %li.41level.selected
+                %span               
+                  3
+              %li.51level.selected
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5           
+        %li
+          %input#3dmax{type:'checkbox', value:'1'}  
+          %label{:for => "3dmax"}  3D Max 
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level
+                %span 
+                  1            
+              %li.31level
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5           
+        %li
+          %input#coral_draw{type:'checkbox', value:'1'}  
+          %label{:for => "coral_draw"}Coral Draw
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level
+                %span 
+                  1            
+              %li.31level
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5           
+        %li
+          %input#any{type:'checkbox', value:'1'}    
+          %label{:for => "any"}Другое 
+          %input#any{type:'text', value:'', class: 'textlines_default_light textline_l6-8 backg_default_light' }     
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level.selected
+                %span 
+                  1            
+              %li.31level.selected
+                %span               
+                  2
+              %li.41level.selected
+                %span               
+                  3
+              %li.51level.selected
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5            
+
+  %li
+    .heading
+      5. Техники, которыми Вы лучше всего владеете: 
+    .full_width
+      %ul.quis
+        %li
+          %input#fabrics{type:'checkbox', value:'1'}  
+          %label{:for => "fabrics"}  Ткани 
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level
+                %span 
+                  1            
+              %li.31level
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5           
+        %li
+          %input#metal_products{type:'checkbox', value:'1'}  
+          %label{:for => "metal_products"}Изделия из металла 
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level
+                %span 
+                  1            
+              %li.31level
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5               
+        %li
+          %input#wood_products_andfurniture{type:'checkbox', value:'1'}  
+          %label{:for => "wood_products_andfurniture"}Изделия из дерева и мебель 
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level
+                %span 
+                  1            
+              %li.31level
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5           
+        %li
+          %input#wood_and_furnitures{type:'checkbox', value:'1'}  
+          %label{:for => "wood_and_furnitures"} Камень и гипс
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level
+                %span 
+                  1            
+              %li.31level
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5           
+        %li
+          %input#stained_glass_and_glassware{type:'checkbox', value:'1'}  
+          %label{:for => "stained_glass_and_glassware"}Витражи и мозаика. Изделия из стекла   
+          .knowledge_level
+            %span.comment
+              уровень владения:
+            %ul
+              %li.1level.selected
+                %span 
+                  1            
+              %li.31level.selected
+                %span               
+                  2
+              %li.41level
+                %span               
+                  3
+              %li.51level
+                %span               
+                  4
+              %li.51level
+                %span               
+                  5                    
+  %li
+    .heading
+      6. Вопрос на кругозор
+    .full_width
+      .padding_left
+        Ответ:
+        %input.textlines_default_light.textline_l14.backg_default_light{type:'text', value:''}  
+    
+  
+  %li
+    .heading
+      7. Ваши достижения
+    .full_width
+      .padding_left   
+        Прикрепите Ваше портфолио с описанием файлов 
+        %div.alert
+          (Вы можете прикрепить заархививированные файлы):  
+        %ul.quis
+          %li
+            1.
+            %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''}  
+            %input.file_att{type:'button', value:'Прирепить'}
+          %li
+            2.
+            %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''} 
+            %input.file_att{type:'button', value:'Прирепить'}            
+          %li
+            3.
+            %input.textlines_default_light.textline_l12.backg_default_light{type:'text', value:''}  
+            %input.file_att{type:'button', value:'Прирепить'}                                       
+  %li
+    .heading
+      8. Ваш опыт работы в компаниях
+    .full_width
+      %ul.quis.break
+        %li
+          %span
+            Наименование организации:
+          %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:'',style:'margin-top: 20px;'} 
+        %li
+          %span
+            Должность:
+          %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:''} 
+        %li
+          %span
+            Должностные обязанности:
+          %ul.manage
+            %li     
+              %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:''}   
+            %li     
+              %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:''}     
+            %li     
+              %input.textlines_default_light.textline_l13.backg_default_light{type:'text', value:''}
+        %li
+          %span.add_new                                                      
+
+  %li
+    .heading
+      Основные правила портала «Дизайн-сервис»
+    .full_width
+      %ul.quis
+        %li
+          1. Работа только по командам
+        %li
+          2. Без согласия портала Дизайн-сервис запрещается обмениваться контактными данными 
+    .submiting_part 
+      %input#agree_validation{type:'checkbox', value:'1'}  
+      %label{:for => "agree_validation"}Согласен с правилами портала «Дизайн-сервис»
+      %span.submit_button

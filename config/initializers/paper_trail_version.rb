@@ -1,3 +1,4 @@
+# coding: utf-8
 class Version < ActiveRecord::Base
   if defined?(Rails::Console)
     #PaperTrail.whodunnit = "#{`whoami`.strip}: console"

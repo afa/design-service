@@ -1,0 +1,6 @@
+%li
+  - unless @data.get_photo.nil?
+    %img{:style => 'width: 193px; height: 125px;', :src => "/uploads/attachment/file/#{@data.get_photo.id}/#{@data.get_photo.original_filename}"}
+    %input{:type => 'hidden', :value => @data.id, :class => "photo_value"}
+  -else
+    %input{:type => 'hidden', :value => @data.id, :class => "photo_value"}

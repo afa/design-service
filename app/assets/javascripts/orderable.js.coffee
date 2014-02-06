@@ -57,6 +57,7 @@ $(document).ready ->
       if checker is true
         li_near.show()
         $('ol.eng_systems li.'+ $(this).attr('id')).show()
+        $(this).focusin()
       else
         li_near.hide()
         $('ol.eng_systems li.'+$(this).attr('id')).hide()
@@ -120,3 +121,23 @@ $(document).ready ->
     )
     return false
   )
+
+
+  selectChecked_what_attach = () ->
+    s=0
+    $('.what_to_attach').each ->
+      checker = $(this).is(':checked')
+      if checker is true
+        s++
+        $('ol.selected_forms li.'+ $(this).attr('id')).show()
+        $('html,body').animate({scrollTop: $('.attach_box').offset().top},'fast')
+      else
+        s--
+        $('ol.selected_forms li.'+$(this).attr('id')).hide()
+    if(s==-5)
+      $('span.attach_info_block.caution').hide()
+    else  
+      $('span.attach_info_block.caution').show()
+  selectChecked_what_attach(document) 
+  $('.what_to_attach').on('click',selectChecked_what_attach)
+

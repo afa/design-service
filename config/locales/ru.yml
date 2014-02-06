@@ -1,3 +1,4 @@
+# coding: utf-8
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
@@ -116,6 +117,7 @@ ru:
       create: 'Забыли пароль'
       edit: 'Смена пароля'
       update: 'Смена пароля'
+    questionnaire: ''
   specialist_controller_titles:
     profiles:
       orders: 'МОИ ПРОЕКТЫ'
@@ -369,6 +371,41 @@ ru:
         specialist: 'Специалист'
         moderator: 'Модератор'
         admin: 'Администратор'
+    questionnaire_field:
+      location:
+        left: 'Слева'
+        right: 'Справа'
+        center_full: 'Во весь центр'
+    question_field:
+      displays:
+        photo_test: 'Фотография для выбора'
+        question_for_random_question: 'Рандомный вопрос'
+        check_select: 'Чекбокс для выбора'
+        check_value: 'Чекбокс для записи текста'
+        yes_no: 'Да-нет'
+        description_with_file: 'Описание с файлом'
+        experience_min: 'Минимум полей'
+        experience_max: 'Максимум полей'
+        value: 'Поле для ввода'
+        check_select_no_level: 'Чекбокс для выбора без оценки'
+    question:
+      kinds:
+        photo_test: 'Тест с картинками'
+        random_question: 'Рандомный вопрос из списка доступных'
+        check_need: 'Список чекбоксов для выбора'
+        yes_no: 'Вопрос "да-нет"'
+        add_files: 'Прикрепленные файлы с описанием'
+        experience_min: 'Опыт работы с минимумом полей'
+        experience_max: 'Опыт работы с максимумом полей'
+        add_values: 'Поля для записи'
+        name_and_add_file: 'Название с загрузкой файла'
+    questionnaire_fields_questionnaire:
+      kinds:
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        patronymic: 'Отчество'
+        phone: 'Телефон'
+        email: 'Почта'
   moderation:
     status:
       not_accepted: 'Еще не проверено'
@@ -577,3 +614,16 @@ ru:
     non_uniq_mail: Введенная Вами почта уже существует!
     too_short_pass: Пароль должен состоять из не менее чем 8-ми символов.
     too_short_login: Неверно введен логин! Логин должен состоять из латинских букв и цифр и не менее 3-х символов.
+  country: Страна
+  region: Регион
+  city: Город
+  heigher: Высшее
+  incomplete_higher: Неполное высшее
+  paraprofessional: Среднее специальное
+  courses: Курсы
+
+  worksheet:
+    success: success
+    error_field: 'Поле заполнено не корректно'
+    nil_field_date: 'Дата не выбрана'
+    nil_field_value: 'Не все поля заполнены'

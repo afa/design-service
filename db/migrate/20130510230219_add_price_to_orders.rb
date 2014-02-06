@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddPriceToOrders < ActiveRecord::Migration
   def change
     change_table :orders do |t|

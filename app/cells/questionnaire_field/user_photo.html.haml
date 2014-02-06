@@ -1,0 +1,12 @@
+%span.main_info_half
+  .head
+    Фотография:
+  .photo  
+%span.main_info_half
+  .text
+    Прикрепите Вашу фотографию 150x150    
+  .attach
+  %input{:type => 'file', :class => 'questionnaire_field_user_avatar', :name => "user_avatar[photo-#{@data.id}]", :style => 'opacity: 0; margin-top: 69px; margin-left: -368px; width: 169px; height: 33px; position: absolute; cursor: pointer;'}
+  %input{:type => 'hidden', :value => '0', :class => 'user_avatar_field', :name => "user_avatar[field-#{@data.id}]"}
+  %input{:type => 'hidden', :value => @data.id}
+  %input{:type => 'hidden', :value => @data.id, :name => "questionnaire_field[photo-#{@data.id}]"}

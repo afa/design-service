@@ -1,3 +1,4 @@
+# coding: utf-8
 DesignService::Application.routes.draw do
   resources :portfolios do
     resources :portfolio_items
@@ -5,6 +6,8 @@ DesignService::Application.routes.draw do
       get 'edit_form'
     end
   end
+
+
 
   resources :moderations, only: [:show] do
     member do
@@ -103,6 +106,19 @@ DesignService::Application.routes.draw do
     resources :attachments
   end
 
+  resources :welcome do
+    get 'anketa1'
+    get 'anketa2'
+    get 'anketa3'
+    get 'anketa4'
+    get 'anketa5'
+    #get 'anketa1' => 'welcome#anketa1', :as => :welcome_anketa1
+    #get 'anketa2' => 'welcome#anketa2', :as => :welcome_anketa2
+    #get 'anketa3' => 'welcome#anketa3', :as => :welcome_anketa3
+    #get 'anketa4' => 'welcome#anketa4', :as => :welcome_anketa4
+    #get 'anketa5' => 'welcome#anketa5', :as => :welcome_anketa5
+  end
+
   root :to => 'welcome#index'
   ActiveAdmin.routes(self)
 
@@ -152,6 +168,9 @@ DesignService::Application.routes.draw do
    end
   end
 
+  resources :questionnaire
+  resources :worksheet
+
   namespace :admin do    
     post 'users/:id/group_remove' => 'users#group_remove', :as => :user_group_remove
     post 'users/:id/group_add' => 'users#group_add', :as => :user_group_add
@@ -160,7 +179,72 @@ DesignService::Application.routes.draw do
     get "specialization/:id/specialist_groups" => 'specialization#specialist_groups', as: :specialization_specialist_groups
   end
 
+  namespace :adm do
+    get '/' => 'index#index', :as => :index_index
+    resources :index do
+      get 'index'
+    end
+    resources :orders
+    resources :specialists
+    post 'specialists/get_by_specialization' => 'specialists#get_by_specialization', :as => :specialists_get_by_specialization
+    
+    resources :specialist
+    post 'specialist/add' => 'specialist#add', :as => :client_add
+    post 'specialist/set' => 'specialist#set', :as => :specialist_set
+    post 'specialist/del' => 'specialist#del', :as => :specialist_del
+    post 'specialist/add_to_group' => 'specialist#add_to_group', :as => :specialist_add_to_group
+    post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
+    post 'specialist/set_specialization' => 'specialist#set_specialization', :as => :specialist_set_specialization
+    
+    resources :order
+    post 'order/check_new' => 'order#check_new', :as => :order_check_new
+    post 'order/set_specialist' => 'order#set_specialist', :as => :order_set_specialist
+    post 'order/send_message' => 'order#send_message', :as => :order_send_message
+    resources :specialist_group do
+      get 'get_by_specialist'
+    end
+    resources :specialist do
+      get 'get_by_group_and_specialization'
+      get 'get_price'
+    end
+    resources :clients
+    resources :client
+    post 'client/add' => 'client#add', :as => :client_add
+    post 'client/autorization' => 'client#autorization', :as => :client_autorization
+    post 'client/set_client' => 'client#set_client', :as => :client_set_client
+    post 'client/del' => 'client#del', :as => :client_del
+    post 'client/set_password' => 'client#set_password', :as => :client_set_password
+    resources :groups
+    resources :group
+    post 'group/set' => 'group#set', :as => :group_set
+    post 'group/add' => 'group#add', :as => :group_add
+    get 'group/:id/show_orders' => 'group#show_orders', :as => :group_show_orders
+    resources :portfolio_item
+    post 'portfolio_item/get_next' => 'portfolio_item#get_next', :as => :portfolio_item_get_next
+    
+    resources :questionnaire
+    post 'questionnaire/set_headers' => 'questionnaire#set_headers', :as => :questionnaire_set_headers
+    post 'questionnaire/add_field' => 'questionnaire#add_field', :as => :questionnaire_add_field
+
+    resources :questionnaire_fields_questionnaire
+    post 'questionnaire_fields_questionnaire/set_field' => 'questionnaire_fields_questionnaire#set_field', :as => :questionnaire_fields_questionnaire_set_field
+  
+    resources :question
+    post 'question/add_field' => 'question#add_field', :as => :question_add_field
+
+    resources :question_field
+    post 'question_field/set_name' => 'question_field#set_name', :as => :question_field_set_name
+    post 'question_field/add_photo_test' => 'question_field#add_photo_test', :as => :question_field_add_photo_test
+    post 'question_field/set_statis_is_true' => 'question_field#set_statis_is_true', :as => :question_field_set_statis_is_true
+    post 'question_field/set_status_is_false' => 'question_field#set_status_is_false', :as => :question_field_set_status_is_false
+
+    resources :worksheet
+  end
+
   get "welcome/index"
+  #get "welcome/anketa1"
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

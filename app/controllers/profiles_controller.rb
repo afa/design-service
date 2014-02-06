@@ -1,3 +1,4 @@
+# coding: utf-8
 class ProfilesController < InheritedResources::Base
   defaults singleton: true
   before_filter :authenticate_user!

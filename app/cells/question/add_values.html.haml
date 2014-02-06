@@ -1,0 +1,17 @@
+%li
+  .heading
+    = @index_question
+    = @data.name
+  .full_width
+    .padding_left{style:'margin-bottom:15px;'}    
+      = @data.value
+    .padding_left
+      %ul.quis
+        - @data.get_values.each do |value|
+          = render_cell :question_field, "#{value.display}", :data => value, :index => @index
+          - @index += 1 
+
+        %li
+          %span.add_new.add_new_fields_value
+          %input{:type => 'hidden', :value => @index}
+          %input{:type => 'hidden', :value => @data.id}

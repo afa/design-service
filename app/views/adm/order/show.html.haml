@@ -1,0 +1,278 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :id => 'order_id', :value => @id}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', 'orders'
+      %span &gt;
+      = link_to 'Заказы', '/adm/orders'
+      %span &gt;
+      Заказ №
+      = @order_data.id
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Заказ №
+            = @order_data.id
+            %div{:class => 'right'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Дата обн.
+                %th Действие
+                %th Статус
+                %th Заказчик
+                %th Тип
+                %th Цена
+                %th Специалист
+                %th Создан
+
+              - @orders.each_with_index do |value, index|
+
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+      
+                  %td
+                    = link_to "#{value.id}", "#{value.id}"
+
+                  %td= value.get_updated_date
+
+                  %td
+                    - if value.executor.nil?
+                      =link_to 'Выставить цену и назначить специалиста', "/order/#{value.id}"
+                    - else
+                      =link_to 'Назначить нового специалиста', "/order/#{value.id}"
+
+                  %td= I18n.t "order.work_state.#{value.work_state}"
+
+                  %td
+                    - unless value.client.nil?
+                      = link_to "#{value.client.profile.full_name}", "/client/#{value.client.id}"
+                    - else
+                      нет
+
+                  %td{:title => 'Узнать подробности', :style => 'cursor: pointer;'}
+                    - unless value.orderable.nil?
+                      - if value.orderable.is_a?(SelectedForm)
+                        - unless value.orderable.order_customizer.nil?
+                          %a= I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+                        - else
+                          нет
+                      - else
+                        %a= I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+
+                  %td= value.price
+
+                  %td
+                    - unless value.executor.nil?
+                      = link_to "#{value.executor.user.profile.full_name}", "/specialist/#{value.executor.user.id}"
+                    - else
+                      нет
+
+                  %td= value.get_created_date
+
+        %div{:style => 'width: 100%'}
+          /Чат
+          %div{:class => 'box', :style => 'width: 68%; display: inline-block; float: left;'}
+            /Box Head
+            %div{:class => 'box-head'}
+              %h2 Сообщения
+            
+            %div{:style => 'width: 100%'}
+              %div{:style => 'width: 100%; height: 50px; padding-top: 10px;'}
+                %div{:style => 'display: inline-block; float: left; margin-left: 90px; font-size: 16px;'}
+                  От заказчика
+                  %br
+                  =link_to "#{@order_data.client.profile.full_name}", "/adm/client/#{@order_data.client.id}"
+                %div{:style => 'display: inline-block; float: left; margin-left: 237px; font-size: 16px;'}
+                  От специалиста
+                  %br
+                  - unless @order_data.executor.nil?
+                    =link_to "#{@order_data.executor.user.profile.full_name}", "/adm/specialist/#{@order_data.executor.user.id}"
+
+              - @messages.each do |value|
+                %div{:class => 'body_message'}
+                  %div{:class => "data_message #{value.sender.specialist? ? 'right_message' : 'left_message'}"}
+                    /Левая половина
+                    %div{:class => 'left_message_text', :style => "#{value.sender.specialist? ? 'width: 45%;' : 'width: 41%;'} border-right: 2px solid #ccc;"}
+                      /Специалист
+                      - if value.sender.specialist?
+                        - if value.versions.size > 1
+                          = value.text
+                        - else
+                          %textarea{:style => 'width: 193px;'}= value.text
+                          %br
+                          %input{:type => 'button', :value => 'Отправить', :class => 'button send_moderator_message'}
+                          %input{:type => 'hidden', :value => 'specialist'}
+                          %input{:type => 'hidden', :value => value.sender.id}
+                          %input{:type => 'hidden', :value => value.id}
+                        /Заказчик
+                      - else
+                        - if value.versions.size > 1
+                          = value.versions.last.reify.text
+                        - else
+                          = value.text
+
+                    /Правая половина
+                    %div{:class => 'right_message_text', :style => "float: left; #{value.sender.specialist? ? 'width: 40%;' : 'width: 193px;'}"}
+                      /Специалист
+                      - if value.sender.specialist?
+                        - if value.versions.size > 1
+                          = value.versions.last.reify.text
+                        - else
+                          = value.text
+                        /Заказчик
+                      - else
+                        - if value.versions.size > 1
+                          = value.text
+                        - else
+                          %textarea{:style => 'width: 193px;'}= value.text
+                          %br
+                          %input{:type => 'button', :value => 'Отправить', :class => 'button send_moderator_message'}
+                          %input{:type => 'hidden', :value => 'client'}
+                          %input{:type => 'hidden', :value => value.sender.id}
+                          %input{:type => 'hidden', :value => value.id}
+
+                  %div{:class => "data_message #{value.sender.specialist? ? 'right_message' : 'left_message'}", :style => 'margin-top: -8px; border: none;'}
+                    %div{:style => 'float: left; display: inline-block; margin-left: 20px'}
+                      - if value.versions.size > 1
+                        = value.versions.last.reify.created_at.strftime("%d.%m.%Y")
+                      - else
+                        = value.created_at.strftime("%d.%m.%Y")
+
+                    %div{:style => 'float: left; display: inline-block; margin-left: 236px'}
+                      = value.created_at.strftime("%d.%m.%Y")
+
+          /Специалист
+          %div{:class => 'box', :style => 'width: 30%; display: inline-block; float: left; margin-left: 15px;'}
+
+            - if @order_data.executor.nil?
+
+              /Выбор специалиста
+              %div{:class => 'box-head'}
+                %h2 Выбор специалиста
+              
+              = simple_form_for @order_data, url: {controller: 'order', action: 'set_specialist'}, remote: true, method: 'post' do |f|
+                %input{:type => 'hidden', :name => 'order_id', :value => @id}
+                %div{:class => 'form'}
+                
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3 select_specialization'}
+                        - Specialization.all.each do |value|
+                          %option{:value => "#{value.id}"}
+                            = I18n.t "enumerize.specialization.#{value.name}"
+                    %label Специальность
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3 select_groups'}
+                        %option{:value => ''} не выбрана группа
+                    %label Группа
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3 select_specialists'}
+                        %option{:value => ''} не выбран специалист
+                    %label Имя
+                    = f.input_field :executor_id, id: 'select_specialist_id', as: :hidden, value: 0
+
+                  - if @order_data.orderable_type == 'PlanDevelopment'
+                    %p
+                      %span{:class => 'req'}
+                        %input{:style => 'text', :class => 'field small-field', :value => @order_data.calculated_price}
+                      %label{:style => 'width: 50px'} Рекомендуемая стоимость
+
+                  %p
+                    %span{:class => 'req'}
+                      - if @order_data.orderable_type == 'PlanDevelopment'
+                        = f.input_field :price, class: 'field small-field', value: @order_data.calculated_price
+                      - else
+                        = f.input_field :price, class: 'field small-field'
+                    %label{:style => 'width: 50px'} Стоимость заказа
+
+                  %p
+                    %span{:class => 'req'}
+                      = f.input_field :specialist_price, class: 'field small-field specialist_price'
+                    %label{:style => 'width: 50px'} Специалисту
+                
+                %div{:class => 'buttons'}
+                  %input{:type => 'submit', :class => 'button', :value => 'Назначить'}
+
+            - else
+
+              /Выбор специалиста
+              %div{:class => 'box-head'}
+                %h2 Поменять специалиста
+              
+              = simple_form_for @order_data, url: {controller: 'order', action: 'set_specialist'}, remote: true, method: 'post' do |f|
+                %input{:type => 'hidden', :name => 'order_id', :value => @id}
+                %div{:class => 'form'}
+                  %p
+                    %span{:class => 'req'}= @order_data.executor.user.profile.surname
+                    %label Фамилия
+                  %p
+                    %span{:class => 'req'}= @order_data.executor.user.profile.name
+                    %label Имя
+
+                  %p
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3 select_specialization'}
+                        - Specialization.all.each do |value|
+                          %option{:value => "#{value.id}"}
+                            = I18n.t "enumerize.specialization.#{value.name}"
+                    %label Специальность
+                  %p{:style => 'display: none;'}
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3 select_groups'}
+                        %option{:value => ''} не выбрана группа
+                    %label Группа
+                  %p{:style => 'display: none;'}
+                    %span{:class => 'req'}
+                      %select{:class => 'field size3 select_specialists'}
+                        %option{:value => ''} не выбран специалист
+                    %label Имя
+                    = f.input_field :executor_id, id: 'select_specialist_id', as: :hidden, value: 0
+
+                  - if @order_data.orderable_type == 'PlanDevelopment'
+                    %p
+                      %span{:class => 'req'}
+                        %input{:style => 'text', :class => 'field small-field', :value => @order_data.calculated_price}
+                      %label{:style => 'width: 50px'} Рекомендуемая стоимость
+
+                  %p
+                    %span{:class => 'req'}
+                      - if @order_data.orderable_type == 'PlanDevelopment'
+                        = f.input_field :price, class: 'field small-field', value: @order_data.calculated_price
+                      - else
+                        = f.input_field :price, class: 'field small-field'
+                    %label{:style => 'width: 50px'} Стоимость заказа
+
+                  %p
+                    %span{:class => 'req'}
+                      = f.input_field :specialist_price, class: 'field small-field specialist_price', value: @order_data.specialist_price
+                    %label{:style => 'width: 50px'} Специалисту
+                
+                %div{:class => 'buttons'}
+                  %input{:type => 'submit', :class => 'button', :value => 'Назначить'}
+      
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

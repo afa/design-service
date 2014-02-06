@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddPhoneToProfile < ActiveRecord::Migration
   def change
    add_column :profiles, :phone, :string

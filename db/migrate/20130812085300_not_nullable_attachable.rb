@@ -1,3 +1,4 @@
+# coding: utf-8
 class NotNullableAttachable < ActiveRecord::Migration
   def change
     Attachment.where(attachable_id: nil).delete_all

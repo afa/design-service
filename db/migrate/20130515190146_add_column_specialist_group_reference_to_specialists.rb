@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddColumnSpecialistGroupReferenceToSpecialists < ActiveRecord::Migration
   def change
     change_table :specialists do |t|

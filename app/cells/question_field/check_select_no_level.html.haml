@@ -1,0 +1,8 @@
+%li
+  %input{type:'checkbox', value:'1', id: "freehand_drawing-#{@data.id}"}
+
+  %label.floating{:for => "freehand_drawing1-#{@data.id}", :class => 'check_select_label check_select_label_false'}
+    = @data.name
+  %label.floating{:for => "freehand_drawing2-#{@data.id}", :class => 'check_select_label check_select_label_true checkbox_checked_level hidden'}
+    = @data.name
+  %input{:type => 'hidden', :value => 'false', :class => 'question_field_check_value', :name => "question_field[check_no_level-#{@data.id}-#{@data.question_id}]"}

@@ -1,5 +1,7 @@
-#encoding: utf-8
+# coding: utf-8
 class Specialist < ActiveRecord::Base
+  self.per_page = 20
+
   before_create :new_user
   has_and_belongs_to_many :specialist_groups
   has_many :orders, as: :executor
@@ -13,6 +15,11 @@ class Specialist < ActiveRecord::Base
 
   has_many :portfolios
   has_many :portfolio_items, through: :portfolios
+
+  belongs_to :specialization, class_name: 'Specialization', foreign_key: 'specialization_id'
+
+  has_many :request_specialists
+  has_many :join_request_specialists, class_name: 'RequestSpecialist', foreign_key: 'join_specialist'
 
   scope :by_order, ->(order_id) { joins(:orders).where('orders.id' => order_id) }
 
@@ -51,5 +58,20 @@ class Specialist < ActiveRecord::Base
   end
   def as_json(options={})
     {id: id, full_name: full_name, specializations: specializations}
+  end
+
+  def get_bunch_on_filter(page, filter)
+    Specialist.paginate(:page => page)
+      .order("specialists.created_at desc")
+  end
+
+  def count_specialists(filter)
+    Specialist.count
+  end
+
+  def get_first_group
+    SpecialistGroup\
+      .joins("inner join specialist_groups_specialists on specialist_groups_specialists.specialist_group_id = specialist_groups.id")\
+      .where("specialist_groups_specialists.specialist_id = ?", self.id).first
   end
 end

@@ -1,0 +1,151 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :value => @id, :id => 'specialist_id'}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', adm_orders_path
+      %span &gt;
+      = link_to 'Анкеты', adm_worksheet_path
+      %span &gt;
+      Анкета №
+      = @worksheet_data.id
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+
+        /специалист
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Оценка
+            %div{:class => 'right'}
+
+          /Table
+          %div{:class => 'table'}
+            = @worksheet_data.get_calc_rating
+        
+        /специалист
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Основные поля
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th Поле
+                %th Значение
+
+              - @worksheet_data.worksheet_fields.each_with_index do |value, index|
+       
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  = render_cell :questionnaire_field, "#{value.questionnaire_fields_questionnaire.questionnaire_field.display}_admin_show", :data => value
+
+        /специалист
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Образование
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th Тип
+                %th Название
+                %th Окончание
+              - @worksheet_data.worksheet_educations.each do |value|
+                %tr
+                  %td
+                    = I18n.t value.type_education
+                  %td
+                    = value.name
+                  %td
+                    = value.date_last
+
+        /специалист
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Опыт работы
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th Название
+                %th Должность
+                %th Обязанности
+                %th Начало
+                %th Окончание
+                %th Город
+                %th Страна
+                %th Регион
+
+              - @worksheet_data.worksheet_experiences.each do |value|
+                %tr
+                  %td
+                    = value.name
+                  %td
+                    = value.position
+                  %td
+                    = value.responsibility
+                  %td
+                    = value.date_start
+                  %td
+                    = value.date_last
+                  %td
+                    = value.sity
+                  %td
+                    = value.country
+                  %td
+                    = value.region
+
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Вопросы
+            %div{:class => 'right'}
+
+          /Table
+          %div{:class => 'table'}
+            - @worksheet_data.get_worksheet_questions.each do |value|
+              - unless value.question_field_id.nil?
+                = render_cell :question, "#{value.question_field.question.kind}_admin_show", :data => value, :id => @id
+
+            - @worksheet_data.get_questions_on_question.each do |value|
+              - unless value.question.nil?
+                = render_cell :question, "#{value.question.kind}_admin_show", :data => value, :id => @id
+
+      %div{:class => 'cl'} &nbsp;
+
+/Footer 
+= render partial: 'adm/menu/footer'

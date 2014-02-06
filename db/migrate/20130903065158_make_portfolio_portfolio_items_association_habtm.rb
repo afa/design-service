@@ -1,3 +1,4 @@
+# coding: utf-8
 class MakePortfolioPortfolioItemsAssociationHabtm < ActiveRecord::Migration
   def change
     create_table :portfolio_items_portfolios do |t|

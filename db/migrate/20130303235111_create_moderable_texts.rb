@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateModerableTexts < ActiveRecord::Migration
   def change
     create_table :moderable_texts do |t|

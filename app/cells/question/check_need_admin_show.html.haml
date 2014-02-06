@@ -1,0 +1,15 @@
+%div{:style => 'font-size: 20px; margin: 21px 0 10px 10px;'}
+  = @question_data.name
+
+  %ul{:style => "list-style:none; padding:0px;font-size: 12px;"}
+    - @data_fields.each_with_index do |value, index|
+      - if index > 0
+        - if value.question_field_id == @data_fields[index - 1].question_field_id
+          %li{:style => "float: left; margin-left: 20px; padding-top: 20px; padding-left: 20px;"}
+            = render partial: 'check_need_value', locals: {:value => value}
+        - else
+          %li{:style => "margin-left: 20px; padding-top: 20px; padding-left: 20px;"}
+            = render partial: 'check_need_value', locals: {:value => value}
+      - else
+        %li{:style => "margin-left: 20px; padding-top: 20px; padding-left: 20px;"}
+          = render partial: 'check_need_value', locals: {:value => value}

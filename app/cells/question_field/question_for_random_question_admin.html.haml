@@ -1,0 +1,8 @@
+%div{:class => 'block_inline'}
+  %input{:type => 'text', :style => 'width: 700px;', :class => 'field small-field block_inline_select', :value => @data.name}
+  %input{:type => 'button', :class => 'button block_inline_select save_question_field_name', :value => "Сохранить"}
+  %input{:type => 'hidden', :value => @data.id}
+
+  %div{:style => 'margin-top: 10px;'}
+    %input{:type => 'button', :class => 'button del_question_field', :value => 'Удалить', :style => ''}
+    %input{:type => 'hidden', :value => @data.id}

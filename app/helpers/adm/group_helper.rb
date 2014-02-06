@@ -1,0 +1,2 @@
+module Adm::GroupHelper
+end

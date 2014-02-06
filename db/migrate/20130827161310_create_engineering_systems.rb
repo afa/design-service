@@ -1,3 +1,4 @@
+# coding: utf-8
 class CreateEngineeringSystems < ActiveRecord::Migration
   def change
     create_table :engineering_systems do |t|

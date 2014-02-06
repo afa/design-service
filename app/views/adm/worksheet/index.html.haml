@@ -1,0 +1,82 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :id => 'group_id', :value => @id}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', '/adm/orders'
+      %span &gt;
+      Анкеты от специалистов
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Анкеты от специалистов
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'button', :class => 'button group_new', :value => 'Добавить'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Название
+                %th Специальность
+
+              - @worksheets.each_with_index do |value, index|
+
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  
+                  %td
+                    = link_to value.id, adm_worksheet_path(value)
+                    %input{:type => 'hidden', :class => 'group_id', :value => value.id}
+                  /Фамилия
+
+                  %td
+                    %span{:class => 'show_input show_input_name'}
+                      = link_to value.questionnaire.name, adm_worksheet_path(value)
+                    %input{:type => 'text', :class => 'edit_input field small-field groupt_name', :value => value.questionnaire.name}
+
+                  %td
+                    - unless value.questionnaire.specialization.nil?
+                      = I18n.t "enumerize.specialization.#{value.questionnaire.specialization.name}"
+                    - else
+                      нет
+            
+            /Pagging
+            %div{:class => 'pagging'}
+              %div{:class => 'left'} 
+                = "Страницы #{@page_number_left}-#{@page_number_right} из #{@count_groups}"
+              %div{:class => 'right'}
+                = link_to 'Первая', "/adm/orders?page=1&filter=#{@filter}"
+
+                - @get_left_pages.each do |value|
+                  = link_to "#{value}", "/adm/orders?page=#{value}&filter=#{@filter}"
+
+                = link_to "#{@page}", "/adm/orders?page=#{@page}&filter=#{@filter}", style: "border-color: #8c3521; background: #ba4c32;"
+
+                - @get_right_pages.each do |value|
+                  = link_to "#{value}", "/adm/orders?page=#{value}&filter=#{@filter}"
+
+                = link_to 'Последняя', "/adm/orders?page=#{@last_page}&filter=#{@filter}"
+      
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

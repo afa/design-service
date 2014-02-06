@@ -1,0 +1,28 @@
+%li
+  %input{type:'checkbox', value:'1', id: "any-#{@data.id}"}    
+
+  %label{:for => "any1-#{@data.id}", :class => 'check_select_label check_select_label_false'}Другое
+  %label{:for => "any2-#{@data.id}", :class => 'check_select_label check_select_label_true checkbox_checked_level hidden'}Другое
+
+  %input{:type => 'hidden', :value => 'false', :class => 'question_field_check_value', :name => "question_field[check-#{@data.id}]"}
+  %input{type:'text', value:'', class: 'textlines_default_light textline_l6-8 backg_default_light', name: "question_field[check_description-#{@data.id}-#{@data.question_id}]" }     
+  .knowledge_level{:style => 'display: none;'}
+    %span.comment
+      уровень владения:
+    %ul{:class => 'check_select_level'}
+      %li.1level.level_1
+        %span 
+          1            
+      %li.31level.level_2
+        %span               
+          2
+      %li.41level.level_3
+        %span               
+          3
+      %li.51level.level_4
+        %span               
+          4
+      %li.51level.level_5
+        %span               
+          5    
+    %input{:type => 'hidden', :value => '0', :class => 'check_select_level_value', :name => "question_field[check_level-#{@data.id}-#{@data.question_id}]"}

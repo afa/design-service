@@ -1,3 +1,4 @@
+# coding: utf-8
 class AddSpecializationToSpecialists < ActiveRecord::Migration
   def up
    change_table :specialists do |t|

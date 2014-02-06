@@ -10,24 +10,48 @@
       .number._2
       .form_description.job
       %span.text
-        Площадь помещения: #{ f.input_field :flat_area, class: 'textlines_default textline_l6-5', id:"ployad_pomijenya" }
-      .interior
-        Какой стиль интерьера Вы предпочитаете?
-        = f.input_field :interior_style, as: :radio_buttons, collection: SelectedForm.interior_style.options
-        = f.input_field :interior_style_comment, as: :string, class: ['textlines_default', 'textline_l5'], size:10
-      .range_and_tone
-        Какие гамму и тональность Вы предпочитаете?
-        %ul.answer
-          %li
-            = f.input :cold_gamma, as: :boolean, label: 'Холодная гамма', wrapper: false
-          %li
-            = f.input :bright_saturated_colors, as: :boolean, label: 'Яркие насыщенные цвета', wrapper: false
-          %li
-            = f.input :warm_color, as: :boolean, label: 'Теплая гамма', wrapper: false
-          %li
-            = f.input :pastel_shades, as: :boolean, label: 'Пастельные оттенки', wrapper: false
+        Наименование помещения: #{ f.input_field :flat_area, class: 'textlines_default textline_l6-5', id:"ployad_pomijenya" }
+      .color_sliders
+        %span.head
+          Какая цветовая гамма желательно для помещения ?
+          %ul
+            %li
+              %span.left
+                Прохладная
+              %span.slider_bar
+              %span.right
+                Теплая  
+
+            %li
+              %span.left
+                Расслабляющая
+              %span.slider_bar
+              %span.right
+                Бодрящая                
+
+            %li
+              %span.left
+                Пастельные оттенки
+              %span.slider_bar
+              %span.right
+                Сочная. насыщенная
+
+            %li
+              %span.left
+                Натуральная
+              %span.slider_bar
+              %span.right
+                Современная
+
+            %li
+              %span.left
+                Уравновещенная
+              %span.slider_bar
+              %span.right
+                Смелая
+
       .color_keyboard_block
-        %span Главный цвет в колористической композиции?
+        %span Ваш любимый цвет в колористической композиции:
         .color_keyboard
           %ul.wide
             %li{:value => "#fdabb2"}
@@ -49,6 +73,29 @@
             %li.dis_long{:value => "#4037fd"}
             %li.dis_short{:value => "#9937fd"}
           = f.input_field :main_color, as: :hidden, id: "selected_color"
+      
+      .selected_objects
+        %span
+          Требуется ли учесть уже выбранных Вами обьектов
+        %ul
+          %li
+            %input#furniture{type:'checkbox', value:'1', class:"what_to_attach" , checked:"checked"}  
+            %label{:for => "furniture"}  Мебель  
+          %li
+            %input#wallpaper-tiles{type:'checkbox', value:'1', class:"what_to_attach"}  
+            %label{:for => "wallpaper-tiles"}  Обоев, плитки
+          %li
+            %input#curtains{type:'checkbox', value:'1',  class:"what_to_attach"}  
+            %label{:for => "curtains"}  Штор 
+          %li
+            %input#floor_material{type:'checkbox', value:'1', class:"what_to_attach"}  
+            %label{:for => "floor_material"}  Материала пола 
+          %li
+            %input#any{type:'checkbox', value:'1', class:"what_to_attach"}  
+            %label{:for => "any"}  
+              Другое
+              %input.textlines_default.textline_l6-5{type:"text"}                                                 
+
       .present_results
         Как Вам представить результат?
         = f.input_field :show_results_different, as: :radio_buttons, collection: SelectedForm.show_results_different.options
@@ -62,4 +109,12 @@
   .loaded_files{:class => "#{disabled ? 'disabled' : 'enabled'}"}
     = render partial: 'attachments/list_of_attachments', locals:{attachments: selected_form.attachments, has_remove_button: !disabled}
   = render partial: 'attachments/drag_n_drop_box', locals: {attached_to: selected_form, kind: 'plan_with_furniture', disabled: disabled, wrapper_class: ''}
-  %span.attach_info_block.caution  Прикрепите: 1. план с расстановкой мебели!
+
+  %span.attach_info_block.caution  
+    Обязательно необходимо добавить;
+    %ol.selected_forms
+      %li.furniture План с расстановкой мебели
+      %li.wallpaper-tiles План расстановки светильников, электрооборудования, розеток и других электроприборов!
+      %li.curtains План, где указаны привязки и размеры проемов
+      %li.floor_material План, где указаны привязки и размеры проемов
+      %li.any План, где указаны привязки и размеры проемов

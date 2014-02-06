@@ -1,4 +1,7 @@
+# coding: utf-8
 class SpecialistGroup < ActiveRecord::Base
+  self.per_page = 20
+  
   belongs_to :specialization
   has_and_belongs_to_many :specialists
 
@@ -14,6 +17,7 @@ class SpecialistGroup < ActiveRecord::Base
   has_many :selected_forms, through: :orders, source: :orderable, source_type: 'SelectedForm'
   # привязка группы к заказу напрямую, не через исполнителя. считать цену и выбирать исплнителей. 
   has_many :reviews, through: :specialists
+  has_many :request_specialists
 
   def messages; received_messages; end
 
@@ -45,5 +49,19 @@ class SpecialistGroup < ActiveRecord::Base
   end
   def order_customizer
     OrderCustomizer.by_specialization(specialization.full_name)
+  end
+
+  # ДОРАБОТАТЬ(БД)
+  def self.get_all_not_specialist(specialist_id)
+    specialist = Specialist.find(specialist_id)
+    SpecialistGroup.all - specialist.specialist_groups
+  end
+
+  def get_bunch_on_filter(page, filter)
+    SpecialistGroup.paginate(:page => page).order("created_at desc")
+  end
+
+  def count_groups(filter)
+    SpecialistGroup.count
   end
 end

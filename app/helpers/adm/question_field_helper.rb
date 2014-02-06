@@ -1,0 +1,2 @@
+module Adm::QuestionFieldHelper
+end

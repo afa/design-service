@@ -1,0 +1,165 @@
+/Header
+= render partial: 'adm/menu/header'
+
+/Container
+%input{:type => 'hidden', :value => @id, :id => 'client_id'}
+%div{:id => 'container'}
+  %div{:class => 'shell'}
+
+    %div{:class => 'small-nav'}
+      = link_to 'Админ-панель', '/adm/orders'
+      %span &gt;
+      = link_to 'Заказчики', '/adm/clients'
+      %span &gt;
+      Клиент №
+      = @client_data.id
+    
+    = render partial: 'adm/menu/popups'
+
+    /Main
+    %div{:id => 'main'}
+      %div{:class => 'cl'} &nbsp;
+      
+      /Content
+      %div{:id => 'content', :style => 'width: 100%;'}
+        
+        /Box
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Заказчик №
+            = @client_data.id
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Имя
+                %th Фамилия
+                %th Логин
+                %th E-mail
+                %th Телефон
+                %th Заказы
+                %th Регистрация
+                %th Действия
+
+              - @clients.each_with_index do |value, index|
+       
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  %td
+                    = link_to "#{value.id}", "client/#{value.id}"
+                    %input{:type => 'hidden', :class => 'client_id', :value => value.id}
+
+                  %td
+                    /= f.input_field :name, class: 'field small-field', style: 'width: 90px;'
+                    %input{:type => 'text', :class => "field small-field client_name_#{value.id}", :value => value.profile.name, :style => 'width: 90px;'}
+                  %td
+                    /= f.input_field :surname, class: 'field small-field', style: 'width: 90px;'
+                    %input{:type => 'text', :class => 'field small-field client_surname', :value => value.profile.surname, :style => 'width: 90px;'}
+
+                  /Логин
+                  %td
+                    /= f.input_field :username, class: 'field small-field', style: 'width: 110px;'
+                    %input{:type => 'text', :class => 'field small-field client_username', :value => value.username, :style => 'width: 110px;'}
+                  /E-mail
+                  %td
+                    /= f.input_field :email, class: 'field small-field', style: 'width: 110px;'
+                    %input{:type => 'text', :class => 'field small-field client_email', :value => value.email, :style => 'width: 110px;'}
+                  /Телефон
+                  %td
+                    /= f.input_field :phone, class: 'field small-field', style: 'width: 90px;'
+                    %input{:type => 'text', :class => 'field small-field client_phone', :value => value.profile.phone, :style => 'width: 90px;'}
+
+                  /Заказы
+                  %td= value.count_orders
+
+                  %td= value.get_created_date
+
+                  %td
+                    %a{:class => 'ico edit set_client'} Сохр.
+                    /= link_to 'Уд.', '#', class: 'ico del'
+                    %a{:class => 'ico del del_client'} Уд.
+        
+        /Box
+        %div{:class => 'box'}
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2 Смена пароля
+          
+          /Form 
+          %div{:class => 'form'}
+            %p
+              /%span{:class => 'req'} max 100 symbols
+              %label Новый пароль
+              %input{:type => 'password', :class => 'field size1', :style => 'width: 150px;'}
+              %input{:type => 'button', :class => 'button client_new_password', :value => 'Сменить'}
+
+        /Заказы клиента
+        %div{:class => 'box'}
+
+          /Box Head
+          %div{:class => 'box-head'}
+            %h2{:class => 'left'} Заказы клиента
+            %div{:class => 'right'}
+              /%label search articles
+              /%input{:type => 'text', :class => 'field small-field'}
+              /%input{:type => 'submit', :class => 'button', :value => 'search'}
+
+          /Table
+          %div{:class => 'table'}
+            %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+              %tr
+                %th №
+                %th Тип
+                %th Статус
+                %th Стоимость
+                %th Выполнено
+                %th Дата зав.
+                %th Специалист
+                %th Группа
+
+              - @orders.each_with_index do |value, index|
+       
+                %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                  %td
+                    = link_to "#{value.id}", "order/#{value.id}"
+
+                  %td
+                    = I18n.t "titles.#{value.orderable.is_a?(SelectedForm) ? "selected_form.#{value.orderable.order_customizer.try( :typename)}" : value.orderable_type.underscore}"
+
+                  %td
+                    = I18n.t "order.work_state.#{value.work_state}"
+
+                  %td
+                    = value.price
+
+                  %td
+                    = value.completion_percent
+                    = "%"
+
+                  %td
+                    = value.completion_time
+
+                  %td
+                    - unless value.executor.nil?
+                      =link_to "#{value.executor.user.profile.full_name}", "specialist/#{value.executor.user.id}"
+                    - else
+                      нет
+
+                  %td
+                    - unless value.specialist_group.nil?
+                      = value.specialist_group.name
+                    - else
+                      нет
+
+
+      %div{:class => 'cl'} &nbsp;    
+
+/Footer 
+= render partial: 'adm/menu/footer'

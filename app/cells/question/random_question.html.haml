@@ -1,0 +1,8 @@
+%li
+  .heading
+    = @index_question
+    = @data.get_random_question_from_answers.name
+  .full_width
+    .padding_left
+      Ответ:
+      = render_cell :question_field, "question_for_random_question", :data => @data.get_random_question_from_answers
