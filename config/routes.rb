@@ -165,6 +165,9 @@ DesignService::Application.routes.draw do
   resources :questionnaire
   resources :worksheet
 
+  resources :request_specialist
+  post 'request_specialist/set_status' => 'request_specialist#set_status', :as => :request_specialist_set_status
+
   namespace :admin do    
     post 'users/:id/group_remove' => 'users#group_remove', :as => :user_group_remove
     post 'users/:id/group_add' => 'users#group_add', :as => :user_group_add
@@ -189,6 +192,7 @@ DesignService::Application.routes.draw do
     post 'specialist/add_to_group' => 'specialist#add_to_group', :as => :specialist_add_to_group
     post 'specialist/del_from_group' => 'specialist#del_from_group', :as => :specialist_del_from_group
     post 'specialist/set_specialization' => 'specialist#set_specialization', :as => :specialist_set_specialization
+    post 'specialist/add_request_to_group' => 'specialist#add_request_to_group', :as => :specialist_add_request_to_group
     
     resources :order
     post 'order/check_new' => 'order#check_new', :as => :order_check_new

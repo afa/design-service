@@ -36,9 +36,30 @@ $(function(){
 	$('.add_spec_to_group').click(function(){
 		var group_id = $('#group_id').attr('value');
 		var specialist_id = $('#select_specialist_id').attr('value');
-		$.post("/adm/specialist/add_to_group", {group_id: group_id, specialist_id: specialist_id}, function(){
+		$.post("/adm/specialist/add_request_to_group", {group_id: group_id, specialist_id: specialist_id}, function(){
 			location.reload();
 		});
+	});
+
+	$('.add_in_group_from_request').click(function(){
+		var group_id = $('#group_id').attr('value');
+		var specialist_id = $(this).next().attr('value');
+		if(confirm("Назначить данного специалиста в группу?"))
+		{
+			$.post("/adm/specialist/add_to_group", {group_id: group_id, specialist_id: specialist_id}, function(){
+				location.reload();
+			});
+		}
+	});
+
+	$('.del_request_specialist_from_group').click(function(){
+		var id = $(this).next().attr('value');
+		if(confirm("Назначить данного специалиста в группу?"))
+		{
+			$.post("/adm/specialist/del_request", {request_id: id}, function(){
+				location.reload();
+			});
+		}
 	});
 
 	$('.add_group').click(function(){

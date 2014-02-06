@@ -1,0 +1,19 @@
+%td
+  = request.join_specialist.user.username
+  %input{:type => 'hidden', :value => request.id, :class => 'request_id'}
+- if request.status.nil?
+  %td
+    %input{:type => 'button', :class => 'add_request_status', :value => 'Принять'}
+    %input{:type => 'hidden', :value => 'true'}
+  %td
+    %input{:type => 'button', :class => 'add_request_status', :value => 'Не принимать'}
+    %input{:type => 'hidden', :value => 'false'}
+- else
+  %td
+    = "Голосующие за - #{request.get_percent_true}%"
+  %td
+    Вы были 
+    - if request.status
+      за
+    - else
+      против

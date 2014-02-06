@@ -150,6 +150,29 @@ class Adm::SpecialistController < Adm::ApplicationController
 		end
 	end
 
+	def add_request_to_group
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			new_request = RequestSpecialist.new(:specialist_group_id => params[:group_id].to_i,
+				:join_specialist_id => params[:specialist_id].to_i)
+			new_request.add
+
+			render :json => {status: ""}
+		else
+			redirect_to root_path
+		end
+	end
+
+	def del_request
+		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
+			request = RequestSpecialist.find(params[:request_id].to_i)
+			request.destroy
+
+			render :json => {status: ""}
+		else
+			redirect_to root_path
+		end
+	end
+
 	def set_specialization
 		if get_current_user.moderator? || get_current_user.main_moderator? || get_current_user.admin?
 			specialist = Specialist.find(params[:id].to_i)

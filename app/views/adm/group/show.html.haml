@@ -79,7 +79,6 @@
 
         %div{:style => 'width: 100%'}
 
-          /Чат
           %div{:class => 'box', :style => 'width: 68%; display: inline-block; float: left;'}
             /Box Head
             %div{:class => 'box-head'}
@@ -116,7 +115,47 @@
                       %input{:type => 'button', :class => 'button', :value => 'Просмотр'}
                     %td
                       %a{:class => 'ico del del_specialist_from_group'} Уд.
-            
+
+          
+          %div{:class => 'box', :style => 'width: 68%; display: inline-block; float: left;'}
+            /Box Head
+            %div{:class => 'box-head'}
+              %h2 Заявки на вступление
+            /Table
+            %div{:class => 'table'}
+              %table{:width => '100%', :border => '0', :cellspacing => '0', :cellpadding => '0'}
+                %tr
+                  %th №
+                  %th Фамилия
+                  %th Логин
+                  %th За вступление
+                  %th В группу
+                  %th Действия
+
+                - @request_specialists.each_with_index do |value, index|
+
+                  %tr{:class => index % 2 == 0 ? '' : 'odd'}
+                    
+                    %td
+                      = link_to "#{value.join_specialist.id}", "/adm/specialist/#{value.join_specialist.id}"
+                      %input{:type => 'hidden', :class => 'specialist_id', :value => value.join_specialist.id}
+                    /Фамилия
+                    %td
+                      = value.join_specialist.user.profile.surname
+                    /Логин
+                    %td
+                      = link_to value.join_specialist.user.username, "/adm/specialist/#{value.join_specialist.id}"
+                    /Процент проголосовавших
+                    %td
+                      = "#{value.get_percent_true}%"
+                    /Фотографии
+                    %td
+                      %input{:type => 'button', :class => 'button add_in_group_from_request', :value => 'Добавить'}
+                      %input{:type => 'hidden', :value => value.join_specialist.id}
+                    %td
+                      %a{:class => 'ico del del_request_specialist_from_group'} Уд.
+                      %input{:type => 'hidden', :value => value.id}
+
 
           /Добавить в группу
           %div{:class => 'box', :style => 'width: 30%; display: inline-block; float: left; margin-left: 15px;'}

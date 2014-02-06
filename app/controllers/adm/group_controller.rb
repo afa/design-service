@@ -9,6 +9,7 @@ class Adm::GroupController < Adm::ApplicationController
 			@groups << @group_data
 
 			@specialists = @group_data.specialists
+			@request_specialists = @group_data.get_request_specialists
 			@user_data = get_current_user
 		else
 			redirect_to root_path

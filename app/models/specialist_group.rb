@@ -64,4 +64,47 @@ class SpecialistGroup < ActiveRecord::Base
   def count_groups(filter)
     SpecialistGroup.count
   end
+
+  # группированные запросы, нужны для сиска запросов группы, но не для определенного специалиста
+  # заявки на вступление в группу, при условии, что специалиста в ней уже нет
+  def get_request_specialists
+    requests = Array.new
+
+    self.request_specialists.select("specialist_group_id, join_specialist_id")\
+      .group("specialist_group_id, join_specialist_id").each do |value|
+      if self.specialists.where("specialists.id = ?", value.join_specialist_id).count == 0
+        requests << value
+      end
+    end
+
+    requests
+  end
+
+  # группированные запросы, нужны для сиска запросов группы, но не для определенного специалиста
+  # берем только те запросы, которые не потеряли актуальности
+  # заявка должна быть не старше 3 дней, в группе кандидата быть не должно
+  def get_open_request_specialists
+    requests = Array.new
+
+    self.get_request_specialists.each do |value|
+      if value.created_at < 3.day.ago
+        requests << value
+      end
+    end
+
+    requests
+  end
+
+  # беруться не группированные запросы на вступление, а относительно нужного специалиста
+  def get_open_request_specialists_for_specialist(specialist)
+    requests = Array.new
+
+    self.request_specialists.where("specialist_group_id = ? and specialist_id = ?", self.id, specialist.id).each do |value|
+      if value.created_at > 3.day.ago && self.specialists.where("specialists.id = ?", value.join_specialist_id).count == 0
+        requests << value
+      end
+    end
+
+    requests
+  end
 end

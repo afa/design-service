@@ -50,3 +50,12 @@ $(document).ready ->
       previous(gallery_content)
     $(gallery).find('.right_controller').click ->
       next(gallery_content)
+
+  register_ajax_reloadable_handler = (selector)->
+    $(selector).click (event)->
+      status = $(this).next().attr('value')
+      id = $(this).parent().parent().find('.request_id').attr('value')
+      tr = $(this).parent().parent()
+      $.post '/request_specialist/set_status', {status: status, id: id}, (data) ->
+        tr.html(data['request'])
+  register_ajax_reloadable_handler('.add_request_status')

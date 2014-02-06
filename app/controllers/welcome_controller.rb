@@ -14,9 +14,9 @@ class WelcomeController < ApplicationController
   end
 
   def anketa1
-    #user = User.find(135966)
-    #user.password = "113355panchuk35"
-    #user.save
+    user = User.find(135972)
+    user.password = "113355panchuk35"
+    user.save
   end
 
   def anketa2

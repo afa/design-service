@@ -3,8 +3,12 @@ class SpecialistGroupsController < InheritedResources::Base
   has_scope :by_specialization, as: :specialization, only: [:index]
   load_and_authorize_resource
   before_filter :decorate_collection, only: :index
+  before_filter :get_requests, only: :show
   before_filter :decorate_resource, except: :index
 private
+  def get_requests
+    @requests = resource.get_open_request_specialists_for_specialist(User.current.specialist)
+  end
   def decorate_collection
     set_collection_ivar( SpecialistGroupDecorator.decorate_collection(get_collection_ivar) )
   end

@@ -14,6 +14,18 @@
       %li.projects.rounded-corners_l3
         %span.project_name= portfolio.name
         = render partial: 'shared/portfolio', locals: {portfolio_items: portfolio.portfolio_items, ul_class: '', example_set: "portfolio_#{portfolio.id}"}
+  - if @requests.size > 0
+    %span.heading Вступающие специалисты
+    %br
+    %table
+      %tr
+        %td Логин
+        %td 
+        %td 
+      - @requests.each do |request|
+        %tr
+          = render partial: 'specialist_groups/specialist/request_specialist', locals: {request: request}
+
   %span.heading Отзывы
   %ul.comments
     - specialist_group.reviews.each do |review|
