@@ -1,2 +1,7 @@
+.orders_content
+ - if User.current.specialist?
+  .specialist
+ - elsif User.current.client?
+  .client
 /= render 'shared/msg_box', messages: @messages
-= render partial: 'orders/order', collection: @orderable
+/= render partial: 'orders/order', collection: @orderable

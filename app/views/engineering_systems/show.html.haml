@@ -1,4 +1,5 @@
 .msg_caution
   %span.engineering_system Данные заказа
-= render partial: 'form', locals: {engineering_system: resource, disabled: true}
+= render partial: 'form', locals: {engineering_system: resource, disabled: false}
+/= render partial: 'form', locals: {engineering_system: resource, disabled: true}
 /= render 'price_calculator', order_id: resource.order.id

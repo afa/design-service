@@ -6,3 +6,8 @@
 //= require completion_percent
 //= require date_selector
 //= require order_profiles
+
+$(document).ready () ->
+  $(".left_msg_area .def_msg").add(".left_msg_area .msg_content").on 'click', () ->
+    oid = $(event.target).closest(".left_msg_area").attr("data")
+    show_fly_window_from_url oid

@@ -1,5 +1,6 @@
 .msg_caution
   %span.post_varplan Данные заказа
-= render partial: 'form', locals: {plan_development: resource, disabled: true}
+= render partial: 'form', locals: {plan_development: resource, disabled: false}
+-# = render partial: 'form', locals: {plan_development: resource, disabled: true}
 /= render 'price_calculator', order_id: resource.order.id
 = render partial: 'login_mode'

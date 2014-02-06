@@ -63,25 +63,34 @@ class ProfilesController < InheritedResources::Base
   end
   def profile1
    @orders = User.current.orders.where(:work_state => %w(sent_to_moderator moderator_suggested specialist_agreed specialist_disagreed client_agreed in_work))
+   render :json => {:to_whom => 'client', :data => render_to_string("profiles/profile1.html.haml", :layout => false)}
   end
 
   def profile2
    @orders = User.current.orders.where(:work_state => %w(draft saved_draft))
+   render :json => {:to_whom => 'client', :data => render_to_string("profiles/profile2.html.haml", :layout => false)}
 
   end
 
   def profile3
    @orders = User.current.orders.where(:work_state => %w(work_accepted))
+   render :json => {:to_whom => 'client', :data => render_to_string("profiles/profile3.html.haml", :layout => false)}
 
   end
   
   def profile4
+   @orders = User.current.orders.where(:work_state => %w(sent_to_moderator moderator_suggested specialist_agreed specialist_disagreed client_agreed in_work))
+   render :json => {:data => render_to_string("profiles/profile4.html.haml", :layout => false)}
   end
   
   def profile5
+   @orders = User.current.orders.where(:work_state => %w(sent_to_moderator moderator_suggested specialist_agreed specialist_disagreed client_agreed in_work))
+   render :json => {:data => render_to_string("profiles/profile5.html.haml", :layout => false)}
   end
 
   def profile6
+   @orders = User.current.orders.where(:work_state => %w(sent_to_moderator moderator_suggested specialist_agreed specialist_disagreed client_agreed in_work))
+   render :json => {:data => render_to_string("profiles/profile6.html.haml", :layout => false)}
   end
 
 protected

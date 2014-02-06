@@ -28,9 +28,10 @@ class User < ActiveRecord::Base
   scope :with_orders, -> { where('orders_count > 0') }
   scope :by_role, ->(r) { where(:role => r) }
 
-  validates :username, :uniqueness => {:case_sensitive => false}
-  validates :email, :uniqueness => {:case_sensitive => false}
-  validates :username, length: {minimum: 3}, immutable: true
+  validates :username, :uniqueness => {:case_sensitive => false, :message => I18n.t(:non_uniq_login)}
+  validates :email, :uniqueness => {:case_sensitive => false, :message => I18n.t(:non_uniq_mail)}
+  validates :username, length: {minimum: 3, :message => I18n.t(:too_short_login)}, immutable: true, format: {with: /\[a-zA-Z0-9\]+/}
+  validates :password, length: {minimum: 8, :message => I18n.t(:too_short_pass)}
 
   # allows user to sign in using both email and username
   # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address

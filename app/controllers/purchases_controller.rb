@@ -16,8 +16,8 @@ class PurchasesController < ApplicationController
     render :text => 'fail'
     return
    end
-   p "---md", sign, [[sum, pay, ROBOPASS], (params.keys - ["action", "controller"]).sort.map{|k| params[k] }].flatten.join(':') , Digest::MD5.hexdigest([[sum, pay, ROBOPASS], (params.keys - ["action", "controller"]).sort.map{|k| params[k] }].flatten.join(':')).downcase 
-   if Digest::MD5.hexdigest([[sum, pay, ROBOPASS], (params.keys - ["action", "controller"]).sort.map{|k| params[k] }].flatten.join(':')).downcase != sign.downcase
+   #p "---md", sign, [[sum, pay, ROBOPASS], (params.keys - ["action", "controller"]).sort.map{|k| params[k] }].flatten.join(':') , Digest::MD5.hexdigest([[sum, pay, ROBOPASS], (params.keys - ["action", "controller"]).sort.map{|k| params[k] }].flatten.join(':')).downcase 
+   if Digest::MD5.hexdigest([[sum, pay, Rubykassa.first_password], (params.keys - ["action", "controller"]).sort.map{|k| params[k] }].flatten.join(':')).downcase != sign.downcase
     render :text => 'fail'
     return
    end

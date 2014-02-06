@@ -84,6 +84,9 @@ $(document).ready ->
     )
     form_html
 
+  render_profile_json = (data, status, xhr) ->
+    $(".orders_content ." + data.to_whom).html(data.data)
+
   # postprocess should be used for actions that don't work on non-rendered elements
   # preprocess is made before showing flying box, so user won't see these actions
   $(document).on('click', 'span.edit_portfolio', (event)->
@@ -101,3 +104,8 @@ $(document).ready ->
     )
 
   )
+  if $(".orders_content .client").size() > 0
+    makeAjaxCall('/profile/profile1', render_profile_json)
+  if $(".orders_content .specialist").size() > 0
+    makeAjaxCall('/profile/profile4', render_profile_json)
+    

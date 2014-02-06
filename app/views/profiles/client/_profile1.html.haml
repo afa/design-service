@@ -1,5 +1,4 @@
-= render partial: 'profiles/client/profile1'
--# %ul.order_profiles
+%ul.order_profiles
   %li.selected 
     = link_to "Текущие заказы", :controller => "profiles", :action => "profile1"
   %li 
@@ -8,7 +7,7 @@
     = link_to "Завершенные проекты", :controller => "profiles", :action => "profile3" 
 
 
--# - @orders.each do |order|
+- @orders.each do |order|
   .order_profile_default.pink_border.rounded-corners
     .left_inbox.pink_border.rounded-corners_l3
       .text_head.purple
@@ -61,7 +60,7 @@
             = order.completion_time.to_s
             //1 нед.
 
--# .order_profile_default.pink_border.rounded-corners
+.order_profile_default.pink_border.rounded-corners
   .left_inbox.pink_border.rounded-corners_l3
     .text_head.purple
       .number
@@ -105,7 +104,7 @@
         1 нед.
 
 
--# .order_profile_default.pink_border.rounded-corners
+.order_profile_default.pink_border.rounded-corners
   .left_inbox.pink_border.rounded-corners_l3
     .text_head.purple
       .number
@@ -148,7 +147,7 @@
         1 нед.
 
 
--# .order_profile_default.pink_border.rounded-corners
+.order_profile_default.pink_border.rounded-corners
   .left_inbox.pink_border.rounded-corners_l3
     .text_head.purple
       .number

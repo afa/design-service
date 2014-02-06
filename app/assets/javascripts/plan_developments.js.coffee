@@ -87,6 +87,39 @@ $(document).ready ->
     )
     return false
   )
+  $("body.registered .reset").off("click")
+  $("body.registered .reset").on("click", ->
+    event.preventDefault()
+    ajax_sendform($(this).closest("form"), "PUT",
+    success: (data,status,xhr) ->
+      alert("Данные отправлены")
+    error: (xhr,status,error) ->
+      alert("Не получилось отправить форму")
+    )
+    return false
+  )
+  $("body.registered .put.submit").off("click")
+  $("body.registered .put.submit").on("click", ->
+    event.preventDefault()
+    if(!$.trim($("#plan_development_flat_area").val()).length)
+      $("#plan_development_flat_area").addClass("red_border").focus()
+      return false
+    else
+      $("#plan_development_flat_area").removeClass("red_border")
+    ajax_sendform($(this).closest("form"), "PUT",
+    success: (data,status,xhr) ->
+      makeAjaxPost(
+        $("body.registered .put.submit").closest("form").attr("action")+"/to_moderator",
+        {},
+        () ->
+          #show_fly_window("#register")
+        () ->
+      )
+    error: (xhr,status,error) ->
+      alert("Не получилось отправить форму")
+    )
+    return false
+  )
   $("body.unregistered .put.submit").off("click")
   $("body.unregistered .put.submit").on("click", ->
     event.preventDefault()

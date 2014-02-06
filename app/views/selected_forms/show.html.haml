@@ -1,3 +1,4 @@
 .msg_caution
   %span.design_p-workin-docs Данные заказа
-= render partial: "order_customizers/forms/#{typename}", locals: {selected_form: resource, disabled: true}
+= render partial: "order_customizers/forms/#{typename}", locals: {selected_form: resource, disabled: false}
+/= render partial: "order_customizers/forms/#{typename}", locals: {selected_form: resource, disabled: true}

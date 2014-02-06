@@ -47,9 +47,11 @@ class Order < ActiveRecord::Base
     event :send_to_moderator do
       transition [:saved_draft, :sent_to_moderator, :moderator_suggested, :specialist_agreed] => :sent_to_moderator
     end
+    before_transition any => :sent_to_moderator, :do => :prepare_date
     event :save_draft_drop_price do
-      transition [:draft, :saved_draft, :sent_to_moderator, :moderator_suggested, :specialist_agreed] => :saved_draft, before: :reset_price
+      transition [:draft, :saved_draft, :sent_to_moderator, :moderator_suggested, :specialist_agreed] => :saved_draft
     end
+    before_transition [:draft, :saved_draft, :sent_to_moderator, :moderator_suggested, :specialist_agreed] => :saved_draft, do: :reset_price
 
     event :assign_specialist do
       transition [:moderator_suggested, :specialist_agreed, :specialist_disagreed] => :moderator_suggested
@@ -94,6 +96,10 @@ class Order < ActiveRecord::Base
       transition [:not_paid, :advance_paid] => :advance_paid, :if => lambda {|order| order.amount_paid >= order.advance_price }
       transition [:not_paid, :paid] => same
     end
+  end
+
+  def prepare_date
+   sent_to_moderator_at = DateTime.now
   end
 
   def mk_payment
@@ -211,6 +217,10 @@ class Order < ActiveRecord::Base
 
   def reset_price
     price = nil
+  end
+
+  def editable?
+   true
   end
 private
   def self.accepted_to_start_work_arel

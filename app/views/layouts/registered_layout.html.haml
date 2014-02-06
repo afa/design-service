@@ -12,6 +12,7 @@
   %body.registered{:class => ["#{params[:controller]}_controller", "#{params[:action]}_action"]}
     %noindex
       #black_content
+      = yield :need_recov
       .twoColFixRtHdr
         .border_ornements
           .header_top

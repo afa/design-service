@@ -1,7 +1,7 @@
 class SelectedFormsController < InheritedResources::Base
-  respond_to :json, only: [:update]
+  respond_to :json, only: [:update, :to_moderator]
   belongs_to :specialist_group, optional: true
-  before_filter :load_draft, only: [:new, :edit]
+  before_filter :load_draft, only: [:new, :edit, :to_moderator]
 
   def new
     if !parent
@@ -10,6 +10,12 @@ class SelectedFormsController < InheritedResources::Base
     else
       render 'new_order_to_specialist'
     end
+  end
+
+  def to_moderator
+   @selected_form.update_attributes permitted_params[:selected_form]
+   @selected_form.order.send_to_moderator
+   render :json => {}
   end
 
   def show

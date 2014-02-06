@@ -1,0 +1,8 @@
+#payment2_stage2.rounded-corners.border_x1.shadow_x1
+  .close_fly_window
+  .head_account_grow
+  .list
+    .head Способ оплаты
+    - @groups.each do |grp|
+      .item= link_to grp["Name"], Rubykassa.pay_url(@order.id, @order.need_amount, :email => current_user.email, :currency => grp["Label"], :culture => :ru)
+
