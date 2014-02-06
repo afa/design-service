@@ -4,7 +4,7 @@
   %label{:for => "any1-#{@data.id}", :class => 'check_select_label check_select_label_false'}Другое
   %label{:for => "any2-#{@data.id}", :class => 'check_select_label check_select_label_true checkbox_checked_level hidden'}Другое
 
-  %input{:type => 'hidden', :value => 'false', :class => 'question_field_check_value', :name => "question_field[check-#{@data.id}]"}
+  %input{:type => 'hidden', :value => 'false', :class => 'question_field_check_value', :name => "question_field[check_true-#{@data.id}-#{@data.question_id}]"}
   %input{type:'text', value:'', class: 'textlines_default_light textline_l6-8 backg_default_light', name: "question_field[check_description-#{@data.id}-#{@data.question_id}]" }     
   .knowledge_level{:style => 'display: none;'}
     %span.comment

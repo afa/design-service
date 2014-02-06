@@ -27,22 +27,23 @@ class WorksheetQuestionField < ActiveRecord::Base
 			question_field = nil
 
 			begin
-	        	question_field = QuestionField.find(index_id)
+	        	question_field = Question.find(index_id)
 	        rescue
-	            status = "error_field"
+	            status = "error_field_1"
 	        end
-	        field_data = Question.find(question_field.question_id)
 
-	        if field_data.is_necessarily
-				unless fields.nil?
-					attach = params[:question_field]["file_work_#{fields.last}-#{index_id}"]
-					status = "file_work_nil" if attach.nil?
-				else
-					status = "file_work_nil"
-				end
+	        unless question_field.nil?
+		        if question_field.is_necessarily
+					unless fields.nil?
+						attach = params[:question_field]["file_work_#{fields.last}-#{index_id}"]
+						status = "file_work_nil" if attach.nil?
+					else
+						status = "file_work_nil"
+					end
 
-				if value_data == "" || value_data.nil?
-					status = "description_work_nil"
+					if value_data == "" || value_data.nil?
+						status = "description_work_nil"
+					end
 				end
 			end
 		elsif !field_name.at("value").nil?
@@ -54,7 +55,7 @@ class WorksheetQuestionField < ActiveRecord::Base
 			begin
 	        	field_data = Question.find(index_id)
 	        rescue
-	            status = "error_field"
+	            status = "error_field_2"
 	        end
 
 	        unless field_data.nil?
@@ -62,8 +63,30 @@ class WorksheetQuestionField < ActiveRecord::Base
 	                status = "nil_field_value"
 	            end
 	        end
+	    elsif !field_name.at("check").nil?
+			question_id = nil
+			value_data = value.last
+			index_id = field.last(2).first
+
+			question_field = nil
+
+			begin
+	        	question_field = QuestionField.find(index_id)
+	        rescue
+	            status = "error_field_3"
+	        end
+
+	        unless question_field.nil?
+	        	field_data = Question.find(question_field.question_id)
+	            if field_data.is_necessarily && (value_data.nil? || value_data == "")
+	                status = "nil_field_#{field_name}"
+	            end
+	        end
 		else
-			if field_name.at("name_and_file").nil? && field_name.at("photo").nil?
+			if field_name.at("name_and_file").nil? && field_name.at("photo").nil? && field_name.at("experience_description").nil? && 
+					field_name.at("experience_date_start").nil? && field_name.at("experience_date_end").nil? &&
+					field_name.at("experience_city").nil? && field_name.at("experience_country").nil? && field_name.at("experience_region").nil? &&
+					field_name.at("experience_position").nil? && field_name.at("file_work").nil? && field_name.at("description_work").nil?
 				question_id = nil
 				value_data = value.last
 				question_field_id = index_id
@@ -73,9 +96,11 @@ class WorksheetQuestionField < ActiveRecord::Base
 				begin
 		        	question_field = QuestionField.find(index_id)
 		        rescue
-		        	p "==========================="
+		        	p "============-------------==============="
 		        	p field_name
-		            status = "error_field"
+		        	p value
+		        	p index_id
+		            status = "error_field_4"
 		        end
 
 		        unless question_field.nil?
@@ -109,6 +134,12 @@ class WorksheetQuestionField < ActiveRecord::Base
 				attachment.attachable = WorksheetQuestionField.last
 				attachment.user = User.new_guest
 				attachment.save
+
+				# если это архив, открываем его и кидаем файлы в другую папку
+				# в public\uploads\attachment\file\{attachment.id}
+				p "================================="
+				p file.inspect
+				#if file.
 			end
 		end
 	end
